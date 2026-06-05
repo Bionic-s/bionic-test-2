@@ -145,12 +145,12 @@ export default function ContactPage() {
 
   const inputCls = (name: keyof FieldErrors, extra = '') =>
     `${extra} w-full px-4 py-3.5 bg-bg-primary border rounded-lg text-text-primary focus:outline-none focus:ring-2 transition-all ${
-      fieldErrors[name] && touched[name] ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20' : 'border-white/10 focus:border-[#059669]/50 focus:ring-[#059669]/15'
+      fieldErrors[name] && touched[name] ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20' : 'border-white/10 focus:border-[#00BFFF]/50 focus:ring-[#00BFFF]/15'
     }`;
 
   const selectCls = (name: keyof FieldErrors) =>
     `w-full px-4 py-3.5 bg-bg-primary border rounded-lg text-text-primary focus:outline-none focus:ring-2 transition-all appearance-none ${
-      fieldErrors[name] && touched[name] ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20' : 'border-white/10 focus:border-[#059669]/50 focus:ring-[#059669]/15'
+      fieldErrors[name] && touched[name] ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20' : 'border-white/10 focus:border-[#00BFFF]/50 focus:ring-[#00BFFF]/15'
     }`;
 
   return (
@@ -161,10 +161,10 @@ export default function ContactPage() {
           <>
             {/* ═══ HERO ═══ */}
             <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
-              <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-[#059669]">Executive Engagement</p>
+              <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-[#00BFFF]">Executive Engagement</p>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
                 Request an<br />
-                <span style={{ color: '#059669' }}>Executive Briefing</span>
+                <span style={{ color: '#00BFFF' }}>Executive Briefing</span>
               </h1>
               <p className="text-text-muted text-lg max-w-[580px] mx-auto leading-relaxed">
                 Enterprise AI. Business Technology Transformation. Measurable Enterprise Value. Long-Term Capability Creation.
@@ -206,7 +206,7 @@ export default function ContactPage() {
                       <label htmlFor="phone" className="block text-sm text-text-muted mb-2">Phone Number</label>
                       <div className="flex gap-2">
                         <select id="country" name="country" value={formData.country} onChange={handleCountryChange}
-                          className="w-28 flex-shrink-0 px-3 py-3.5 bg-bg-primary border border-white/10 rounded-lg text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-[#059669]/15">
+                          className="w-28 flex-shrink-0 px-3 py-3.5 bg-bg-primary border border-white/10 rounded-lg text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-[#00BFFF]/15">
                           {countries.map((c) => <option key={c.code} value={c.code} className="bg-bg-primary">{c.flag} {c.code}</option>)}
                         </select>
                         <div className="flex-1">
@@ -279,8 +279,8 @@ export default function ContactPage() {
 
                   {/* Submit */}
                   <button type="submit" disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-[#059669] text-white font-semibold rounded-xl hover:bg-[#047857] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
-                    style={{ boxShadow: '0 8px 24px #05966920' }}>
+                    className="w-full px-8 py-4 bg-[#00BFFF] text-white font-semibold rounded-xl hover:bg-[#0099CC] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
+                    style={{ boxShadow: '0 8px 24px #00BFFF20' }}>
                     {isSubmitting ? (
                       <><div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" /><span>Sending...</span></>
                     ) : (
@@ -311,7 +311,7 @@ export default function ContactPage() {
                     'What a capability compounding strategy looks like for you',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
-                      <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#059669' }} />
+                      <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#00BFFF' }} />
                       {item}
                     </li>
                   ))}
@@ -330,22 +330,22 @@ export default function ContactPage() {
                 <p className="text-sm text-text-muted">Choose the method that works best for you</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#059669]/20 transition-all">
-                  <Phone className="w-6 h-6 mx-auto mb-3" style={{ color: '#059669' }} />
+                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all">
+                  <Phone className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
                   <h4 className="font-semibold text-sm text-text-primary mb-1">Call Us</h4>
-                  <a href={contactPhone.href} className="text-[#059669] text-sm font-medium">{contactPhone.number}</a>
+                  <a href={contactPhone.href} className="text-[#00BFFF] text-sm font-medium">{contactPhone.number}</a>
                   <p className="text-tiny text-text-muted mt-1">{contactPhone.hours}</p>
                 </div>
-                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#059669]/20 transition-all">
-                  <Mail className="w-6 h-6 mx-auto mb-3" style={{ color: '#059669' }} />
+                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all">
+                  <Mail className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
                   <h4 className="font-semibold text-sm text-text-primary mb-1">Email Us</h4>
-                  <a href={`mailto:${contactEmails.general}`} className="text-[#059669] text-sm font-medium">{contactEmails.general}</a>
+                  <a href={`mailto:${contactEmails.general}`} className="text-[#00BFFF] text-sm font-medium">{contactEmails.general}</a>
                   <p className="text-tiny text-text-muted mt-1">We respond within 24 hours</p>
                 </div>
               </div>
               <OfficeLocations variant="card" showDescription={false} />
               <div className="mt-6 bg-bg-secondary border border-white/5 rounded-xl p-6 flex items-start gap-4">
-                <Clock className="w-5 h-5 flex-shrink-0" style={{ color: '#059669' }} />
+                <Clock className="w-5 h-5 flex-shrink-0" style={{ color: '#00BFFF' }} />
                 <div>
                   <h4 className="font-semibold text-sm text-text-primary mb-1">Office Hours</h4>
                   <p className="text-tiny text-text-muted">{businessHours.workingDays} · {businessHours.hours} · {businessHours.timezone}</p>
@@ -357,8 +357,8 @@ export default function ContactPage() {
           /* ═══ SUCCESS SCREEN ═══ */
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="text-center">
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: 'spring' }} className="mb-8">
-              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full" style={{ backgroundColor: '#05966915', border: '2px solid #059669' }}>
-                <CheckCircle className="w-12 h-12" style={{ color: '#059669' }} />
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full" style={{ backgroundColor: '#00BFFF15', border: '2px solid #00BFFF' }}>
+                <CheckCircle className="w-12 h-12" style={{ color: '#00BFFF' }} />
               </div>
             </motion.div>
 
@@ -376,8 +376,8 @@ export default function ContactPage() {
                   { label: 'Blueprints', desc: '12 architectures', path: '/blueprints', icon: BookOpen },
                 ].map((link) => (
                   <Link key={link.label} to={link.path}
-                    className="inline-flex items-center gap-3 px-5 py-3 bg-bg-secondary border border-white/5 rounded-xl text-sm font-medium text-text-primary hover:border-[#059669]/25 transition-all hover:-translate-y-0.5">
-                    <link.icon className="w-4 h-4" style={{ color: '#059669' }} />
+                    className="inline-flex items-center gap-3 px-5 py-3 bg-bg-secondary border border-white/5 rounded-xl text-sm font-medium text-text-primary hover:border-[#00BFFF]/25 transition-all hover:-translate-y-0.5">
+                    <link.icon className="w-4 h-4" style={{ color: '#00BFFF' }} />
                     <span>{link.label} <span className="text-tiny text-text-muted ml-1">{link.desc}</span></span>
                     <ArrowRight className="w-3.5 h-3.5 text-text-muted" />
                   </Link>
