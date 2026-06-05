@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, TrendingUp, Users, CreditCard, GitBranch } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#2563EB';
@@ -42,13 +43,13 @@ const blueprints = [
 ];
 
 const partners = [
-  { name: 'Salesforce', accent: '#00A1E0', role: 'CRM & customer engagement for banking', tech: 'Financial Services Cloud · Marketing Cloud · Einstein AI · Agentforce' },
-  { name: 'IBM', accent: '#052FAD', role: 'Fraud AI & banking infrastructure', tech: 'watsonx for fraud detection · QRadar SOC · FlashSystem for resilience · Cloud Pak' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'Customer 360 MDM & data governance', tech: 'Customer 360 MDM · Data Quality · Data Catalog · Data Lineage for regulatory reporting' },
-  { name: 'MuleSoft', accent: '#00A1E0', role: 'Open banking APIs & core integration', tech: 'Anypoint Platform · API Manager · Flex Gateway · Core banking connectivity' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Cyber recovery & resilient infrastructure', tech: 'PowerProtect Cyber Recovery · PowerMax · VxRail · Isolated Vault for SAMA BCM' },
-  { name: 'Intel', accent: '#0071C5', role: 'Confidential computing & AI acceleration', tech: 'Intel SGX · TDX for transaction security · Gaudi 3 for fraud AI · Xeon for banking' },
-  { name: 'Tableau', accent: '#1A8CD8', role: 'Regulatory dashboards & executive BI', tech: 'Tableau Cloud · Embedded Analytics · SAMA compliance dashboards · Risk analytics' },
+  { name: 'Salesforce', role: 'CRM & customer engagement for banking', tech: 'Financial Services Cloud · Marketing Cloud · Einstein AI · Agentforce' },
+  { name: 'IBM', role: 'Fraud AI & banking infrastructure', tech: 'watsonx for fraud detection · QRadar SOC · FlashSystem for resilience · Cloud Pak' },
+  { name: 'Informatica', role: 'Customer 360 MDM & data governance', tech: 'Customer 360 MDM · Data Quality · Data Catalog · Data Lineage for regulatory reporting' },
+  { name: 'MuleSoft', role: 'Open banking APIs & core integration', tech: 'Anypoint Platform · API Manager · Flex Gateway · Core banking connectivity' },
+  { name: 'Dell Technologies', role: 'Cyber recovery & resilient infrastructure', tech: 'PowerProtect Cyber Recovery · PowerMax · VxRail · Isolated Vault for SAMA BCM' },
+  { name: 'Intel', role: 'Confidential computing & AI acceleration', tech: 'Intel SGX · TDX for transaction security · Gaudi 3 for fraud AI · Xeon for banking' },
+  { name: 'Tableau', role: 'Regulatory dashboards & executive BI', tech: 'Tableau Cloud · Embedded Analytics · SAMA compliance dashboards · Risk analytics' },
 ];
 
 export default function BankingIndustryPage() {
@@ -179,7 +180,7 @@ export default function BankingIndustryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#2563EB]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>{p.name.charAt(0)}</div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

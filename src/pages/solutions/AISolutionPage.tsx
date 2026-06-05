@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { Brain, ArrowRight, Layers, Shield, FileText, Users, Cpu, GitBranch, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#7C3AED';
@@ -13,10 +14,10 @@ const SectionLabel = ({ children }: { children: string }) => (
 
 /* ── Partner Logo Data ── */
 const partners = [
-  { name: 'Salesforce', accent: '#00A1E0', role: 'AI embedded in business applications', tech: 'Agentforce · Einstein AI · Copilot · Prompt Builder · Model Builder' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'Enterprise AI platform & agentic capabilities', tech: 'Vertex AI · Gemini · Model Garden · Agent Builder · Document AI' },
-  { name: 'IBM', accent: '#052FAD', role: 'AI governance, orchestration & open models', tech: 'watsonx.ai · watsonx Assistant · watsonx Governance · Orchestrate · Granite' },
-  { name: 'Intel', accent: '#0071C5', role: 'AI infrastructure — training, inference & edge', tech: 'Gaudi 3 AI Accelerators · Xeon AI Boost · OpenVINO · Edge AI' },
+  { name: 'Salesforce', role: 'AI embedded in business applications', tech: 'Agentforce · Einstein AI · Copilot · Prompt Builder · Model Builder' },
+  { name: 'Google', role: 'Enterprise AI platform & agentic capabilities', tech: 'Vertex AI · Gemini · Model Garden · Agent Builder · Document AI' },
+  { name: 'IBM', role: 'AI governance, orchestration & open models', tech: 'watsonx.ai · watsonx Assistant · watsonx Governance · Orchestrate · Granite' },
+  { name: 'Intel', role: 'AI infrastructure — training, inference & edge', tech: 'Gaudi 3 AI Accelerators · Xeon AI Boost · OpenVINO · Edge AI' },
 ];
 
 export default function AISolutionPage() {
@@ -202,13 +203,7 @@ export default function AISolutionPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/12 transition-all duration-300 group">
                 <div className="flex items-center gap-4 mb-3">
-                  <span
-                    className="text-lg md:text-xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300"
-                    style={{ color: p.accent }}
-                  >
-                    {p.name}
-                  </span>
-                  <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: p.accent }} />
+                  <PartnerLogo partner={p} size="sm" />
                   <span className="text-[#7C3AED]/60 text-xs font-medium">{p.role.split(' —')[0]}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>

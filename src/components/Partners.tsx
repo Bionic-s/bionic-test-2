@@ -1,57 +1,13 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-interface Partner {
-  name: string;
-  logo?: string;
-  alt: string;
-}
+import { CANON_PARTNERS } from '../data/partnersData';
+import { PartnerLogo } from './PartnerLogo';
 
 /**
  * Compact Trust Bar — infinite logo scroll.
  * Replaces the full Partners section for faster scroll-to-lead.
  */
-const partners: Partner[] = [
-  {
-    name: 'Salesforce',
-    logo: `${import.meta.env.BASE_URL}images/partners/salesforce-partner.png`,
-    alt: 'Salesforce Registered Consulting Partner',
-  },
-  {
-    name: 'Google',
-    logo: `${import.meta.env.BASE_URL}images/partners/google-partner.png`,
-    alt: 'Google Cloud Partner',
-  },
-  {
-    name: 'IBM',
-    alt: 'IBM Authorized Business Partner',
-  },
-  {
-    name: 'Dell Technologies',
-    alt: 'Dell Technologies Registered Partner',
-  },
-  {
-    name: 'Intel',
-    logo: `${import.meta.env.BASE_URL}images/partners/intel-partner.webp`,
-    alt: 'Intel Partner',
-  },
-  {
-    name: 'MuleSoft',
-    alt: 'MuleSoft Delivery Partner',
-  },
-  {
-    name: 'Tableau',
-    alt: 'Tableau Analytics Partner',
-  },
-  {
-    name: 'Informatica',
-    alt: 'Informatica Solution Partner',
-  },
-  {
-    name: 'Platform9',
-    alt: 'Platform9 Value Added Reseller',
-  },
-];
+const partners = CANON_PARTNERS;
 
 // Double for seamless loop
 const scrollPartners = [...partners, ...partners];
@@ -62,7 +18,7 @@ export const Partners = () => {
   return (
     <section
       ref={ref}
-      className="relative py-6 md:py-8 border-y border-white/[0.06] bg-bg-secondary/20 overflow-hidden"
+      className="relative py-8 md:py-10 border-y border-white/[0.06] bg-bg-secondary/20 overflow-hidden"
     >
       {/* Background scan line */}
       <motion.div
@@ -89,9 +45,10 @@ export const Partners = () => {
           className="shrink-0 pl-6 md:pl-12 flex items-center gap-3"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-          <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-            Partners
-          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest">Strategic</span>
+            <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest">Partners</span>
+          </div>
         </motion.div>
 
         {/* Marquee */}
@@ -121,7 +78,7 @@ export const Partners = () => {
 
           {/* Scrolling track */}
           <motion.div
-            className="flex items-center gap-10 md:gap-16 whitespace-nowrap"
+            className="flex items-center gap-16 md:gap-24 whitespace-nowrap"
             animate={{ x: ['0%', '-50%'] }}
             transition={{
               x: {
@@ -136,17 +93,9 @@ export const Partners = () => {
                 key={`${partner.name}-${i}`}
                 className="shrink-0 flex items-center gap-3 group cursor-default"
               >
-                {partner.logo ? (
-                  <img
-                    src={partner.logo}
-                    alt={partner.alt}
-                    className="h-6 md:h-7 w-auto object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
-                  />
-                ) : (
-                  <span className="text-sm md:text-base font-bold text-text-muted/50 group-hover:text-accent-primary transition-all duration-300">
-                    {partner.name}
-                  </span>
-                )}
+                <div className="opacity-50 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0">
+                  <PartnerLogo partner={partner} size="xl" />
+                </div>
               </div>
             ))}
           </motion.div>

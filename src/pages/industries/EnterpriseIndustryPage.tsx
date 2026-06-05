@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Brain, TrendingUp, Shield, Cpu, GitBranch, BarChart3 } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#7C3AED';
@@ -42,16 +43,15 @@ const blueprints = [
 ];
 
 const partners = [
-  { name: 'Salesforce', accent: '#00A1E0', role: 'CRM, CX & agentic workforce', tech: 'Sales Cloud · Service Cloud · Marketing Cloud · Agentforce · Einstein AI · Slack' },
-  { name: 'IBM', accent: '#052FAD', role: 'Enterprise AI, security & infrastructure', tech: 'watsonx for enterprise AI · QRadar SOC · Instana AIOps · FlashSystem' },
-  { name: 'MuleSoft', accent: '#00A1E0', role: 'Enterprise integration & APIs', tech: 'Anypoint Platform · API Manager · Flex Gateway · ERP connectivity · RPA' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'Enterprise MDM & data governance', tech: 'Enterprise MDM · Data Quality · Data Catalog · Data Lineage · Data Integration' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Enterprise infrastructure & cyber recovery', tech: 'PowerEdge · PowerStore · VxRail · APEX · PowerProtect Cyber Recovery' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'Enterprise platform & automation', tech: 'OpenShift · Ansible Automation · RHEL · Satellite · OpenStack' },
-  { name: 'Intel', accent: '#0071C5', role: 'Enterprise compute & AI acceleration', tech: 'Xeon Scalable · Gaudi 3 AI · vPro Security · Confidential Computing' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'Enterprise analytics & AI platform', tech: 'Vertex AI · BigQuery · Looker · Gemini · Enterprise AI Platform' },
-  { name: 'Tableau', accent: '#1A8CD8', role: 'Executive BI & enterprise analytics', tech: 'Tableau Cloud · Embedded Analytics · Executive Dashboards · Data Stories' },
-  { name: 'Platform9', accent: '#7B61FF', role: 'Multi-cloud platform & private cloud', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation' },
+  { name: 'Salesforce', role: 'CRM, CX & agentic workforce', tech: 'Sales Cloud · Service Cloud · Marketing Cloud · Agentforce · Einstein AI · Slack' },
+  { name: 'IBM', role: 'Enterprise AI, security & infrastructure', tech: 'watsonx for enterprise AI · QRadar SOC · Instana AIOps · FlashSystem' },
+  { name: 'MuleSoft', role: 'Enterprise integration & APIs', tech: 'Anypoint Platform · API Manager · Flex Gateway · ERP connectivity · RPA' },
+  { name: 'Informatica', role: 'Enterprise MDM & data governance', tech: 'Enterprise MDM · Data Quality · Data Catalog · Data Lineage · Data Integration' },
+  { name: 'Dell Technologies', role: 'Enterprise infrastructure & cyber recovery', tech: 'PowerEdge · PowerStore · VxRail · APEX · PowerProtect Cyber Recovery' },
+  { name: 'Intel', role: 'Enterprise compute & AI acceleration', tech: 'Xeon Scalable · Gaudi 3 AI · vPro Security · Confidential Computing' },
+  { name: 'Google', role: 'Enterprise analytics & AI platform', tech: 'Vertex AI · BigQuery · Looker · Gemini · Enterprise AI Platform' },
+  { name: 'Tableau', role: 'Executive BI & enterprise analytics', tech: 'Tableau Cloud · Embedded Analytics · Executive Dashboards · Data Stories' },
+  { name: 'Platform9', role: 'Multi-cloud platform & private cloud', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation' },
 ];
 
 export default function EnterpriseIndustryPage() {
@@ -187,7 +187,7 @@ export default function EnterpriseIndustryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#7C3AED]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>{p.name.charAt(0)}</div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

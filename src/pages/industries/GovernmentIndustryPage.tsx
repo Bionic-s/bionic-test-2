@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, Cpu, GitBranch, BarChart3, TrendingUp } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#059669';
@@ -42,15 +43,14 @@ const blueprints = [
 ];
 
 const partners = [
-  { name: 'IBM', accent: '#052FAD', role: 'Sovereign AI & cybersecurity for government', tech: 'watsonx for government AI · QRadar for national SOC · Cloud Pak for sovereign data' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'Sovereign cloud & automation platform', tech: 'OpenShift for sovereign cloud · Ansible Automation · SELinux for classified workloads' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Sovereign infrastructure & cyber recovery', tech: 'PowerEdge for air-gapped datacenters · PowerProtect Cyber Recovery · PowerStore for sovereign data' },
-  { name: 'Intel', accent: '#0071C5', role: 'National AI infrastructure & confidential compute', tech: 'Gaudi 3 AI Accelerators for national AI · Intel TDX for classified workloads · Xeon for government compute' },
-  { name: 'Platform9', accent: '#7B61FF', role: 'Private cloud for classified government workloads', tech: 'Managed Kubernetes for sovereign platforms · OpenStack for government cloud · KubeVirt for VM modernization' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'Cross-ministry data governance & MDM', tech: 'MDM for citizen data · Data Quality · Data Catalog · Data Lineage for government analytics' },
-  { name: 'MuleSoft', accent: '#00A1E0', role: 'Government API-led integration', tech: 'Anypoint Platform for cross-agency APIs · Flex Gateway for secure government integration' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'AI & analytics for government intelligence', tech: 'Vertex AI · BigQuery for national analytics · Looker for government dashboards' },
-  { name: 'Tableau', accent: '#1A8CD8', role: 'Executive dashboards & public transparency', tech: 'Tableau Cloud · Embedded Analytics · Public-facing open data dashboards' },
+  { name: 'IBM', role: 'Sovereign AI & cybersecurity for government', tech: 'watsonx for government AI · QRadar for national SOC · Cloud Pak for sovereign data' },
+  { name: 'Dell Technologies', role: 'Sovereign infrastructure & cyber recovery', tech: 'PowerEdge for air-gapped datacenters · PowerProtect Cyber Recovery · PowerStore for sovereign data' },
+  { name: 'Intel', role: 'National AI infrastructure & confidential compute', tech: 'Gaudi 3 AI Accelerators for national AI · Intel TDX for classified workloads · Xeon for government compute' },
+  { name: 'Platform9', role: 'Private cloud for classified government workloads', tech: 'Managed Kubernetes for sovereign platforms · OpenStack for government cloud · KubeVirt for VM modernization' },
+  { name: 'Informatica', role: 'Cross-ministry data governance & MDM', tech: 'MDM for citizen data · Data Quality · Data Catalog · Data Lineage for government analytics' },
+  { name: 'MuleSoft', role: 'Government API-led integration', tech: 'Anypoint Platform for cross-agency APIs · Flex Gateway for secure government integration' },
+  { name: 'Google', role: 'AI & analytics for government intelligence', tech: 'Vertex AI · BigQuery for national analytics · Looker for government dashboards' },
+  { name: 'Tableau', role: 'Executive dashboards & public transparency', tech: 'Tableau Cloud · Embedded Analytics · Public-facing open data dashboards' },
 ];
 
 export default function GovernmentIndustryPage() {
@@ -190,7 +190,7 @@ export default function GovernmentIndustryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>{p.name.charAt(0)}</div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

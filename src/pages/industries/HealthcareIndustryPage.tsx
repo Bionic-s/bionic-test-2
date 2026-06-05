@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Heart, Cpu, Users, Shield, TrendingUp } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#0D9488';
@@ -41,14 +42,14 @@ const blueprints = [
 ];
 
 const partners = [
-  { name: 'Salesforce', accent: '#00A1E0', role: 'Health Cloud & patient CRM', tech: 'Health Cloud · Patient 360 · Intelligent Contact Center · Patient Journey Analytics' },
-  { name: 'IBM', accent: '#052FAD', role: 'Clinical AI & healthcare infrastructure', tech: 'watsonx for clinical AI · FlashSystem for PACS storage · QRadar for PHI security' },
-  { name: 'MuleSoft', accent: '#00A1E0', role: 'Healthcare integration & FHIR APIs', tech: 'Anypoint Platform for healthcare · FHIR API connectivity · EMR integration · Health cluster orchestration' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'Clinical MDM & healthcare data governance', tech: 'Patient 360 MDM · Data Quality for clinical data · Data Catalog · Healthcare data lineage' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'Healthcare data platform & AI', tech: 'Healthcare Data Engine · Vertex AI for medical imaging · BigQuery for population health' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'PHI-compliant infrastructure & cyber recovery', tech: 'PowerProtect for PHI · PowerScale for PACS · VxRail for EMR · Cyber Recovery Vault' },
-  { name: 'Intel', accent: '#0071C5', role: 'Clinical AI acceleration & edge compute', tech: 'Gaudi 3 for medical imaging AI · OpenVINO for edge diagnostics · Xeon for clinical workloads' },
-  { name: 'Tableau', accent: '#1A8CD8', role: 'Clinical dashboards & population health analytics', tech: 'Tableau Cloud · Embedded Analytics · Clinical KPI dashboards · Population health views' },
+  { name: 'Salesforce', role: 'Health Cloud & patient CRM', tech: 'Health Cloud · Patient 360 · Intelligent Contact Center · Patient Journey Analytics' },
+  { name: 'IBM', role: 'Clinical AI & healthcare infrastructure', tech: 'watsonx for clinical AI · FlashSystem for PACS storage · QRadar for PHI security' },
+  { name: 'MuleSoft', role: 'Healthcare integration & FHIR APIs', tech: 'Anypoint Platform for healthcare · FHIR API connectivity · EMR integration · Health cluster orchestration' },
+  { name: 'Informatica', role: 'Clinical MDM & healthcare data governance', tech: 'Patient 360 MDM · Data Quality for clinical data · Data Catalog · Healthcare data lineage' },
+  { name: 'Google', role: 'Healthcare data platform & AI', tech: 'Healthcare Data Engine · Vertex AI for medical imaging · BigQuery for population health' },
+  { name: 'Dell Technologies', role: 'PHI-compliant infrastructure & cyber recovery', tech: 'PowerProtect for PHI · PowerScale for PACS · VxRail for EMR · Cyber Recovery Vault' },
+  { name: 'Intel', role: 'Clinical AI acceleration & edge compute', tech: 'Gaudi 3 for medical imaging AI · OpenVINO for edge diagnostics · Xeon for clinical workloads' },
+  { name: 'Tableau', role: 'Clinical dashboards & population health analytics', tech: 'Tableau Cloud · Embedded Analytics · Clinical KPI dashboards · Population health views' },
 ];
 
 export default function HealthcareIndustryPage() {
@@ -181,7 +182,7 @@ export default function HealthcareIndustryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>{p.name.charAt(0)}</div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

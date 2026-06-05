@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Cpu, TrendingUp, Shield, BarChart3, Wrench } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#D97706';
@@ -41,12 +42,11 @@ const blueprints = [
 ];
 
 const partners = [
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Edge infrastructure & industrial data', tech: 'PowerEdge for remote sites · Streaming Data Platform · PowerStore for operational data' },
-  { name: 'IBM', accent: '#052FAD', role: 'Predictive AI & OT security operations', tech: 'Maximo for asset management · watsonx for predictive AI · QRadar for OT SOC' },
-  { name: 'Intel', accent: '#0071C5', role: 'Edge AI & industrial compute', tech: 'OpenVINO for computer vision · Xeon for digital twin · Edge AI accelerators' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'Edge platform & OT automation', tech: 'OpenShift for edge/cloud · Ansible for OT automation · MicroShift for edge devices' },
-  { name: 'Tableau', accent: '#1A8CD8', role: 'Operational dashboards & emissions analytics', tech: 'Tableau Cloud · Embedded Analytics · Real-time operational dashboards' },
-  { name: 'Salesforce', accent: '#00A1E0', role: 'Energy CRM & field service', tech: 'Energy CRM · Field Service Management · Asset lifecycle management' },
+  { name: 'Dell Technologies', role: 'Edge infrastructure & industrial data', tech: 'PowerEdge for remote sites · Streaming Data Platform · PowerStore for operational data' },
+  { name: 'IBM', role: 'Predictive AI & OT security operations', tech: 'Maximo for asset management · watsonx for predictive AI · QRadar for OT SOC' },
+  { name: 'Intel', role: 'Edge AI & industrial compute', tech: 'OpenVINO for computer vision · Xeon for digital twin · Edge AI accelerators' },
+  { name: 'Tableau', role: 'Operational dashboards & emissions analytics', tech: 'Tableau Cloud · Embedded Analytics · Real-time operational dashboards' },
+  { name: 'Salesforce', role: 'Energy CRM & field service', tech: 'Energy CRM · Field Service Management · Asset lifecycle management' },
 ];
 
 export default function OilGasIndustryPage() {
@@ -177,7 +177,7 @@ export default function OilGasIndustryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>{p.name.charAt(0)}</div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

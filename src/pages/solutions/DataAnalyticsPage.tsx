@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { BarChart3, ArrowRight, Database, Shield, GitBranch, LineChart, Server, Eye, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#06B6D4';
@@ -12,12 +13,12 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const partners = [
-  { name: 'Salesforce', accent: '#00A1E0', role: 'Executive intelligence & BI', tech: 'Tableau · Einstein Analytics · CRM Analytics · Data Cloud' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'Master data management & governance', tech: 'MDM · Data Quality · Data Catalog · Data Lineage · Data Integration' },
-  { name: 'IBM', accent: '#052FAD', role: 'Data fabric & AI-ready data platforms', tech: 'watsonx.data · DataStage · Cloud Pak for Data · Db2 · Knowledge Catalog' },
-  { name: 'Intel', accent: '#0071C5', role: 'Data infrastructure — compute & performance', tech: 'Xeon Scalable · Optane · Analytics accelerators · Edge data processing' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'Data platform & analytics at scale', tech: 'BigQuery · Looker · Dataflow · Dataproc · Vertex AI' },
-  { name: 'Tableau', accent: '#1A8CD8', role: 'Self-service BI & visual analytics', tech: 'Tableau Cloud · Embedded Analytics · Data Stories · Pulse' },
+  { name: 'Salesforce', role: 'Executive intelligence & BI', tech: 'Tableau · Einstein Analytics · CRM Analytics · Data Cloud' },
+  { name: 'Informatica', role: 'Master data management & governance', tech: 'MDM · Data Quality · Data Catalog · Data Lineage · Data Integration' },
+  { name: 'IBM', role: 'Data fabric & AI-ready data platforms', tech: 'watsonx.data · DataStage · Cloud Pak for Data · Db2 · Knowledge Catalog' },
+  { name: 'Intel', role: 'Data infrastructure — compute & performance', tech: 'Xeon Scalable · Optane · Analytics accelerators · Edge data processing' },
+  { name: 'Google', role: 'Data platform & analytics at scale', tech: 'BigQuery · Looker · Dataflow · Dataproc · Vertex AI' },
+  { name: 'Tableau', role: 'Self-service BI & visual analytics', tech: 'Tableau Cloud · Embedded Analytics · Data Stories · Pulse' },
 ];
 
 export default function DataAnalyticsPage() {
@@ -206,9 +207,7 @@ export default function DataAnalyticsPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group">
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-lg md:text-xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300"
-                    style={{ color: p.accent }}>{p.name}</span>
-                  <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: p.accent }} />
+                  <PartnerLogo partner={p} size="sm" />
                   <span className="text-xs font-medium" style={{ color: '#06B6D499' }}>{p.role}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>

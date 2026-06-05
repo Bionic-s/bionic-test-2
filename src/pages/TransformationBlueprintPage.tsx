@@ -6,6 +6,7 @@ import { ArrowRight, Shield, Brain, Cog, Target, Layers, CheckCircle } from 'luc
 import { Buildings, Bank, Drop, Heartbeat, BuildingOffice, ChartBar, Desktop, GitMerge, ShieldCheck, Cloud, Gear, Brain as BrainPh } from '@phosphor-icons/react';
 import { blueprints } from '../data/blueprintsData';
 import { trackBlueprintView } from '../lib/analytics';
+import { PartnerLogo } from '../components/PartnerLogo';
 
 const industryIcons: Record<string, React.ReactNode> = {
   'Government & Public Sector': <Buildings size={20} weight="fill" />,
@@ -186,12 +187,7 @@ export default function TransformationBlueprintPage() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {bp.partners.map((p, i) => (
-                  <span
-                    key={i}
-                    className="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-medium rounded-full border border-accent-primary/30"
-                  >
-                    {p}
-                  </span>
+                  <PartnerLogo key={i} partner={p} size="sm" />
                 ))}
               </div>
             </motion.div>

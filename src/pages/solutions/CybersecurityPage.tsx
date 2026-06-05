@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { Shield, ArrowRight, Eye, Fingerprint, Lock, Database, FileWarning, Activity, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#DC2626';
@@ -12,10 +13,9 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const partners = [
-  { name: 'IBM', accent: '#052FAD', role: 'Security operations & threat intelligence', tech: 'QRadar SIEM · Guardium · Verify · X-Force · SOAR · MaaS360' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Cyber recovery & data protection', tech: 'PowerProtect Cyber Recovery · Data Domain · CyberSense · Isolated Vault' },
-  { name: 'Intel', accent: '#0071C5', role: 'Hardware-anchored security & confidential computing', tech: 'Intel TXT · SGX · TDX · Threat Detection Technology · vPro' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'Security automation & compliance', tech: 'Ansible Automation Platform · Red Hat Insights · OpenSCAP · SELinux' },
+  { name: 'IBM', role: 'Security operations & threat intelligence', tech: 'QRadar SIEM · Guardium · Verify · X-Force · SOAR · MaaS360' },
+  { name: 'Dell Technologies', role: 'Cyber recovery & data protection', tech: 'PowerProtect Cyber Recovery · Data Domain · CyberSense · Isolated Vault' },
+  { name: 'Intel', role: 'Hardware-anchored security & confidential computing', tech: 'Intel TXT · SGX · TDX · Threat Detection Technology · vPro' },
 ];
 
 export default function CybersecurityPage() {
@@ -204,9 +204,7 @@ export default function CybersecurityPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#DC26261A]">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-lg font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300"
-                    style={{ color: p.accent }}>{p.name}</span>
-                  <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: p.accent }} />
+                  <PartnerLogo partner={p} size="sm" />
                   <span className="text-xs font-medium" style={{ color: '#DC262699' }}>{p.role.split(' —')[0]}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>

@@ -2,7 +2,7 @@ import { CANON_PARTNERS, type PartnerData } from '../data/partnersData';
 
 /**
  * Renders a partner logo or a styled text fallback.
- * Size: 'sm' (24px), 'md' (32px), 'lg' (48px)
+ * Size: 'sm' (24px), 'md' (32px), 'lg' (48px), 'xl' (70px)
  */
 export const PartnerLogo = ({
   partner,
@@ -10,10 +10,10 @@ export const PartnerLogo = ({
   className = '',
 }: {
   partner: PartnerData | string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 }) => {
-  const sizes = { sm: 24, md: 32, lg: 48 };
+  const sizes = { sm: 24, md: 32, lg: 48, xl: 70 };
 
   // Accept string name or full PartnerData
   const p = typeof partner === 'string'
@@ -30,7 +30,7 @@ export const PartnerLogo = ({
         src={p.logo}
         alt={p.name}
         className={`object-contain ${className}`}
-        style={{ height: px, maxWidth: px * 3 }}
+        style={{ maxHeight: px, height: 'auto', width: 'auto', maxWidth: px * 4 }}
       />
     );
   }

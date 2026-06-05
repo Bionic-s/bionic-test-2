@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { GitBranch, ArrowRight, Workflow, Zap, Network, Plug, RefreshCw, Activity, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#10B981';
@@ -12,10 +13,10 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const partners = [
-  { name: 'MuleSoft', accent: '#00A1E0', role: 'API-led connectivity', tech: 'Anypoint Platform · API Manager · Exchange · Flex Gateway · API Governance' },
-  { name: 'IBM', accent: '#052FAD', role: 'Enterprise integration fabric', tech: 'Cloud Pak for Integration · API Connect · App Connect · MQ · Event Streams' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'API management & event-driven architecture', tech: 'Apigee · Workflows · Eventarc · Pub/Sub · Cloud Run' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'Data & application integration', tech: 'Cloud Data Integration · Application Integration · Mass Ingestion · Process Automation' },
+  { name: 'MuleSoft', role: 'API-led connectivity', tech: 'Anypoint Platform · API Manager · Exchange · Flex Gateway · API Governance' },
+  { name: 'IBM', role: 'Enterprise integration fabric', tech: 'Cloud Pak for Integration · API Connect · App Connect · MQ · Event Streams' },
+  { name: 'Google', role: 'API management & event-driven architecture', tech: 'Apigee · Workflows · Eventarc · Pub/Sub · Cloud Run' },
+  { name: 'Informatica', role: 'Data & application integration', tech: 'Cloud Data Integration · Application Integration · Mass Ingestion · Process Automation' },
 ];
 
 export default function IntegrationPage() {
@@ -204,9 +205,7 @@ export default function IntegrationPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#10B9811A]">
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-lg md:text-xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300"
-                    style={{ color: p.accent }}>{p.name}</span>
-                  <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: p.accent }} />
+                  <PartnerLogo partner={p} size="sm" />
                   <span className="text-xs font-medium" style={{ color: '#10B98199' }}>{p.role}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>

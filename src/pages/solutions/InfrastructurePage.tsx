@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { Server, ArrowRight, Cloud, Container, HardDrive, Cpu, Globe, Activity, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#2563EB';
@@ -12,11 +13,10 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const partners = [
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Enterprise infrastructure', tech: 'PowerEdge · PowerStore · PowerMax · VxRail · APEX · PowerFlex' },
-  { name: 'IBM', accent: '#052FAD', role: 'Storage, AI infra & hybrid cloud', tech: 'FlashSystem · Power · watsonx · Cloud Pak · Storage Defender' },
-  { name: 'Platform9', accent: '#7B61FF', role: 'Private & hybrid cloud platform', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation · Multi-Cluster Management' },
-  { name: 'Intel', accent: '#0071C5', role: 'Compute, AI & edge infrastructure', tech: 'Xeon Scalable · Gaudi 3 AI Accelerators · Edge AI · Confidential Computing · Optane' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'Enterprise container & automation platform', tech: 'OpenShift · RHEL · Ansible Automation · OpenStack · Satellite' },
+  { name: 'Dell Technologies', role: 'Enterprise infrastructure', tech: 'PowerEdge · PowerStore · PowerMax · VxRail · APEX · PowerFlex' },
+  { name: 'IBM', role: 'Storage, AI infra & hybrid cloud', tech: 'FlashSystem · Power · watsonx · Cloud Pak · Storage Defender' },
+  { name: 'Platform9', role: 'Private & hybrid cloud platform', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation · Multi-Cluster Management' },
+  { name: 'Intel', role: 'Compute, AI & edge infrastructure', tech: 'Xeon Scalable · Gaudi 3 AI Accelerators · Edge AI · Confidential Computing · Optane' },
 ];
 
 export default function InfrastructurePage() {
@@ -205,9 +205,7 @@ export default function InfrastructurePage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#2563EB1A]">
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-lg md:text-xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300"
-                    style={{ color: p.accent }}>{p.name}</span>
-                  <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: p.accent }} />
+                  <PartnerLogo partner={p} size="sm" />
                   <span className="text-xs font-medium" style={{ color: '#2563EB99' }}>{p.role}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>

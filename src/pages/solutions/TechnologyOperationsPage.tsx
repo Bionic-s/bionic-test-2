@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Cpu, Activity, Gauge, BarChart3, GitBranch, HardDrive, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#D97706';
@@ -12,11 +13,10 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const partners = [
-  { name: 'IBM', accent: '#052FAD', role: 'AIOps, observability & IT automation', tech: 'Instana · Turbonomic · IBM Concert · Cloud Pak for Watson AIOps · SevOne' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'Platform engineering & automation', tech: 'OpenShift · Ansible Automation Platform · Advanced Cluster Management · Satellite' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Infrastructure telemetry & operations', tech: 'CloudIQ · OpenManage Enterprise · APEX Console · PowerProtect Cyber Recovery' },
-  { name: 'Platform9', accent: '#7B61FF', role: 'Multi-cluster K8s & private cloud operations', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation · Multi-Cluster Management' },
-  { name: 'Intel', accent: '#0071C5', role: 'Infrastructure performance & telemetry', tech: 'Intel Node Manager · Resource Director Technology · Performance tuning & optimization' },
+  { name: 'IBM', role: 'AIOps, observability & IT automation', tech: 'Instana · Turbonomic · IBM Concert · Cloud Pak for Watson AIOps · SevOne' },
+  { name: 'Dell Technologies', role: 'Infrastructure telemetry & operations', tech: 'CloudIQ · OpenManage Enterprise · APEX Console · PowerProtect Cyber Recovery' },
+  { name: 'Platform9', role: 'Multi-cluster K8s & private cloud operations', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation · Multi-Cluster Management' },
+  { name: 'Intel', role: 'Infrastructure performance & telemetry', tech: 'Intel Node Manager · Resource Director Technology · Performance tuning & optimization' },
 ];
 
 const capabilities = [
@@ -194,9 +194,7 @@ export default function TechnologyOperationsPage() {
             {partners.map((partner, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: partner.accent }}>
-                    {partner.name.charAt(0)}
-                  </div>
+                  <PartnerLogo partner={partner} size="sm" />
                   <div>
                     <h3 className="font-semibold text-sm">{partner.name}</h3>
                     <p className="text-tiny text-text-muted">{partner.role}</p>

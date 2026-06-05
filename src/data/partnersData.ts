@@ -18,7 +18,7 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'Google',
-    logo: `${BASE}images/partners/google-partner.png`,
+    logo: `${BASE}images/partners/google-partner.svg`,
     accent: '#4285F4',
   },
   {
@@ -33,7 +33,7 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'Intel',
-    logo: `${BASE}images/partners/intel-partner.webp`,
+    logo: `${BASE}images/partners/intel-partner.png`,
     accent: '#0071C5',
   },
   {
