@@ -44,7 +44,7 @@ function generateTimeSlots(): string[] {
   const slots: string[] = [];
   for (let h = 8; h < 17; h++) {
     for (const m of [0, 30]) {
-      if (h === 16 && m === 30) continue; // last slot ends at 17:00
+      if (h === 17) continue; // last slot ends at 17:00
       slots.push(`${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`);
     }
   }
