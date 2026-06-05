@@ -153,6 +153,14 @@ export const Hero = () => {
             >
               Explore Transformation Blueprints
             </Link>
+            <a
+              href="/contact?intent=ibm-experts"
+              onClick={() => trackCTAClick('hero', '/contact?intent=ibm-experts')}
+              className="inline-flex items-center gap-2 px-8 py-4 border border-white/10 text-text-muted font-medium rounded-full hover:border-accent-primary/30 hover:text-text-primary transition-all"
+            >
+              Speak to a Senior Architect
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </motion.div>
 
           {/* Verified Credibility Indicators */}
