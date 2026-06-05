@@ -2,22 +2,21 @@
  * book-discovery — Supabase Edge Function
  * DB-first: insert into discovery_bookings, then best-effort email via Resend.
  */
-import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
 const NOTIFY = Deno.env.get('NOTIFICATION_EMAIL') || 'm.aljawharji@bionics.com.sa';
 const FROM = Deno.env.get('FROM_EMAIL') || 'm.aljawharji@bionics.com.sa';
 
-serve(async (req: Request) => {
-  // CORS
+Deno.serve(async (req: Request) => {
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  };
+
   if (req.method === 'OPTIONS') {
-    return new Response('ok', {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'authorization, content-type',
-      },
-    });
+    return new Response('ok', { headers: corsHeaders });
   }
 
   try {
@@ -27,13 +26,11 @@ serve(async (req: Request) => {
 
     if (!name || !email || !company || !selected_date || !selected_time) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*' },
+        status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
 
-    // 1. Insert into DB (primary — must succeed)
+    // 1. Insert into DB (primary — MUST succeed)
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL') || 'https://krjgjaemysvutpwbwgst.supabase.co',
       Deno.env.get('SB_SERVICE_KEY') || '',
@@ -54,15 +51,13 @@ serve(async (req: Request) => {
     if (dbErr || !data) {
       console.error('DB insert failed:', dbErr);
       return new Response(JSON.stringify({ error: 'Failed to save booking' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*' },
+        status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
 
     const bookingId = data.id;
 
-    // 2. Email notification (best-effort, does not block the response)
+    // 2. Email notification (best-effort)
     if (RESEND_API_KEY) {
       try {
         await fetch('https://api.resend.com/emails', {
@@ -98,16 +93,13 @@ serve(async (req: Request) => {
     }
 
     return new Response(JSON.stringify({ success: true, bookingId }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*' },
+      status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
+
   } catch (err) {
     console.error('Unexpected error:', err);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*' },
+      status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 });
