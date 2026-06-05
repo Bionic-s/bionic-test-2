@@ -13,17 +13,18 @@ interface Partner {
  */
 const partners: Partner[] = [
   {
-    name: 'IBM',
-    alt: 'IBM Authorized Business Partner',
-  },
-  {
     name: 'Salesforce',
     logo: `${import.meta.env.BASE_URL}images/partners/salesforce-partner.png`,
     alt: 'Salesforce Registered Consulting Partner',
   },
   {
-    name: 'Google Cloud',
+    name: 'Google',
+    logo: `${import.meta.env.BASE_URL}images/partners/google-partner.png`,
     alt: 'Google Cloud Partner',
+  },
+  {
+    name: 'IBM',
+    alt: 'IBM Authorized Business Partner',
   },
   {
     name: 'Dell Technologies',
@@ -39,12 +40,12 @@ const partners: Partner[] = [
     alt: 'MuleSoft Delivery Partner',
   },
   {
-    name: 'Informatica',
-    alt: 'Informatica Solution Partner',
-  },
-  {
     name: 'Tableau',
     alt: 'Tableau Analytics Partner',
+  },
+  {
+    name: 'Informatica',
+    alt: 'Informatica Solution Partner',
   },
   {
     name: 'Platform9',
