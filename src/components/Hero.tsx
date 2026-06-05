@@ -139,7 +139,7 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
             <a
-              href="#contact"
+              href="/contact?source=hero&intent=executive-briefing"
               onClick={() => trackExecutiveBriefingClick('hero_primary')}
               className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg"
             >
@@ -147,15 +147,15 @@ export const Hero = () => {
               <ArrowRight className="w-5 h-5" />
             </a>
             <Link
-              to="/blueprints"
+              to="/blueprints?source=hero&intent=blueprints"
               onClick={() => trackCTAClick('hero', '/blueprints')}
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-text-primary font-medium rounded-full hover:border-white/30 transition-all"
             >
               Explore Transformation Blueprints
             </Link>
             <a
-              href="/contact?intent=ibm-experts"
-              onClick={() => trackCTAClick('hero', '/contact?intent=ibm-experts')}
+              href="/contact?source=hero&intent=ibm-experts"
+              onClick={() => trackCTAClick('hero', '/contact?source=hero&intent=ibm-experts')}
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/10 text-text-muted font-medium rounded-full hover:border-accent-primary/30 hover:text-text-primary transition-all"
             >
               Speak to a Senior Architect
