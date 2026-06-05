@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Filter, X, Search } from 'lucide-react';
+import { Buildings, Bank, Drop, Heartbeat, BuildingOffice } from '@phosphor-icons/react';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../data/blueprintsData';
 import { trackBlueprintHubView } from '../lib/analytics';
 
@@ -22,12 +23,12 @@ const iatForce: Record<string, string> = {
   'Technology Operations': 'Trust',
 };
 
-const industryIcons: Record<string, string> = {
-  'Government & Public Sector': '🏛️',
-  'Banking & Financial Services': '🏦',
-  'Oil, Gas & Energy': '⛽',
-  'Healthcare': '🏥',
-  'Enterprise': '🏢',
+const industryIcons: Record<string, React.ReactNode> = {
+  'Government & Public Sector': <Buildings size={20} weight="fill" />,
+  'Banking & Financial Services': <Bank size={20} weight="fill" />,
+  'Oil, Gas & Energy': <Drop size={20} weight="fill" />,
+  'Healthcare': <Heartbeat size={20} weight="fill" />,
+  'Enterprise': <BuildingOffice size={20} weight="fill" />,
 };
 
 export default function BlueprintsHub() {

@@ -3,25 +3,26 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, Shield, Brain, Cog, Target, Layers, CheckCircle } from 'lucide-react';
+import { Buildings, Bank, Drop, Heartbeat, BuildingOffice, ChartBar, Desktop, GitMerge, ShieldCheck, Cloud, Gear, Brain as BrainPh } from '@phosphor-icons/react';
 import { blueprints } from '../data/blueprintsData';
 import { trackBlueprintView } from '../lib/analytics';
 
-const industryIcons: Record<string, string> = {
-  'Government & Public Sector': '🏛️',
-  'Banking & Financial Services': '🏦',
-  'Oil, Gas & Energy': '⛽',
-  'Healthcare': '🏥',
-  'Enterprise': '🏢',
+const industryIcons: Record<string, React.ReactNode> = {
+  'Government & Public Sector': <Buildings size={20} weight="fill" />,
+  'Banking & Financial Services': <Bank size={20} weight="fill" />,
+  'Oil, Gas & Energy': <Drop size={20} weight="fill" />,
+  'Healthcare': <Heartbeat size={20} weight="fill" />,
+  'Enterprise': <BuildingOffice size={20} weight="fill" />,
 };
 
-const capabilityIcons: Record<string, string> = {
-  'Enterprise AI & Automation': '🧠',
-  'Data, Analytics & Intelligence': '📊',
-  'Business Applications & CX': '⚙️',
-  'Integration & Intelligent Operations': '🔗',
-  'Cybersecurity & Cyber Resilience': '🛡️',
-  'Sovereign Infrastructure & Hybrid Cloud': '🏗️',
-  'Technology Operations': '🔧',
+const capabilityIcons: Record<string, React.ReactNode> = {
+  'Enterprise AI & Automation': <BrainPh size={20} weight="fill" />,
+  'Data, Analytics & Intelligence': <ChartBar size={20} weight="fill" />,
+  'Business Applications & CX': <Desktop size={20} weight="fill" />,
+  'Integration & Intelligent Operations': <GitMerge size={20} weight="fill" />,
+  'Cybersecurity & Cyber Resilience': <ShieldCheck size={20} weight="fill" />,
+  'Sovereign Infrastructure & Hybrid Cloud': <Cloud size={20} weight="fill" />,
+  'Technology Operations': <Gear size={20} weight="fill" />,
 };
 
 const iatForce: Record<string, string> = {
