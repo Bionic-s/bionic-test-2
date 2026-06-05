@@ -64,8 +64,11 @@ export const Footer = () => {
               />
             </Link>
             
-            <p className="text-body text-text-muted">
-              Enterprise AI. Delivered for Saudi Arabia.
+            <p className="text-body text-text-muted mb-1">
+              Enterprise AI Transformation Integrator
+            </p>
+            <p className="text-tiny text-text-muted">
+              We design Intelligence, Automation &amp; Trust into business.
             </p>
           </div>
 
