@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bionic Solutions — Partners Section Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* --------- Bionic Solutions theme tokens (from tailwind.config.js) --------- */
+    :root {
+      --bg-primary: #0B0D10;
+      --bg-secondary: #1A1D23;
+      --accent-primary: #00BFFF;
+      --accent-secondary: #0099CC;
+      --text-primary: #FFFFFF;
+      --text-muted: #9AA4AF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 18px;
+      line-height: 28px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --------- Page banner so the preview feels framed --------- */
+    .preview-banner {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .preview-banner strong { color: var(--text-primary); font-weight: 600; }
+
+    .preview-banner .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 191, 255, 0.1);
+      color: var(--accent-primary);
+      border: 1px solid rgba(0, 191, 255, 0.3);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* --------- Partners section --------- */
+    .partners-section {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0;
+      background: var(--bg-primary);
+    }
+    @media (min-width: 768px) { .partners-section { padding: 128px 0; } }
+
+    .partners-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(0, 191, 255, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    @media (min-width: 992px) { .container { padding: 0 48px; } }
+
+    .header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .header .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(0, 191, 255, 0.05);
+      border: 1px solid rgba(0, 191, 255, 0.3);
+      margin-bottom: 24px;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      color: var(--accent-primary);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .header h2 {
+      font-size: 44px;
+      line-height: 52px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 768px) { .header h2 { font-size: 32px; line-height: 40px; } }
+
+    .header h2 .accent { color: var(--accent-primary); }
+
+    .header p {
+      font-size: 20px;
+      line-height: 28px;
+      color: var(--text-muted);
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .header p { font-size: 28px; line-height: 36px; }
+    }
+
+    /* --------- Partner grid --------- */
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .grid { grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    }
+
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      min-height: 160px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    @media (min-width: 768px) { .card { min-height: 180px; padding: 40px; } }
+
+    .card.in-view {
+      animation: reveal 0.6s ease forwards;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 191, 255, 0.5);
+      transform: translateY(-4px);
+    }
+
+    .card img, .card svg {
+      max-height: 64px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    @media (min-width: 768px) { .card img, .card svg { max-height: 80px; } }
+
+    .card:hover img, .card:hover svg { transform: scale(1.05); }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .trust-line {
+      margin-top: 64px;
+      text-align: center;
+      opacity: 0;
+      animation: reveal 0.6s ease forwards;
+      animation-delay: 0.8s;
+    }
+    .trust-line p { color: var(--text-muted); font-size: 18px; }
+    .trust-line strong { color: var(--text-primary); font-weight: 600; }
+
+    /* --------- Placeholder logo tiles (used until real logos are saved) --------- */
+    .logo-tile {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 16 / 7;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+    }
+
+    /* Brand-accurate placeholder approximations */
+    .logo-google {
+      background: #fff;
+      color: #1f1f1f;
+      border: 1px solid #e5e5e5;
+      box-shadow: inset 12px 0 0 #4285F4;
+      padding-left: 28px;
+    }
+    .logo-google .brand {
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+    .logo-google .brand .b { color: #4285F4; }
+    .logo-google .brand .r { color: #EA4335; }
+    .logo-google .brand .y { color: #FBBC05; }
+    .logo-google .brand .g { color: #34A853; }
+    .logo-google .sub { display: block; color: #5f6368; font-size: 18px; font-weight: 500; margin-top: 2px; }
+
+    .logo-intel {
+      background: #003C88;
+      color: #fff;
+      position: relative;
+    }
+    .logo-intel .brand { font-size: 28px; font-weight: 300; letter-spacing: -0.02em; }
+    .logo-intel .brand em { font-style: normal; color: #fff; }
+    .logo-intel .sub { color: #bcd5f0; font-weight: 400; margin-left: 6px; font-size: 16px; }
+
+    .logo-microsoft {
+      background: #0F2A33;
+      color: #fff;
+      padding: 16px 18px;
+      gap: 12px;
+    }
+    .logo-microsoft .squares {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+    .logo-microsoft .squares span { display: block; }
+    .logo-microsoft .squares .s1 { background: #F25022; }
+    .logo-microsoft .squares .s2 { background: #7FBA00; }
+    .logo-microsoft .squares .s3 { background: #00A4EF; }
+    .logo-microsoft .squares .s4 { background: #FFB900; }
+    .logo-microsoft .txt { line-height: 1.1; text-align: left; }
+    .logo-microsoft .txt .a { font-size: 20px; font-weight: 600; }
+    .logo-microsoft .txt .b { font-size: 15px; font-weight: 400; opacity: 0.92; }
+
+    .logo-salesforce {
+      background: linear-gradient(90deg, #1a1d23 0%, #2a4a60 100%);
+      color: #fff;
+      gap: 14px;
+      padding: 14px 16px;
+    }
+    .logo-salesforce .cloud {
+      background: #00A1E0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      letter-spacing: -0.01em;
+    }
+    .logo-salesforce .label { font-size: 20px; font-weight: 800; letter-spacing: 0.05em; }
+
+    /* Missing-image fallback: the alt text appears on its own line if the img fails */
+    .card img { display: inline-block; }
+
+    .swap-hint {
+      margin-top: 48px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .swap-hint code {
+      background: var(--bg-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--accent-primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    <span><strong>Preview:</strong> Partners section &mdash; HomePage.tsx</span>
+    <span class="pill">Test Build</span>
+  </div>
+
+  <!-- Partners section -->
+  <section id="partners" class="partners-section">
+    <div class="container">
+      <div class="header">
+        <div class="badge">Strategic Alliances</div>
+        <h2>Our <span class="accent">Technology Partners</span></h2>
+        <p>
+          As a trusted IT system integrator, we partner with the world's leading
+          technology vendors to deliver enterprise-grade solutions built on
+          platforms you can rely on.
+        </p>
+      </div>
+
+      <div class="grid">
+        <!-- Google Partner -->
+        <div class="card" data-delay="0.3">
+          <div class="logo-tile logo-google">
+            <div>
+              <div class="brand">
+                <span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span>
+              </div>
+              <span class="sub">Partner</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Solutions Partner -->
+        <div class="card" data-delay="0.4">
+          <div class="logo-tile logo-microsoft">
+            <div class="squares">
+              <span class="s1"></span>
+              <span class="s2"></span>
+              <span class="s3"></span>
+              <span class="s4"></span>
+            </div>
+            <div class="txt">
+              <div class="a">Microsoft</div>
+              <div class="b">Solutions Partner</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intel Partner -->
+        <div class="card" data-delay="0.5">
+          <div class="logo-tile logo-intel">
+            <div>
+              <span class="brand"><em>intel</em></span>
+              <span class="sub">partner</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salesforce Partner -->
+        <div class="card" data-delay="0.6">
+          <div class="logo-tile logo-salesforce">
+            <span class="cloud">salesforce</span>
+            <span class="label">PARTNER</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-line">
+        <p>
+          Certified partnerships, enterprise-grade platforms,
+          <strong>delivered across Saudi Arabia and the GCC.</strong>
+        </p>
+      </div>
+
+      <div class="swap-hint">
+        Preview uses styled placeholders. Once you save the real PNGs to
+        <code>public/images/partners/</code>, the live site displays the actual
+        partner badges using <code>&lt;img&gt;</code> tags in <code>Partners.tsx</code>.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Replicates the framer-motion + react-intersection-observer reveal behavior
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || '0';
+          entry.target.style.animationDelay = delay + 's';
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    cards.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

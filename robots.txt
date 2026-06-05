@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /test-site-2/
+Disallow: /test-site-2/api/
+Disallow: /test-site-2/admin/
+
+Sitemap: https://app.bionics.sa/test-site-2/sitemap.xml
