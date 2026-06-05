@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { trackExecutiveBriefingClick, trackCTAClick } from '../lib/analytics';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
-import { useAnimatedText } from '../hooks/useAnimatedText';
+import { useCycleWords } from '../hooks/useCycleWords';
 
 export const Hero = () => {
   const heroBg = `${import.meta.env.BASE_URL}images/hero_background_7.png`;
@@ -15,11 +15,8 @@ export const Hero = () => {
     threshold: 0.3,
   });
 
-  const { displayedWord, isAnimating, animationState } = useAnimatedText([
-    'intelligence',
-    'automation', 
-    'trust'
-  ], 3000, 80, 40, 2000);
+  const canonWords = ['Intelligence', 'Automation', 'Trust'];
+  const { activeIndex } = useCycleWords(canonWords, 3000);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -91,17 +88,34 @@ export const Hero = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               We design{' '}
-              <motion.span
-                className="gradient-text inline-block"
-                animate={animationState as any}
-                transition={{
-                  duration: 0.3,
-                  ease: [0.25, 0.46, 0.45, 0.94]
-                }}
-                key={displayedWord} // Force re-render on word change
-              >
-                {displayedWord}
-              </motion.span>{' '}
+              {canonWords.map((word, i) => (
+                <span key={word}>
+                  <AnimatePresence mode="wait">
+                    {i === activeIndex ? (
+                      <motion.span
+                        key={`active-${word}`}
+                        className="gradient-text inline"
+                        initial={{ opacity: 0, filter: 'blur(4px)' }}
+                        animate={{ opacity: 1, filter: 'blur(0px)' }}
+                        exit={{ opacity: 0, filter: 'blur(4px)' }}
+                        transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      >
+                        {word}
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key={`dim-${word}`}
+                        className="text-text-muted inline"
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 1 }}
+                      >
+                        {word}
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                  {i < canonWords.length - 1 ? ', ' : ''}
+                </span>
+              ))}{' '}
               into business.
             </h1>
           </motion.div>
