@@ -23,10 +23,12 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'IBM',
+    logo: `${BASE}images/partners/ibm-partner.png`,
     accent: '#052FAD',
   },
   {
     name: 'Dell Technologies',
+    logo: `${BASE}images/partners/dell-partner.png`,
     accent: '#007DB8',
   },
   {
@@ -36,18 +38,22 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'MuleSoft',
+    logo: `${BASE}images/partners/mulesoft-partner.png`,
     accent: '#00A1E0',
   },
   {
     name: 'Tableau',
+    logo: `${BASE}images/partners/tableau-partner.png`,
     accent: '#E8762D',
   },
   {
     name: 'Informatica',
+    logo: `${BASE}images/partners/informatica-partner.svg`,
     accent: '#FF4F1E',
   },
   {
     name: 'Platform9',
+    logo: `${BASE}images/partners/platform9-partner.png`,
     accent: '#7B61FF',
   },
 ];
