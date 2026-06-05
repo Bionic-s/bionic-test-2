@@ -16,7 +16,7 @@ export const Hero = () => {
   });
 
   const canonWords = ['Intelligence', 'Automation', 'Trust'];
-  const animatedWord = useCycleWords(canonWords, 80, 2000, 40);
+  const animatedWord = useCycleWords(canonWords, 80, 3500, 40);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -107,28 +107,32 @@ export const Hero = () => {
             </p>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons — 2-row layout: two on top, one centered below */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="flex flex-col items-center gap-4 mb-16"
           >
-            <Link
-              to="/contact?source=hero&intent=executive-briefing"
-              onClick={() => trackExecutiveBriefingClick('hero_primary')}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg"
-            >
-              Request Executive Briefing
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              to="/blueprints?source=hero&intent=blueprints"
-              onClick={() => trackCTAClick('hero', '/blueprints')}
-              className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-text-primary font-medium rounded-full hover:border-white/30 transition-all"
-            >
-              Explore Transformation Blueprints
-            </Link>
+            {/* Row 1: two primary CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/contact?source=hero&intent=executive-briefing"
+                onClick={() => trackExecutiveBriefingClick('hero_primary')}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg"
+              >
+                Request Executive Briefing
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/blueprints?source=hero&intent=blueprints"
+                onClick={() => trackCTAClick('hero', '/blueprints')}
+                className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-text-primary font-medium rounded-full hover:border-white/30 transition-all"
+              >
+                Explore Transformation Blueprints
+              </Link>
+            </div>
+            {/* Row 2: one CTA centered */}
             <Link
               to="/book-discovery-call?source=hero&intent=ibm-experts"
               onClick={() => trackCTAClick('hero', '/book-discovery-call?source=hero&intent=ibm-experts')}
