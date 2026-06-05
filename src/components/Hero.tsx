@@ -154,8 +154,8 @@ export const Hero = () => {
               Explore Transformation Blueprints
             </Link>
             <Link
-              to="/contact?source=hero&intent=ibm-experts"
-              onClick={() => trackCTAClick('hero', '/contact?source=hero&intent=ibm-experts')}
+              to="/book-discovery-call?source=hero&intent=ibm-experts"
+              onClick={() => trackCTAClick('hero', '/book-discovery-call?source=hero&intent=ibm-experts')}
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/10 text-text-muted font-medium rounded-full hover:border-accent-primary/30 hover:text-text-primary transition-all"
             >
               Speak to a Senior Architect

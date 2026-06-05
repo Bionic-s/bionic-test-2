@@ -13,6 +13,7 @@ import BlueprintsHub from './pages/BlueprintsHub';
 import TransformationBlueprintPage from './pages/TransformationBlueprintPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import BookDiscoveryCallPage from './pages/BookDiscoveryCall';
 
 // Capabilities (shared with legacy /solutions/* redirects)
 import AISolutionPage from './pages/solutions/AISolutionPage';
@@ -116,6 +117,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/book-discovery-call" element={<BookDiscoveryCallPage />} />
 
           {/* ═══ Transformation Blueprints ═══ */}
           <Route path="/blueprints" element={<BlueprintsHub />} />
