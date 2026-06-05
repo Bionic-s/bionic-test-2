@@ -38,7 +38,7 @@ module.exports = {
 				error: '#FF4444',
 			},
 			fontFamily: {
-				sans: ['Space Grotesk', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 			},
 			fontSize: {
 				// Desktop
