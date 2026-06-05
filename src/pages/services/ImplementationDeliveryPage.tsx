@@ -4,6 +4,8 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Cog, Zap, GitBranch, Cloud, Shield, Users, TrendingUp } from 'lucide-react';
 import { trackServicePageView } from '../../lib/analytics';
+import { CANON_PARTNERS, type PartnerData } from '../../data/partnersData';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#059669';
@@ -39,13 +41,13 @@ const blueprints = [
   { title: 'Clinical Intelligence & Medical AI', industry: 'Healthcare', slug: 'clinical-intelligence-medical-ai' },
 ];
 
-const partners = [
-  { name: 'Salesforce', accent: '#00A1E0', role: 'CRM, Marketing Cloud, Experience Cloud deployment', tech: 'Sales Cloud · Service Cloud · Marketing Cloud · Commerce Cloud · Experience Cloud' },
-  { name: 'MuleSoft', accent: '#00A1E0', role: 'API-led integration, Anypoint platform delivery', tech: 'Anypoint Platform · API Manager · Flex Gateway · RPA · Composer' },
-  { name: 'IBM', accent: '#052FAD', role: 'watsonx deployment, DataStage, Cloud Pak implementation', tech: 'watsonx.ai · DataStage · Cloud Pak · FlashSystem · Instana' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'MDM, Data Quality, Data Catalog deployment', tech: 'MDM · Data Quality · Data Catalog · Data Lineage · Data Integration' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'PowerEdge, PowerStore, VxRail deployment', tech: 'PowerEdge · PowerStore · PowerMax · VxRail · APEX' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'OpenShift deployment, Ansible automation', tech: 'OpenShift · Ansible Automation · RHEL · Satellite' },
+const partners: (PartnerData & { role: string; tech: string })[] = [
+  { ...CANON_PARTNERS.find(p => p.name === 'Salesforce')!, role: 'CRM, Marketing Cloud, Experience Cloud deployment', tech: 'Sales Cloud · Service Cloud · Marketing Cloud · Commerce Cloud · Experience Cloud' },
+  { ...CANON_PARTNERS.find(p => p.name === 'MuleSoft')!, role: 'API-led integration, Anypoint platform delivery', tech: 'Anypoint Platform · API Manager · Flex Gateway · RPA · Composer' },
+  { ...CANON_PARTNERS.find(p => p.name === 'IBM')!, role: 'watsonx deployment, DataStage, Cloud Pak implementation', tech: 'watsonx.ai · DataStage · Cloud Pak · FlashSystem · Instana' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Informatica')!, role: 'MDM, Data Quality, Data Catalog deployment', tech: 'MDM · Data Quality · Data Catalog · Data Lineage · Data Integration' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Dell Technologies')!, role: 'PowerEdge, PowerStore, VxRail deployment', tech: 'PowerEdge · PowerStore · PowerMax · VxRail · APEX' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Platform9')!, role: 'Private cloud & Kubernetes platform delivery', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation' },
 ];
 
 export default function ImplementationDeliveryPage() {
@@ -175,9 +177,7 @@ export default function ImplementationDeliveryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>
-                    {p.name.charAt(0)}
-                  </div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

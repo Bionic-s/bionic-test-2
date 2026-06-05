@@ -4,6 +4,8 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Target, BarChart3, FileText, Shield, Compass, TrendingUp } from 'lucide-react';
 import { trackServicePageView } from '../../lib/analytics';
+import { CANON_PARTNERS, type PartnerData } from '../../data/partnersData';
+import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#0D9488';
@@ -39,13 +41,13 @@ const blueprints = [
   { title: 'Enterprise Zero Trust', industry: 'Enterprise', slug: 'enterprise-zero-trust' },
 ];
 
-const partners = [
-  { name: 'IBM', accent: '#052FAD', role: 'AI governance, watsonx strategy, Cloud Pak architecture', tech: 'watsonx.ai · watsonx Governance · Cloud Pak for Data · IBM Consulting' },
-  { name: 'Salesforce', accent: '#00A1E0', role: 'CRM transformation roadmap, Einstein AI strategy', tech: 'Sales Cloud · Service Cloud · Einstein AI · Agentforce' },
-  { name: 'Google Cloud', accent: '#4285F4', role: 'Cloud-native architecture, Vertex AI platform design', tech: 'Vertex AI · BigQuery · Looker · Gemini' },
-  { name: 'Dell Technologies', accent: '#007DB8', role: 'Infrastructure modernization, APEX strategy', tech: 'PowerEdge · PowerStore · APEX · VxRail' },
-  { name: 'Red Hat', accent: '#EE0000', role: 'OpenShift architecture, automation strategy', tech: 'OpenShift · Ansible · RHEL · OpenStack' },
-  { name: 'Informatica', accent: '#FF4F1E', role: 'MDM strategy, data governance framework', tech: 'MDM · Data Quality · Data Catalog · Data Lineage' },
+const partners: (PartnerData & { role: string; tech: string })[] = [
+  { ...CANON_PARTNERS.find(p => p.name === 'IBM')!, role: 'AI governance, watsonx strategy, Cloud Pak architecture', tech: 'watsonx.ai · watsonx Governance · Cloud Pak for Data · IBM Consulting' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Salesforce')!, role: 'CRM transformation roadmap, Einstein AI strategy', tech: 'Sales Cloud · Service Cloud · Einstein AI · Agentforce' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Google')!, role: 'Cloud-native architecture, Vertex AI platform design', tech: 'Vertex AI · BigQuery · Looker · Gemini' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Dell Technologies')!, role: 'Infrastructure modernization, APEX strategy', tech: 'PowerEdge · PowerStore · APEX · VxRail' },
+  { ...CANON_PARTNERS.find(p => p.name === 'MuleSoft')!, role: 'API-led integration, Anypoint platform strategy', tech: 'Anypoint Platform · API Manager · Flex Gateway · MuleSoft RPA · Composer' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Informatica')!, role: 'MDM strategy, data governance framework', tech: 'MDM · Data Quality · Data Catalog · Data Lineage' },
 ];
 
 export default function ConsultingAdvisoryPage() {
@@ -151,9 +153,7 @@ export default function ConsultingAdvisoryPage() {
             {partners.map((p, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: p.accent }}>
-                    {p.name.charAt(0)}
-                  </div>
+                  <PartnerLogo partner={p} size="md" />
                   <div>
                     <h3 className="font-semibold text-sm">{p.name}</h3>
                     <p className="text-tiny text-text-muted">{p.role}</p>

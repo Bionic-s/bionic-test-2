@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Filter, X, Search } from 'lucide-react';
 import { Buildings, Bank, Drop, Heartbeat, BuildingOffice } from '@phosphor-icons/react';
+import { PartnerLogo } from '../components/PartnerLogo';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../data/blueprintsData';
 import { trackBlueprintHubView } from '../lib/analytics';
 
@@ -365,12 +366,7 @@ export default function BlueprintsHub() {
                     {/* Partner Badges */}
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {bp.partners.slice(0, 4).map((p, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-0.5 bg-white/5 text-text-muted text-xs rounded-full border border-white/10"
-                        >
-                          {p}
-                        </span>
+                        <PartnerLogo key={i} partner={p} size="sm" />
                       ))}
                       {bp.partners.length > 4 && (
                         <span className="px-2 py-0.5 text-text-muted text-xs">+{bp.partners.length - 4}</span>
