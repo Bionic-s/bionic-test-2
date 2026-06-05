@@ -164,7 +164,7 @@ export const Hero = () => {
           >
             {[
               { 
-                value: 10,
+                value: 9,
                 suffix: '',
                 label: 'Strategic Technology Partners',
                 description: 'Global ecosystem'
@@ -172,20 +172,14 @@ export const Hero = () => {
               { 
                 value: 7,
                 suffix: '',
-                label: 'Enterprise Capabilities',
-                description: 'Full technology stack'
+                label: 'Business Lines',
+                description: 'Full transformation stack'
               },
               { 
-                value: 12,
+                value: 4,
                 suffix: '',
-                label: 'Transformation Blueprints',
-                description: 'Industry-specific execution'
-              },
-              { 
-                value: 5,
-                suffix: '',
-                label: 'Industry Focus Areas',
-                description: 'Deep domain expertise'
+                label: 'Top Sectors',
+                description: 'Government · Banking · Oil & Gas · Healthcare'
               },
             ].map((metric, index) => (
               <motion.div
