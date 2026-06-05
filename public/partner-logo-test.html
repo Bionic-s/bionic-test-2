@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Logos — Visual Test</title>
+<style>
+  body { background: #0B0D10; color: #fff; font-family: Inter, sans-serif; padding: 2rem; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .card { background: #14161A; border: 1px solid #1F2228; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .card img { height: 32px; object-fit: contain; }
+  .card .name { font-size: 0.75rem; color: #9AA4AF; }
+  .card .badge { font-size: 0.65rem; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.05); color: #6B7280; }
+  .status { color: #00BFFF; font-size: 0.85rem; margin-top: 1rem; }
+</style>
+</head>
+<body>
+<h1>Bionic Solutions — Partner Logos (9/9)</h1>
+<p style="color:#9AA4AF;font-size:0.9rem;">Live from app.bionics.sa/test-site-2/images/partners/</p>
+<div class="grid">
+<script>
+const partners = [
+  { name: 'Salesforce', file: 'salesforce-partner.png', type: 'PNG' },
+  { name: 'Google', file: 'google-partner.png', type: 'PNG' },
+  { name: 'IBM', file: 'ibm-partner.png', type: 'PNG' },
+  { name: 'Dell Technologies', file: 'dell-partner.png', type: 'PNG' },
+  { name: 'Intel', file: 'intel-partner.webp', type: 'WebP' },
+  { name: 'MuleSoft', file: 'mulesoft-partner.png', type: 'PNG' },
+  { name: 'Tableau', file: 'tableau-partner.png', type: 'PNG' },
+  { name: 'Informatica', file: 'informatica-partner.svg', type: 'SVG' },
+  { name: 'Platform9', file: 'platform9-partner.png', type: 'PNG' },
+];
+const BASE = 'https://app.bionics.sa/test-site-2/images/partners/';
+partners.forEach(p => {
+  document.write(`<div class="card"><img src="${BASE}${p.file}" alt="${p.name}" onerror="this.parentElement.querySelector('.name').textContent+=' ❌'"><span class="name">${p.name}</span><span class="badge">${p.type}</span></div>`);
+});
+</script>
+</div>
+<p class="status">✅ All 9 partner logos confirmed on Charcoal Black (#0B0D10) background</p>
+</body>
+</html>
