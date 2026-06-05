@@ -139,7 +139,7 @@ export const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex-shrink-0">
               <img
-                src="/bionic-full-dark.svg"
+                src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
                 alt="Bionic Solutions"
                 className="h-10 w-auto"
                 style={{
