@@ -184,7 +184,7 @@ function AppContent() {
       </main>
       <Footer />
       <StickyCTABar />
-      <ProgressiveProfiling triggerAfterSeconds={40} />
+      <ProgressiveProfiling />
       <CookieConsent />
     </div>
   );
