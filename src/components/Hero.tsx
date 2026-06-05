@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { trackExecutiveBriefingClick, trackCTAClick } from '../lib/analytics';
@@ -16,7 +16,7 @@ export const Hero = () => {
   });
 
   const canonWords = ['Intelligence', 'Automation', 'Trust'];
-  const { activeIndex } = useCycleWords(canonWords, 3000);
+  const animatedWord = useCycleWords(canonWords, 80, 2000, 40);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -88,34 +88,10 @@ export const Hero = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               We design{' '}
-              {canonWords.map((word, i) => (
-                <span key={word}>
-                  <AnimatePresence mode="wait">
-                    {i === activeIndex ? (
-                      <motion.span
-                        key={`active-${word}`}
-                        className="gradient-text inline"
-                        initial={{ opacity: 0, filter: 'blur(4px)' }}
-                        animate={{ opacity: 1, filter: 'blur(0px)' }}
-                        exit={{ opacity: 0, filter: 'blur(4px)' }}
-                        transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      >
-                        {word}
-                      </motion.span>
-                    ) : (
-                      <motion.span
-                        key={`dim-${word}`}
-                        className="text-text-muted inline"
-                        initial={{ opacity: 1 }}
-                        exit={{ opacity: 1 }}
-                      >
-                        {word}
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                  {i < canonWords.length - 2 ? ', ' : i === canonWords.length - 2 ? ' & ' : ''}
-                </span>
-              ))}{' '}
+              <span className="gradient-text inline">
+                {animatedWord}
+                <span className="inline-block w-[2px] h-[0.9em] bg-[#00BFFF] ml-1 align-middle animate-pulse" />
+              </span>{' '}
               into business.
             </h1>
           </motion.div>
