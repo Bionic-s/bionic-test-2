@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run postbuild",
+    "postbuild": "chmod 644 dist/images/partners/* 2>/dev/null; chmod 644 dist/*.svg 2>/dev/null; true",
     "lint": "eslint .",
     "preview": "vite preview",
     "type-check": "tsc --noEmit"
