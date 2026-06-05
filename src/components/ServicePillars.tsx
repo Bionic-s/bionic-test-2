@@ -82,7 +82,7 @@ export const ServicePillars = () => {
             className="text-h2 md:text-[48px] font-bold mb-6 tracking-tight"
           >
             7 enterprise capabilities across{' '}
-            <span className="gradient-text">Intelligence, Automation and Trust</span>.
+            <span className="gradient-text">Intelligence, Automation & Trust</span>.
           </motion.h2>
 
           <motion.p

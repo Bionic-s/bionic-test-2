@@ -113,7 +113,7 @@ export const Hero = () => {
                       </motion.span>
                     )}
                   </AnimatePresence>
-                  {i < canonWords.length - 1 ? ', ' : ''}
+                  {i < canonWords.length - 2 ? ', ' : i === canonWords.length - 2 ? ' & ' : ''}
                 </span>
               ))}{' '}
               into business.
@@ -138,14 +138,14 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <a
-              href="/contact?source=hero&intent=executive-briefing"
+            <Link
+              to="/contact?source=hero&intent=executive-briefing"
               onClick={() => trackExecutiveBriefingClick('hero_primary')}
               className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg"
             >
               Request Executive Briefing
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
             <Link
               to="/blueprints?source=hero&intent=blueprints"
               onClick={() => trackCTAClick('hero', '/blueprints')}
@@ -153,14 +153,14 @@ export const Hero = () => {
             >
               Explore Transformation Blueprints
             </Link>
-            <a
-              href="/contact?source=hero&intent=ibm-experts"
+            <Link
+              to="/contact?source=hero&intent=ibm-experts"
               onClick={() => trackCTAClick('hero', '/contact?source=hero&intent=ibm-experts')}
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/10 text-text-muted font-medium rounded-full hover:border-accent-primary/30 hover:text-text-primary transition-all"
             >
               Speak to a Senior Architect
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </motion.div>
 
           {/* Verified Credibility Indicators */}
@@ -187,7 +187,7 @@ export const Hero = () => {
                 value: 4,
                 suffix: '',
                 label: 'Top Sectors',
-                description: 'Government · Banking · Oil & Gas · Healthcare'
+                description: 'Banking · Government · Oil & Gas · Manufacturing'
               },
             ].map((metric, index) => (
               <motion.div
