@@ -52,6 +52,7 @@ const partners = [
   { name: 'Google', role: 'Enterprise analytics & AI platform', tech: 'Vertex AI · BigQuery · Looker · Gemini · Enterprise AI Platform' },
   { name: 'Tableau', role: 'Executive BI & enterprise analytics', tech: 'Tableau Cloud · Embedded Analytics · Executive Dashboards · Data Stories' },
   { name: 'Platform9', role: 'Multi-cloud platform & private cloud', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation' },
+  { name: 'Red Hat', role: 'Enterprise platform engineering', tech: 'OpenShift · Ansible Automation · RHEL · Satellite' },
 ];
 
 export default function EnterpriseIndustryPage() {

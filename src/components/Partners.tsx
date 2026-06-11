@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import { CANON_PARTNERS } from '../data/partnersData';
 import { PartnerLogo } from './PartnerLogo';
 
@@ -7,7 +8,9 @@ import { PartnerLogo } from './PartnerLogo';
  * Compact Trust Bar — infinite logo scroll.
  * Replaces the full Partners section for faster scroll-to-lead.
  */
-const partners = CANON_PARTNERS;
+const partners = CANON_PARTNERS.filter(
+  (p) => !['MuleSoft', 'Tableau', 'Informatica'].includes(p.name),
+);
 
 // Double for seamless loop
 const scrollPartners = [...partners, ...partners];
@@ -37,18 +40,20 @@ export const Partners = () => {
       />
 
       <div className="flex items-center gap-8 md:gap-12">
-        {/* Trust label — pinned left */}
+        {/* Trust label — pinned left, clickable */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="shrink-0 pl-6 md:pl-12 flex items-center gap-3"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-          <div className="flex flex-col leading-tight">
-            <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest">Strategic</span>
-            <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest">Partners</span>
-          </div>
+          <Link to="/partners" className="flex items-center gap-3 group/label">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
+            <div className="flex flex-col leading-tight">
+              <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest group-hover/label:text-accent-primary transition-colors">Strategic</span>
+              <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest group-hover/label:text-accent-primary transition-colors">Partners</span>
+            </div>
+          </Link>
         </motion.div>
 
         {/* Marquee */}

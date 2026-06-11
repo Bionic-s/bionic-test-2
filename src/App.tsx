@@ -11,6 +11,7 @@ import { ProgressiveProfiling } from './components/ProgressiveProfiling';
 import HomePage from './pages/HomePage';
 import BlueprintsHub from './pages/BlueprintsHub';
 import TransformationBlueprintPage from './pages/TransformationBlueprintPage';
+import PartnersPage from './pages/PartnersPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BookDiscoveryCallPage from './pages/BookDiscoveryCall';
@@ -120,6 +121,7 @@ function AppContent() {
           <Route path="/book-discovery-call" element={<BookDiscoveryCallPage />} />
 
           {/* ═══ Transformation Blueprints ═══ */}
+          <Route path="/partners" element={<PartnersPage />} />
           <Route path="/blueprints" element={<BlueprintsHub />} />
           <Route path="/blueprints/:slug" element={<TransformationBlueprintPage />} />
 

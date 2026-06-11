@@ -342,6 +342,11 @@ export const Header = () => {
                 )}
               </div>
 
+              {/* ═══ Partners ═══ */}
+              <Link to="/partners" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
+                Partners
+              </Link>
+
               {/* ═══ Blueprints ═══ */}
               <Link to="/blueprints" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
                 Blueprints
@@ -478,6 +483,10 @@ export const Header = () => {
                         ))}
                       </div>
                     )}
+                    <Link to="/partners" onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2 px-4 py-3 mt-3 text-accent-primary font-medium text-small">
+                      Strategic Partners <ArrowRight className="w-4 h-4" />
+                    </Link>
                     <Link to="/blueprints" onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2 px-4 py-3 mt-3 text-accent-primary font-medium text-small">
                       View Blueprints <ArrowRight className="w-4 h-4" />
@@ -514,6 +523,12 @@ export const Header = () => {
                   </div>
                 )}
               </div>
+
+              {/* Mobile Partners */}
+              <Link to="/partners" onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 text-accent-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
+                Strategic Partners
+              </Link>
 
               {/* Mobile Blueprints */}
               <Link to="/blueprints" onClick={() => setMobileMenuOpen(false)}

@@ -51,6 +51,7 @@ const partners = [
   { name: 'MuleSoft', role: 'Government API-led integration', tech: 'Anypoint Platform for cross-agency APIs · Flex Gateway for secure government integration' },
   { name: 'Google', role: 'AI & analytics for government intelligence', tech: 'Vertex AI · BigQuery for national analytics · Looker for government dashboards' },
   { name: 'Tableau', role: 'Executive dashboards & public transparency', tech: 'Tableau Cloud · Embedded Analytics · Public-facing open data dashboards' },
+  { name: 'Red Hat', role: 'OpenShift, Ansible & open-source infrastructure', tech: 'OpenShift · Ansible Automation · RHEL · Satellite' },
 ];
 
 export default function GovernmentIndustryPage() {

@@ -1,6 +1,6 @@
 /**
  * Canonical Partners — single source of truth.
- * 9 Strategic Technology Partners per brand canon.
+ * Strategic Technology Partners.
  */
 export interface PartnerData {
   name: string;
@@ -55,6 +55,16 @@ export const CANON_PARTNERS: PartnerData[] = [
     name: 'Platform9',
     logo: `${BASE}images/partners/platform9-partner.png`,
     accent: '#7B61FF',
+  },
+  {
+    name: 'Red Hat',
+    logo: `${BASE}images/partners/redhat-partner.svg`,
+    accent: '#EE0000',
+  },
+  {
+    name: 'Lenovo',
+    logo: `${BASE}images/partners/lenovo-partner.png`,
+    accent: '#E2231A',
   },
 ];
 

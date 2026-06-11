@@ -16,6 +16,7 @@ const partners = [
   { name: 'IBM', role: 'Security operations & threat intelligence', tech: 'QRadar SIEM · Guardium · Verify · X-Force · SOAR · MaaS360' },
   { name: 'Dell Technologies', role: 'Cyber recovery & data protection', tech: 'PowerProtect Cyber Recovery · Data Domain · CyberSense · Isolated Vault' },
   { name: 'Intel', role: 'Hardware-anchored security & confidential computing', tech: 'Intel TXT · SGX · TDX · Threat Detection Technology · vPro' },
+  { name: 'Red Hat', role: 'Secure platform & compliance automation', tech: 'OpenShift · Ansible Automation · RHEL · SELinux · OpenSCAP' },
 ];
 
 export default function CybersecurityPage() {

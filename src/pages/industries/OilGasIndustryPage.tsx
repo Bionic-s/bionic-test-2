@@ -47,6 +47,7 @@ const partners = [
   { name: 'Intel', role: 'Edge AI & industrial compute', tech: 'OpenVINO for computer vision · Xeon for digital twin · Edge AI accelerators' },
   { name: 'Tableau', role: 'Operational dashboards & emissions analytics', tech: 'Tableau Cloud · Embedded Analytics · Real-time operational dashboards' },
   { name: 'Salesforce', role: 'Energy CRM & field service', tech: 'Energy CRM · Field Service Management · Asset lifecycle management' },
+  { name: 'Red Hat', role: 'Industrial platform & automation', tech: 'OpenShift · Ansible Automation · RHEL · Edge Computing' },
 ];
 
 export default function OilGasIndustryPage() {

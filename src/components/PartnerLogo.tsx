@@ -2,6 +2,7 @@ import { CANON_PARTNERS, type PartnerData } from '../data/partnersData';
 
 /**
  * Renders a partner logo or a styled text fallback.
+ * Accepts a PartnerData object, { name: string }, or a string name.
  * Size: 'sm' (24px), 'md' (32px), 'lg' (48px), 'xl' (70px)
  */
 export const PartnerLogo = ({
@@ -9,16 +10,17 @@ export const PartnerLogo = ({
   size = 'md',
   className = '',
 }: {
-  partner: PartnerData | string;
+  partner: PartnerData | { name: string } | string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 }) => {
   const sizes = { sm: 24, md: 32, lg: 48, xl: 70 };
 
-  // Accept string name or full PartnerData
-  const p = typeof partner === 'string'
-    ? CANON_PARTNERS.find((x) => x.name.toLowerCase() === partner.toLowerCase())
-    : partner;
+  // Resolve partner: string → canon lookup; object → canon lookup by name, fallback to object itself
+  const p: PartnerData | undefined =
+    typeof partner === 'string'
+      ? CANON_PARTNERS.find((x) => x.name.toLowerCase() === partner.toLowerCase())
+      : (CANON_PARTNERS.find((x) => x.name.toLowerCase() === partner.name.toLowerCase()) || (partner as PartnerData));
 
   if (!p) return <span className={`text-xs text-text-muted ${className}`}>{typeof partner === 'string' ? partner : partner.name}</span>;
 

@@ -17,6 +17,7 @@ const partners = [
   { name: 'IBM', role: 'Storage, AI infra & hybrid cloud', tech: 'FlashSystem · Power · watsonx · Cloud Pak · Storage Defender' },
   { name: 'Platform9', role: 'Private & hybrid cloud platform', tech: 'Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation · Multi-Cluster Management' },
   { name: 'Intel', role: 'Compute, AI & edge infrastructure', tech: 'Xeon Scalable · Gaudi 3 AI Accelerators · Edge AI · Confidential Computing · Optane' },
+  { name: 'Red Hat', role: 'Open-source infrastructure & automation', tech: 'OpenShift · Ansible Automation · RHEL · Satellite' },
 ];
 
 export default function InfrastructurePage() {
