@@ -50,11 +50,11 @@ export const StickyCTABar = () => {
 
               <div className="flex items-center gap-3">
                 <Link
-                  to="/contact?source=sticky&intent=executive-briefing"
-                  onClick={() => trackCTAClick('sticky', '/contact?source=sticky&intent=executive-briefing')}
+                  to="/contact?source=sticky&intent=conversation"
+                  onClick={() => trackCTAClick('sticky', '/contact?source=sticky&intent=conversation')}
                   className="px-6 py-3 bg-bg-primary text-text-primary font-semibold rounded-full hover:bg-bg-secondary hover:shadow-lg transition-all duration-300 flex items-center space-x-2 whitespace-nowrap"
                 >
-                  <span className="hidden sm:inline">Request Executive Briefing</span>
+                  <span className="hidden sm:inline">Start the Conversation</span>
                   <span className="sm:hidden">Briefing</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>

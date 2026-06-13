@@ -363,7 +363,7 @@ export const Header = () => {
               <Link to="/contact"
                 onClick={() => trackCTAClick('mega_menu', '/contact')}
                 className="px-5 py-2 bg-accent-primary text-text-primary text-sm font-semibold rounded-full hover:bg-accent-secondary transition-all">
-                Request Executive Briefing
+                Start the Conversation
               </Link>
             </div>
 
@@ -545,7 +545,7 @@ export const Header = () => {
               <div className="pt-3">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}
                   className="block w-full px-6 py-3 bg-accent-primary text-text-primary text-center text-lg font-semibold rounded-full hover:bg-accent-secondary transition-all">
-                  Request Executive Briefing
+                  Start the Conversation
                 </Link>
               </div>
             </nav>

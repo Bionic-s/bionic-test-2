@@ -323,7 +323,7 @@ export default function AISolutionPage() {
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7C3AED] hover:bg-[#7C3AED]/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-[#7C3AED]/15"
               >
-                Request Executive Briefing
+                Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link

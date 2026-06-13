@@ -152,10 +152,10 @@ export const Footer = () => {
               </a>
             </div>
             <Link
-              to="/contact?source=footer&intent=executive-briefing"
+              to="/contact?source=footer&intent=transformation"
               className="inline-block px-6 py-3 bg-accent-primary text-text-primary font-semibold rounded-full hover:bg-accent-secondary hover:-translate-y-0.5 transition-all duration-300 text-sm"
             >
-              Request Executive Briefing
+              Explore Your Transformation
             </Link>
           </div>
         </div>

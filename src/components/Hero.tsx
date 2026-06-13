@@ -117,11 +117,11 @@ export const Hero = () => {
             {/* Row 1: two primary CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                to="/contact?source=hero&intent=executive-briefing"
+                to="/contact?source=hero&intent=architect"
                 onClick={() => trackExecutiveBriefingClick('hero_primary')}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg"
               >
-                Request Executive Briefing
+                Talk to an Architect
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link

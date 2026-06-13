@@ -237,7 +237,7 @@ export default function BankingIndustryPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
                 style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #2563EB20' }}>
-                Request Executive Briefing
+                Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/blueprints?industry=banking" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#2563EB]/30">

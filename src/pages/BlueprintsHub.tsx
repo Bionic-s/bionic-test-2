@@ -443,7 +443,7 @@ export default function BlueprintsHub() {
             to="/contact"
             className="inline-flex items-center gap-2 px-10 py-4 bg-accent-primary text-text-primary font-semibold rounded-full hover:bg-accent-secondary transition-all"
           >
-            Request Executive Briefing <ArrowRight className="w-5 h-5" />
+            Start the Conversation <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>
       </div>

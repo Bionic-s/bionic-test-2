@@ -311,7 +311,7 @@ export const Contact = () => {
                     </>
                   ) : (
                     <>
-                      <span>Request Executive Briefing</span>
+                      <span>Send My Request</span>
                       <Send className="w-5 h-5" />
                     </>
                   )}
