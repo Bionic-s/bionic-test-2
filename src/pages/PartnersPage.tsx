@@ -18,13 +18,13 @@ const ECOSYSTEM_CARD = {
 };
 
 const PARTNER_OUTCOMES: { name: string; outcome: string }[] = [
+  { name: 'IBM', outcome: 'watsonx AI governance + FlashSystem infrastructure — AI that is compliant, not just fast.' },
   { name: 'Google', outcome: 'Sovereign AI on Vertex AI — governed, secured, and operated in-Kingdom.' },
   { name: 'Dell Technologies', outcome: 'PowerEdge, PowerStore, VxRail — the infrastructure backbone underneath AI workloads.' },
-  { name: 'IBM', outcome: 'watsonx AI governance + FlashSystem infrastructure — AI that is compliant, not just fast.' },
   { name: 'Intel', outcome: 'Xeon & Gaudi AI acceleration — sovereign AI compute, from edge to datacenter.' },
-  { name: 'Red Hat', outcome: 'OpenShift + Ansible Automation — open-source platform for sovereign hybrid cloud.' },
   { name: 'Platform9', outcome: 'Kubernetes, managed, in your datacenter — private cloud without the complexity.' },
   { name: 'Lenovo', outcome: 'ThinkSystem, ThinkAgile, TruScale — infrastructure engineered for AI, from edge to cloud.' },
+  { name: 'Red Hat', outcome: 'OpenShift + Ansible Automation — open-source platform for sovereign hybrid cloud.' },
 ];
 
 /* ── Partnership tiers ── */
