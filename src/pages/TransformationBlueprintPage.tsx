@@ -284,7 +284,7 @@ export default function TransformationBlueprintPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to explore this blueprint for your organization?</h2>
           <p className="text-body text-text-muted mb-8 max-w-xl mx-auto">
-            Request an executive briefing to discuss how this transformation blueprint applies to your industry context.
+            Request a strategy session to discuss how this transformation blueprint applies to your industry context.
           </p>
           <Link
             to="/contact"

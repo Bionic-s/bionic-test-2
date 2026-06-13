@@ -145,7 +145,7 @@ export const ProgressiveProfiling = () => {
                 >
                   <h3 className="text-h3 font-bold mb-2">Before You Go</h3>
                   <p className="text-body text-text-muted mb-6">
-                    Get a personalized executive briefing on enterprise AI transformation.
+                    Get a personalized strategy session on enterprise AI transformation.
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-4">

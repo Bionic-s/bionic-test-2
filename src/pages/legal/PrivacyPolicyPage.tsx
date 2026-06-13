@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-h3 font-semibold text-text-primary mb-4">How We Collect It</h2>
               <ul className="list-disc pl-6 space-y-1 text-body">
-                <li>When you submit the "Request an Executive Briefing" form</li>
+                <li>When you submit the "Talk to an Architect" form</li>
                 <li>When you complete our multi-step assessment</li>
                 <li>Through cookies and analytics tools</li>
                 <li>Through standard server logging</li>

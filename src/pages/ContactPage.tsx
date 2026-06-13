@@ -163,8 +163,8 @@ export default function ContactPage() {
             <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
               <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-[#00BFFF]">Executive Engagement</p>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                Request an<br />
-                <span style={{ color: '#00BFFF' }}>Executive Briefing</span>
+                Talk to an<br />
+                <span style={{ color: '#00BFFF' }}>Architect</span>
               </h1>
               <p className="text-text-muted text-lg max-w-[580px] mx-auto leading-relaxed">
                 Enterprise AI. Business Technology Transformation. Measurable Enterprise Value. Long-Term Capability Creation.
@@ -248,9 +248,9 @@ export default function ContactPage() {
                     <FieldErr msg={touched.industry ? fieldErrors.industry : undefined} id="industry-error" />
                   </div>
 
-                  {/* Row 5: Executive Briefing Type */}
+                  {/* Row 5: Meeting Focus */}
                   <div>
-                    <label htmlFor="priority" className="block text-sm text-text-muted mb-2">Executive Briefing Type <span className="text-text-muted">(optional)</span></label>
+                    <label htmlFor="priority" className="block text-sm text-text-muted mb-2">Meeting Focus <span className="text-text-muted">(optional)</span></label>
                     <select id="priority" name="priority" value={formData.priority} onChange={handleChange} onBlur={() => handleBlur('priority')}
                       aria-required="true" className={selectCls('priority')}>
                       <option value="" className="bg-bg-primary text-text-muted">Select briefing type...</option>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                     </div>
                     <textarea id="message" name="message" value={formData.message} onChange={handleChange} maxLength={500} rows={5}
                       className={`${inputCls('message')} resize-none`}
-                      placeholder="What would you like to discuss in your Executive Briefing?" />
+                      placeholder="What would you like to discuss in your strategy session?" />
                   </div>
 
                   {/* Error */}
@@ -299,9 +299,9 @@ export default function ContactPage() {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.5 }} className="mt-16 mb-12">
               <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8">
-                <p className="text-lg font-semibold text-text-primary mb-3">What to expect from your Executive Briefing</p>
+                <p className="text-lg font-semibold text-text-primary mb-3">What to expect from your Strategy Session</p>
                 <p className="text-text-muted text-sm leading-relaxed mb-5">
-                  Every Executive Briefing is a strategic discussion — not a sales call.
+                  Every strategy session is a focused discussion — not a sales call.
                 </p>
                 <ul className="space-y-2.5">
                   {[
@@ -363,9 +363,9 @@ export default function ContactPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Your Executive Briefing Request Has Been Received</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Your Meeting Request Has Been Received</h2>
               <p className="text-text-muted text-lg mb-10 max-w-[520px] mx-auto leading-relaxed">
-                An enterprise transformation specialist will contact you within 24-48 hours to schedule your Executive Briefing.
+                An enterprise transformation specialist will contact you within 24-48 hours to schedule your strategy session.
               </p>
 
               <p className="text-sm text-text-muted mb-6">While you wait — explore our transformation approach:</p>

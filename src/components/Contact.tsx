@@ -120,7 +120,7 @@ export const Contact = () => {
               transition={{ duration: 0.6 }}
               className="text-h2 md:text-[38px] lg:text-h2 font-bold mb-4"
             >
-              Request an Executive Briefing
+              Talk to an Architect
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -144,7 +144,7 @@ export const Contact = () => {
               <p className="text-body text-text-muted text-center mb-8">Every transformation begins with a conversation.</p>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                 {[
-                  { step: '1', title: 'Executive Briefing', dur: '45 minutes', desc: 'A focused discussion about your transformation priorities. Not a sales presentation.' },
+                  { step: '1', title: 'Strategy Session', dur: '45 minutes', desc: 'A focused discussion about your transformation priorities. Not a sales presentation.' },
                   { step: '2', title: 'Discovery & Assessment', dur: '1–2 weeks', desc: 'Deep-dive into architecture, capabilities, and business objectives.' },
                   { step: '3', title: 'Architecture & Blueprint', dur: '2–4 weeks', desc: 'Target-state architecture, roadmap, governance, and business case.' },
                   { step: '4', title: 'Implementation', dur: '8–16 weeks', desc: 'Platform deployment, integration, and adoption engineering.' },
@@ -163,7 +163,7 @@ export const Contact = () => {
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
-                <h3 className="text-h3 font-semibold mb-2 text-success">Your Executive Briefing Request Has Been Received</h3>
+                <h3 className="text-h3 font-semibold mb-2 text-success">Your Meeting Request Has Been Received</h3>
                 <p className="text-body text-text-muted mb-4">
                   Our team will review your request and respond within 24 hours.
                 </p>
@@ -318,7 +318,7 @@ export const Contact = () => {
                 </button>
 
                 <p className="text-tiny text-text-muted mt-4">
-                  * Required fields. Our team will respond to your executive briefing request within 24 hours.
+                  * Required fields. Our team will respond to your meeting request within 24 hours.
                 </p>
               </form>
             )}

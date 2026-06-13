@@ -79,7 +79,7 @@ export default function AboutPage() {
               across seven integrated domains: enterprise AI, data platforms, business applications, integration, cybersecurity, sovereign infrastructure, and technology operations.
             </p>
             <p className="text-base">
-              We do not publish client names, project details, or specific metrics — transformation work is commercially sensitive. Our experience can be discussed in detail during the Executive Briefing, within the bounds of client confidentiality.
+              We do not publish client names, project details, or specific metrics — transformation work is commercially sensitive. Our experience can be discussed in detail during the Strategy Session, within the bounds of client confidentiality.
             </p>
           </div>
         </motion.section>

@@ -41,7 +41,7 @@ export const StickyCTABar = () => {
             <div className="flex items-center justify-between gap-4">
               <div className="flex-1">
                 <p className="text-text-primary font-semibold text-lg md:text-xl">
-                  Request an Executive Briefing
+                  Start the Conversation
                 </p>
                 <p className="text-text-primary/80 text-sm hidden md:block">
                   A focused discussion about your transformation priorities
