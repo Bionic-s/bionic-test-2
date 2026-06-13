@@ -23,7 +23,7 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'IBM',
-    logo: `${BASE}images/partners/ibm-partner.png`,
+    logo: `${BASE}images/partners/ibm-partner.svg`,
     accent: '#052FAD',
   },
   {
@@ -63,7 +63,7 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'Lenovo',
-    logo: `${BASE}images/partners/lenovo-partner.png`,
+    logo: `${BASE}images/partners/lenovo-partner.svg`,
     accent: '#E2231A',
   },
 ];

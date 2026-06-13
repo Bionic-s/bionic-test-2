@@ -24,6 +24,7 @@ const PARTNER_OUTCOMES: { name: string; outcome: string }[] = [
   { name: 'Dell Technologies', outcome: 'PowerEdge, PowerStore, VxRail — the infrastructure backbone underneath AI workloads.' },
   { name: 'Red Hat', outcome: 'OpenShift + Ansible Automation — open-source platform for sovereign hybrid cloud.' },
   { name: 'Platform9', outcome: 'Kubernetes, managed, in your datacenter — private cloud without the complexity.' },
+  { name: 'Lenovo', outcome: 'ThinkSystem, ThinkAgile, TruScale — infrastructure engineered for AI, from edge to cloud.' },
 ];
 
 /* ── Partnership tiers ── */
@@ -33,7 +34,7 @@ const TIERS = [
     subtitle: 'Procure. Deliver. Support.',
     desc: 'Authorized resale and deployment of partner technology — hardware, software, and cloud platforms — with local logistics, Saudi-based delivery, and warranty support.',
     icon: Shield,
-    examples: 'Dell PowerEdge, PowerStore · Intel Xeon, Gaudi AI · IBM FlashSystem, Power · Platform9',
+              examples: 'Dell PowerEdge, PowerStore · Intel Xeon, Gaudi AI · IBM FlashSystem, Power · Platform9 · Lenovo ThinkSystem',
   },
   {
     title: 'Delivery Partner',
@@ -76,7 +77,7 @@ export default function PartnersPage() {
               Strategic Ecosystem
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              7 Strategic Partners.
+              8 Strategic Partners.
               <br />
               <span className="text-accent-primary">One Accountable Integrator.</span>
             </h1>
@@ -99,7 +100,7 @@ export default function PartnersPage() {
             className="text-center mb-16"
           >
             <p className="text-tiny font-semibold tracking-wider uppercase mb-3 text-accent-primary">Who We Partner With</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Seven partners. One accountable relationship.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Eight partners. One accountable relationship.</h2>
             <p className="text-text-muted max-w-3xl mx-auto">
               Each partner is selected for a specific capability they bring to your transformation. No reseller padding. No logo farms. Every relationship earns its place.
             </p>

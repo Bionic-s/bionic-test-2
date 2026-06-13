@@ -152,7 +152,7 @@ export const Hero = () => {
           >
             {[
               { 
-                value: 7,
+                value: 8,
                 suffix: '',
                 label: 'Strategic Technology Partners',
                 description: 'Global ecosystem'
