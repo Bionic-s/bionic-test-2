@@ -19,10 +19,10 @@ const ECOSYSTEM_CARD = {
 
 const PARTNER_OUTCOMES: { name: string; outcome: string }[] = [
   { name: 'Google', outcome: 'Sovereign AI on Vertex AI — governed, secured, and operated in-Kingdom.' },
-  { name: 'IBM', outcome: 'watsonx AI governance + FlashSystem infrastructure — AI that is compliant, not just fast.' },
-  { name: 'Intel', outcome: 'Xeon & Gaudi AI acceleration — sovereign AI compute, from edge to datacenter.' },
   { name: 'Dell Technologies', outcome: 'PowerEdge, PowerStore, VxRail — the infrastructure backbone underneath AI workloads.' },
+  { name: 'Intel', outcome: 'Xeon & Gaudi AI acceleration — sovereign AI compute, from edge to datacenter.' },
   { name: 'Red Hat', outcome: 'OpenShift + Ansible Automation — open-source platform for sovereign hybrid cloud.' },
+  { name: 'IBM', outcome: 'watsonx AI governance + FlashSystem infrastructure — AI that is compliant, not just fast.' },
   { name: 'Platform9', outcome: 'Kubernetes, managed, in your datacenter — private cloud without the complexity.' },
   { name: 'Lenovo', outcome: 'ThinkSystem, ThinkAgile, TruScale — infrastructure engineered for AI, from edge to cloud.' },
 ];
@@ -117,11 +117,11 @@ export default function PartnersPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView1 ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.45, delay: i * 0.06 }}
-                  className="group relative bg-bg-secondary/40 border border-white/[0.06] rounded-2xl overflow-hidden hover:border-accent-primary/25 transition-all duration-400 hover:-translate-y-1 flex flex-col"
+                  className={`group relative bg-bg-secondary/40 border border-white/[0.06] rounded-2xl overflow-hidden hover:border-accent-primary/25 transition-all duration-400 hover:-translate-y-1 flex flex-col ${po.name === 'IBM' ? 'lg:col-span-2 shadow-[0_0_30px_rgba(5,47,173,0.08)]' : ''}`}
                 >
                   <div className="h-0.5 w-full" style={{ backgroundColor: canon?.accent || '#444' }} />
                   <div className="flex items-center justify-center px-4 pt-6 pb-3">
-                    <PartnerLogo partner={po.name} size="lg" className="mx-auto transition-transform duration-300 group-hover:scale-105" />
+                    <PartnerLogo partner={po.name} size={po.name === 'IBM' ? 'xl' : 'lg'} className="mx-auto transition-transform duration-300 group-hover:scale-105" />
                   </div>
                   <div className="px-4 pb-6 flex-1 flex flex-col justify-end">
                     <p className="text-tiny text-text-muted leading-relaxed text-center">{po.outcome}</p>
