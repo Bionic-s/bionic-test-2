@@ -58,7 +58,7 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'Red Hat',
-    logo: `${BASE}images/partners/redhat-partner.svg`,
+    logo: `${BASE}images/partners/redhat-partner.png`,
     accent: '#EE0000',
   },
   {
