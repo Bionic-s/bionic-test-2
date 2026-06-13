@@ -127,7 +127,7 @@ export const Hero = () => {
               <Link
                 to="/blueprints?source=hero&intent=blueprints"
                 onClick={() => trackCTAClick('hero', '/blueprints')}
-                className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-text-primary font-medium rounded-full hover:border-white/30 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-primary text-accent-primary font-semibold rounded-full hover:bg-accent-primary hover:text-white transition-all"
               >
                 Explore Transformation Blueprints
               </Link>
