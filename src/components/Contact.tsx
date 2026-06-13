@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, CheckCircle, AlertCircle, FileText } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, FileText, ArrowRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { trackFormSubmitted } from '../lib/analytics';
 
@@ -157,6 +157,23 @@ export const Contact = () => {
                     <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Book a Strategy Session — self-service calendar */}
+            <div className="mb-12 pb-12 border-b border-white/5">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-bg-primary/50 rounded-xl border border-white/5">
+                <div>
+                  <h4 className="text-lg font-semibold text-text-primary mb-1">Prefer a self-service booking?</h4>
+                  <p className="text-sm text-text-muted">Pick a date and time that works for you — no back-and-forth.</p>
+                </div>
+                <Link
+                  to="/book-discovery-call?source=contact&intent=strategy-session"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-md whitespace-nowrap"
+                >
+                  Book a Strategy Session
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
 
