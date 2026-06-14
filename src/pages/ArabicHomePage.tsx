@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 
@@ -10,11 +10,6 @@ const G = '#34D399';
 const W = '#FB923C';
 
 // ─── Data ───
-const cycles = [
-  { word: 'الذكاء', color: A },
-  { word: 'الأتمتة', color: P },
-  { word: 'الثقة', color: G },
-];
 
 const partnersList = [
   { name: 'Salesforce', file: 'salesforce-partner.png' },
@@ -128,7 +123,6 @@ function SpotlightCard({ children, color, className = '' }: { children: React.Re
 // ─── Page ───
 
 export default function ArabicHomePage() {
-  const [cycIdx, setCycIdx] = useState(0);
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [ringPos, setRingPos] = useState({ x: -100, y: -100 });
   const [ringGrow, setRingGrow] = useState(false);
@@ -177,13 +171,6 @@ export default function ArabicHomePage() {
 
   // ─── Reduced motion ───
   useEffect(() => { reducedMotion.current = matchMedia('(prefers-reduced-motion: reduce)').matches; }, []);
-
-  // ─── Cycling word ───
-  useEffect(() => {
-    if (reducedMotion.current) return;
-    const id = setInterval(() => setCycIdx((prev) => (prev + 1) % cycles.length), 2400);
-    return () => clearInterval(id);
-  }, []);
 
   // ─── Custom cursor ───
   useEffect(() => {
@@ -311,18 +298,17 @@ export default function ArabicHomePage() {
         <div className="relative z-10 max-w-[1180px] mx-auto px-7 w-full">
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-sm tracking-wider text-[#00BFFF] font-medium mb-5" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            شريك التحول المؤسسي للذكاء الاصطناعي - المملكة العربية السعودية
+            خبراء التحول المؤسسي للذكاء الاصطناعي
           </motion.p>
 
           <motion.h1 initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
             className="font-bold max-w-[16ch] leading-tight" style={{ fontSize: 'clamp(40px,7vw,80px)', fontFamily: "'Tajawal', sans-serif" }}>
-            نصمم الذكاء المؤسسي. لا نكتفي بتوفير التقنية. <AnimatePresence mode="wait"><motion.span key={cycIdx} initial={{ opacity: 0, filter: 'blur(8px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(8px)' }} transition={{ duration: 0.25 }} style={{ color: cycles[cycIdx].color, display: 'inline-block' }}>{cycles[cycIdx].word}</motion.span></AnimatePresence>
-            <br />- ليس مجرد تقنية.
+            نصمم الذكاء والأتمتة والأمن السيبراني في نظام مؤسسي موحد.
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
             className="text-[#9AA4AF] mt-6 font-normal max-w-2xl leading-relaxed" style={{ fontSize: 'clamp(18px,2.4vw,24px)', fontFamily: "'Tajawal', sans-serif" }}>
-            نبني الجاهزية المؤسسية للمستقبل: ذكاء اصطناعي منتِج، أنظمة متكاملة، وبنية تحتية محصَّنة - جميعها داخل حدود المملكة.
+            نساعد المؤسسات على تحويل الذكاء الاصطناعي والبيانات والأتمتة إلى قدرات تشغيلية متكاملة تُسرّع القرار وتحقق قيمة أعمال قابلة للقياس، ضمن بنية تحتية سيادية داخل المملكة.
           </motion.p>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
