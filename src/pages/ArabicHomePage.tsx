@@ -38,35 +38,35 @@ const pillarsData: PillarGroup[] = [
   {
     id: 'pillar-intelligence',
     name: 'الذكاء', color: A, tag: 'Intelligence',
-    desc: 'نحوّل البيانات الخام إلى قرارات ذكية. منصات جاهزة للـ AI، تحليلات تنفيذية فورية، ومساعدات أذكياء تختصر القرار من أسابيع إلى دقائق.',
+    desc: 'نحوّل البيانات الخام إلى قرارات ذكية. منصات جاهزة للذكاء الاصطناعي، تحليلات تنفيذية آنية، ومساعدات ذكية تختصر دورة القرار من أسابيع إلى دقائق.',
     lines: [
-      { title: 'الذكاء الاصطناعي والأتمتة المؤسسية', desc: 'نصمم ونشغّل وكلاء ذكاء اصطناعي، مساعدين افتراضيين، وأتمتة ذكية ترفع إنتاجية مؤسستك وتختصر التكاليف. نشر آمن داخل بيئتك — بياناتك ما تطلع برا المملكة.', partners: 'IBM watsonx · Salesforce Einstein · Intel Gaudi', color: A, icon: '🧠' },
-      { title: 'البيانات والتحليلات والذكاء', desc: 'نوحّد بياناتك المتفرقة في مصدر واحد للحقيقة. لوحات قيادة تنفيذية، مؤشرات أداء، وتحليلات متقدمة — بحيث كل قرار في شركتك مبني على أرقام دقيقة، مو تخمين.', partners: 'Informatica · Tableau · Google BigQuery', color: A, icon: '📊' },
+      { title: 'الذكاء الاصطناعي والأتمتة المؤسسية', desc: 'نصمم ونشغّل وكلاء ذكاء اصطناعي ومساعدين افتراضيين وأتمتة ذكية ترفع الكفاءة التشغيلية وتقلّص التكاليف. نشر آمن داخل بيئتك المؤسسية - مع سيادة كاملة على البيانات داخل المملكة.', partners: 'IBM watsonx · Salesforce Einstein · Intel Gaudi', color: A, icon: '🧠' },
+      { title: 'البيانات والتحليلات والذكاء', desc: 'نوحّد بياناتك المتفرقة في مصدر واحد موثوق للحقيقة. لوحات قيادة تنفيذية، مؤشرات أداء رئيسية، وتحليلات متقدمة - ليُبنى كل قرار مؤسسي على بيانات دقيقة، لا على تقديرات.', partners: 'Informatica · Tableau · Google BigQuery', color: A, icon: '📊' },
     ],
   },
   {
     id: 'pillar-automation',
     name: 'الأتمتة', color: P, tag: 'Automation',
-    desc: 'نربط أنظمتك المنعزلة وننسق عملياتك. من ERP إلى CRM إلى legacy systems — مؤسستك تتحرك كوحدة واحدة، بدون فجوات.',
+    desc: 'نربط أنظمتك المنعزلة وننسق عملياتك المؤسسية. من أنظمة تخطيط الموارد إلى إدارة العملاء إلى الأنظمة القديمة - لتعمل مؤسستك كمنظومة واحدة متسقة بلا فجوات.',
     lines: [
-      { title: 'تطبيقات الأعمال وتجربة العملاء', desc: 'منصة موحدة لإدارة علاقات العملاء، مركز اتصال ذكي، أتمتة تسويق، وتجربة موظف متكاملة. عميلك ما يفرق معه أنظمتك الداخلية — يشوف تجربة واحدة سلسة.', partners: 'Salesforce · Tableau · MuleSoft', color: P, icon: '💼' },
-      { title: 'التكامل والعمليات الذكية', desc: 'نربط أنظمتك عبر API-led architecture بحيث البيانات تتدفق تلقائياً بين الأقسام. لا إدخال مزدوج. لا أخطاء بشرية. لا تأخير.', partners: 'MuleSoft Anypoint · Informatica · Apigee', color: P, icon: '🔗' },
+      { title: 'تطبيقات الأعمال وتجربة العملاء', desc: 'منصة موحدة لإدارة علاقات العملاء ومركز اتصال ذكي وأتمتة تسويقية وتجربة موظف متكاملة. يحصل عملاؤك على تجربة موحدة سلسة - بغض النظر عن تعقيد أنظمتك الداخلية.', partners: 'Salesforce · Tableau · MuleSoft', color: P, icon: '💼' },
+      { title: 'التكامل والعمليات الذكية', desc: 'نربط أنظمتك عبر معمارية تكامل API-led لتتدفق البيانات تلقائياً بين الأقسام. دون إدخال مزدوج للبيانات. دون أخطاء بشرية. دون تأخير في العمليات.', partners: 'MuleSoft Anypoint · Informatica · Apigee', color: P, icon: '🔗' },
     ],
   },
   {
     id: 'pillar-trust',
     name: 'الثقة', color: G, tag: 'Trust',
-    desc: 'نبني أسساً رقمية آمنة ومرنة وذات سيادة. من الحماية السيبرانية إلى البنية التحتية — كل شيء داخل المملكة، متوافق مع أعلى المعايير التنظيمية.',
+    desc: 'نصمم أسساً رقمية آمنة ومرنة وذات سيادة وطنية. من الحماية السيبرانية إلى البنية التحتية الحيوية - داخل المملكة، وبما يتوافق مع أعلى المعايير التنظيمية الوطنية.',
     lines: [
-      { title: 'الأمن السيبراني والمرونة الرقمية', desc: 'مركز عمليات أمنية (SOC) يراقب تهديداتك ٢٤/٧. Zero Trust، حوكمة الهوية، ونسخ احتياطي منيع — مؤسستك محمية من أول يوم، ومتوافقة مع NCA.', partners: 'IBM QRadar · Guardium · Zero Trust', color: G, icon: '🛡️' },
-      { title: 'البنية التحتية السيادية والسحابة الهجينة', desc: 'نحدّث مراكز بياناتك بأحدث تقنيات Dell و IBM و Red Hat. سحابتك الخاصة داخل المملكة — سيادة كاملة، أداء عالٍ، وتكاليف أقل من الحلول السحابية العامة.', partners: 'Dell PowerEdge · IBM FlashSystem · Red Hat OpenShift', color: G, icon: '🏗️' },
+      { title: 'الأمن السيبراني والمرونة الرقمية', desc: 'مركز عمليات أمنية (SOC) يراقب التهديدات على مدار الساعة. نموذج Zero Trust، حوكمة الهوية الرقمية، ونسخ احتياطي منيع - مؤسستك محمية من اليوم الأول، ومتوافقة مع متطلبات الهيئة الوطنية للأمن السيبراني.', partners: 'IBM QRadar · Guardium · Zero Trust', color: G, icon: '🛡️' },
+      { title: 'البنية التحتية السيادية والسحابة الهجينة', desc: 'نحدّث مراكز بياناتك بأحدث تقنيات البنية التحتية المؤسسية. سحابة خاصة داخل المملكة - سيادة رقمية كاملة، أداء عالٍ، وتكلفة إجمالية أقل مقارنة بالحلول السحابية العامة.', partners: 'Dell PowerEdge · IBM FlashSystem · Red Hat OpenShift', color: G, icon: '🏗️' },
     ],
   },
 ];
 
 const managedOpsLine: ServiceLine = {
   title: 'الخدمات التقنية والعمليات المدارة',
-  desc: 'فريق تقني يشغّل ويراقب بيئتك ٢٤/٧. عمليات سحابية، عمليات ذكاء اصطناعي، ودعم فني مستمر. أنت تركز على أعمالك — واحنا نتولى التقنية.',
+  desc: 'فريق تقني متخصص يتولى تشغيل بيئتك ومراقبتها على مدار الساعة. عمليات سحابية، عمليات ذكاء اصطناعي، ودعم فني مستمر - لتركز على أعمالك الأساسية بينما ندير نحن البنية التقنية.',
   partners: '24×7 Monitoring · CloudOps · AIOps · Managed Services',
   color: W,
   icon: '⚙️',
@@ -155,15 +155,15 @@ export default function ArabicHomePage() {
       if (formData.phone && !/^[\d\s\+\-\(\)]{10,}$/.test(formData.phone)) throw new Error('يرجى إدخال رقم هاتف صحيح');
       const { supabase } = await import('../lib/supabase');
       const { error: sbError } = await supabase.functions.invoke('contact-form', {
-        body: { name: formData.name, email: formData.email, company: formData.company, phone: formData.phone || null, message: formData.message || 'لا توجد رسالة' },
+        body: { name: formData.name, email: formData.email, company: formData.company, phone: formData.phone || null, message: formData.message || 'بدون رسالة' },
       });
-      if (sbError) throw new Error(sbError.message || 'فشل إرسال النموذج');
+      if (sbError) throw new Error(sbError.message || 'تعذر إرسال النموذج');
       setFormSuccess(true);
       setFormData({ name: '', email: '', company: '', phone: '', message: '' });
       setConsent(false);
       setTimeout(() => setFormSuccess(false), 5000);
     } catch (err: any) {
-      setFormError(err.message || 'حدث خطأ. حاول مرة أخرى.');
+      setFormError(err.message || 'حدث خطأ. يرجى المحاولة مرة أخرى.');
     } finally {
       setFormSubmitting(false);
     }
@@ -294,7 +294,7 @@ export default function ArabicHomePage() {
             <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-8 w-auto" />
           </Link>
           <div className="hidden md:flex gap-7 text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            <button onClick={() => scrollTo(whatRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">ماذا نقدم</button>
+            <button onClick={() => scrollTo(whatRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">قدراتنا</button>
             <button onClick={() => scrollTo(howRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">كيف نعمل</button>
             <button onClick={() => scrollTo(partnersRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">شركاؤنا</button>
             <button onClick={() => scrollTo(contactRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">اتصل بنا</button>
@@ -310,23 +310,23 @@ export default function ArabicHomePage() {
         <div className="relative z-10 max-w-[1180px] mx-auto px-7 w-full">
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-sm tracking-wider text-[#00BFFF] font-medium mb-5" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            مكامل التحول المؤسسي بالذكاء الاصطناعي — المملكة العربية السعودية
+            شريك التحول المؤسسي للذكاء الاصطناعي - المملكة العربية السعودية
           </motion.p>
 
           <motion.h1 initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
             className="font-bold max-w-[16ch] leading-tight" style={{ fontSize: 'clamp(40px,7vw,80px)', fontFamily: "'Tajawal', sans-serif" }}>
-            نبيع <AnimatePresence mode="wait"><motion.span key={cycIdx} initial={{ opacity: 0, filter: 'blur(8px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(8px)' }} transition={{ duration: 0.25 }} style={{ color: cycles[cycIdx].color, display: 'inline-block' }}>{cycles[cycIdx].word}</motion.span></AnimatePresence>
-            <br />— ليس مجرد تقنية.
+            نصمم الذكاء المؤسسي. لا نكتفي بتوفير التقنية. <AnimatePresence mode="wait"><motion.span key={cycIdx} initial={{ opacity: 0, filter: 'blur(8px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(8px)' }} transition={{ duration: 0.25 }} style={{ color: cycles[cycIdx].color, display: 'inline-block' }}>{cycles[cycIdx].word}</motion.span></AnimatePresence>
+            <br />- ليس مجرد تقنية.
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
             className="text-[#9AA4AF] mt-6 font-normal max-w-2xl leading-relaxed" style={{ fontSize: 'clamp(18px,2.4vw,24px)', fontFamily: "'Tajawal', sans-serif" }}>
-            نجهّز المؤسسات السعودية للمستقبل: ذكاء اصطناعي جاهز للإنتاج، أنظمة متصلة، وبنية تحتية محصّنة — كلها داخل المملكة.
+            نبني الجاهزية المؤسسية للمستقبل: ذكاء اصطناعي منتِج، أنظمة متكاملة، وبنية تحتية محصَّنة - جميعها داخل حدود المملكة.
           </motion.p>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
             className="text-[#5B6470] text-sm mt-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            6 شركاء عالميين · 7 خطوط أعمال · متوافق مع رؤية 2030 · جدة · الرياض · الدمام
+            6 شركاء تقنيين عالميين · 7 مجالات أعمال · متوائم مع رؤية السعودية 2030 · جدة · الرياض · الدمام
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
@@ -339,7 +339,7 @@ export default function ArabicHomePage() {
             <button onClick={() => scrollTo(howRef)}
               className="text-sm text-[#9AA4AF] border-b border-transparent hover:text-white hover:border-[#00BFFF] transition-colors bg-transparent border-none cursor-pointer"
               style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              كيف نعمل معاً؟
+              منهجية العمل
             </button>
           </motion.div>
         </div>
@@ -360,20 +360,20 @@ export default function ArabicHomePage() {
         </div>
       </section>
 
-      {/* ═══ WHAT WE DELIVER — 3 Pillars → 7 Lines ═══ */}
+      {/* ═══ WHAT WE DELIVER - 3 Pillars → 7 Lines ═══ */}
       <section ref={whatRef} className="py-28 scroll-mt-20" id="what-we-deliver">
         <div className="max-w-[1180px] mx-auto px-7">
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-sm text-[#00BFFF] font-medium mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            ماذا نقدم
+            قدراتنا
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="font-bold mb-6" style={{ fontSize: 'clamp(30px,5vw,52px)', fontFamily: "'Tajawal', sans-serif" }}>
-            ثلاث ركائز. سبعة خطوط أعمال. تحول واحد.
+            ثلاث ركائز. سبعة مجالات. تحول مؤسسي متكامل.
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
             className="text-[#9AA4AF] text-lg mb-16 max-w-3xl leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            كل خط من خطوط الأعمال السبعة قابل للشراء بشكل مستقل أو كحزمة متكاملة. ننفذ ونشغّل — لا نبيع تراخيص ونسلّمك لشركائنا.
+            كل مجال من المجالات السبعة متاح بشكل مستقل أو ضمن حزمة تحول متكاملة. ننفذ ونشغّل - لا نكتفي بتوريد التراخيص وتسليمها.
           </motion.p>
 
           {pillarsData.map((pillar, pi) => (
@@ -403,10 +403,10 @@ export default function ArabicHomePage() {
             </motion.div>
           ))}
 
-          {/* Line 7 — Managed Operations (cross-cutting) */}
+          {/* Line 7 - Managed Operations (cross-cutting) */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
             <span className="inline-block px-4 py-1.5 rounded-full border border-white/10 text-xs text-[#5B6470] mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              الخط السابع — يشمل جميع الركائز
+              المجال السابع - يغطي جميع الركائز
             </span>
             <SpotlightCard color={managedOpsLine.color} className="text-center max-w-2xl mx-auto">
               <div className="text-2xl mb-3">{managedOpsLine.icon}</div>
@@ -423,13 +423,13 @@ export default function ArabicHomePage() {
         <div className="max-w-[1180px] mx-auto px-7 text-center">
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-sm text-[#00BFFF] font-medium mb-10" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            نتائج مثبتة في المملكة
+            نتائج موثقة في السوق السعودي
           </motion.p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
             {[
-              { num: 40, suffix: '%', lbl: 'انخفاض في عبء الامتثال اليدوي' },
-              { num: 5, suffix: '×', lbl: 'دورات قرار أسرع مع بيانات جاهزة للـ AI' },
-              { num: 50, suffix: '%', lbl: 'انقطاعات أقل مع الصيانة التنبؤية' },
+              { num: 40, suffix: '%', lbl: 'انخفاض أعباء الامتثال اليدوي' },
+              { num: 5, suffix: '×', lbl: 'دورات قرار أسرع مع بيانات مهيأة للذكاء الاصطناعي' },
+              { num: 50, suffix: '%', lbl: 'انقطاعات تشغيلية أقل مع الصيانة التنبؤية' },
             ].map((ps, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
                 <AnimatedCounter target={ps.num} suffix={ps.suffix} label={ps.lbl} started={proofStarted} />
@@ -438,7 +438,7 @@ export default function ArabicHomePage() {
           </div>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
             className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            النطاقات تعكس بحوث القطاع. النتائج الخاصة بالعميل تُحدد خلال مرحلة الاكتشاف والتقييم.
+            النطاقات المذكورة مستندة إلى بحوث القطاع. النتائج الخاصة بكل عميل تُحدَّد خلال مرحلة الاكتشاف والتقييم.
           </motion.p>
         </div>
       </section>
@@ -452,7 +452,7 @@ export default function ArabicHomePage() {
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            لا نبيع منتجاتهم — نبني بها حلولاً.
+            لا نكتفي بتوريد منتجاتهم — نوظفها لبناء حلول مؤسسية متكاملة.
           </motion.h2>
         </div>
         <div className="overflow-hidden" style={{ maskImage: 'linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)' }}>
@@ -466,7 +466,7 @@ export default function ArabicHomePage() {
         </div>
       </section>
 
-      {/* ═══ TIMELINE — How we engage ═══ */}
+      {/* ═══ TIMELINE - How we engage ═══ */}
       <section ref={howRef} className="py-28 scroll-mt-20" id="how-we-engage">
         <div className="max-w-[1180px] mx-auto px-7 relative" ref={timelineRef}>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -475,7 +475,7 @@ export default function ArabicHomePage() {
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="font-bold mb-16" style={{ fontSize: 'clamp(28px,4vw,44px)', fontFamily: "'Tajawal', sans-serif" }}>
-            كل تحول يبدأ بمحادثة.
+            كل تحول مؤسسي يبدأ بحوار.
           </motion.h2>
 
           {/* Line + Progress */}
@@ -485,11 +485,11 @@ export default function ArabicHomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
             {[
-              { time: '45 دقيقة', title: 'الإحاطة التنفيذية', desc: 'أولوياتك. ليس عرضاً.' },
-              { time: '1–2 أسبوع', title: 'الاكتشاف', desc: 'نرسم المعمارية والأهداف.' },
-              { time: '2–4 أسابيع', title: 'المخطط', desc: 'خريطة طريق وجدوى أعمال.' },
-              { time: '8–16 أسبوع', title: 'التنفيذ', desc: 'نشر، دمج، تبني.' },
-              { time: 'مستمر', title: 'العمليات المدارة', desc: 'تحسين وتطوير مستمر.' },
+              { time: '45 دقيقة', title: 'الإحاطة التنفيذية', desc: 'أولوياتك. ليس عرض مبيعات.' },
+              { time: '1–2 أسبوع', title: 'الاكتشاف والتقييم', desc: 'نرسم المعمارية المستهدفة والأهداف المؤسسية.' },
+              { time: '2–4 أسابيع', title: 'المخطط التفصيلي', desc: 'خريطة طريق تنفيذية ودراسة جدوى تفصيلية.' },
+              { time: '8–16 أسبوع', title: 'التنفيذ', desc: 'نشر، دمج، وتمكين التبني المؤسسي.' },
+              { time: 'مستمر', title: 'العمليات المدارة', desc: 'تحسين مستمر وتطوير متواصل.' },
             ].map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative">
                 <div className="w-3.5 h-3.5 rounded-full bg-[#1A1F28] border-2 border-[#00BFFF] mb-8" />
@@ -511,20 +511,20 @@ export default function ArabicHomePage() {
               تحدث إلى مستشار.
             </h2>
             <p className="text-[#9AA4AF] text-lg max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              نرد خلال ٢٤ ساعة لمناقشة أولويات التحول في مؤسستك. بدون التزام. بدون عرض مبيعات.
+              يرد فريقنا خلال ٢٤ ساعة لمناقشة أولويات التحول المؤسسي لديكم. دون التزام. دون عرض مبيعات.
             </p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
             className="bg-[#12161C] border border-white/5 rounded-2xl p-8 md:p-12">
-            
+
             {formSuccess ? (
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-10">
                 <div className="w-16 h-16 rounded-full bg-[#00D4AA20] flex items-center justify-center mx-auto mb-6">
                   <span className="text-3xl">✓</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Tajawal', sans-serif" }}>تم الاستلام!</h3>
-                <p className="text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>سنرد عليك خلال ٢٤ ساعة. شكراً لتواصلك معنا.</p>
+                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Tajawal', sans-serif" }}>تم استلام طلبكم.</h3>
+                <p className="text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>سيتواصل معكم فريقنا خلال ٢٤ ساعة. شكراً لتواصلكم معنا.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-5">
@@ -536,7 +536,7 @@ export default function ArabicHomePage() {
                     <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>الاسم *</label>
                     <input type="text" name="name" value={formData.name} onChange={e => { setFormData(p => ({ ...p, name: e.target.value })); if (formError) setFormError(null); }}
                       className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
-                      placeholder="اسمك الكامل" style={{ fontFamily: "'Tajawal', sans-serif" }} required />
+                      placeholder="الاسم الكامل" style={{ fontFamily: "'Tajawal', sans-serif" }} required />
                   </div>
                   <div>
                     <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>البريد الإلكتروني *</label>
@@ -548,7 +548,7 @@ export default function ArabicHomePage() {
                     <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>الشركة</label>
                     <input type="text" name="company" value={formData.company} onChange={e => { setFormData(p => ({ ...p, company: e.target.value })); if (formError) setFormError(null); }}
                       className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
-                      placeholder="اسم شركتك" style={{ fontFamily: "'Tajawal', sans-serif" }} />
+                      placeholder="اسم الشركة" style={{ fontFamily: "'Tajawal', sans-serif" }} />
                   </div>
                   <div>
                     <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>رقم الهاتف</label>
@@ -562,19 +562,19 @@ export default function ArabicHomePage() {
                   <textarea name="message" value={formData.message} onChange={e => { setFormData(p => ({ ...p, message: e.target.value })); if (formError) setFormError(null); }}
                     rows={4} maxLength={1000}
                     className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors resize-none"
-                    placeholder="أخبرنا عن أولويات التحول في مؤسستك..." style={{ fontFamily: "'Tajawal', sans-serif" }} />
+                    placeholder="أخبرنا عن أولويات التحول المؤسسي لديكم..." style={{ fontFamily: "'Tajawal', sans-serif" }} />
                 </div>
                 <div className="flex items-start gap-3">
                   <input type="checkbox" id="consent" checked={consent} onChange={e => setConsent(e.target.checked)}
                     className="mt-1 w-4 h-4 rounded border-white/20 bg-[#0B0D10] text-[#00BFFF] focus:ring-[#00BFFF]" />
                   <label htmlFor="consent" className="text-sm text-[#9AA4AF] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-                    أوافق على <Link to="/privacy-policy" className="text-[#00BFFF] hover:underline">سياسة الخصوصية</Link> وأوافق على جمع بياناتي للتواصل معي.
+                    أوافق على <Link to="/privacy-policy" className="text-[#00BFFF] hover:underline">سياسة الخصوصية</Link> وعلى جمع بياناتي لغرض التواصل.
                   </label>
                 </div>
                 <button type="submit" disabled={formSubmitting} data-magnetic
                   className="w-full py-4 rounded-full font-semibold text-sm text-[#04141c] transition-shadow hover:shadow-[0_8px_30px_rgba(0,191,255,.35)] disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}>
-                  {formSubmitting ? 'جاري الإرسال...' : 'أرسل طلبي ←'}
+                  {formSubmitting ? 'جارٍ الإرسال...' : 'إرسال الطلب ←'}
                 </button>
               </form>
             )}
@@ -585,11 +585,11 @@ export default function ArabicHomePage() {
       {/* ═══ FOOTER ═══ */}
       <footer className="py-12 border-t border-white/5 text-center text-sm text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
         <div className="max-w-[1180px] mx-auto px-7">
-          <p>نصمم الذكاء والأتمتة والثقة في صميم الأعمال.</p>
+          <p>نصمم الذكاء والأتمتة والثقة في صميم الأعمال المؤسسية.</p>
           <p className="mt-2">
             <a href="mailto:info@bionics.com.sa" className="hover:text-[#00BFFF] transition-colors">info@bionics.com.sa</a>
             {' · '}<Link to="/" className="hover:text-[#00BFFF] transition-colors">English</Link>
-            {' · '}متوافق مع رؤية السعودية 2030
+            {' · '}متوائم مع رؤية السعودية 2030
           </p>
         </div>
       </footer>
