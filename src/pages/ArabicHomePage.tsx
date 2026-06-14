@@ -138,10 +138,42 @@ export default function ArabicHomePage() {
   const mouseRef = useRef({ x: -999, y: -999 });
   const reducedMotion = useRef(false);
 
+  // ─── Contact form ───
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', message: '' });
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormSubmitting(true);
+    setFormError(null);
+    try {
+      if (!formData.name || !formData.email) throw new Error('الاسم والبريد الإلكتروني مطلوبان');
+      if (!consent) throw new Error('يرجى الموافقة على سياسة الخصوصية');
+      if (formData.phone && !/^[\d\s\+\-\(\)]{10,}$/.test(formData.phone)) throw new Error('يرجى إدخال رقم هاتف صحيح');
+      const { supabase } = await import('../lib/supabase');
+      const { error: sbError } = await supabase.functions.invoke('contact-form', {
+        body: { name: formData.name, email: formData.email, company: formData.company, phone: formData.phone || null, message: formData.message || 'لا توجد رسالة' },
+      });
+      if (sbError) throw new Error(sbError.message || 'فشل إرسال النموذج');
+      setFormSuccess(true);
+      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+      setConsent(false);
+      setTimeout(() => setFormSuccess(false), 5000);
+    } catch (err: any) {
+      setFormError(err.message || 'حدث خطأ. حاول مرة أخرى.');
+    } finally {
+      setFormSubmitting(false);
+    }
+  };
+
   // Section refs for scroll navigation
   const whatRef = useRef<HTMLElement>(null);
   const howRef = useRef<HTMLElement>(null);
   const partnersRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
 
   // ─── Reduced motion ───
   useEffect(() => { reducedMotion.current = matchMedia('(prefers-reduced-motion: reduce)').matches; }, []);
@@ -265,7 +297,7 @@ export default function ArabicHomePage() {
             <button onClick={() => scrollTo(whatRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">ماذا نقدم</button>
             <button onClick={() => scrollTo(howRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">كيف نعمل</button>
             <button onClick={() => scrollTo(partnersRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">شركاؤنا</button>
-            <Link to="/contact" className="hover:text-white transition-colors">اتصل بنا</Link>
+            <button onClick={() => scrollTo(contactRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">اتصل بنا</button>
           </div>
           <Link to="/" className="text-sm text-[#9AA4AF] hover:text-white transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>English</Link>
         </div>
@@ -470,23 +502,82 @@ export default function ArabicHomePage() {
         </div>
       </section>
 
-      {/* ═══ FINAL CTA ═══ */}
-      <section className="py-28 text-center">
-        <div className="max-w-[1180px] mx-auto px-7">
-          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="font-bold" style={{ fontSize: 'clamp(34px,6vw,64px)', fontFamily: "'Tajawal', sans-serif" }}>
-            لنصمم الذكاء<br />في مؤسستك.
-          </motion.h2>
-          <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-            className="text-[#9AA4AF] mt-4 mb-9 max-w-lg mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            أول خطوة: محادثة لمدة ٤٥ دقيقة. بدون التزام. بدون عرض. أولوياتك أولاً.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <Link to="/contact" data-magnetic
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-sm text-[#04141c] transition-shadow hover:shadow-[0_8px_30px_rgba(0,191,255,.35)]"
-              style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}>
-              تحدث إلى مستشار ←
-            </Link>
+      {/* ═══ CONTACT FORM ═══ */}
+      <section ref={contactRef} className="py-28 scroll-mt-20" id="contact">
+        <div className="max-w-3xl mx-auto px-7">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <p className="text-sm text-[#00BFFF] font-medium mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>اتصل بنا</p>
+            <h2 className="font-bold mb-4" style={{ fontSize: 'clamp(28px,5vw,48px)', fontFamily: "'Tajawal', sans-serif" }}>
+              تحدث إلى مستشار.
+            </h2>
+            <p className="text-[#9AA4AF] text-lg max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              نرد خلال ٢٤ ساعة لمناقشة أولويات التحول في مؤسستك. بدون التزام. بدون عرض مبيعات.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+            className="bg-[#12161C] border border-white/5 rounded-2xl p-8 md:p-12">
+            
+            {formSuccess ? (
+              <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-10">
+                <div className="w-16 h-16 rounded-full bg-[#00D4AA20] flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl">✓</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Tajawal', sans-serif" }}>تم الاستلام!</h3>
+                <p className="text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>سنرد عليك خلال ٢٤ ساعة. شكراً لتواصلك معنا.</p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleFormSubmit} className="space-y-5">
+                {formError && (
+                  <div className="bg-[#FF444420] border border-[#FF444440] rounded-lg p-4 text-sm text-[#FF4444] text-center" style={{ fontFamily: "'Tajawal', sans-serif" }}>{formError}</div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>الاسم *</label>
+                    <input type="text" name="name" value={formData.name} onChange={e => { setFormData(p => ({ ...p, name: e.target.value })); if (formError) setFormError(null); }}
+                      className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
+                      placeholder="اسمك الكامل" style={{ fontFamily: "'Tajawal', sans-serif" }} required />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>البريد الإلكتروني *</label>
+                    <input type="email" name="email" value={formData.email} onChange={e => { setFormData(p => ({ ...p, email: e.target.value })); if (formError) setFormError(null); }}
+                      className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
+                      placeholder="example@company.com" dir="ltr" required />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>الشركة</label>
+                    <input type="text" name="company" value={formData.company} onChange={e => { setFormData(p => ({ ...p, company: e.target.value })); if (formError) setFormError(null); }}
+                      className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
+                      placeholder="اسم شركتك" style={{ fontFamily: "'Tajawal', sans-serif" }} />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>رقم الهاتف</label>
+                    <input type="tel" name="phone" value={formData.phone} onChange={e => { setFormData(p => ({ ...p, phone: e.target.value })); if (formError) setFormError(null); }}
+                      className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
+                      placeholder="+966 5XXXXXXXX" dir="ltr" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>رسالتك</label>
+                  <textarea name="message" value={formData.message} onChange={e => { setFormData(p => ({ ...p, message: e.target.value })); if (formError) setFormError(null); }}
+                    rows={4} maxLength={1000}
+                    className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors resize-none"
+                    placeholder="أخبرنا عن أولويات التحول في مؤسستك..." style={{ fontFamily: "'Tajawal', sans-serif" }} />
+                </div>
+                <div className="flex items-start gap-3">
+                  <input type="checkbox" id="consent" checked={consent} onChange={e => setConsent(e.target.checked)}
+                    className="mt-1 w-4 h-4 rounded border-white/20 bg-[#0B0D10] text-[#00BFFF] focus:ring-[#00BFFF]" />
+                  <label htmlFor="consent" className="text-sm text-[#9AA4AF] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+                    أوافق على <Link to="/privacy-policy" className="text-[#00BFFF] hover:underline">سياسة الخصوصية</Link> وأوافق على جمع بياناتي للتواصل معي.
+                  </label>
+                </div>
+                <button type="submit" disabled={formSubmitting} data-magnetic
+                  className="w-full py-4 rounded-full font-semibold text-sm text-[#04141c] transition-shadow hover:shadow-[0_8px_30px_rgba(0,191,255,.35)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}>
+                  {formSubmitting ? 'جاري الإرسال...' : 'أرسل طلبي ←'}
+                </button>
+              </form>
+            )}
           </motion.div>
         </div>
       </section>
