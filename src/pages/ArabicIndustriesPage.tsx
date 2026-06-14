@@ -40,7 +40,7 @@ const footerLinks_ar = [
   { label: 'قدراتنا', to: '/ar/capabilities' },
   { label: 'القطاعات', to: '/ar/industries' },
   { label: 'اتصل بنا', to: '/ar#contact' },
-  { label: 'سياسة الخصوصية', to: '/privacy-policy' },
+  { label: 'سياسة الخصوصية', to: '/ar/privacy' },
 ];
 
 export default function ArabicIndustriesPage() {
