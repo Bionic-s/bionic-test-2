@@ -316,7 +316,7 @@ export default function ArabicHomePage() {
 
           <motion.h1 initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
             className="font-bold max-w-[16ch] leading-tight" style={{ fontSize: 'clamp(40px,7vw,80px)', fontFamily: "'Tajawal', sans-serif" }}>
-            نصمم <AnimatePresence mode="wait"><motion.span key={cycIdx} initial={{ opacity: 0, filter: 'blur(8px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(8px)' }} transition={{ duration: 0.25 }} style={{ color: cycles[cycIdx].color, display: 'inline-block' }}>{cycles[cycIdx].word}</motion.span></AnimatePresence> في نظام مؤسسي موحد.
+            نصمم <AnimatePresence mode="wait"><motion.span key={cycIdx} initial={{ opacity: 0, filter: 'blur(8px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(8px)' }} transition={{ duration: 0.25 }} style={{ color: A, display: 'inline-block' }}>{cycles[cycIdx].word}</motion.span></AnimatePresence> في نظام مؤسسي موحد.
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
