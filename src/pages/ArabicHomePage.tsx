@@ -314,10 +314,13 @@ export default function ArabicHomePage() {
       {/* ═══ NAV ═══ */}
       <nav className="fixed top-0 inset-x-0 z-[100] backdrop-blur-[10px] bg-[#0B0D1088] border-b border-white/5">
         <div className="max-w-[1180px] mx-auto px-7 flex items-center justify-between h-[68px]">
-          <div className="flex items-center gap-2.5 font-bold text-lg" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            <span className="w-[22px] h-[22px] rounded-md" style={{ background: `conic-gradient(from 0deg, ${A}, ${P}, ${A})` }} />
-            BIONIC SOLUTIONS
-          </div>
+          <Link to="/ar" className="flex items-center">
+            <img
+              src="/test-site-2/bionic-full-white.svg"
+              alt="Bionic Solutions"
+              className="h-8 w-auto"
+            />
+          </Link>
           <div className="hidden md:flex gap-7 text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             <Link to="/ar" className="hover:text-white transition-colors">الرئيسية</Link>
             <Link to="/about" className="hover:text-white transition-colors">من نحن</Link>
@@ -439,7 +442,7 @@ export default function ArabicHomePage() {
         </div>
       </section>
 
-      {/* ═══ BENTO ═══ */}
+      {/* ═══ 3 PILLARS → 7 BUSINESS LINES ═══ */}
       <section className="py-28">
         <div className="max-w-[1180px] mx-auto px-7">
           <motion.p
@@ -456,112 +459,158 @@ export default function ArabicHomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-medium mb-10"
+            className="font-medium mb-16"
             style={{ fontSize: 'clamp(30px,5vw,52px)', fontFamily: "'Tajawal', sans-serif" }}
           >
-            نتائج، وليس إنفاق تقني.
+            ثلاث ركائز. سبعة خطوط أعمال. تحول واحد.
           </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {/* Intelligence card — wide */}
+          {/* ── Pillar 1: Intelligence ── */}
+          <div className="mb-20">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              onMouseMove={handleCardMove}
-              className="relative bg-[#12161C] border border-white/5 rounded-[18px] p-7 overflow-hidden sm:col-span-3 group cursor-pointer"
-              style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
+              className="flex items-center gap-3 mb-8"
             >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), rgba(0,191,255,.14), transparent 60%)` }}
-              />
-              <div className="absolute right-0 top-6 bottom-6 w-[3px] rounded-sm" style={{ background: A }} />
-              <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الذكاء</span>
-              <h3 className="text-[22px] font-medium mt-3 mb-2.5" style={{ fontFamily: "'Tajawal', sans-serif" }}>قرارات في دقائق، لا أسابيع.</h3>
-              <p className="text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>بيانات جاهزة للذكاء الاصطناعي، ومساعدات ذكية، ورؤى تنفيذية يعتمد عليها قادتك.</p>
+              <span className="w-3 h-3 rounded-full" style={{ background: A }} />
+              <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>الركيزة الأولى</span>
+              <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: A }}>الذكاء</h3>
             </motion.div>
+            <p className="text-[#9AA4AF] text-lg mb-8 max-w-2xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              نحول البيانات الخام إلى قرارات ذكية. منصات جاهزة للذكاء الاصطناعي، تحليلات تنفيذية، ومساعدات ذكية تختصر الزمن من أسابيع إلى دقائق.
+            </p>
 
-            {/* Trust card — wide */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              onMouseMove={handleCardMove}
-              className="relative bg-[#12161C] border border-white/5 rounded-[18px] p-7 overflow-hidden sm:col-span-3 group cursor-pointer"
-              style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), rgba(52,211,153,.14), transparent 60%)` }}
-              />
-              <div className="absolute right-0 top-6 bottom-6 w-[3px] rounded-sm" style={{ background: G }} />
-              <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الثقة</span>
-              <h3 className="text-[22px] font-medium mt-3 mb-2.5" style={{ fontFamily: "'Tajawal', sans-serif" }}>أساس يمكنك الدفاع عنه.</h3>
-              <p className="text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثقة معدومة، استعادة ثابتة، وبنية تحتية ذات سيادة مبنية للواقع التنظيمي السعودي.</p>
-            </motion.div>
-
-            {/* Automation */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              onMouseMove={handleCardMove}
-              className="relative bg-[#12161C] border border-white/5 rounded-[18px] p-7 overflow-hidden sm:col-span-2 group cursor-pointer"
-              style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), rgba(167,139,250,.14), transparent 60%)` }}
-              />
-              <div className="absolute right-0 top-6 bottom-6 w-[3px] rounded-sm" style={{ background: P }} />
-              <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الأتمتة</span>
-              <h3 className="text-[22px] font-medium mt-3 mb-2.5" style={{ fontFamily: "'Tajawal', sans-serif" }}>أنظمة تتحرك كوحدة واحدة.</h3>
-              <p className="text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تكامل وتنسيق عبر المؤسسة بأكملها.</p>
-            </motion.div>
-
-            {/* Experience */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              onMouseMove={handleCardMove}
-              className="relative bg-[#12161C] border border-white/5 rounded-[18px] p-7 overflow-hidden sm:col-span-2 group cursor-pointer"
-              style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), rgba(0,191,255,.14), transparent 60%)` }}
-              />
-              <div className="absolute right-0 top-6 bottom-6 w-[3px] rounded-sm" style={{ background: A }} />
-              <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>التجربة</span>
-              <h3 className="text-[22px] font-medium mt-3 mb-2.5" style={{ fontFamily: "'Tajawal', sans-serif" }}>عملاء يستمرون.</h3>
-              <p className="text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تفاعل متصل على منصة Salesforce.</p>
-            </motion.div>
-
-            {/* Operations */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25 }}
-              onMouseMove={handleCardMove}
-              className="relative bg-[#12161C] border border-white/5 rounded-[18px] p-7 overflow-hidden sm:col-span-2 group cursor-pointer"
-              style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), rgba(251,146,60,.14), transparent 60%)` }}
-              />
-              <div className="absolute right-0 top-6 bottom-6 w-[3px] rounded-sm" style={{ background: W }} />
-              <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>العمليات</span>
-              <h3 className="text-[22px] font-medium mt-3 mb-2.5" style={{ fontFamily: "'Tajawal', sans-serif" }}>قيمة تتراكم.</h3>
-              <p className="text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>عمليات مُدارة على مدار الساعة.</p>
-            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: 'الذكاء الاصطناعي والأتمتة المؤسسية', desc: 'تحول ذكي بقيادة AI — وكلاء أذكياء، مساعدين افتراضيين، وأتمتة ذكية على مستوى المؤسسة. من IBM watsonx إلى Salesforce Einstein.', partners: 'IBM watsonx · Salesforce Einstein · Intel Gaudi', color: A },
+                { title: 'البيانات والتحليلات والذكاء', desc: 'منصات بيانات جاهزة للذكاء الاصطناعي، لوحات قيادة تنفيذية، مؤشرات أداء رئيسية، وإدارة البيانات الرئيسية الموحدة. مصدر واحد للحقيقة.', partners: 'Informatica · Tableau · Google BigQuery', color: A },
+              ].map((line, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  onMouseMove={handleCardMove}
+                  className="relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer"
+                  style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
+                >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                    style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(0,191,255,.1), transparent 60%)` }} />
+                  <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: line.color }} />
+                  <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
+                  <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
+                  <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
+
+          {/* ── Pillar 2: Automation ── */}
+          <div className="mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-8"
+            >
+              <span className="w-3 h-3 rounded-full" style={{ background: P }} />
+              <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>الركيزة الثانية</span>
+              <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: P }}>الأتمتة</h3>
+            </motion.div>
+            <p className="text-[#9AA4AF] text-lg mb-8 max-w-2xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              نربط الأنظمة وننسق العمليات. تكامل API-led، أتمتة سير العمل، وتطبيقات أعمال ذكية تجعل كل جزء في مؤسستك يتحرك كوحدة واحدة.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: 'تطبيقات الأعمال وتجربة العملاء', desc: 'منصة موحدة لإدارة علاقات العملاء، مركز اتصال ذكي، أتمتة التسويق، التجارة الإلكترونية، وتجربة موظف متكاملة.', partners: 'Salesforce · Tableau · MuleSoft', color: P },
+                { title: 'التكامل والعمليات الذكية', desc: 'ربط الأنظمة عبر API-led architecture، تنسيق الأحداث، وأتمتة سير العمل. مؤسستك تتحرك بتناغم — كل جزء يؤدي دوره.', partners: 'MuleSoft Anypoint · Informatica · Apigee', color: P },
+              ].map((line, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  onMouseMove={handleCardMove}
+                  className="relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer"
+                  style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
+                >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                    style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(167,139,250,.1), transparent 60%)` }} />
+                  <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: line.color }} />
+                  <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
+                  <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
+                  <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Pillar 3: Trust ── */}
+          <div className="mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-8"
+            >
+              <span className="w-3 h-3 rounded-full" style={{ background: G }} />
+              <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>الركيزة الثالثة</span>
+              <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: G }}>الثقة</h3>
+            </motion.div>
+            <p className="text-[#9AA4AF] text-lg mb-8 max-w-2xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              نبني أسساً رقمية آمنة ومرنة وذات سيادة. من الأمن السيبراني إلى البنية التحتية السيادية — حماية كاملة للواقع التنظيمي السعودي.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: 'الأمن السيبراني والمرونة الرقمية', desc: 'مركز عمليات أمنية متكامل، Zero Trust، حوكمة الهوية، ومرونة ضد الفدية. حماية متوافقة مع NCA وهيئة الأمن السيبراني.', partners: 'IBM QRadar · Guardium · Zero Trust', color: G },
+                { title: 'البنية التحتية السيادية والسحابة الهجينة', desc: 'تحديث مراكز البيانات، تخزين عصري، بنية تحتية للذكاء الاصطناعي، وسحابة خاصة هجينة. كل شيء داخل المملكة — سيادة كاملة.', partners: 'Dell PowerEdge · IBM FlashSystem · Red Hat OpenShift', color: G },
+              ].map((line, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  onMouseMove={handleCardMove}
+                  className="relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer"
+                  style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
+                >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                    style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(52,211,153,.1), transparent 60%)` }} />
+                  <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: line.color }} />
+                  <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
+                  <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
+                  <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Line 7: Managed Operations (cross-cutting) ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            onMouseMove={handleCardMove}
+            className="relative bg-gradient-to-l from-[#12161C] to-[#1A1F28] border border-white/5 rounded-2xl p-8 overflow-hidden group cursor-pointer text-center"
+            style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
+          >
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+              style={{ background: `radial-gradient(320px circle at var(--mx,50%) var(--my,50%), rgba(0,191,255,.08), transparent 60%)` }} />
+            <span className="inline-block px-4 py-1.5 rounded-full border border-white/10 text-xs text-[#5B6470] mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              الخط السابع — شامل لجميع الركائز
+            </span>
+            <h4 className="text-xl font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>الخدمات التقنية والعمليات المدارة</h4>
+            <p className="text-sm text-[#9AA4AF] max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              خدمات مُدارة، عمليات سحابية، عمليات ذكاء اصطناعي، ومراقبة على مدار الساعة. فريق تشغيلي يضمن استمرارية أعمالك.
+            </p>
+            <span className="text-xs text-[#5B6470] mt-3 block" style={{ fontFamily: "'Tajawal', sans-serif" }}>24×7 Monitoring · CloudOps · AIOps · Managed Services</span>
+          </motion.div>
         </div>
       </section>
 
@@ -683,12 +732,12 @@ export default function ArabicHomePage() {
             {[...partnersList, ...partnersList].map((p, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl px-6 py-3 flex items-center justify-center h-[60px] min-w-[140px]"
+                className="bg-[#1A1F2888] border border-white/5 rounded-xl px-6 py-3 flex items-center justify-center h-[68px] min-w-[150px] hover:border-[#00BFFF40] transition-colors"
               >
                 <img
                   src={`/test-site-2/images/partners/${p.file}`}
                   alt={p.name}
-                  className="max-h-[36px] max-w-[120px] object-contain"
+                  className="max-h-[38px] max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity"
                   loading="lazy"
                 />
               </div>
