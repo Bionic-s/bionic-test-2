@@ -294,6 +294,7 @@ export default function ArabicHomePage() {
             <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-8 w-auto" />
           </Link>
           <div className="hidden md:flex gap-7 text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            <Link to="/ar/about" className="hover:text-white transition-colors">من نحن</Link>
             <button onClick={() => scrollTo(whatRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">قدراتنا</button>
             <button onClick={() => scrollTo(howRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">كيف نعمل</button>
             <button onClick={() => scrollTo(partnersRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">شركاؤنا</button>
