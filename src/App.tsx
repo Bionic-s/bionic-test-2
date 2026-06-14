@@ -194,9 +194,13 @@ function AppContent() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      <Footer />
-      <StickyCTABar />
-      <ProgressiveProfiling />
+      {!location.pathname.startsWith('/ar') && (
+        <>
+          <Footer />
+          <StickyCTABar />
+          <ProgressiveProfiling />
+        </>
+      )}
       <CookieConsent />
     </div>
   );
