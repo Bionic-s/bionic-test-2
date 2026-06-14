@@ -17,6 +17,7 @@ import ContactPage from './pages/ContactPage';
 import BookDiscoveryCallPage from './pages/BookDiscoveryCall';
 import NotFoundPage from './pages/NotFoundPage';
 import ArabicHomePage from './pages/ArabicHomePage';
+import ArabicPrivacyPolicyPage from './pages/ArabicPrivacyPolicyPage';
 import ArabicCapabilitiesPage from './pages/ArabicCapabilitiesPage';
 import ArabicAboutPage from './pages/ArabicAboutPage';
 import ArabicIndustriesPage from './pages/ArabicIndustriesPage';
@@ -192,6 +193,7 @@ function AppContent() {
 
           {/* Arabic Homepage */}
           <Route path="/ar" element={<ArabicHomePage />} />
+          <Route path="/ar/privacy" element={<ArabicPrivacyPolicyPage />} />
           <Route path="/ar/capabilities" element={<ArabicCapabilitiesPage />} />
           <Route path="/ar/about" element={<ArabicAboutPage />} />
           <Route path="/ar/industries" element={<ArabicIndustriesPage />} />

@@ -568,7 +568,7 @@ export default function ArabicHomePage() {
                   <input type="checkbox" id="consent" checked={consent} onChange={e => setConsent(e.target.checked)}
                     className="mt-1 w-4 h-4 rounded border-white/20 bg-[#0B0D10] text-[#00BFFF] focus:ring-[#00BFFF]" />
                   <label htmlFor="consent" className="text-sm text-[#9AA4AF] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-                    أوافق على <Link to="/privacy-policy" className="text-[#00BFFF] hover:underline">سياسة الخصوصية</Link> وعلى جمع بياناتي لغرض التواصل.
+                    أوافق على <Link to="/ar/privacy" className="text-[#00BFFF] hover:underline">سياسة الخصوصية</Link> وعلى جمع بياناتي لغرض التواصل.
                   </label>
                 </div>
                 <button type="submit" disabled={formSubmitting} data-magnetic
@@ -639,7 +639,7 @@ export default function ArabicHomePage() {
                 <li><Link to="/ar/capabilities" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">قدراتنا</Link></li>
                 <li><Link to="/ar/industries" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">القطاعات</Link></li>
                 <li><Link to="/ar#contact" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">اتصل بنا</Link></li>
-                <li><Link to="/privacy-policy" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">سياسة الخصوصية</Link></li>
+                <li><Link to="/ar/privacy" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">سياسة الخصوصية</Link></li>
               </ul>
             </div>
           </div>
