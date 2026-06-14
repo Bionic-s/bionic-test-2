@@ -355,7 +355,7 @@ export default function ArabicHomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <AnimatedCounter target={6} label="شركاء تقنيون استراتيجيون" started={countersStarted} />
             <AnimatedCounter target={7} label="خطوط أعمال متكاملة" started={countersStarted} />
-            <AnimatedCounter target={4} label="قطاعات ذات أولوية" started={countersStarted} />
+            <AnimatedCounter target={5} label="قطاعات ذات أولوية" started={countersStarted} />
           </div>
         </div>
       </section>
@@ -554,7 +554,7 @@ export default function ArabicHomePage() {
                     <label className="block text-sm text-[#9AA4AF] mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>رقم الهاتف</label>
                     <input type="tel" name="phone" value={formData.phone} onChange={e => { setFormData(p => ({ ...p, phone: e.target.value })); if (formError) setFormError(null); }}
                       className="w-full bg-[#0B0D10] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#00BFFF] focus:outline-none transition-colors"
-                      placeholder="+966 5XXXXXXXX" dir="ltr" />
+                      placeholder="+966 5X XXX XXXX" dir="ltr" />
                   </div>
                 </div>
                 <div>

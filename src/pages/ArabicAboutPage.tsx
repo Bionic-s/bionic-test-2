@@ -2,7 +2,16 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Target, Eye, MapPin, Building2, ShieldCheck } from 'lucide-react';
 
+const footerLinks_ar = [
+  { label: 'من نحن', to: '/ar/about' },
+  { label: 'قدراتنا', to: '/ar/capabilities' },
+  { label: 'القطاعات', to: '/ar/industries' },
+  { label: 'اتصل بنا', to: '/ar#contact' },
+  { label: 'سياسة الخصوصية', to: '/privacy-policy' },
+];
+
 export default function ArabicAboutPage() {
+  const y = new Date().getFullYear();
   return (
     <div className="min-h-screen bg-[#0B0D10] text-white font-sans" dir="rtl" lang="ar" style={{ fontFamily: "'Tajawal', sans-serif" }}>
       <nav className="fixed top-0 inset-x-0 z-[100] backdrop-blur-[10px] bg-[#0B0D1088] border-b border-white/5">
@@ -10,10 +19,13 @@ export default function ArabicAboutPage() {
           <Link to="/ar" className="flex items-center">
             <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-8 w-auto" />
           </Link>
-          <Link to="/ar" className="flex items-center gap-1.5 text-sm text-[#9AA4AF] hover:text-white transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            العودة للرئيسية
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link to="/ar" className="flex items-center gap-1.5 text-sm text-[#9AA4AF] hover:text-white transition-colors">
+              <ArrowLeft className="w-4 h-4" />
+              العودة إلى الرئيسية
+            </Link>
+            <Link to="/" className="text-sm text-[#9AA4AF] hover:text-white transition-colors">English</Link>
+          </div>
         </div>
       </nav>
 
@@ -49,7 +61,7 @@ export default function ArabicAboutPage() {
           {/* DNA */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
             className="bg-gradient-to-l from-[#12161C] to-[#1A1F28] border border-white/5 rounded-2xl p-8 md:p-12 mb-20">
-            <h2 className="text-2xl font-bold mb-6">حمضنا النووي</h2>
+            <h2 className="text-2xl font-bold mb-6">روحنا المؤسسية</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-[#9AA4AF] leading-relaxed">
               <div>
                 <div className="text-[#00BFFF] font-bold text-lg mb-2">ننفذ</div>
@@ -84,10 +96,30 @@ export default function ArabicAboutPage() {
         </div>
       </section>
 
-      <footer className="bg-[#12161C] border-t border-white/5 py-6 text-center text-xs text-[#5B6470]">
-        <div className="max-w-[1180px] mx-auto px-7">
-          <Link to="/ar" className="hover:text-[#00BFFF] transition-colors">الرئيسية</Link>
-          {' · '}متوائم مع رؤية السعودية 2030
+      {/* Footer */}
+      <footer className="bg-[#12161C] border-t border-white/5" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+        <div className="max-w-[1180px] mx-auto px-7 py-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-2">
+              <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-7 w-auto opacity-70" />
+              <span className="text-xs text-[#5B6470]">شريك التحول المؤسسي للذكاء الاصطناعي</span>
+            </div>
+            <div className="flex items-center gap-5 text-sm text-[#9AA4AF]">
+              {footerLinks_ar.map((l, i) => (
+                <Link key={i} to={l.to} className="hover:text-[#00BFFF] transition-colors">{l.label}</Link>
+              ))}
+            </div>
+          </div>
+          <div className="border-t border-white/5 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#5B6470]">
+            <span className="inline-block px-3 py-1 rounded-full border border-white/10 text-[10px] tracking-wider">🇸🇦 متوائم مع رؤية السعودية 2030</span>
+            <div className="flex items-center gap-4">
+              <a href="mailto:info@bionics.com.sa" className="hover:text-[#00BFFF] transition-colors">info@bionics.com.sa</a>
+              <span className="text-white/10">|</span>
+              <span>© {y} Bionic Solutions</span>
+              <span className="text-white/10">|</span>
+              <Link to="/" className="hover:text-[#00BFFF] transition-colors">English</Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
