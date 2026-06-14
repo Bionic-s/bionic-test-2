@@ -16,6 +16,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BookDiscoveryCallPage from './pages/BookDiscoveryCall';
 import NotFoundPage from './pages/NotFoundPage';
+import ArabicHomePage from './pages/ArabicHomePage';
 
 // Capabilities (shared with legacy /solutions/* redirects)
 import AISolutionPage from './pages/solutions/AISolutionPage';
@@ -185,6 +186,9 @@ function AppContent() {
           {/* /case-studies / /case-studies/* → /blueprints */}
           <Route path="/case-studies" element={<Navigate to="/blueprints" replace />} />
           <Route path="/case-studies/*" element={<Navigate to="/blueprints" replace />} />
+
+          {/* Arabic Homepage */}
+          <Route path="/ar" element={<ArabicHomePage />} />
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />
