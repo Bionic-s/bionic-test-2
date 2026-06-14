@@ -22,9 +22,10 @@ export const Header = () => {
   // ── About dropdown ──
   const aboutItems = [
     { name: 'Who We Are', desc: 'Our story, leadership, and mission', path: '/about' },
-    { name: 'The Bionic Difference', desc: 'What sets us apart', path: '/about' },
     { name: 'Transformation Architecture', desc: '10 layers. One integrated system.', path: '/architecture' },
     { name: 'Enterprise Value System', desc: 'How value compounds across horizons', path: '/value' },
+    { name: 'Partner Ecosystem', desc: 'Global technology partners', path: '/partners' },
+    { name: 'Blueprints', desc: 'Transformation case studies', path: '/blueprints' },
   ];
 
   // ── Industries ──
@@ -342,21 +343,6 @@ export const Header = () => {
                 )}
               </div>
 
-              {/* ═══ Partners ═══ */}
-              <Link to="/partners" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                Partners
-              </Link>
-
-              {/* ═══ Blueprints ═══ */}
-              <Link to="/blueprints" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                Blueprints
-              </Link>
-
-              {/* ═══ Contact ═══ */}
-              <Link to="/contact" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                Contact
-              </Link>
-
               {/* ═══ Arabic ═══ */}
               <Link to="/ar" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg" style={{ fontFamily: "'Tajawal', sans-serif" }}>
                 العربية
@@ -528,24 +514,6 @@ export const Header = () => {
                   </div>
                 )}
               </div>
-
-              {/* Mobile Partners */}
-              <Link to="/partners" onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 text-accent-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                Strategic Partners
-              </Link>
-
-              {/* Mobile Blueprints */}
-              <Link to="/blueprints" onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                Blueprints
-              </Link>
-
-              {/* Mobile Contact */}
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                Contact
-              </Link>
 
               {/* Mobile Arabic */}
               <Link to="/ar" onClick={() => setMobileMenuOpen(false)}
