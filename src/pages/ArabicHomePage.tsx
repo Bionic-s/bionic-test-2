@@ -1,21 +1,15 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 
 // ─── Design tokens ───
-const A = '#00BFFF'; // accent — Intelligence
-const P = '#A78BFA'; // purple — Automation
-const G = '#34D399'; // green  — Trust
-const W = '#FB923C'; // warm   — Experience
-const DIM = '#5B6470';
+const A = '#00BFFF';
+const P = '#A78BFA';
+const G = '#34D399';
+const W = '#FB923C';
 
-// ─── Type helpers ───
-interface CounterProps { target: number; suffix?: string; label: string; sub?: string; started: boolean; }
-interface StatData { num: number; suffix?: string; lbl: string; sml: string; }
-
-// ─── Cycling word data ───
+// ─── Data ───
 const cycles = [
   { word: 'الذكاء', color: A },
   { word: 'الأتمتة', color: P },
@@ -36,55 +30,102 @@ const partnersList = [
   { name: 'Lenovo', file: 'lenovo-partner.svg' },
 ];
 
-// ─── sub components ───
+// ─── Business Lines ───
+interface ServiceLine { title: string; desc: string; partners: string; color: string; icon: string; }
+interface PillarGroup { id: string; name: string; color: string; tag: string; desc: string; lines: ServiceLine[]; }
 
-function AnimatedCounter({ target, suffix = '', label, sub, started }: CounterProps) {
-  const val = useMotionValue(0);
-  const rounded = useTransform(val, (v) => Math.round(v));
-  const display = useTransform(rounded, (v) => `${v}${suffix}`);
+const pillarsData: PillarGroup[] = [
+  {
+    id: 'pillar-intelligence',
+    name: 'الذكاء', color: A, tag: 'Intelligence',
+    desc: 'نحوّل البيانات الخام إلى قرارات ذكية. منصات جاهزة للـ AI، تحليلات تنفيذية فورية، ومساعدات أذكياء تختصر القرار من أسابيع إلى دقائق.',
+    lines: [
+      { title: 'الذكاء الاصطناعي والأتمتة المؤسسية', desc: 'نصمم ونشغّل وكلاء ذكاء اصطناعي، مساعدين افتراضيين، وأتمتة ذكية ترفع إنتاجية مؤسستك وتختصر التكاليف. نشر آمن داخل بيئتك — بياناتك ما تطلع برا المملكة.', partners: 'IBM watsonx · Salesforce Einstein · Intel Gaudi', color: A, icon: '🧠' },
+      { title: 'البيانات والتحليلات والذكاء', desc: 'نوحّد بياناتك المتفرقة في مصدر واحد للحقيقة. لوحات قيادة تنفيذية، مؤشرات أداء، وتحليلات متقدمة — بحيث كل قرار في شركتك مبني على أرقام دقيقة، مو تخمين.', partners: 'Informatica · Tableau · Google BigQuery', color: A, icon: '📊' },
+    ],
+  },
+  {
+    id: 'pillar-automation',
+    name: 'الأتمتة', color: P, tag: 'Automation',
+    desc: 'نربط أنظمتك المنعزلة وننسق عملياتك. من ERP إلى CRM إلى legacy systems — مؤسستك تتحرك كوحدة واحدة، بدون فجوات.',
+    lines: [
+      { title: 'تطبيقات الأعمال وتجربة العملاء', desc: 'منصة موحدة لإدارة علاقات العملاء، مركز اتصال ذكي، أتمتة تسويق، وتجربة موظف متكاملة. عميلك ما يفرق معه أنظمتك الداخلية — يشوف تجربة واحدة سلسة.', partners: 'Salesforce · Tableau · MuleSoft', color: P, icon: '💼' },
+      { title: 'التكامل والعمليات الذكية', desc: 'نربط أنظمتك عبر API-led architecture بحيث البيانات تتدفق تلقائياً بين الأقسام. لا إدخال مزدوج. لا أخطاء بشرية. لا تأخير.', partners: 'MuleSoft Anypoint · Informatica · Apigee', color: P, icon: '🔗' },
+    ],
+  },
+  {
+    id: 'pillar-trust',
+    name: 'الثقة', color: G, tag: 'Trust',
+    desc: 'نبني أسساً رقمية آمنة ومرنة وذات سيادة. من الحماية السيبرانية إلى البنية التحتية — كل شيء داخل المملكة، متوافق مع أعلى المعايير التنظيمية.',
+    lines: [
+      { title: 'الأمن السيبراني والمرونة الرقمية', desc: 'مركز عمليات أمنية (SOC) يراقب تهديداتك ٢٤/٧. Zero Trust، حوكمة الهوية، ونسخ احتياطي منيع — مؤسستك محمية من أول يوم، ومتوافقة مع NCA.', partners: 'IBM QRadar · Guardium · Zero Trust', color: G, icon: '🛡️' },
+      { title: 'البنية التحتية السيادية والسحابة الهجينة', desc: 'نحدّث مراكز بياناتك بأحدث تقنيات Dell و IBM و Red Hat. سحابتك الخاصة داخل المملكة — سيادة كاملة، أداء عالٍ، وتكاليف أقل من الحلول السحابية العامة.', partners: 'Dell PowerEdge · IBM FlashSystem · Red Hat OpenShift', color: G, icon: '🏗️' },
+    ],
+  },
+];
+
+const managedOpsLine: ServiceLine = {
+  title: 'الخدمات التقنية والعمليات المدارة',
+  desc: 'فريق تقني يشغّل ويراقب بيئتك ٢٤/٧. عمليات سحابية، عمليات ذكاء اصطناعي، ودعم فني مستمر. أنت تركز على أعمالك — واحنا نتولى التقنية.',
+  partners: '24×7 Monitoring · CloudOps · AIOps · Managed Services',
+  color: W,
+  icon: '⚙️',
+};
+
+interface StatData { num: number; suffix?: string; lbl: string; }
+
+// ─── Animated Counter ───
+function AnimatedCounter({ target, suffix = '', label, started }: { target: number; suffix?: string; label: string; started: boolean }) {
+  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
     if (!started) return;
-    const controls = import('framer-motion').then(() => {
-      // Use spring animation
-    });
-    const unsubscribe = val.on('change', () => {});
-    // Simple approach: animate with spring
-    val.set(0);
-    const spring = { stiffness: 45, damping: 18 };
-    // We'll use direct animation
     let raf: number;
     const start = performance.now();
     const duration = 1600;
     function tick(now: number) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
+      const progress = Math.min((now - start) / duration, 1);
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      val.set(eased * target);
+      setDisplay(Math.round(eased * target));
       if (progress < 1) raf = requestAnimationFrame(tick);
     }
     raf = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(raf); };
-  }, [started]);
+    return () => cancelAnimationFrame(raf);
+  }, [started, target]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-    >
-      <motion.div className="font-bold leading-none text-white" style={{ fontSize: 'clamp(48px,7vw,84px)', fontFamily: "'Tajawal', sans-serif" }}>
-        {display}
-      </motion.div>
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+      <div className="font-bold leading-none text-white" style={{ fontSize: 'clamp(48px,7vw,84px)', fontFamily: "'Tajawal', sans-serif" }}>
+        {display}{suffix}
+      </div>
       <div className="text-[#9AA4AF] text-sm mt-2">{label}</div>
-      {sub && <div className="text-[#5B6470] text-xs mt-1">{sub}</div>}
     </motion.div>
   );
 }
 
-// ─── Main page ───
+// ─── Spotlight Card ───
+function SpotlightCard({ children, color, className = '' }: { children: React.ReactNode; color: string; className?: string }) {
+  return (
+    <div
+      className={`relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer ${className}`}
+      onMouseMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+      }}
+      style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
+    >
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+        style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), ${color}15, transparent 60%)` }}
+      />
+      <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: color }} />
+      <div className="relative z-10">{children}</div>
+    </div>
+  );
+}
+
+// ─── Page ───
 
 export default function ArabicHomePage() {
   const [cycIdx, setCycIdx] = useState(0);
@@ -92,32 +133,29 @@ export default function ArabicHomePage() {
   const [ringPos, setRingPos] = useState({ x: -100, y: -100 });
   const [ringGrow, setRingGrow] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const pillarsRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
   const nodesRef = useRef<Array<{ x: number; y: number; vx: number; vy: number }>>([]);
   const mouseRef = useRef({ x: -999, y: -999 });
   const reducedMotion = useRef(false);
 
-  // ─── Reduced motion check ───
-  useEffect(() => {
-    reducedMotion.current = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }, []);
+  // Section refs for scroll navigation
+  const whatRef = useRef<HTMLElement>(null);
+  const howRef = useRef<HTMLElement>(null);
+  const partnersRef = useRef<HTMLElement>(null);
+
+  // ─── Reduced motion ───
+  useEffect(() => { reducedMotion.current = matchMedia('(prefers-reduced-motion: reduce)').matches; }, []);
 
   // ─── Cycling word ───
   useEffect(() => {
     if (reducedMotion.current) return;
-    const id = setInterval(() => {
-      setCycIdx((prev) => (prev + 1) % cycles.length);
-    }, 2400);
+    const id = setInterval(() => setCycIdx((prev) => (prev + 1) % cycles.length), 2400);
     return () => clearInterval(id);
   }, []);
 
   // ─── Custom cursor ───
   useEffect(() => {
-    if (reducedMotion.current) return;
-    const touch = matchMedia('(hover: none)').matches;
-    if (touch) return;
-
+    if (reducedMotion.current || matchMedia('(hover: none)').matches) return;
     let rx = -100, ry = -100;
     const onMove = (e: MouseEvent) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
@@ -125,42 +163,23 @@ export default function ArabicHomePage() {
       ry += (e.clientY - ry) * 0.18;
       setRingPos({ x: rx, y: ry });
     };
-
     const enter = () => setRingGrow(true);
-    const leave = () => { setRingGrow(false); };
-    const attach = () => {
-      document.querySelectorAll('a,button,[data-magnetic]').forEach((el) => {
-        el.addEventListener('mouseenter', enter);
-        el.addEventListener('mouseleave', leave);
-      });
-    };
+    const leave = () => setRingGrow(false);
     const onMagMove = (e: MouseEvent) => {
       const btn = e.currentTarget as HTMLElement;
       const r = btn.getBoundingClientRect();
       btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.3}px, ${(e.clientY - r.top - r.height / 2) * 0.5}px)`;
     };
-    const onMagLeave = (e: MouseEvent) => {
-      (e.currentTarget as HTMLElement).style.transform = '';
-    };
-    const attachMag = () => {
-      document.querySelectorAll('[data-magnetic]').forEach((btn) => {
-        btn.addEventListener('mousemove', onMagMove as any);
-        btn.addEventListener('mouseleave', onMagLeave as any);
-      });
-    };
+    const onMagLeave = (e: MouseEvent) => { (e.currentTarget as HTMLElement).style.transform = ''; };
 
     window.addEventListener('mousemove', onMove, { passive: true });
-    setTimeout(attach, 300);
-    setTimeout(attachMag, 300);
+    setTimeout(() => {
+      document.querySelectorAll('a,button,[data-magnetic]').forEach((el) => { el.addEventListener('mouseenter', enter); el.addEventListener('mouseleave', leave); });
+      document.querySelectorAll('[data-magnetic]').forEach((btn) => { btn.addEventListener('mousemove', onMagMove as any); btn.addEventListener('mouseleave', onMagLeave as any); });
+    }, 300);
 
     return () => {
       window.removeEventListener('mousemove', onMove);
-      document.querySelectorAll('a,button,[data-magnetic]').forEach((el) => {
-        el.removeEventListener('mouseenter', enter);
-        el.removeEventListener('mouseleave', leave);
-        el.removeEventListener('mousemove', onMagMove as any);
-        el.removeEventListener('mouseleave', onMagLeave as any);
-      });
     };
   }, []);
 
@@ -170,263 +189,130 @@ export default function ArabicHomePage() {
     if (!cv || reducedMotion.current) return;
     const ctx = cv.getContext('2d');
     if (!ctx) return;
-
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let w = 0, h = 0;
     const resize = () => {
       const parent = cv.parentElement!;
-      w = parent.clientWidth;
-      h = parent.clientHeight;
-      cv.width = w * dpr;
-      cv.height = h * dpr;
+      w = parent.clientWidth; h = parent.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const n = Math.min(Math.round((w * h) / 14000), 90);
-      nodesRef.current = Array.from({ length: n }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-      }));
+      nodesRef.current = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4 }));
     };
     resize();
     window.addEventListener('resize', resize);
-
     const parent = cv.parentElement!;
-    const onMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-    const onMouseLeave = () => {
-      mouseRef.current = { x: -999, y: -999 };
-    };
-    parent.addEventListener('mousemove', onMouseMove, { passive: true });
-    parent.addEventListener('mouseleave', onMouseLeave);
+    const onMove = (e: MouseEvent) => { mouseRef.current = { x: e.clientX, y: e.clientY }; };
+    parent.addEventListener('mousemove', onMove, { passive: true });
+    parent.addEventListener('mouseleave', () => { mouseRef.current = { x: -999, y: -999 }; });
 
     function frame() {
       const nodes = nodesRef.current;
       ctx!.clearRect(0, 0, w, h);
       const mx = mouseRef.current.x, my = mouseRef.current.y;
-
       for (let i = 0; i < nodes.length; i++) {
         const p = nodes[i];
-        const dx = mx - p.x, dy = my - p.y;
-        const d = Math.hypot(dx, dy);
-        if (d < 160 && d > 0) {
-          p.vx -= (dx / d) * 0.06;
-          p.vy -= (dy / d) * 0.06;
-        }
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vx *= 0.99;
-        p.vy *= 0.99;
+        const dx = mx - p.x, dy = my - p.y, d = Math.hypot(dx, dy);
+        if (d < 160 && d > 0) { p.vx -= (dx / d) * 0.06; p.vy -= (dy / d) * 0.06; }
+        p.x += p.vx; p.y += p.vy; p.vx *= 0.99; p.vy *= 0.99;
         if (p.x < 0 || p.x > w) p.vx *= -1;
         if (p.y < 0 || p.y > h) p.vy *= -1;
-
-        ctx!.beginPath();
-        ctx!.arc(p.x, p.y, 1.6, 0, 7);
-        ctx!.fillStyle = 'rgba(0,191,255,0.7)';
-        ctx!.fill();
-
+        ctx!.beginPath(); ctx!.arc(p.x, p.y, 1.6, 0, 7); ctx!.fillStyle = 'rgba(0,191,255,0.7)'; ctx!.fill();
         for (let j = i + 1; j < nodes.length; j++) {
-          const q = nodes[j];
-          const dd = Math.hypot(p.x - q.x, p.y - q.y);
-          if (dd < 120) {
-            ctx!.beginPath();
-            ctx!.moveTo(p.x, p.y);
-            ctx!.lineTo(q.x, q.y);
-            ctx!.strokeStyle = `rgba(0,191,255,${0.12 * (1 - dd / 120)})`;
-            ctx!.lineWidth = 1;
-            ctx!.stroke();
-          }
+          const q = nodes[j], dd = Math.hypot(p.x - q.x, p.y - q.y);
+          if (dd < 120) { ctx!.beginPath(); ctx!.moveTo(p.x, p.y); ctx!.lineTo(q.x, q.y); ctx!.strokeStyle = `rgba(0,191,255,${0.12 * (1 - dd / 120)})`; ctx!.lineWidth = 1; ctx!.stroke(); }
         }
       }
       if (!reducedMotion.current) rafRef.current = requestAnimationFrame(frame);
     }
     frame();
-
-    return () => {
-      cancelAnimationFrame(rafRef.current);
-      window.removeEventListener('resize', resize);
-      parent.removeEventListener('mousemove', onMouseMove);
-      parent.removeEventListener('mouseleave', onMouseLeave);
-    };
+    return () => { cancelAnimationFrame(rafRef.current); window.removeEventListener('resize', resize); };
   }, []);
 
-  // ─── Scroll-tracking refs ───
-  const heroSubRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: pillarsProgress } = useScroll({
-    target: pillarsRef,
-    offset: ['start start', 'end end'],
-  });
+  // ─── Scroll to section ───
+  const scrollTo = (ref: React.RefObject<HTMLElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
-  // Pillar opacities mapped to scroll progress
-  const p1Opacity = useTransform(pillarsProgress, [0, 0.12, 0.28, 0.33], [1, 1, 0, 0]);
-  const p2Opacity = useTransform(pillarsProgress, [0.28, 0.33, 0.48, 0.61, 0.66], [0, 1, 1, 1, 0]);
-  const p3Opacity = useTransform(pillarsProgress, [0.61, 0.66, 0.82, 1], [0, 1, 1, 1]);
-  const p1Y = useTransform(pillarsProgress, [0, 0.15, 0.33], [0, -30, -70]);
-  const p2Y = useTransform(pillarsProgress, [0.28, 0.33, 0.5, 0.66], [70, 0, 0, -70]);
-  const p3Y = useTransform(pillarsProgress, [0.61, 0.66, 0.85], [70, 0, 0]);
-
-  // Timeline progress
+  // ─── Timeline scroll progress ───
   const timelineRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: timelineProgress } = useScroll({
-    target: timelineRef,
-    offset: ['start 0.75', 'end 0.75'] as const,
-  });
-  const tlScaleX = useTransform(timelineProgress, [0, 1], [0, 1]);
+  const { scrollYProgress: tlProgress } = useScroll({ target: timelineRef, offset: ['start 0.75', 'end 0.75'] as const });
+  const tlScaleX = useTransform(tlProgress, [0, 1], [0, 1]);
 
-  // ─── Card spotlight hooks ───
-  const handleCardMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget;
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-    card.style.setProperty('--my', `${e.clientY - r.top}px`);
-  }, []);
-
-  // ─── Counter triggers ───
-  const [counterStarted, setCounterStarted] = useState(false);
+  // ─── Counters ───
+  const [countersStarted, setCountersStarted] = useState(false);
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, threshold: 0.3 });
-  useEffect(() => { if (statsInView) setCounterStarted(true); }, [statsInView]);
+  useEffect(() => { if (statsInView) setCountersStarted(true); }, [statsInView]);
 
-  const stats: StatData[] = [
-    { num: 6, lbl: 'شركاء تقنيون استراتيجيون', sml: 'منظومة عالمية معتمدة' },
-    { num: 7, lbl: 'خطوط أعمال', sml: 'منصة تحول متكاملة' },
-    { num: 4, lbl: 'قطاعات ذات أولوية', sml: 'حكومة · بنوك · طاقة · رعاية صحية' },
-  ];
-
-  const proofStats = [
-    { num: 40, suffix: '%', lbl: 'انخفاض في عبء الامتثال اليدوي' },
-    { num: 5, suffix: '×', lbl: 'دورات قرار أسرع' },
-    { num: 50, suffix: '%', lbl: 'انقطاعات أقل مع الصيانة التنبؤية' },
-  ];
+  // ─── Proof counters ───
+  const [proofStarted, setProofStarted] = useState(false);
+  const { ref: proofRef, inView: proofInView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  useEffect(() => { if (proofInView) setProofStarted(true); }, [proofInView]);
 
   return (
     <div className="min-h-screen bg-[#0B0D10] text-white font-sans overflow-x-hidden" dir="rtl" lang="ar">
       {/* ═══ Custom cursor ═══ */}
-      <div
-        className="fixed pointer-events-none z-[9999] rounded-full mix-blend-screen hidden md:block"
-        style={{ top: 0, left: 0, width: 7, height: 7, background: A, transform: `translate(${cursorPos.x - 3.5}px, ${cursorPos.y - 3.5}px)` }}
-      />
-      <div
-        className={`fixed pointer-events-none z-[9999] rounded-full mix-blend-screen hidden md:block transition-[width,height,border-color,background] duration-250 border ${ringGrow ? 'w-[62px] h-[62px] border-[#00BFFF] bg-[#00BFFF10]' : 'w-9 h-9 border-[#00BFFF80]'}`}
-        style={{ top: 0, left: 0, transform: `translate(${ringPos.x - (ringGrow ? 31 : 18)}px, ${ringPos.y - (ringGrow ? 31 : 18)}px)`, borderWidth: ringGrow ? 0 : '1.5px' }}
-      />
+      <div className="fixed pointer-events-none z-[9999] rounded-full mix-blend-screen hidden md:block" style={{ top: 0, left: 0, width: 7, height: 7, background: A, transform: `translate(${cursorPos.x - 3.5}px, ${cursorPos.y - 3.5}px)` }} />
+      <div className={`fixed pointer-events-none z-[9999] rounded-full mix-blend-screen hidden md:block transition-[width,height,border-color,background] duration-250 ${ringGrow ? 'w-[62px] h-[62px] border-[#00BFFF] bg-[#00BFFF10]' : 'w-9 h-9 border-[#00BFFF80]'}`} style={{ top: 0, left: 0, transform: `translate(${ringPos.x - (ringGrow ? 31 : 18)}px, ${ringPos.y - (ringGrow ? 31 : 18)}px)`, borderWidth: ringGrow ? 0 : '1.5px' }} />
 
       {/* ═══ NAV ═══ */}
       <nav className="fixed top-0 inset-x-0 z-[100] backdrop-blur-[10px] bg-[#0B0D1088] border-b border-white/5">
         <div className="max-w-[1180px] mx-auto px-7 flex items-center justify-between h-[68px]">
           <Link to="/ar" className="flex items-center">
-            <img
-              src="/test-site-2/bionic-full-white.svg"
-              alt="Bionic Solutions"
-              className="h-8 w-auto"
-            />
+            <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-8 w-auto" />
           </Link>
           <div className="hidden md:flex gap-7 text-sm text-[#9AA4AF]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            <Link to="/ar" className="hover:text-white transition-colors">الرئيسية</Link>
-            <Link to="/about" className="hover:text-white transition-colors">من نحن</Link>
-            <Link to="/capabilities/ai" className="hover:text-white transition-colors">القدرات</Link>
-            <Link to="/industries/government" className="hover:text-white transition-colors">القطاعات</Link>
-            <Link to="/partners" className="hover:text-white transition-colors">المنظومة</Link>
+            <button onClick={() => scrollTo(whatRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">ماذا نقدم</button>
+            <button onClick={() => scrollTo(howRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">كيف نعمل</button>
+            <button onClick={() => scrollTo(partnersRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">شركاؤنا</button>
             <Link to="/contact" className="hover:text-white transition-colors">اتصل بنا</Link>
           </div>
-          <Link to="/" className="text-sm text-[#9AA4AF] hover:text-white transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            English <ArrowLeft className="inline w-3 h-3" />
-          </Link>
+          <Link to="/" className="text-sm text-[#9AA4AF] hover:text-white transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>English</Link>
         </div>
       </nav>
 
       {/* ═══ HERO ═══ */}
       <header className="relative min-h-screen flex items-center pt-[68px] overflow-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `radial-gradient(900px 520px at 72% 18%, rgba(0,191,255,.10), transparent 60%),
-                         radial-gradient(700px 420px at 20% 90%, rgba(167,139,250,.08), transparent 60%)`,
-          }}
-        />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(900px 520px at 72% 18%, rgba(0,191,255,.10), transparent 60%), radial-gradient(700px 420px at 20% 90%, rgba(167,139,250,.08), transparent 60%)` }} />
         <div className="relative z-10 max-w-[1180px] mx-auto px-7 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <p className="text-sm tracking-wider text-[#00BFFF] font-medium mb-5" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              مكامل التحول المؤسسي بالذكاء الاصطناعي
-            </p>
-          </motion.div>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-sm tracking-wider text-[#00BFFF] font-medium mb-5" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            مكامل التحول المؤسسي بالذكاء الاصطناعي — المملكة العربية السعودية
+          </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 34 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-            className="font-bold max-w-[14ch] leading-tight"
-            style={{ fontSize: 'clamp(40px,7vw,86px)', fontFamily: "'Tajawal', sans-serif" }}
-          >
-            نصمم{' '}
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={cycIdx}
-                initial={{ opacity: 0, filter: 'blur(8px)' }}
-                animate={{ opacity: 1, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, filter: 'blur(8px)' }}
-                transition={{ duration: 0.25 }}
-                style={{ color: cycles[cycIdx].color, display: 'inline-block' }}
-              >
-                {cycles[cycIdx].word}
-              </motion.span>
-            </AnimatePresence>
-            <br />في صميم الأعمال.
+          <motion.h1 initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
+            className="font-bold max-w-[16ch] leading-tight" style={{ fontSize: 'clamp(40px,7vw,80px)', fontFamily: "'Tajawal', sans-serif" }}>
+            نبيع <AnimatePresence mode="wait"><motion.span key={cycIdx} initial={{ opacity: 0, filter: 'blur(8px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(8px)' }} transition={{ duration: 0.25 }} style={{ color: cycles[cycIdx].color, display: 'inline-block' }}>{cycles[cycIdx].word}</motion.span></AnimatePresence>
+            <br />— ليس مجرد تقنية.
           </motion.h1>
 
-          <motion.p
-            ref={heroSubRef}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[#9AA4AF] mt-6 font-normal"
-            style={{ fontSize: 'clamp(18px,2.4vw,26px)', fontFamily: "'Tajawal', sans-serif" }}
-          >
-            ذكاء، أتمتة، وثقة — في منصة واحدة.
+          <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-[#9AA4AF] mt-6 font-normal max-w-2xl leading-relaxed" style={{ fontSize: 'clamp(18px,2.4vw,24px)', fontFamily: "'Tajawal', sans-serif" }}>
+            نجهّز المؤسسات السعودية للمستقبل: ذكاء اصطناعي جاهز للإنتاج، أنظمة متصلة، وبنية تحتية محصّنة — كلها داخل المملكة.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="text-[#5B6470] text-sm mt-4"
-            style={{ fontFamily: "'Tajawal', sans-serif" }}
-          >
-            6 شركاء عالميين · متوافق مع رؤية 2030 · جدة · الرياض · الدمام
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
+            className="text-[#5B6470] text-sm mt-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            6 شركاء عالميين · 7 خطوط أعمال · متوافق مع رؤية 2030 · جدة · الرياض · الدمام
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
-            className="flex items-center gap-6 mt-10 flex-wrap"
-          >
-            <Link
-              to="/contact"
-              data-magnetic
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-sm text-[#04141c] transition-shadow hover:shadow-[0_8px_30px_rgba(0,191,255,.35)]"
-              style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}
-            >
-              تحدث إلى مستشار ←
-            </Link>
-            <Link
-              to="/blueprints"
-              className="text-sm text-[#9AA4AF] border-b border-transparent hover:text-white hover:border-[#00BFFF] transition-colors"
-              style={{ fontFamily: "'Tajawal', sans-serif" }}
-            >
-              استعرض مخططات التحول
-            </Link>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
+            className="flex items-center gap-6 mt-10 flex-wrap">
+            <button data-magnetic onClick={() => scrollTo(whatRef)}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-sm text-[#04141c] transition-shadow hover:shadow-[0_8px_30px_rgba(0,191,255,.35)] bg-transparent border-none cursor-pointer"
+              style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}>
+              استعرض خدماتنا ←
+            </button>
+            <button onClick={() => scrollTo(howRef)}
+              className="text-sm text-[#9AA4AF] border-b border-transparent hover:text-white hover:border-[#00BFFF] transition-colors bg-transparent border-none cursor-pointer"
+              style={{ fontFamily: "'Tajawal', sans-serif" }}>
+              كيف نعمل معاً؟
+            </button>
           </motion.div>
         </div>
-
-        {/* Scroll hint */}
         <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 text-[#5B6470] text-xs text-center" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-          اسحب
+          اسحب للأسفل
           <span className="block w-px h-[34px] mx-auto mt-2 animate-[drop_1.8s_infinite]" style={{ background: `linear-gradient(${A}, transparent)` }} />
         </div>
       </header>
@@ -435,370 +321,145 @@ export default function ArabicHomePage() {
       <section className="border-y border-white/5 py-14 px-0" ref={statsRef}>
         <div className="max-w-[1180px] mx-auto px-7">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {stats.map((s, i) => (
-              <AnimatedCounter key={i} target={s.num} label={s.lbl} sub={s.sml} started={counterStarted} />
-            ))}
+            <AnimatedCounter target={6} label="شركاء تقنيون استراتيجيون" started={countersStarted} />
+            <AnimatedCounter target={7} label="خطوط أعمال متكاملة" started={countersStarted} />
+            <AnimatedCounter target={4} label="قطاعات ذات أولوية" started={countersStarted} />
           </div>
         </div>
       </section>
 
-      {/* ═══ 3 PILLARS → 7 BUSINESS LINES ═══ */}
-      <section className="py-28">
+      {/* ═══ WHAT WE DELIVER — 3 Pillars → 7 Lines ═══ */}
+      <section ref={whatRef} className="py-28 scroll-mt-20" id="what-we-deliver">
         <div className="max-w-[1180px] mx-auto px-7">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm text-[#00BFFF] font-medium mb-4"
-            style={{ fontFamily: "'Tajawal', sans-serif" }}
-          >
-            ما نقدمه
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-sm text-[#00BFFF] font-medium mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            ماذا نقدم
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-medium mb-16"
-            style={{ fontSize: 'clamp(30px,5vw,52px)', fontFamily: "'Tajawal', sans-serif" }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="font-bold mb-6" style={{ fontSize: 'clamp(30px,5vw,52px)', fontFamily: "'Tajawal', sans-serif" }}>
             ثلاث ركائز. سبعة خطوط أعمال. تحول واحد.
           </motion.h2>
+          <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
+            className="text-[#9AA4AF] text-lg mb-16 max-w-3xl leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            كل خط من خطوط الأعمال السبعة قابل للشراء بشكل مستقل أو كحزمة متكاملة. ننفذ ونشغّل — لا نبيع تراخيص ونسلّمك لشركائنا.
+          </motion.p>
 
-          {/* ── Pillar 1: Intelligence ── */}
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <span className="w-3 h-3 rounded-full" style={{ background: A }} />
-              <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>الركيزة الأولى</span>
-              <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: A }}>الذكاء</h3>
+          {pillarsData.map((pillar, pi) => (
+            <motion.div key={pillar.id} id={pillar.id} className="mb-20 scroll-mt-20"
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: pi * 0.1 }}>
+              {/* Pillar header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style={{ background: `${pillar.color}18`, color: pillar.color }}>{pi + 1}</div>
+                <div>
+                  <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>{pillar.tag}</span>
+                  <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: pillar.color }}>{pillar.name}</h3>
+                </div>
+              </div>
+              <p className="text-[#9AA4AF] text-base mb-8 max-w-3xl leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{pillar.desc}</p>
+
+              {/* Service lines */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {pillar.lines.map((line, i) => (
+                  <SpotlightCard key={i} color={line.color}>
+                    <div className="text-2xl mb-3">{line.icon}</div>
+                    <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
+                    <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
+                    <span className="text-xs text-[#5B6470] tracking-wider" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
+                  </SpotlightCard>
+                ))}
+              </div>
             </motion.div>
-            <p className="text-[#9AA4AF] text-lg mb-8 max-w-2xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              نحول البيانات الخام إلى قرارات ذكية. منصات جاهزة للذكاء الاصطناعي، تحليلات تنفيذية، ومساعدات ذكية تختصر الزمن من أسابيع إلى دقائق.
-            </p>
+          ))}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                { title: 'الذكاء الاصطناعي والأتمتة المؤسسية', desc: 'تحول ذكي بقيادة AI — وكلاء أذكياء، مساعدين افتراضيين، وأتمتة ذكية على مستوى المؤسسة. من IBM watsonx إلى Salesforce Einstein.', partners: 'IBM watsonx · Salesforce Einstein · Intel Gaudi', color: A },
-                { title: 'البيانات والتحليلات والذكاء', desc: 'منصات بيانات جاهزة للذكاء الاصطناعي، لوحات قيادة تنفيذية، مؤشرات أداء رئيسية، وإدارة البيانات الرئيسية الموحدة. مصدر واحد للحقيقة.', partners: 'Informatica · Tableau · Google BigQuery', color: A },
-              ].map((line, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  onMouseMove={handleCardMove}
-                  className="relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer"
-                  style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                    style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(0,191,255,.1), transparent 60%)` }} />
-                  <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: line.color }} />
-                  <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
-                  <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
-                  <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Pillar 2: Automation ── */}
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <span className="w-3 h-3 rounded-full" style={{ background: P }} />
-              <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>الركيزة الثانية</span>
-              <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: P }}>الأتمتة</h3>
-            </motion.div>
-            <p className="text-[#9AA4AF] text-lg mb-8 max-w-2xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              نربط الأنظمة وننسق العمليات. تكامل API-led، أتمتة سير العمل، وتطبيقات أعمال ذكية تجعل كل جزء في مؤسستك يتحرك كوحدة واحدة.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                { title: 'تطبيقات الأعمال وتجربة العملاء', desc: 'منصة موحدة لإدارة علاقات العملاء، مركز اتصال ذكي، أتمتة التسويق، التجارة الإلكترونية، وتجربة موظف متكاملة.', partners: 'Salesforce · Tableau · MuleSoft', color: P },
-                { title: 'التكامل والعمليات الذكية', desc: 'ربط الأنظمة عبر API-led architecture، تنسيق الأحداث، وأتمتة سير العمل. مؤسستك تتحرك بتناغم — كل جزء يؤدي دوره.', partners: 'MuleSoft Anypoint · Informatica · Apigee', color: P },
-              ].map((line, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  onMouseMove={handleCardMove}
-                  className="relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer"
-                  style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                    style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(167,139,250,.1), transparent 60%)` }} />
-                  <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: line.color }} />
-                  <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
-                  <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
-                  <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Pillar 3: Trust ── */}
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <span className="w-3 h-3 rounded-full" style={{ background: G }} />
-              <span className="text-xs text-[#5B6470] tracking-wider uppercase" style={{ fontFamily: "'Tajawal', sans-serif" }}>الركيزة الثالثة</span>
-              <h3 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif", color: G }}>الثقة</h3>
-            </motion.div>
-            <p className="text-[#9AA4AF] text-lg mb-8 max-w-2xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              نبني أسساً رقمية آمنة ومرنة وذات سيادة. من الأمن السيبراني إلى البنية التحتية السيادية — حماية كاملة للواقع التنظيمي السعودي.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                { title: 'الأمن السيبراني والمرونة الرقمية', desc: 'مركز عمليات أمنية متكامل، Zero Trust، حوكمة الهوية، ومرونة ضد الفدية. حماية متوافقة مع NCA وهيئة الأمن السيبراني.', partners: 'IBM QRadar · Guardium · Zero Trust', color: G },
-                { title: 'البنية التحتية السيادية والسحابة الهجينة', desc: 'تحديث مراكز البيانات، تخزين عصري، بنية تحتية للذكاء الاصطناعي، وسحابة خاصة هجينة. كل شيء داخل المملكة — سيادة كاملة.', partners: 'Dell PowerEdge · IBM FlashSystem · Red Hat OpenShift', color: G },
-              ].map((line, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  onMouseMove={handleCardMove}
-                  className="relative bg-[#12161C] border border-white/5 rounded-2xl p-6 overflow-hidden group cursor-pointer"
-                  style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                    style={{ background: `radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(52,211,153,.1), transparent 60%)` }} />
-                  <div className="absolute right-0 top-5 bottom-5 w-[3px] rounded-sm" style={{ background: line.color }} />
-                  <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.title}</h4>
-                  <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.desc}</p>
-                  <span className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{line.partners}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Line 7: Managed Operations (cross-cutting) ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            onMouseMove={handleCardMove}
-            className="relative bg-gradient-to-l from-[#12161C] to-[#1A1F28] border border-white/5 rounded-2xl p-8 overflow-hidden group cursor-pointer text-center"
-            style={{ ['--mx' as any]: '50%', ['--my' as any]: '50%' }}
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-              style={{ background: `radial-gradient(320px circle at var(--mx,50%) var(--my,50%), rgba(0,191,255,.08), transparent 60%)` }} />
+          {/* Line 7 — Managed Operations (cross-cutting) */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
             <span className="inline-block px-4 py-1.5 rounded-full border border-white/10 text-xs text-[#5B6470] mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              الخط السابع — شامل لجميع الركائز
+              الخط السابع — يشمل جميع الركائز
             </span>
-            <h4 className="text-xl font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>الخدمات التقنية والعمليات المدارة</h4>
-            <p className="text-sm text-[#9AA4AF] max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              خدمات مُدارة، عمليات سحابية، عمليات ذكاء اصطناعي، ومراقبة على مدار الساعة. فريق تشغيلي يضمن استمرارية أعمالك.
-            </p>
-            <span className="text-xs text-[#5B6470] mt-3 block" style={{ fontFamily: "'Tajawal', sans-serif" }}>24×7 Monitoring · CloudOps · AIOps · Managed Services</span>
+            <SpotlightCard color={managedOpsLine.color} className="text-center max-w-2xl mx-auto">
+              <div className="text-2xl mb-3">{managedOpsLine.icon}</div>
+              <h4 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Tajawal', sans-serif" }}>{managedOpsLine.title}</h4>
+              <p className="text-sm text-[#9AA4AF] mb-3 leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>{managedOpsLine.desc}</p>
+              <span className="text-xs text-[#5B6470] tracking-wider" style={{ fontFamily: "'Tajawal', sans-serif" }}>{managedOpsLine.partners}</span>
+            </SpotlightCard>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ PILLARS — Pinned Scrollytelling ═══ */}
-      <section ref={pillarsRef} className="relative bg-gradient-to-b from-[#0B0D10] to-[#080a0d]" style={{ height: '360vh' }}>
-        <div className="sticky top-0 h-screen flex items-center max-w-[1180px] mx-auto px-7 overflow-hidden">
-          <div className="relative w-full">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm text-[#00BFFF] font-medium mb-8"
-              style={{ fontFamily: "'Tajawal', sans-serif" }}
-            >
-              المعمارية
-            </motion.p>
-
-            <div className="relative h-[62vh]">
-              {/* Pillar 1 — Intelligence */}
-              <motion.div
-                className="absolute inset-0 flex flex-col justify-center"
-                style={{ opacity: p1Opacity, y: p1Y }}
-              >
-                <span className="text-sm text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>01 — الذكاء</span>
-                <div className="font-bold" style={{ fontSize: 'clamp(40px,8vw,96px)', color: A, fontFamily: "'Tajawal', sans-serif" }}>الذكاء.</div>
-                <p className="text-[#9AA4AF] mt-4 max-w-[34ch]" style={{ fontSize: 'clamp(16px,2vw,22px)', fontFamily: "'Tajawal', sans-serif" }}>
-                  تحويل بيانات المؤسسة إلى إجراءات ذكية.
-                </p>
-              </motion.div>
-
-              {/* Pillar 2 — Automation */}
-              <motion.div
-                className="absolute inset-0 flex flex-col justify-center"
-                style={{ opacity: p2Opacity, y: p2Y }}
-              >
-                <span className="text-sm text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>02 — الأتمتة</span>
-                <div className="font-bold" style={{ fontSize: 'clamp(40px,8vw,96px)', color: P, fontFamily: "'Tajawal', sans-serif" }}>الأتمتة.</div>
-                <p className="text-[#9AA4AF] mt-4 max-w-[34ch]" style={{ fontSize: 'clamp(16px,2vw,22px)', fontFamily: "'Tajawal', sans-serif" }}>
-                  ربط الأنظمة وتنسيق العمليات بذكاء.
-                </p>
-              </motion.div>
-
-              {/* Pillar 3 — Trust */}
-              <motion.div
-                className="absolute inset-0 flex flex-col justify-center"
-                style={{ opacity: p3Opacity, y: p3Y }}
-              >
-                <span className="text-sm text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>03 — الثقة</span>
-                <div className="font-bold" style={{ fontSize: 'clamp(40px,8vw,96px)', color: G, fontFamily: "'Tajawal', sans-serif" }}>الثقة.</div>
-                <p className="text-[#9AA4AF] mt-4 max-w-[34ch]" style={{ fontSize: 'clamp(16px,2vw,22px)', fontFamily: "'Tajawal', sans-serif" }}>
-                  بناء أسس رقمية آمنة ومرنة وذات سيادة.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ PROOF ═══ */}
-      <section className="py-28">
+      <section ref={proofRef} className="py-24 bg-gradient-to-b from-[#0B0D10] to-[#080a0d]">
         <div className="max-w-[1180px] mx-auto px-7 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm text-[#00BFFF] font-medium mb-10"
-            style={{ fontFamily: "'Tajawal', sans-serif" }}
-          >
-            إنجازات مثبتة في المملكة
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-sm text-[#00BFFF] font-medium mb-10" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            نتائج مثبتة في المملكة
           </motion.p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {proofStats.map((ps, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-              >
-                <div
-                  className="font-bold bg-clip-text text-transparent bg-gradient-to-l from-[#00BFFF] to-[#A78BFA]"
-                  style={{ fontSize: 'clamp(44px,6vw,72px)', fontFamily: "'Tajawal', sans-serif" }}
-                >
-                  {ps.num}{ps.suffix}
-                </div>
-                <p className="text-sm text-[#9AA4AF] mt-3" style={{ fontFamily: "'Tajawal', sans-serif" }}>{ps.lbl}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+            {[
+              { num: 40, suffix: '%', lbl: 'انخفاض في عبء الامتثال اليدوي' },
+              { num: 5, suffix: '×', lbl: 'دورات قرار أسرع مع بيانات جاهزة للـ AI' },
+              { num: 50, suffix: '%', lbl: 'انقطاعات أقل مع الصيانة التنبؤية' },
+            ].map((ps, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
+                <AnimatedCounter target={ps.num} suffix={ps.suffix} label={ps.lbl} started={proofStarted} />
               </motion.div>
             ))}
           </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-xs text-[#5B6470] mt-8"
-            style={{ fontFamily: "'Tajawal', sans-serif" }}
-          >
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            className="text-xs text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             النطاقات تعكس بحوث القطاع. النتائج الخاصة بالعميل تُحدد خلال مرحلة الاكتشاف والتقييم.
           </motion.p>
         </div>
       </section>
 
-      {/* ═══ MARQUEE — Partner images ═══ */}
-      <section className="py-16">
+      {/* ═══ PARTNERS MARQUEE ═══ */}
+      <section ref={partnersRef} className="py-20 scroll-mt-20" id="partners">
         <div className="max-w-[1180px] mx-auto px-7">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm text-[#00BFFF] font-medium mb-8 text-center"
-            style={{ fontFamily: "'Tajawal', sans-serif" }}
-          >
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-sm text-[#00BFFF] font-medium mb-4 text-center" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             شركاؤنا التقنيون
           </motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            لا نبيع منتجاتهم — نبني بها حلولاً.
+          </motion.h2>
         </div>
         <div className="overflow-hidden" style={{ maskImage: 'linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)' }}>
           <div className="flex gap-5 w-max animate-[scroll_30s_linear_infinite] hover:[animation-play-state:paused]">
             {[...partnersList, ...partnersList].map((p, i) => (
-              <div
-                key={i}
-                className="bg-[#1A1F2888] border border-white/5 rounded-xl px-6 py-3 flex items-center justify-center h-[68px] min-w-[150px] hover:border-[#00BFFF40] transition-colors"
-              >
-                <img
-                  src={`/test-site-2/images/partners/${p.file}`}
-                  alt={p.name}
-                  className="max-h-[38px] max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity"
-                  loading="lazy"
-                />
+              <div key={i} className="bg-[#1A1F2888] border border-white/5 rounded-xl px-6 py-3 flex items-center justify-center h-[68px] min-w-[150px] hover:border-[#00BFFF40] transition-colors">
+                <img src={`/test-site-2/images/partners/${p.file}`} alt={p.name} className="max-h-[38px] max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ TIMELINE ═══ */}
-      <section ref={timelineRef} className="py-28">
-        <div className="max-w-[1180px] mx-auto px-7 relative">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm text-[#00BFFF] font-medium mb-3"
-            style={{ fontFamily: "'Tajawal', sans-serif" }}
-          >
+      {/* ═══ TIMELINE — How we engage ═══ */}
+      <section ref={howRef} className="py-28 scroll-mt-20" id="how-we-engage">
+        <div className="max-w-[1180px] mx-auto px-7 relative" ref={timelineRef}>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-sm text-[#00BFFF] font-medium mb-3" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             كيف نعمل معاً
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-medium mb-16"
-            style={{ fontSize: 'clamp(28px,4vw,44px)', fontFamily: "'Tajawal', sans-serif" }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="font-bold mb-16" style={{ fontSize: 'clamp(28px,4vw,44px)', fontFamily: "'Tajawal', sans-serif" }}>
             كل تحول يبدأ بمحادثة.
           </motion.h2>
 
           {/* Line + Progress */}
-          <div className="absolute left-0 right-0" style={{ top: '108px', height: 2, background: 'rgba(255,255,255,.08)' }}>
-            <motion.div
-              className="absolute inset-y-0"
-              style={{
-                background: A,
-                right: 0,
-                width: '100%',
-                transformOrigin: 'right center',
-                scaleX: tlScaleX,
-              }}
-            />
+          <div className="absolute left-0 right-0 hidden sm:block" style={{ top: '108px', height: 2, background: 'rgba(255,255,255,.08)' }}>
+            <motion.div className="absolute inset-y-0" style={{ background: A, right: 0, width: '100%', transformOrigin: 'right center', scaleX: tlScaleX }} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
             {[
               { time: '45 دقيقة', title: 'الإحاطة التنفيذية', desc: 'أولوياتك. ليس عرضاً.' },
-              { time: '1–2 أسبوع', title: 'الاكتشاف', desc: 'المعمارية والأهداف.' },
-              { time: '2–4 أسابيع', title: 'المخطط', desc: 'خريطة طريق وجدوى الأعمال.' },
+              { time: '1–2 أسبوع', title: 'الاكتشاف', desc: 'نرسم المعمارية والأهداف.' },
+              { time: '2–4 أسابيع', title: 'المخطط', desc: 'خريطة طريق وجدوى أعمال.' },
               { time: '8–16 أسبوع', title: 'التنفيذ', desc: 'نشر، دمج، تبني.' },
-              { time: 'مستمر', title: 'العمليات المدارة', desc: 'تحسين وتطوير.' },
+              { time: 'مستمر', title: 'العمليات المدارة', desc: 'تحسين وتطوير مستمر.' },
             ].map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative">
                 <div className="w-3.5 h-3.5 rounded-full bg-[#1A1F28] border-2 border-[#00BFFF] mb-8" />
                 <span className="text-sm text-[#5B6470]" style={{ fontFamily: "'Tajawal', sans-serif" }}>{step.time}</span>
                 <h4 className="text-base font-medium mt-1.5" style={{ fontFamily: "'Tajawal', sans-serif" }}>{step.title}</h4>
@@ -812,28 +473,18 @@ export default function ArabicHomePage() {
       {/* ═══ FINAL CTA ═══ */}
       <section className="py-28 text-center">
         <div className="max-w-[1180px] mx-auto px-7">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-bold"
-            style={{ fontSize: 'clamp(34px,6vw,64px)', fontFamily: "'Tajawal', sans-serif" }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="font-bold" style={{ fontSize: 'clamp(34px,6vw,64px)', fontFamily: "'Tajawal', sans-serif" }}>
             لنصمم الذكاء<br />في مؤسستك.
           </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-9"
-          >
-            <Link
-              to="/contact"
-              data-magnetic
+          <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            className="text-[#9AA4AF] mt-4 mb-9 max-w-lg mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+            أول خطوة: محادثة لمدة ٤٥ دقيقة. بدون التزام. بدون عرض. أولوياتك أولاً.
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <Link to="/contact" data-magnetic
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-sm text-[#04141c] transition-shadow hover:shadow-[0_8px_30px_rgba(0,191,255,.35)]"
-              style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}
-            >
+              style={{ background: A, fontFamily: "'Tajawal', sans-serif" }}>
               تحدث إلى مستشار ←
             </Link>
           </motion.div>
@@ -846,25 +497,15 @@ export default function ArabicHomePage() {
           <p>نصمم الذكاء والأتمتة والثقة في صميم الأعمال.</p>
           <p className="mt-2">
             <a href="mailto:info@bionics.com.sa" className="hover:text-[#00BFFF] transition-colors">info@bionics.com.sa</a>
-            {' · '}
-            <Link to="/" className="hover:text-[#00BFFF] transition-colors">English</Link>
-            {' · '}
-            متوافق مع رؤية السعودية 2030
+            {' · '}<Link to="/" className="hover:text-[#00BFFF] transition-colors">English</Link>
+            {' · '}متوافق مع رؤية السعودية 2030
           </p>
         </div>
       </footer>
 
-      {/* ═══ Marquee keyframes ═══ */}
       <style>{`
-        @keyframes scroll {
-          to { transform: translateX(50%); }
-        }
-        @keyframes drop {
-          0% { transform: scaleY(0); transform-origin: top; }
-          50% { transform: scaleY(1); transform-origin: top; }
-          51% { transform-origin: bottom; }
-          100% { transform: scaleY(0); transform-origin: bottom; }
-        }
+        @keyframes scroll { to { transform: translateX(50%); } }
+        @keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
       `}</style>
     </div>
   );
