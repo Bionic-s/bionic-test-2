@@ -457,7 +457,7 @@ export default function ArabicHomePage() {
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl font-bold text-center mb-8" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            لا نكتفي بتوريد منتجاتهم — نوظفها لبناء حلول مؤسسية متكاملة.
+            لا نكتفي بتوريد منتجات شركائنا — بل نوظفها لبناء حلول مؤسسية متكاملة.
           </motion.h2>
         </div>
         <div className="overflow-hidden" style={{ maskImage: 'linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)' }}>
