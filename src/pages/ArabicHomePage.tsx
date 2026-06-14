@@ -613,7 +613,7 @@ export default function ArabicHomePage() {
               <ul className="space-y-2.5">
                 {['الذكاء الاصطناعي والأتمتة', 'البيانات والتحليلات', 'تطبيقات الأعمال', 'التكامل والعمليات', 'الأمن السيبراني', 'البنية التحتية', 'العمليات المدارة'].map((item, i) => (
                   <li key={i}>
-                    <Link to="/capabilities/ai" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">{item}</Link>
+                    <Link to="/ar/capabilities" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">{item}</Link>
                   </li>
                 ))}
               </ul>
@@ -625,7 +625,7 @@ export default function ArabicHomePage() {
               <ul className="space-y-2.5">
                 {['القطاع الحكومي', 'البنوك والخدمات المالية', 'النفط والغاز والطاقة', 'الرعاية الصحية', 'المؤسسات الكبرى'].map((item, i) => (
                   <li key={i}>
-                    <Link to="/industries/government" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">{item}</Link>
+                    <Link to="/ar/industries" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">{item}</Link>
                   </li>
                 ))}
               </ul>
@@ -635,9 +635,9 @@ export default function ArabicHomePage() {
             <div>
               <h3 className="text-white font-semibold text-sm mb-4">عن الشركة</h3>
               <ul className="space-y-2.5">
-                <li><Link to="/about" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">من نحن</Link></li>
-                <li><Link to="/partners" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">المنظومة</Link></li>
-                <li><Link to="/blueprints" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">مخططات التحول</Link></li>
+                <li><Link to="/ar/about" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">من نحن</Link></li>
+                <li><Link to="/ar/capabilities" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">قدراتنا</Link></li>
+                <li><Link to="/ar/industries" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">القطاعات</Link></li>
                 <li><Link to="/ar#contact" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">اتصل بنا</Link></li>
                 <li><Link to="/privacy-policy" className="text-sm text-[#9AA4AF] hover:text-[#00BFFF] transition-colors">سياسة الخصوصية</Link></li>
               </ul>
