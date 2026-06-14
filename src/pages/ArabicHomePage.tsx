@@ -300,7 +300,12 @@ export default function ArabicHomePage() {
             <button onClick={() => scrollTo(partnersRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">شركاؤنا</button>
             <button onClick={() => scrollTo(contactRef)} className="hover:text-white transition-colors bg-transparent border-none cursor-pointer">اتصل بنا</button>
           </div>
-          <Link to="/" className="text-sm text-[#9AA4AF] hover:text-white transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>English</Link>
+          <Link to="/"
+            className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
+            aria-label="English version">
+            <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇬🇧</span>
+            <span className="text-[11px] font-medium text-[#5B6470] group-hover:text-white transition-colors tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>EN</span>
+          </Link>
         </div>
       </nav>
 

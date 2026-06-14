@@ -15,7 +15,7 @@ export default function ArabicPrivacyPolicyPage() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
               العودة إلى الرئيسية
             </Link>
-            <Link to="/" className="text-sm text-[#9AA4AF] hover:text-white transition-colors">English</Link>
+            <Link to="/" className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300" aria-label="English version"><span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇬🇧</span><span className="text-[11px] font-medium text-[#5B6470] group-hover:text-white transition-colors tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>EN</span></Link>
           </div>
         </div>
       </nav>
