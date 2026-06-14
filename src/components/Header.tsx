@@ -356,6 +356,11 @@ export const Header = () => {
               <Link to="/contact" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
                 Contact
               </Link>
+
+              {/* ═══ Arabic ═══ */}
+              <Link to="/ar" className="px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+                العربية
+              </Link>
             </nav>
 
             {/* Desktop CTA */}
@@ -540,6 +545,12 @@ export const Header = () => {
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
                 Contact
+              </Link>
+
+              {/* Mobile Arabic */}
+              <Link to="/ar" onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+                العربية
               </Link>
 
               <div className="pt-3">
