@@ -331,7 +331,7 @@ export default function ArabicHomePage() {
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
             className="text-[#5B6470] text-sm mt-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            6 شركاء تقنيين عالميين · 7 مجالات أعمال · متوائم مع رؤية السعودية 2030 · جدة · الرياض · الدمام
+            11 شركاء تقنيين عالميين · 7 مجالات أعمال · متوائم مع رؤية السعودية 2030 · جدة · الرياض · الدمام
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
@@ -358,7 +358,7 @@ export default function ArabicHomePage() {
       <section className="border-y border-white/5 py-14 px-0" ref={statsRef}>
         <div className="max-w-[1180px] mx-auto px-7">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <AnimatedCounter target={6} label="شركاء تقنيون استراتيجيون" started={countersStarted} />
+            <AnimatedCounter target={11} label="شركاء تقنيون" started={countersStarted} />
             <AnimatedCounter target={7} label="خطوط أعمال متكاملة" started={countersStarted} />
             <AnimatedCounter target={5} label="قطاعات ذات أولوية" started={countersStarted} />
           </div>
