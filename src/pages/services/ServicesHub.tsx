@@ -7,6 +7,7 @@ import { trackServicePageView } from '../../lib/analytics';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#FFFFFF';
+const HERO_BG = '/test-site-2/images/professional-services-ai-hero.jpg';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-text-muted">{children}</p>
 );
@@ -42,21 +43,32 @@ export default function ServicesHub() {
 
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+    <div className="min-h-screen bg-bg-primary">
+      {/* ═══ HERO ═══ */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
+        </div>
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+          className="relative z-10 pt-40 pb-24 text-center px-4"
+        >
+          <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+            <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-text-muted">How We Deliver</p>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+              Three delivery models.<br />
+              <span className="text-text-muted">One accountable partner.</span>
+            </h1>
+            <p className="text-text-muted text-lg max-w-[640px] mx-auto leading-relaxed">
+              Every capability we offer — from AI to cybersecurity — is delivered through one or more of these models.
+              Advisory for strategy. Implementation for execution. Operations for continuous value.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
-        {/* Hero */}
-        <motion.section className="mb-20 text-center" {...fadeIn} transition={{ duration: 0.5 }}>
-          <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-text-muted">How We Deliver</p>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-            Three delivery models.<br />
-            <span className="text-text-muted">One accountable partner.</span>
-          </h1>
-          <p className="text-text-muted text-lg max-w-[640px] mx-auto leading-relaxed">
-            Every capability we offer — from AI to cybersecurity — is delivered through one or more of these models.
-            Advisory for strategy. Implementation for execution. Operations for continuous value.
-          </p>
-        </motion.section>
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl pb-24">
 
         {/* Delivery Model Cards */}
         <motion.section
@@ -64,7 +76,7 @@ export default function ServicesHub() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-20"
+          className="mb-20 pt-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {deliveryModels.map((model, i) => (

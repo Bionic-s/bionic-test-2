@@ -9,6 +9,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#0D9488';
+const HERO_BG = '/test-site-2/images/data-analytics.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
@@ -61,23 +62,36 @@ export default function ConsultingAdvisoryPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+    <div className="min-h-screen bg-bg-primary">
+      {/* ═══ HERO ═══ */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
+        </div>
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+          className="relative z-10 pt-40 pb-24 text-center px-4"
+        >
+          <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#0D9488]/25 bg-[#0D9488]/5 mb-10">
+              <span className="text-tiny text-[#0D9488] font-semibold tracking-widest uppercase">Consulting & Advisory</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
+              Strategy before technology.<br />
+              <span style={{ color: ACCENT }}>Clarity before investment.</span><br />
+              Transformation before procurement.
+            </h1>
+            <p className="text-text-muted text-lg max-w-[720px] mx-auto leading-relaxed">
+              We help Saudi enterprises answer the hardest questions first: what should we transform, why,
+              in what order, and how — from AI readiness to operating model design, from compliance architecture
+              to multi-year roadmap. Advisory services that turn ambition into executable transformation.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
-        {/* ═══ 1. HERO ═══ */}
-        <motion.section className="mb-28" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>Consulting & Advisory</SectionLabel>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
-            Strategy before technology.<br />
-            <span style={{ color: ACCENT }}>Clarity before investment.</span><br />
-            Transformation before procurement.
-          </h1>
-          <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
-            We help Saudi enterprises answer the hardest questions first: what should we transform, why,
-            in what order, and how — from AI readiness to operating model design, from compliance architecture
-            to multi-year roadmap. Advisory services that turn ambition into executable transformation.
-          </p>
-        </motion.section>
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl pb-24">
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
