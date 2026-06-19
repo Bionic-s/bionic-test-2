@@ -179,42 +179,6 @@ export const Header = () => {
                 )}
               </div>
 
-              {/* ═══ Industries Mega-Menu ═══ */}
-              <div className="relative"
-                onMouseEnter={() => { closeAll(); setIndustriesOpen(true); }}
-                onMouseLeave={() => setIndustriesOpen(false)}>
-                <Link to="/industries/government"
-                  className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                  <span>Industries</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${industriesOpen ? 'rotate-180' : ''}`} />
-                </Link>
-                {industriesOpen && <div className="absolute top-full left-0 h-3 w-full" />}
-                {industriesOpen && (
-                  <div className="absolute top-full -left-16 mt-1 w-[560px] bg-bg-secondary border border-white/10 rounded-xl shadow-2xl shadow-black/40 backdrop-blur-xl overflow-hidden"
-                    onMouseEnter={() => setIndustriesOpen(true)}
-                    onMouseLeave={() => setIndustriesOpen(false)}>
-                    <div className="p-2">
-                      <div className="grid grid-cols-3 gap-0">
-                        {industries.map((ind) => (
-                          <Link key={ind.name} to={ind.path} className="p-4 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: ind.color }} />
-                              <p className="text-small font-semibold text-text-primary group-hover/link:text-accent-primary transition-colors">{ind.name}</p>
-                            </div>
-                            <p className="text-tiny text-text-muted leading-relaxed">{ind.desc}</p>
-                          </Link>
-                        ))}
-                        <div className="col-span-3 border-t border-white/5 mt-1 pt-4 px-4 pb-2">
-                          <p className="text-tiny text-text-muted">
-                            5 industries. Government to enterprise — AI transformation applied to your sector.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
               {/* ═══ Our Offerings Mega-Menu — Tabbed ═══ */}
               <div className="relative"
                 onMouseEnter={() => { closeAll(); setCapabilitiesOpen(true); }}
@@ -425,6 +389,42 @@ export const Header = () => {
                   </div>
                 )}
               </div>
+              {/* ═══ Industries Mega-Menu ═══ */}
+              <div className="relative"
+                onMouseEnter={() => { closeAll(); setIndustriesOpen(true); }}
+                onMouseLeave={() => setIndustriesOpen(false)}>
+                <Link to="/industries/government"
+                  className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
+                  <span>Industries</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${industriesOpen ? 'rotate-180' : ''}`} />
+                </Link>
+                {industriesOpen && <div className="absolute top-full left-0 h-3 w-full" />}
+                {industriesOpen && (
+                  <div className="absolute top-full -left-16 mt-1 w-[560px] bg-bg-secondary border border-white/10 rounded-xl shadow-2xl shadow-black/40 backdrop-blur-xl overflow-hidden"
+                    onMouseEnter={() => setIndustriesOpen(true)}
+                    onMouseLeave={() => setIndustriesOpen(false)}>
+                    <div className="p-2">
+                      <div className="grid grid-cols-3 gap-0">
+                        {industries.map((ind) => (
+                          <Link key={ind.name} to={ind.path} className="p-4 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
+                            <div className="flex items-center gap-2 mb-2">
+                              <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: ind.color }} />
+                              <p className="text-small font-semibold text-text-primary group-hover/link:text-accent-primary transition-colors">{ind.name}</p>
+                            </div>
+                            <p className="text-tiny text-text-muted leading-relaxed">{ind.desc}</p>
+                          </Link>
+                        ))}
+                        <div className="col-span-3 border-t border-white/5 mt-1 pt-4 px-4 pb-2">
+                          <p className="text-tiny text-text-muted">
+                            5 industries. Government to enterprise — AI transformation applied to your sector.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
             </nav>
 
             {/* Language + CTA group */}
@@ -478,29 +478,6 @@ export const Header = () => {
                         className="block px-4 py-2.5 text-small text-text-primary hover:text-accent-primary hover:bg-white/5 rounded-lg transition-colors">
                         <div className="font-medium">{item.name}</div>
                         <div className="text-tiny text-text-muted">{item.desc}</div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Industries */}
-              <div>
-                <button onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-                  className="w-full flex items-center justify-between px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                  <span>Industries</span>
-                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {mobileIndustriesOpen && (
-                  <div className="ml-2 mt-1 space-y-1 mb-3">
-                    {industries.map((ind) => (
-                      <Link key={ind.name} to={ind.path} onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center gap-3 px-4 py-2.5 text-small text-text-primary hover:text-accent-primary hover:bg-white/5 rounded-lg transition-colors">
-                        <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: ind.color }} />
-                        <div>
-                          <div className="font-medium">{ind.name}</div>
-                          <div className="text-tiny text-text-muted">{ind.desc}</div>
-                        </div>
                       </Link>
                     ))}
                   </div>
@@ -638,6 +615,29 @@ export const Header = () => {
                       className="flex items-center gap-2 px-4 py-3 text-accent-primary font-medium text-small">
                       View All Services <ArrowRight className="w-4 h-4" />
                     </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Industries */}
+              <div>
+                <button onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                  className="w-full flex items-center justify-between px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
+                  <span>Industries</span>
+                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileIndustriesOpen && (
+                  <div className="ml-2 mt-1 space-y-1 mb-3">
+                    {industries.map((ind) => (
+                      <Link key={ind.name} to={ind.path} onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2.5 text-small text-text-primary hover:text-accent-primary hover:bg-white/5 rounded-lg transition-colors">
+                        <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: ind.color }} />
+                        <div>
+                          <div className="font-medium">{ind.name}</div>
+                          <div className="text-tiny text-text-muted">{ind.desc}</div>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
