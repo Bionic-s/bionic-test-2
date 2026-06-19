@@ -281,6 +281,30 @@ export const blueprints: Blueprint[] = [
     ],
     whyBionic: 'Zero Trust is not a product. Bionic implements Zero Trust across the full IBM security stack with Ansible automation — not just a consulting certification. Build + operate + guarantee.',
   },
+
+  // ── Enterprise AI Agents ──────────────────────────────
+  {
+    slug: 'enterprise-ai-agents',
+    title: 'Enterprise AI Agents — Full Stack',
+    industry: 'Enterprise',
+    industrySlug: 'enterprise',
+    capabilities: ['Enterprise AI & Automation', 'Business Applications & CX', 'Integration & Intelligent Operations', 'Sovereign Infrastructure & Hybrid Cloud', 'Data, Analytics & Intelligence'],
+    capabilitySlugs: ['ai', 'apps', 'integration', 'infra', 'data'],
+    services: ['Agent Discovery Workshop', 'Custom AI Agent Build', 'AI & Automation Deployment', 'Managed Operations', 'AI Readiness Assessment'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Dell Technologies', 'Lenovo', 'Intel', 'IBM', 'Salesforce', 'Google', 'Red Hat', 'Platform9'],
+    products: ['Dell Precision AI Workstations', 'Lenovo ThinkPad P-Series', 'Intel Core Ultra AI PC', 'Intel Gaudi 3', 'NVIDIA H100 via Dell', 'Dell PowerEdge Servers', 'IBM watsonx.ai', 'Salesforce Agentforce', 'Google Vertex AI', 'Red Hat OpenShift', 'Platform9 Managed K8s'],
+    challenge: 'Enterprises are being pitched AI agents by every vendor — but no one delivers the complete stack. They get a SaaS tool without the hardware to run it, or GPU servers without the AI platform, or a platform without the agents themselves. The result: stalled AI projects and shelfware.',
+    architecture: 'Intel Core Ultra AI PCs & Dell Precision AI Workstations → Intel Gaudi 3 / NVIDIA H100 on Dell PowerEdge → Red Hat OpenShift / Platform9 K8s container layer → watsonx.ai / Vertex AI / Agentforce agent runtime → Custom AI agents deployed into production → 24×7 Agent Operations monitoring & evolution',
+    outcomes: [
+      'Complete AI agent stack delivered in weeks, not quarters — from laptop to production',
+      '3-5 high-ROI agent use cases identified and prioritized in the first two weeks',
+      'Agents built on enterprise-grade platforms — not experimental frameworks',
+      'Continuous agent improvement through managed operations — your agents get smarter every quarter',
+      'Full Saudi data sovereignty — all infrastructure and agent runtime within the Kingdom',
+    ],
+    whyBionic: 'No single vendor sells the complete AI agent stack. Dell sells hardware. Salesforce sells Agentforce. IBM sells watsonx. Google sells Vertex AI. None of them deliver the laptop, the GPU, the platform, the agent, AND the ongoing operations as one accountable engagement. Bionic does — from discovery to production to continuous evolution.',
+  },
 ];
 
 // Derived lookup maps for filtering

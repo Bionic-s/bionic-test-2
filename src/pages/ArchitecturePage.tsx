@@ -2,18 +2,32 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers } from 'lucide-react';
+import {
+  ArrowRight, Layers, Target, TrendingUp, Building2, Cpu, Wrench,
+  FileText, Monitor, Database, Shield, BarChart3, Gauge, Zap
+} from 'lucide-react';
 import { trackArchitectureView } from '../lib/analytics';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#D97706';
+const HERO_BG = '/test-site-2/images/enterprise-integration-hero.jpg';
+
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
+);
+
+const SectionDivider = () => (
+  <div className="flex items-center justify-center gap-3 my-12">
+    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: ACCENT }} />
+    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+  </div>
 );
 
 const layers = [
   {
     num: 1,
+    icon: Target,
     title: 'Business Outcomes',
     subtitle: 'What changes when transformation succeeds?',
     desc: 'Every transformation starts with a business outcome — revenue growth, cost optimization, risk reduction, experience transformation, or national capability.',
@@ -22,6 +36,7 @@ const layers = [
   },
   {
     num: 2,
+    icon: TrendingUp,
     title: 'Enterprise Value System',
     subtitle: 'How does value compound across four horizons?',
     desc: 'Value compounds across four horizons — cost optimization (0-12 months), risk reduction (6-18 months), revenue growth (12-36 months), and market leadership (24-60 months).',
@@ -30,6 +45,7 @@ const layers = [
   },
   {
     num: 3,
+    icon: Building2,
     title: 'Industries',
     subtitle: 'Where do we apply this architecture?',
     desc: 'Five regulated sectors where our architecture solves real industry challenges — government, banking, oil & gas, healthcare, and cross-industry enterprise.',
@@ -38,6 +54,7 @@ const layers = [
   },
   {
     num: 4,
+    icon: Cpu,
     title: 'Capabilities',
     subtitle: 'What do we actually do?',
     desc: 'Seven integrated capabilities spanning Intelligence, Automation, and Trust — composable across industries, not siloed products.',
@@ -46,6 +63,7 @@ const layers = [
   },
   {
     num: 5,
+    icon: Wrench,
     title: 'Services',
     subtitle: 'How do we deliver?',
     desc: 'Three delivery models — Advisory, Implementation, and Managed Operations — combining as needed across every industry and capability.',
@@ -54,6 +72,7 @@ const layers = [
   },
   {
     num: 6,
+    icon: FileText,
     title: 'Transformation Blueprints',
     subtitle: 'Can you prove this works?',
     desc: 'Twelve reference architectures mapping industries → capabilities → services → partners → products → outcomes.',
@@ -62,6 +81,7 @@ const layers = [
   },
   {
     num: 7,
+    icon: Monitor,
     title: 'Applications & Platforms',
     subtitle: 'What technology runs the transformation?',
     desc: 'We architect, deploy, and operate enterprise platforms — Salesforce for CRM, watsonx and Vertex AI for intelligence, MuleSoft for integration, and Informatica for data governance.',
@@ -70,6 +90,7 @@ const layers = [
   },
   {
     num: 8,
+    icon: Database,
     title: 'Data & Intelligence',
     subtitle: 'Where does the intelligence come from?',
     desc: 'Unified, governed, AI-ready data platforms — data fabric and lakehouse architectures, master data management, governance for PDPL compliance, and analytical engines powering every layer above.',
@@ -78,6 +99,7 @@ const layers = [
   },
   {
     num: 9,
+    icon: Shield,
     title: 'Infrastructure & Security',
     subtitle: 'What is the trust foundation?',
     desc: 'Sovereign infrastructure architected for trust — Dell compute and storage, Intel AI acceleration, Platform9 and Red Hat cloud platforms, cyber recovery, and NCA-compliant security operations.',
@@ -86,6 +108,7 @@ const layers = [
   },
   {
     num: 10,
+    icon: Gauge,
     title: 'Operations & Continuous Optimization',
     subtitle: 'How do we sustain and compound value?',
     desc: 'Operations protect and compound value quarter over quarter — AIOps, SRE, FinOps, SOC-as-a-Service, and quarterly continuous optimization reviews.',
@@ -95,35 +118,48 @@ const layers = [
 ];
 
 export default function ArchitecturePage() {
-
   useEffect(() => { trackArchitectureView(); }, []);
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div className="min-h-screen bg-bg-primary">
+
+      {/* ═══ 1. HERO — with background image ═══ */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
+        </div>
+
+        <motion.div
+          ref={heroRef} {...fadeIn}
+          animate={heroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="relative z-10 pt-40 pb-28 px-4"
+        >
+          <div className="container mx-auto max-w-4xl">
+            <SectionLabel>Transformation Architecture</SectionLabel>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
+              The Bionic Enterprise<br />
+              <span style={{ color: ACCENT }}>Transformation Architecture.</span>
+            </h1>
+            <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
+              10 interconnected layers. One integrated approach. From business outcomes to continuous optimization —
+              this is how we architect, deliver, and sustain enterprise transformation for Saudi Arabia.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
-        {/* ═══ 1. HERO ═══ */}
-        <motion.section ref={heroRef} {...fadeIn} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>Transformation Architecture</SectionLabel>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
-            The Bionic Enterprise<br />
-            <span style={{ color: ACCENT }}>Transformation Architecture.</span>
-          </h1>
-          <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
-            10 interconnected layers. One integrated approach. From business outcomes to continuous optimization —
-            this is how we architect, deliver, and sustain enterprise transformation for Saudi Arabia.
-          </p>
-        </motion.section>
-
-        {/* ═══ FLOW SUMMARY ═══ */}
+        {/* ═══ VISUAL LAYER STACK DIAGRAM ═══ */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-28"
+          className="mb-20 -mt-8"
         >
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12">
             <div className="flex items-center gap-3 mb-6">
@@ -137,44 +173,70 @@ export default function ArchitecturePage() {
               <p><strong className="text-text-primary">Capabilities</strong> define <em>what</em> we do — seven integrated domains.</p>
               <p><strong className="text-text-primary">Services</strong> define <em>how</em> we deliver — three cross-cutting models.</p>
               <p><strong className="text-text-primary">Transformation Blueprints</strong> prove <em>it works</em> — 12 reference architectures.</p>
-              <p><strong className="text-text-primary">Applications & Platforms</strong> provide the <em>technology</em>.</p>
-              <p><strong className="text-text-primary">Data & Intelligence</strong> fuel <em>everything above</em>.</p>
-              <p><strong className="text-text-primary">Infrastructure & Security</strong> provide the <em>trust foundation</em>.</p>
-              <p><strong className="text-text-primary">Operations & Optimization</strong> <em>sustain and compound</em> the value.</p>
+              <p><strong className="text-text-primary">Applications &amp; Platforms</strong> provide the <em>technology</em>.</p>
+              <p><strong className="text-text-primary">Data &amp; Intelligence</strong> fuel <em>everything above</em>.</p>
+              <p><strong className="text-text-primary">Infrastructure &amp; Security</strong> provide the <em>trust foundation</em>.</p>
+              <p><strong className="text-text-primary">Operations &amp; Optimization</strong> <em>sustain and compound</em> the value.</p>
             </div>
           </div>
         </motion.section>
 
-        {/* ═══ 10 LAYERS ═══ */}
+        <SectionDivider />
+
+        {/* ═══ 10 LAYERS — enhanced with icons & visual stacking ═══ */}
         {layers.map((layer, i) => {
           const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+          const isEven = i % 2 === 0;
           return (
             <motion.section
               key={layer.num}
               ref={ref}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="mb-20"
+              transition={{ duration: 0.5, delay: 0.03 * i }}
+              className="mb-10"
             >
-              {/* Layer header */}
-              <div className="flex items-center gap-4 mb-6">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                  style={{ backgroundColor: ACCENT }}
-                >
-                  {layer.num}
+              {/* Connecting line from previous layer */}
+              {i > 0 && (
+                <div className="flex justify-center mb-2">
+                  <div className="w-px h-8 bg-gradient-to-b from-[#D9770615] to-transparent" />
                 </div>
-                <div>
-                  <h2 className="text-xl md:text-2xl font-bold">{layer.title}</h2>
-                  <p className="text-sm text-text-muted mt-0.5">{layer.subtitle}</p>
-                </div>
-              </div>
+              )}
 
               {/* Layer card */}
-              <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8 ml-14">
-                <p className="text-text-muted leading-relaxed mb-6">{layer.desc}</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-6">
+              <div
+                className="rounded-2xl border p-6 md:p-8 transition-all duration-300 hover:border-[#D9770620]"
+                style={{
+                  background: isEven ? 'var(--bg-secondary)' : 'linear-gradient(135deg, #D9770605, var(--bg-secondary))',
+                  borderColor: isEven ? 'rgba(255,255,255,0.04)' : '#D9770610',
+                }}
+              >
+                {/* Layer header with icon */}
+                <div className="flex items-center gap-4 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: '#D9770615', color: ACCENT }}
+                  >
+                    <layer.icon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
+                        style={{ backgroundColor: ACCENT }}
+                      >
+                        {layer.num}
+                      </span>
+                      <h2 className="text-xl md:text-2xl font-bold">{layer.title}</h2>
+                    </div>
+                    <p className="text-sm text-text-muted mt-1">{layer.subtitle}</p>
+                  </div>
+                </div>
+
+                <p className="text-text-muted leading-relaxed mb-5 ml-[64px]">{layer.desc}</p>
+
+                {/* Items grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-5 ml-[64px]">
                   {layer.items.map((item, j) => (
                     <div key={j} className="flex items-center gap-2 text-sm text-text-muted">
                       <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: ACCENT }} />
@@ -182,17 +244,23 @@ export default function ArchitecturePage() {
                     </div>
                   ))}
                 </div>
-                <Link
-                  to={layer.link.to}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium hover:gap-2 transition-all"
-                  style={{ color: ACCENT }}
-                >
-                  {layer.link.label} <ArrowRight className="w-4 h-4" />
-                </Link>
+
+                {/* Link */}
+                <div className="ml-[64px]">
+                  <Link
+                    to={layer.link.to}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium hover:gap-2 transition-all"
+                    style={{ color: ACCENT }}
+                  >
+                    {layer.link.label} <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </motion.section>
-            );
+          );
         })}
+
+        <SectionDivider />
 
         {/* ═══ THE COMPLETE PICTURE ═══ */}
         <motion.section
@@ -200,30 +268,39 @@ export default function ArchitecturePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-28"
+          className="mb-20"
         >
-          <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12">
-            <SectionLabel>The Complete Picture</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Ten layers. Three pillars. One accountable partner.</h2>
-            <p className="text-text-muted text-lg leading-relaxed mb-8 max-w-[720px]">
-              Every other page on this website is a detail view of one or more of these layers.
-              Capability pages zoom into Layer 4. Industry pages zoom into Layer 3. Service pages zoom into Layer 5.
-              Blueprints bridge Layers 3-6. The Enterprise Value System is Layer 2.
-              This architecture page is the connective tissue — the single view that shows how everything composes.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { label: 'Capabilities', path: '/capabilities/ai' },
-                { label: 'Services', path: '/services' },
-                { label: 'Industries', path: '/industries/government' },
-                { label: 'Blueprints', path: '/blueprints' },
-                { label: 'Enterprise Value System', path: '/value' },
-              ].map((link) => (
-                <Link key={link.label} to={link.path}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#D97706]/30 transition-all">
-                  {link.label} <ArrowRight className="w-3.5 h-3.5" style={{ color: ACCENT }} />
-                </Link>
-              ))}
+          <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+            {/* Background glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(circle, #D9770605 0%, transparent 70%)' }} />
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-4">
+                <Zap className="w-7 h-7" style={{ color: ACCENT }} />
+                <SectionLabel>The Complete Picture</SectionLabel>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Ten layers. Three pillars. One accountable partner.</h2>
+              <p className="text-text-muted text-lg leading-relaxed mb-8 max-w-[720px]">
+                Every other page on this website is a detail view of one or more of these layers.
+                Capability pages zoom into Layer 4. Industry pages zoom into Layer 3. Service pages zoom into Layer 5.
+                Blueprints bridge Layers 3-6. The Enterprise Value System is Layer 2.
+                This architecture page is the connective tissue — the single view that shows how everything composes.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { label: 'Capabilities', path: '/capabilities/ai' },
+                  { label: 'Services', path: '/services' },
+                  { label: 'Industries', path: '/industries/government' },
+                  { label: 'Blueprints', path: '/blueprints' },
+                  { label: 'Enterprise Value System', path: '/value' },
+                ].map((link) => (
+                  <Link key={link.label} to={link.path}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#D97706]/30 transition-all">
+                    {link.label} <ArrowRight className="w-3.5 h-3.5" style={{ color: ACCENT }} />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </motion.section>
@@ -234,35 +311,47 @@ export default function ArchitecturePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="pb-12"
         >
-          <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
-            <SectionLabel>Next Step</SectionLabel>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">
-              Ready to see this architecture applied to your enterprise?
-            </h2>
-            <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
-              Let's discuss how these 10 layers map to your specific industry, your transformation priorities, and your business outcomes.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #D9770620' }}
-              >
-                Start the Conversation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/blueprints"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#D97706]/30"
-              >
-                View Transformation Blueprints
-              </Link>
+          <div className="rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #D977060A, var(--bg-secondary), var(--bg-secondary))',
+              border: '1px solid #D9770615',
+            }}
+          >
+            {/* Decorative glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(circle, #D9770605 0%, transparent 70%)' }} />
+
+            <div className="relative z-10">
+              <SectionLabel>Next Step</SectionLabel>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4">
+                Ready to see this architecture applied to your enterprise?
+              </h2>
+              <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
+                Let's discuss how these 10 layers map to your specific industry, your transformation priorities, and your business outcomes.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                  style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #D9770620' }}
+                >
+                  Start the Conversation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/blueprints"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#D97706]/30"
+                >
+                  View Transformation Blueprints
+                </Link>
+              </div>
             </div>
           </div>
         </motion.section>
 
       </div>
     </div>
-);
+  );
 }

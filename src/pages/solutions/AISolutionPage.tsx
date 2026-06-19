@@ -8,6 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#7C3AED';
+const HERO_BG = '/test-site-2/images/enterprise-ai-transformation-hero.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny text-[#7C3AED] font-semibold tracking-wider uppercase mb-4">{children}</p>
 );
@@ -31,28 +32,35 @@ export default function AISolutionPage() {
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+    <div className="min-h-screen bg-bg-primary">
 
-        {/* ═══ 1. HERO ═══ */}
-        <motion.section
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
-          className="mb-32 text-center"
-        >
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#7C3AED]/25 bg-[#7C3AED]/5 mb-10">
-            <Brain className="w-4 h-4 text-[#7C3AED] mr-2" />
-            <span className="text-tiny text-[#7C3AED] font-semibold tracking-widest uppercase">Enterprise AI & Automation</span>
+        {/* ═══ 1. HERO — with background image ═══ */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-[#7C3AED] via-[#A78BFA] to-white bg-clip-text text-transparent">
-              AI from experimentation<br />to enterprise execution.
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">
-            We close the gap between AI pilots and production-grade systems —
-            governed, measured, and built for Saudi Arabia's regulatory reality.
-          </p>
-        </motion.section>
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+            className="relative z-10 pt-40 pb-32 text-center px-4"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#7C3AED]/25 bg-[#7C3AED]/5 mb-10">
+              <Brain className="w-4 h-4 text-[#7C3AED] mr-2" />
+              <span className="text-tiny text-[#7C3AED] font-semibold tracking-widest uppercase">Enterprise AI & Automation</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
+              <span className="bg-gradient-to-r from-[#7C3AED] via-[#A78BFA] to-white bg-clip-text text-transparent">
+                AI from experimentation<br />to enterprise execution.
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">
+              We close the gap between AI pilots and production-grade systems —
+              governed, measured, and built for Saudi Arabia's regulatory reality.
+            </p>
+          </motion.div>
+        </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">

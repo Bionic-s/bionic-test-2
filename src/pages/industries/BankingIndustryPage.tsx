@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, TrendingUp, Users, CreditCard, GitBranch } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+const heroBg = `${import.meta.env.BASE_URL}images/enterprise-ai-transformation-hero.avif`;
+
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#2563EB';
@@ -64,10 +66,13 @@ export default function BankingIndustryPage() {
 
   return (
     <div className="min-h-screen bg-bg-primary pt-32 pb-24">
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
-
-        {/* ═══ 1. HERO ═══ */}
-        <motion.section className="mb-28" {...fadeIn} transition={{ duration: 0.5 }}>
+      {/* ═══ 1. HERO SECTION — Full-width background ═══ */}
+        <section className="relative -mt-32 mb-24 overflow-hidden">
+          <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.5) 0%, var(--bg-primary) 100%)` }} />
+          <div className="relative z-10 pt-44 pb-24">
+            <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+        <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
           <SectionLabel>Banking & Financial Services</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
             Banking transformation <span style={{ color: ACCENT }}>under SAMA</span> —<br />
@@ -79,6 +84,9 @@ export default function BankingIndustryPage() {
             intelligence through enterprise AI.
           </p>
         </motion.section>
+            </div>
+          </div>
+        </section>
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">

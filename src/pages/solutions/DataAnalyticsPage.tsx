@@ -8,6 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#06B6D4';
+const HERO_BG = '/test-site-2/images/data-analytics.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
@@ -32,14 +33,19 @@ export default function DataAnalyticsPage() {
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div className="min-h-screen bg-bg-primary">
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 1. HERO ═══ */}
-        <motion.section
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
-          className="mb-32 text-center"
-        >
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+            className="relative z-10 pt-40 pb-32 text-center px-4"
+          >
           <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10"
             style={{ borderColor: '#06B6D440', backgroundColor: '#06B6D408' }}>
             <BarChart3 className="w-4 h-4 mr-2" style={{ color: ACCENT }} />
@@ -54,7 +60,8 @@ export default function DataAnalyticsPage() {
             We design AI-ready data platforms, executive intelligence systems, and governed data
             foundations — built for Saudi Arabia's regulatory and operational reality.
           </p>
-        </motion.section>
+          </motion.div>
+        </section>
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">

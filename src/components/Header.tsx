@@ -9,12 +9,12 @@ export const Header = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
-  const [capabilitiesTab, setCapabilitiesTab] = useState<'industry' | 'capability'>('capability');
+  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
-  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'industry' | 'capability'>('capability');
+  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -215,23 +215,28 @@ export const Header = () => {
                 )}
               </div>
 
-              {/* ═══ Capabilities Mega-Menu — Tabbed ═══ */}
+              {/* ═══ Our Offerings Mega-Menu — Tabbed ═══ */}
               <div className="relative"
                 onMouseEnter={() => { closeAll(); setCapabilitiesOpen(true); }}
-                onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('capability'); }}>
+                onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('products'); }}>
                 <Link to="/capabilities/ai"
                   className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                  <span>Capabilities</span>
+                  <span>Our Offerings</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${capabilitiesOpen ? 'rotate-180' : ''}`} />
                 </Link>
                 {capabilitiesOpen && <div className="absolute top-full left-0 h-3 w-full" />}
                 {capabilitiesOpen && (
                   <div className="fixed left-0 right-0 mx-auto" style={{ top: '5rem', maxWidth: '80rem' }}
                     onMouseEnter={() => setCapabilitiesOpen(true)}
-                    onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('capability'); }}>
+                    onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('products'); }}>
                     <div className="mx-4 bg-bg-secondary border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden backdrop-blur-xl">
                       {/* Tabs */}
                       <div className="flex border-b border-white/5 px-6">
+                        <button onClick={() => setCapabilitiesTab('products')}
+                          className={`relative px-4 py-3.5 text-sm font-medium transition-colors ${capabilitiesTab === 'products' ? 'text-[#00BFFF]' : 'text-text-muted hover:text-text-primary'}`}>
+                          By Products
+                          {capabilitiesTab === 'products' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00BFFF] rounded-full" />}
+                        </button>
                         <button onClick={() => setCapabilitiesTab('capability')}
                           className={`relative px-4 py-3.5 text-sm font-medium transition-colors ${capabilitiesTab === 'capability' ? 'text-accent-primary' : 'text-text-muted hover:text-text-primary'}`}>
                           By Capability
@@ -245,7 +250,85 @@ export const Header = () => {
                       </div>
                       {/* Content */}
                       <div className="p-2">
-                        {capabilitiesTab === 'capability' ? (
+                        {capabilitiesTab === 'products' ? (
+                          <div className="grid grid-cols-3 gap-0">
+                            {/* Intelligence */}
+                            <div className="p-5">
+                              <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00BFFF' }} />
+                                <div>
+                                  <h4 className="text-small font-semibold text-text-primary">Intelligence</h4>
+                                  <p className="text-tiny text-text-muted">AI · Data · Workstations</p>
+                                </div>
+                              </div>
+                              <div className="space-y-0.5 ml-4">
+                                {[
+                                  { cat: 'Enterprise AI & ML', sub: 'watsonx, Vertex AI, Agentforce' },
+                                  { cat: 'Data & Analytics', sub: 'Tableau, Informatica, BigQuery' },
+                                  { cat: 'AI Workstations & Laptops', sub: 'Precision, ThinkPad P-Series, Core Ultra' },
+                                ].map((item) => (
+                                  <Link key={item.cat} to="/products"
+                                    className="block px-3 py-2.5 -mx-3 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
+                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#00BFFF] transition-colors">{item.cat}</p>
+                                    <p className="text-tiny text-text-muted leading-relaxed mt-0.5">{item.sub}</p>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                            {/* Automation */}
+                            <div className="p-5">
+                              <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F59E0B' }} />
+                                <div>
+                                  <h4 className="text-small font-semibold text-text-primary">Automation</h4>
+                                  <p className="text-tiny text-text-muted">CRM · Integration · Advisory</p>
+                                </div>
+                              </div>
+                              <div className="space-y-0.5 ml-4">
+                                {[
+                                  { cat: 'CRM & Customer Experience', sub: 'Sales, Service, Marketing Cloud' },
+                                  { cat: 'Integration & Automation', sub: 'MuleSoft, Ansible, API Management' },
+                                  { cat: 'Advisory & Strategy', sub: 'AI Readiness, Architecture, Roadmap' },
+                                ].map((item) => (
+                                  <Link key={item.cat} to="/products"
+                                    className="block px-3 py-2.5 -mx-3 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
+                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#F59E0B] transition-colors">{item.cat}</p>
+                                    <p className="text-tiny text-text-muted leading-relaxed mt-0.5">{item.sub}</p>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                            {/* Trust */}
+                            <div className="p-5">
+                              <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#7C3AED' }} />
+                                <div>
+                                  <h4 className="text-small font-semibold text-text-primary">Trust</h4>
+                                  <p className="text-tiny text-text-muted">Infra · Cyber · Cloud</p>
+                                </div>
+                              </div>
+                              <div className="space-y-0.5 ml-4">
+                                {[
+                                  { cat: 'Servers & Storage', sub: 'PowerEdge, ThinkSystem, FlashSystem' },
+                                  { cat: 'AI GPUs & Accelerators', sub: 'Gaudi 3, NVIDIA H100, Intel GPU Max' },
+                                  { cat: 'Cybersecurity', sub: 'QRadar, Guardium, Cyber Recovery' },
+                                  { cat: 'Cloud & HCI', sub: 'VxRail, ThinkAgile, APEX, OpenShift' },
+                                ].map((item) => (
+                                  <Link key={item.cat} to="/products"
+                                    className="block px-3 py-2.5 -mx-3 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
+                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#7C3AED] transition-colors">{item.cat}</p>
+                                    <p className="text-tiny text-text-muted leading-relaxed mt-0.5">{item.sub}</p>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                            {/* CTA row */}
+                            <Link to="/products"
+                              className="col-span-3 px-4 py-3 mt-1 rounded-lg hover:bg-[#00BFFF06] transition-colors flex items-center justify-center gap-2 text-small font-semibold text-[#00BFFF] hover:text-white">
+                              View Full Product Catalog → 4 tabs · 10 categories · 50+ products <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </div>
+                        ) : capabilitiesTab === 'capability' ? (
                           <div className="grid grid-cols-3 gap-0">
                             {capabilityPillars.map((pillar) => (
                               <div key={pillar.pillar} className="p-5">
@@ -286,7 +369,7 @@ export const Header = () => {
                       {/* Footer */}
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30">
                         <p className="text-tiny text-text-muted">
-                          7 capabilities. 3 pillars. Intelligence · Automation · Trust.
+                          {capabilitiesTab === 'products' ? 'Full AI stack — from laptop to cloud. 11 partners. One relationship.' : '7 capabilities. 3 pillars. Intelligence · Automation · Trust.'}
                         </p>
                         <Link to="/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
                           View Transformation Blueprints <ArrowRight className="w-4 h-4" />
@@ -424,16 +507,20 @@ export const Header = () => {
                 )}
               </div>
 
-              {/* Mobile Capabilities — Tabbed */}
+              {/* Mobile Our Offerings — Tabbed */}
               <div>
                 <button onClick={() => setMobileCapabilitiesOpen(!mobileCapabilitiesOpen)}
                   className="w-full flex items-center justify-between px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                  <span>Capabilities</span>
+                  <span>Our Offerings</span>
                   <ChevronDown className={`w-5 h-5 transition-transform ${mobileCapabilitiesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {mobileCapabilitiesOpen && (
                   <div className="ml-2 mt-1 mb-3">
                     <div className="flex border-b border-white/5 mb-3">
+                      <button onClick={() => setMobileCapabilitiesTab('products')}
+                        className={`flex-1 px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${mobileCapabilitiesTab === 'products' ? 'border-[#00BFFF] text-[#00BFFF]' : 'border-transparent text-text-muted'}`}>
+                        By Products
+                      </button>
                       <button onClick={() => setMobileCapabilitiesTab('capability')}
                         className={`flex-1 px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${mobileCapabilitiesTab === 'capability' ? 'border-accent-primary text-accent-primary' : 'border-transparent text-text-muted'}`}>
                         By Capability
@@ -443,7 +530,45 @@ export const Header = () => {
                         By Industry
                       </button>
                     </div>
-                    {mobileCapabilitiesTab === 'capability' ? (
+                    {mobileCapabilitiesTab === 'products' ? (
+                      <div className="space-y-3">
+                        {[
+                          { pillar: 'Intelligence', color: '#00BFFF', cats: [
+                            'Enterprise AI & ML — watsonx, Vertex AI, Agentforce',
+                            'Data & Analytics — Tableau, Informatica, BigQuery',
+                            'AI Workstations & Laptops — Precision, ThinkPad, Core Ultra',
+                          ]},
+                          { pillar: 'Automation', color: '#F59E0B', cats: [
+                            'CRM & Customer Experience — Sales, Service, Marketing Cloud',
+                            'Integration & Automation — MuleSoft, Ansible, API Management',
+                            'Advisory & Strategy — AI Readiness, Architecture, Roadmap',
+                          ]},
+                          { pillar: 'Trust', color: '#7C3AED', cats: [
+                            'Servers & Storage — PowerEdge, ThinkSystem, FlashSystem',
+                            'AI GPUs & Accelerators — Gaudi 3, H100, Intel GPU Max',
+                            'Cybersecurity — QRadar, Guardium, Cyber Recovery',
+                            'Cloud & HCI — VxRail, ThinkAgile, APEX, OpenShift',
+                          ]},
+                        ].map((pillar) => (
+                          <div key={pillar.pillar}>
+                            <div className="flex items-center gap-2 px-4 py-1">
+                              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: pillar.color }} />
+                              <p className="text-tiny font-semibold text-text-muted uppercase tracking-wider">{pillar.pillar}</p>
+                            </div>
+                            {pillar.cats.map((cat) => (
+                              <Link key={cat} to="/products" onClick={() => setMobileMenuOpen(false)}
+                                className="block px-6 py-2 text-small text-text-primary hover:bg-white/5 rounded-lg transition-colors">
+                                {cat}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                        <Link to="/products" onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center gap-2 px-4 py-3 mt-2 text-[#00BFFF] font-semibold text-small border-t border-white/5 pt-4">
+                          View Full Product Catalog → 50+ products <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    ) : mobileCapabilitiesTab === 'capability' ? (
                       <div className="space-y-3">
                         {capabilityPillars.map((pillar) => (
                           <div key={pillar.pillar}>
@@ -481,7 +606,7 @@ export const Header = () => {
                       Strategic Partners <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link to="/blueprints" onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-2 px-4 py-3 mt-3 text-accent-primary font-medium text-small">
+                      className="flex items-center gap-2 px-4 py-3 text-accent-primary font-medium text-small">
                       View Blueprints <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

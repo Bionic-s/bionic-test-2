@@ -24,12 +24,12 @@ import ArabicIndustriesPage from './pages/ArabicIndustriesPage';
 
 // Capabilities (shared with legacy /solutions/* redirects)
 import AISolutionPage from './pages/solutions/AISolutionPage';
-import DataAnalyticsSolutionPage from './pages/solutions/DataAnalyticsSolutionPage';
-import BusinessApplicationsSolutionPage from './pages/solutions/BusinessApplicationsSolutionPage';
-import IntegrationSolutionPage from './pages/solutions/IntegrationSolutionPage';
+import DataAnalyticsSolutionPage from './pages/solutions/DataAnalyticsPage';
+import BusinessApplicationsSolutionPage from './pages/solutions/BusinessApplicationsPage';
+import IntegrationSolutionPage from './pages/solutions/IntegrationPage';
 import ServiceManagementSolutionPage from './pages/solutions/TechnologyOperationsPage';
-import CybersecuritySolutionPage from './pages/solutions/CybersecuritySolutionPage';
-import InfrastructureSolutionPage from './pages/solutions/InfrastructureSolutionPage';
+import CybersecuritySolutionPage from './pages/solutions/CybersecurityPage';
+import InfrastructureSolutionPage from './pages/solutions/InfrastructurePage';
 
 // Services
 import ServicesHub from './pages/services/ServicesHub';
@@ -43,6 +43,9 @@ import BankingIndustryPage from './pages/industries/BankingIndustryPage';
 import OilGasIndustryPage from './pages/industries/OilGasIndustryPage';
 import HealthcareIndustryPage from './pages/industries/HealthcareIndustryPage';
 import EnterpriseIndustryPage from './pages/industries/EnterpriseIndustryPage';
+
+// Products
+import ProductsPage from './pages/solutions/ProductsPage';
 
 // Architecture
 import ArchitecturePage from './pages/ArchitecturePage';
@@ -130,6 +133,9 @@ function AppContent() {
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/blueprints" element={<BlueprintsHub />} />
           <Route path="/blueprints/:slug" element={<TransformationBlueprintPage />} />
+
+          {/* ═══ Products ═══ */}
+          <Route path="/products" element={<ProductsPage />} />
 
           {/* ═══ Capabilities (7) ═══ */}
           <Route path="/capabilities/ai" element={<AISolutionPage />} />

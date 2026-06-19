@@ -8,6 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#D97706';
+const HERO_BG = '/test-site-2/images/cloud-computing.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
@@ -54,29 +55,39 @@ export default function TechnologyOperationsPage() {
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+    <div className="min-h-screen bg-bg-primary">
 
         {/* ════════════════════════════════════════════
-            1. HERO
+            1. HERO — with background image
             ════════════════════════════════════════════ */}
-        <motion.section className="mb-28" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>Technology Operations</SectionLabel>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
-            We run what we architect.<br />
-            <span style={{ color: ACCENT }}>AI-driven operations,</span> measured<br />
-            by outcomes — not tickets.
-          </h1>
-          <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
-            <span className="text-tiny font-semibold tracking-wider uppercase block mb-3" style={{ color: ACCENT }}>
-              Technology Transformation → Operational Excellence → Business Value
-            </span>
-            This is the capability that closes the loop. We don't just architect and deploy — we run,
-            optimize, and continuously improve the platforms that deliver your transformation outcomes.
-            From platform engineering to FinOps, from SRE to multi-vendor observability —{' '}
-            <strong className="text-text-primary">this is where transformation becomes operation.</strong>
-          </p>
-        </motion.section>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+            className="relative z-10 pt-40 pb-32 px-4 lg:px-12"
+          >
+            <SectionLabel>Technology Operations</SectionLabel>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
+              We run what we architect.<br />
+              <span style={{ color: ACCENT }}>AI-driven operations,</span> measured<br />
+              by outcomes — not tickets.
+            </h1>
+            <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
+              <span className="text-tiny font-semibold tracking-wider uppercase block mb-3" style={{ color: ACCENT }}>
+                Technology Transformation → Operational Excellence → Business Value
+              </span>
+              This is the capability that closes the loop. We don't just architect and deploy — we run,
+              optimize, and continuously improve the platforms that deliver your transformation outcomes.
+              From platform engineering to FinOps, from SRE to multi-vendor observability —{' '}
+              <strong className="text-text-primary">this is where transformation becomes operation.</strong>
+            </p>
+          </motion.div>
+        </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ════════════════════════════════════════════
             2. THE REALITY

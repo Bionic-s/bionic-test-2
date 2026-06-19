@@ -27,12 +27,18 @@ export const PartnerLogo = ({
   const px = sizes[size];
 
   if (p.logo) {
+    const maxW = size === 'sm' ? px * 3 : size === 'md' ? px * 3 : size === 'lg' ? px * 3 : px * 3;
     return (
       <img
         src={p.logo}
         alt={p.name}
         className={`object-contain ${className}`}
-        style={{ maxHeight: px, height: 'auto', width: 'auto', maxWidth: px * 4 }}
+        style={{
+          maxWidth: maxW,
+          maxHeight: px,
+          width: 'auto',
+          height: 'auto',
+        }}
       />
     );
   }
