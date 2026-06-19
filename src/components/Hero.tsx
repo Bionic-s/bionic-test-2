@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import { useCycleWords } from '../hooks/useCycleWords';
 
 export const Hero = () => {
-  const heroBg = `${import.meta.env.BASE_URL}images/hero_background_7.png`;
+  const heroBg = `${import.meta.env.BASE_URL}images/enterprise-ai-transformation-hero.avif`;
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
