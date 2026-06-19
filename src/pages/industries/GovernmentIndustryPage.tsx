@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, Cpu, GitBranch, BarChart3, TrendingUp } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
-const heroBg = `${import.meta.env.BASE_URL}images/hero_background_0.jpg`;
+const heroBg = `${import.meta.env.BASE_URL}images/professional-services-ai-hero.jpg`;
 
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
