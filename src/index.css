@@ -84,3 +84,81 @@ img {
   filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(180deg);
   transition: filter 0.3s ease;
 }
+
+/* ═══ Hover card glow ═══ */
+.hover-card,
+a[class*="bg-bg-secondary"][class*="rounded"],
+.group[class*="bg-bg-secondary"][class*="rounded"] {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hover-card:hover,
+a[class*="bg-bg-secondary"][class*="rounded"]:hover,
+.group[class*="bg-bg-secondary"][class*="rounded"]:hover {
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.08), 0 0 60px rgba(0, 191, 255, 0.03);
+  border-color: rgba(0, 191, 255, 0.15) !important;
+}
+
+/* ═══ Scroll progress bar ═══ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00BFFF, #7C3AED);
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ═══ Navbar glass/blur on scroll ═══ */
+.nav-glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(11, 13, 16, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ═══ Page transition ═══ */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+}
+
+/* ═══ Back to top button ═══ */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(11, 13, 16, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: rgba(0, 191, 255, 0.15);
+  border-color: rgba(0, 191, 255, 0.3);
+  transform: translateY(-2px);
+}

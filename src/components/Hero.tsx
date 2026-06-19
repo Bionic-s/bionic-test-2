@@ -97,16 +97,16 @@ export const Hero = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+            className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12" ref={ref}>
             {[
               { value: 11, suffix: '', label: 'Strategic Technology Partners', description: 'Global ecosystem' },
               { value: 7, suffix: '', label: 'Service Lines', description: 'Full transformation stack' },
               { value: 5, suffix: '', label: 'Top Sectors', description: 'Banking · Government · Oil & Gas · Enterprise' },
             ].map((metric, index) => (
-              <motion.div key={index} className="text-center group cursor-pointer" whileHover={{ scale: 1.05, y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} ref={ref}>
+              <motion.div key={index} className="text-center group cursor-pointer" whileHover={{ scale: 1.05, y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                 <motion.div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-primary mb-2 group-hover:text-accent-secondary transition-colors duration-300"
                   initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6, delay: 0.9 + index * 0.1, type: 'spring' }}>
-                  {inView && <CountUp start={0} end={metric.value} duration={2.5} delay={1 + index * 0.2} suffix={metric.suffix} useEasing={true} />}
+                  {inView ? <CountUp start={0} end={metric.value} duration={2.5} delay={1 + index * 0.2} suffix={metric.suffix} useEasing={true} /> : '0'}
                 </motion.div>
                 <div className="text-sm md:text-base font-medium text-text-primary mb-1">{metric.label}</div>
                 <div className="text-xs text-text-muted group-hover:text-accent-primary transition-colors duration-300">{metric.description}</div>

@@ -8,6 +8,8 @@ import { PartnerLogo } from '../components/PartnerLogo';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../data/blueprintsData';
 import { trackBlueprintHubView } from '../lib/analytics';
 
+const HERO_BG = '/test-site-2/images/security-alert.avif';
+
 const iatColors: Record<string, string> = {
   Intelligence: '#00BFFF',
   Automation: '#7C3AED',
@@ -107,26 +109,33 @@ export default function BlueprintsHub() {
   }, [selectedIndustries, selectedCapabilities, selectedPartners, searchQuery]);
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
-      <div className="container mx-auto px-4 lg:px-12">
-        {/* Page Hero */}
+    <div className="min-h-screen bg-bg-primary">
+      {/* ═══ HERO ═══ */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
+        </div>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+          className="relative z-10 pt-40 pb-24 text-center px-4"
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 mb-6">
-            <span className="text-tiny text-accent-primary font-semibold tracking-wider uppercase">Industry Use Cases</span>
+          <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 mb-6">
+              <span className="text-tiny text-accent-primary font-semibold tracking-wider uppercase">Industry Use Cases</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Transformation
+              <span className="block text-accent-primary">Blueprints</span>
+            </h1>
+            <p className="text-xl text-text-muted max-w-3xl mx-auto">
+              Real reference architectures built on Bionic's strategic ecosystem — connecting industries, capabilities, and partners into executable transformation blueprints.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Transformation
-            <span className="block text-accent-primary">Blueprints</span>
-          </h1>
-          <p className="text-xl text-text-muted max-w-3xl mx-auto">
-            Real reference architectures built on Bionic's strategic ecosystem — connecting industries, capabilities, and partners into executable transformation blueprints.
-          </p>
         </motion.div>
+      </section>
+
+      <div className="container mx-auto px-4 lg:px-12 pb-24">
 
         {/* Search */}
         <motion.div

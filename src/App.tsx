@@ -1,11 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
 import { StickyCTABar } from './components/StickyCTABar';
 import { ProgressiveProfiling } from './components/ProgressiveProfiling';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -119,9 +122,17 @@ function AppContent() {
 
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
       <ScrollToTop />
       <Header />
-      <main>
+      <AnimatePresence mode="wait">
+        <motion.main
+          key={location.pathname}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+        >
         <Routes>
           {/* ═══ Core Pages ═══ */}
           <Route path="/" element={<HomePage />} />
@@ -207,7 +218,8 @@ function AppContent() {
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </main>
+        </motion.main>
+      </AnimatePresence>
       {!location.pathname.startsWith('/ar') && (
         <>
           <Footer />
@@ -216,6 +228,7 @@ function AppContent() {
         </>
       )}
       <CookieConsent />
+      <BackToTop />
     </div>
   );
 }
