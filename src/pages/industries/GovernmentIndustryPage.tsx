@@ -265,7 +265,6 @@ export default function GovernmentIndustryPage() {
           </div>
         </motion.section>
 
-      </div>
     </div>
 );
 }

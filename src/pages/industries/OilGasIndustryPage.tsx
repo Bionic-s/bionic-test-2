@@ -252,7 +252,6 @@ export default function OilGasIndustryPage() {
           </div>
         </motion.section>
 
-      </div>
     </div>
 );
 }

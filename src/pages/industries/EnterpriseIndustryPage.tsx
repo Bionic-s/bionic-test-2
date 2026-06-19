@@ -263,7 +263,6 @@ export default function EnterpriseIndustryPage() {
           </div>
         </motion.section>
 
-      </div>
     </div>
 );
 }

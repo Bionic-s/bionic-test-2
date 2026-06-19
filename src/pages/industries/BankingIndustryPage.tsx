@@ -255,7 +255,6 @@ export default function BankingIndustryPage() {
           </div>
         </motion.section>
 
-      </div>
     </div>
 );
 }

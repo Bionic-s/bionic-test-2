@@ -256,7 +256,6 @@ export default function HealthcareIndustryPage() {
           </div>
         </motion.section>
 
-      </div>
     </div>
 );
 }
