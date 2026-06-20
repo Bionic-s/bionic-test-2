@@ -76,7 +76,7 @@ export default function ArabicTransformationBlueprintPage() {
       <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">المخطط المرجعي غير موجود</h1>
-          <p className="text-text-muted mb-8">المخطط المرجعي للتحول الذي تبحث عنه غير موجود.</p>
+          <p className="text-text-muted mb-8">المخطط المرجعي للتحول الذي تبحث عنه غير متوفر.</p>
           <Link to="/ar/blueprints" className="text-accent-primary hover:underline">← عرض جميع المخططات المرجعية</Link>
         </div>
       </div>
@@ -311,9 +311,9 @@ export default function ArabicTransformationBlueprintPage() {
       {/* الخطوة التالية */}
       <section className="py-16 bg-gradient-to-b from-bg-secondary to-bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">هل أنت مستعد لاستكشاف هذا المخطط المرجعي لمؤسستك؟</h2>
+          <h2 className="text-3xl font-bold mb-4">هل أنتم مستعدون لاستكشاف هذا المخطط المرجعي لمؤسستكم؟</h2>
           <p className="text-body text-text-muted mb-8 max-w-xl mx-auto">
-            اطلب جلسة استراتيجية لمناقشة كيفية تطبيق هذا المخطط المرجعي للتحول في سياق قطاعك.
+            اطلب جلسة استراتيجية لمناقشة كيفية تطبيق هذا المخطط المرجعي للتحول في سياق قطاعكم.
           </p>
           <Link
             to="/ar/contact"

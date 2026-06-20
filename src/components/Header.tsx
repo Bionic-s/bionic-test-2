@@ -7,14 +7,12 @@ import { ChevronDown, X, Menu, ArrowRight } from 'lucide-react';
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
-  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
+  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability'>('products');
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
-  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
+  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability'>('products');
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -26,24 +24,6 @@ export const Header = () => {
     { name: 'Enterprise Value System', desc: 'How value compounds across horizons', path: '/value' },
     { name: 'Partner Ecosystem', desc: 'Global technology partners', path: '/partners' },
     { name: 'Blueprints', desc: 'Transformation case studies', path: '/blueprints' },
-  ];
-
-  // ── Industries ──
-  const industries = [
-    { name: 'Government', desc: 'Sovereign AI, Vision 2030, national intelligence', path: '/industries/government', color: '#059669' },
-    { name: 'Banking', desc: 'SAMA compliance, fraud intelligence, open banking', path: '/industries/banking', color: '#2563EB' },
-    { name: 'Oil & Gas', desc: 'Predictive ops, OT/IT security, carbon intelligence', path: '/industries/oil-gas', color: '#D97706' },
-    { name: 'Healthcare', desc: 'Clinical AI, patient experience, health clusters', path: '/industries/healthcare', color: '#0D9488' },
-    { name: 'Enterprise', desc: 'Agentic workforce, Zero Trust, platform modernization', path: '/industries/enterprise', color: '#7C3AED' },
-  ];
-
-  // ── Capabilities by Industry tab ──
-  const industryCapabilityMap = [
-    { heading: 'Government', path: '/industries/government', caps: ['Enterprise AI', 'Data & Intelligence', 'Cybersecurity', 'Sovereign Infra'] },
-    { heading: 'Banking', path: '/industries/banking', caps: ['Enterprise AI', 'Data & Intelligence', 'Business Apps', 'Cybersecurity'] },
-    { heading: 'Oil & Gas', path: '/industries/oil-gas', caps: ['Enterprise AI', 'Integration & Ops', 'Cybersecurity', 'Sovereign Infra'] },
-    { heading: 'Healthcare', path: '/industries/healthcare', caps: ['Enterprise AI', 'Data & Intelligence', 'Business Apps', 'Integration'] },
-    { heading: 'Enterprise', path: '/industries/enterprise', caps: ['Enterprise AI', 'Business Apps', 'Cybersecurity', 'Technology Ops'] },
   ];
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
@@ -102,7 +82,6 @@ export const Header = () => {
 
   const closeAll = () => {
     setAboutOpen(false);
-    setIndustriesOpen(false);
     setCapabilitiesOpen(false);
     setServicesOpen(false);
   };
@@ -116,7 +95,6 @@ export const Header = () => {
   useEffect(() => {
     setMobileMenuOpen(false);
     setMobileAboutOpen(false);
-    setMobileIndustriesOpen(false);
     setMobileCapabilitiesOpen(false);
     setMobileCapabilitiesTab('capability');
     setMobileServicesOpen(false);
@@ -206,11 +184,7 @@ export const Header = () => {
                           By Capability
                           {capabilitiesTab === 'capability' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary rounded-full" />}
                         </button>
-                        <button onClick={() => setCapabilitiesTab('industry')}
-                          className={`relative px-4 py-3.5 text-sm font-medium transition-colors ${capabilitiesTab === 'industry' ? 'text-accent-primary' : 'text-text-muted hover:text-text-primary'}`}>
-                          By Industry
-                          {capabilitiesTab === 'industry' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary rounded-full" />}
-                        </button>
+
                       </div>
                       {/* Content */}
                       <div className="p-2">
@@ -316,17 +290,8 @@ export const Header = () => {
                             ))}
                           </div>
                         ) : (
-                          <div className="grid grid-cols-3 gap-0">
-                            {industryCapabilityMap.map((ind) => (
-                              <div key={ind.heading} className="p-5">
-                                <Link to={ind.path} className="text-small font-semibold text-text-primary hover:text-accent-primary transition-colors">{ind.heading}</Link>
-                                <div className="mt-3 space-y-1">
-                                  {ind.caps.map((cap) => (
-                                    <p key={cap} className="text-tiny text-text-muted px-3 py-1.5 -mx-3 rounded-lg">{cap}</p>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
+                          <div className="p-5 text-center">
+                            <p className="text-small text-text-muted">Select a tab above to browse by Products or Capability.</p>
                           </div>
                         )}
                       </div>
@@ -389,41 +354,11 @@ export const Header = () => {
                   </div>
                 )}
               </div>
-              {/* ═══ Industries Mega-Menu ═══ */}
-              <div className="relative"
-                onMouseEnter={() => { closeAll(); setIndustriesOpen(true); }}
-                onMouseLeave={() => setIndustriesOpen(false)}>
-                <Link to="/industries/government"
-                  className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                  <span>Industries</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${industriesOpen ? 'rotate-180' : ''}`} />
-                </Link>
-                {industriesOpen && <div className="absolute top-full left-0 h-3 w-full" />}
-                {industriesOpen && (
-                  <div className="absolute top-full -left-16 mt-1 w-[560px] bg-bg-secondary border border-white/10 rounded-xl shadow-2xl shadow-black/40 backdrop-blur-xl overflow-hidden"
-                    onMouseEnter={() => setIndustriesOpen(true)}
-                    onMouseLeave={() => setIndustriesOpen(false)}>
-                    <div className="p-2">
-                      <div className="grid grid-cols-3 gap-0">
-                        {industries.map((ind) => (
-                          <Link key={ind.name} to={ind.path} className="p-4 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: ind.color }} />
-                              <p className="text-small font-semibold text-text-primary group-hover/link:text-accent-primary transition-colors">{ind.name}</p>
-                            </div>
-                            <p className="text-tiny text-text-muted leading-relaxed">{ind.desc}</p>
-                          </Link>
-                        ))}
-                        <div className="col-span-3 border-t border-white/5 mt-1 pt-4 px-4 pb-2">
-                          <p className="text-tiny text-text-muted">
-                            5 industries. Government to enterprise — AI transformation applied to your sector.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+              {/* ═══ Partners ═══ */}
+              <Link to="/partners"
+                className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
+                Partners
+              </Link>
 
             </nav>
 
@@ -502,10 +437,7 @@ export const Header = () => {
                         className={`flex-1 px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${mobileCapabilitiesTab === 'capability' ? 'border-accent-primary text-accent-primary' : 'border-transparent text-text-muted'}`}>
                         By Capability
                       </button>
-                      <button onClick={() => setMobileCapabilitiesTab('industry')}
-                        className={`flex-1 px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${mobileCapabilitiesTab === 'industry' ? 'border-accent-primary text-accent-primary' : 'border-transparent text-text-muted'}`}>
-                        By Industry
-                      </button>
+
                     </div>
                     {mobileCapabilitiesTab === 'products' ? (
                       <div className="space-y-3">
@@ -564,18 +496,8 @@ export const Header = () => {
                         ))}
                       </div>
                     ) : (
-                      <div className="space-y-2">
-                        {industryCapabilityMap.map((ind) => (
-                          <div key={ind.heading}>
-                            <Link to={ind.path} onClick={() => setMobileMenuOpen(false)}
-                              className="block px-4 py-2 text-small font-semibold text-text-primary hover:text-accent-primary hover:bg-white/5 rounded-lg transition-colors">{ind.heading}</Link>
-                            <div className="ml-2">
-                              {ind.caps.map((cap) => (
-                                <p key={cap} className="px-6 py-1 text-tiny text-text-muted">{cap}</p>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
+                      <div className="p-4">
+                        <p className="text-small text-text-muted">Select a tab above to browse by Products or Capability.</p>
                       </div>
                     )}
                     <Link to="/partners" onClick={() => setMobileMenuOpen(false)}
@@ -619,28 +541,11 @@ export const Header = () => {
                 )}
               </div>
 
-              {/* Mobile Industries */}
-              <div>
-                <button onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-                  className="w-full flex items-center justify-between px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                  <span>Industries</span>
-                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {mobileIndustriesOpen && (
-                  <div className="ml-2 mt-1 space-y-1 mb-3">
-                    {industries.map((ind) => (
-                      <Link key={ind.name} to={ind.path} onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center gap-3 px-4 py-2.5 text-small text-text-primary hover:text-accent-primary hover:bg-white/5 rounded-lg transition-colors">
-                        <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: ind.color }} />
-                        <div>
-                          <div className="font-medium">{ind.name}</div>
-                          <div className="text-tiny text-text-muted">{ind.desc}</div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {/* Mobile Partners */}
+              <Link to="/partners" onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
+                Our Partners
+              </Link>
 
               {/* Mobile Arabic */}
               <Link to="/ar" onClick={() => setMobileMenuOpen(false)}

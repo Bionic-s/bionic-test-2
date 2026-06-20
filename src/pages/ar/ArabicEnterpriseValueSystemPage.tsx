@@ -25,21 +25,21 @@ export default function ArabicEnterpriseValueSystemPage() {
 
         {/* ═══ 1. HERO ═══ */}
         <motion.section className="mb-28" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>نظام القيمة المؤسسية</SectionLabel>
+          <SectionLabel>منظومة القيمة المؤسسية</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
             القيمة المؤسسية لا تأتي<br />
-            <span style={{ color: ACCENT }}>من التقنية. بل من القدرات.</span>
+            <span style={{ color: ACCENT }}>من التقنية، بل من القدرات.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
             أربعة آفاق للقيمة. تقدم متراكم واحد. من تحسين التكاليف إلى الريادة السوقية —
             هكذا نقيس ونحقق ونراكم القيمة المؤسسية عبر كل مشاركة.
-            ليس نشرًا للتقنية. بل بناء للقدرات المؤسسية.
+            لسنا ناشرين للتقنية — بل بناة للقدرات المؤسسية.
           </p>
         </motion.section>
 
         {/* ═══ 2. سؤال المدير المالي + سؤال الرئيس التنفيذي ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>الأسئلة المهمة</SectionLabel>
+          <SectionLabel>الأسئلة الجوهرية</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* المدير المالي */}
             <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8">
@@ -53,14 +53,14 @@ export default function ArabicEnterpriseValueSystemPage() {
                 </div>
               </div>
               <p className="text-text-muted text-sm leading-relaxed mb-5">
-                المدير المالي يسأل ثلاثة أسئلة حول كل استثمار تحولي.
+                المدير المالي يطرح ثلاثة أسئلة حول كل استثمار تحولي.
                 إجابتنا ليست دراسة جدوى — بل نظام تشغيل لتحقيق القيمة.
               </p>
               <div className="space-y-3">
                 {[
                   { q: 'أين القيمة؟', a: 'أربعة آفاق — النمو، الكفاءة، المرونة، القدرات. كل مشاركة ترتبط بواحد منها على الأقل.' },
                   { q: 'كيف تُقاس؟', a: 'لوحة مؤشرات أداء تنفيذية عبر الآفاق الأربعة. خط أساس، مستهدف، قياس ربع سنوي — وليس مراجعة سنوية.' },
-                  { q: 'كيف تتراكم؟', a: 'بيانات أفضل ← قرارات أذكى ← عمليات أسرع ← ثقة أقوى ← قيمة مؤسسية. كل دورة تقوّي كل نقطة.' },
+                  { q: 'كيف تتراكم؟', a: 'بيانات أفضل ← قرارات أذكى ← عمليات أسرع ← ثقة أقوى ← قيمة مؤسسية. كل دورة تعزز كل نقطة.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3">
                     <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: ACCENT }} />
@@ -85,13 +85,13 @@ export default function ArabicEnterpriseValueSystemPage() {
                 </div>
               </div>
               <p className="text-text-muted text-sm leading-relaxed mb-5">
-                الرئيس التنفيذي لا يسأل عن التقنية. بل يسأل عن الموقع التنافسي.
+                الرئيس التنفيذي لا يسأل عن التقنية، بل يسأل عن الموقع التنافسي.
                 إجابتنا ليست خطة مشروع — بل منصة قدرات مؤسسية.
               </p>
               <div className="space-y-3">
                 {[
                   { q: 'كيف يخلق التحول ميزة تنافسية؟', a: 'ببناء قدرات لا يمكن للمنافسين تقليدها في أشهر — عمليات مدمجة بالذكاء الاصطناعي، منصات بيانات سيادية، وضع ثقة Zero Trust.' },
-                  { q: 'كيف نتحرك أسرع من المنافسين؟', a: 'القوى العاملة الوكيلة تقلل دورات العمل من أسابيع إلى ساعات. القرارات المدعومة بالذكاء الاصطناعي تقضي على شلل التحليل. هندسة المنصات تسرّع التسليم.' },
+                  { q: 'كيف نتحرك أسرع من المنافسين؟', a: 'القوى العاملة الوكيلة تقلّص دورات العمل من أسابيع إلى ساعات. القرارات المدعومة بالذكاء الاصطناعي تقضي على شلل التحليل. هندسة المنصات تُسرّع التسليم.' },
                   { q: 'كيف نبني قدرات جديدة؟', a: 'بناء القدرات، وليس تسليم المشاريع. كل مشاركة تترك المؤسسة أقوى — بمنصات وبيانات ومهارات تتراكم.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3">
@@ -110,16 +110,16 @@ export default function ArabicEnterpriseValueSystemPage() {
         {/* ═══ 3. أربعة آفاق للقيمة ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>أربعة آفاق للقيمة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة لا تصل في ربع سنة واحد. إنها تتراكم عبر أربعة آفاق.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة لا تصل في ربع واحد، بل تتراكم عبر أربعة آفاق.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
-            كل أفق مدعوم بواحد أو أكثر من ركائز الذكاء-الأتمتة-الثقة (I-A-T).
+            كل أفق مدعوم بواحدة أو أكثر من ركائز الذكاء-الأتمتة-الثقة.
             معًا يشكلون محرك خلق القيمة.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
                 horizon: 'النمو',
-                timeline: '12-36 شهرًا',
+                timeline: '١٢–٣٦ شهرًا',
                 desc: 'الإيرادات، الحصة السوقية، قيمة العميل.',
                 iat: 'الذكاء + الأتمتة',
                 color: '#7C3AED',
@@ -127,15 +127,15 @@ export default function ArabicEnterpriseValueSystemPage() {
               },
               {
                 horizon: 'الكفاءة',
-                timeline: '0-12 شهرًا',
-                desc: 'التكلفة، الإنتاجية، throughput.',
+                timeline: '٠–١٢ شهرًا',
+                desc: 'التكلفة، الإنتاجية، معدل التدفق.',
                 iat: 'الأتمتة',
                 color: '#F97316',
-                items: ['أتمتة العمليات', 'إعادة توزيع الموارد البشرية', 'ترشيد البنية التحتية', 'خفض التذاكر'],
+                items: ['أتمتة العمليات', 'إعادة توزيع الكوادر', 'ترشيد البنية التحتية', 'خفض التذاكر'],
               },
               {
                 horizon: 'المرونة',
-                timeline: '6-18 شهرًا',
+                timeline: '٦–١٨ شهرًا',
                 desc: 'المخاطر، الامتثال، الاستمرارية.',
                 iat: 'الثقة',
                 color: '#2563EB',
@@ -143,7 +143,7 @@ export default function ArabicEnterpriseValueSystemPage() {
               },
               {
                 horizon: 'القدرات',
-                timeline: '24-60 شهرًا',
+                timeline: '٢٤–٦٠ شهرًا',
                 desc: 'منصات سيادية، بنية تحتية وطنية.',
                 iat: 'الذكاء + الأتمتة + الثقة',
                 color: '#0D9488',
@@ -171,9 +171,9 @@ export default function ArabicEnterpriseValueSystemPage() {
           </div>
         </motion.section>
 
-        {/* ═══ 4. منطق القيمة I-A-T ═══ */}
+        {/* ═══ 4. منطق القيمة — الذكاء والأتمتة والثقة ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>منطق القيمة I-A-T</SectionLabel>
+          <SectionLabel>منطق القيمة — الذكاء والأتمتة والثقة</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-3">ثلاث ركائز. ثلاث آليات للقيمة. نظام متراكم واحد.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
             ركائز بيونك الثلاث للتحول تخلق القيمة عبر آليات متميزة — وتتراكم عند تطبيقها معًا.
@@ -184,7 +184,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 pillar: 'الذكاء',
                 mechanism: 'سرعة القرار، رفع الذكاء، جودة الرؤى',
                 outcome: 'قرارات أسرع وأفضل على كل المستويات',
-                example: 'تقييم الائتمان بالذكاء الاصطناعي يقلص وقت القرار من أيام إلى دقائق — ويحسن الدقة.',
+                example: 'تقييم الائتمان بالذكاء الاصطناعي يقلّص وقت القرار من أيام إلى دقائق — ويُحسّن الدقة.',
                 color: '#00BFFF',
                 icon: Brain,
               },
@@ -192,15 +192,15 @@ export default function ArabicEnterpriseValueSystemPage() {
                 pillar: 'الأتمتة',
                 mechanism: 'الإنتاجية، تكلفة الخدمة، وقت الوصول للسوق',
                 outcome: 'مخرجات أكثر بتكلفة أقل وأخطاء أقل',
-                example: 'القوى العاملة الوكيلة تؤتمت المهام المتكررة — يُعاد توزيع الكوادر على أعمال عالية القيمة.',
+                example: 'القوى العاملة الوكيلة تؤتمت المهام المتكررة — ويُعاد توزيع الكوادر على أعمال عالية القيمة.',
                 color: '#7C3AED',
                 icon: Zap,
               },
               {
                 pillar: 'الثقة',
                 mechanism: 'المرونة، السيادة، وضع التدقيق',
-                outcome: 'ثقة تمكن النمو',
-                example: 'معمارية Zero Trust تمكّن التوسع الرقمي الآمن — يصبح الامتثال عامل تمكين وليس عائقًا.',
+                outcome: 'ثقة تمكّن النمو',
+                example: 'معمارية Zero Trust تمكّن التوسع الرقمي الآمن — فيصبح الامتثال عامل تمكين لا عائقًا.',
                 color: '#10B981',
                 icon: Shield,
               },
@@ -240,7 +240,7 @@ export default function ArabicEnterpriseValueSystemPage() {
               ))}
             </div>
             <p className="text-text-muted text-sm leading-relaxed mt-5 pt-5 border-t border-white/5">
-              عند تطبيقها معًا: الذكاء يوجّه الأتمتة، والأتمتة تنفذ الذكاء، والثقة تمكن الاثنين من العمل على نطاق واسع.
+              حين تُطبَّق معًا: الذكاء يوجّه الأتمتة، والأتمتة تنفّذ الذكاء، والثقة تمكّنهما من العمل على نطاق واسع.
               <strong className="text-text-primary"> الركائز الثلاث تتراكم.</strong>
             </p>
           </div>
@@ -251,15 +251,15 @@ export default function ArabicEnterpriseValueSystemPage() {
           <SectionLabel>دورة حياة تحقيق القيمة</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة تتحقق عبر دورة حياة التحول الكاملة — وليس عند التشغيل فقط.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
-            معظم الشركات تتوقف عند البناء — وتتآكل القيمة. بيونك مسؤولة عبر التشغيل والتطور — وهنا تتراكم القيمة.
+            معظم الشركات تتوقف عند البناء — فتتآكل القيمة. بيونك مسؤولة عبر التشغيل والتطوّر — وهنا تتراكم القيمة.
           </p>
           <div className="space-y-3">
             {[
-              { phase: 'المشاركة', color: '#7C3AED', icon: Target, what: 'الاستكشاف، الجاهزية، دراسة الجدوى', value: 'وضوح حول ما يجب تحويله، ولماذا، وما القيمة المتوقعة' },
+              { phase: 'المشاركة', color: '#7C3AED', icon: Target, what: 'الاستكشاف، الجاهزية، دراسة الجدوى', value: 'وضوح حول ما ينبغي تحويله، ولماذا، وما القيمة المتوقعة' },
               { phase: 'التصميم', color: '#06B6D4', icon: Layers, what: 'المعمارية، خارطة الطريق، الحوكمة', value: 'خطة تحول بأهداف قابلة للقياس وجداول زمنية محددة' },
               { phase: 'البناء', color: '#059669', icon: Zap, what: 'النشر، التكامل، التبني', value: 'منصات تشغيلية، مستخدمون منضمون، سير عمل حي' },
               { phase: 'التشغيل', color: '#F97316', icon: RefreshCw, what: 'التشغيل، المراقبة، التحسين', value: 'منصات عاملة، مشكلات محلولة، مقاييس متتبعة — تمكين مستمر للتحول' },
-              { phase: 'التطور', color: '#DC2626', icon: TrendingUp, what: 'الابتكار، التوسع، النطاق', value: 'قدرات جديدة مضافة، نطاق موسع، قيمة متراكمة ربعًا بعد ربع' },
+              { phase: 'التطوّر', color: '#DC2626', icon: TrendingUp, what: 'الابتكار، التوسع، النطاق', value: 'قدرات جديدة مُضافة، نطاق موسع، قيمة متراكمة ربعًا بعد ربع' },
             ].map((phase, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-white/10 transition-all duration-300 flex items-center gap-5">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${phase.color}15`, color: phase.color }}>
@@ -284,7 +284,7 @@ export default function ArabicEnterpriseValueSystemPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-3">كل مشاركة محكومة بمؤشرات أداء قابلة للقياس عبر آفاق القيمة الأربعة.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
             فيما يلي إطار القياس — الفئات التي نتتبعها ونقيسها ونحكمها عبر كل مشاركة.
-            لا أرقام ملفقة. لا ادعاءات مبالغ فيها. النظام الذي يحكم تحقيق القيمة.
+            لا أرقام ملفقة ولا ادعاءات مبالغ فيها — النظام الذي يحكم تحقيق القيمة.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -343,7 +343,7 @@ export default function ArabicEnterpriseValueSystemPage() {
         >
           <SectionLabel>تراكم القيمة المؤسسية</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            لسنا شركة مشاريع. لسنا شركة منتجات.<br />
+            لسنا شركة مشاريع، ولسنا شركة منتجات.<br />
             <span style={{ color: ACCENT }}>نحن شركة تراكم القدرات.</span>
           </h2>
 
@@ -351,10 +351,10 @@ export default function ArabicEnterpriseValueSystemPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 mb-8">
             <div className="space-y-6">
               {[
-                { step: 'بيانات أفضل', leads: 'قرارات أفضل', desc: 'بيانات موحدة ومحكومة وجاهزة للذكاء الاصطناعي — كل مشاركة تحسن جودة البيانات عبر المؤسسة. البيانات النظيفة تغذي القرارات النظيفة.' },
+                { step: 'بيانات أفضل', leads: 'قرارات أفضل', desc: 'بيانات موحدة ومحكومة وجاهزة للذكاء الاصطناعي — كل مشاركة تُحسّن جودة البيانات عبر المؤسسة. البيانات النظيفة تغذي القرارات السليمة.' },
                 { step: 'قرارات أفضل', leads: 'إجراءات أفضل', desc: 'رؤى مدعومة بالذكاء الاصطناعي على المستويات الاستراتيجية والتشغيلية والتكتيكية. قرارات أسرع وأدق وأكثر اتساقًا.' },
                 { step: 'إجراءات أفضل', leads: 'نتائج أفضل', desc: 'تنفيذ آلي، دورات عمل مختصرة، أخطاء أقل. الذكاء يتدفق إلى العمليات — لا يبقى حبيس لوحات المعلومات.' },
-                { step: 'نتائج أفضل', leads: 'قدرة استثمارية أكبر', desc: 'نمو الإيرادات، توسع الهوامش، خفض المخاطر. نتائج قابلة للقياس تمول الدورة التالية من التحول.' },
+                { step: 'نتائج أفضل', leads: 'قدرة استثمارية أكبر', desc: 'نمو الإيرادات، توسع الهوامش، خفض المخاطر. نتائج قابلة للقياس تموّل الدورة التالية من التحول.' },
                 { step: 'قدرة استثمارية أكبر', leads: 'قدرات مؤسسية أقوى', desc: 'إعادة استثمار في المنصات والبيانات والذكاء الاصطناعي والكفاءات. المؤسسة تصبح أقوى مع كل دورة — وليس فقط أكثر كفاءة.' },
                 { step: 'قدرات مؤسسية أقوى', leads: 'بيانات أفضل', desc: 'المنصات الأقوى تجمع بيانات أغنى. البيانات الأغنى تمكّن ذكاءً أعمق. الذكاء الأعمق يقود قرارات أسرع. الدورة تتسارع.', restart: true },
               ].map((item, i) => (
@@ -385,7 +385,7 @@ export default function ArabicEnterpriseValueSystemPage() {
             <p className="text-text-muted leading-relaxed max-w-[640px] mx-auto">
               كل مشاركة تبني قدرات مؤسسية تتراكم — وليس عمليات نشر لمرة واحدة تتآكل.
               بيانات أفضل تمكّن قرارات أفضل. قرارات أفضل تقود إجراءات أفضل. إجراءات أفضل تنتج نتائج أفضل.
-              نتائج أفضل تمول استثمارات أكبر. استثمارات أكبر تبني قدرات أقوى.
+              نتائج أفضل تموّل استثمارات أكبر. استثمارات أكبر تبني قدرات أقوى.
               قدرات أقوى تجمع بيانات أفضل.
               <strong className="text-text-primary"> الدورة تتسارع.</strong>
             </p>
@@ -402,7 +402,7 @@ export default function ArabicEnterpriseValueSystemPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center mb-12">
             <SectionLabel>الخطوة التالية</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4">
-              هل أنتم مستعدون لرؤية كيف ينطبق نظام القيمة المؤسسية على مؤسستكم؟
+              هل أنتم مستعدون لرؤية كيف تنطبق منظومة القيمة المؤسسية على مؤسستكم؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
               دعونا نناقش كيف تتوافق هذه الآفاق الأربعة ومنطق القيمة المتراكمة مع سياقكم المؤسسي المحدد.

@@ -13,7 +13,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const realityItems = [{"pre":"قوى عاملة مثقلة","text":"فرق عالية القيمة مدفونة في عمل يدوي متكرر."},{"pre":"بيانات منعزلة","text":"أنظمة تخطيط الموارد وإدارة العلاقات — بيانات في صوامع."},{"pre":"عمليات معطلة","text":"المشتريات والمالية والموارد البشرية — سير العمل بطيء ويدوي."},{"pre":"أنظمة عملاء قديمة","text":"أنظمة العملاء غير قادرة على الاستفادة من الذكاء."},{"pre":"تلاشي الحدود الأمنية","text":"العمل الهجين والسحابة يتطلب Zero Trust."},{"pre":"تقنية معلومات مثقلة","text":"حجم التذاكر ينمو أسرع من فرق تقنية المعلومات."}];
+const realityItems = [{"pre":"قوى عاملة مثقلة","text":"فرق عالية القيمة غارقة في عمل يدوي متكرر."},{"pre":"بيانات منعزلة","text":"أنظمة تخطيط الموارد وإدارة العلاقات — بيانات محتجزة في صوامع."},{"pre":"عمليات معطلة","text":"المشتريات والمالية والموارد البشرية — سير العمل بطيء ويدوي."},{"pre":"أنظمة عملاء تقليدية","text":"أنظمة العملاء غير مهيأة للاستفادة من قدرات الذكاء الاصطناعي."},{"pre":"تلاشي الحدود الأمنية","text":"العمل الهجين والسحابة يفرضان نموذج Zero Trust."},{"pre":"تقنية معلومات مثقلة","text":"حجم التذاكر ينمو بوتيرة أسرع من فرق تقنية المعلومات."}];
 const priorities = [{"title":"القوى العاملة الوكيلة","desc":"وكلاء ذكاء يعملون مع الفرق البشرية — مع حوكمة human-in-the-loop.","icon":"Brain"},{"title":"الذكاء الاصطناعي المؤسسي","desc":"ذكاء عبر كل وظيفة: المبيعات والتسويق والمالية والموارد البشرية.","icon":"Cpu"},{"title":"اتخاذ القرار المبني على البيانات","desc":"ذكاء أعمال تنفيذي، بيانات مؤسسية موحدة، تحليلات تنبؤية.","icon":"BarChart3"},{"title":"أمن Zero Trust","desc":"أمن متمركز حول الهوية، تجزئة دقيقة، تحقق مستمر.","icon":"Shield"},{"title":"تحديث المنصات","desc":"تحول إدارة علاقات العملاء، تكامل تخطيط الموارد، معمارية API.","icon":"GitBranch"},{"title":"تحول عمليات تقنية المعلومات","desc":"منصة المطور الداخلية، AIOps، FinOps، الخدمة الذاتية.","icon":"TrendingUp"}];
 const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"وكلاء الذكاء الاصطناعي، ذكاء المستندات، أتمتة العمليات، MLOps المؤسسي"},{"cap":"البيانات والتحليلات والذكاء","app":"بحيرة بيانات مؤسسية، ذكاء أعمال تنفيذي، إدارة البيانات الرئيسية"},{"cap":"تطبيقات الأعمال وتجربة العملاء","app":"تحول إدارة علاقات العملاء، مركز الاتصال، أتمتة التسويق"},{"cap":"التكامل والعمليات الذكية","app":"معمارية API، تكامل تخطيط الموارد، سير عمل مدفوع بالأحداث"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"Zero Trust، مركز عمليات أمنية، أمن الهوية، الامتثال المستمر"},{"cap":"عمليات التقنية","app":"منصة المطور الداخلية، AIOps، FinOps، هندسة المنصات، 24×7"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/apps","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/ops"];
@@ -42,13 +42,13 @@ export default function ArabicEnterpriseIndustryPage() {
           <div className="relative z-10 pt-44 pb-24">
             <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
         <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>المؤسسات الكبرى</SectionLabel>
+          <SectionLabel>قطاع المؤسسات الكبرى</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             منصة التحول المؤسسي<br />
             <span style={{ color: ACCENT }}>— ذكاء وكيلي، عمليات ذكية، أمن Zero Trust.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            هذا هو عرض القيمة الأكثر شمولاً من بيونك. من وكلاء الذكاء الاصطناعي إلى Zero Trust — نقدم المنظومة الكاملة.
+            هذا هو عرض القيمة الأكثر شمولاً من بيونك. من وكلاء الذكاء الاصطناعي إلى Zero Trust — نقدم المنظومة الكاملة للتحول المؤسسي.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicEnterpriseIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كل مؤسسة تتحول إلى مؤسسة ذكاء اصطناعي — لكن معظمها ليس جاهزًا.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الفرق عالية القيمة مدفونة في العمل اليدوي. البيانات محتجزة في أنظمة منفصلة. تجارب الذكاء الاصطناعي لا تصل إلى الإنتاج.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كل مؤسسة تتجه نحو الذكاء الاصطناعي — لكن معظمها ليس جاهزًا.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الفرق عالية القيمة غارقة في العمل اليدوي. البيانات محتجزة في أنظمة منفصلة. تجارب الذكاء الاصطناعي لا تصل إلى مرحلة الإنتاج.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">
@@ -87,8 +87,8 @@ export default function ArabicEnterpriseIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>القدرات ذات الصلة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كيف تتوافق قدرات بيونك مع متطلبات القطاع.</h2>
+          <SectionLabel>القدرات المرتبطة</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>مواءمة قدرات بيونك مع متطلبات القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilities.map((c, i) => (
               <Link key={i} to={capPaths[i]} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/25 transition-all duration-300 flex items-start gap-3 group">
@@ -103,8 +103,8 @@ export default function ArabicEnterpriseIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ مطبقة على القطاع.</h2>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ متكاملة لهذا القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <Link key={i} to={svcPaths[i]} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -117,7 +117,7 @@ export default function ArabicEnterpriseIndustryPage() {
 
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المخططات المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معمارياتنا المرجعية.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معماريات مرجعية تطبيقية.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -181,10 +181,10 @@ export default function ArabicEnterpriseIndustryPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              مستعدون لنشر منصة التحول المؤسسي؟
+              هل أنتم مستعدون لتطبيق منصة التحول المؤسسي؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              لنناقش كيف يمكن للذكاء الوكيلي وZero Trust وتحديث المنصات أن يحول مؤسستكم — أسرع مما تتوقعون.
+              لنناقش كيف تساهم حلول الذكاء الوكيلي وZero Trust وتحديث المنصات في تطوير مؤسستكم — بوتيرة أسرع مما تتوقعون.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"

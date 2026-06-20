@@ -85,9 +85,9 @@ export default function ArabicInfrastructurePage() {
 
         {/* ═══ 3. القدرات الأساسية ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-right">القدرات الأساسية</h2>
-          <p className="text-text-muted text-base mb-10 text-right">ست قدرات. كل قدرة مصمَّمة حول نتيجة سيادية وأداء ملموسة.</p>
+          <p className="text-text-muted text-base mb-10 text-right">ست قدرات. كل قدرة مصممة لتحقيق نتيجة سيادية وأداء ملموسين.</p>
 
           <div className="space-y-4">
             {[
@@ -95,7 +95,7 @@ export default function ArabicInfrastructurePage() {
                 icon: <Cloud className="w-5 h-5" />,
                 title: 'استراتيجية السحابة والتحديث',
                 desc: 'تقييم محافظ أحمال العمل، تحديد الحالة المستهدفة، وبناء خارطة طريق تحديث توازن بين المرونة والسيادة والاقتصاد — متوائمة مع استراتيجية الأعمال، لا حوافز مورّدي السحابة.',
-                outcomes: ['استراتيجية توزيع أحمال العمل: سحابة، هجين، سيادي، ومحلي', 'خارطة طريق تحديث مرتَّبة حسب الأثر التجاري والجدوى', 'نموذج تكلفة كلية للملكية يقارن الوضع الحالي بالمعمارية المستهدفة', 'استراتيجية ترحيل مع تخفيف المخاطر واستمرارية الأعمال'],
+                outcomes: ['استراتيجية توزيع أحمال العمل: سحابة، هجين، سيادي، ومحلي', 'خارطة طريق تحديث مرتَّبة حسب الأثر التجاري والجدوى', 'نموذج تكلفة كلية للملكية يقارن بين الوضع الحالي والمعمارية المستهدفة', 'استراتيجية ترحيل مع تخفيف المخاطر واستمرارية الأعمال'],
               },
               {
                 icon: <Server className="w-5 h-5" />,
@@ -150,9 +150,9 @@ export default function ArabicInfrastructurePage() {
           </div>
         </motion.section>
 
-        {/* ═══ 3.5 كيف ننجز ═══ */}
+        {/* ═══ 3.5 كيف نحقق ذلك ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">ثلاثة نماذج تنفيذ متكاملة — عبر جميع القدرات.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link to="/ar/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300 text-right">

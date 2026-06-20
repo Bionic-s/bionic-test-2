@@ -129,7 +129,7 @@ export default function Page() {
               <span className="block text-accent-primary">للتحول</span>
             </h1>
             <p className="text-xl text-text-muted max-w-3xl mx-auto">
-              معماريات مرجعية حقيقية مبنية على منظومة بيونك الاستراتيجية — تربط القطاعات والقدرات والشركاء في مخططات تحول مرجعية قابلة للتنفيذ.
+              معماريات مرجعية تطبيقية مبنية على منظومة بيونك الاستراتيجية — تربط القطاعات والقدرات والشركاء في مخططات تحول مرجعية قابلة للتنفيذ.
             </p>
           </div>
         </motion.div>
@@ -444,9 +444,9 @@ export default function Page() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-20 pt-16 border-t border-white/10"
         >
-          <h2 className="text-3xl font-bold mb-4">هل أنت مستعد لاستكشاف مخطط مرجعي لمؤسستك؟</h2>
+          <h2 className="text-3xl font-bold mb-4">هل أنتم مستعدون لاستكشاف مخطط مرجعي لمؤسستكم؟</h2>
           <p className="text-lg text-text-muted mb-8 max-w-2xl mx-auto">
-            كل مخطط مرجعي يمثل معمارية مرجعية — دعنا نناقش كيف ينطبق على سياق قطاعك وأهداف التحول الخاصة بك.
+            كل مخطط مرجعي يمثل معمارية مرجعية تطبيقية — دعنا نناقش كيف ينطبق على سياق قطاعكم وأهداف التحول الخاصة بكم.
           </p>
           <Link
             to="/ar/contact"

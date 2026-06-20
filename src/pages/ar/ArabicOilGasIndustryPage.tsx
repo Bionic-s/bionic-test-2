@@ -13,7 +13,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const realityItems = [{"pre":"التوقف غير المخطط","text":"أعطال المعدات تكلف الملايين — والصيانة لا تزال قائمة على التقويم وليس الحالة."},{"pre":"مخاطر تقارب OT/IT","text":"أنظمة التحكم الصناعي متصلة بدون تجزئة كافية أو كشف تهديدات."},{"pre":"عمليات بعيدة غير مرئية","text":"رؤية فورية محدودة للأصول الموزعة عبر مناطق شاسعة."},{"pre":"بيانات محتجزة","text":"بيانات تشغيلية جمعت لسنوات — لكنها لم تحلل."},{"pre":"الامتثال البيئي","text":"مراقبة انبعاثات يدوية — بطيئة وعرضة للأخطاء."},{"pre":"ضغط التحول في الطاقة","text":"تتبع الكربون وتحسين الكفاءة أصبحت متطلبات تشغيلية."}];
+const realityItems = [{"pre":"التوقف غير المخطط","text":"أعطال المعدات تُكلف الملايين — والصيانة ما زالت قائمة على التقويم لا على الحالة الفعلية."},{"pre":"مخاطر تقارب OT/IT","text":"أنظمة التحكم الصناعي متصلة دون تجزئة كافية أو آليات لكشف التهديدات."},{"pre":"عمليات نائية غير مرئية","text":"رؤية آنية محدودة للأصول الموزعة عبر مناطق شاسعة."},{"pre":"بيانات محتجزة","text":"بيانات تشغيلية متراكمة لسنوات — دون تحليل يُذكر."},{"pre":"الامتثال البيئي","text":"مراقبة الانبعاثات يدوية — بطيئة وعرضة للأخطاء."},{"pre":"ضغط التحول في الطاقة","text":"تتبع الكربون وتحسين الكفاءة لم يعودا خيارًا — بل متطلبين تشغيليين."}];
 const priorities = [{"title":"الصيانة التنبؤية","desc":"توقع أعطال المعدات بالذكاء الاصطناعي باستخدام تحليلات إنترنت الأشياء والتوائم الرقمية.","icon":"Wrench"},{"title":"تقارب الأمن السيبراني OT/IT","desc":"أمن OT متعدد الطبقات مع تجزئة الشبكة وكشف التهديدات.","icon":"Shield"},{"title":"ذكاء من الحافة إلى السحابة","desc":"تحليلات فورية مع إدارة مركزية لنماذج الذكاء الاصطناعي.","icon":"Cpu"},{"title":"ذكاء الكربون والطاقة","desc":"تتبع الانبعاثات بالذكاء الاصطناعي وتحسين الطاقة.","icon":"BarChart3"},{"title":"عمليات التوأم الرقمي","desc":"نسخ افتراضية للأصول المادية للمحاكاة والتحسين.","icon":"TrendingUp"},{"title":"ذكاء سلسلة الإمداد","desc":"لوجستيات ذكية وتنبؤ بالطلب وإدارة مخاطر الموردين.","icon":"TrendingUp"}];
 const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء الصيانة التنبؤية، كشف الشذوذ، الرؤية الحاسوبية لفحص الأصول"},{"cap":"البيانات والتحليلات والذكاء","app":"منصة بيانات إنترنت الأشياء، لوحات تشغيلية فورية، تحليلات الانبعاثات"},{"cap":"التكامل والعمليات الذكية","app":"تكامل OT/IT، خطوط بيانات من الحافة إلى السحابة، اتصال SCADA"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"أمن OT/IT، حماية ICS، امتثال IEC 62443"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"حوسبة طرفية، سحابة هجينة للعمليات البعيدة، بنية ذكاء للطاقة"},{"cap":"عمليات التقنية","app":"عمليات منصات من الحافة إلى السحابة، مراقبة OT/IT موحدة 24×7"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/infra","/ar/capabilities/ops"];
@@ -42,13 +42,13 @@ export default function ArabicOilGasIndustryPage() {
           <div className="relative z-10 pt-44 pb-24">
             <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
         <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>النفط والغاز والطاقة</SectionLabel>
+          <SectionLabel>قطاع النفط والغاز والطاقة</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             عمليات طاقة ذكية —<br />
             <span style={{ color: ACCENT }}>من الصيانة التنبؤية إلى ذكاء الكربون.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من الصيانة التنبؤية المدعومة بالذكاء الاصطناعي إلى أمن OT/IT، ومن الذكاء من الحافة إلى السحابة إلى تتبع الكربون — نساعد شركات الطاقة السعودية على تعظيم وقت تشغيل الأصول وتقليل المخاطر.
+            من الصيانة التنبؤية المدعومة بالذكاء الاصطناعي إلى أمن OT/IT، ومن الذكاء الممتد من الحافة إلى السحابة إلى تتبع الكربون — نمكن شركات الطاقة السعودية من تعظيم زمن تشغيل الأصول وتقليل المخاطر.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicOilGasIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>المخاطر التشغيلية في الطاقة تقاس بالملايين لكل ساعة توقف.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>أعطال المعدات تكلف ملايين. أنظمة التحكم الصناعي متصلة بدون أمن كافٍ. العمليات الميدانية البعيدة تفتقر للرؤية الفورية.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>المخاطر التشغيلية في قطاع الطاقة تُقاس بالملايين لكل ساعة توقف.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>أعطال المعدات تُكلف ملايين الريالات. أنظمة التحكم الصناعي متصلة دون حماية كافية. العمليات الميدانية النائية تفتقر إلى الرؤية الآنية.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">
@@ -87,8 +87,8 @@ export default function ArabicOilGasIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>القدرات ذات الصلة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كيف تتوافق قدرات بيونك مع متطلبات القطاع.</h2>
+          <SectionLabel>القدرات المرتبطة</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>مواءمة قدرات بيونك مع متطلبات القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilities.map((c, i) => (
               <Link key={i} to={capPaths[i]} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/25 transition-all duration-300 flex items-start gap-3 group">
@@ -103,8 +103,8 @@ export default function ArabicOilGasIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ مطبقة على القطاع.</h2>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ متكاملة لهذا القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <Link key={i} to={svcPaths[i]} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -117,7 +117,7 @@ export default function ArabicOilGasIndustryPage() {
 
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المخططات المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معمارياتنا المرجعية.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معماريات مرجعية تطبيقية.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -181,10 +181,10 @@ export default function ArabicOilGasIndustryPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              مستعدون لتحويل عمليات الطاقة لديكم بالذكاء؟
+              هل أنتم مستعدون لتطوير عمليات الطاقة لديكم بالذكاء الاصطناعي؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              لنناقش كيف يمكن للصيانة التنبؤية وأمن OT/IT وذكاء الكربون أن تقلل المخاطر وتعظم قيمة الأصول.
+              لنناقش كيف تساهم الصيانة التنبؤية وأمن OT/IT وذكاء الكربون في تقليل المخاطر وتعظيم قيمة الأصول.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"

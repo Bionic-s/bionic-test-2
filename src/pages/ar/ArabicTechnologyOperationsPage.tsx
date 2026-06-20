@@ -123,10 +123,10 @@ export default function ArabicTechnologyOperationsPage() {
         </motion.section>
 
         {/* ════════════════════════════════════════════
-            3.5 كيف ننجز
+            3.5 كيف نحقق ذلك
             ════════════════════════════════════════════ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">ثلاثة نماذج تنفيذ متكاملة — عبر جميع القدرات.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link to="/ar/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#D97706]/25 transition-all duration-300 text-right">

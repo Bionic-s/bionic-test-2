@@ -22,15 +22,15 @@ export const HeaderAr = () => {
   // ── About dropdown ──
   const aboutItems = [
     { name: 'من نحن', desc: 'قصتنا، فريق القيادة، ورسالتنا', path: '/ar/about' },
-    { name: 'معمارية التحول', desc: '10 طبقات. منظومة واحدة متكاملة.', path: '/ar/architecture' },
-    { name: 'نظام القيمة المؤسسية', desc: 'كيف تتراكم القيمة عبر الآفاق', path: '/ar/value' },
+    { name: 'معمارية التحول', desc: '١٠ طبقات. منظومة واحدة متكاملة.', path: '/ar/architecture' },
+    { name: 'منظومة القيمة المؤسسية', desc: 'كيف تتراكم القيمة عبر الآفاق', path: '/ar/value' },
     { name: 'منظومة الشركاء', desc: 'شركاء التقنية العالميون', path: '/ar/partners' },
     { name: 'المخططات المرجعية', desc: 'دراسات حالة تحولية', path: '/ar/blueprints' },
   ];
 
   // ── Industries ──
   const industries = [
-    { name: 'حكومي', desc: 'الذكاء السيادي، رؤية 2030، الذكاء الوطني', path: '/ar/industries/government', color: '#059669' },
+    { name: 'حكومي', desc: 'الذكاء السيادي، رؤية ٢٠٣٠، الذكاء الوطني', path: '/ar/industries/government', color: '#059669' },
     { name: 'بنوك', desc: 'امتثال البنك المركزي، ذكاء الاحتيال، الخدمات المصرفية المفتوحة', path: '/ar/industries/banking', color: '#2563EB' },
     { name: 'نفط وغاز', desc: 'العمليات التنبؤية، أمن OT/IT، ذكاء الكربون', path: '/ar/industries/oil-gas', color: '#D97706' },
     { name: 'رعاية صحية', desc: 'الذكاء السريري، تجربة المريض، التجمعات الصحية', path: '/ar/industries/healthcare', color: '#0D9488' },
@@ -53,17 +53,17 @@ export const HeaderAr = () => {
       tagline: 'ذكاء اصطناعي · تحليلات · بيانات',
       color: '#00BFFF',
       items: [
-        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'وكلاء الذكاء الاصطناعي والمساعدون الأذكياء، MLOps', path: '/ar/capabilities/ai' },
-        { name: 'البيانات والتحليلات والذكاء', desc: 'منصات البيانات، إدارة البيانات الرئيسية، ذكاء الأعمال', path: '/ar/capabilities/data' },
+        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'وكلاء ذكاء اصطناعي ومساعدون أذكياء، MLOps', path: '/ar/capabilities/ai' },
+        { name: 'البيانات والتحليلات والذكاء', desc: 'منصات بيانات، إدارة بيانات رئيسية، ذكاء أعمال', path: '/ar/capabilities/data' },
       ],
     },
     {
       pillar: 'الأتمتة',
-      tagline: 'تطبيقات · تكامل · سير العمل',
+      tagline: 'تطبيقات · تكامل · سير عمل',
       color: '#F59E0B',
       items: [
-        { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز الاتصال، التجارة', path: '/ar/capabilities/apps' },
-        { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، المعمارية المدفوعة بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
+        { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز اتصال، تجارة', path: '/ar/capabilities/apps' },
+        { name: 'التكامل والعمليات الذكية', desc: 'معمارية قائمة على واجهات برمجة التطبيقات، معمارية بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
       ],
     },
     {
@@ -71,9 +71,9 @@ export const HeaderAr = () => {
       tagline: 'أمن سيبراني · سيادة · مرونة',
       color: '#7C3AED',
       items: [
-        { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز العمليات الأمنية، Zero Trust، الهوية', path: '/ar/capabilities/cyber' },
-        { name: 'البنية التحتية السيادية', desc: 'مراكز البيانات، السحابة الهجينة، البنية التحتية للذكاء الاصطناعي', path: '/ar/capabilities/infra' },
-        { name: 'عمليات التقنية', desc: 'هندسة المنصات، AIOps، هندسة الموثوقية', path: '/ar/capabilities/ops' },
+        { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز عمليات أمنية، Zero Trust، هوية', path: '/ar/capabilities/cyber' },
+        { name: 'البنية التحتية السيادية', desc: 'مراكز بيانات، سحابة هجينة، بنية تحتية للذكاء الاصطناعي', path: '/ar/capabilities/infra' },
+        { name: 'عمليات التقنية', desc: 'هندسة منصات، AIOps، هندسة موثوقية', path: '/ar/capabilities/ops' },
       ],
     },
   ];
@@ -83,8 +83,8 @@ export const HeaderAr = () => {
     {
       heading: 'الاستشارات والتخطيط',
       path: '/ar/services/advisory',
-      desc: 'الاستراتيجية، المعمارية، الجاهزية للذكاء الاصطناعي، خرائط طريق الامتثال',
-      items: ['تقييم الجاهزية للذكاء الاصطناعي', 'استشارات الامتثال والحوكمة', 'المعمارية المؤسسية', 'استراتيجية التحول المؤسسي'],
+      desc: 'الاستراتيجية، المعمارية، جاهزية الذكاء الاصطناعي، خرائط طريق الامتثال',
+      items: ['تقييم جاهزية الذكاء الاصطناعي', 'استشارات الامتثال والحوكمة', 'المعمارية المؤسسية', 'استراتيجية التحول المؤسسي'],
     },
     {
       heading: 'التنفيذ والتسليم',
@@ -95,8 +95,8 @@ export const HeaderAr = () => {
     {
       heading: 'العمليات المدارة',
       path: '/ar/services/operations',
-      desc: 'عمليات المنصات 24×7، AIOps، هندسة الموثوقية، FinOps، التحسين المستمر',
-      items: ['عمليات التقنية 24×7', 'مركز العمليات الأمنية كخدمة', 'حوكمة FinOps', 'هندسة المنصات'],
+      desc: 'عمليات المنصات على مدار الساعة، AIOps، هندسة موثوقية، FinOps، تحسين مستمر',
+      items: ['عمليات التقنية على مدار الساعة', 'مركز عمليات أمنية كخدمة', 'حوكمة FinOps', 'هندسة المنصات'],
     },
   ];
 
@@ -159,7 +159,7 @@ export const HeaderAr = () => {
                 onMouseLeave={() => setAboutOpen(false)}>
                 <Link to="/ar/about"
                   className="flex items-center space-x-1 space-x-reverse px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                  <span>عن الشركة</span>
+                  <span>من نحن</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${aboutOpen ? 'rotate-180' : ''}`} />
                 </Link>
                 {aboutOpen && <div className="absolute top-full right-0 h-3 w-full" />}
@@ -246,7 +246,7 @@ export const HeaderAr = () => {
                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F59E0B' }} />
                                 <div>
                                   <h4 className="text-small font-semibold text-text-primary">الأتمتة</h4>
-                                  <p className="text-tiny text-text-muted">إدارة علاقات العملاء · تكامل · استشارات</p>
+                                  <p className="text-tiny text-text-muted">CRM · تكامل · استشارات</p>
                                 </div>
                               </div>
                               <div className="space-y-0.5 mr-4">
@@ -290,7 +290,7 @@ export const HeaderAr = () => {
                             {/* CTA row */}
                             <Link to="/ar/products"
                               className="col-span-3 px-4 py-3 mt-1 rounded-lg hover:bg-[#00BFFF06] transition-colors flex items-center justify-center gap-2 text-small font-semibold text-[#00BFFF] hover:text-white">
-                              تصفح كامل كتالوج المنتجات ← 4 ألسنة · 10 فئات · +50 منتج <ArrowRight className="w-4 h-4 rotate-180" />
+                              تصفح كامل كتالوج المنتجات ← ٤ ألسنة · ١٠ فئات · +٥٠ منتج <ArrowRight className="w-4 h-4 rotate-180" />
                             </Link>
                           </div>
                         ) : capabilitiesTab === 'capability' ? (
@@ -334,7 +334,7 @@ export const HeaderAr = () => {
                       {/* Footer */}
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30" style={{ fontFamily: "'Tajawal', sans-serif" }}>
                         <p className="text-tiny text-text-muted">
-                          {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. 11 شريكًا. علاقة واحدة.' : '7 قدرات. 3 ركائز. الذكاء · الأتمتة · الثقة.'}
+                          {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. ١١ شريكًا. علاقة واحدة.' : '٧ قدرات. ٣ ركائز. الذكاء · الأتمتة · الثقة.'}
                         </p>
                         <Link to="/ar/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
                           استعرض المخططات المرجعية <ArrowRight className="w-4 h-4 rotate-180" />
@@ -417,7 +417,7 @@ export const HeaderAr = () => {
                         ))}
                         <div className="col-span-3 border-t border-white/5 mt-1 pt-4 px-4 pb-2 text-right">
                           <p className="text-tiny text-text-muted">
-                            5 قطاعات. من الحكومي إلى المؤسسات الكبرى — تحول الذكاء الاصطناعي مطبق على قطاعك.
+                            ٥ قطاعات. من الحكومي إلى المؤسسات الكبرى — تحول الذكاء الاصطناعي مُطبّق على قطاعك.
                           </p>
                         </div>
                       </div>
@@ -469,7 +469,7 @@ export const HeaderAr = () => {
               <div>
                 <button onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                   className="w-full flex items-center justify-between px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                  <span>عن الشركة</span>
+                  <span>من نحن</span>
                   <ChevronDown className={`w-5 h-5 transition-transform ${mobileAboutOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {mobileAboutOpen && (
@@ -517,7 +517,7 @@ export const HeaderAr = () => {
                             'محطات العمل وأجهزة الذكاء — Precision, ThinkPad, Core Ultra',
                           ]},
                           { pillar: 'الأتمتة', color: '#F59E0B', cats: [
-                            'إدارة علاقات العملاء وتجربة العميل — Sales, Service, Marketing Cloud',
+                            'CRM وتجربة العميل — Sales, Service, Marketing Cloud',
                             'التكامل والأتمتة — MuleSoft, Ansible, API Management',
                             'الاستشارات والاستراتيجية — جاهزية الذكاء، المعمارية، خارطة الطريق',
                           ]},
@@ -543,7 +543,7 @@ export const HeaderAr = () => {
                         ))}
                         <Link to="/ar/products" onClick={() => setMobileMenuOpen(false)}
                           className="flex items-center gap-2 px-4 py-3 mt-2 text-[#00BFFF] font-semibold text-small border-t border-white/5 pt-4">
-                          تصفح كامل كتالوج المنتجات ← +50 منتج <ArrowRight className="w-4 h-4 rotate-180" />
+                          تصفح كامل كتالوج المنتجات ← +٥٠ منتج <ArrowRight className="w-4 h-4 rotate-180" />
                         </Link>
                       </div>
                     ) : mobileCapabilitiesTab === 'capability' ? (

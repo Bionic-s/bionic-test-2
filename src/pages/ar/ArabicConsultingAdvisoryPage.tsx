@@ -83,7 +83,7 @@ export default function ArabicConsultingAdvisoryPage() {
               التحول قبل الشراء.
             </h1>
             <p className="text-text-muted text-lg max-w-[720px] mx-auto leading-relaxed">
-              نساعد المؤسسات السعودية في الإجابة على أصعب الأسئلة أولاً: ماذا يجب أن نحول، ولماذا، وبأي ترتيب، وكيف — من جاهزية الذكاء الاصطناعي إلى تصميم نموذج التشغيل، ومن معمارية الامتثال إلى خارطة طريق متعددة السنوات. خدمات استشارية تحول الطموح إلى تحول قابل للتنفيذ.
+              نمكن المؤسسات السعودية من الإجابة على الأسئلة الأصعب أولاً: ماذا نحول؟ ولماذا؟ وبأي أولويات؟ وكيف؟ — انطلاقًا من جاهزية الذكاء الاصطناعي إلى تصميم نموذج التشغيل، ومن معمارية الامتثال إلى خارطة طريق متعددة السنوات. خدمات استشارية تحول الطموح إلى خطة تحول قابلة للتنفيذ.
             </p>
           </div>
         </motion.div>
@@ -95,19 +95,19 @@ export default function ArabicConsultingAdvisoryPage() {
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            معظم التحولات تفشل قبل أن تبدأ — في مرحلة الاستراتيجية.
+            معظم التحولات تتعثر قبل أن تبدأ — عند مرحلة الاستراتيجية.
           </h2>
           <p className="text-text-muted mb-8 max-w-[720px]">
-            تستثمر المؤسسات الملايين في التقنية دون حالة أعمال واضحة، دون فهم التعرض التنظيمي، ودون تصميم نموذج التشغيل الذي سيحافظ على الاستثمار. نحن نصلح هذا — قبل أن تبدأ عمليات الشراء.
+            تستثمر المؤسسات الملايين في التقنية دون حالة أعمال واضحة، دون فهم التعرض التنظيمي، ودون تصميم نموذج التشغيل الذي يضمن استدامة الاستثمار. نحن نعالج هذا — قبل أن تبدأ عمليات الشراء.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
-              { pre: 'استراتيجية بدون حالة أعمال', text: 'قرارات تقنية تُتخذ بدون نمذجة عائد الاستثمار أو تحليل التكلفة الإجمالية أو موافقة تنفيذية — يختفي الاستثمار قبل أن تصل القيمة' },
-              { pre: 'اكتشاف المتطلبات التنظيمية متأخرًا', text: 'متطلبات SDAIA و NCA و PDPL تظهر متأخرة في التنفيذ — مما يجبر على إعادة عمل مكلفة وتمارين امتثال طارئة' },
+              { pre: 'استراتيجية بدون حالة أعمال', text: 'قرارات تقنية تُتخذ دون نمذجة عائد الاستثمار أو تحليل التكلفة الإجمالية أو موافقة تنفيذية — يختفي الاستثمار قبل أن تتحقق القيمة' },
+              { pre: 'اكتشاف المتطلبات التنظيمية متأخرًا', text: 'متطلبات SDAIA و NCA و PDPL تظهر متأخرة أثناء التنفيذ — مما يفرض إعادة عمل مكلفة وتمارين امتثال طارئة' },
               { pre: 'فائض حالات الاستخدام', text: 'العشرات من فرص الذكاء الاصطناعي والأتمتة يتم تحديدها — ولكن بدون إطار لترتيبها حسب التأثير والجدوى والمخاطر' },
-              { pre: 'اختيار المورّدين مبني على العلاقات', text: 'قرارات المنصات تُتخذ بناءً على علاقات مورّدين قائمة — وليس بناءً على تقييم موضوعي للقدرات مقابل متطلبات الأعمال' },
-              { pre: 'تجاهل نموذج التشغيل', text: 'تقنية تُنشر في مؤسسة لم يتم إعادة تصميمها لاستيعابها — الأفراد والعمليات والحوكمة تُترك خلف الركب' },
-              { pre: 'غياب خط الأساس للقياس', text: 'انطلاق التحول بدون مؤشرات أداء رئيسية، بدون خط أساس، بدون آلية تتبع القيمة — يصبح النجاح رأيًا وليس دليلاً' },
+              { pre: 'اختيار المورّدين مبني على العلاقات', text: 'قرارات المنصات تُتخذ بناءً على علاقات مورّدين قائمة — لا على تقييم موضوعي للقدرات مقابل متطلبات الأعمال' },
+              { pre: 'تجاهل نموذج التشغيل', text: 'تقنية تُطبق في مؤسسة لم يُعاد تصميمها لاستيعابها — الأفراد والعمليات والحوكمة تُترك خلف الركب' },
+              { pre: 'غياب خط الأساس للقياس', text: 'انطلاق التحول دون مؤشرات أداء رئيسية، دون خط أساس، دون آلية لتتبع القيمة — يصبح النجاح رأيًا لا دليلاً' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#0D9488]/20 transition-all duration-300">
                 <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
@@ -121,7 +121,7 @@ export default function ArabicConsultingAdvisoryPage() {
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>حلولنا</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            من الجاهزية إلى الموافقة التنفيذية — ست خدمات استشارية.
+            من الجاهزية إلى اعتماد المجلس — ست خدمات استشارية.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
@@ -138,7 +138,7 @@ export default function ArabicConsultingAdvisoryPage() {
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>تغطية القدرات</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            تغطي استشاراتنا كل قدرة نقدمها.
+            استشاراتنا تغطي كامل منظومة قدراتنا.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilityCoverage.map((c, i) => (
@@ -157,7 +157,7 @@ export default function ArabicConsultingAdvisoryPage() {
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المنظومة الاستراتيجية</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            موضوعية متعددة المورّدين. في كل مشاركة.
+            موضوعية متعددة المنصات والتقنيات. في كل مشاركة.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (
@@ -184,7 +184,7 @@ export default function ArabicConsultingAdvisoryPage() {
           className="mb-28"
         >
           <SectionLabel>مخططات التحول المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تشكلت من خلال المشاركات الاستشارية.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تطبيقية تبلورت عبر المشاركات الاستشارية.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
@@ -207,10 +207,10 @@ export default function ArabicConsultingAdvisoryPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">الفرق الاستشاري.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { title: 'موضوعية متعددة المورّدين', desc: 'لا نمثل مورّدًا واحدًا. نختار ما يحقق أقصى قيمة لأعمالكم — بناءً على التقييم مقابل متطلباتكم، وليس حوافز الموزعين.' },
+              { title: 'موضوعية متعددة المنصات والتقنيات', desc: 'لا نمثل مورّدًا واحدًا. نختار ما يحقق أقصى قيمة لأعمالكم — بناءً على التقييم مقابل متطلباتكم، لا على حوافز الموزعين.' },
               { title: 'عمق تنظيمي سعودي', desc: 'خبرة SDAIA و NCA و PDPL و SAMA مدمجة في كل مشاركة استشارية. المواءمة التنظيمية تُصمم من اليوم الأول — لا تُضاف لاحقًا.' },
-              { title: 'استمرارية من الاستشارة إلى التنفيذ', desc: 'الفريق الذي يقدم الاستشارة هو الفريق الذي ينفذ. لا فجوات تسليم، لا انقطاع بين الاستراتيجية والتنفيذ، لا "رمي فوق الجدار".' },
-              { title: 'نتائج قابلة للقياس، وليس عروضًا تقديمية', desc: 'كل مشاركة استشارية تنتهي بمؤشرات أداء قابلة للقياس، وحالة أعمال مالية، وخارطة طريق قابلة للتنفيذ — وليس تقريرًا من 200 صفحة يوضع على الرف.' },
+              { title: 'استمرارية من الاستشارة إلى التنفيذ', desc: 'الفريق الذي يقدم الاستشارة هو من يتولى التنفيذ. لا فجوات تسليم، لا انقطاع بين الاستراتيجية والتنفيذ، لا تسليم منقوص.' },
+              { title: 'نتائج قابلة للقياس، لا عروض تقديمية', desc: 'كل مشاركة استشارية تنتهي بمؤشرات أداء قابلة للقياس، وحالة أعمال مالية، وخارطة طريق قابلة للتنفيذ — لا تقرير من 200 صفحة يُوضع على الرف.' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
@@ -255,10 +255,10 @@ export default function ArabicConsultingAdvisoryPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4">
-              هل أنت مستعد لتحويل الطموح إلى خارطة طريق قابلة للتنفيذ؟
+              هل أنتم مستعدون لتحويل الطموح إلى خارطة طريق قابلة للتنفيذ؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
-              دعنا نناقش كيف يمكن لخدماتنا الاستشارية بناء الأساس الاستراتيجي الذي يحتاجه تحولكم.
+              دعنا نناقش كيف تساهم خدماتنا الاستشارية في بناء الأساس الاستراتيجي الذي يحتاجه تحولكم.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link

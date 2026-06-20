@@ -32,7 +32,7 @@ export const ContactAr = () => {
     
     try {
       if (formData.message && formData.message.length > 1000) {
-        throw new Error('يجب أن تكون الرسالة أقل من 1000 حرف');
+        throw new Error('يجب ألا تتجاوز الرسالة ١٠٠٠ حرف');
       }
       
       if (!consent) {
@@ -52,16 +52,16 @@ export const ContactAr = () => {
           email: formData.email,
           company: formData.company,
           phone: formData.phone || null,
-          message: formData.message || 'لم يتم تقديم رسالة',
+          message: formData.message || 'لم تُقدَّم رسالة',
         },
       });
 
       if (submitError) {
-        throw new Error(submitError.message || 'فشل في إرسال النموذج');
+        throw new Error(submitError.message || 'فشل إرسال النموذج');
       }
 
       if (data?.error) {
-        throw new Error(data.error.message || 'فشل في إرسال النموذج');
+        throw new Error(data.error.message || 'فشل إرسال النموذج');
       }
 
       setIsSubmitting(false);
@@ -117,7 +117,7 @@ export const ContactAr = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-h4 md:text-h3 lg:text-h3 text-text-muted"
             >
-              يستجيب فريقنا خلال 24 ساعة لمناقشة أولويات التحول لديكم.
+              يرد فريقنا خلال ٢٤ ساعة لمناقشة أولويات التحول لديكم.
             </motion.p>
           </div>
 
@@ -130,14 +130,14 @@ export const ContactAr = () => {
             {/* How We Engage */}
             <div className="mb-12 pb-12 border-b border-white/5">
               <h3 className="text-h4 font-semibold mb-6 text-center">كيف نعمل معًا</h3>
-              <p className="text-body text-text-muted text-center mb-8">كل تحول يبدأ بمحادثة.</p>
+              <p className="text-body text-text-muted text-center mb-8">كل رحلة تحول تبدأ بمحادثة.</p>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                 {[
-                  { step: '1', title: 'جلسة استراتيجية', dur: '45 دقيقة', desc: 'نقاش مركز حول أولويات التحول لديكم. ليس عرضًا تجاريًا.' },
-                  { step: '2', title: 'الاكتشاف والتقييم', dur: 'أسبوع – أسبوعين', desc: 'تحليل معمق للمعمارية والقدرات والأهداف المؤسسية.' },
-                  { step: '3', title: 'المعمارية والمخطط', dur: 'أسبوعين – 4 أسابيع', desc: 'المعمارية المستهدفة، خارطة الطريق، الحوكمة، وحالة الأعمال.' },
-                  { step: '4', title: 'التنفيذ', dur: '8–16 أسبوعًا', desc: 'نشر المنصات، التكامل، وإدارة التبني المؤسسي.' },
-                  { step: '5', title: 'العمليات المدارة', dur: 'مستمرة', desc: 'تحسين مستمر، مراقبة، وتطور طويل الأمد.' },
+                  { step: '1', title: 'جلسة استراتيجية', dur: '٤٥ دقيقة', desc: 'نقاش مركز حول أولويات التحول — وليس عرضًا تجاريًا.' },
+                  { step: '2', title: 'الاكتشاف والتقييم', dur: 'أسبوع – أسبوعين', desc: 'تحليل معمق للمعمارية الحالية وقدراتكم وأهدافكم المؤسسية.' },
+                  { step: '3', title: 'المعمارية والمخطط', dur: 'أسبوعين – ٤ أسابيع', desc: 'المعمارية المستهدفة وخارطة الطريق والحوكمة وحالة الأعمال.' },
+                  { step: '4', title: 'التنفيذ', dur: '٨–١٦ أسبوعًا', desc: 'نشر المنصات والتكامل وإدارة التبني المؤسسي.' },
+                  { step: '5', title: 'العمليات المدارة', dur: 'مستمرة', desc: 'تحسين مستمر ومراقبة وتطوير طويل المدى.' },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
                     <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-tiny font-bold" style={{ backgroundColor: '#2563EB15', color: '#2563EB' }}>{item.step}</div>
@@ -153,8 +153,8 @@ export const ContactAr = () => {
             <div className="mb-12 pb-12 border-b border-white/5">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-bg-primary/50 rounded-xl border border-white/5">
                 <div className="text-right">
-                  <h4 className="text-lg font-semibold text-text-primary mb-1">تفضل الحجز المباشر؟</h4>
-                  <p className="text-sm text-text-muted">اختر التاريخ والوقت المناسبين لك — بدون مراسلات متبادلة.</p>
+                  <h4 className="text-lg font-semibold text-text-primary mb-1">تفضل الحجز المباشر</h4>
+                  <p className="text-sm text-text-muted">اختر التاريخ والوقت المناسبين — بدون مراسلات متبادلة.</p>
                 </div>
                 <Link
                   to="/ar/book-discovery-call?source=contact&intent=strategy-session"
@@ -169,12 +169,12 @@ export const ContactAr = () => {
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
-                <h3 className="text-h3 font-semibold mb-2 text-success">تم استلام طلب الاجتماع الخاص بكم</h3>
+                <h3 className="text-h3 font-semibold mb-2 text-success">تم استلام طلبكم</h3>
                 <p className="text-body text-text-muted mb-4">
-                  سيقوم فريقنا بمراجعة طلبكم والرد خلال 24 ساعة.
+                  سيراجع فريقنا طلبكم ويرد خلال ٢٤ ساعة.
                 </p>
                 <p className="text-small text-text-muted mb-6">
-                  أثناء الانتظار، استكشف كيف تقدم بيونك التحول المؤسسي.
+                  أثناء الانتظار — استكشف كيف تقدم بيونك التحول المؤسسي.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -190,7 +190,7 @@ export const ContactAr = () => {
                     className="inline-flex items-center gap-2 px-6 py-3 bg-bg-primary border border-white/10 rounded-full text-text-muted hover:border-accent-primary/50 hover:text-text-primary transition-all"
                   >
                     <FileText className="w-4 h-4" />
-                    <span>نظام القيمة المؤسسية</span>
+                    <span>منظومة القيمة المؤسسية</span>
                   </Link>
                 </div>
               </div>
@@ -241,7 +241,7 @@ export const ContactAr = () => {
 
                 <div>
                   <label htmlFor="company" className="block text-small text-text-muted mb-2 text-right">
-                    الشركة (اختياري)
+                    الجهة (اختياري)
                   </label>
                   <input
                     type="text"
@@ -250,7 +250,7 @@ export const ContactAr = () => {
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-bg-primary border border-white/10 rounded-medium text-text-primary focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20 transition-all text-right"
-                    placeholder="اسم شركتكم"
+                    placeholder="اسم جهة العمل"
                   />
                 </div>
 
@@ -302,7 +302,7 @@ export const ContactAr = () => {
                     className="mt-1 w-4 h-4 rounded border-white/20 bg-bg-primary text-accent-primary focus:ring-accent-primary/30 cursor-pointer"
                   />
                   <label htmlFor="consent" className="text-tiny text-text-muted cursor-pointer text-right">
-                    أوافق على <Link to="/ar/privacy" className="text-accent-primary hover:underline">سياسة الخصوصية</Link> وأوافق على قيام شركة بيونك سوليوشنز بمعالجة معلوماتي للرد على استفساري.
+                    أوافق على <Link to="/ar/privacy" className="text-accent-primary hover:underline">سياسة الخصوصية</Link> وأوافق على معالجة شركة بيونك سوليوشنز لمعلوماتي للرد على استفساري.
                   </label>
                 </div>
 
@@ -325,7 +325,7 @@ export const ContactAr = () => {
                 </button>
 
                 <p className="text-tiny text-text-muted mt-4 text-right">
-                  * حقول إلزامية. سيقوم فريقنا بالرد على طلب الاجتماع خلال 24 ساعة.
+                  * حقول إلزامية. يرد فريقنا على طلب الاجتماع خلال ٢٤ ساعة.
                 </p>
               </form>
             )}

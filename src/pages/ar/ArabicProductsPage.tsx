@@ -29,24 +29,24 @@ const infraCategories: Category[] = [
   {
     name: 'محطات عمل وأجهزة الذكاء الاصطناعي',
     products: [
-      { name: 'Precision AI Workstations', vendor: 'Dell Technologies', desc: 'محطات عمل مكتبية ومحمولة جاهزة للذكاء الاصطناعي بمعالجات NVIDIA RTX أو Intel Arc Pro، معتمدة من مزودي البرمجيات المستقلة لأعمال تعلم الآلة وعلوم البيانات وتطوير الذكاء الاصطناعي الطرفي.' },
-      { name: 'ThinkPad P-Series & ThinkStation', vendor: 'Lenovo', desc: 'محطات عمل احترافية ومكتبية للذكاء الاصطناعي — خيارات معالجات NVIDIA RTX وذاكرة كبيرة، مصممة لتشغيل النماذج محلياً وأعمال الذكاء الاصطناعي الميدانية.' },
+      { name: 'Precision AI Workstations', vendor: 'Dell Technologies', desc: 'محطات عمل مكتبية ومحمولة جاهزة للذكاء الاصطناعي بمعالجات NVIDIA RTX أو Intel Arc Pro، معتمدة من مزودي البرمجيات المستقلين لأعمال تعلم الآلة وعلوم البيانات وتطوير الذكاء الاصطناعي الطرفي.' },
+      { name: 'ThinkPad P-Series & ThinkStation', vendor: 'Lenovo', desc: 'محطات عمل احترافية ومكتبية للذكاء الاصطناعي — خيارات معالجات NVIDIA RTX وذاكرة كبيرة، مصممة لتشغيل النماذج محليًا وأعمال الذكاء الاصطناعي الميدانية.' },
       { name: 'Intel Core Ultra (AI PC)', vendor: 'Intel', desc: 'معالجات الجيل التالي للحواسب الشخصية المزوّدة بوحدة معالجة عصبية مدمجة — تقدم استدلال الذكاء الاصطناعي على الجهاز وتجارب Copilot+ وكفاءة طاقة عالية للحواسب المؤسسية.' },
     ],
   },
   {
     name: 'مسرّعات ومعالجات الذكاء الاصطناعي',
     products: [
-      { name: 'Gaudi 3 AI Accelerators', vendor: 'Intel', desc: 'مسرّعات تعلّم عميق مخصصة لتدريب النماذج واستدلالها على نطاق واسع. منظومة مفتوحة — بديل اقتصادي للمعماريات الاحتكارية لوحدات معالجة الرسوميات.' },
-      { name: 'Data Center GPU Max', vendor: 'Intel', desc: 'حوسبة عالية الكثافة لوحدات معالجة الرسوميات للحوسبة الفائقة والذكاء الاصطناعي — حتى 128 نواة Xe لكل وحدة. مصممة للأحمال المتوازية الكثيفة: المحاكاة والتدريب والحوسبة العلمية.' },
-      { name: 'NVIDIA GPUs (via OEM)', vendor: 'Dell Technologies', desc: 'وحدات معالجة NVIDIA H100 وL40S وRTX مدمجة مصنعياً في خوادم Dell PowerEdge ومحطات Precision. مجموعة برمجيات NVIDIA AI Enterprise متاحة بالكامل.' },
-      { name: 'NVIDIA GPUs (via OEM)', vendor: 'Lenovo', desc: 'وحدات معالجة NVIDIA H100 وL40S وRTX في خوادم Lenovo ThinkSystem ومحطات ThinkStation — معتمدة لمنصتي NVIDIA AI Enterprise وNVIDIA Omniverse.' },
+      { name: 'Gaudi 3 AI Accelerators', vendor: 'Intel', desc: 'مسرّعات تعلّم عميق مخصصة لتدريب النماذج واستدلالها على نطاق واسع. منظومة مفتوحة — بديل اقتصادي للمعماريات الاحتكارية.' },
+      { name: 'Data Center GPU Max', vendor: 'Intel', desc: 'حوسبة عالية الكثافة للحوسبة الفائقة والذكاء الاصطناعي — حتى ١٢٨ نواة Xe لكل وحدة. مصممة للأحمال المتوازية الكثيفة: المحاكاة والتدريب والحوسبة العلمية.' },
+      { name: 'NVIDIA GPUs (via OEM)', vendor: 'Dell Technologies', desc: 'وحدات NVIDIA H100 وL40S وRTX مدمجة مصنعيًا في خوادم Dell PowerEdge ومحطات Precision. مجموعة برمجيات NVIDIA AI Enterprise متاحة بالكامل.' },
+      { name: 'NVIDIA GPUs (via OEM)', vendor: 'Lenovo', desc: 'وحدات NVIDIA H100 وL40S وRTX في خوادم Lenovo ThinkSystem ومحطات ThinkStation — معتمدة لمنصتي NVIDIA AI Enterprise وNVIDIA Omniverse.' },
     ],
   },
   {
     name: 'الخوادم',
     products: [
-      { name: 'PowerEdge Servers', vendor: 'Dell Technologies', desc: 'خوادم مؤسسية بأنواع الرف والبرج والمسرّعة بوحدات معالجة الرسوميات — من الاستخدام العام إلى الخوادم المحسّنة للذكاء الاصطناعي بخيارات NVIDIA أو Intel GPU.' },
+      { name: 'PowerEdge Servers', vendor: 'Dell Technologies', desc: 'خوادم مؤسسية بأنواع الرف والبرج والمسرّعة — من الاستخدام العام إلى الخوادم المحسّنة للذكاء الاصطناعي بخيارات NVIDIA أو Intel GPU.' },
       { name: 'ThinkSystem Servers', vendor: 'Lenovo', desc: 'خوادم مؤسسية مصممة لتدريب الذكاء الاصطناعي والاستدلال وقواعد البيانات والافتراضية — مختبرة مع NVIDIA AI Enterprise.' },
       { name: 'Power Servers', vendor: 'IBM', desc: 'خوادم Linux مخصصة للأحمال كثيفة البيانات وSAP HANA واستدلال الذكاء الاصطناعي.' },
       { name: 'Xeon Scalable Processors', vendor: 'Intel', desc: 'معالجات مراكز بيانات بتسريع ذكاء اصطناعي مدمج (AMX) وحماية معززة على مستوى العتاد.' },
@@ -57,14 +57,14 @@ const infraCategories: Category[] = [
     products: [
       { name: 'PowerStore Storage', vendor: 'Dell Technologies', desc: 'تخزين فلاشي بالكامل من الفئة المتوسطة بأتمتة ذكية وأداء NVMe وقدرة AppsON المدمجة.' },
       { name: 'PowerMax Storage', vendor: 'Dell Technologies', desc: 'تخزين عالي الأداء للمهام الحرجة — تحسين آني مدعوم بالذكاء الاصطناعي ومعمارية بلا توقف للصيانة.' },
-      { name: 'FlashSystem Storage', vendor: 'IBM', desc: 'تخزين فلاشي بالكامل مسرّع بتقنية NVMe — مرونة سيبرانية مع تشفير مدمج وكشف عن برامج الفدية.' },
+      { name: 'FlashSystem Storage', vendor: 'IBM', desc: 'تخزين فلاشي بالكامل مسرّع بتقنية NVMe — مرونة سيبرانية مع تشفير مدمج وكشف برامج الفدية.' },
     ],
   },
   {
     name: 'البنية فائقة التقارب (HCI)',
     products: [
       { name: 'VxRail Hyperconverged', vendor: 'Dell Technologies', desc: 'جهاز HCI متكامل — حوسبة وتخزين وشبكات. إدارة آلية لدورة الحياة لمنصات VMware والسحابة الأصلية.' },
-      { name: 'ThinkAgile HCI', vendor: 'Lenovo', desc: 'بنية HCI متكاملة للسحابة الهجينة — مدمجة مصنعياً مع Nutanix أو Microsoft أو VMware.' },
+      { name: 'ThinkAgile HCI', vendor: 'Lenovo', desc: 'بنية HCI متكاملة للسحابة الهجينة — مدمجة مصنعيًا مع Nutanix أو Microsoft أو VMware.' },
     ],
   },
   {
@@ -97,7 +97,7 @@ const cyberCategories: Category[] = [
   {
     name: 'التعافي السيبراني',
     products: [
-      { name: 'PowerProtect Cyber Recovery', vendor: 'Dell Technologies', desc: 'خزنة استرداد معزولة وغير قابلة للتغيير — مفصولة هوائياً عن بيئة الإنتاج. تحمي البيانات الحرجة من برامج الفدية بفحوصات سلامة آلية.' },
+      { name: 'PowerProtect Cyber Recovery', vendor: 'Dell Technologies', desc: 'خزنة استرداد معزولة وغير قابلة للتغيير — مفصولة هوائيًا عن بيئة الإنتاج. تحمي البيانات الحرجة من برامج الفدية بفحوصات سلامة آلية.' },
     ],
   },
 ];
@@ -107,7 +107,7 @@ const platformCategories: Category[] = [
   {
     name: 'إدارة علاقات العملاء وتجربة العميل',
     products: [
-      { name: 'Sales Cloud', vendor: 'Salesforce', desc: 'إدارة خطوط المبيعات والتنبؤ وتخطيط المناطق والرؤى المدعومة بالذكاء الاصطناعي. مصممة لفرق المبيعات المؤسسية في السعودية.' },
+      { name: 'Sales Cloud', vendor: 'Salesforce', desc: 'إدارة خطوط المبيعات والتنبؤ وتخطيط المناطق والرؤى المدعومة بالذكاء الاصطناعي. مصممة لفرق المبيعات المؤسسية في المملكة.' },
       { name: 'Service Cloud', vendor: 'Salesforce', desc: 'خدمة عملاء ذكية — إدارة الحالات وتوجيه متعدد القنوات وخدمة ميدانية ومساعدة ذكية للموظفين.' },
       { name: 'Marketing Cloud', vendor: 'Salesforce', desc: 'تسويق مخصص على نطاق واسع — رحلات عميل وحملات بريد إلكتروني وجوال وإعلانات وتفاعل آني عبر Data Cloud.' },
     ],
@@ -136,7 +136,7 @@ const platformCategories: Category[] = [
     products: [
       { name: 'Tableau Creator', vendor: 'Tableau', desc: 'تحليلات شاملة — ربط البيانات وبناء لوحات معلومات تفاعلية ومشاركة الرؤى. إعداد البيانات وتحليلها وسرد القصص في ترخيص واحد.' },
       { name: 'Tableau Explorer & Viewer', vendor: 'Tableau', desc: 'تحليلات ذاتية الخدمة — استكشاف لوحات معلومات موثوقة وطرح الأسئلة باللغة الطبيعية والاشتراك في تنبيهات قائمة على البيانات.' },
-      { name: 'Informatica MDM', vendor: 'Informatica', desc: 'إدارة البيانات الرئيسية — رؤية شاملة 360 درجة للعملاء والأصول والمورّدين. مطابقة وإدارة مدعومة بالذكاء الاصطناعي.' },
+      { name: 'Informatica MDM', vendor: 'Informatica', desc: 'إدارة البيانات الرئيسية — رؤية شاملة بزاوية ٣٦٠ درجة للعملاء والأصول والمورّدين. مطابقة وإدارة مدعومة بالذكاء الاصطناعي.' },
       { name: 'Informatica Data Governance', vendor: 'Informatica', desc: 'حوكمة البيانات وفهرستها — اكتشاف وتصنيف وحوكمة البيانات. تتبع آلي للنسب وقواعد الجودة وامتثال لنظام حماية البيانات الشخصية.' },
       { name: 'BigQuery', vendor: 'Google', desc: 'مستودع بيانات سحابي متعدد بدون خادم مع تعلّم آلة مدمج. تحليل بيتابايتات من البيانات في ثوانٍ — تحليلات جاهزة للذكاء الاصطناعي.' },
     ],
@@ -148,8 +148,8 @@ const serviceCategories: Category[] = [
   {
     name: 'وكلاء الذكاء الاصطناعي المؤسسي',
     products: [
-      { name: 'Agent Discovery Workshop', vendor: 'Bionic Solutions', desc: 'مشاركة لمدة أسبوعين — نحدد 3-5 حالات استخدام عالية العائد لوكلاء الذكاء الاصطناعي عبر مؤسستك. تُسلم كخارطة طريق ذات أولوية مع تقديرات البناء.' },
-      { name: 'Custom AI Agent Build', vendor: 'Bionic Solutions', desc: 'تطوير شامل لدورة حياة الوكيل — اكتشاف وتصميم وبناء واختبار ونشر. مدعوم بـ Salesforce Agentforce أو IBM watsonx أو Google Vertex AI. يُسلم جاهزاً للإنتاج في بيئتك.' },
+      { name: 'Agent Discovery Workshop', vendor: 'Bionic Solutions', desc: 'مشاركة لمدة أسبوعين — نحدد ٣–٥ حالات استخدام عالية العائد لوكلاء الذكاء الاصطناعي عبر مؤسستك. تُسلّم كخارطة طريق ذات أولوية مع تقديرات البناء.' },
+      { name: 'Custom AI Agent Build', vendor: 'Bionic Solutions', desc: 'تطوير شامل لدورة حياة الوكيل — اكتشاف وتصميم وبناء واختبار ونشر. مدعوم بـ Salesforce Agentforce أو IBM watsonx أو Google Vertex AI. يُسلّم جاهزًا للإنتاج في بيئتك.' },
       { name: 'Agent Operations & Evolution', vendor: 'Bionic Solutions', desc: 'مراقبة مستمرة للوكلاء وتحسين التلقينات وصيانة قاعدة المعرفة وتحليلات الأداء. عقد دوري شهري — نواصل تطوير وكلائك.' },
     ],
   },
@@ -157,23 +157,23 @@ const serviceCategories: Category[] = [
     name: 'الاستشارات والاستراتيجية',
     products: [
       { name: 'AI Readiness Assessment', vendor: 'Bionic Solutions', desc: 'تقييم لمدة أسبوعين — جاهزية البنية التحتية والبيانات والحوكمة والمواهب. تقرير جاهز لمجلس الإدارة مع خارطة طريق ذات أولوية.' },
-      { name: 'Strategy & Architecture', vendor: 'Bionic Solutions', desc: 'مشاركة تنفيذية — تصميم الحالة المستهدفة وتحليل فجوات القدرات وخارطة طريق تحول لمدة 18 شهراً.' },
+      { name: 'Strategy & Architecture', vendor: 'Bionic Solutions', desc: 'مشاركة تنفيذية — تصميم الحالة المستهدفة وتحليل فجوات القدرات وخارطة طريق تحول لمدة ١٨ شهرًا.' },
     ],
   },
   {
     name: 'النشر والتكامل',
     products: [
       { name: 'Platform Deployment', vendor: 'Bionic Solutions', desc: 'نشر كامل للعتاد والبرمجيات والمنصات السحابية — متعدد المورّدين والمجالات بمسؤولية موحدة.' },
-      { name: 'AI & Automation Delivery', vendor: 'Bionic Solutions', desc: 'نماذج ذكاء اصطناعي وسير أتمتة وأنظمة وكلاء اصطناعيين إلى بيئة الإنتاج — عمليات MLOps ومراقبة وحوكمة.' },
-      { name: 'Platform Engineering & IDP', vendor: 'Bionic Solutions', desc: 'منصة تطوير داخلية — مسارات ذهبية وبنية تحتية ذاتية الخدمة وحوكمة آلية. بنية تحتية في دقائق، لا أسابيع.' },
+      { name: 'AI & Automation Delivery', vendor: 'Bionic Solutions', desc: 'نماذج ذكاء اصطناعي وسير أتمتة وأنظمة وكلاء إلى بيئة الإنتاج — عمليات MLOps ومراقبة وحوكمة.' },
+      { name: 'Platform Engineering & IDP', vendor: 'Bionic Solutions', desc: 'منصة تطوير داخلية — مسارات ذهبية وبنية تحتية ذاتية الخدمة وحوكمة آلية. بنية تحتية في دقائق لا أسابيع.' },
     ],
   },
   {
     name: 'العمليات المدارة',
     products: [
-      { name: 'Managed Operations 24×7', vendor: 'Bionic Solutions', desc: 'عمليات منصات مستمرة — مراقبة واستجابة للحوادث وتحديثات وتحسين. 3 مستويات: الأساسية والمتقدمة والنخبة.' },
-      { name: 'SOC-as-a-Service', vendor: 'Bionic Solutions', desc: 'مركز عمليات أمنية 24×7 — مراقبة التهديدات والصيد والاستجابة للحوادث والامتثال. متوافق مع الهيئة الوطنية للأمن السيبراني والبنك المركزي السعودي.' },
-      { name: 'FinOps Governance', vendor: 'Bionic Solutions', desc: 'إدارة تكاليف السحابة والبنية التحتية — رؤية ومحاسبة تناسبية وتنبؤ وتحسين. عادةً ما تحقق توفيراً بنسبة 25–40% خلال ربعين.' },
+      { name: 'Managed Operations 24×7', vendor: 'Bionic Solutions', desc: 'عمليات منصات مستمرة — مراقبة واستجابة للحوادث وتحديثات وتحسين. ٣ مستويات: الأساسية والمتقدمة والنخبة.' },
+      { name: 'SOC-as-a-Service', vendor: 'Bionic Solutions', desc: 'مركز عمليات أمنية على مدار الساعة — مراقبة التهديدات والصيد والاستجابة للحوادث والامتثال. متوافق مع الهيئة الوطنية للأمن السيبراني والبنك المركزي السعودي.' },
+      { name: 'FinOps Governance', vendor: 'Bionic Solutions', desc: 'إدارة تكاليف السحابة والبنية التحتية — رؤية ومحاسبة تناسبية وتنبؤ وتحسين. تحقق عادةً توفيرًا بنسبة ٢٥–٤٠٪ خلال ربعين.' },
     ],
   },
 ];
@@ -183,7 +183,7 @@ const serviceCategories: Category[] = [
    ═══════════════════════════════════════════ */
 
 const tabs = [
-  { id: 'infrastructure', label: 'البنية التحتية', icon: Server, desc: 'الخوادم والتخزين والبنية فائقة التقارب ومنصات السحابة ذات السيادة.' },
+  { id: 'infrastructure', label: 'البنية التحتية', icon: Server, desc: 'الخوادم والتخزين والبنية فائقة التقارب ومنصات السحابة السيادية.' },
   { id: 'cybersecurity', label: 'الأمن السيبراني', icon: Shield, desc: 'إدارة المعلومات الأمنية وأمن البيانات والتعافي السيبراني والهوية — جميع الشركاء.' },
   { id: 'platforms', label: 'المنصات والذكاء الاصطناعي', icon: Cpu, desc: 'إدارة علاقات العملاء والتكامل والذكاء الاصطناعي المؤسسي والبيانات والتحليلات.' },
   { id: 'services', label: 'الخدمات', icon: Wrench, desc: 'الاستراتيجية والنشر والعمليات المدارة والتحسين.' },
@@ -235,7 +235,7 @@ export default function ArabicProductsPage() {
             </h1>
             <p className="text-text-muted text-lg max-w-[620px] mx-auto leading-relaxed">
               تصفّح حسب الفئة — قارن العلامات التجارية والطرازات والإمكانيات.
-              علاقة واحدة. سلسلة مسؤولية واحدة. توريد وتشغيل داخل المملكة العربية السعودية.
+              علاقة واحدة. سلسلة مسؤولية واحدة. توريد وتشغيل داخل المملكة.
             </p>
           </div>
         </motion.div>
@@ -317,9 +317,9 @@ export default function ArabicProductsPage() {
             <h2 className="text-2xl md:text-3xl font-bold mb-8">ثلاث خطوات من الاستفسار إلى التسليم.</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { step: '١', title: 'أخبرنا بما تحتاج', desc: 'أرسل لنا متطلباتك — ورقة مواصفات أو موجز مشروع أو حتى اسم منتج. نتولى نحن الباقي.' },
-                { step: '٢', title: 'استلم عرض سعر مخصص', desc: 'خلال 24–48 ساعة: عرض سعر رسمي يتضمن التسعير والجدول الزمني للتسليم وتفاصيل التوريد من الشركاء والموزعين.' },
-                { step: '٣', title: 'التسليم والنشر', desc: 'تسليم المنتجات لموقعك في المملكة العربية السعودية. اختيارياً: النشر والتكامل والعمليات المدارة من قبل فريقنا.' },
+                { step: '١', title: 'أخبرنا بما تحتاج', desc: 'أرسل متطلباتك — ورقة مواصفات أو موجز مشروع أو حتى اسم منتج. ونتولى نحن الباقي.' },
+                { step: '٢', title: 'استلم عرض سعر مخصص', desc: 'خلال ٢٤–٤٨ ساعة: عرض سعر رسمي يتضمن التسعير وجدول التسليم وتفاصيل التوريد من الشركاء والموزعين.' },
+                { step: '٣', title: 'التسليم والنشر', desc: 'تسليم المنتجات إلى موقعك في المملكة. واختياريًا: النشر والتكامل والعمليات المدارة من قبل فريقنا.' },
               ].map((item) => (
                 <div key={item.step} className="text-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg"
@@ -344,9 +344,9 @@ export default function ArabicProductsPage() {
         >
           <div className="text-center mb-10">
             <SectionLabel>منظومة المورّدين</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold">11 شريك تقني مباشر.</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">١١ شريكًا تقنيًا مباشرًا.</h2>
             <p className="text-text-muted text-base mt-3 max-w-lg mx-auto">
-              منتجات يتم توريدها مباشرة عبر علاقات توزيع معتمدة — Ingram Micro وشركاء التوزيع الإقليميين.
+              منتجات تُورَّد مباشرة عبر علاقات توزيع معتمدة — Ingram Micro وشركاء التوزيع الإقليميون.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 lg:gap-4 lg:grid-cols-6">
@@ -387,8 +387,8 @@ export default function ArabicProductsPage() {
                 هل أنت مستعد <span style={{ color: ACCENT }}>للتوريد بثقة</span>؟
               </h2>
               <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
-                أخبرنا بما تحتاج. سنقوم بإعداد عرض سعر رسمي خلال 24–48 ساعة —
-                مع تفاصيل التوريد من الشركاء والتسعير والجدول الزمني للتسليم. بدون التزام.
+                أخبرنا بما تحتاج. نُعدّ لك عرض سعر رسمي خلال ٢٤–٤٨ ساعة —
+                مع تفاصيل التوريد من الشركاء والتسعير وجدول التسليم. بدون التزام.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link

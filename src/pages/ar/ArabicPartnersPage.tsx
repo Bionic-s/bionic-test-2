@@ -12,18 +12,18 @@ const fadeIn = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } }
 /* ── نتائج الشركاء: بطاقة واحدة لكل شريك، نتيجة واحدة لكل منهم ── */
 const ECOSYSTEM_CARD = {
   name: 'منظومة Salesforce',
-  outcome: 'CRM + ذكاء + تحليلات + تكامل + إدارة بيانات — منصة ذكاء العملاء المتكاملة، موحدة تحت شريك واحد.',
+  outcome: 'CRM + ذكاء + تحليلات + تكامل + إدارة بيانات — منصة ذكاء عملاء متكاملة وموحدة تحت مسؤولية واحدة.',
   main: 'Salesforce',
   subs: ['MuleSoft', 'Tableau', 'Informatica'],
 };
 
 const PARTNER_OUTCOMES: { name: string; outcome: string }[] = [
-  { name: 'IBM', outcome: 'حوكمة ذكاء watsonx + بنية FlashSystem التحتية — ذكاء اصطناعي متوافق، وليس سريعًا فحسب.' },
+  { name: 'IBM', outcome: 'حوكمة ذكاء watsonx + بنية FlashSystem التحتية — ذكاء اصطناعي متوافق وليس سريعًا فحسب.' },
   { name: 'Google', outcome: 'ذكاء سيادي على Vertex AI — محكوم ومؤمَّن ومُشغَّل داخل المملكة.' },
-  { name: 'Dell Technologies', outcome: 'PowerEdge، PowerStore، VxRail — العمود الفقري للبنية التحتية تحت أحمال الذكاء الاصطناعي.' },
-  { name: 'Intel', outcome: 'Xeon وGaudi AI لتسريع الذكاء — حوسبة ذكاء سيادية، من الحافة إلى مركز البيانات.' },
+  { name: 'Dell Technologies', outcome: 'PowerEdge وPowerStore وVxRail — العمود الفقري للبنية التحتية تحت أحمال الذكاء الاصطناعي.' },
+  { name: 'Intel', outcome: 'Xeon وGaudi AI لتسريع الذكاء — حوسبة ذكاء سيادية من الحافة إلى مركز البيانات.' },
   { name: 'Platform9', outcome: 'Kubernetes مُدارة في مركز بياناتك — سحابة خاصة بدون تعقيد.' },
-  { name: 'Lenovo', outcome: 'ThinkSystem، ThinkAgile، TruScale — بنية تحتية مهيأة للذكاء الاصطناعي، من الحافة إلى السحابة.' },
+  { name: 'Lenovo', outcome: 'ThinkSystem وThinkAgile وTruScale — بنية تحتية مهيأة للذكاء الاصطناعي من الحافة إلى السحابة.' },
   { name: 'Red Hat', outcome: 'OpenShift + أتمتة Ansible — منصة مفتوحة المصدر للسحابة الهجينة السيادية.' },
 ];
 
@@ -32,21 +32,21 @@ const TIERS = [
   {
     title: 'موزع معتمد',
     subtitle: 'توريد. تسليم. دعم.',
-    desc: 'إعادة بيع معتمدة ونشر لتقنيات الشركاء — أجهزة وبرمجيات ومنصات سحابية — مع لوجستيات محلية وتسليم داخل المملكة ودعم ضمان.',
+    desc: 'إعادة بيع معتمدة ونشر لتقنيات الشركاء — أجهزة وبرمجيات ومنصات سحابية — مع لوجستيات محلية وتسليم داخل المملكة ودعم الضمان.',
     icon: Shield,
     examples: 'Dell PowerEdge, PowerStore · Intel Xeon, Gaudi AI · IBM FlashSystem, Power · Platform9 · Lenovo ThinkSystem',
   },
   {
     title: 'شريك تنفيذ',
     subtitle: 'تنفيذ. تكامل. تشغيل.',
-    desc: 'تنفيذ وتكامل معتمد عبر منصات الشركاء — معمارية مبنية على API، إدارة البيانات الرئيسية، نشر CRM، هندسة البيانات، والعمليات المُدارة.',
+    desc: 'تنفيذ وتكامل معتمد عبر منصات الشركاء — معمارية قائمة على واجهات برمجة التطبيقات، وإدارة بيانات رئيسية، ونشر CRM، وهندسة بيانات، وعمليات مُدارة.',
     icon: GitMerge,
-    examples: 'نشر Salesforce CRM · تكامل MuleSoft المبني على API · Informatica MDM · Tableau BI · Red Hat OpenShift',
+    examples: 'نشر Salesforce CRM · تكامل MuleSoft القائم على API · Informatica MDM · Tableau BI · Red Hat OpenShift',
   },
   {
     title: 'مستشار استراتيجي',
     subtitle: 'تصميم. تحول. حوكمة.',
-    desc: 'المعمارية المؤسسية، استراتيجية الذكاء الاصطناعي، وحوكمة التحول — اختيار وتجميع وتشغيل تقنيات الشركاء كمنظومة واحدة ذات مساءلة موحدة.',
+    desc: 'المعمارية المؤسسية واستراتيجية الذكاء الاصطناعي وحوكمة التحول — نختار ونجمع ونشغّل تقنيات الشركاء كمنظومة واحدة بمسؤولية موحدة.',
     icon: Lightbulb,
     examples: 'حوكمة ذكاء Watsonx · تصميم منصة Vertex AI · معمارية Zero Trust · مخطط السحابة السيادية',
   },
@@ -77,12 +77,12 @@ export default function ArabicPartnersPage() {
               منظومة استراتيجية
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              8 شركاء استراتيجيين.
+              ٨ شركاء استراتيجيين.
               <br />
               <span className="text-accent-primary">مُكمِّل واحد مسؤول.</span>
             </h1>
             <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
-              نختار ونجمع ونشغّل أحدث التقنيات المؤسسية في العالم — لتحصل على علاقة مسؤولة واحدة عبر المنظومة المتكاملة.
+              نختار ونجمع ونشغّل أحدث التقنيات المؤسسية عالميًا — لتحصل على علاقة مسؤولة واحدة عبر منظومة متكاملة.
             </p>
           </motion.div>
         </div>
@@ -102,7 +102,7 @@ export default function ArabicPartnersPage() {
             <p className="text-tiny font-semibold tracking-wider uppercase mb-3 text-accent-primary">مع من نتعاون</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">ثمانية شركاء. علاقة مسؤولة واحدة.</h2>
             <p className="text-text-muted max-w-3xl mx-auto">
-              كل شريك يُختار لقدرة محددة يضيفها لتحولكم. لا حشو للموزعين. لا مزارع شعارات. كل علاقة تثبت استحقاقها.
+              شراكاتنا ليست مجرد أسماء ضمن منظومة العمل، بل قدرات متخصصة تسهم في تسريع التحول المؤسسي وتعظيم الأثر التشغيلي والاستثماري.
             </p>
           </motion.div>
 
@@ -202,7 +202,7 @@ export default function ArabicPartnersPage() {
             <p className="text-tiny font-semibold tracking-wider uppercase mb-3 text-accent-primary">كيف نتعاون</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">ثلاثة مستويات. علاقة واحدة.</h2>
             <p className="text-text-muted max-w-2xl mx-auto">
-              ليست كل علاقات الشركاء متشابهة. نشارك في المستوى المناسب — من إعادة البيع المعتمدة إلى المشاركة في تصميم المنصات الاستراتيجية.
+              ليست كل علاقات الشركاء متشابهة. نشارك بالمستوى المناسب — من إعادة البيع المعتمدة إلى المشاركة في تصميم المنصات الاستراتيجية.
             </p>
           </motion.div>
 
@@ -242,27 +242,27 @@ export default function ArabicPartnersPage() {
             style={{ fontFamily: "'Tajawal', sans-serif" }}
           >
             <p className="text-tiny font-semibold tracking-wider uppercase mb-3 text-accent-primary">فرق بيونك</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">لماذا لا نتعامل مباشرة؟</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">لماذا لا تتعامل معهم مباشرة؟</h2>
             <p className="text-text-muted max-w-2xl mx-auto">
-              كل شريك في هذه الصفحة سيبيع لكم مباشرة. إليكم لماذا تختار المؤسسات بيونك بدلاً من ذلك.
+              كل شريك في هذه الصفحة يمكنه البيع لكم مباشرة. إليكم لماذا تختار المؤسسات بيونك بدلًا من ذلك.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
               {
-                title: 'نحن نجمّع',
-                desc: 'لا يوجد مورد واحد يغطي CRM + ذكاء + بنية تحتية + أمن سيبراني + تكامل. نختار ونجمع الأفضل — دون احتكار.',
+                title: 'نجمّع',
+                desc: 'لا يوجد مورد واحد يغطي CRM + ذكاء + بنية تحتية + أمن سيبراني + تكامل. نختار الأفضل ونُجمّعه — بحيادية تقنية كاملة.',
                 icon: Cpu,
               },
               {
-                title: 'نحن ندمج',
-                desc: 'الشركاء يبنون منتجات. نحن نبني أنظمة. معمارية مبنية على API، سير عمل بالأحداث، عمليات آمنة عبر المنصات.',
+                title: 'ندمج',
+                desc: 'الشركاء يبنون منتجات. نحن نبني أنظمة. معمارية قائمة على واجهات برمجة التطبيقات، وسير عمل بالأحداث، وعمليات آمنة عبر المنصات.',
                 icon: GitMerge,
               },
               {
-                title: 'نحن نشغّل',
-                desc: 'دليل تشغيل واحد. SLA واحد. فريق واحد مسؤول عن المنظومة المتكاملة — 24×7، من البنية التحتية إلى طبقة التطبيقات.',
+                title: 'نشغّل',
+                desc: 'دليل تشغيل واحد. SLA واحد. فريق واحد مسؤول عن المنظومة المتكاملة — على مدار الساعة، من البنية التحتية إلى طبقة التطبيقات.',
                 icon: Shield,
               },
             ].map((item, i) => (
@@ -298,7 +298,7 @@ export default function ArabicPartnersPage() {
               هل أنتم مستعدون للبناء مع المنظومة؟
             </h2>
             <p className="text-text-muted max-w-xl mx-auto mb-8">
-              كل تحول يبدأ بمحادثة. دعونا نطابق احتياجاتكم مع القدرات والشركاء المناسبين.
+              كل رحلة تحول تبدأ بمحادثة. دعونا نوفّق بين احتياجاتكم والقدرات والشركاء المناسبين.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -13,7 +13,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const realityItems = [{"pre":"تعقيد اعتماد","text":"إعداد العطاءات يدوي وبطيء ومكثف الامتثال."},{"pre":"فجوات NCA و NDMO","text":"الأنظمة الحكومية القديمة تواجه صعوبة في تلبية معايير الأمن السيبراني."},{"pre":"تراكم خدمات المواطنين","text":"العمليات اليدوية تخلق تأخيرات في خدمات المواطنين."},{"pre":"عزل البيانات بين الجهات","text":"الوزارات تعمل في بيئات بيانات معزولة — لا نسيج بيانات وطني موحد."},{"pre":"بنية تحتية قديمة","text":"مراكز بيانات متقادمة غير قادرة على دعم أحمال الذكاء الاصطناعي."},{"pre":"متطلبات السيادة","text":"متطلبات إقامة البيانات والسحابة الوطنية تتطلب معمارية سيادية متخصصة."}];
+const realityItems = [{"pre":"تعقيد إجراءات الاعتماد","text":"إعداد العطاءات يدوي وبطيء ومثقل بمتطلبات الامتثال."},{"pre":"فجوات الامتثال NCA و NDMO","text":"الأنظمة الحكومية التقليدية عاجزة عن استيفاء معايير الأمن السيبراني."},{"pre":"تراكم خدمات المواطنين","text":"العمليات اليدوية تؤدي إلى تأخيرات ملموسة في خدمات المواطنين."},{"pre":"عزل البيانات بين الجهات","text":"الوزارات تعمل ضمن بيئات بيانات منعزلة — غياب نسيج بيانات وطني موحد."},{"pre":"بنية تحتية متقادمة","text":"مراكز بيانات متقادمة غير مهيأة لأحمال الذكاء الاصطناعي."},{"pre":"متطلبات السيادة","text":"اشتراطات إقامة البيانات والسحابة الوطنية تفرض معمارية سيادية متخصصة."}];
 const priorities = [{"title":"تمكين الذكاء الاصطناعي الوطني","desc":"بناء قدرة المملكة في الذكاء الاصطناعي — منصات وطنية، حوكمة النماذج، تسريع المواهب.","icon":"Cpu"},{"title":"منصات البيانات والذكاء السيادية","desc":"بنية تحتية للذكاء متوافقة مع NCA، بحيرات بيانات سيادية، قدرة حوسبة وطنية.","icon":"Shield"},{"title":"الذكاء عبر الوزارات","desc":"نسيج بيانات بين الجهات لكسر عقود من العزل.","icon":"GitBranch"},{"title":"تنفيذ برامج رؤية 2030","desc":"إدارة برامج مدعومة بالذكاء الاصطناعي، تتبع مؤشرات الأداء، حوكمة التحول.","icon":"TrendingUp"},{"title":"العمليات السيبرانية الوطنية","desc":"مركز عمليات أمنية وطني 24×7، حماية البنية التحتية الحيوية.","icon":"Shield"},{"title":"تحول خدمات المواطنين","desc":"بوابات مواطنين مدعومة بالذكاء الاصطناعي، معالجة ذكية للمستندات.","icon":"BarChart3"}];
 const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء المستندات لاعتماد، ذكاء خدمة المواطن، حوكمة نماذج الذكاء السيادية"},{"cap":"البيانات والتحليلات والذكاء","app":"نسيج البيانات بين الوزارات، لوحات مؤشرات الأداء الوطنية، منصات البيانات المفتوحة"},{"cap":"التكامل والعمليات الذكية","app":"تكامل أنظمة الحكومة عبر API، تنسيق سير العمل عبر الجهات، تحديث ESB"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"مركز عمليات أمنية وطني، امتثال NCA ECC، Zero Trust للحكومة"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"مراكز بيانات متوافقة مع NCA، سحابة سيادية، بنية ذكاء معزولة هوائيًا"},{"cap":"عمليات التقنية","app":"مركز عمليات شبكة وطني 24×7، عمليات منصات سيادية، إدارة أحمال العمل المصنفة"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/infra","/ar/capabilities/ops"];
@@ -42,13 +42,13 @@ export default function ArabicGovernmentIndustryPage() {
           <div className="relative z-10 pt-44 pb-24">
             <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
         <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>القطاع الحكومي</SectionLabel>
+          <SectionLabel>القطاع الحكومي والعام</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             التحول الرقمي السيادي<br />
             <span style={{ color: ACCENT }}>للقطاع العام في المملكة.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من تمكين الذكاء الاصطناعي الوطني إلى السحابة السيادية المتوافقة مع الهيئة الوطنية للأمن السيبراني، ومن أنسجة البيانات بين الوزارات إلى تحقيق مستهدفات رؤية 2030 — نساعد الجهات الحكومية السعودية على تسريع التحول الوطني.
+            انطلاقًا من تمكين الذكاء الاصطناعي الوطني وصولًا إلى السحابة السيادية المتوافقة مع الهيئة الوطنية للأمن السيبراني، ومن أنسجة البيانات بين الوزارات إلى تحقيق مستهدفات رؤية 2030 — نمكن الجهات الحكومية السعودية من تسريع التحول الوطني.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicGovernmentIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>التحول الحكومي هو تحول وطني — وهو الأكثر تعقيدًا.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تعمل الوزارات في بيئات بيانات معزولة. البنية التحتية القديمة لا تستطيع التوسع للذكاء الاصطناعي. المشتريات يدوية ومكثفة الامتثال.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>التحول الحكومي تحول وطني — وهو الأعلى تعقيدًا.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تعمل الوزارات في بيئات بيانات منعزلة. البنية التحتية التقليدية لا تستوعب أحمال الذكاء الاصطناعي. عمليات المشتريات يدوية ومثقلة بالامتثال.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">
@@ -87,8 +87,8 @@ export default function ArabicGovernmentIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>القدرات ذات الصلة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كيف تتوافق قدرات بيونك مع متطلبات القطاع.</h2>
+          <SectionLabel>القدرات المرتبطة</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>مواءمة قدرات بيونك مع متطلبات القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilities.map((c, i) => (
               <Link key={i} to={capPaths[i]} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/25 transition-all duration-300 flex items-start gap-3 group">
@@ -103,8 +103,8 @@ export default function ArabicGovernmentIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ مطبقة على القطاع.</h2>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ متكاملة لهذا القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <Link key={i} to={svcPaths[i]} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -117,7 +117,7 @@ export default function ArabicGovernmentIndustryPage() {
 
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المخططات المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معمارياتنا المرجعية.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معماريات مرجعية تطبيقية.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -161,7 +161,7 @@ export default function ArabicGovernmentIndustryPage() {
           className="mb-28"
         >
           <SectionLabel>النتائج المتوقعة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>أثر قابل للقياس عبر التحول المؤسسي.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>أثر ملموس عبر منظومة التحول المؤسسي.</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {outcomes.map((o, i) => (
               <div key={i} className="text-center p-4 rounded-xl bg-bg-secondary border border-white/5 hover:border-[ACCENT]/30 transition-all">
@@ -181,10 +181,10 @@ export default function ArabicGovernmentIndustryPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              مستعدون لتسريع تحولكم الحكومي؟
+              هل أنتم مستعدون لتسريع تحولكم الحكومي؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              لنناقش كيف يمكن للذكاء السيادي والذكاء عبر الوزارات والتسليم المتوافق مع رؤية 2030 أن يحول جهاتكم.
+              لنناقش كيف تساهم منصات الذكاء السيادي والذكاء عبر الوزارات والتسليم المتوافق مع رؤية 2030 في تطوير جهاتكم.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"

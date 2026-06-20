@@ -13,10 +13,10 @@ export default function ArabicHomePage() {
       {/* 2. Trust */}
       <Partners />
 
-      {/* 3. Value — 3 Pillars × 7 Service Lines */}
+      {/* 3. Value — 3 ركائز × ٧ خطوط أعمال */}
       <ServicePillarsAr />
 
-      {/* 4. Proof — Saudi capability cards */}
+      {/* 4. Proof — بطاقات القدرات السعودية */}
       <CapabilityShowAr />
 
       {/* 5. Convert */}

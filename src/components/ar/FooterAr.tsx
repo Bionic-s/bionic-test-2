@@ -33,9 +33,9 @@ export const FooterAr = () => {
               <img src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)' }} />
             </Link>
-            <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي للذكاء الاصطناعي</p>
+            <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي بالذكاء الاصطناعي</p>
             <p className="text-tiny text-text-muted leading-relaxed">
-              نصمم الذكاء الاصطناعي والأتمتة والثقة في الأعمال.
+              نُدمج الذكاء الاصطناعي والأتمتة والثقة في صميم الأعمال.
             </p>
           </div>
 
@@ -69,9 +69,9 @@ export const FooterAr = () => {
           <div>
             <h4 className="text-small font-semibold text-text-primary mb-4">الشركة</h4>
             <ul className="space-y-2 mb-6">
-              <li><Link to="/ar/about" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">عن الشركة</Link></li>
+              <li><Link to="/ar/about" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">من نحن</Link></li>
               <li><Link to="/ar/contact" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">تواصل معنا</Link></li>
-              <li><Link to="/ar/value" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">نظام القيمة المؤسسية</Link></li>
+              <li><Link to="/ar/value" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">منظومة القيمة المؤسسية</Link></li>
               <li><Link to="/ar/architecture" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">معمارية التحول</Link></li>
             </ul>
 
@@ -116,7 +116,7 @@ export const FooterAr = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-tiny text-text-muted">
-            © {currentYear} Bionic Solutions Company. جميع الحقوق محفوظة.
+            © {currentYear} شركة بيونك سوليوشنز. جميع الحقوق محفوظة.
           </p>
           <div className="flex items-center gap-4">
             <Link to="/ar/privacy-policy" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">سياسة الخصوصية</Link>

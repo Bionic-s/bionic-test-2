@@ -41,7 +41,7 @@ const priorities = [
   'التحول المؤسسي الشامل',
 ];
 
-const orgSizes = ['أقل من 500 موظف', '500 – 2,000', '2,000 – 10,000', 'أكثر من 10,000'];
+const orgSizes = ['أقل من ٥٠٠ موظف', '٥٠٠ – ٢,٠٠٠', '٢,٠٠٠ – ١٠,٠٠٠', 'أكثر من ١٠,٠٠٠'];
 
 export default function ArabicContactPage() {
   const [formData, setFormData] = useState({
@@ -167,7 +167,7 @@ export default function ArabicContactPage() {
                 <span style={{ color: '#00BFFF' }}>مهندس معماري</span>
               </h1>
               <p className="text-text-muted text-lg max-w-[580px] mx-auto leading-relaxed">
-                الذكاء الاصطناعي المؤسسي. تحول تقنية الأعمال. قيمة مؤسسية قابلة للقياس. بناء قدرات مستدامة طويلة الأمد.
+                الذكاء الاصطناعي المؤسسي. تحول تقنية الأعمال. قيمة مؤسسية قابلة للقياس. بناء قدرات مستدامة للمدى الطويل.
               </p>
             </motion.section>
 
@@ -267,7 +267,7 @@ export default function ArabicContactPage() {
                     </div>
                     <textarea id="message" name="message" value={formData.message} onChange={handleChange} maxLength={500} rows={5}
                       className={`${inputCls('message')} resize-none`}
-                      placeholder="ما الذي ترغب في مناقشته في جلسة الاستراتيجية؟" />
+                      placeholder="ما الذي ترغب في مناقشته خلال جلسة الاستراتيجية؟" />
                   </div>
 
                   {/* Error */}
@@ -289,7 +289,7 @@ export default function ArabicContactPage() {
                   </button>
 
                   <p className="text-tiny text-text-muted text-center">
-                    بتقديمك للنموذج، فإنك توافق على أن يتم التواصل معك بخصوص استفسارك. لا نشارك معلوماتك مع أي طرف آخر.
+                    بتقديمك للنموذج، أنت توافق على تواصُلنا معك بخصوص استفسارك. لا نشارك معلوماتك مع أي طرف آخر.
                   </p>
                 </form>
               </div>
@@ -301,12 +301,12 @@ export default function ArabicContactPage() {
               <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8">
                 <p className="text-lg font-semibold text-text-primary mb-3">ما يمكن توقعه من جلسة الاستراتيجية</p>
                 <p className="text-text-muted text-sm leading-relaxed mb-5">
-                  كل جلسة استراتيجية هي نقاش مركّز — وليست مكالمة مبيعات.
+                  كل جلسة استراتيجية هي نقاش مركّز — وليس عرضًا تجاريًا.
                 </p>
                 <ul className="space-y-2.5">
                   {[
                     'أين تقف مؤسستكم في رحلة التحول',
-                    'أي القدرات تحقق أكبر قيمة في قطاعكم',
+                    'أي القدرات تحقق أقصى قيمة في قطاعكم',
                     'كيف تتوافق معماريتنا ذات العشر طبقات مع أولوياتكم',
                     'كيف تبدو استراتيجية تراكم القدرات لمؤسستكم',
                   ].map((item, i) => (
@@ -317,7 +317,7 @@ export default function ArabicContactPage() {
                   ))}
                 </ul>
                 <p className="text-tiny text-text-muted mt-5 pt-5 border-t border-white/5">
-                  يرد فريقنا خلال 24-48 ساعة لتحديد موعد جلستك الإحاطية.
+                  يرد فريقنا خلال ٢٤–٤٨ ساعة لتحديد موعد جلستك الإحاطية.
                 </p>
               </div>
             </motion.div>
@@ -340,7 +340,7 @@ export default function ArabicContactPage() {
                   <Mail className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
                   <h4 className="font-semibold text-sm text-text-primary mb-1">راسلنا</h4>
                   <a href={`mailto:${contactEmails.general}`} className="text-[#00BFFF] text-sm font-medium">{contactEmails.general}</a>
-                  <p className="text-tiny text-text-muted mt-1">نرد خلال 24 ساعة</p>
+                  <p className="text-tiny text-text-muted mt-1">نرد خلال ٢٤ ساعة</p>
                 </div>
               </div>
               <OfficeLocations variant="card" showDescription={false} />
@@ -363,17 +363,17 @@ export default function ArabicContactPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">تم استلام طلب الاجتماع</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">تم استلام طلبكم</h2>
               <p className="text-text-muted text-lg mb-10 max-w-[520px] mx-auto leading-relaxed">
-                سيتواصل معكم أخصائي تحول مؤسسي خلال 24-48 ساعة لتحديد موعد جلسة الاستراتيجية.
+                سيتواصل معكم أخصائي تحول مؤسسي خلال ٢٤–٤٨ ساعة لتحديد موعد جلسة الاستراتيجية.
               </p>
 
-              <p className="text-sm text-text-muted mb-6">خلال الانتظار — استكشف منهجية التحول لدينا:</p>
+              <p className="text-sm text-text-muted mb-6">أثناء الانتظار — استكشف منهجية التحول لدينا:</p>
               <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
                 {[
-                  { label: 'المعمارية', desc: '10 طبقات', path: '/ar/architecture', icon: Layers },
-                  { label: 'نظام القيمة المؤسسية', desc: 'كيف تتراكم القيمة', path: '/ar/value', icon: BarChart3 },
-                  { label: 'المخططات', desc: '12 معمارية مرجعية', path: '/ar/blueprints', icon: BookOpen },
+                  { label: 'المعمارية', desc: '١٠ طبقات', path: '/ar/architecture', icon: Layers },
+                  { label: 'منظومة القيمة المؤسسية', desc: 'كيف تتراكم القيمة', path: '/ar/value', icon: BarChart3 },
+                  { label: 'المخططات', desc: '١٢ معمارية مرجعية', path: '/ar/blueprints', icon: BookOpen },
                 ].map((link) => (
                   <Link key={link.label} to={link.path}
                     className="inline-flex items-center gap-3 px-5 py-3 bg-bg-secondary border border-white/5 rounded-xl text-sm font-medium text-text-primary hover:border-[#00BFFF]/25 transition-all hover:-translate-y-0.5">

@@ -13,7 +13,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const realityItems = [{"pre":"تأخير التشخيص","text":"تراكمات الأشعة وعلم الأمراض تؤخر التشخيصات الحرجة."},{"pre":"تجربة مريض متجزئة","text":"الجدولة والفرز والمتابعة عبر أنظمة منفصلة."},{"pre":"صوامع البيانات السريرية","text":"بيانات السجل الطبي ونظام الصور والمختبر غير متكاملة."},{"pre":"عدم كفاءة تشغيلية","text":"إدارة الأسرة والتوظيف وتخصيص الموارد يدوية."},{"pre":"فجوات أمن المعلومات الصحية","text":"حماية معلومات المريض غير متسقة عبر الأنظمة."},{"pre":"تنسيق التجمعات الصحية","text":"النموذج الجديد يتطلب مشاركة البيانات عبر المرافق."}];
+const realityItems = [{"pre":"تأخير التشخيص","text":"تراكمات الأشعة وعلم الأمراض تُؤخر التشخيصات الحرجة."},{"pre":"تجربة مريض متجزئة","text":"الجدولة والفرز والمتابعة مشتتة عبر أنظمة منفصلة."},{"pre":"صوامع البيانات السريرية","text":"بيانات السجل الطبي ونظام الصور والمختبر غير متكاملة."},{"pre":"ضعف الكفاءة التشغيلية","text":"إدارة الأسرة والتوظيف وتخصيص الموارد ما زالت يدوية."},{"pre":"فجوات أمن المعلومات الصحية","text":"حماية معلومات المريض غير متسقة عبر الأنظمة المتعددة."},{"pre":"تنسيق التجمعات الصحية","text":"النموذج الجديد يفرض مشاركة البيانات عبر المرافق المختلفة."}];
 const priorities = [{"title":"الذكاء السريري والتشخيص","desc":"تصوير طبي بالذكاء الاصطناعي، دعم القرار السريري، وأنظمة الإنذار المبكر.","icon":"Cpu"},{"title":"تجربة مريض ذكية","desc":"بوابة مريض موحدة، فرز بالذكاء الاصطناعي، ورحلات رعاية مخصصة.","icon":"Heart"},{"title":"منصة بيانات الرعاية الصحية","desc":"بحيرة بيانات سريرية موحدة، تحليلات Patient 360.","icon":"TrendingUp"},{"title":"الذكاء التشغيلي","desc":"إدارة أسرة تنبؤية، تحسين توظيف بالذكاء الاصطناعي.","icon":"TrendingUp"},{"title":"أمن المعلومات الصحية","desc":"Zero Trust للرعاية الصحية، المرونة ضد برامج الفدية، أمن الأجهزة الطبية.","icon":"Shield"},{"title":"تكامل التجمعات الصحية","desc":"مشاركة بيانات عبر المرافق، تنسيق الإحالات.","icon":"Users"}];
 const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء التصوير الطبي، معالجة اللغة الطبيعية السريرية، التوثيق السريري الآلي"},{"cap":"البيانات والتحليلات والذكاء","app":"بحيرة بيانات سريرية، تحليلات Patient 360، لوحات صحة السكان"},{"cap":"تطبيقات الأعمال وتجربة العملاء","app":"منصة تجربة المريض، إدارة علاقات العملاء للرعاية الصحية"},{"cap":"التكامل والعمليات الذكية","app":"تكامل السجل الطبي/نظام الصور/المختبر، معمارية FHIR API"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"أمن المعلومات الصحية، أمن الأجهزة الطبية، Zero Trust للرعاية الصحية"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"بنية تحتية متوافقة مع المعلومات الصحية، منصات سريرية عالية التوفر"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/apps","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/infra"];
@@ -42,13 +42,13 @@ export default function ArabicHealthcareIndustryPage() {
           <div className="relative z-10 pt-44 pb-24">
             <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
         <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>الرعاية الصحية</SectionLabel>
+          <SectionLabel>قطاع الرعاية الصحية</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             تحول الرعاية الصحية<br />
             <span style={{ color: ACCENT }}>من خلال الذكاء الاصطناعي السريري.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من التصوير الطبي المدعوم بالذكاء الاصطناعي إلى منصات تجربة المريض الذكية — نساعد مقدمي الرعاية الصحية والمستشفيات والتجمعات الصحية السعودية.
+            من التصوير الطبي المدعوم بالذكاء الاصطناعي إلى منصات تجربة المريض الذكية — نمكن مقدمي الرعاية الصحية والمستشفيات والتجمعات الصحية السعودية من تحقيق نقلة نوعية.
           </p>
         </motion.section>
             </div>
@@ -58,7 +58,7 @@ export default function ArabicHealthcareIndustryPage() {
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>بيانات الرعاية الصحية وفيرة — لكن الذكاء السريري نادر.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تراكمات الأشعة تؤخر التشخيصات. بيانات المريض متناثرة. الموارد توزع يدويًا. وفجوات أمن المعلومات الصحية تكشف بيانات المرضى.</p>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تراكمات الأشعة تُؤخر التشخيصات الحرجة. بيانات المريض متناثرة عبر أنظمة منفصلة. الموارد تُوزع يدويًا. وفجوات أمن المعلومات الصحية تُعرض بيانات المرضى للخطر.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">
@@ -87,8 +87,8 @@ export default function ArabicHealthcareIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>القدرات ذات الصلة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كيف تتوافق قدرات بيونك مع متطلبات القطاع.</h2>
+          <SectionLabel>القدرات المرتبطة</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>مواءمة قدرات بيونك مع متطلبات القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilities.map((c, i) => (
               <Link key={i} to={capPaths[i]} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/25 transition-all duration-300 flex items-start gap-3 group">
@@ -103,8 +103,8 @@ export default function ArabicHealthcareIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>كيف ننجز</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ مطبقة على القطاع.</h2>
+          <SectionLabel>كيف نحقق ذلك</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>ثلاثة نماذج تنفيذ متكاملة لهذا القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <Link key={i} to={svcPaths[i]} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -117,7 +117,7 @@ export default function ArabicHealthcareIndustryPage() {
 
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المخططات المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معمارياتنا المرجعية.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>معماريات مرجعية تطبيقية.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[ACCENT]/25 transition-all duration-300">
@@ -181,10 +181,10 @@ export default function ArabicHealthcareIndustryPage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              مستعدون لتحويل الرعاية الصحية بالذكاء السريري؟
+              هل أنتم مستعدون لتطوير الرعاية الصحية بالذكاء السريري؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              لنناقش كيف يمكن للذكاء السريري ومنصات تجربة المريض والبنية التحتية المتوافقة أن تحقق نتائج أفضل.
+              لنناقش كيف تساهم حلول الذكاء السريري ومنصات تجربة المريض والبنية التحتية المتوافقة في تحقيق نتائج أفضل.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"

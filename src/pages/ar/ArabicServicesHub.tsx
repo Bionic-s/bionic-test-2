@@ -16,22 +16,22 @@ const deliveryModels = [
   {
     title: 'الاستشارات والتخطيط',
     accent: '#0D9488',
-    desc: 'الاستراتيجية، المعمارية، الامتثال، نموذج التشغيل، وحالة الأعمال — من تقييم الجاهزية إلى القبول التنفيذي.',
-    highlights: ['تقييم جاهزية الذكاء الاصطناعي', 'تطوير حالة الأعمال', 'تصميم نموذج التشغيل', 'استشارات الامتثال والحوكمة', 'اختيار المورّدين'],
+    desc: 'الاستراتيجية، المعمارية، الامتثال، نموذج التشغيل، وحالة الأعمال — من تقييم الجاهزية إلى اعتماد المجلس.',
+    highlights: ['تقييم جاهزية الذكاء الاصطناعي', 'تطوير حالة الأعمال', 'تصميم نموذج التشغيل', 'استشارات الامتثال والحوكمة', 'اختيار المنصات والتقنيات'],
     path: '/ar/services/advisory',
   },
   {
     title: 'التنفيذ والتسليم',
     accent: '#059669',
-    desc: 'النشر والتكامل والتسليم إلى الإنتاج — مع التبني والحوكمة وتتبع القيمة.',
-    highlights: ['نشر الذكاء الاصطناعي والأتمتة', 'تسليم المنصات والتطبيقات', 'هندسة التكامل', 'تنفيذ الأمن', 'تحقيق القيمة'],
+    desc: 'التطبيق والتكامل والتسليم إلى الإنتاج — مع التبني والحوكمة وتتبع القيمة.',
+    highlights: ['تطبيق الذكاء الاصطناعي والأتمتة', 'تسليم المنصات والتطبيقات', 'هندسة التكامل', 'تنفيذ الحلول الأمنية', 'تحقيق القيمة'],
     path: '/ar/services/implementation',
   },
   {
     title: 'العمليات المدارة',
     accent: '#D97706',
     desc: 'تمكين التحول المستمر — عمليات منصات 24×7، SRE، AIOps، FinOps، وهندسة المنصات.',
-    highlights: ['AIOps والمراقبة', 'SRE وهندسة المنصات', 'حوكمة FinOps', 'مركز عمليات أمنية كخدمة', 'تحسين مستمر'],
+    highlights: ['AIOps والمراقبة', 'SRE وهندسة المنصات', 'حوكمة FinOps', 'مركز عمليات أمنية كخدمة', 'تحسين مستمر وممنهج'],
     path: '/ar/services/operations',
   },
 ];
@@ -55,14 +55,14 @@ export default function ArabicServicesHub() {
           className="relative z-10 pt-40 pb-24 text-center px-4"
         >
           <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-text-muted">كيف ننجز</p>
+            <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-text-muted">كيف نحقق ذلك</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-              ثلاثة نماذج تنفيذ.<br />
+              ثلاثة نماذج تنفيذ متكاملة.<br />
               <span className="text-text-muted">شريك واحد مسؤول.</span>
             </h1>
             <p className="text-text-muted text-lg max-w-[640px] mx-auto leading-relaxed">
               كل قدرة نقدمها — من الذكاء الاصطناعي إلى الأمن السيبراني — تُنفَّذ عبر واحد أو أكثر من هذه النماذج.
-              الاستشارات للاستراتيجية. التنفيذ للتسليم. العمليات للقيمة المستمرة.
+              الاستشارات لصياغة الاستراتيجية. التنفيذ للتسليم. العمليات لتحقيق قيمة مستدامة.
             </p>
           </div>
         </motion.div>

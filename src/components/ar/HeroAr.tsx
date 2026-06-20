@@ -67,17 +67,17 @@ export const HeroAr = () => {
         <div className="max-w-5xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              نصمم{' '}
+              نُدمج{' '}
               <span className="gradient-text inline">
                 {animatedWord}
                 <span className="inline-block w-[2px] h-[0.9em] bg-[#00BFFF] mr-1 align-middle animate-pulse" />
               </span>{' '}
-              في صميم الأعمال.
+              في صميم أعمالك.
             </h1>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُمكّن التحول المؤسسي للذكاء الاصطناعي.</p>
+            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُمكّن التحول المؤسسي بالذكاء الاصطناعي.</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
@@ -99,7 +99,7 @@ export const HeroAr = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12" ref={ref}>
             {[
-              { value: 11, suffix: '', label: 'شريك تقني استراتيجي', description: 'منظومة عالمية' },
+              { value: 11, suffix: '', label: 'شريك تقني استراتيجي', description: 'منظومة تقنية عالمية' },
               { value: 7, suffix: '', label: 'خطوط أعمال', description: 'منظومة تحول متكاملة' },
               { value: 5, suffix: '', label: 'قطاعات رئيسية', description: 'الخدمات المالية والمصرفية · حكومي · النفط والغاز · مؤسسات كبرى' },
             ].map((metric, index) => (
