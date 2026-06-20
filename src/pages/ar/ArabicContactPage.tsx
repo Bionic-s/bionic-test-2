@@ -334,7 +334,7 @@ export default function ArabicContactPage() {
                   <Phone className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
                   <h4 className="font-semibold text-sm text-text-primary mb-1">اتصل بنا</h4>
                   <a href={contactPhone.href} className="text-[#00BFFF] text-sm font-medium">{contactPhone.number}</a>
-                  <p className="text-tiny text-text-muted mt-1">{contactPhone.hours}</p>
+                  <p className="text-tiny text-text-muted mt-1">{contactPhone.hoursAr}</p>
                 </div>
                 <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all">
                   <Mail className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
@@ -343,12 +343,12 @@ export default function ArabicContactPage() {
                   <p className="text-tiny text-text-muted mt-1">نرد خلال ٢٤ ساعة</p>
                 </div>
               </div>
-              <OfficeLocations variant="card" showDescription={false} />
+              <OfficeLocations variant="card" showDescription={false} title="زوروا مكاتبنا" locale="ar" />
               <div className="mt-6 bg-bg-secondary border border-white/5 rounded-xl p-6 flex items-start gap-4">
                 <Clock className="w-5 h-5 flex-shrink-0" style={{ color: '#00BFFF' }} />
                 <div>
                   <h4 className="font-semibold text-sm text-text-primary mb-1">ساعات العمل</h4>
-                  <p className="text-tiny text-text-muted">{businessHours.workingDays} · {businessHours.hours} · {businessHours.timezone}</p>
+                  <p className="text-tiny text-text-muted">{businessHours.workingDaysAr} · {businessHours.hoursAr} · {businessHours.timezoneAr}</p>
                 </div>
               </div>
             </motion.div>
