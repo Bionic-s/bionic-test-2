@@ -24,7 +24,7 @@ export const HeaderAr = () => {
     { name: 'من نحن', desc: 'قصتنا، فريق القيادة، ورسالتنا', path: '/ar/about' },
     { name: 'معمارية التحول', desc: '10 طبقات. منظومة واحدة متكاملة.', path: '/ar/architecture' },
     { name: 'نظام القيمة المؤسسية', desc: 'كيف تتراكم القيمة عبر الآفاق', path: '/ar/value' },
-    { name: 'منظومة الشركاء', desc: 'شركاء التكنولوجيا العالميون', path: '/ar/partners' },
+    { name: 'منظومة الشركاء', desc: 'شركاء التقنية العالميون', path: '/ar/partners' },
     { name: 'المخططات المرجعية', desc: 'دراسات حالة تحولية', path: '/ar/blueprints' },
   ];
 

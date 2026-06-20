@@ -119,7 +119,7 @@ export default function ArabicImplementationDeliveryPage() {
 
         {/* ═══ 3. WHAT WE DELIVER ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>ما نقدمه</SectionLabel>
+          <SectionLabel>حلولنا</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             ست خدمات تسليم — من النشر إلى تحقيق القيمة.
           </h2>

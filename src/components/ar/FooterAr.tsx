@@ -58,7 +58,7 @@ export const FooterAr = () => {
             <h4 className="text-small font-semibold text-text-primary mb-4">القطاعات</h4>
             <ul className="space-y-2">
               <li><Link to="/ar/industries/government" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">القطاع الحكومي</Link></li>
-              <li><Link to="/ar/industries/banking" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">البنوك والخدمات المالية</Link></li>
+              <li><Link to="/ar/industries/banking" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الخدمات المالية والمصرفية</Link></li>
               <li><Link to="/ar/industries/oil-gas" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">النفط والغاز</Link></li>
               <li><Link to="/ar/industries/healthcare" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الرعاية الصحية</Link></li>
               <li><Link to="/ar/industries/enterprise" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">المؤسسات الكبرى</Link></li>
