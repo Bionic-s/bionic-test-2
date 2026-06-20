@@ -125,7 +125,7 @@ export const HeaderAr = () => {
           <div className="flex items-center justify-between h-20">
 
             {/* Logo */}
-            <Link to="/" className="flex-shrink-0">
+            <Link to="/ar" className="flex-shrink-0">
               <img
                 src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
                 alt="Bionic Solutions"
@@ -387,7 +387,7 @@ export const HeaderAr = () => {
 
             {/* Language + CTA group */}
             <div className="hidden md:flex flex-row-reverse items-center gap-3">
-              <Link to="/"
+              <Link to={location.pathname.replace(/^\/ar/, '') || '/'}
                 className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
                 aria-label="English version">
                 <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇬🇧</span>
@@ -586,10 +586,10 @@ export const HeaderAr = () => {
                 شركاؤنا
               </Link>
 
-              {/* Mobile Arabic */}
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-                العربية
+              {/* Mobile English */}
+              <Link to={location.pathname.replace(/^\/ar/, '') || '/'} onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors text-right">
+                English
               </Link>
 
               <div className="pt-3">

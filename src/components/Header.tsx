@@ -387,7 +387,7 @@ export const Header = () => {
 
             {/* Language + CTA group */}
             <div className="hidden md:flex items-center gap-3">
-              <Link to="/ar"
+              <Link to={`/ar${location.pathname}`}
                 className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
                 aria-label="النسخة العربية">
                 <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇸🇦</span>
@@ -581,7 +581,7 @@ export const Header = () => {
               </Link>
 
               {/* Mobile Arabic */}
-              <Link to="/ar" onClick={() => setMobileMenuOpen(false)}
+              <Link to={`/ar${location.pathname}`} onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>
                 العربية
               </Link>
