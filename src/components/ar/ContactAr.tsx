@@ -135,8 +135,8 @@ export const ContactAr = () => {
                 {[
                   { step: '1', title: 'جلسة استراتيجية', dur: '45 دقيقة', desc: 'نقاش مركز حول أولويات التحول لديكم. ليس عرضًا تجاريًا.' },
                   { step: '2', title: 'الاكتشاف والتقييم', dur: 'أسبوع – أسبوعين', desc: 'تحليل معمق للمعمارية والقدرات والأهداف المؤسسية.' },
-                  { step: '3', title: 'المعمارية والمخطط', dur: 'أسبوعين – 4 أسابيع', desc: 'معمارية الحالة المستهدفة، خارطة الطريق، الحوكمة، وحالة الأعمال.' },
-                  { step: '4', title: 'التنفيذ', dur: '8–16 أسبوعًا', desc: 'نشر المنصات، التكامل، وهندسة التبني.' },
+                  { step: '3', title: 'المعمارية والمخطط', dur: 'أسبوعين – 4 أسابيع', desc: 'المعمارية المستهدفة، خارطة الطريق، الحوكمة، وحالة الأعمال.' },
+                  { step: '4', title: 'التنفيذ', dur: '8–16 أسبوعًا', desc: 'نشر المنصات، التكامل، وإدارة التبني المؤسسي.' },
                   { step: '5', title: 'العمليات المدارة', dur: 'مستمرة', desc: 'تحسين مستمر، مراقبة، وتطور طويل الأمد.' },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
@@ -153,7 +153,7 @@ export const ContactAr = () => {
             <div className="mb-12 pb-12 border-b border-white/5">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-bg-primary/50 rounded-xl border border-white/5">
                 <div className="text-right">
-                  <h4 className="text-lg font-semibold text-text-primary mb-1">تفضل الحجز الذاتي؟</h4>
+                  <h4 className="text-lg font-semibold text-text-primary mb-1">تفضل الحجز المباشر؟</h4>
                   <p className="text-sm text-text-muted">اختر التاريخ والوقت المناسبين لك — بدون مراسلات متبادلة.</p>
                 </div>
                 <Link

@@ -13,7 +13,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const partners = [{"name":"Salesforce","role":"الذكاء الاصطناعي المدمج في تطبيقات الأعمال","tech":"Agentforce · Einstein AI · Copilot · Prompt Builder · Model Builder"},{"name":"Google","role":"منصة الذكاء المؤسسي وقدرات وكيلية","tech":"Vertex AI · Gemini · Model Garden · Agent Builder · Document AI"},{"name":"IBM","role":"حوكمة وتنسيق الذكاء والنماذج المفتوحة","tech":"watsonx.ai · watsonx Assistant · watsonx Governance · Orchestrate · Granite"},{"name":"Intel","role":"بنية الذكاء التحتية — تدريب، استدلال، وحافة","tech":"Gaudi 3 AI Accelerators · Xeon AI Boost · OpenVINO · Edge AI"}];
+const partners = [{"name":"Salesforce","role":"الذكاء الاصطناعي المدمج في تطبيقات الأعمال","tech":"Agentforce · Einstein AI · Copilot · Prompt Builder · Model Builder"},{"name":"Google","role":"منصة الذكاء المؤسسي وقدرات وكيلية","tech":"Vertex AI · Gemini · Model Garden · Agent Builder · Document AI"},{"name":"IBM","role":"حوكمة وتنسيق الذكاء والنماذج المفتوحة","tech":"watsonx.ai · watsonx Assistant · watsonx Governance · Orchestrate · Granite"},{"name":"Intel","role":"البنية التحتية للذكاء الاصطناعي — تدريب، استدلال، وحافة","tech":"Gaudi 3 AI Accelerators · Xeon AI Boost · OpenVINO · Edge AI"}];
 
 const blueprints = [{"title":"منصة الذكاء السيادي","industry":"حكومي","slug":"sovereign-ai-platform"},{"title":"كشف الاحتيال الفوري","industry":"بنوك","slug":"real-time-fraud-detection"},{"title":"تحول القوى العاملة الوكيلة","industry":"مؤسسات","slug":"agentic-workforce-transformation"}];
 const bpSlugs = ["sovereign-ai-platform","real-time-fraud-detection","agentic-workforce-transformation"];

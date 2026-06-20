@@ -30,7 +30,7 @@ export const HeaderAr = () => {
 
   // ── Industries ──
   const industries = [
-    { name: 'حكومي', desc: 'الذكاء السيادي، رؤية 2030، الذكاء الوطنية', path: '/ar/industries/government', color: '#059669' },
+    { name: 'حكومي', desc: 'الذكاء السيادي، رؤية 2030، الذكاء الوطني', path: '/ar/industries/government', color: '#059669' },
     { name: 'بنوك', desc: 'امتثال البنك المركزي، ذكاء الاحتيال، الخدمات المصرفية المفتوحة', path: '/ar/industries/banking', color: '#2563EB' },
     { name: 'نفط وغاز', desc: 'العمليات التنبؤية، أمن OT/IT، ذكاء الكربون', path: '/ar/industries/oil-gas', color: '#D97706' },
     { name: 'رعاية صحية', desc: 'الذكاء السريري، تجربة المريض، التجمعات الصحية', path: '/ar/industries/healthcare', color: '#0D9488' },
@@ -72,7 +72,7 @@ export const HeaderAr = () => {
       color: '#7C3AED',
       items: [
         { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز العمليات الأمنية، Zero Trust، الهوية', path: '/ar/capabilities/cyber' },
-        { name: 'البنية التحتية السيادية', desc: 'مراكز البيانات، السحابة الهجينة، بنية الذكاء التحتية', path: '/ar/capabilities/infra' },
+        { name: 'البنية التحتية السيادية', desc: 'مراكز البيانات، السحابة الهجينة، البنية التحتية للذكاء الاصطناعي', path: '/ar/capabilities/infra' },
         { name: 'عمليات التقنية', desc: 'هندسة المنصات، AIOps، هندسة الموثوقية', path: '/ar/capabilities/ops' },
       ],
     },

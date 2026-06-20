@@ -60,7 +60,7 @@ export const CapabilityShowAr = () => {
             className="inline-flex items-center px-4 py-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 mb-6"
           >
             <span className="text-small text-accent-primary font-semibold tracking-wider uppercase">
-              قدراتنا المثبتة
+              سجلنا الحافل
             </span>
           </motion.div>
 
