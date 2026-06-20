@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { Header } from './components/Header';
 import { HeaderAr } from './components/HeaderAr';
 import { Footer } from './components/Footer';
@@ -166,15 +166,7 @@ function AppContent() {
       <ScrollProgress />
       <ScrollToTop />
       {location.pathname.startsWith('/ar') ? <HeaderAr /> : <Header />}
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={location.pathname}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-        <Routes>
+      <Routes>
           {/* ═══ Core Pages ═══ */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -293,9 +285,7 @@ function AppContent() {
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        </motion.main>
-      </AnimatePresence>
+      </Routes>
       {location.pathname.startsWith('/ar') ? (
         <FooterAr />
       ) : (
