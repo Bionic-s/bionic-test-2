@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Linkedin, Twitter } from 'lucide-react';
 
 const footerLinks = {
   'من نحن': [
@@ -28,6 +29,25 @@ export const FooterAr = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
+            {/* Social */}
+            <div className="flex gap-3 mb-6">
+              <a
+                href="https://www.linkedin.com/company/bionic-solutions-ksa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-bg-primary rounded-full flex items-center justify-center hover:bg-accent-primary hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                <Linkedin className="w-5 h-5 text-text-muted group-hover:text-text-primary" />
+              </a>
+              <a
+                href="https://twitter.com/bionics_Sa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-bg-primary rounded-full flex items-center justify-center hover:bg-accent-primary hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                <Twitter className="w-5 h-5 text-text-muted group-hover:text-text-primary" />
+              </a>
+            </div>
             <Link to="/ar" className="inline-block mb-4 footer-logo-link">
               <img src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto footer-logo"
                 style={{ filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)' }} />
