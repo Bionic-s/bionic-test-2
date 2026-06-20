@@ -1,36 +1,16 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter } from 'lucide-react';
-
-const footerLinks = {
-  'من نحن': [
-    { label: 'عن الشركة', path: '/ar/about' },
-    { label: 'معمارية التحول', path: '/ar/architecture' },
-    { label: 'نظام القيمة المؤسسية', path: '/ar/value' },
-    { label: 'المخططات المرجعية', path: '/ar/blueprints' },
-    { label: 'شركاؤنا', path: '/ar/partners' },
-  ],
-  'خطوط الأعمال': [
-    { label: 'المنتجات', path: '/ar/products' },
-    { label: 'القدرات', path: '/ar/capabilities/ai' },
-    { label: 'القطاعات', path: '/ar/industries/government' },
-  ],
-  'الخدمات': [
-    { label: 'الاستشارات والتوجيه', path: '/ar/services/advisory' },
-    { label: 'التنفيذ والتسليم', path: '/ar/services/implementation' },
-    { label: 'العمليات المدارة', path: '/ar/services/operations' },
-  ],
-};
+import { Linkedin, Twitter, Mail, Phone, MapPin, ArrowLeft } from 'lucide-react';
 
 export const FooterAr = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-bg-secondary border-t border-white/[0.06] relative z-10" dir="rtl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+          {/* Brand + Social */}
+          <div className="lg:col-span-2">
             {/* Social */}
-            <div className="flex gap-3 mb-6">
+            <div className="flex gap-3 mb-5">
               <a
                 href="https://www.linkedin.com/company/bionic-solutions-ksa/"
                 target="_blank"
@@ -48,36 +28,93 @@ export const FooterAr = () => {
                 <Twitter className="w-5 h-5 text-text-muted group-hover:text-text-primary" />
               </a>
             </div>
-            <Link to="/ar" className="inline-block mb-4 footer-logo-link">
-              <img src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto footer-logo"
+
+            <Link to="/ar" className="inline-block mb-4 hover:opacity-80 transition-opacity">
+              <img src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)' }} />
             </Link>
-            <p className="text-tiny text-text-muted leading-relaxed mt-4">
+            <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي للذكاء الاصطناعي</p>
+            <p className="text-tiny text-text-muted leading-relaxed">
               نصمم الذكاء الاصطناعي والأتمتة والثقة في الأعمال.
             </p>
-            <p className="text-tiny text-text-muted mt-3">
-              الرياض · جدة · الدمام<br />
-              المملكة العربية السعودية
-            </p>
           </div>
-          {/* Links */}
-          {Object.entries(footerLinks).map(([heading, links]) => (
-            <div key={heading}>
-              <h4 className="text-small font-semibold text-text-primary mb-4">{heading}</h4>
-              <ul className="space-y-2.5">
-                {links.map((l) => (
-                  <li key={l.label}>
-                    <Link to={l.path} className="text-tiny text-text-muted hover:text-accent-primary transition-colors">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+
+          {/* القدرات */}
+          <div>
+            <h4 className="text-small font-semibold text-text-primary mb-4">القدرات</h4>
+            <ul className="space-y-2">
+              <li><Link to="/ar/capabilities/ai" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الذكاء الاصطناعي المؤسسي والأتمتة</Link></li>
+              <li><Link to="/ar/capabilities/data" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">البيانات والتحليلات والذكاء</Link></li>
+              <li><Link to="/ar/capabilities/apps" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">تطبيقات الأعمال وتجربة العملاء</Link></li>
+              <li><Link to="/ar/capabilities/integration" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">التكامل والعمليات الذكية</Link></li>
+              <li><Link to="/ar/capabilities/cyber" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الأمن السيبراني والمرونة السيبرانية</Link></li>
+              <li><Link to="/ar/capabilities/infra" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">البنية التحتية السيادية والسحابة الهجينة</Link></li>
+              <li><Link to="/ar/capabilities/ops" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">عمليات التقنية</Link></li>
+            </ul>
+          </div>
+
+          {/* القطاعات */}
+          <div>
+            <h4 className="text-small font-semibold text-text-primary mb-4">القطاعات</h4>
+            <ul className="space-y-2">
+              <li><Link to="/ar/industries/government" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">القطاع الحكومي</Link></li>
+              <li><Link to="/ar/industries/banking" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">البنوك والخدمات المالية</Link></li>
+              <li><Link to="/ar/industries/oil-gas" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">النفط والغاز</Link></li>
+              <li><Link to="/ar/industries/healthcare" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الرعاية الصحية</Link></li>
+              <li><Link to="/ar/industries/enterprise" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">المؤسسات الكبرى</Link></li>
+            </ul>
+          </div>
+
+          {/* الشركة + تواصل */}
+          <div>
+            <h4 className="text-small font-semibold text-text-primary mb-4">الشركة</h4>
+            <ul className="space-y-2 mb-6">
+              <li><Link to="/ar/about" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">عن الشركة</Link></li>
+              <li><Link to="/ar/contact" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">تواصل معنا</Link></li>
+              <li><Link to="/ar/value" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">نظام القيمة المؤسسية</Link></li>
+              <li><Link to="/ar/architecture" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">معمارية التحول</Link></li>
+            </ul>
+
+            <h4 className="text-small font-semibold text-text-primary mb-3">تواصل معنا</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="mailto:info@bionics.com.sa" className="text-tiny text-text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                  info@bionics.com.sa
+                </a>
+              </li>
+              <li>
+                <a href="mailto:sales@Bionics.com.sa" className="text-tiny text-text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                  sales@Bionics.com.sa
+                </a>
+              </li>
+              <li>
+                <a href="mailto:support@Bionics.com.sa" className="text-tiny text-text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                  support@Bionics.com.sa
+                </a>
+              </li>
+              <li>
+                <a href="tel:+966500884376" className="text-tiny text-text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 flex-shrink-0" />
+                  +966 500 884 376
+                </a>
+              </li>
+            </ul>
+
+            <Link
+              to="/ar/contact?source=footer&intent=transformation"
+              className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent-primary/15 text-accent-primary text-tiny font-semibold hover:bg-accent-primary/25 transition-colors"
+            >
+              استكشف تحولك المؤسسي
+              <ArrowLeft className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
+
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-tiny text-text-muted">
             © {currentYear} Bionic Solutions Company. جميع الحقوق محفوظة.
           </p>
