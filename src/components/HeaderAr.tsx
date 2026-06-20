@@ -8,11 +8,11 @@ export const HeaderAr = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
-  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability'>('products');
+  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
-  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability'>('products');
+  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -24,6 +24,15 @@ export const HeaderAr = () => {
     { name: 'منظومة القيمة المؤسسية', desc: 'كيف تتراكم القيمة عبر الآفاق', path: '/value' },
     { name: 'شركاؤنا', desc: 'شركاء تقنية عالميون', path: '/partners' },
     { name: 'المخططات المرجعية', desc: 'حالات تحول مرجعية', path: '/blueprints' },
+  ];
+
+  // ── القدرات حسب القطاع ──
+  const industryCapabilityMap = [
+    { heading: 'القطاع الحكومي', path: '/ar/industries/government', caps: ['الذكاء الاصطناعي المؤسسي', 'البيانات والذكاء', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
+    { heading: 'الخدمات المالية والمصرفية', path: '/ar/industries/banking', caps: ['الذكاء الاصطناعي المؤسسي', 'البيانات والذكاء', 'تطبيقات الأعمال', 'الأمن السيبراني'] },
+    { heading: 'النفط والغاز', path: '/ar/industries/oil-gas', caps: ['الذكاء الاصطناعي المؤسسي', 'التكامل والعمليات', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
+    { heading: 'الرعاية الصحية', path: '/ar/industries/healthcare', caps: ['الذكاء الاصطناعي المؤسسي', 'البيانات والذكاء', 'تطبيقات الأعمال', 'التكامل'] },
+    { heading: 'المؤسسات الكبرى', path: '/ar/industries/enterprise', caps: ['الذكاء الاصطناعي المؤسسي', 'تطبيقات الأعمال', 'الأمن السيبراني', 'عمليات التقنية'] },
   ];
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
@@ -290,15 +299,24 @@ export const HeaderAr = () => {
                             ))}
                           </div>
                         ) : (
-                          <div className="p-5 text-center">
-                            <p className="text-small text-text-muted">Select a tab above to browse by Products or Capability.</p>
+                          <div className="grid grid-cols-3 gap-0">
+                            {industryCapabilityMap.map((ind) => (
+                              <div key={ind.heading} className="p-5 text-right">
+                                <Link to={ind.path} className="text-small font-semibold text-text-primary hover:text-accent-primary transition-colors">{ind.heading}</Link>
+                                <div className="mt-3 space-y-1">
+                                  {ind.caps.map((cap) => (
+                                    <p key={cap} className="text-tiny text-text-muted px-3 py-1.5 -mx-3 rounded-lg">{cap}</p>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         )}
                       </div>
                       {/* Footer */}
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30">
                         <p className="text-tiny text-text-muted">
-                          {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. ١١ شريكًا. علاقة واحدة.' : '٧ قدرات. ٣ ركائز. الذكاء · الأتمتة · الثقة.'}
+                          {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. ١١ شريكًا. علاقة واحدة.' : capabilitiesTab === 'capability' ? '٧ قدرات. ٣ ركائز. الذكاء · الأتمتة · الثقة.' : '٥ قطاعات. من القطاع الحكومي إلى المؤسسات الكبرى — تحول الذكاء الاصطناعي مُطبّق على قطاعك.'}
                         </p>
                         <Link to="/ar/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
                           View Transformation Blueprints <ArrowRight className="w-4 h-4" />
@@ -496,8 +514,20 @@ export const HeaderAr = () => {
                         ))}
                       </div>
                     ) : (
-                      <div className="p-4">
-                        <p className="text-small text-text-muted">Select a tab above to browse by Products or Capability.</p>
+                      <div className="space-y-3">
+                        {industryCapabilityMap.map((ind) => (
+                          <div key={ind.heading}>
+                            <Link to={ind.path} onClick={() => setMobileMenuOpen(false)}
+                              className="block px-6 py-2 text-small font-semibold text-text-primary hover:text-accent-primary transition-colors text-right">
+                              {ind.heading}
+                            </Link>
+                            <div className="px-6 space-y-1 mt-1 mb-3">
+                              {ind.caps.map((cap) => (
+                                <p key={cap} className="text-tiny text-text-muted text-right">{cap}</p>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     )}
                     <Link to="/ar/partners" onClick={() => setMobileMenuOpen(false)}

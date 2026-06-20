@@ -8,11 +8,11 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
-  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability'>('products');
+  const [capabilitiesTab, setCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
-  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability'>('products');
+  const [mobileCapabilitiesTab, setMobileCapabilitiesTab] = useState<'products' | 'capability' | 'industry'>('products');
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -24,6 +24,15 @@ export const Header = () => {
     { name: 'Enterprise Value System', desc: 'How value compounds across horizons', path: '/value' },
     { name: 'Partner Ecosystem', desc: 'Global technology partners', path: '/partners' },
     { name: 'Blueprints', desc: 'Transformation case studies', path: '/blueprints' },
+  ];
+
+  // ── Capability by Industry mapping ──
+  const industryCapabilityMap = [
+    { heading: 'Government', path: '/industries/government', caps: ['Enterprise AI', 'Data & Intelligence', 'Cybersecurity', 'Sovereign Infra'] },
+    { heading: 'Banking', path: '/industries/banking', caps: ['Enterprise AI', 'Data & Intelligence', 'Business Apps', 'Cybersecurity'] },
+    { heading: 'Oil & Gas', path: '/industries/oil-gas', caps: ['Enterprise AI', 'Integration & Ops', 'Cybersecurity', 'Sovereign Infra'] },
+    { heading: 'Healthcare', path: '/industries/healthcare', caps: ['Enterprise AI', 'Data & Intelligence', 'Business Apps', 'Integration'] },
+    { heading: 'Enterprise', path: '/industries/enterprise', caps: ['Enterprise AI', 'Business Apps', 'Cybersecurity', 'Technology Ops'] },
   ];
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
@@ -184,6 +193,11 @@ export const Header = () => {
                           By Capability
                           {capabilitiesTab === 'capability' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary rounded-full" />}
                         </button>
+                        <button onClick={() => setCapabilitiesTab('industry')}
+                          className={`relative px-4 py-3.5 text-sm font-medium transition-colors ${capabilitiesTab === 'industry' ? 'text-accent-primary' : 'text-text-muted hover:text-text-primary'}`}>
+                          By Industry
+                          {capabilitiesTab === 'industry' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary rounded-full" />}
+                        </button>
 
                       </div>
                       {/* Content */}
@@ -290,15 +304,24 @@ export const Header = () => {
                             ))}
                           </div>
                         ) : (
-                          <div className="p-5 text-center">
-                            <p className="text-small text-text-muted">Select a tab above to browse by Products or Capability.</p>
+                          <div className="grid grid-cols-3 gap-0">
+                            {industryCapabilityMap.map((ind) => (
+                              <div key={ind.heading} className="p-5">
+                                <Link to={ind.path} className="text-small font-semibold text-text-primary hover:text-accent-primary transition-colors">{ind.heading}</Link>
+                                <div className="mt-3 space-y-1">
+                                  {ind.caps.map((cap) => (
+                                    <p key={cap} className="text-tiny text-text-muted px-3 py-1.5 -mx-3 rounded-lg">{cap}</p>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         )}
                       </div>
                       {/* Footer */}
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30">
                         <p className="text-tiny text-text-muted">
-                          {capabilitiesTab === 'products' ? 'Full AI stack — from laptop to cloud. 11 partners. One relationship.' : '7 capabilities. 3 pillars. Intelligence · Automation · Trust.'}
+                          {capabilitiesTab === 'products' ? 'Full AI stack — from laptop to cloud. 11 partners. One relationship.' : capabilitiesTab === 'capability' ? '7 capabilities. 3 pillars. Intelligence · Automation · Trust.' : '5 sectors. Government to enterprise — AI transformation applied to your sector.'}
                         </p>
                         <Link to="/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
                           View Transformation Blueprints <ArrowRight className="w-4 h-4" />
@@ -496,8 +519,18 @@ export const Header = () => {
                         ))}
                       </div>
                     ) : (
-                      <div className="p-4">
-                        <p className="text-small text-text-muted">Select a tab above to browse by Products or Capability.</p>
+                      <div className="space-y-2">
+                        {industryCapabilityMap.map((ind) => (
+                          <div key={ind.heading}>
+                            <Link to={ind.path} onClick={() => setMobileMenuOpen(false)}
+                              className="block px-4 py-2 text-small font-semibold text-text-primary hover:text-accent-primary hover:bg-white/5 rounded-lg transition-colors">{ind.heading}</Link>
+                            <div className="ml-2">
+                              {ind.caps.map((cap) => (
+                                <p key={cap} className="px-6 py-1 text-tiny text-text-muted">{cap}</p>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     )}
                     <Link to="/partners" onClick={() => setMobileMenuOpen(false)}
