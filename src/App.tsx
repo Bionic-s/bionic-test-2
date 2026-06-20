@@ -51,6 +51,7 @@ import ArabicArchitecturePage from './pages/ar/ArabicArchitecturePage';
 import ArabicEnterpriseValueSystemPage from './pages/ar/ArabicEnterpriseValueSystemPage';
 import ArabicPartnersPage from './pages/ar/ArabicPartnersPage';
 import ArabicBlueprintsHub from './pages/ar/ArabicBlueprintsHub';
+import ArabicTransformationBlueprintPage from './pages/ar/ArabicTransformationBlueprintPage';
 import ArabicProductsPage from './pages/ar/ArabicProductsPage';
 import ArabicContactPage from './pages/ar/ArabicContactPage';
 import ArabicBookDiscoveryCallPage from './pages/ar/ArabicBookDiscoveryCallPage';
@@ -249,6 +250,7 @@ function AppContent() {
           <Route path="/ar/value" element={<ArabicEnterpriseValueSystemPage />} />
           <Route path="/ar/partners" element={<ArabicPartnersPage />} />
           <Route path="/ar/blueprints" element={<ArabicBlueprintsHub />} />
+          <Route path="/ar/blueprints/:slug" element={<ArabicTransformationBlueprintPage />} />
           <Route path="/ar/products" element={<ArabicProductsPage />} />
           <Route path="/ar/contact" element={<ArabicContactPage />} />
           <Route path="/ar/book-discovery-call" element={<ArabicBookDiscoveryCallPage />} />
