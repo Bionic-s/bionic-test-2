@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from './components/Header';
 import { HeaderAr } from './components/HeaderAr';
 import { Footer } from './components/Footer';
+import { FooterAr } from './components/ar/FooterAr';
 import { CookieConsent } from './components/CookieConsent';
 import { StickyCTABar } from './components/StickyCTABar';
 import { ProgressiveProfiling } from './components/ProgressiveProfiling';
@@ -287,7 +288,9 @@ function AppContent() {
         </Routes>
         </motion.main>
       </AnimatePresence>
-      {!location.pathname.startsWith('/ar') && (
+      {location.pathname.startsWith('/ar') ? (
+        <FooterAr />
+      ) : (
         <>
           <Footer />
           <StickyCTABar />
