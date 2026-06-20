@@ -1,7 +1,7 @@
 import { HeroAr } from '../components/ar/HeroAr';
 import { Partners } from '../components/Partners';
 import { ServicePillarsAr } from '../components/ar/ServicePillarsAr';
-import { CapabilityShow } from '../components/CapabilityShow';
+import { CapabilityShowAr } from '../components/ar/CapabilityShowAr';
 import { ContactAr } from '../components/ar/ContactAr';
 
 export default function ArabicHomePage() {
@@ -17,7 +17,7 @@ export default function ArabicHomePage() {
       <ServicePillarsAr />
 
       {/* 4. Proof — Saudi capability cards */}
-      <CapabilityShow />
+      <CapabilityShowAr />
 
       {/* 5. Convert */}
       <ContactAr />

@@ -217,7 +217,7 @@ export default function ArabicCybersecurityPage() {
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">لنناقش كيف يمكن لبرنامج أمني متكامل حماية أعمالكم — مع الامتثال التنظيمي السعودي.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg" style={{ backgroundColor: '#DC2626', boxShadow: '0 8px 24px #DC262620' }}>
-                ابدأ المحادثة <ArrowRight className="w-4 h-4 rotate-180" />
+                تواصل معنا <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link to="/ar/blueprints" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300">
                 استعرض المخططات المرجعية

@@ -26,7 +26,7 @@ export default function Page() {
         </section>
         <div className="text-center mt-16 pt-8 border-t border-white/10">
           <Link to="/ar/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all">
-            ابدأ المحادثة
+            تواصل معنا
             <ArrowRight className="w-5 h-5 rotate-180" />
           </Link>
         </div>

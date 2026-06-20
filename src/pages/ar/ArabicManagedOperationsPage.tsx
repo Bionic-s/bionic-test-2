@@ -35,7 +35,7 @@ export default function ArabicManagedOperationsPage() {
         <div className="text-center mt-16 pt-8 border-t border-white/10">
           <Link to="/ar/contact" className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all shadow-lg"
             style={{ backgroundColor: '#7C3AED', boxShadow: '0 8px 24px #7C3AED20' }}>
-            ابدأ المحادثة
+            تواصل معنا
             <ArrowRight className="w-5 h-5 rotate-180" />
           </Link>
         </div>

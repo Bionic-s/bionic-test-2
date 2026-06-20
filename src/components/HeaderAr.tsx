@@ -186,7 +186,7 @@ export const HeaderAr = () => {
                 onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('products'); }}>
                 <Link to="/ar/capabilities/ai"
                   className="flex items-center space-x-1 space-x-reverse px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                  <span>عروضنا</span>
+                  <span>خطوط الأعمال</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${capabilitiesOpen ? 'rotate-180' : ''}`} />
                 </Link>
                 {capabilitiesOpen && <div className="absolute top-full right-0 h-3 w-full" />}
@@ -440,7 +440,7 @@ export const HeaderAr = () => {
               <Link to="/ar/contact"
                 onClick={() => trackCTAClick('mega_menu', '/ar/contact')}
                 className="px-5 py-2 bg-accent-primary text-text-primary text-sm font-semibold rounded-full hover:bg-accent-secondary transition-all">
-                ابدأ المحادثة
+                تواصل معنا
               </Link>
             </div>
 
@@ -489,7 +489,7 @@ export const HeaderAr = () => {
               <div>
                 <button onClick={() => setMobileCapabilitiesOpen(!mobileCapabilitiesOpen)}
                   className="w-full flex items-center justify-between px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                  <span>عروضنا</span>
+                  <span>خطوط الأعمال</span>
                   <ChevronDown className={`w-5 h-5 transition-transform ${mobileCapabilitiesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {mobileCapabilitiesOpen && (
@@ -652,7 +652,7 @@ export const HeaderAr = () => {
               <div className="pt-3">
                 <Link to="/ar/contact" onClick={() => setMobileMenuOpen(false)}
                   className="block w-full px-6 py-3 bg-accent-primary text-text-primary text-center text-lg font-semibold rounded-full hover:bg-accent-secondary transition-all">
-                  ابدأ المحادثة
+                  تواصل معنا
                 </Link>
               </div>
             </nav>

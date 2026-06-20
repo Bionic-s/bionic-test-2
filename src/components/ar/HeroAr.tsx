@@ -77,7 +77,7 @@ export const HeroAr = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مكامل التحول المؤسسي للذكاء الاصطناعي.</p>
+            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُمكّن التحول المؤسسي للذكاء الاصطناعي.</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
@@ -86,7 +86,7 @@ export const HeroAr = () => {
               <Link to="/ar/contact?source=hero&intent=architect" onClick={() => trackExecutiveBriefingClick('hero_primary')}
                 data-magnetic
                 className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg">
-                تحدث مع مهندس الحلول <ArrowRight className="w-5 h-5 rotate-180" />
+                تواصل مع فريقنا <ArrowRight className="w-5 h-5 rotate-180" />
               </Link>
               <Link to="/ar/blueprints?source=hero&intent=blueprints" onClick={() => trackCTAClick('hero', '/ar/blueprints')}
                 data-magnetic

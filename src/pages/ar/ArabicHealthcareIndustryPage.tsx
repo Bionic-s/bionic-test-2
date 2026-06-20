@@ -189,7 +189,7 @@ export default function ArabicHealthcareIndustryPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
                 style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #0D948820' }}>
-                ابدأ المحادثة
+                تواصل معنا
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link to="/ar/blueprints" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[ACCENT]/30"

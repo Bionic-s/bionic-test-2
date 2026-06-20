@@ -217,7 +217,7 @@ export default function ArabicInfrastructurePage() {
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">لنناقش كيف يمكن للبنية التحتية السيادية ومنصات السحابة الهجينة تسريع تحولكم مع الحفاظ على السيادة.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg" style={{ backgroundColor: '#2563EB', boxShadow: '0 8px 24px #2563EB20' }}>
-                ابدأ المحادثة <ArrowRight className="w-4 h-4 rotate-180" />
+                تواصل معنا <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link to="/ar/blueprints" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300">
                 استعرض المخططات المرجعية

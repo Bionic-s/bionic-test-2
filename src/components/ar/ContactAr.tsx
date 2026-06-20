@@ -109,7 +109,7 @@ export const ContactAr = () => {
               transition={{ duration: 0.6 }}
               className="text-h2 md:text-[38px] lg:text-h2 font-bold mb-4"
             >
-              تحدث مع مهندس الحلول
+              تواصل مع فريقنا
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}

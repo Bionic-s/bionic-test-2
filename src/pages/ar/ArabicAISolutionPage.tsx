@@ -285,7 +285,7 @@ export default function ArabicAISolutionPage() {
                 to="/ar/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
                 style={{ backgroundColor: '#7C3AED', boxShadow: '0 8px 24px #7C3AED20' }}>
-                ابدأ المحادثة
+                تواصل معنا
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link
