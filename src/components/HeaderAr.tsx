@@ -193,6 +193,11 @@ export const HeaderAr = () => {
                           حسب القدرات
                           {capabilitiesTab === 'capability' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary rounded-full" />}
                         </button>
+                        <button onClick={() => setCapabilitiesTab('industry')}
+                          className={`relative px-4 py-3.5 text-sm font-medium transition-colors ${capabilitiesTab === 'industry' ? 'text-accent-primary' : 'text-text-muted hover:text-text-primary'}`}>
+                          حسب القطاع
+                          {capabilitiesTab === 'industry' && <motion.div layoutId="cap-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-primary rounded-full" />}
+                        </button>
 
                       </div>
                       {/* Content */}
@@ -454,6 +459,10 @@ export const HeaderAr = () => {
                       <button onClick={() => setMobileCapabilitiesTab('capability')}
                         className={`flex-1 px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${mobileCapabilitiesTab === 'capability' ? 'border-accent-primary text-accent-primary' : 'border-transparent text-text-muted'}`}>
                         حسب القدرات
+                      </button>
+                      <button onClick={() => setMobileCapabilitiesTab('industry')}
+                        className={`flex-1 px-3 py-2.5 text-sm font-medium transition-colors border-b-2 ${mobileCapabilitiesTab === 'industry' ? 'border-accent-primary text-accent-primary' : 'border-transparent text-text-muted'}`}>
+                        حسب القطاع
                       </button>
 
                     </div>
