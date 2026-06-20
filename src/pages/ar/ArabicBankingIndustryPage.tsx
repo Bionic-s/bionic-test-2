@@ -27,7 +27,7 @@ const outcomes = [{"metric":"+90%","label":"دقة كشف الاحتيال"},{"m
 const iconMap: Record<string, React.ComponentType<any>> = { Shield, Cpu, GitBranch, BarChart3, TrendingUp, Brain, Users, CreditCard, Heart, Wrench };
 
 export default function ArabicBankingIndustryPage() {
-  useEffect(() => { trackIndustryPageView('القطاع المصرفي والمالي'); }, []);
+  useEffect(() => { trackIndustryPageView('الخدمات المالية والمصرفية'); }, []);
   const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -42,7 +42,7 @@ export default function ArabicBankingIndustryPage() {
           <div className="relative z-10 pt-44 pb-24">
             <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
         <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
-          <SectionLabel>القطاع المصرفي والمالي</SectionLabel>
+          <SectionLabel>الخدمات المالية والمصرفية</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             تحول مصرفي<br />
             <span style={{ color: ACCENT }}>تحت مظلة البنك المركزي السعودي — ذكي، متوافق، آمن.</span>
