@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Lenis from 'lenis';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from './components/Header';
+import { HeaderAr } from './components/HeaderAr';
 import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
 import { StickyCTABar } from './components/StickyCTABar';
@@ -20,10 +21,42 @@ import ContactPage from './pages/ContactPage';
 import BookDiscoveryCallPage from './pages/BookDiscoveryCall';
 import NotFoundPage from './pages/NotFoundPage';
 import ArabicHomePage from './pages/ArabicHomePage';
-import ArabicPrivacyPolicyPage from './pages/ArabicPrivacyPolicyPage';
-import ArabicCapabilitiesPage from './pages/ArabicCapabilitiesPage';
-import ArabicAboutPage from './pages/ArabicAboutPage';
-import ArabicIndustriesPage from './pages/ArabicIndustriesPage';
+
+// Arabic Industry Pages
+import ArabicGovernmentIndustryPage from './pages/ar/ArabicGovernmentIndustryPage';
+import ArabicBankingIndustryPage from './pages/ar/ArabicBankingIndustryPage';
+import ArabicOilGasIndustryPage from './pages/ar/ArabicOilGasIndustryPage';
+import ArabicHealthcareIndustryPage from './pages/ar/ArabicHealthcareIndustryPage';
+import ArabicEnterpriseIndustryPage from './pages/ar/ArabicEnterpriseIndustryPage';
+
+// Arabic Capability Pages
+import ArabicAISolutionPage from './pages/ar/ArabicAISolutionPage';
+import ArabicDataAnalyticsPage from './pages/ar/ArabicDataAnalyticsPage';
+import ArabicBusinessApplicationsPage from './pages/ar/ArabicBusinessApplicationsPage';
+import ArabicIntegrationPage from './pages/ar/ArabicIntegrationPage';
+import ArabicCybersecurityPage from './pages/ar/ArabicCybersecurityPage';
+import ArabicInfrastructurePage from './pages/ar/ArabicInfrastructurePage';
+import ArabicTechnologyOperationsPage from './pages/ar/ArabicTechnologyOperationsPage';
+
+// Arabic Service Pages
+import ArabicServicesHub from './pages/ar/ArabicServicesHub';
+import ArabicConsultingAdvisoryPage from './pages/ar/ArabicConsultingAdvisoryPage';
+import ArabicImplementationDeliveryPage from './pages/ar/ArabicImplementationDeliveryPage';
+import ArabicManagedOperationsPage from './pages/ar/ArabicManagedOperationsPage';
+
+// Arabic Other Pages
+import ArabicAboutPage from './pages/ar/ArabicAboutPage';
+import ArabicArchitecturePage from './pages/ar/ArabicArchitecturePage';
+import ArabicEnterpriseValueSystemPage from './pages/ar/ArabicEnterpriseValueSystemPage';
+import ArabicPartnersPage from './pages/ar/ArabicPartnersPage';
+import ArabicBlueprintsHub from './pages/ar/ArabicBlueprintsHub';
+import ArabicProductsPage from './pages/ar/ArabicProductsPage';
+import ArabicContactPage from './pages/ar/ArabicContactPage';
+import ArabicBookDiscoveryCallPage from './pages/ar/ArabicBookDiscoveryCallPage';
+import ArabicNotFoundPage from './pages/ar/ArabicNotFoundPage';
+import ArabicPrivacyPolicyPage from './pages/ar/ArabicPrivacyPolicyPage';
+import ArabicTermsOfUsePage from './pages/ar/ArabicTermsOfUsePage';
+import ArabicCookiePolicyPage from './pages/ar/ArabicCookiePolicyPage';
 
 // Capabilities (shared with legacy /solutions/* redirects)
 import AISolutionPage from './pages/solutions/AISolutionPage';
@@ -124,7 +157,7 @@ function AppContent() {
     <div className="min-h-screen">
       <ScrollProgress />
       <ScrollToTop />
-      <Header />
+      {location.pathname.startsWith('/ar') ? <HeaderAr /> : <Header />}
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}
@@ -208,12 +241,46 @@ function AppContent() {
           <Route path="/case-studies" element={<Navigate to="/blueprints" replace />} />
           <Route path="/case-studies/*" element={<Navigate to="/blueprints" replace />} />
 
-          {/* Arabic Homepage */}
+          {/* ═══ Arabic Routes /ar ═══ */}
           <Route path="/ar" element={<ArabicHomePage />} />
-          <Route path="/ar/privacy" element={<ArabicPrivacyPolicyPage />} />
-          <Route path="/ar/capabilities" element={<ArabicCapabilitiesPage />} />
           <Route path="/ar/about" element={<ArabicAboutPage />} />
-          <Route path="/ar/industries" element={<ArabicIndustriesPage />} />
+          <Route path="/ar/architecture" element={<ArabicArchitecturePage />} />
+          <Route path="/ar/value" element={<ArabicEnterpriseValueSystemPage />} />
+          <Route path="/ar/partners" element={<ArabicPartnersPage />} />
+          <Route path="/ar/blueprints" element={<ArabicBlueprintsHub />} />
+          <Route path="/ar/products" element={<ArabicProductsPage />} />
+          <Route path="/ar/contact" element={<ArabicContactPage />} />
+          <Route path="/ar/book-discovery-call" element={<ArabicBookDiscoveryCallPage />} />
+
+          {/* Arabic Capabilities */}
+          <Route path="/ar/capabilities/ai" element={<ArabicAISolutionPage />} />
+          <Route path="/ar/capabilities/data" element={<ArabicDataAnalyticsPage />} />
+          <Route path="/ar/capabilities/apps" element={<ArabicBusinessApplicationsPage />} />
+          <Route path="/ar/capabilities/integration" element={<ArabicIntegrationPage />} />
+          <Route path="/ar/capabilities/cyber" element={<ArabicCybersecurityPage />} />
+          <Route path="/ar/capabilities/infra" element={<ArabicInfrastructurePage />} />
+          <Route path="/ar/capabilities/ops" element={<ArabicTechnologyOperationsPage />} />
+
+          {/* Arabic Services */}
+          <Route path="/ar/services" element={<ArabicServicesHub />} />
+          <Route path="/ar/services/advisory" element={<ArabicConsultingAdvisoryPage />} />
+          <Route path="/ar/services/implementation" element={<ArabicImplementationDeliveryPage />} />
+          <Route path="/ar/services/operations" element={<ArabicManagedOperationsPage />} />
+
+          {/* Arabic Industries */}
+          <Route path="/ar/industries/government" element={<ArabicGovernmentIndustryPage />} />
+          <Route path="/ar/industries/banking" element={<ArabicBankingIndustryPage />} />
+          <Route path="/ar/industries/oil-gas" element={<ArabicOilGasIndustryPage />} />
+          <Route path="/ar/industries/healthcare" element={<ArabicHealthcareIndustryPage />} />
+          <Route path="/ar/industries/enterprise" element={<ArabicEnterpriseIndustryPage />} />
+
+          {/* Arabic Legal */}
+          <Route path="/ar/privacy" element={<ArabicPrivacyPolicyPage />} />
+          <Route path="/ar/terms-of-use" element={<ArabicTermsOfUsePage />} />
+          <Route path="/ar/cookie-policy" element={<ArabicCookiePolicyPage />} />
+
+          {/* Arabic 404 */}
+          <Route path="/ar/*" element={<ArabicNotFoundPage />} />
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />
