@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, Shield, Brain, Cog, Target, Layers, CheckCircle } from 'lucide-react';
 import { Buildings, Bank, Drop, Heartbeat, BuildingOffice, ChartBar, Desktop, GitMerge, ShieldCheck, Cloud, Gear, Brain as BrainPh } from '@phosphor-icons/react';
 import { blueprints } from '../../data/blueprintsData';
+import { blueprintTranslations } from '../../data/blueprintsDataAr';
 import { trackBlueprintView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 
@@ -70,6 +71,7 @@ export default function ArabicTransformationBlueprintPage() {
   useEffect(() => { if (slug) trackBlueprintView(slug); }, [slug]);
 
   const bp = blueprints.find((b) => b.slug === slug);
+  const ar = slug ? blueprintTranslations[slug] : undefined;
 
   if (!bp) {
     return (
@@ -115,9 +117,9 @@ export default function ArabicTransformationBlueprintPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-accent-primary to-white bg-clip-text text-transparent">{bp.title}</span>
+              <span className="bg-gradient-to-r from-accent-primary to-white bg-clip-text text-transparent">{ar?.title || bp.title}</span>
             </h1>
-            <p className="text-xl text-text-muted max-w-3xl">{bp.challenge}</p>
+            <p className="text-xl text-text-muted max-w-3xl">{ar?.challenge || bp.challenge}</p>
           </motion.div>
         </div>
       </section>
@@ -132,7 +134,7 @@ export default function ArabicTransformationBlueprintPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold mb-6">التحدي</h2>
-            <p className="text-lg text-text-muted leading-relaxed">{bp.challenge}</p>
+            <p className="text-lg text-text-muted leading-relaxed">{ar?.challenge || bp.challenge}</p>
           </motion.div>
         </div>
       </section>
@@ -261,7 +263,7 @@ export default function ArabicTransformationBlueprintPage() {
               <h2 className="text-2xl font-bold">المعمارية المستهدفة</h2>
             </div>
             <div className="p-6 rounded-xl bg-gradient-to-r from-accent-primary/5 to-bg-secondary border border-accent-primary/10">
-              <p className="text-sm text-text-muted leading-relaxed font-mono">{bp.architecture}</p>
+              <p className="text-sm text-text-muted leading-relaxed font-mono">{ar?.architecture || bp.architecture}</p>
             </div>
           </motion.div>
         </div>
@@ -278,7 +280,7 @@ export default function ArabicTransformationBlueprintPage() {
           >
             <h2 className="text-3xl font-bold text-center mb-10">النتائج المتوقعة</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {bp.outcomes.map((o, i) => (
+              {(ar?.outcomes || bp.outcomes).map((o, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-3 p-5 rounded-xl bg-bg-primary border border-white/5"
@@ -303,7 +305,7 @@ export default function ArabicTransformationBlueprintPage() {
             className="p-8 rounded-2xl bg-gradient-to-br from-accent-primary/5 to-bg-secondary border border-accent-primary/20"
           >
             <h2 className="text-2xl font-bold mb-4">لماذا بيونك</h2>
-            <p className="text-text-muted leading-relaxed">{bp.whyBionic}</p>
+            <p className="text-text-muted leading-relaxed">{ar?.whyBionic || bp.whyBionic}</p>
           </motion.div>
         </div>
       </section>

@@ -158,6 +158,13 @@ function AppContent() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Set html lang + dir dynamically
+  useEffect(() => {
+    const isArabic = location.pathname.startsWith('/ar/') || location.pathname === '/ar';
+    document.documentElement.lang = isArabic ? 'ar' : 'en';
+    document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen">
       <Preloader />
@@ -165,7 +172,7 @@ function AppContent() {
       <GrainOverlay />
       <ScrollProgress />
       <ScrollToTop />
-      {location.pathname.startsWith('/ar') ? <HeaderAr /> : <Header />}
+      {(location.pathname.startsWith('/ar/') || location.pathname === '/ar') ? <HeaderAr /> : <Header />}
       <Routes>
           {/* ═══ Core Pages ═══ */}
           <Route path="/" element={<HomePage />} />
@@ -286,7 +293,7 @@ function AppContent() {
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      {location.pathname.startsWith('/ar') ? (
+      {(location.pathname.startsWith('/ar/') || location.pathname === '/ar') ? (
         <FooterAr />
       ) : (
         <>
