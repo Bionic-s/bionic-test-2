@@ -113,7 +113,7 @@ export const FooterAr = () => {
             © {currentYear} شركة بيونك سوليوشنز. جميع الحقوق محفوظة.
           </p>
           <div className="flex items-center gap-4">
-            <Link to="/ar/privacy-policy" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">سياسة الخصوصية</Link>
+            <Link to="/ar/privacy" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">سياسة الخصوصية</Link>
             <Link to="/ar/terms-of-use" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">شروط الاستخدام</Link>
             <Link to="/ar/cookie-policy" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">ملفات تعريف الارتباط</Link>
           </div>

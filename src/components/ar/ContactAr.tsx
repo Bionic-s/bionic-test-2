@@ -233,7 +233,7 @@ export const ContactAr = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-5 py-4 bg-bg-primary border border-white/10 rounded-medium text-text-primary focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20 transition-all"
-                      placeholder="mohammed@example.com"
+                      placeholder="example@domain.com"
                       dir="ltr"
                     />
                   </div>
