@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Mail, Phone, MapPin, ArrowLeft } from 'lucide-react';
+import { Linkedin, Twitter, Mail, MapPin, ArrowLeft } from 'lucide-react';
 
 export const FooterAr = () => {
   const currentYear = new Date().getFullYear();
@@ -93,12 +93,6 @@ export const FooterAr = () => {
                 <a href="mailto:support@Bionics.com.sa" className="text-tiny text-text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 flex-shrink-0" />
                   support@Bionics.com.sa
-                </a>
-              </li>
-              <li>
-                <a href="tel:+966500884376" className="text-tiny text-text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 flex-shrink-0" />
-                  +966 500 884 376
                 </a>
               </li>
             </ul>

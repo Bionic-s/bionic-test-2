@@ -1,6 +1,6 @@
 import { Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { contactEmails, contactPhone } from '../data/contactData';
+import { contactEmails } from '../data/contactData';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -143,12 +143,6 @@ export const Footer = () => {
                 className="block text-sm text-text-muted hover:text-accent-primary transition-colors"
               >
                 {contactEmails.support}
-              </a>
-              <a
-                href={contactPhone.href}
-                className="block text-sm text-text-muted hover:text-accent-primary transition-colors"
-              >
-                {contactPhone.number}
               </a>
             </div>
             <Link
