@@ -354,10 +354,10 @@ export const HeaderAr = () => {
                   </div>
                 )}
               </div>
-              {/* ═══ Partners ═══ */}
+              {/* ═══ شركاؤنا ═══ */}
               <Link to="/ar/partners"
                 className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
-                Partners
+                شركاؤنا
               </Link>
 
             </nav>
@@ -367,8 +367,8 @@ export const HeaderAr = () => {
               <Link to="/"
                 className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
                 aria-label="English version">
-                <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇸🇦</span>
-                <span className="text-[11px] font-medium text-[#5B6470] group-hover:text-white transition-colors tracking-wide" style={{ fontFamily: "'Tajawal', sans-serif" }}>عربي</span>
+                <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇬🇧</span>
+                <span className="text-[11px] font-medium text-[#5B6470] group-hover:text-white transition-colors tracking-wide" style={{ fontFamily: "'Tajawal', sans-serif" }}>English</span>
               </Link>
 
               <Link to="/ar/contact"
@@ -502,7 +502,7 @@ export const HeaderAr = () => {
                     )}
                     <Link to="/ar/partners" onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2 px-4 py-3 mt-3 text-accent-primary font-medium text-small">
-                      Strategic Partners <ArrowRight className="w-4 h-4" />
+                      الشركاء الاستراتيجيون <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link to="/ar/blueprints" onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2 px-4 py-3 text-accent-primary font-medium text-small">
@@ -541,10 +541,10 @@ export const HeaderAr = () => {
                 )}
               </div>
 
-              {/* Mobile Partners */}
+              {/* Mobile شركاؤنا */}
               <Link to="/ar/partners" onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors">
-                Our Partners
+                شركاؤنا
               </Link>
 
               {/* Mobile Arabic */}
