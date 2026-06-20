@@ -161,7 +161,7 @@ export const Footer = () => {
               &copy; {currentYear} Bionic Solutions. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy-policy" className="text-small text-text-muted hover:text-accent-primary transition-colors">
+              <Link to="/privacy" className="text-small text-text-muted hover:text-accent-primary transition-colors">
                 Privacy Policy
               </Link>
               <Link to="/terms-of-use" className="text-small text-text-muted hover:text-accent-primary transition-colors">

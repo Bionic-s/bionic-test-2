@@ -312,7 +312,7 @@ export const Contact = () => {
                     className="mt-1 w-4 h-4 rounded border-white/20 bg-bg-primary text-accent-primary focus:ring-accent-primary/30 cursor-pointer"
                   />
                   <label htmlFor="consent" className="text-tiny text-text-muted cursor-pointer">
-                    I agree to the <Link to="/privacy-policy" className="text-accent-primary hover:underline">Privacy Policy</Link> and consent to Bionic Solutions processing my information to respond to my inquiry.
+                    I agree to the <Link to="/privacy" className="text-accent-primary hover:underline">Privacy Policy</Link> and consent to Bionic Solutions processing my information to respond to my inquiry.
                   </label>
                 </div>
 

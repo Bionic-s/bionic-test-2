@@ -208,7 +208,7 @@ function AppContent() {
           <Route path="/value" element={<EnterpriseValueSystemPage />} />
 
           {/* ═══ Legal ═══ */}
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="/cookie-policy" element={<CookiePolicyPage />} />
 
