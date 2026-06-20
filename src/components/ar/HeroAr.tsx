@@ -12,7 +12,7 @@ export const HeroAr = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
-  const canonWords = ['الذكاء', 'الأتمتة', 'الثقة'];
+  const canonWords = ['الذكاء الاصطناعي', 'الأتمتة', 'الثقة'];
   const animatedWord = useCycleWords(canonWords, 80, 3500, 40);
 
   // ─── Magnetic buttons ───

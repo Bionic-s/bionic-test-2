@@ -72,7 +72,7 @@ export const CookieConsent = () => {
                   {texts.body}
                 </p>
               </div>
-              <button onClick={reject} className="p-1 text-text-muted hover:text-text-primary transition-colors flex-shrink-0" aria-label="Close">
+              <button onClick={reject} className="p-1 text-text-muted hover:text-text-primary transition-colors flex-shrink-0" aria-label="إغلاق">
                 <X className="w-4 h-4" />
               </button>
             </div>

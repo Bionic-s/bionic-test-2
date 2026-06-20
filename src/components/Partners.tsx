@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { CANON_PARTNERS } from '../data/partnersData';
 import { PartnerLogo } from './PartnerLogo';
 
@@ -16,6 +16,8 @@ const partners = CANON_PARTNERS.filter(
 const scrollPartners = [...partners, ...partners];
 
 export const Partners = () => {
+  const location = useLocation();
+  const isAr = location.pathname.startsWith('/ar');
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
@@ -47,13 +49,23 @@ export const Partners = () => {
           transition={{ duration: 0.6 }}
           className="shrink-0 pl-6 md:pl-12 flex items-center gap-3"
         >
-          <Link to="/partners" className="flex items-center gap-3 group/label">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-            <div className="flex flex-col leading-tight">
-              <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest group-hover/label:text-accent-primary transition-colors">Strategic</span>
-              <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest group-hover/label:text-accent-primary transition-colors">Partners</span>
+          {isAr ? (
+            <Link to="/ar/partners" className="flex items-center gap-3 group/label">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
+              <div className="flex flex-col leading-tight">
+                <span className="text-tiny font-semibold text-text-muted group-hover/label:text-accent-primary transition-colors">الشركاء</span>
+                <span className="text-tiny font-semibold text-text-muted group-hover/label:text-accent-primary transition-colors">الاستراتيجيون</span>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/partners" className="flex items-center gap-3 group/label">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
+              <div className="flex flex-col leading-tight">
+                <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest group-hover/label:text-accent-primary transition-colors">Strategic</span>
+                <span className="text-tiny font-semibold text-text-muted uppercase tracking-widest group-hover/label:text-accent-primary transition-colors">Partners</span>
             </div>
           </Link>
+          )}
         </motion.div>
 
         {/* Marquee */}
