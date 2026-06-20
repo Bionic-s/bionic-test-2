@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Brain, Cog, Shield, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTextReveal } from '../hooks/useTextReveal';
 
 /**
  * Bionic Solutions — 3 Pillars × 7 Service Lines
@@ -58,6 +59,7 @@ const pillars: Pillar[] = [
 
 export const ServicePillars = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const textReveal = useTextReveal({ threshold: 0.2, staggerDelay: 50 });
 
   return (
     <section className="py-20 md:py-28 bg-bg-primary relative overflow-hidden" ref={ref}>
@@ -80,9 +82,11 @@ export const ServicePillars = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-h2 md:text-[48px] font-bold mb-6 tracking-tight"
+            ref={textReveal.ref}
           >
-            7 enterprise capabilities across{' '}
-            <span className="gradient-text">Intelligence, Automation & Trust</span>.
+            <span className="reveal-line">7 enterprise capabilities across{' '}</span>
+            <span className="gradient-text reveal-line">Intelligence, Automation & Trust</span>
+            <span className="reveal-line">.</span>
           </motion.h2>
 
           <motion.p
@@ -91,7 +95,7 @@ export const ServicePillars = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-h4 text-text-muted max-w-2xl mx-auto"
           >
-            7 service lines. 3 core values. One integrated enterprise AI transformation.
+            <span className="reveal-line">7 service lines. 3 core values. One integrated enterprise AI transformation.</span>
           </motion.p>
         </div>
 

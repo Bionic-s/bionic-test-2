@@ -6,6 +6,7 @@ import { trackExecutiveBriefingClick, trackCTAClick } from '../lib/analytics';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { useCycleWords } from '../hooks/useCycleWords';
+import { useTextReveal } from '../hooks/useTextReveal';
 
 export const Hero = () => {
   const heroBg = `${import.meta.env.BASE_URL}images/hero_background_7.png`;
@@ -14,6 +15,7 @@ export const Hero = () => {
 
   const canonWords = ['Intelligence', 'Automation', 'Trust'];
   const animatedWord = useCycleWords(canonWords, 80, 3500, 40);
+  const textReveal = useTextReveal({ threshold: 0.3, staggerDelay: 60 });
 
   // ─── Magnetic buttons ───
   useEffect(() => {
@@ -76,8 +78,10 @@ export const Hero = () => {
             </h1>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">Enterprise AI Transformation Integrator.</p>
+          <motion.div ref={textReveal.ref} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
+            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">
+              <span className="reveal-line">Enterprise AI Transformation Integrator.</span>
+            </p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
@@ -99,14 +103,26 @@ export const Hero = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12" ref={ref}>
             {[
-              { value: 11, suffix: '', label: 'Strategic Technology Partners', description: 'Global ecosystem' },
-              { value: 7, suffix: '', label: 'Service Lines', description: 'Full transformation stack' },
-              { value: 5, suffix: '', label: 'Top Sectors', description: 'Banking · Government · Oil & Gas · Enterprise' },
+              { value: 11, prefix: '', suffix: '+', label: 'Strategic Technology Partners', description: 'Global ecosystem' },
+              { value: 7, prefix: '', suffix: '', label: 'Service Lines', description: 'Full transformation stack' },
+              { value: 5, prefix: '', suffix: '', label: 'Top Sectors', description: 'Banking · Government · Oil & Gas · Enterprise' },
             ].map((metric, index) => (
               <motion.div key={index} className="text-center group cursor-pointer" whileHover={{ scale: 1.05, y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                 <motion.div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-primary mb-2 group-hover:text-accent-secondary transition-colors duration-300"
-                  initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6, delay: 0.9 + index * 0.1, type: 'spring' }}>
-                  {inView ? <CountUp start={0} end={metric.value} duration={2.5} delay={1 + index * 0.2} suffix={metric.suffix} useEasing={true} /> : '0'}
+                  initial={{ scale: 0.5, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.9 + index * 0.15, type: 'spring' }}>
+                  {inView ? (
+                    <CountUp
+                      start={0}
+                      end={metric.value}
+                      duration={2.8}
+                      delay={1.2 + index * 0.25}
+                      prefix={metric.prefix}
+                      suffix={metric.suffix}
+                      useEasing={true}
+                      easingFn={(t: number) => 1 - Math.pow(1 - t, 3)}
+                      enableScrollSpy={false}
+                    />
+                  ) : '0'}
                 </motion.div>
                 <div className="text-sm md:text-base font-medium text-text-primary mb-1">{metric.label}</div>
                 <div className="text-xs text-text-muted group-hover:text-accent-primary transition-colors duration-300">{metric.description}</div>

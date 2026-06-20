@@ -9,6 +9,9 @@ import { FooterAr } from './components/ar/FooterAr';
 import { CookieConsent } from './components/CookieConsent';
 import { StickyCTABar } from './components/StickyCTABar';
 import { ProgressiveProfiling } from './components/ProgressiveProfiling';
+import { Preloader } from './components/Preloader';
+import { CustomCursor } from './components/CustomCursor';
+import { GrainOverlay } from './components/GrainOverlay';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 
@@ -157,16 +160,19 @@ function AppContent() {
 
   return (
     <div className="min-h-screen">
+      <Preloader />
+      <CustomCursor />
+      <GrainOverlay />
       <ScrollProgress />
       <ScrollToTop />
       {location.pathname.startsWith('/ar') ? <HeaderAr /> : <Header />}
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.25, ease: 'easeOut' }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
         <Routes>
           {/* ═══ Core Pages ═══ */}

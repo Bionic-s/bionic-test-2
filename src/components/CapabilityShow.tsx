@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Shield, Cpu, BarChart3, ArrowRight, XCircle, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTextReveal } from '../hooks/useTextReveal';
 
 interface Capability {
   icon: React.ReactNode;
@@ -37,6 +38,7 @@ const capabilities: Capability[] = [
 
 export const CapabilityShow = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const textReveal = useTextReveal({ threshold: 0.2, staggerDelay: 50 });
 
   return (
     <section className="py-20 md:py-28 bg-bg-secondary relative overflow-hidden">
@@ -69,9 +71,11 @@ export const CapabilityShow = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-h2 md:text-[48px] font-bold mb-6 tracking-tight"
+            ref={textReveal.ref}
           >
-            We understand{' '}
-            <span className="text-accent-primary">Saudi enterprise</span>.
+            <span className="reveal-line">We understand{' '}</span>
+            <span className="text-accent-primary reveal-line">Saudi enterprise</span>
+            <span className="reveal-line">.</span>
           </motion.h2>
 
           <motion.p
@@ -80,7 +84,7 @@ export const CapabilityShow = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-h4 text-text-muted max-w-3xl mx-auto"
           >
-            From Etimad procurement to NCA cybersecurity — we speak the language of Saudi business transformation.
+            <span className="reveal-line">From Etimad procurement to NCA cybersecurity — we speak the language of Saudi business transformation.</span>
           </motion.p>
         </div>
 
