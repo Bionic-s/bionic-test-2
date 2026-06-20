@@ -1,45 +1,285 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle, Target, BarChart3, FileText, Shield, Compass, TrendingUp } from 'lucide-react';
+import { trackServicePageView } from '../../lib/analytics';
+import { CANON_PARTNERS, type PartnerData } from '../../data/partnersData';
+import { PartnerLogo } from '../../components/PartnerLogo';
+
+const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
+const ACCENT = '#0D9488';
+const HERO_BG = '/test-site-2/images/data-analytics.avif';
+const SectionLabel = ({ children }: { children: string }) => (
+  <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
+);
+
+const services = [
+  { title: 'استراتيجية تحول الأعمال', desc: 'تصميم تحول شامل — تقييم الوضع الحالي، رؤية الحالة المستقبلية، تحليل الفجوات، محفظة المبادرات، وخطة تحقيق قيمة متعددة السنوات.', icon: Target },
+  { title: 'خارطة طريق تحول الذكاء الاصطناعي', desc: 'تشخيص لمدة 6 أسابيع ← بنك حالات استخدام ← مصفوفة أولويات ← خارطة طريق تنفيذية لمدة 12 شهرًا مع توقعات عائد الاستثمار لكل مبادرة.', icon: TrendingUp },
+  { title: 'دراسة القيمة التنفيذية وحالة الأعمال', desc: 'نمذجة عائد الاستثمار، تحليل التكلفة الإجمالية للملكية، تخطيط تحقيق القيمة، ودعم اتخاذ القرار التنفيذي. نبني الحالة المالية والاستراتيجية التي تحظى بموافقة مجلس الإدارة.', icon: BarChart3 },
+  { title: 'تصميم نموذج التشغيل', desc: 'الأفراد · العمليات · التقنية · الحوكمة — كيف يجب أن تتطور مؤسستكم لاستدامة التحول. نماذج تشغيلية للمؤسسات القائمة على الذكاء الاصطناعي والبيانات والمنصات.', icon: Compass },
+  { title: 'استشارات الامتثال والحوكمة والمخاطر', desc: 'أخلاقيات الذكاء الاصطناعي من SDAIA · حماية البيانات PDPL · الأمن السيبراني NCA · الجاهزية التنظيمية SAMA — مدمجة في المعمارية التقنية، وليست مجرد قائمة تدقيق.', icon: Shield },
+  { title: 'استراتيجية التقنية والمعمارية', desc: 'معمارية مرجعية عبر جميع القدرات السبع. إطار اختيار المورّدين. تحليل البناء مقابل الشراء. نمذجة التكلفة الإجمالية للملكية.', icon: FileText },
+];
+
+const capabilityCoverage = [
+  { cap: 'الذكاء الاصطناعي المؤسسي والأتمتة', app: 'تقييم جاهزية الذكاء الاصطناعي، تحديد أولويات حالات الاستخدام، استراتيجية MLOps، تصميم حوكمة النماذج' },
+  { cap: 'البيانات والتحليلات والذكاء', app: 'معمارية منصة البيانات، استراتيجية إدارة البيانات الرئيسية، خارطة طريق ذكاء الأعمال، إطار حوكمة البيانات' },
+  { cap: 'تطبيقات الأعمال وتجربة العميل', app: 'استراتيجية تحول CRM، تقييم نضج تجربة العميل، خارطة طريق التجارة الإلكترونية' },
+  { cap: 'التكامل والعمليات الذكية', app: 'تصميم معمارية API-led، خارطة طريق التكامل، استراتيجية Event-Driven' },
+  { cap: 'الأمن السيبراني والمرونة السيبرانية', app: 'الامتثال لـ NCA، معمارية Zero Trust، استراتيجية مركز العمليات الأمنية، تقييم النضج السيبراني' },
+  { cap: 'البنية التحتية السيادية والسحابة الهجينة', app: 'استراتيجية مراكز البيانات، خارطة طريق الترحيل السحابي، تخطيط البنية التحتية للذكاء الاصطناعي' },
+  { cap: 'عمليات التقنية', app: 'تقييم نضج SRE، استراتيجية المراقبة والملاحظة، خارطة طريق FinOps، تصميم منصة المطورين الداخلية' },
+];
+
+const blueprints = [
+  { title: 'منصة الذكاء السيادي', industry: 'حكومي', slug: 'sovereign-ai-platform' },
+  { title: 'مركز العمليات السيبرانية الوطني', industry: 'حكومي', slug: 'national-soc' },
+  { title: 'بنية تحتية مصرفية متوافقة مع SAMA', industry: 'بنوك', slug: 'sama-compliant-banking-infra' },
+  { title: 'Customer 360 والمشاركة الذكية', industry: 'بنوك', slug: 'customer-360-intelligent-engagement' },
+  { title: 'تكامل OT/IT والعمليات الآمنة', industry: 'نفط وغاز', slug: 'ot-it-integration-secure-ops' },
+  { title: 'Zero Trust المؤسسي', industry: 'مؤسسات', slug: 'enterprise-zero-trust' },
+];
+
+const partners: (PartnerData & { role: string; tech: string })[] = [
+  { ...CANON_PARTNERS.find(p => p.name === 'IBM')!, role: 'حوكمة الذكاء الاصطناعي، استراتيجية watsonx، معمارية Cloud Pak', tech: 'watsonx.ai · watsonx Governance · Cloud Pak for Data · IBM Consulting' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Salesforce')!, role: 'خارطة طريق تحول CRM، استراتيجية Einstein AI', tech: 'Sales Cloud · Service Cloud · Einstein AI · Agentforce' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Google')!, role: 'معمارية Cloud-Native، تصميم منصة Vertex AI', tech: 'Vertex AI · BigQuery · Looker · Gemini' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Dell Technologies')!, role: 'تحديث البنية التحتية، استراتيجية APEX', tech: 'PowerEdge · PowerStore · APEX · VxRail' },
+  { ...CANON_PARTNERS.find(p => p.name === 'MuleSoft')!, role: 'استراتيجية التكامل API-led، منصة Anypoint', tech: 'Anypoint Platform · API Manager · Flex Gateway · MuleSoft RPA · Composer' },
+  { ...CANON_PARTNERS.find(p => p.name === 'Informatica')!, role: 'استراتيجية إدارة البيانات الرئيسية، إطار حوكمة البيانات', tech: 'MDM · Data Quality · Data Catalog · Data Lineage' },
+];
 
 export default function ArabicConsultingAdvisoryPage() {
+
+  useEffect(() => { trackServicePageView('Consulting & Advisory'); }, []);
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
-      <div className="container mx-auto px-4 lg:px-12 max-w-4xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00BFFF]/30 bg-[#00BFFF]/5 mb-6">
-            <span className="text-small" style={{color:'#00BFFF'}}></span>
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">الاستشارات والتخطيط</h1>
-          <p className="text-text-muted max-w-2xl mx-auto leading-relaxed">الأساس الذي يسبق كل تحول ناجح.</p>
-        </motion.div>
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-text-primary">تقييم الجاهزية للذكاء الاصطناعي</h2>
-          <p className="text-text-muted leading-relaxed mb-4">تقييم شامل لقدرات مؤسستكم الحالية واستعدادها لتبني الذكاء الاصطناعي المؤسسي.</p>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-text-primary">استشارات الامتثال والحوكمة</h2>
-          <p className="text-text-muted leading-relaxed mb-4">مواءمة استراتيجية التحول مع متطلبات NCA و SAMA و PDPL.</p>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-text-primary">المعمارية المؤسسية</h2>
-          <p className="text-text-muted leading-relaxed mb-4">تصميم معمارية التحول المؤسسي من 10 طبقات ضمن إطار متكامل.</p>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-text-primary">استراتيجية التحول المؤسسي</h2>
-          <p className="text-text-muted leading-relaxed mb-4">تطوير خارطة طريق تحول شاملة لمدة 12-36 شهرًا.</p>
-        </section>
-        <div className="text-center mt-16 pt-8 border-t border-white/10">
-          <Link to="/ar/contact" className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all shadow-lg"
-            style={{ backgroundColor: '#00BFFF', boxShadow: '0 8px 24px #00BFFF20' }}>
-            تواصل معنا
-            <ArrowRight className="w-5 h-5 rotate-180" />
-          </Link>
+    <div className="min-h-screen bg-bg-primary" dir="rtl">
+      {/* ═══ HERO ═══ */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+          className="relative z-10 pt-40 pb-24 text-center px-4"
+        >
+          <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#0D9488]/25 bg-[#0D9488]/5 mb-10">
+              <span className="text-tiny text-[#0D9488] font-semibold tracking-widest uppercase">الاستشارات والتوجيه</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
+              الاستراتيجية قبل التقنية.<br />
+              <span style={{ color: ACCENT }}>الوضوح قبل الاستثمار.</span><br />
+              التحول قبل الشراء.
+            </h1>
+            <p className="text-text-muted text-lg max-w-[720px] mx-auto leading-relaxed">
+              نساعد المؤسسات السعودية في الإجابة على أصعب الأسئلة أولاً: ماذا يجب أن نحول، ولماذا، وبأي ترتيب، وكيف — من جاهزية الذكاء الاصطناعي إلى تصميم نموذج التشغيل، ومن معمارية الامتثال إلى خارطة طريق متعددة السنوات. خدمات استشارية تحول الطموح إلى تحول قابل للتنفيذ.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl pb-24">
+
+        {/* ═══ 2. THE REALITY ═══ */}
+        <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
+          <SectionLabel>الواقع</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            معظم التحولات تفشل قبل أن تبدأ — في مرحلة الاستراتيجية.
+          </h2>
+          <p className="text-text-muted mb-8 max-w-[720px]">
+            تستثمر المؤسسات الملايين في التقنية دون حالة أعمال واضحة، دون فهم التعرض التنظيمي، ودون تصميم نموذج التشغيل الذي سيحافظ على الاستثمار. نحن نصلح هذا — قبل أن تبدأ عمليات الشراء.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              { pre: 'استراتيجية بدون حالة أعمال', text: 'قرارات تقنية تُتخذ بدون نمذجة عائد الاستثمار أو تحليل التكلفة الإجمالية أو موافقة تنفيذية — يختفي الاستثمار قبل أن تصل القيمة' },
+              { pre: 'اكتشاف المتطلبات التنظيمية متأخرًا', text: 'متطلبات SDAIA و NCA و PDPL تظهر متأخرة في التنفيذ — مما يجبر على إعادة عمل مكلفة وتمارين امتثال طارئة' },
+              { pre: 'فائض حالات الاستخدام', text: 'العشرات من فرص الذكاء الاصطناعي والأتمتة يتم تحديدها — ولكن بدون إطار لترتيبها حسب التأثير والجدوى والمخاطر' },
+              { pre: 'اختيار المورّدين مبني على العلاقات', text: 'قرارات المنصات تُتخذ بناءً على علاقات مورّدين قائمة — وليس بناءً على تقييم موضوعي للقدرات مقابل متطلبات الأعمال' },
+              { pre: 'تجاهل نموذج التشغيل', text: 'تقنية تُنشر في مؤسسة لم يتم إعادة تصميمها لاستيعابها — الأفراد والعمليات والحوكمة تُترك خلف الركب' },
+              { pre: 'غياب خط الأساس للقياس', text: 'انطلاق التحول بدون مؤشرات أداء رئيسية، بدون خط أساس، بدون آلية تتبع القيمة — يصبح النجاح رأيًا وليس دليلاً' },
+            ].map((item, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#0D9488]/20 transition-all duration-300">
+                <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
+                <p className="text-tiny text-text-muted">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* ═══ 3. WHAT WE DELIVER ═══ */}
+        <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
+          <SectionLabel>ما نقدمه</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            من الجاهزية إلى الموافقة التنفيذية — ست خدمات استشارية.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((s, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+                <s.icon className="w-6 h-6 mb-3" style={{ color: ACCENT }} />
+                <h3 className="font-semibold text-sm mb-2">{s.title}</h3>
+                <p className="text-tiny text-text-muted leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* ═══ 4. CAPABILITY COVERAGE ═══ */}
+        <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
+          <SectionLabel>تغطية القدرات</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            تغطي استشاراتنا كل قدرة نقدمها.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {capabilityCoverage.map((c, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#0D9488]/15 transition-all duration-300 flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
+                <div>
+                  <h3 className="font-semibold text-sm mb-1">{c.cap}</h3>
+                  <p className="text-tiny text-text-muted leading-relaxed">{c.app}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* ═══ 5. STRATEGIC ECOSYSTEM ═══ */}
+        <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
+          <SectionLabel>المنظومة الاستراتيجية</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            موضوعية متعددة المورّدين. في كل مشاركة.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {partners.map((p, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <PartnerLogo partner={p} size="md" />
+                  <div>
+                    <h3 className="font-semibold text-sm">{p.name}</h3>
+                    <p className="text-tiny text-text-muted">{p.role}</p>
+                  </div>
+                </div>
+                <p className="text-tiny text-text-muted leading-relaxed border-t border-white/5 pt-3">{p.tech}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* ═══ 6. RELATED BLUEPRINTS ═══ */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-28"
+        >
+          <SectionLabel>مخططات التحول المرجعية</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تشكلت من خلال المشاركات الاستشارية.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {blueprints.map((bp, i) => (
+              <Link key={i} to={`/ar/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+                <span className="text-tiny text-[#0D9488]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#0D9488] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#0D9488]/40 group-hover:text-[#0D9488] group-hover:-translate-x-1 transition-all mt-2 rotate-180" />
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <Link to="/ar/blueprints" className="inline-flex items-center gap-1.5 text-[#0D9488] text-sm font-medium hover:underline">
+              عرض جميع المخططات المرجعية <ArrowRight className="w-3.5 h-3.5 rotate-180" />
+            </Link>
+          </div>
+        </motion.section>
+
+        {/* ═══ 7. WHY BIONIC ═══ */}
+        <motion.section ref={ref5} {...fadeIn} animate={inView5 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
+          <SectionLabel>لماذا بيونك</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">الفرق الاستشاري.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { title: 'موضوعية متعددة المورّدين', desc: 'لا نمثل مورّدًا واحدًا. نختار ما يحقق أقصى قيمة لأعمالكم — بناءً على التقييم مقابل متطلباتكم، وليس حوافز الموزعين.' },
+              { title: 'عمق تنظيمي سعودي', desc: 'خبرة SDAIA و NCA و PDPL و SAMA مدمجة في كل مشاركة استشارية. المواءمة التنظيمية تُصمم من اليوم الأول — لا تُضاف لاحقًا.' },
+              { title: 'استمرارية من الاستشارة إلى التنفيذ', desc: 'الفريق الذي يقدم الاستشارة هو الفريق الذي ينفذ. لا فجوات تسليم، لا انقطاع بين الاستراتيجية والتنفيذ، لا "رمي فوق الجدار".' },
+              { title: 'نتائج قابلة للقياس، وليس عروضًا تقديمية', desc: 'كل مشاركة استشارية تنتهي بمؤشرات أداء قابلة للقياس، وحالة أعمال مالية، وخارطة طريق قابلة للتنفيذ — وليس تقريرًا من 200 صفحة يوضع على الرف.' },
+            ].map((item, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+                <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
+                <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* ═══ 8. CROSS-NAVIGATION ═══ */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <div className="text-center">
+            <h2 className="text-lg font-semibold mb-5 text-text-muted">ماذا تود استكشافه أيضًا؟</h2>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {[
+                { label: 'القدرات', path: '/ar/capabilities/ai' },
+                { label: 'القطاعات', path: '/ar/industries/government' },
+                { label: 'المخططات المرجعية', path: '/ar/blueprints' },
+              ].map((link) => (
+                <Link key={link.label} to={link.path}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-white/20 transition-all hover:-translate-y-0.5">
+                  {link.label} <ArrowRight className="w-3.5 h-3.5 text-text-muted rotate-180" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ═══ 9. CTA ═══ */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
+            <SectionLabel>الخطوة التالية</SectionLabel>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
+              هل أنت مستعد لتحويل الطموح إلى خارطة طريق قابلة للتنفيذ؟
+            </h2>
+            <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
+              دعنا نناقش كيف يمكن لخدماتنا الاستشارية بناء الأساس الاستراتيجي الذي يحتاجه تحولكم.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                to="/ar/contact"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #0D948820' }}
+              >
+                ابدأ المحادثة
+                <ArrowRight className="w-4 h-4 rotate-180" />
+              </Link>
+              <Link
+                to="/ar/capabilities/ai"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#0D9488]/30"
+              >
+                عرض القدرات
+              </Link>
+            </div>
+          </div>
+        </motion.section>
+
       </div>
     </div>
-  );
+);
 }

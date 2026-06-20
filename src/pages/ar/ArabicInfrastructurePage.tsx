@@ -2,45 +2,24 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, ExternalLink, Brain, BarChart3, Users, MessageSquare, Layout, Globe, Heart, ShoppingCart, Briefcase, GitBranch, Workflow, Zap, Network, Plug, RefreshCw, Activity, Shield, Eye, Fingerprint, Lock, Database, FileWarning, Server, Cloud, Container, HardDrive, Cpu, Gauge, Layers, FileText, LineChart } from 'lucide-react';
+import { Server, ArrowRight, Cloud, Container, HardDrive, Cpu, Globe, Activity, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#2563EB';
-const HERO_BG = `${import.meta.env.BASE_URL}images/it-infrastructure.avif`;
+const HERO_BG = '/test-site-2/images/it-infrastructure.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const partners = [{"name":"Dell Technologies","role":"البنية التحتية المؤسسية","tech":"PowerEdge · PowerStore · PowerMax · VxRail · APEX · PowerFlex"},{"name":"IBM","role":"التخزين وبنية الذكاء والسحابة الهجينة","tech":"FlashSystem · Power · watsonx · Cloud Pak · Storage Defender"},{"name":"Platform9","role":"منصة سحابة خاصة وهجينة","tech":"Managed Kubernetes · OpenStack · KubeVirt · Bare Metal Automation"},{"name":"Intel","role":"الحوسبة والذكاء والبنية الطرفية","tech":"Xeon Scalable · Gaudi 3 AI · Edge AI · Confidential Computing · Optane"},{"name":"Red Hat","role":"بنية تحتية مفتوحة المصدر وأتمتة","tech":"OpenShift · Ansible Automation · RHEL · Satellite"}];
-const blueprints = [{"title":"منصة الذكاء السيادي","industry":"حكومي","slug":"sovereign-ai-platform"},{"title":"بنية تحتية مصرفية متوافقة مع البنك المركزي","industry":"بنوك","slug":"sama-compliant-banking-infra"},{"title":"Zero Trust المؤسسي","industry":"مؤسسات","slug":"enterprise-zero-trust"}];
-const bpSlugs = ["sovereign-ai-platform","sama-compliant-banking-infra","enterprise-zero-trust"];
-
-const iconMap: Record<string, React.ReactNode> = {
-  Users: <Users className="w-5 h-5" />, Brain: <Brain className="w-5 h-5" />,
-  FileText: <FileText className="w-5 h-5" />, GitBranch: <GitBranch className="w-5 h-5" />,
-  Shield: <Shield className="w-5 h-5" />, Cpu: <Cpu className="w-5 h-5" />,
-  Layers: <Layers className="w-5 h-5" />, BarChart3: <BarChart3 className="w-5 h-5" />,
-  Database: <Database className="w-5 h-5" />, Server: <Server className="w-5 h-5" />,
-  Eye: <Eye className="w-5 h-5" />, LineChart: <LineChart className="w-5 h-5" />,
-  MessageSquare: <MessageSquare className="w-5 h-5" />, Globe: <Globe className="w-5 h-5" />,
-  Layout: <Layout className="w-5 h-5" />, ShoppingCart: <ShoppingCart className="w-5 h-5" />,
-  Briefcase: <Briefcase className="w-5 h-5" />, Heart: <Heart className="w-5 h-5" />,
-  Workflow: <Workflow className="w-5 h-5" />, Network: <Network className="w-5 h-5" />,
-  Zap: <Zap className="w-5 h-5" />, Plug: <Plug className="w-5 h-5" />,
-  RefreshCw: <RefreshCw className="w-5 h-5" />, Activity: <Activity className="w-5 h-5" />,
-  Fingerprint: <Fingerprint className="w-5 h-5" />, Lock: <Lock className="w-5 h-5" />,
-  FileWarning: <FileWarning className="w-5 h-5" />, Cloud: <Cloud className="w-5 h-5" />,
-  Container: <Container className="w-5 h-5" />, HardDrive: <HardDrive className="w-5 h-5" />,
-  Gauge: <Gauge className="w-5 h-5" />,
-};
-
-const realityItems = [{"iconName":"Server","text":"مراكز بيانات قديمة تستهلك رأس المال بدون تقديم مرونة."},{"iconName":"Globe","text":"تبني السحابة متوقف بسبب متطلبات السيادة وإقامة البيانات."},{"iconName":"Cloud","text":"بيئات هجينة تدار في صوامع — لا نموذج تشغيل موحد."},{"iconName":"Activity","text":"عمليات بنية تحتية يدوية على نطاق يتطلب الأتمتة."},{"iconName":"Container","text":"لا طبقة منصة بين البنية التحتية وفرق التطوير."},{"iconName":"HardDrive","text":"دورات شراء بنية تحتية منفصلة عن سرعة الأعمال."}];
-const coreCaps = [{"title":"استراتيجية وتحديث السحابة","desc":"تقييم محافظ أحمال العمل وتحديد الحالة المستهدفة وبناء خارطة طريق تحديث.","iconName":"Cloud","outcomes":["استراتيجية وضع أحمال العمل: سحابة، هجين، سيادي، محلي","خارطة طريق تحديث مرتبة حسب التأثير","نموذج تكلفة إجمالية مقارن","استراتيجية ترحيل مع تخفيف المخاطر"]},{"title":"البنية التحتية السيادية","desc":"تصميم ونشر بنية تحتية تلبي متطلبات السيادة السعودية.","iconName":"Server","outcomes":["بنية تحتية متوافقة مع متطلبات إقامة البيانات","قدرة نشر معزولة هوائيًا","معمارية أمنية من فئة البيانات المصنفة","قدرة سحابة وطنية"]},{"title":"بنية الذكاء التحتية","desc":"نشر مجمعات GPU وبنية تدريب واستدلال ذكاء على نطاق المؤسسة.","iconName":"Cpu","outcomes":["مجمعات GPU مُحسَّنة للتدريب والاستدلال","بنية ذكاء جاهزة لأحمال العمل السيادية","تكامل مع خطوط MLOps","بنية حوسبة عالية الأداء"]},{"title":"منصة السحابة الهجينة","desc":"بناء طبقة منصة موحدة عبر البيئات المحلية والخاصة والعامة.","iconName":"Container","outcomes":["طبقة Kubernetes موحدة عبر البيئات","قدرات خدمة ذاتية للمطورين","عمليات موحدة عبر المواقع","حوكمة تكاليف عبر السحب"]},{"title":"تحديث التخزين والبيانات","desc":"تحديث البنية التحتية للتخزين لأحمال العمل الحديثة.","iconName":"HardDrive","outcomes":["منصة تخزين موحدة عبر الكتل والملفات والكائنات","تحسين أداء لأحمال الذكاء","حماية بيانات مع قدرة تعافٍ سيبراني","تحسين تكاليف التخزين"]},{"title":"عمليات وأتمتة البنية التحتية","desc":"أتمتة عمليات البنية التحتية من التزويد إلى التقاعد.","iconName":"Activity","outcomes":["تزويد بنية تحتية آلي — دقائق وليس أسابيع","إدارة دورة حياة آلية","مراقبة وتحليلات أداء","تكامل مع أدوات التطوير وسير العمل"]}];
-const whyItems = [{"title":"متعدد المورّدين. بدون احتكار.","desc":"نصمم عبر Dell و IBM و Platform9 و Intel و Red Hat."},{"title":"سيادية بالتصميم.","desc":"متطلبات إقامة البيانات السعودية مدمجة في معماريتنا من اليوم الأول."},{"title":"بنية مهندسة للذكاء.","desc":"كل بنية تحتية ننشرها جاهزة لأحمال الذكاء الاصطناعي."},{"title":"شريك واحد. مساءلة كاملة.","desc":"من الاستراتيجية إلى النشر إلى عمليات 24×7."}];
-const industryItems = [{"industry":"القطاع الحكومي","apps":"مراكز بيانات سيادية، سحابة وطنية، بنية ذكاء معزولة هوائيًا."},{"industry":"القطاع المصرفي","apps":"بنية تحتية متوافقة مع استمرارية الأعمال، مخازن تعافٍ سيبراني."},{"industry":"الرعاية الصحية","apps":"بنية تحتية متوافقة مع المعلومات الصحية، منصات PACS عالية الأداء."},{"industry":"النفط والغاز","apps":"بنية حوسبة طرفية، سحابة هجينة للعمليات البعيدة."},{"industry":"الصناعة","apps":"حوسبة عالية الأداء للمحاكاة، بنية تحتية للمصنع الذكي."},{"industry":"الاتصالات","apps":"بنية 5G، حوسبة طرفية، منصة سحابة اتصالات."}];
-const insightItems = [{"tag":"الاستراتيجية","title":"سيادة البيانات في العصر متعدد السحب","desc":"كيف تصمم معمارية توازن بين السيادة والمرونة والأداء."},{"tag":"السعودية","title":"متطلبات NCA لإقامة البيانات","desc":"فهم وتنفيذ ضوابط إقامة البيانات السيادية."},{"tag":"الهندسة","title":"ثورة هندسة المنصات","desc":"كيف تحول منصات المطورين الداخلية تقديم البنية التحتية."}];
+const partners = [
+  { name: 'Dell Technologies', role: 'البنية التحتية المؤسسية', tech: 'PowerEdge · PowerStore · PowerMax · VxRail · APEX · PowerFlex' },
+  { name: 'IBM', role: 'التخزين وبنية الذكاء والسحابة الهجينة', tech: 'FlashSystem · Power · watsonx · Cloud Pak · Storage Defender' },
+  { name: 'Platform9', role: 'منصة سحابة خاصة وهجينة', tech: 'Managed Kubernetes · OpenStack · KubeVirt · أتمتة المعادن المجردة · إدارة متعددة المجموعات' },
+  { name: 'Intel', role: 'الحوسبة والذكاء والبنية الطرفية', tech: 'Xeon Scalable · Gaudi 3 AI Accelerators · Edge AI · الحوسبة السرية · Optane' },
+  { name: 'Red Hat', role: 'بنية تحتية مفتوحة المصدر وأتمتة', tech: 'OpenShift · Ansible Automation · RHEL · Satellite' },
+];
 
 export default function ArabicInfrastructurePage() {
 
@@ -52,57 +31,114 @@ export default function ArabicInfrastructurePage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const capsWithIcons = coreCaps.map((c) => ({ ...c, icon: iconMap[c.iconName] || iconMap['Brain'] }));
-
   return (
     <div className="min-h-screen bg-bg-primary" dir="rtl">
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
+        {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
           </div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }} className="relative z-10 pt-40 pb-32 text-center px-4">
-          <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10" style={{ borderColor: '#2563EB40', backgroundColor: '#2563EB08' }}>
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
+            className="relative z-10 pt-40 pb-32 text-center px-4"
+          >
+          <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10"
+            style={{ borderColor: '#2563EB40', backgroundColor: '#2563EB08' }}>
+            <Server className="w-4 h-4 ml-2" style={{ color: ACCENT }} />
             <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>البنية التحتية السيادية والسحابة الهجينة</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-            <span style={{ color: ACCENT }}>من إدارة البنية التحتية</span><br />إلى الأسس الرقمية السيادية.
+            <span className="bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-white bg-clip-text text-transparent">
+              من إدارة البنية التحتية<br />إلى الأسس الرقمية السيادية.
+            </span>
           </h1>
-          <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">نصمم وننشر ونشغل بنية تحتية سيادية ومنصات سحابة هجينة تدعم أحمال الذكاء الاصطناعي والبيانات والمؤسسات — مبنية لمتطلبات الإقامة والمرونة في المملكة.</p>
+          <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">
+            نصمم وننشر ونشغّل بنية تحتية سيادية ومنصات سحابة هجينة تدعم أحمال الذكاء الاصطناعي والبيانات والمؤسسات — مبنية لمتطلبات الإقامة والمرونة في المملكة العربية السعودية.
+          </p>
           </motion.div>
         </section>
 
+        {/* ═══ 2. الواقع ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">معظم البنى التحتية تعيق المؤسسات ولا تدفعها للأمام.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">معظم البنى التحتية تعيق المؤسسات ولا تدفعها للأمام.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {realityItems.map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#2563EB]30" style={{ flexDirection: 'row-reverse' }}>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#2563EB15', color: '#2563EB' }}>{iconMap[item.iconName]}</div>
+            {[
+              { icon: <Server className="w-5 h-5" />, text: 'مراكز بيانات تقليدية تستهلك رأس المال دون تقديم مرونة تشغيلية.' },
+              { icon: <Globe className="w-5 h-5" />, text: 'تبني السحابة متوقف بسبب متطلبات السيادة وإقامة البيانات.' },
+              { icon: <Cloud className="w-5 h-5" />, text: 'بيئات هجينة تُدار في صوامع — لا نموذج تشغيل موحد.' },
+              { icon: <Activity className="w-5 h-5" />, text: 'عمليات بنية تحتية يدوية على نطاق يتطلب الأتمتة.' },
+              { icon: <Container className="w-5 h-5" />, text: 'لا طبقة منصة بين البنية التحتية وفرق التطوير.' },
+              { icon: <HardDrive className="w-5 h-5" />, text: 'دورات شراء البنية التحتية منفصلة عن سرعة الأعمال.' },
+            ].map((item, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#2563EB30] flex-row-reverse">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: '#2563EB15', color: ACCENT }}>{item.icon}</div>
                 <p className="text-text-primary text-sm leading-relaxed text-right">{item.text}</p>
               </div>
             ))}
           </div>
         </motion.section>
 
+        {/* ═══ 3. القدرات الأساسية ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>كيف ننجز</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">القدرات الأساسية</h2>
-          <p className="text-text-muted text-base mb-10">ست قدرات. كل منها مصمم حول نتيجة أعمال.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-right">القدرات الأساسية</h2>
+          <p className="text-text-muted text-base mb-10 text-right">ست قدرات. كل قدرة مصمَّمة حول نتيجة سيادية وأداء ملموسة.</p>
+
           <div className="space-y-4">
-            {capsWithIcons.map((cap, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#2563EB]1A">
-                <div className="flex flex-col md:flex-row md:items-start gap-5" style={{ flexDirection: 'row-reverse' }}>
-                  <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#2563EB12', color: '#2563EB' }}>{cap.icon}</div>
+            {[
+              {
+                icon: <Cloud className="w-5 h-5" />,
+                title: 'استراتيجية السحابة والتحديث',
+                desc: 'تقييم محافظ أحمال العمل، تحديد الحالة المستهدفة، وبناء خارطة طريق تحديث توازن بين المرونة والسيادة والاقتصاد — متوائمة مع استراتيجية الأعمال، لا حوافز مورّدي السحابة.',
+                outcomes: ['استراتيجية توزيع أحمال العمل: سحابة، هجين، سيادي، ومحلي', 'خارطة طريق تحديث مرتَّبة حسب الأثر التجاري والجدوى', 'نموذج تكلفة كلية للملكية يقارن الوضع الحالي بالمعمارية المستهدفة', 'استراتيجية ترحيل مع تخفيف المخاطر واستمرارية الأعمال'],
+              },
+              {
+                icon: <Server className="w-5 h-5" />,
+                title: 'منصات السحابة الهجينة',
+                desc: 'تصميم ونشر وتشغيل منصات سحابة هجينة تمتد من مركز البيانات الخاص إلى السحابة العامة — بإدارة وحوكمة وأتمتة موحَّدة عبر جميع البيئات.',
+                outcomes: ['منصة موحَّدة تشمل المحلي والسيادي والسحابة العامة', 'إدارة وأمن وحوكمة متسقة عبر جميع البيئات', 'قابلية نقل أحمال العمل تلغي الاحتكار السحابي', 'كتالوج خدمات يمكّن الاستهلاك الذاتي والتزويد الآلي'],
+              },
+              {
+                icon: <Container className="w-5 h-5" />,
+                title: 'Kubernetes وهندسة المنصات',
+                desc: 'بناء منصات مطورين داخلية على Kubernetes — توفر تنسيق الحاويات، شبكة الخدمات، خطوط أنابيب CI/CD، وقدرات خدمة ذاتية تسرّع سرعة الفرق الهندسية.',
+                outcomes: ['منصة Kubernetes مدارة مع حوكمة متعددة المجموعات', 'بوابة مطورين ذاتية الخدمة تقلل أوقات انتظار البنية التحتية', 'خطوط أنابيب CI/CD آلية تسرّع وتيرة النشر', 'شبكة خدمات توفر المراقبة والأمن وإدارة الحركة'],
+              },
+              {
+                icon: <Globe className="w-5 h-5" />,
+                title: 'البنية التحتية السيادية وإقامة البيانات',
+                desc: 'تصميم معماريات بنية تحتية تلبي متطلبات إقامة البيانات السعودية — تضمن عدم مغادرة البيانات للحدود المصرَّح بها مع الحفاظ على مرونة السحابة الأصلية.',
+                outcomes: ['معمارية سيادية تضمن بقاء البيانات داخل النطاق القضائي السعودي', 'منصات سحابة خاصة وهجينة تلبي متطلبات الإقامة', 'تشغيل معزول هوائيًا لأحمال العمل المصنَّفة', 'وثائق امتثال تدعم متطلبات هيئة الأمن السيبراني والتدقيق القطاعي'],
+              },
+              {
+                icon: <Cpu className="w-5 h-5" />,
+                title: 'أتمتة البنية التحتية والمراقبة الشاملة',
+                desc: 'أتمتة دورة حياة البنية التحتية — التزويد، التهيئة، التصحيح، والتوسع — مع مراقبة شاملة عبر الأداء والتكلفة والسعة والامتثال.',
+                outcomes: ['بنية تحتية ككود تمكّن تزويدًا قابلًا للتكرار والتدقيق', 'تصحيح آلي وإنفاذ امتثال عبر جميع البيئات', 'مراقبة موحَّدة: المقاييس والسجلات والتتبع والتكلفة في رؤية واحدة', 'إدارة استباقية للسعة تمنع تدهور الأداء'],
+              },
+              {
+                icon: <Activity className="w-5 h-5" />,
+                title: 'عمليات البنية التحتية والتطور المستمر',
+                desc: 'تشغيل ومراقبة وتطوير مستمر لمنصة البنية التحتية — ضمان الموثوقية والأداء والتكيف مع تغير أحمال العمل والمتطلبات التنظيمية.',
+                outcomes: ['مراقبة بنية تحتية 24×7 مع استجابة استباقية للحوادث', 'تخطيط السعة وإدارة دورة الحياة عبر جميع أصول البنية التحتية', 'تطور مستمر للمنصة متوائم مع تغيرات أحمال العمل والأنظمة', 'عمليات بضمان اتفاقية مستوى خدمة مع التزامات أداء وتوافر محدَّدة'],
+              },
+            ].map((cap, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#2563EB1A]">
+                <div className="flex flex-col md:flex-row md:items-start gap-5 flex-row-reverse">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: '#2563EB12', color: ACCENT }}>{cap.icon}</div>
                   <div className="flex-1 text-right">
                     <h3 className="text-lg font-bold mb-1 text-text-primary">{cap.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.desc}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {cap.outcomes.map((o, j) => (
                         <div key={j} className="flex items-start gap-2 flex-row-reverse">
-                          <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: '#2563EB' }} />
+                          <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
                           <span className="text-xs text-text-primary leading-relaxed">{o}</span>
                         </div>
                       ))}
@@ -114,30 +150,50 @@ export default function ArabicInfrastructurePage() {
           </div>
         </motion.section>
 
+        {/* ═══ 3.5 كيف ننجز ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>كيف ننجز</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">ثلاثة نماذج تنفيذ متكاملة.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">ثلاثة نماذج تنفيذ متكاملة — عبر جميع القدرات.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[{ href: '/ar/services/advisory', title: 'الاستشارات والتخطيط', desc: 'تقييم الجاهزية · استشارات الامتثال · الاستراتيجية' },
-              { href: '/ar/services/implementation', title: 'التنفيذ والتسليم', desc: 'نشر الذكاء والأتمتة · تسليم المنصات · MLOps' },
-              { href: '/ar/services/operations', title: 'العمليات المدارة', desc: 'عمليات 24×7 · SOC كخدمة · 3 مستويات' },
-            ].map((s, i) => (
-              <Link key={i} to={s.href} className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300 text-right">
-                <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">{s.title}</h3>
-                <p className="text-tiny text-text-muted">{s.desc}</p>
-              </Link>
-            ))}
+            <Link to="/ar/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300 text-right">
+              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-3 text-[#2563EB]">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              </div>
+              <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">الاستشارات والتخطيط</h3>
+              <p className="text-tiny text-text-muted">تقييم جاهزية الذكاء الاصطناعي · استشارات الامتثال والحوكمة · الاستراتيجية وخارطة الطريق</p>
+            </Link>
+            <Link to="/ar/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300 text-right">
+              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-3 text-[#2563EB]">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">التنفيذ والتسليم</h3>
+              <p className="text-tiny text-text-muted">نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps</p>
+            </Link>
+            <Link to="/ar/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300 text-right">
+              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-3 text-[#2563EB]">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+              </div>
+              <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">العمليات المدارة</h3>
+              <p className="text-tiny text-text-muted">عمليات منصات 24×7 · مركز عمليات أمنية كخدمة · 3 مستويات (أساسي/متقدم/متميز)</p>
+            </Link>
           </div>
         </motion.section>
 
+        {/* ═══ 4. لماذا بيونك سوليوشنز ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <div className="rounded-2xl p-10 md:p-12" style={{ background: 'linear-gradient(135deg, #2563EB08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
-            <SectionLabel>لماذا بيونك</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold mb-10">الشريك الذي يحول القدرات إلى نتائج.</h2>
+          <div className="rounded-2xl p-10 md:p-12 text-right"
+            style={{ background: 'linear-gradient(135deg, #2563EB08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
+            <SectionLabel>لماذا بيونك سوليوشنز</SectionLabel>
+            <h2 className="text-2xl md:text-3xl font-bold mb-10">الشريك الذي يبني أسسًا رقمية سيادية.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {whyItems.map((item, i) => (
+              {[
+                { title: 'السيادة أولًا. مصمَّمة من البداية.', desc: 'كل معمارية نصممها تبدأ بمتطلبات إقامة البيانات السعودية وضوابط هيئة الأمن السيبراني والمتطلبات القطاعية — لا تُعامل كفكرة لاحقة أو ميزة إضافية.' },
+                { title: 'هجينة بالتصميم. لا بالصدفة.', desc: 'نصمم منصات تمتد من مركز البيانات الخاص إلى السحابة السيادية إلى السحابة العامة — بإدارة موحَّدة ومرونة لوضع أحمال العمل حيث تنتمي.' },
+                { title: 'هندسة متعددة المورّدين. بدون احتكار.', desc: 'نصمم عبر Dell و IBM و Platform9 و Intel — نختار البنية التحتية المناسبة لكل حمل عمل، بناءً على ملاءمة المعمارية لا حوافز المورّد.' },
+                { title: 'شريك واحد. مساءلة كاملة.', desc: 'من استراتيجية البنية التحتية مرورًا بنشر المنصة إلى عمليات 24×7 — علاقة واحدة مسؤولة عبر دورة حياة البنية التحتية الكاملة.' },
+              ].map((item, i) => (
                 <div key={i} className="flex gap-3 flex-row-reverse">
-                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#2563EB' }} />
+                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: ACCENT }} />
                   <div className="text-right">
                     <h3 className="font-semibold text-base mb-1 text-text-primary">{item.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
@@ -148,13 +204,14 @@ export default function ArabicInfrastructurePage() {
           </div>
         </motion.section>
 
+        {/* ═══ 5. المنظومة التقنية ═══ */}
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>التقنية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">المنظومة التقنية</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-right">المنظومة التقنية</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group">
-                <div className="flex items-center gap-4 mb-3" style={{ flexDirection: 'row-reverse' }}>
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#2563EB1A]">
+                <div className="flex items-center gap-4 mb-3 flex-row-reverse">
                   <PartnerLogo partner={p} size="sm" />
                   <span className="text-xs font-medium" style={{ color: '#2563EB99' }}>{p.role}</span>
                 </div>
@@ -164,14 +221,22 @@ export default function ArabicInfrastructurePage() {
           </div>
         </motion.section>
 
+        {/* ═══ 6. التطبيقات القطاعية ═══ */}
         <motion.section ref={ref5} {...fadeIn} animate={inView5 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>أين نطبقها</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">التطبيقات القطاعية</h2>
+          <SectionLabel>أين نطبّقها</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">التطبيقات القطاعية</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industryItems.map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300">
-                <h3 className="font-semibold text-base mb-2 text-text-primary text-right">{item.industry}</h3>
-                <p className="text-text-muted text-xs leading-relaxed text-right">{item.apps}</p>
+            {[
+              { industry: 'القطاع الحكومي', apps: 'منصات سحابة وطنية، مراكز بيانات سيادية، بنية تحتية لأحمال العمل المصنَّفة، استضافة متوافقة مع هيئة الأمن السيبراني.' },
+              { industry: 'القطاع المصرفي والمالي', apps: 'بنية تحتية متوافقة مع البنك المركزي، منصات الصيرفة الأساسية، مراكز بيانات عالية التوفر، عزل أحمال العمل التنظيمية.' },
+              { industry: 'الرعاية الصحية', apps: 'إقامة البيانات السريرية، بنية تصوير طبي PACS، أنظمة سريرية عالية التوفر، سيادة بيانات المرضى.' },
+              { industry: 'النفط والغاز والطاقة', apps: 'تقارب بنية التقنية التشغيلية والتقنية المعلوماتية، حوسبة طرفية للأصول البعيدة، حوسبة عالية الأداء لنمذجة المكامن، منصات بيانات سيادية.' },
+              { industry: 'الصناعة والتصنيع', apps: 'حوسبة طرفية لعمليات المصانع، بنية 5G خاصة، توفر عالٍ لأنظمة الإنتاج، منصات سلسلة الإمداد.' },
+              { industry: 'الاتصالات وتقنية المعلومات', apps: 'بنية NFV، منصات 5G الأساسية، سحابة طرفية للخدمات منخفضة الكمون، ترحيل BSS/OSS إلى السحابة.' },
+            ].map((item, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#2563EB1A] text-right">
+                <h3 className="font-semibold text-base mb-2 text-text-primary">{item.industry}</h3>
+                <p className="text-text-muted text-xs leading-relaxed">{item.apps}</p>
               </div>
             ))}
           </div>
@@ -182,45 +247,101 @@ export default function ArabicInfrastructurePage() {
           </div>
         </motion.section>
 
+        {/* ═══ 7. رؤى مختارة ═══ */}
         <motion.section ref={ref6} {...fadeIn} animate={inView6 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>رؤى</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">رؤى مختارة</h2>
+          <SectionLabel>وجهات نظر</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">رؤى مختارة</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {insightItems.map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300">
-                <span className="text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block" style={{ backgroundColor: '#2563EB12', color: '#2563EB' }}>{item.tag}</span>
-                <h3 className="text-lg font-bold mb-2 text-text-primary text-right">{item.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-4 text-right">{item.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium" style={{ color: '#2563EB99' }}><ExternalLink className="w-3 h-3" /> اقرأ الرؤية</span>
+            {[
+              {
+                tag: 'الاستراتيجية',
+                title: 'السحابة الهجينة نموذج تشغيلي',
+                desc: 'لماذا يعتمد نجاح السحابة الهجينة على العمليات والحوكمة والأتمتة الموحَّدة — لا على أي مورّدي سحابة في المزيج.',
+              },
+              {
+                tag: 'المملكة العربية السعودية',
+                title: 'سيادة البيانات كمعمارية',
+                desc: 'كيف تصمم المؤسسات السعودية بنية تحتية تلبي متطلبات الإقامة مع تقديم المرونة التي يطلبها المطورون وفرق البيانات.',
+              },
+              {
+                tag: 'الهندسة',
+                title: 'ضرورة هندسة المنصات',
+                desc: 'لماذا أصبحت منصات المطورين الداخلية الفارق بين بنية تحتية تمكّن الابتكار وبنية تحتية تعيقه.',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#2563EB12] text-right">
+                <span className="text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block"
+                  style={{ backgroundColor: '#2563EB12', color: ACCENT }}>{item.tag}</span>
+                <h3 className="text-lg font-bold mb-2 text-text-primary">{item.title}</h3>
+                <p className="text-text-muted text-sm leading-relaxed mb-4">{item.desc}</p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium"
+                  style={{ color: '#2563EB99' }}>
+                  <ExternalLink className="w-3 h-3" />
+                  اقرأ الرؤية
+                </span>
               </div>
             ))}
           </div>
         </motion.section>
 
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-28">
-          <SectionLabel>المخططات المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تجسد هذه القدرة.</h2>
+        {/* ═══ 7.5 المخططات المرجعية ═══ */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-28"
+        >
+          <SectionLabel>مخططات التحول</SectionLabel>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">معماريات مرجعية تجسّد هذه القدرة على أرض الواقع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {blueprints.map((bp, i) => (
-              <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#2563EB]/25 transition-all duration-300 text-right">
+            {[
+              { title: 'منصة الذكاء الاصطناعي السيادية', industry: 'حكومي', slug: 'sovereign-ai-platform' },
+              { title: 'بنية تحتية مصرفية متوافقة مع البنك المركزي', industry: 'مصرفي', slug: 'sama-compliant-banking-infra' },
+              { title: 'الذكاء الصناعي والعمليات التنبؤية', industry: 'نفط وغاز', slug: 'industrial-intelligence-predictive-ops' },
+            ].map((bp, i) => (
+              <Link key={i} to={`/ar/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#2563EB]/25 transition-all duration-300 text-right">
                 <span className="text-tiny text-[#2563EB]/60 mb-2 block">{bp.industry}</span>
                 <h3 className="font-semibold text-sm mb-1 group-hover:text-[#2563EB] transition-colors">{bp.title}</h3>
                 <ArrowRight className="w-4 h-4 text-[#2563EB]/40 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
+          <div className="mt-4 text-center">
+            <Link to="/ar/blueprints?capability=infra" className="inline-flex items-center gap-1.5 text-[#2563EB] text-sm font-medium hover:underline">
+              عرض جميع المخططات ذات الصلة <ArrowRight className="w-3.5 h-3.5 rotate-180" />
+            </Link>
+          </div>
         </motion.section>
 
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <div className="rounded-2xl p-10 md:p-14 text-center" style={{ background: 'linear-gradient(135deg, #2563EB0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-3">مستعدون لبناء<br /><span style={{ color: '#2563EB' }}>البنية التحتية السيادية</span>؟</h2>
-            <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">لنناقش كيف يمكن للبنية التحتية السيادية ومنصات السحابة الهجينة تسريع تحولكم مع الحفاظ على السيادة.</p>
+        {/* ═══ 8. الدعوة إلى التواصل ═══ */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="rounded-2xl p-10 md:p-14 text-center"
+            style={{ background: 'linear-gradient(135deg, #2563EB0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
+            <h2 className="text-2xl md:text-4xl font-bold mb-3">
+              هل أنتم مستعدون لبناء<br />
+              <span className="bg-gradient-to-r from-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">أسسكم الرقمية السيادية</span>؟
+            </h2>
+            <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
+              دعونا نناقش كيف يمكن للبنية التحتية السيادية والسحابة الهجينة تسريع تحولكم الرقمي — مع الإقامة والمرونة المدمجتين من البداية.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg" style={{ backgroundColor: '#2563EB', boxShadow: '0 8px 24px #2563EB20' }}>
-                تواصل معنا <ArrowRight className="w-4 h-4 rotate-180" />
+              <Link
+                to="/ar/contact"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #2563EB20' }}>
+                ابدأ المحادثة
+                <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
-              <Link to="/ar/blueprints" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300">
-                استعرض المخططات المرجعية
+              <Link
+                to="/ar/blueprints?capability=infra"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300">
+                استعرض مخططات التحول
               </Link>
             </div>
           </div>
