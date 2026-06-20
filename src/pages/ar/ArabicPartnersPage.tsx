@@ -17,8 +17,8 @@ export default function Page() {
           <p className="text-text-muted leading-relaxed">نحن لسنا بائعين. نحن معماريون نختار التقنيات المناسبة لكل حالة استخدام — مدفوعين بالملاءمة المعمارية، وليس بحوافز إعادة البيع. كل شريك يمر عبر تقييم صارم للقدرات والأمن والتوافق مع المتطلبات السعودية.</p>
         </section>
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-text-primary">حوكمة متعددة المزودين</h2>
-          <p className="text-text-muted leading-relaxed">نموذج الحوكمة الموحد لدينا يضمن المساءلة عبر جميع المزودين — نقطة اتصال واحدة، عقد واحد، مسؤولية واحدة عن النتائج.</p>
+          <h2 className="text-2xl font-bold mb-4 text-text-primary">حوكمة متعددة المورّدين</h2>
+          <p className="text-text-muted leading-relaxed">نموذج الحوكمة الموحد لدينا يضمن المساءلة عبر جميع المورّدين — نقطة اتصال واحدة، عقد واحد، مسؤولية واحدة عن النتائج.</p>
         </section>
         <div className="text-center mt-16 pt-8 border-t border-white/10">
           <Link to="/ar/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all">

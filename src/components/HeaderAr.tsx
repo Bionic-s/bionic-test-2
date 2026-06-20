@@ -30,7 +30,7 @@ export const HeaderAr = () => {
 
   // ── Industries ──
   const industries = [
-    { name: 'حكومي', desc: 'الذكاء السيادي، رؤية 2030، الاستخبارات الوطنية', path: '/ar/industries/government', color: '#059669' },
+    { name: 'حكومي', desc: 'الذكاء السيادي، رؤية 2030، الذكاء الوطنية', path: '/ar/industries/government', color: '#059669' },
     { name: 'بنوك', desc: 'امتثال البنك المركزي، ذكاء الاحتيال، الخدمات المصرفية المفتوحة', path: '/ar/industries/banking', color: '#2563EB' },
     { name: 'نفط وغاز', desc: 'العمليات التنبؤية، أمن OT/IT، ذكاء الكربون', path: '/ar/industries/oil-gas', color: '#D97706' },
     { name: 'رعاية صحية', desc: 'الذكاء السريري، تجربة المريض، التجمعات الصحية', path: '/ar/industries/healthcare', color: '#0D9488' },
@@ -39,10 +39,10 @@ export const HeaderAr = () => {
 
   // ── Capabilities by Industry tab ──
   const industryCapabilityMap = [
-    { heading: 'حكومي', path: '/ar/industries/government', caps: ['الذكاء المؤسسي', 'البيانات والاستخبارات', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
-    { heading: 'بنوك', path: '/ar/industries/banking', caps: ['الذكاء المؤسسي', 'البيانات والاستخبارات', 'تطبيقات الأعمال', 'الأمن السيبراني'] },
+    { heading: 'حكومي', path: '/ar/industries/government', caps: ['الذكاء المؤسسي', 'البيانات والذكاء', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
+    { heading: 'بنوك', path: '/ar/industries/banking', caps: ['الذكاء المؤسسي', 'البيانات والذكاء', 'تطبيقات الأعمال', 'الأمن السيبراني'] },
     { heading: 'نفط وغاز', path: '/ar/industries/oil-gas', caps: ['الذكاء المؤسسي', 'التكامل والعمليات', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
-    { heading: 'رعاية صحية', path: '/ar/industries/healthcare', caps: ['الذكاء المؤسسي', 'البيانات والاستخبارات', 'تطبيقات الأعمال', 'التكامل'] },
+    { heading: 'رعاية صحية', path: '/ar/industries/healthcare', caps: ['الذكاء المؤسسي', 'البيانات والذكاء', 'تطبيقات الأعمال', 'التكامل'] },
     { heading: 'مؤسسات كبرى', path: '/ar/industries/enterprise', caps: ['الذكاء المؤسسي', 'تطبيقات الأعمال', 'الأمن السيبراني', 'عمليات التقنية'] },
   ];
 
@@ -53,8 +53,8 @@ export const HeaderAr = () => {
       tagline: 'ذكاء اصطناعي · تحليلات · بيانات',
       color: '#00BFFF',
       items: [
-        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'الذكاء الوكيلي، المساعدون الأذكياء، MLOps', path: '/ar/capabilities/ai' },
-        { name: 'البيانات والتحليلات والاستخبارات', desc: 'منصات البيانات، إدارة البيانات الرئيسية، ذكاء الأعمال', path: '/ar/capabilities/data' },
+        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'وكلاء الذكاء الاصطناعي والمساعدون الأذكياء، MLOps', path: '/ar/capabilities/ai' },
+        { name: 'البيانات والتحليلات والذكاء', desc: 'منصات البيانات، إدارة البيانات الرئيسية، ذكاء الأعمال', path: '/ar/capabilities/data' },
       ],
     },
     {
@@ -63,7 +63,7 @@ export const HeaderAr = () => {
       color: '#F59E0B',
       items: [
         { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز الاتصال، التجارة', path: '/ar/capabilities/apps' },
-        { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، البنى المدفوعة بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
+        { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، المعمارية المدفوعة بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
       ],
     },
     {
