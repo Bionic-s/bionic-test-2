@@ -16,7 +16,7 @@ const pillars: PillarSection[] = [
     id: 'intelligence',
     label: 'الذكاء',
     tag: 'Intelligence',
-    desc: 'نحوّل البيانات الخام إلى قرارات ذكية. منصات جاهزة للذكاء الاصطناعي، تحليلات تنفيذية آنية، ومساعدات ذكية تختصر دورة القرار من أسابيع إلى دقائق.',
+    desc: 'نحوّل البيانات الخام إلى قرارات ذكية. منصات بيانات مهيأة لتشغيل مبادرات الذكاء الاصطناعي، تحليلات تنفيذية آنية، ومساعدات ذكية تختصر دورة القرار من أسابيع إلى دقائق.',
     color: A, cardColor: A,
     cards: [
       { icon: <Brain className="w-5 h-5" />, title: 'الذكاء الاصطناعي والأتمتة المؤسسية', desc: 'نصمم ونشغّل وكلاء ذكاء اصطناعي ومساعدين افتراضيين وأتمتة ذكية ترفع الكفاءة التشغيلية وتقلّص التكاليف. نشر آمن داخل بيئتك المؤسسية — مع سيادة كاملة على البيانات داخل المملكة.', partners: 'IBM watsonx · Salesforce Einstein · Intel Gaudi', color: A },
@@ -51,7 +51,7 @@ const managedOps: CapCard = {
   icon: <Cog className="w-5 h-5" />,
   title: 'الخدمات التقنية والعمليات المدارة',
   desc: 'فريق تقني متخصص يتولى تشغيل بيئتك ومراقبتها على مدار الساعة. عمليات سحابية، عمليات ذكاء اصطناعي، ودعم فني مستمر — لتركز على أعمالك الأساسية بينما ندير نحن البنية التقنية.',
-  partners: '24×7 Monitoring · CloudOps · AIOps · Managed Services',
+  partners: '٢٤×٧ Monitoring · CloudOps · AIOps · Managed Services',
   color: W,
 };
 
@@ -69,7 +69,7 @@ function SpotlightCard({ children, color }: { children: React.ReactNode; color: 
     >
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-        style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), ${color}12, transparent 60%)` }}
+        style={{ background: `radial-gradient(280px circle at var(--mx,50%) var(--my,50%), ${color}12, transparent  %)` }}
       />
       <div className="relative z-10">{children}</div>
     </div>
@@ -106,7 +106,7 @@ export default function ArabicCapabilitiesPage() {
 
       {/* ═══ HERO ═══ */}
       <section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(600px 350px at 80% 10%, rgba(0,191,255,.06), transparent 60%), radial-gradient(500px 300px at 15% 70%, rgba(167,139,250,.05), transparent 60%)` }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(600px 350px at 80%  %, rgba(0,191,255,.06), transparent  %), radial-gradient(500px 300px at 15%  %, rgba(167,139,250,.05), transparent  %)` }} />
         <div className="max-w-[1180px] mx-auto px-7 relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00BFFF10] border border-[#00BFFF20] text-xs text-[#00BFFF] font-medium mb-6">

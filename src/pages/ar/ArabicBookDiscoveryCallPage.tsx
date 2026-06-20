@@ -9,7 +9,7 @@ export default function Page() {
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">احجز جلسة استكشاف</h1>
           <p className="text-xl text-text-muted mb-4">اختر التاريخ والوقت المناسبين لك</p>
-          <p className="text-text-muted max-w-2xl mx-auto leading-relaxed">جلسة استكشاف مدتها 45 دقيقة مع أحد مهندسي الحلول لدينا. نناقش أولويات التحول والتحديات والفرص — بدون عروض تجارية.</p>
+          <p className="text-text-muted max-w-2xl mx-auto leading-relaxed">جلسة استكشاف مدتها ٤٥ دقيقة مع أحد مهندسي الحلول لدينا. نناقش أولويات التحول والتحديات والفرص — بدون عروض تجارية.</p>
         </motion.div>
         
         <section className="mb-16">

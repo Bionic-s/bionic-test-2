@@ -46,7 +46,7 @@ export const CapabilityShowAr = () => {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse at 50% 0%, rgba(0, 191, 255, 0.06), transparent 60%)',
+            'radial-gradient(ellipse at 50%  %, rgba(0, 191, 255, 0.06), transparent  %)',
         }}
       />
 
@@ -70,8 +70,7 @@ export const CapabilityShowAr = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-h2 md:text-[48px] font-bold mb-6 tracking-tight"
           >
-            نفهم{' '}
-            <span className="text-accent-primary">متطلبات المؤسسة السعودية</span> من الداخل.
+            <span className="text-accent-primary">خبرة معمقة في بيئة الأعمال السعودية</span>
           </motion.h2>
 
           <motion.p

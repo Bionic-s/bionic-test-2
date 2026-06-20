@@ -59,7 +59,7 @@ export default function ArabicAboutPage() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed mt-8" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              نُدمج الذكاء الاصطناعي والأتمتة والثقة في صميم أعمالك — ونمكّن المؤسسات من تحويل العمليات وتجارب العملاء
+              نصمم الذكاء الاصطناعي والأتمتة والثقة في صميم أعمالك — ونمكّن المؤسسات من تحويل العمليات وتجارب العملاء
               والبيانات والأمن والبنية التحتية إلى نتائج أعمال قابلة للقياس.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
@@ -142,10 +142,10 @@ export default function ArabicAboutPage() {
               <h2 className="text-2xl md:text-3xl font-bold mb-10" style={{ fontFamily: "'Tajawal', sans-serif" }}>الشريك الذي يصمم التحول المؤسسي.</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { icon: Target, title: 'خبرة التحول المؤسسي', desc: 'لا نبيع منتجات. نصمم النتائج — نوفّق بين الاستراتيجية والتقنية والبيانات والحوكمة في برامج تحول تُقاس بالأداء المؤسسي.' },
+                  { icon: Target, title: 'خبرة التحول المؤسسي', desc: 'لا نبيع منتجات — نبني قدرات مؤسسية. نوفّق بين الاستراتيجية والتقنية والبيانات والحوكمة في برامج تحول تُقاس بالأداء المؤسسي.' },
                   { icon: Layers, title: 'قيادة منظومة متعددة المورّدين', desc: 'لسنا مقيدين بخارطة طريق أي مورد. نعتمد على أهم منصات التقنية عالميًا — نختار وندمج ما يحقق أقصى قيمة للأعمال.' },
                   { icon: Shield, title: 'مسؤولية كاملة من البداية للنهاية', desc: 'من التقييم إلى المعمارية إلى العمليات والتطوير المستمر — شريك واحد، مسؤولية كاملة عبر دورة حياة التحول.' },
-                  { icon: Globe, title: 'المواءمة مع رؤية 2030', desc: 'كل مشاركة تنطلق من أولويات التحول الوطني للمملكة — السيادة والحكومة الرقمية والتحديث الصناعي وتنمية القدرات البشرية.' },
+                  { icon: Globe, title: 'المواءمة مع رؤية ٢٠٣٠', desc: 'كل مشاركة تنطلق من أولويات التحول الوطني للمملكة — السيادة والحكومة الرقمية والتحديث الصناعي وتنمية القدرات البشرية.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 bg-bg-primary/40 rounded-xl p-6 border border-white/5 transition-all duration-300 hover:border-[#2563EB20]">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -262,7 +262,7 @@ export default function ArabicAboutPage() {
             style={{ background: 'linear-gradient(135deg, #2563EB0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
             {/* توهج زخرفي */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #2563EB08 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #2563EB08  %, transparent  %)' }} />
 
             <div className="relative z-10">
               <h2 className="text-2xl md:text-5xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>

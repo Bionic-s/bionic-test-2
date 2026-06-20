@@ -74,7 +74,7 @@ export default function ArabicPartnersPage() {
             style={{ fontFamily: "'Tajawal', sans-serif" }}
           >
             <p className="text-tiny font-semibold tracking-widest uppercase mb-4 text-accent-primary">
-              منظومة استراتيجية
+              المنظومة الاستراتيجية للتقنية
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               ٨ شركاء استراتيجيين.

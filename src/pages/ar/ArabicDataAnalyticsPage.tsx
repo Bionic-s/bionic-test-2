@@ -13,20 +13,20 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const partners = [{"name":"Salesforce","role":"الذكاء التنفيذي وذكاء الأعمال","tech":"Tableau · Einstein Analytics · CRM Analytics · Data Cloud"},{"name":"Informatica","role":"إدارة البيانات الرئيسية والحوكمة","tech":"MDM · جودة البيانات · كتالوج البيانات · تتبع البيانات · تكامل البيانات"},{"name":"IBM","role":"نسيج البيانات ومنصات جاهزة للذكاء الاصطناعي","tech":"watsonx.data · DataStage · Cloud Pak for Data · Db2 · Knowledge Catalog"},{"name":"Intel","role":"بنية البيانات التحتية","tech":"Xeon Scalable · Optane · مسرعات التحليلات · معالجة البيانات الطرفية"},{"name":"Google","role":"منصة البيانات والتحليلات على نطاق واسع","tech":"BigQuery · Looker · Dataflow · Dataproc · Vertex AI"},{"name":"Tableau","role":"ذكاء أعمال خدمة ذاتية وتحليلات بصرية","tech":"Tableau Cloud · تحليلات مضمنة · Data Stories · Pulse"}];
+const partners = [{"name":"Salesforce","role":"الذكاء التنفيذي وذكاء الأعمال","tech":"Tableau · Einstein Analytics · CRM Analytics · Data Cloud"},{"name":"Informatica","role":"إدارة البيانات الرئيسية والحوكمة","tech":"MDM · جودة البيانات · كتالوج البيانات · تتبع البيانات · تكامل البيانات"},{"name":"IBM","role":"نسيج البيانات ومنصات بيانات مهيأة لتشغيل مبادرات الذكاء الاصطناعي","tech":"watsonx.data · DataStage · Cloud Pak for Data · Db2 · Knowledge Catalog"},{"name":"Intel","role":"بنية البيانات التحتية","tech":"Xeon Scalable · Optane · مسرعات التحليلات · معالجة البيانات الطرفية"},{"name":"Google","role":"منصة البيانات والتحليلات على نطاق واسع","tech":"BigQuery · Looker · Dataflow · Dataproc · Vertex AI"},{"name":"Tableau","role":"ذكاء أعمال خدمة ذاتية وتحليلات بصرية","tech":"Tableau Cloud · تحليلات مضمنة · Data Stories · Pulse"}];
 
-const blueprints = [{"title":"نسيج البيانات بين الوزارات","industry":"حكومي","slug":"inter-ministry-data-fabric"},{"title":"Customer 360 والمشاركة الذكية","industry":"بنوك","slug":"customer-360-intelligent-engagement"},{"title":"الذكاء السريري والذكاء الاصطناعي الطبي","industry":"رعاية صحية","slug":"clinical-intelligence-medical-ai"}];
+const blueprints = [{"title":"نسيج البيانات بين الوزارات","industry":"حكومي","slug":"inter-ministry-data-fabric"},{"title":"Customer ٣٦٠ والمشاركة الذكية","industry":"بنوك","slug":"customer-360-intelligent-engagement"},{"title":"الذكاء السريري والذكاء الاصطناعي الطبي","industry":"رعاية صحية","slug":"clinical-intelligence-medical-ai"}];
 const bpSlugs = ["inter-ministry-data-fabric","customer-360-intelligent-engagement","clinical-intelligence-medical-ai"];
 
-const realityItems = [{"iconName":"Database","text":"بيانات متناثرة عبر أنظمة منعزلة — لا مرجع موحد للبيانات."},{"iconName":"Server","text":"الأنظمة القديمة تعجز عن دعم أحمال الذكاء الاصطناعي الفورية."},{"iconName":"Eye","text":"القادة يتخذون قرارات بناءً على الحدس لا على الذكاء."},{"iconName":"GitBranch","text":"بيانات رئيسية غير متسقة عبر الأنظمة المؤسسية."},{"iconName":"LineChart","text":"تحليلات تنتج تقارير — لا قرارات."},{"iconName":"Shield","text":"مخاطر امتثال البيانات في ظل PDPL والتشريعات القطاعية."}];
+const realityItems = [{"iconName":"Database","text":"البيانات موزعة بين أنظمة متعددة دون مرجعية موحدة وموثوقة."},{"iconName":"Server","text":"الأنظمة القديمة تعجز عن دعم أحمال الذكاء الاصطناعي الفورية."},{"iconName":"Eye","text":"تُتخذ قرارات استراتيجية اعتماداً على الخبرة الشخصية أكثر من الاعتماد على البيانات."},{"iconName":"GitBranch","text":"بيانات رئيسية غير متسقة عبر الأنظمة المؤسسية."},{"iconName":"LineChart","text":"مخرجات تحليلية وفيرة دون أثر واضح على اتخاذ القرار."},{"iconName":"Shield","text":"مخاطر امتثال البيانات في ظل PDPL والتشريعات القطاعية."}];
 
-const coreCaps = [{"title":"استراتيجية البيانات وتحديث المنصات","desc":"تقييم نضج البيانات، تصميم المعمارية المستهدفة، والترحيل من مستودعات قديمة إلى منصات جاهزة للذكاء الاصطناعي.","iconName":"Database","outcomes":["خط أساس لنضج البيانات مع خارطة طريق للتحديث","معمارية مستهدفة مصممة للذكاء الاصطناعي وأحمال العمل الفورية","استراتيجية ترحيل مع تخفيف المخاطر","اختيار منصة قائم على الملاءمة لا على الحوافز"]},{"title":"هندسة بيانات جاهزة للذكاء الاصطناعي","desc":"بناء مسارات البيانات ومستودعات الخصائص وأسس البيانات التي تغذي الذكاء المؤسسي.","iconName":"GitBranch","outcomes":["خطوط بيانات آلية من المصدر إلى استهلاك الذكاء","مستودعات خصائص موحدة لنماذج تعلم الآلة","إدخال فوري ودفعي يلبي الاحتياجات التشغيلية والتحليلية","أطر جودة بيانات مدمجة في كل مرحلة"]},{"title":"الذكاء التنفيذي ولوحات المعلومات","desc":"تصميم أطر مؤشرات الأداء ولوحات فورية تحول البيانات الخام إلى ذكاء القرارات.","iconName":"BarChart3","outcomes":["لوحات تنفيذية مرتبطة بالأهداف الاستراتيجية","مراقبة مؤشرات أداء فورية مع تعمق للتفاصيل","تحليلات خدمة ذاتية تمكّن فرق الأعمال","ذكاء القرارات بديلاً عن الحدس"]},{"title":"إدارة البيانات الرئيسية والحوكمة","desc":"إنشاء مرجع موحد للبيانات عبر المؤسسة.","iconName":"Server","outcomes":["بيانات رئيسية موحدة عبر جميع الأنظمة","مراقبة آلية لجودة البيانات","تتبع كامل للبيانات للتدقيق والامتثال","تخفيض جهد التسوية عبر المالية وسلسلة الإمداد"]},{"title":"التحليلات المتقدمة والذكاء التنبؤي","desc":"الارتقاء من التقارير الوصفية إلى التحليلات التنبؤية والتوجيهية.","iconName":"LineChart","outcomes":["نماذج تنبؤية للطلب والمخاطر والتنبؤ التشغيلي","نمذجة سيناريوهات للقرارات الاستراتيجية","توصيات توجيهية مدمجة في سير العمل","تحسين مستمر للنماذج"]},{"title":"سيادة البيانات والامتثال","desc":"تصميم معماريات بيانات تلبي متطلبات إقامة البيانات السعودية.","iconName":"Shield","outcomes":["معمارية إقامة بيانات متوافقة مع المتطلبات السيادية","امتثال PDPL مدمج في جمع وتخزين ومعالجة البيانات","حوكمة نقل البيانات عبر الحدود","منصات بيانات جاهزة للتدقيق"]}];
+const coreCaps = [{"title":"استراتيجية البيانات وتحديث المنصات","desc":"تقييم نضج البيانات، تصميم المعمارية المستهدفة، والترحيل من مستودعات قديمة إلى منصات بيانات مهيأة لتشغيل مبادرات الذكاء الاصطناعي.","iconName":"Database","outcomes":["خط أساس لنضج البيانات مع خارطة طريق للتحديث","معمارية مستهدفة مصممة للذكاء الاصطناعي وأحمال العمل الفورية","استراتيجية ترحيل مع تخفيف المخاطر","اختيار منصة قائم على الملاءمة لا على الحوافز"]},{"title":"هندسة بيانات مهيأة للذكاء الاصطناعي","desc":"بناء مسارات البيانات ومستودعات الخصائص وأسس البيانات التي تغذي الذكاء المؤسسي.","iconName":"GitBranch","outcomes":["خطوط بيانات آلية من المصدر إلى استهلاك الذكاء","مستودعات خصائص موحدة لنماذج تعلم الآلة","إدخال فوري ودفعي يلبي الاحتياجات التشغيلية والتحليلية","أطر جودة بيانات مدمجة في كل مرحلة"]},{"title":"لوحات القيادة التنفيذية وتحليلات الأعمال","desc":"تصميم أطر مؤشرات الأداء ولوحات فورية تحويل البيانات إلى رؤى تدعم القرار التنفيذي.","iconName":"BarChart3","outcomes":["لوحات تنفيذية مرتبطة بالأهداف الاستراتيجية","مراقبة مؤشرات أداء فورية مع تعمق للتفاصيل","تحليلات خدمة ذاتية تمكّن فرق الأعمال","تمكين القرارات بالبيانات والتحليلات بدلاً من الاعتماد على التقديرات الشخصية"]},{"title":"إدارة البيانات الرئيسية والحوكمة","desc":"إنشاء مرجع موحد للبيانات عبر المؤسسة.","iconName":"Server","outcomes":["بيانات رئيسية موحدة عبر جميع الأنظمة","مراقبة آلية لجودة البيانات","تتبع كامل للبيانات للتدقيق والامتثال","تخفيض جهد التسوية عبر المالية وسلسلة الإمداد"]},{"title":"التحليلات المتقدمة والذكاء التنبؤي","desc":"الارتقاء من التقارير الوصفية إلى التحليلات التنبؤية والتوجيهية.","iconName":"LineChart","outcomes":["نماذج تنبؤية للطلب والمخاطر والتنبؤ التشغيلي","نمذجة سيناريوهات للقرارات الاستراتيجية","توصيات توجيهية مدمجة في سير العمل","تحسين مستمر للنماذج"]},{"title":"سيادة البيانات والامتثال","desc":"تصميم معماريات بيانات تلبي متطلبات إقامة البيانات السعودية.","iconName":"Shield","outcomes":["معمارية إقامة بيانات متوافقة مع المتطلبات السيادية","امتثال PDPL مدمج في جمع وتخزين ومعالجة البيانات","حوكمة نقل البيانات عبر الحدود","منصات بيانات جاهزة للتدقيق"]}];
 
-const whyItems = [{"title":"متعدد المورّدين. بدون احتكار.","desc":"نصمم عبر Salesforce و Informatica و IBM و Intel — نختار المنصة المناسبة."},{"title":"مُصمم للذكاء الاصطناعي منذ البداية.","desc":"كل منصة بيانات نبنيها مهندسة لتشغيل أحمال الذكاء الاصطناعي."},{"title":"سيادة البيانات السعودية. مصممة.","desc":"متطلبات PDPL و NCA مدمجة في معماريتنا من اليوم الأول."},{"title":"شريك واحد. مساءلة كاملة.","desc":"من استراتيجية البيانات إلى العمليات المدارة — علاقة مسؤولة واحدة."}];
+const whyItems = [{"title":"متعدد المورّدين. بدون احتكار.","desc":"نصمم عبر Salesforce و Informatica و IBM و Intel — نختار المنصة المناسبة."},{"title":"مُصمم للذكاء الاصطناعي منذ البداية.","desc":"كل منصة بيانات نبنيها مهندسة لتشغيل أحمال الذكاء الاصطناعي."},{"title":"سيادة البيانات السعودية. مصممة.","desc":"متطلبات PDPL و NCA مدمجة في معماريتنا من اليوم الأول."},{"title":"شريك واحد. مسؤولية كاملة.","desc":"من استراتيجية البيانات إلى العمليات المدارة — علاقة مسؤولة واحدة."}];
 
-const industryItems = [{"industry":"القطاع الحكومي","apps":"منصات بيانات وطنية، برامج بيانات مفتوحة، تحليلات خدمة المواطن."},{"industry":"القطاع المصرفي","apps":"تحليلات المخاطر، أتمتة التقارير التنظيمية، Customer 360، ذكاء الاحتيال."},{"industry":"الرعاية الصحية","apps":"توحيد البيانات السريرية، تحليلات صحة السكان، ذكاء الأداء التشغيلي."},{"industry":"النفط والغاز","apps":"منصات بيانات OT/IoT، تحليلات الصيانة التنبؤية، ذكاء تداول الطاقة."},{"industry":"الصناعة","apps":"رؤية سلسلة الإمداد، تحليلات جودة الإنتاج، التنبؤ بالطلب."},{"industry":"الاتصالات","apps":"تحليلات العملاء، ذكاء أداء الشبكة، التنبؤ بالتوقف."}];
+const industryItems = [{"industry":"القطاع الحكومي","apps":"منصات بيانات وطنية وبرامج حوكمة البيانات، تحليلات خدمة المواطن."},{"industry":"القطاع المصرفي","apps":"تحليلات المخاطر، أتمتة التقارير التنظيمية، Customer 360، ذكاء الاحتيال."},{"industry":"الرعاية الصحية","apps":"توحيد البيانات السريرية، تحليلات صحة السكان، ذكاء الأداء التشغيلي."},{"industry":"النفط والغاز","apps":"منصات بيانات OT/IoT، تحليلات الصيانة التنبؤية، ذكاء تداول الطاقة."},{"industry":"الصناعة","apps":"رؤية سلسلة الإمداد، تحليلات جودة الإنتاج، التنبؤ بالطلب."},{"industry":"الاتصالات","apps":"تحليلات العملاء، ذكاء أداء الشبكة، التنبؤ بالتوقف."}];
 
-const insightItems = [{"tag":"استراتيجية البيانات","title":"أساس البيانات الجاهز للذكاء الاصطناعي","desc":"لماذا المؤسسات التي تستثمر في تحديث منصة البيانات قبل نشر الذكاء الاصطناعي تحقق وقت وصول أسرع للقيمة."},{"tag":"السعودية","title":"PDPL وضرورة سيادة البيانات","desc":"كيف يمكن للمؤسسات السعودية بناء معماريات بيانات متوافقة تلبي متطلبات الإقامة."},{"tag":"القيادة","title":"من لوحات المعلومات إلى ذكاء القرارات","desc":"التحول من التقارير الوصفية إلى ذكاء قرارات مدعوم بالذكاء الاصطناعي."}];
+const insightItems = [{"tag":"استراتيجية البيانات","title":"أساس البيانات المهيأ للذكاء الاصطناعي","desc":"لماذا المؤسسات التي تستثمر في تحديث منصة البيانات قبل نشر الذكاء الاصطناعي تحقق وقت وصول أسرع للقيمة."},{"tag":"السعودية","title":"PDPL وضرورة سيادة البيانات","desc":"كيف يمكن للمؤسسات السعودية بناء معماريات بيانات متوافقة تلبي متطلبات الإقامة."},{"tag":"القيادة","title":"من التقارير ولوحات المؤشرات إلى قرارات مدعومة بالبيانات","desc":"الانتقال من التحليلات الوصفية إلى ذكاء قرارات مدعوم بالذكاء الاصطناعي."}];
 
 export default function ArabicDataAnalyticsPage() {
 
@@ -78,11 +78,11 @@ export default function ArabicDataAnalyticsPage() {
             <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>البيانات والتحليلات والذكاء</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-            <span style={{ color: ACCENT }}>من تشتت البيانات</span><br />
-            إلى ذكاء موحد.
+            <span style={{ color: ACCENT }}>من البيانات المبعثرة</span><br />
+            إلى رؤية موحدة تدعم القرار.
           </h1>
           <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">
-            نصمم منصات بيانات جاهزة للذكاء الاصطناعي وأنظمة ذكاء تنفيذي وأسس بيانات محكومة — مبنية للواقع التنظيمي والتشغيلي في المملكة.
+            نصمم منصات بيانات مهيأة للذكاء الاصطناعي وأنظمة ذكاء تنفيذي وأسس بيانات محكومة — مبنية للواقع التنظيمي والتشغيلي في المملكة.
           </p>
           </motion.div>
         </section>
@@ -90,7 +90,7 @@ export default function ArabicDataAnalyticsPage() {
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">المؤسسات غنية بالبيانات لكنها فقيرة بالرؤى.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">تمتلك المؤسسات كميات هائلة من البيانات لكنها تفتقر إلى الرؤى القابلة للتنفيذ.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#06B6D4]30" style={{ flexDirection: 'row-reverse' }}>
@@ -156,7 +156,7 @@ export default function ArabicDataAnalyticsPage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#06B6D4] transition-colors">العمليات المدارة</h3>
-              <p className="text-tiny text-text-muted">عمليات المنصات 24×7 · مركز العمليات الأمنية كخدمة · 3 مستويات</p>
+              <p className="text-tiny text-text-muted">عمليات المنصات ٢٤×٧ · مركز العمليات الأمنية كخدمة · ·  مستويات</p>
             </Link>
           </div>
         </motion.section>
@@ -247,7 +247,7 @@ export default function ArabicDataAnalyticsPage() {
           className="mb-28"
         >
           <SectionLabel>المخططات المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تجسد هذه القدرة.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تطبيقية لهذه القدرة.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#06B6D4]/25 transition-all duration-300 text-right">
@@ -278,7 +278,7 @@ export default function ArabicDataAnalyticsPage() {
               <span style={{ color: '#06B6D4' }}>ذكاء موحد</span>؟
             </h2>
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
-              لنناقش كيف يمكن لمنصة بيانات جاهزة للذكاء الاصطناعي أن تدعم القرارات التنفيذية — مع سيادة وحوكمة مدمجة.
+              لنناقش كيف يمكن لمنصة بيانات مهيأة للذكاء الاصطناعي أن تدعم القرارات التنفيذية — مع سيادة وحوكمة مدمجة.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

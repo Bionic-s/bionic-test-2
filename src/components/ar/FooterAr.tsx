@@ -35,7 +35,7 @@ export const FooterAr = () => {
             </Link>
             <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي بالذكاء الاصطناعي</p>
             <p className="text-tiny text-text-muted leading-relaxed">
-              نُدمج الذكاء الاصطناعي والأتمتة والثقة في صميم الأعمال.
+              نصمم الذكاء الاصطناعي والأتمتة والثقة في صميم الأعمال.
             </p>
           </div>
 

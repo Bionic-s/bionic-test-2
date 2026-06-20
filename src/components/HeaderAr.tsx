@@ -34,7 +34,7 @@ export const HeaderAr = () => {
     { name: 'بنوك', desc: 'امتثال البنك المركزي، ذكاء الاحتيال، الخدمات المصرفية المفتوحة', path: '/ar/industries/banking', color: '#2563EB' },
     { name: 'نفط وغاز', desc: 'العمليات التنبؤية، أمن OT/IT، ذكاء الكربون', path: '/ar/industries/oil-gas', color: '#D97706' },
     { name: 'رعاية صحية', desc: 'الذكاء السريري، تجربة المريض، التجمعات الصحية', path: '/ar/industries/healthcare', color: '#0D9488' },
-    { name: 'مؤسسات كبرى', desc: 'القوى العاملة الوكيلة، Zero Trust، تحديث المنصات', path: '/ar/industries/enterprise', color: '#7C3AED' },
+    { name: 'مؤسسات كبرى', desc: 'فرق العمل المعززة بالذكاء الاصطناعي، Zero Trust، تحديث المنصات', path: '/ar/industries/enterprise', color: '#7C3AED' },
   ];
 
   // ── Capabilities by Industry tab ──

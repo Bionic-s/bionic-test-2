@@ -93,8 +93,8 @@ const layers = [
     icon: Database,
     title: 'البيانات والذكاء',
     subtitle: 'من أين يأتي الذكاء؟',
-    desc: 'منصات بيانات موحدة ومحكومة وجاهزة للذكاء الاصطناعي — معماريات نسيج البيانات وبحيرة البيانات، وإدارة بيانات رئيسية، وحوكمة متوافقة مع نظام حماية البيانات الشخصية، ومحركات تحليلية تغذي كل طبقة أعلاها.',
-    items: ['منصات البيانات: بحيرة البيانات، النسيج، التدفق', 'MDM: رؤية شاملة للعميل، المواطن، الأصول، المريض', 'حوكمة البيانات: الجودة، النسب، الكتالوج', 'التحليلات والذكاء: لوحات معلومات، خدمة ذاتية، مضمنة', 'بيانات جاهزة للذكاء الاصطناعي: مستودعات خصائص، قواعد بيانات متجهة، مسارات بيانات'],
+    desc: 'منصات بيانات موحدة ومحكومة ومهيأة للذكاء الاصطناعي — معماريات نسيج البيانات وبحيرة البيانات، وإدارة بيانات رئيسية، وحوكمة متوافقة مع نظام حماية البيانات الشخصية، ومحركات تحليلية تغذي كل طبقة أعلاها.',
+    items: ['منصات البيانات: بحيرة البيانات، النسيج، التدفق', 'MDM: رؤية شاملة للعميل، المواطن، الأصول، المريض', 'حوكمة البيانات: الجودة، النسب، الكتالوج', 'التحليلات والذكاء: لوحات معلومات، خدمة ذاتية، مضمنة', 'بيانات مهيأة للذكاء الاصطناعي: مستودعات خصائص، قواعد بيانات متجهة، مسارات بيانات'],
     link: { label: 'استكشف قدرة البيانات والتحليلات', to: '/ar/capabilities/data' },
   },
   {
@@ -273,7 +273,7 @@ export default function ArabicArchitecturePage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 relative overflow-hidden">
             {/* توهج الخلفية */}
             <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #D9770605 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #D9770605  %, transparent  %)' }} />
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
@@ -321,7 +321,7 @@ export default function ArabicArchitecturePage() {
           >
             {/* توهج زخرفي */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #D9770605 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #D9770605  %, transparent  %)' }} />
 
             <div className="relative z-10">
               <SectionLabel>الخطوة التالية</SectionLabel>

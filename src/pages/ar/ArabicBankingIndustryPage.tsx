@@ -13,16 +13,16 @@ const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
 
-const realityItems = [{"pre":"تقارير البنك المركزي — يدوية","text":"التقارير التنظيمية بطيئة وعرضة للأخطاء وفرق الامتثال تحت ضغط متواصل."},{"pre":"تصاعد تعقيد الاحتيال","text":"الأنظمة التقليدية عاجزة عن رصد أنماط الاحتيال المعقدة آنيًا."},{"pre":"اختناقات اعرف عميلك","text":"التحقق اليدوي من المستندات يطيل مدة اكتساب العميل لأسابيع."},{"pre":"تشتت بيانات العملاء","text":"بيانات محتجزة في صوامع — غياب رؤية موحدة للعميل."},{"pre":"متطلبات المصرفية المفتوحة","text":"معمارية API آمنة مطلوبة. الأنظمة التقليدية لم تصمم للانكشاف عبر API."},{"pre":"مرونة البنية التحتية","text":"متطلبات استمرارية الأعمال تفرض توفرًا بنسبة 99.99% مع تعافٍ سيبراني كامل."}];
-const priorities = [{"title":"المخاطر والامتثال المدعوم بالذكاء","desc":"كشف الاحتيال الفوري، مراقبة معاملات مكافحة غسل الأموال، وأتمتة تنظيم البنك المركزي.","icon":"Shield"},{"title":"ذكاء العملاء","desc":"توحيد بيانات Customer 360، تخصيص مدفوع بالذكاء الاصطناعي، والمشاركة التنبؤية.","icon":"Users"},{"title":"الخدمات المصرفية الرقمية","desc":"منصات مصرفية رقمية أولاً، تحول الخدمات المصرفية عبر الجوال.","icon":"CreditCard"},{"title":"الخدمات المصرفية المفتوحة","desc":"معمارية API، بوابة API آمنة، وامتثال إطار المصرفية المفتوحة.","icon":"GitBranch"},{"title":"اعرف عميلك والتأهيل الذكي","desc":"معالجة ذكية للمستندات، تحقق آلي من الهوية — أسرع بثلاث مرات.","icon":"TrendingUp"},{"title":"بنية تحتية مرنة سيبرانيًا","desc":"بنية تحتية متوافقة مع استمرارية الأعمال، Zero Trust، توفر +99.99%.","icon":"Shield"}];
-const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء كشف الاحتيال، نمذجة مخاطر الائتمان، المعالجة الذكية للمستندات"},{"cap":"البيانات والتحليلات والذكاء","app":"منصة بيانات Customer 360، لوحات مخاطر فورية، تحليلات تنظيمية"},{"cap":"تطبيقات الأعمال وتجربة العملاء","app":"تحول إدارة علاقات العملاء، بوابات مصرفية رقمية، مركز اتصال ذكي"},{"cap":"التكامل والعمليات الذكية","app":"واجهات API مصرفية مفتوحة، تكامل مصرفي أساسي، خطوط دفع فورية"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"امتثال إطار البنك المركزي، مركز عمليات أمنية، PCI-DSS"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"بنية تحتية متوافقة مع استمرارية الأعمال، توفر +99.99%"}];
+const realityItems = [{"pre":"تقارير البنك المركزي — يدوية","text":"التقارير التنظيمية بطيئة وعرضة للأخطاء وفرق الامتثال تحت ضغط متواصل."},{"pre":"تصاعد تعقيد الاحتيال","text":"الأنظمة التقليدية عاجزة عن رصد أنماط الاحتيال المعقدة آنيًا."},{"pre":"اختناقات اعرف عميلك","text":"التحقق اليدوي من المستندات يطيل مدة اكتساب العميل لأسابيع."},{"pre":"تشتت بيانات العملاء","text":"بيانات موزعة بين أنظمة وقنوات متعددة — غياب منظور موحد لبيانات العملاء."},{"pre":"متطلبات المصرفية المفتوحة","text":"معمارية API آمنة مطلوبة. الأنظمة التقليدية لم تصمم للانكشاف عبر API."},{"pre":"مرونة البنية التحتية","text":"متطلبات استمرارية الأعمال تتطلب توفرًا بنسبة ٩٩.٩٩% مع تعافٍ سيبراني كامل."}];
+const priorities = [{"title":"المخاطر والامتثال المدعوم بالذكاء","desc":"كشف الاحتيال الفوري، مراقبة معاملات مكافحة غسل الأموال، وأتمتة تنظيم البنك المركزي.","icon":"Shield"},{"title":"ذكاء العملاء","desc":"توحيد بيانات Customer 360، تخصيص مدفوع بالذكاء الاصطناعي، والمشاركة التنبؤية.","icon":"Users"},{"title":"المصرفية الرقمية الحديثة","desc":"منصات مصرفية رقمية أولاً، تحول الخدمات المصرفية عبر الجوال.","icon":"CreditCard"},{"title":"الخدمات المصرفية المفتوحة","desc":"معمارية API، بوابة API آمنة، وامتثال إطار المصرفية المفتوحة.","icon":"GitBranch"},{"title":"إجراءات اعرف عميلك والانضمام الرقمي للعملاء","desc":"معالجة ذكية للمستندات، تحقق آلي من الهوية — أسرع بثلاث مرات.","icon":"TrendingUp"},{"title":"بنية تحتية مرنة سيبرانيًا","desc":"بنية تحتية متوافقة مع استمرارية الأعمال، Zero Trust، توفر +٩٩.٩٩%.","icon":"Shield"}];
+const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء كشف الاحتيال، نمذجة مخاطر الائتمان، المعالجة الذكية للمستندات"},{"cap":"البيانات والتحليلات والذكاء","app":"منصة بيانات Customer 360، لوحات مخاطر فورية، تحليلات تنظيمية"},{"cap":"تطبيقات الأعمال وتجربة العملاء","app":"تحول إدارة علاقات العملاء، بوابات مصرفية رقمية، مركز اتصال ذكي"},{"cap":"التكامل والعمليات الذكية","app":"واجهات API مصرفية مفتوحة، تكامل مصرفي أساسي، خطوط دفع فورية"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"امتثال إطار البنك المركزي، مركز عمليات أمنية، PCI-DSS"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"بنية تحتية متوافقة مع استمرارية الأعمال، توفر +٩٩.٩٩%"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/apps","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/infra"];
-const services = [{"svc":"الاستشارات والتخطيط","app":"الجاهزية التنظيمية لمتطلبات البنك المركزي، استراتيجية الاحتيال، معمارية المصرفية المفتوحة"},{"svc":"التنفيذ والتسليم","app":"نشر ذكاء الاحتيال، بناء Customer 360، منصة المصرفية المفتوحة"},{"svc":"العمليات المدارة","app":"مركز عمليات أمنية مصرفي 24×7، عمليات بنية تحتية بضمان مستوى الخدمة"}];
+const services = [{"svc":"الاستشارات والتخطيط","app":"الجاهزية التنظيمية لمتطلبات البنك المركزي، استراتيجية الاحتيال، معمارية المصرفية المفتوحة"},{"svc":"التنفيذ والتسليم","app":"نشر ذكاء الاحتيال، بناء Customer 360، منصة المصرفية المفتوحة"},{"svc":"العمليات المدارة","app":"مركز عمليات أمنية مصرفي ٢٤×٧، عمليات بنية تحتية بضمان مستوى الخدمة"}];
 const svcPaths: string[] = ["/ar/services/advisory","/ar/services/implementation","/ar/services/operations"];
-const blueprints = [{"title":"كشف الاحتيال الفوري","label":"بنوك"},{"title":"Customer 360 والمشاركة الذكية","label":"بنوك"},{"title":"بنية تحتية متوافقة مع البنك المركزي","label":"بنوك"}];
+const blueprints = [{"title":"كشف الاحتيال الفوري","label":"بنوك"},{"title":"رؤية موحدة للعميل وتعزيز التفاعل الرقمي","label":"بنوك"},{"title":"بنية تحتية متوافقة مع البنك المركزي","label":"بنوك"}];
 const bpSlugs: string[] = ["real-time-fraud-detection","customer-360-intelligent-engagement","sama-compliant-banking-infra"];
 const partners = [{"name":"Salesforce","role":"إدارة علاقات العملاء والمشاركة المصرفية","tech":"Financial Services Cloud · Marketing Cloud · Einstein AI"},{"name":"IBM","role":"ذكاء الاحتيال والبنية التحتية المصرفية","tech":"watsonx · QRadar SOC · FlashSystem"},{"name":"Informatica","role":"إدارة البيانات الرئيسية وحوكمة Customer 360","tech":"Customer 360 MDM · جودة البيانات"},{"name":"MuleSoft","role":"واجهات API مصرفية مفتوحة","tech":"Anypoint Platform · API Manager · Flex Gateway"},{"name":"Dell Technologies","role":"التعافي السيبراني والبنية التحتية المرنة","tech":"PowerProtect Cyber Recovery · PowerMax · VxRail"},{"name":"Intel","role":"الحوسبة السرية وتسريع الذكاء","tech":"Intel SGX · TDX · Gaudi 3"},{"name":"Tableau","role":"لوحات معلومات تنظيمية","tech":"Tableau Cloud · تحليلات مضمنة"}];
-const outcomes = [{"metric":"+90%","label":"دقة كشف الاحتيال"},{"metric":"مسرّع","label":"دورات تقارير البنك المركزي"},{"metric":"3× أسرع","label":"تأهيل اعرف عميلك"},{"metric":"+99.99%","label":"توفر البنية التحتية"},{"metric":"90 يومًا","label":"نشر المصرفية المفتوحة"},{"metric":"< 4 ساعات","label":"وقت التعافي السيبراني"}];
+const outcomes = [{"metric":"+٩٠%","label":"دقة كشف الاحتيال"},{"metric":"مسرّع","label":"دورات تقارير البنك المركزي"},{"metric":"٣× أسرع","label":"تأهيل اعرف عميلك"},{"metric":"+٩٩.٩٩%","label":"توفر البنية التحتية"},{"metric":"٩٠ يومًا","label":"نشر المصرفية المفتوحة"},{"metric":"< ٤ ساعات","label":"وقت التعافي السيبراني"}];
 
 const iconMap: Record<string, React.ComponentType<any>> = { Shield, Cpu, GitBranch, BarChart3, TrendingUp, Brain, Users, CreditCard, Heart, Wrench };
 
@@ -38,17 +38,17 @@ export default function ArabicBankingIndustryPage() {
     <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-          <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.5) 0%, var(--bg-primary) 100%)` }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.5)  %, var(--bg-primary)  %)` }} />
           <div className="relative z-10 pt-44 pb-24">
             <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
         <motion.section className="mb-0" {...fadeIn} transition={{ duration: 0.5 }}>
           <SectionLabel>القطاع المصرفي والمالي</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            تحول مصرفي<br />
-            <span style={{ color: ACCENT }}>وفق أطر البنك المركزي السعودي — ذكي، متوافق، آمن.</span>
+            تمكين التحول المصرفي<br />
+            <span style={{ color: ACCENT }}>بما ينسجم مع متطلبات البنك المركزي السعودي.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من كشف الاحتيال الفوري إلى البنية التحتية المتوافقة مع البنك المركزي السعودي، ومن Customer 360 إلى الخدمات المصرفية المفتوحة — نمكن المؤسسات المالية السعودية من تحقيق الامتثال التنظيمي والكفاءة التشغيلية.
+            من كشف الاحتيال الفوري إلى البنية التحتية المتوافقة مع البنك المركزي السعودي، ومن Customer 360 إلى الخدمات المصرفية المفتوحة — نمكّن المؤسسات المالية السعودية من تحقيق الامتثال التنظيمي والكفاءة التشغيلية.
           </p>
         </motion.section>
             </div>
@@ -58,7 +58,7 @@ export default function ArabicBankingIndustryPage() {
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>وتيرة المتطلبات التنظيمية من البنك المركزي تتسارع — والأنظمة التقليدية عاجزة عن المواكبة.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>التقارير التنظيمية اليدوية تثقل كاهل الفرق. الأنظمة التقليدية عاجزة عن رصد أنماط الاحتيال المعقدة. بيانات العملاء متناثرة عبر صوامع متعددة.</p>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>التقارير التنظيمية اليدوية تثقل كاهل الفرق. الأنظمة التقليدية عاجزة عن رصد أنماط الاحتيال المعقدة. بيانات العملاء متناثرة عبر أنظمة متفرقة متعددة.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">
@@ -132,10 +132,10 @@ export default function ArabicBankingIndustryPage() {
         <motion.section ref={ref5} {...fadeIn} animate={inView5 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المنظومة الاستراتيجية</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            تقنيات عالمية — بمعمارية مصممة للمملكة.
+            أفضل التقنيات العالمية ضمن معماريات مصممة لتلبية متطلبات السوق السعودي.
           </h2>
           <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            لسنا بائعين. نصمم منصات سيادية باستخدام أفضل التقنيات العالمية — مختارة بناءً على الكفاءة، وليس حوافز إعادة البيع.
+            لانبيع منتجات. نصمم منصات سيادية باستخدام أفضل التقنيات العالمية — مختارة بناءً على الكفاءة، وليس حوافز إعادة البيع.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (

@@ -75,7 +75,7 @@ export default function ArabicImplementationDeliveryPage() {
         >
           <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
             <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#059669]/25 bg-[#059669]/5 mb-10">
-              <span className="text-tiny text-[#059669] font-semibold tracking-widest uppercase">التنفيذ والتسليم</span>
+              <span className="text-tiny text-[#059669] font-semibold tracking-widest uppercase">التنفيذ والتسليم التشغيلي</span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
               الاستراتيجية ← التنفيذ ←<br />
@@ -229,7 +229,7 @@ export default function ArabicImplementationDeliveryPage() {
             {[
               { title: 'مالك تسليم واحد', desc: 'ندير جميع المورّدين. تحصل على فريق واحد مسؤول، لا خمسة مدراء مشاريع يتبادلون الاتهامات.' },
               { title: 'سلسلة الاستراتيجية إلى القيمة', desc: 'الفريق الذي قدّم الاستشارة هو من يبني. الفريق الذي يبني يضمن التبني. التبني يُقاس مقابل نتائج الأعمال.' },
-              { title: 'تسريع الوقت إلى القيمة', desc: 'منهجية الإنتاج أولاً: سباقات أسبوعين، حوكمة بجودة إنتاجية، قيمة تتحقق تدريجيًا — ليس بعد 18 شهرًا.' },
+              { title: 'تسريع الوقت إلى القيمة', desc: 'منهجية الإنتاج أولاً: سباقات أسبوعين، حوكمة بجودة إنتاجية، قيمة تتحقق تدريجيًا — ليس بعد ١٨ شهرًا.' },
               { title: 'البناء حتى التبني', desc: 'التسليم يشمل إدارة التغيير والتدريب وأدلة التشغيل وخطوط أساس مؤشرات الأداء. لا تسليم منقوص.' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">

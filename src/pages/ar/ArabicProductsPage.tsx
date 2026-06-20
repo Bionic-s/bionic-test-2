@@ -29,7 +29,7 @@ const infraCategories: Category[] = [
   {
     name: 'محطات عمل وأجهزة الذكاء الاصطناعي',
     products: [
-      { name: 'Precision AI Workstations', vendor: 'Dell Technologies', desc: 'محطات عمل مكتبية ومحمولة جاهزة للذكاء الاصطناعي بمعالجات NVIDIA RTX أو Intel Arc Pro، معتمدة من مزودي البرمجيات المستقلين لأعمال تعلم الآلة وعلوم البيانات وتطوير الذكاء الاصطناعي الطرفي.' },
+      { name: 'Precision AI Workstations', vendor: 'Dell Technologies', desc: 'محطات عمل مكتبية ومحمولة مهيأة للذكاء الاصطناعي بمعالجات NVIDIA RTX أو Intel Arc Pro، معتمدة من مزودي البرمجيات المستقلين لأعمال تعلم الآلة وعلوم البيانات وتطوير الذكاء الاصطناعي الطرفي.' },
       { name: 'ThinkPad P-Series & ThinkStation', vendor: 'Lenovo', desc: 'محطات عمل احترافية ومكتبية للذكاء الاصطناعي — خيارات معالجات NVIDIA RTX وذاكرة كبيرة، مصممة لتشغيل النماذج محليًا وأعمال الذكاء الاصطناعي الميدانية.' },
       { name: 'Intel Core Ultra (AI PC)', vendor: 'Intel', desc: 'معالجات الجيل التالي للحواسب الشخصية المزوّدة بوحدة معالجة عصبية مدمجة — تقدم استدلال الذكاء الاصطناعي على الجهاز وتجارب Copilot+ وكفاءة طاقة عالية للحواسب المؤسسية.' },
     ],
@@ -138,7 +138,7 @@ const platformCategories: Category[] = [
       { name: 'Tableau Explorer & Viewer', vendor: 'Tableau', desc: 'تحليلات ذاتية الخدمة — استكشاف لوحات معلومات موثوقة وطرح الأسئلة باللغة الطبيعية والاشتراك في تنبيهات قائمة على البيانات.' },
       { name: 'Informatica MDM', vendor: 'Informatica', desc: 'إدارة البيانات الرئيسية — رؤية شاملة بزاوية ٣٦٠ درجة للعملاء والأصول والمورّدين. مطابقة وإدارة مدعومة بالذكاء الاصطناعي.' },
       { name: 'Informatica Data Governance', vendor: 'Informatica', desc: 'حوكمة البيانات وفهرستها — اكتشاف وتصنيف وحوكمة البيانات. تتبع آلي للنسب وقواعد الجودة وامتثال لنظام حماية البيانات الشخصية.' },
-      { name: 'BigQuery', vendor: 'Google', desc: 'مستودع بيانات سحابي متعدد بدون خادم مع تعلّم آلة مدمج. تحليل بيتابايتات من البيانات في ثوانٍ — تحليلات جاهزة للذكاء الاصطناعي.' },
+      { name: 'BigQuery', vendor: 'Google', desc: 'مستودع بيانات سحابي متعدد بدون خادم مع تعلّم آلة مدمج. تحليل بيتابايتات من البيانات في ثوانٍ — تحليلات مهيأة للذكاء الاصطناعي.' },
     ],
   },
 ];
@@ -171,7 +171,7 @@ const serviceCategories: Category[] = [
   {
     name: 'العمليات المدارة',
     products: [
-      { name: 'Managed Operations 24×7', vendor: 'Bionic Solutions', desc: 'عمليات منصات مستمرة — مراقبة واستجابة للحوادث وتحديثات وتحسين. ٣ مستويات: الأساسية والمتقدمة والنخبة.' },
+      { name: 'Managed Operations ٢٤×٧', vendor: 'Bionic Solutions', desc: 'عمليات منصات مستمرة — مراقبة واستجابة للحوادث وتحديثات وتحسين. ٣ مستويات: الأساسية والمتقدمة والنخبة.' },
       { name: 'SOC-as-a-Service', vendor: 'Bionic Solutions', desc: 'مركز عمليات أمنية على مدار الساعة — مراقبة التهديدات والصيد والاستجابة للحوادث والامتثال. متوافق مع الهيئة الوطنية للأمن السيبراني والبنك المركزي السعودي.' },
       { name: 'FinOps Governance', vendor: 'Bionic Solutions', desc: 'إدارة تكاليف السحابة والبنية التحتية — رؤية ومحاسبة تناسبية وتنبؤ وتحسين. تحقق عادةً توفيرًا بنسبة ٢٥–٤٠٪ خلال ربعين.' },
     ],
@@ -380,7 +380,7 @@ export default function ArabicProductsPage() {
             }}
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #00BFFF05 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #00BFFF05  %, transparent  %)' }} />
 
             <div className="relative z-10">
               <h2 className="text-2xl md:text-4xl font-bold mb-4">
