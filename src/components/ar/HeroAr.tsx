@@ -101,7 +101,7 @@ export const HeroAr = () => {
             {[
               { value: 11, suffix: '', label: 'شريك تقني استراتيجي', description: 'منظومة عالمية' },
               { value: 7, suffix: '', label: 'خطوط أعمال', description: 'منظومة تحول متكاملة' },
-              { value: 5, suffix: '', label: 'قطاعات رئيسية', description: 'بنوك · حكومي · نفط وغاز · مؤسسات كبرى' },
+              { value: 5, suffix: '', label: 'قطاعات رئيسية', description: 'الخدمات المالية والمصرفية · حكومي · النفط والغاز · مؤسسات كبرى' },
             ].map((metric, index) => (
               <motion.div key={index} className="text-center group cursor-pointer" whileHover={{ scale: 1.05, y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                 <motion.div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-primary mb-2 group-hover:text-accent-secondary transition-colors duration-300"
