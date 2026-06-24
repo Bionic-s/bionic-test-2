@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && npm run postbuild",
-    "postbuild": "chmod 644 dist/images/partners/* 2>/dev/null; chmod 644 dist/*.svg 2>/dev/null; true",
+    "postbuild": "chmod 644 dist/images/partners/* 2>/dev/null; chmod 644 dist/*.svg 2>/dev/null; cp -r dist/* /var/www/html/test-site-2/; rm -f /var/www/html/test-site-2/ar.html; true",
     "lint": "eslint .",
     "preview": "vite preview",
     "type-check": "tsc --noEmit"
