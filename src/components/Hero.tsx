@@ -86,15 +86,15 @@ export const Hero = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
             className="flex flex-col items-center gap-4 mb-16">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link to="/contact?source=hero&intent=architect" onClick={() => trackExecutiveBriefingClick('hero_primary')}
                 data-magnetic
-                className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg">
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg text-base">
                 Talk to an Architect <ArrowRight className="w-5 h-5" />
               </Link>
               <Link to="/blueprints?source=hero&intent=blueprints" onClick={() => trackCTAClick('hero', '/blueprints')}
                 data-magnetic
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-primary text-accent-primary font-semibold rounded-full hover:bg-accent-primary hover:text-white transition-all">
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-accent-primary text-accent-primary font-semibold rounded-full hover:bg-accent-primary hover:text-white transition-all text-base">
                 Explore Transformation Blueprints
               </Link>
             </div>

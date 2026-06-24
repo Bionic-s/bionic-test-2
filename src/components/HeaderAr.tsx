@@ -415,12 +415,23 @@ export const HeaderAr = () => {
         <div className="fixed inset-0 z-[100] md:hidden">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
           <div className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-bg-secondary shadow-2xl animate-slide-in-right overflow-y-auto">
-            <div className="flex justify-end p-4">
-              <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-text-primary hover:text-accent-primary transition-colors">
+            {/* Mobile Nav Header: Logo + Close */}
+            <div className="flex items-center justify-between p-4 border-b border-white/5">
+              <Link to="/ar" onClick={() => setMobileMenuOpen(false)}>
+                <img
+                  src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
+                  alt="بيونك سوليوشنز"
+                  className="h-8 w-auto"
+                  style={{
+                    filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)',
+                  }}
+                />
+              </Link>
+              <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-text-primary hover:text-accent-primary transition-colors rounded-lg hover:bg-white/5">
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <nav className="px-6 py-2 space-y-1">
+            <nav className="px-6 py-4 space-y-1">
 
               {/* Mobile About */}
               <div>
