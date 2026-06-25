@@ -31,9 +31,9 @@ export default function ArabicEnterpriseValueSystemPage() {
             <span style={{ color: ACCENT }}>من التقنية، بل من القدرات.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed">
-            أربعة آفاق للقيمة. تقدم متراكم واحد. من تحسين التكاليف إلى الريادة السوقية —
+            أربعة آفاق للقيمة. تراكم واحد متصل. من تحسين التكاليف إلى الريادة السوقية —
             هكذا نقيس ونحقق ونراكم القيمة المؤسسية عبر كل مشاركة.
-            لسنا ناشرين للتقنية — بل بناة للقدرات المؤسسية.
+            لسنا ناشرين للتقنية — بل بناة للقدرات المؤسسية التي تتراكم.
           </p>
         </motion.section>
 
@@ -54,7 +54,7 @@ export default function ArabicEnterpriseValueSystemPage() {
               </div>
               <p className="text-text-muted text-sm leading-relaxed mb-5">
                 المدير المالي يطرح ثلاثة أسئلة حول كل استثمار تحولي.
-                إجابتنا ليست دراسة جدوى — بل نظام تشغيل لتحقيق القيمة.
+                إجابتنا ليست دراسة جدوى — بل نظام تشغيل لتحقيق القيمة واستدامتها.
               </p>
               <div className="space-y-3">
                 {[
@@ -85,8 +85,8 @@ export default function ArabicEnterpriseValueSystemPage() {
                 </div>
               </div>
               <p className="text-text-muted text-sm leading-relaxed mb-5">
-                الرئيس التنفيذي لا يسأل عن التقنية، بل يسأل عن الموقع التنافسي.
-                إجابتنا ليست خطة مشروع — بل منصة قدرات مؤسسية.
+                الرئيس التنفيذي لا يسأل عن التقنية، بل عن الموقع التنافسي والقدرات الجديدة.
+                إجابتنا ليست خطة مشروع — بل منصة قدرات مؤسسية تتراكم عبر الزمن.
               </p>
               <div className="space-y-3">
                 {[
@@ -110,10 +110,10 @@ export default function ArabicEnterpriseValueSystemPage() {
         {/* ═══ 3. أربعة آفاق للقيمة ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>أربعة آفاق للقيمة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة لا تصل في ربع واحد، بل تتراكم عبر أربعة آفاق.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة لا تتحقق في ربع واحد، بل تتراكم عبر أربعة آفاق زمنية متصلة.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
-            كل أفق مدعوم بواحدة أو أكثر من ركائز الذكاء-الأتمتة-الثقة.
-            معًا يشكلون محرك خلق القيمة.
+            كل أفق مدعوم بواحدة أو أكثر من ركائز الذكاء والأتمتة والثقة.
+            معاً تشكل محرك خلق القيمة المؤسسية.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -249,9 +249,9 @@ export default function ArabicEnterpriseValueSystemPage() {
         {/* ═══ 5. دورة حياة تحقيق القيمة ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>دورة حياة تحقيق القيمة</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة تتحقق عبر دورة حياة التحول الكاملة — وليس عند التشغيل فقط.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">القيمة تتحقق عبر دورة حياة التحول الكاملة — وليس عند التشغيل فقط، بل بعده.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
-            معظم الشركات تتوقف عند البناء — فتتآكل القيمة. بيونك مسؤولة عبر التشغيل والتطوّر — وهنا تتراكم القيمة.
+            معظم الشركات تتوقف عند البناء — فتتآكل القيمة. بيونك تتحمل المسؤولية عبر التشغيل والتطور — وهنا تتراكم القيمة ربعاً بعد ربع.
           </p>
           <div className="space-y-3">
             {[
@@ -281,7 +281,7 @@ export default function ArabicEnterpriseValueSystemPage() {
         {/* ═══ 6. لوحة مؤشرات الأداء التنفيذية ═══ */}
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>لوحة مؤشرات الأداء التنفيذية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">كل مشاركة محكومة بمؤشرات أداء قابلة للقياس عبر آفاق القيمة الأربعة.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">كل مشاركة محكومة بمؤشرات أداء قابلة للقياس عبر الآفاق الأربعة للقيمة.</h2>
           <p className="text-text-muted text-lg mb-10 max-w-[720px] leading-relaxed">
             فيما يلي إطار القياس — الفئات التي نتتبعها ونقيسها ونحكمها عبر كل مشاركة.
             لا أرقام ملفقة ولا ادعاءات مبالغ فيها — النظام الذي يحكم تحقيق القيمة.
@@ -380,7 +380,7 @@ export default function ArabicEnterpriseValueSystemPage() {
           {/* بيان ختامي */}
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8 text-center">
             <p className="text-text-primary font-semibold text-lg mb-2">
-              هذا هو جوهر بيونك.
+              هذا هو جوهر ما نقدمه.
             </p>
             <p className="text-text-muted leading-relaxed max-w-[640px] mx-auto">
               كل مشاركة تبني قدرات مؤسسية تتراكم — وليس عمليات نشر لمرة واحدة تتآكل.
@@ -413,14 +413,14 @@ export default function ArabicEnterpriseValueSystemPage() {
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
                 style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #05966920' }}
               >
-                ابدأ المحادثة
+                احجز جلسة استراتيجية
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link
                 to="/ar/architecture"
                 className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#059669]/30"
               >
-                استكشف معمارية التحول
+                استكشف معمارية التحول المؤسسي
               </Link>
             </div>
           </div>

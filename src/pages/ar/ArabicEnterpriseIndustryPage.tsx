@@ -48,7 +48,7 @@ export default function ArabicEnterpriseIndustryPage() {
             <span style={{ color: ACCENT }}>— ذكاء وكيلي، عمليات ذكية، أمن Zero Trust.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            هذا هو عرض القيمة الأكثر شمولاً من بيونك. من وكلاء الذكاء الاصطناعي إلى Zero Trust — نقدم المنظومة الكاملة للتحول المؤسسي.
+            هذا هو عرض القيمة الأكثر شمولاً من بيونك. من وكلاء الذكاء الاصطناعي إلى معمارية Zero Trust — نقدم المنظومة الكاملة للتحول المؤسسي عبر الذكاء والأتمتة والثقة.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicEnterpriseIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كل مؤسسة تتجه نحو الذكاء الاصطناعي — لكن معظمها ليس جاهزًا.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الفرق عالية القيمة غارقة في العمل اليدوي. البيانات محتجزة في أنظمة منفصلة. تجارب الذكاء الاصطناعي لا تصل إلى مرحلة الإنتاج.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كل مؤسسة تتجه نحو الذكاء الاصطناعي — لكن معظمها ليس جاهزاً من حيث البيانات والحوكمة والبنية.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>الفرق عالية القيمة غارقة في العمل اليدوي. البيانات محتجزة في أنظمة منفصلة. تجارب الذكاء الاصطناعي لا تصل إلى مرحلة الإنتاج — فتبقى استثمارات بلا عائد.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">

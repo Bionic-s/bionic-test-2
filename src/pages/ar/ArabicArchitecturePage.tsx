@@ -30,7 +30,7 @@ const layers = [
     icon: Target,
     title: 'نتائج الأعمال',
     subtitle: 'ما الذي يتغير حين ينجح التحول؟',
-    desc: 'كل تحول يبدأ بنتيجة أعمال — نمو الإيرادات، تحسين التكاليف، خفض المخاطر، تحول التجربة، أو القدرات الوطنية.',
+    desc: 'كل تحول يبدأ من نتيجة أعمال محددة — ليس من تقنية. نمو الإيرادات، تحسين التكاليف، خفض المخاطر، تحول التجربة، أو بناء القدرات الوطنية.',
     items: ['نمو الإيرادات', 'تحسين التكاليف', 'خفض المخاطر', 'تحول التجربة', 'القدرات الوطنية'],
     link: { label: 'استكشف منظومة القيمة المؤسسية', to: '/ar/value' },
   },
@@ -39,7 +39,7 @@ const layers = [
     icon: TrendingUp,
     title: 'منظومة القيمة المؤسسية',
     subtitle: 'كيف تتراكم القيمة عبر أربعة آفاق؟',
-    desc: 'تتراكم القيمة عبر أربعة آفاق — تحسين التكاليف (٠–١٢ شهرًا)، خفض المخاطر (٦–١٨ شهرًا)، نمو الإيرادات (١٢–٣٦ شهرًا)، والريادة السوقية (٢٤–٦٠ شهرًا).',
+    desc: 'القيمة لا تتحقق دفعة واحدة — بل تتراكم عبر أربعة آفاق زمنية متتابعة: تحسين التكاليف (٠–١٢ شهراً)، خفض المخاطر (٦–١٨ شهراً)، نمو الإيرادات (١٢–٣٦ شهراً)، والريادة السوقية (٢٤–٦٠ شهراً).',
     items: ['تحسين التكاليف: ٠–١٢ شهرًا', 'خفض المخاطر: ٦–١٨ شهرًا', 'نمو الإيرادات: ١٢–٣٦ شهرًا', 'الريادة السوقية: ٢٤–٦٠ شهرًا'],
     link: { label: 'استكشف منظومة القيمة المؤسسية', to: '/ar/value' },
   },
@@ -47,8 +47,8 @@ const layers = [
     num: 3,
     icon: Building2,
     title: 'القطاعات',
-    subtitle: 'أين نُطبّق هذه المعمارية؟',
-    desc: 'خمسة قطاعات محددة تحل فيها معماريتنا تحديات صناعية حقيقية — القطاع الحكومي، البنوك، النفط والغاز، الرعاية الصحية، والمؤسسات عبر القطاعات.',
+    subtitle: 'أين نطبق هذه المعمارية؟',
+    desc: 'خمسة قطاعات تُشكل نسيج الاقتصاد السعودي — لكل قطاع تحدياته التنظيمية والتشغيلية الخاصة: الحكومي، المصرفي والمالي، النفط والغاز، الرعاية الصحية، والمؤسسات عبر القطاعات.',
     items: ['القطاع الحكومي', 'القطاع المصرفي والخدمات المالية', 'النفط والغاز والطاقة', 'الرعاية الصحية', 'المؤسسات عبر القطاعات'],
     link: { label: 'استكشف جميع القطاعات', to: '/ar/industries/government' },
   },
@@ -57,7 +57,7 @@ const layers = [
     icon: Cpu,
     title: 'القدرات',
     subtitle: 'ماذا نفعل فعليًا؟',
-    desc: 'سبع قدرات متكاملة تغطي الذكاء والأتمتة والثقة — قابلة للتكوين عبر القطاعات، وليست منتجات منعزلة.',
+    desc: 'سبع قدرات متكاملة تغطي الذكاء والأتمتة والثقة — ليست منتجات منعزلة، بل نسيج مؤسسي قابل للتكوين عبر القطاعات.',
     items: ['الذكاء الاصطناعي المؤسسي والأتمتة', 'البيانات والتحليلات والذكاء', 'تطبيقات الأعمال وتجربة العميل', 'التكامل والعمليات الذكية', 'الأمن السيبراني والمرونة السيبرانية', 'البنية التحتية السيادية', 'عمليات التقنية'],
     link: { label: 'استكشف جميع القدرات', to: '/ar/capabilities/ai' },
   },
@@ -66,7 +66,7 @@ const layers = [
     icon: Wrench,
     title: 'الخدمات',
     subtitle: 'كيف نُنفّذ؟',
-    desc: 'ثلاثة نماذج تنفيذ — الاستشارات، والتنفيذ، والعمليات المُدارة — تتكامل حسب الحاجة عبر كل قطاع وقدرة.',
+    desc: 'ثلاثة نماذج تنفيذ — الاستشارات والتخطيط، والتنفيذ والتسليم، والعمليات المُدارة — تتكامل حسب الحاجة عبر كل قطاع وقدرة لتشكل دورة حياة متصلة.',
     items: ['الاستشارات والتخطيط: الاستراتيجية، المعمارية، خرائط الطريق', 'التنفيذ والتسليم: النشر، التكامل، التبني', 'العمليات المُدارة: تشغيل على مدار الساعة، هندسة موثوقية المواقع، AIOps، تحسين مستمر'],
     link: { label: 'استكشف جميع الخدمات', to: '/ar/services' },
   },
@@ -74,8 +74,8 @@ const layers = [
     num: 6,
     icon: FileText,
     title: 'مخططات التحول',
-    subtitle: 'هل يمكنك إثبات نجاح هذا؟',
-    desc: 'اثنتا عشرة معمارية مرجعية تربط القطاعات ← القدرات ← الخدمات ← الشركاء ← المنتجات ← النتائج.',
+    subtitle: 'هل يمكن إثبات نجاح هذه المعمارية؟',
+    desc: 'اثنتا عشرة معمارية مرجعية تربط القطاعات ← القدرات ← الخدمات ← الشركاء ← المنتجات ← النتائج. هذه ليست أرقاماً معيارية — هذا سجل أداء حقيقي في بيئة إنتاجية.',
     items: ['١٢ مخططًا عبر ٥ قطاعات', 'وصول مزدوج: من القطاعات ومن القدرات', 'تخطيط كامل: قطاع، قدرة، خدمات، شركاء، منتجات'],
     link: { label: 'استكشف جميع المخططات', to: '/ar/blueprints' },
   },
@@ -84,7 +84,7 @@ const layers = [
     icon: Monitor,
     title: 'التطبيقات والمنصات',
     subtitle: 'ما التقنية التي تُشغّل التحول؟',
-    desc: 'نصمم وننشر وندير المنصات المؤسسية — Salesforce لإدارة علاقات العملاء، وwatsonx وVertex AI للذكاء، وMuleSoft للتكامل، وInformatica لحوكمة البيانات.',
+    desc: 'نصمم وننشر وندير المنصات المؤسسية التي تشغل عملياتكم — Salesforce لإدارة علاقات العملاء، وwatsonx وVertex AI للذكاء، وMuleSoft للتكامل، وInformatica لحوكمة البيانات.',
     items: ['CRM وتجربة العميل: Salesforce (المبيعات، الخدمة، التسويق، Health Cloud)', 'الذكاء الاصطناعي وتعلم الآلة: watsonx، Vertex AI، Einstein، Agentforce', 'التكامل: MuleSoft Anypoint، معمارية بالأحداث', 'البيانات والتحليلات: Informatica MDM، Tableau، BigQuery', 'الأتمتة: Ansible، RPA، سير العمل الذكي'],
     link: { label: 'استكشف منظومتنا', to: '/ar/about' },
   },
@@ -111,7 +111,7 @@ const layers = [
     icon: Gauge,
     title: 'العمليات والتحسين المستمر',
     subtitle: 'كيف نستمر ونراكم القيمة؟',
-    desc: 'العمليات تحمي القيمة وتراكمها ربعًا بعد ربع — AIOps، وهندسة موثوقية المواقع، وFinOps، وSOC كخدمة، ومراجعات تحسين مستمر ربع سنوية.',
+    desc: 'العمليات ليست مرحلة أخيرة — بل المحرك الذي يحمي القيمة المحققة ويراكمها ربعاً بعد ربع: AIOps، وهندسة موثوقية المواقع، وFinOps، وSOC كخدمة، ومراجعات تحسين ربع سنوية.',
     items: ['AIOps والمراقبة: Instana + Turbonomic', 'هندسة موثوقية المواقع: ميزانيات الأخطاء، SLOs، تحليل postmortem', 'FinOps: رؤية التكاليف، محاسبة تناسبية، تحسين', 'SOC كخدمة: أمن على مدار الساعة، صيد التهديدات', 'التحسين المستمر: مراجعات ربع سنوية، تحسين المقاس'],
     link: { label: 'استكشف عمليات التقنية', to: '/ar/capabilities/ops' },
   },
@@ -144,8 +144,8 @@ export default function ArabicArchitecturePage() {
               <span style={{ color: ACCENT }}>من بيونك.</span>
             </h1>
             <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              عشر طبقات مترابطة. نهج متكامل واحد. من نتائج الأعمال إلى التحسين المستمر —
-              هكذا نصمم ونُنفّذ ونستدام التحول المؤسسي للمملكة العربية السعودية.
+              عشر طبقات مترابطة. منهجية متكاملة واحدة. من نتائج الأعمال إلى التحسين المستمر —
+              هكذا نصمم وننفذ ونستدام التحول المؤسسي في المملكة العربية السعودية.
             </p>
           </div>
         </motion.div>
@@ -164,19 +164,19 @@ export default function ArabicArchitecturePage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12">
             <div className="flex items-center gap-3 mb-6">
               <Layers className="w-6 h-6" style={{ color: ACCENT }} />
-              <h2 className="text-xl md:text-2xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif" }}>كيف تتدفق</h2>
+              <h2 className="text-xl md:text-2xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif" }}>كيف تتدفق المعمارية</h2>
             </div>
             <div className="text-lg text-text-muted leading-relaxed space-y-3" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              <p><strong className="text-text-primary">نتائج الأعمال</strong> تُحدد <em>لماذا</em> نتحول.</p>
-              <p><strong className="text-text-primary">منظومة القيمة المؤسسية</strong> تُحدد <em>كيف تتراكم القيمة</em> عبر الزمن.</p>
-              <p><strong className="text-text-primary">القطاعات</strong> تُحدد <em>أين</em> — السياق التنظيمي والتنافسي.</p>
-              <p><strong className="text-text-primary">القدرات</strong> تُحدد <em>ماذا</em> نفعل — سبعة مجالات متكاملة.</p>
+              <p><strong className="text-text-primary">نتائج الأعمال</strong> تُجيب عن <em>لماذا</em> نتحول.</p>
+              <p><strong className="text-text-primary">منظومة القيمة المؤسسية</strong> تُجيب عن <em>كيف تتراكم القيمة</em> عبر الزمن.</p>
+              <p><strong className="text-text-primary">القطاعات</strong> تُجيب عن <em>أين</em> — السياق التنظيمي والتنافسي.</p>
+              <p><strong className="text-text-primary">القدرات</strong> تُجيب عن <em>ماذا</em> ننفذ — سبعة مجالات متكاملة.</p>
               <p><strong className="text-text-primary">الخدمات</strong> تُحدد <em>كيف</em> نُنفّذ — ثلاثة نماذج متداخلة.</p>
-              <p><strong className="text-text-primary">مخططات التحول</strong> تُثبت <em>أنها تعمل</em> — ١٢ معمارية مرجعية.</p>
-              <p><strong className="text-text-primary">التطبيقات والمنصات</strong> تُقدّم <em>التقنية</em>.</p>
-              <p><strong className="text-text-primary">البيانات والذكاء</strong> يُغذّي <em>كل ما فوقه</em>.</p>
-              <p><strong className="text-text-primary">البنية التحتية والأمن</strong> يُوفّران <em>أساس الثقة</em>.</p>
-              <p><strong className="text-text-primary">العمليات والتحسين</strong> <em>تستدام وتراكم</em> القيمة.</p>
+              <p><strong className="text-text-primary">مخططات التحول</strong> تُثبت <em>أنها تعمل</em> في بيئة إنتاجية حقيقية — ١٢ معمارية مرجعية.</p>
+              <p><strong className="text-text-primary">التطبيقات والمنصات</strong> تقدم <em>التقنية</em> التي تشغّل كل ما سبق.</p>
+              <p><strong className="text-text-primary">البيانات والذكاء</strong> يغذي <em>كل ما يعلوه</em>.</p>
+              <p><strong className="text-text-primary">البنية التحتية والأمن</strong> يوفران <em>أساس الثقة</em>.</p>
+              <p><strong className="text-text-primary">العمليات والتحسين المستمر</strong> <em>تستدام وتراكم</em> القيمة ربعاً بعد ربع.</p>
             </div>
           </div>
         </motion.section>
@@ -280,11 +280,11 @@ export default function ArabicArchitecturePage() {
                 <Zap className="w-7 h-7" style={{ color: ACCENT }} />
                 <SectionLabel>الصورة الكاملة</SectionLabel>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>عشر طبقات. ثلاث ركائز. شريك مسؤول واحد.</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>عشر طبقات. ثلاث ركائز. شريك واحد. مسؤولية كاملة.</h2>
               <p className="text-text-muted text-lg leading-relaxed mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-                كل صفحة أخرى في هذا الموقع هي عرض تفصيلي لواحدة أو أكثر من هذه الطبقات.
-                صفحات القدرات تركّز على الطبقة ٤. صفحات القطاعات تركّز على الطبقة ٣. صفحات الخدمات تركّز على الطبقة ٥.
-                المخططات تربط الطبقات ٣–٦. منظومة القيمة المؤسسية هي الطبقة ٢.
+                كل صفحة في هذا الموقع هي عرض تفصيلي لواحدة أو أكثر من هذه الطبقات.
+                صفحات القدرات تركز على الطبقة ٤. صفحات القطاعات تركز على الطبقة ٣. صفحات الخدمات تركز على الطبقة ٥.
+                المخططات تربط الطبقات ٣–٦ عبر معماريات مرجعية مثبتة. منظومة القيمة المؤسسية هي الطبقة ٢.
                 صفحة المعمارية هذه هي النسيج الرابط — الرؤية الواحدة التي تُظهر كيف يتكامل كل شيء.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -329,7 +329,7 @@ export default function ArabicArchitecturePage() {
                 هل أنتم مستعدون لرؤية هذه المعمارية مُطبّقة على مؤسستكم؟
               </h2>
               <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-                دعونا نناقش كيف تتوافق هذه الطبقات العشر مع قطاعكم وأولويات تحولكم ونتائج أعمالكم.
+                دعونا نناقش كيف تنطبق هذه الطبقات العشر على قطاعكم وأولويات تحولكم ونتائج أعمالكم.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
@@ -337,14 +337,14 @@ export default function ArabicArchitecturePage() {
                   className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                   style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #D9770620' }}
                 >
-                  ابدأ المحادثة
+                  احجز جلسة معمارية
                   <ArrowRight className="w-4 h-4 rotate-180" />
                 </Link>
                 <Link
                   to="/ar/blueprints"
                   className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#D97706]/30"
                 >
-                  عرض مخططات التحول
+                  استعرض مخططات التحول
                 </Link>
               </div>
             </div>

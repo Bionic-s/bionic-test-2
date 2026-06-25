@@ -77,7 +77,7 @@ export default function ArabicPartnersPage() {
               المنظومة الاستراتيجية للتقنية
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              ٨ شركاء استراتيجيين.
+              ٨ شركاء تقنيين استراتيجيين.
               <br />
               <span className="text-accent-primary">مُكمِّل واحد مسؤول.</span>
             </h1>

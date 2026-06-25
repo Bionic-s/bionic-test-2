@@ -48,7 +48,7 @@ export default function ArabicOilGasIndustryPage() {
             <span style={{ color: ACCENT }}>من الصيانة التنبؤية إلى ذكاء الكربون.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من الصيانة التنبؤية المدعومة بالذكاء الاصطناعي إلى أمن OT/IT، ومن الذكاء الممتد من الحافة إلى السحابة إلى تتبع الكربون — نمكن شركات الطاقة السعودية من تعظيم زمن تشغيل الأصول وتقليل المخاطر.
+            من الصيانة التنبؤية المدعومة بالذكاء الاصطناعي إلى أمن الشبكات الصناعية OT/IT، ومن الذكاء الممتد من الحافة إلى السحابة إلى تتبع البصمة الكربونية — نمكّن شركات الطاقة السعودية من تعظيم زمن تشغيل الأصول وتقليل المخاطر.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicOilGasIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>المخاطر التشغيلية في قطاع الطاقة تُقاس بالملايين لكل ساعة توقف.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>أعطال المعدات تُكلف ملايين الريالات. أنظمة التحكم الصناعي متصلة دون حماية كافية. العمليات الميدانية النائية تفتقر إلى الرؤية الآنية.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>المخاطر التشغيلية في قطاع الطاقة تُقاس بملايين الريالات لكل ساعة توقف.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>أعطال المعدات غير المخطط لها تُكلف ملايين الريالات. أنظمة التحكم الصناعي متصلة دون حماية كافية. العمليات الميدانية النائية تفتقر إلى الرؤية الآنية — والقرارات تتأخر.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">

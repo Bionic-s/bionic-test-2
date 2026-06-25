@@ -79,7 +79,7 @@ export const CapabilityShowAr = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-h4 text-text-muted max-w-3xl mx-auto"
           >
-            من منصة اعتماد إلى ضوابط الهيئة الوطنية للأمن السيبراني — نتحدث لغة التحول المؤسسي السعودي.
+            من منصة اعتماد إلى ضوابط الهيئة الوطنية للأمن السيبراني — نتحدث لغة التحول المؤسسي السعودي بطلاقة.
           </motion.p>
         </div>
 

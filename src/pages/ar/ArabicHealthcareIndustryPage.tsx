@@ -48,7 +48,7 @@ export default function ArabicHealthcareIndustryPage() {
             <span style={{ color: ACCENT }}>من خلال الذكاء الاصطناعي السريري.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من التصوير الطبي المدعوم بالذكاء الاصطناعي إلى منصات تجربة المريض الذكية — نمكن مقدمي الرعاية الصحية والمستشفيات والتجمعات الصحية السعودية من تحقيق نقلة نوعية.
+            من التصوير الطبي المدعوم بالذكاء الاصطناعي إلى منصات تجربة المريض الذكية — نمكّن مقدمي الرعاية الصحية والمستشفيات والتجمعات الصحية السعودية من تحقيق نقلة نوعية في الكفاءة السريرية والتشغيلية.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicHealthcareIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>بيانات الرعاية الصحية وفيرة — لكن الذكاء السريري نادر.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تراكمات الأشعة تُؤخر التشخيصات الحرجة. بيانات المريض متناثرة عبر أنظمة منفصلة. الموارد تُوزع يدويًا. وفجوات أمن المعلومات الصحية تُعرض بيانات المرضى للخطر.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>بيانات الرعاية الصحية وفيرة — لكن الذكاء السريري نادر، والتحول الحقيقي لم يبدأ بعد.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تراكمات التصوير الطبي تؤخر التشخيصات الحرجة. بيانات المريض متناثرة عبر أنظمة منفصلة. الموارد تُوزع يدوياً. وفجوات أمن المعلومات الصحية تُعرض بيانات المرضى للخطر.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">

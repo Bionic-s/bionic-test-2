@@ -48,7 +48,7 @@ export default function ArabicBankingIndustryPage() {
             <span style={{ color: ACCENT }}>بما ينسجم مع متطلبات البنك المركزي السعودي.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            من كشف الاحتيال الفوري إلى البنية التحتية المتوافقة مع البنك المركزي السعودي، ومن Customer 360 إلى الخدمات المصرفية المفتوحة — نمكّن المؤسسات المالية السعودية من تحقيق الامتثال التنظيمي والكفاءة التشغيلية.
+            من كشف الاحتيال الفوري إلى البنية التحتية المتوافقة مع البنك المركزي السعودي، ومن Customer 360 إلى الخدمات المصرفية المفتوحة — نمكّن المؤسسات المالية السعودية من تحقيق الامتثال التنظيمي والكفاءة التشغيلية والميزة التنافسية.
           </p>
         </motion.section>
             </div>
@@ -57,8 +57,8 @@ export default function ArabicBankingIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>وتيرة المتطلبات التنظيمية من البنك المركزي تتسارع — والأنظمة التقليدية عاجزة عن المواكبة.</h2>
-          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>التقارير التنظيمية اليدوية تثقل كاهل الفرق. الأنظمة التقليدية عاجزة عن رصد أنماط الاحتيال المعقدة. بيانات العملاء متناثرة عبر أنظمة متفرقة متعددة.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>وتيرة المتطلبات التنظيمية من البنك المركزي السعودي تتسارع — والأنظمة التقليدية عاجزة عن المواكبة.</h2>
+          <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>التقارير التنظيمية اليدوية تثقل كاهل فرق الامتثال. الأنظمة التقليدية عاجزة عن رصد أنماط الاحتيال المعقدة. بيانات العملاء متناثرة عبر أنظمة متفرقة — والفرصة تضيع.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[ACCENT]/20 transition-all duration-300">

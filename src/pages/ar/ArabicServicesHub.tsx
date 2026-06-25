@@ -58,11 +58,11 @@ export default function ArabicServicesHub() {
             <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-text-muted">كيف نحقق ذلك</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
               ثلاثة نماذج تنفيذ متكاملة.<br />
-              <span className="text-text-muted">شريك واحد مسؤول.</span>
+              <span className="text-text-muted">مسؤولية واحدة من البداية إلى النهاية.</span>
             </h1>
             <p className="text-text-muted text-lg max-w-[640px] mx-auto leading-relaxed">
               كل قدرة نقدمها — من الذكاء الاصطناعي إلى الأمن السيبراني — تُنفَّذ عبر واحد أو أكثر من هذه النماذج.
-              الاستشارات لصياغة الاستراتيجية. التنفيذ للتسليم. العمليات لتحقيق قيمة مستدامة.
+              الاستشارات لصياغة الاستراتيجية. التنفيذ للتسليم. العمليات لتحقيق قيمة تشغيلية مستدامة.
             </p>
           </div>
         </motion.div>
@@ -99,7 +99,7 @@ export default function ArabicServicesHub() {
                   ))}
                 </ul>
                 <span className="inline-flex items-center gap-1.5 text-sm font-medium group-hover:gap-2 transition-all" style={{ color: model.accent }}>
-                  اعرف المزيد <ArrowRight className="w-4 h-4 rotate-180" />
+                  استكشف <ArrowRight className="w-4 h-4 rotate-180" />
                 </span>
               </Link>
             ))}
@@ -115,7 +115,7 @@ export default function ArabicServicesHub() {
           className="mb-20"
         >
           <div className="text-center">
-            <h2 className="text-xl md:text-2xl font-bold mb-6">إلى أين تريد التوجه الآن؟</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-6">استكشف المزيد من منظومتنا</h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
                 { label: 'القدرات', path: '/ar/capabilities/ai', desc: '7 مجالات متكاملة' },
@@ -143,10 +143,10 @@ export default function ArabicServicesHub() {
         >
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              لست متأكدًا أي نموذج يناسبك؟
+              لست متأكداً أي نموذج يناسب تحولكم؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
-              معظم المهام تجمع بين نموذجين أو ثلاثة. دعونا نناقش ما يتطلبه تحولكم.
+              معظم التحولات المؤسسية تجمع بين نموذجين أو ثلاثة. دعونا نناقش ما يتطلبه مسار تحولكم.
             </p>
             <Link
               to="/ar/contact"

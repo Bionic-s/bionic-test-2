@@ -55,7 +55,7 @@ export default function ArabicCybersecurityPage() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">
-            نبني برامج أمن سيبراني تحمي عمليات الأعمال وتضمن الثقة التنظيمية وتمكّن التعافي — مصمَّمة خصيصًا لمشهد التهديدات ومتطلبات الامتثال في المملكة العربية السعودية.
+            نبني برامج أمن سيبراني تحمي العمليات وتضمن الثقة التنظيمية وتمكّن التعافي — مصمَّمة خصيصاً لمشهد التهديدات ومتطلبات الامتثال في المملكة.
           </p>
           </motion.div>
         </section>
@@ -63,10 +63,10 @@ export default function ArabicCybersecurityPage() {
         {/* ═══ 2. الواقع ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">معظم المؤسسات مؤمَّنة على الورق، لا في الواقع العملي.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">معظم المؤسسات مؤمَّنة على الورق — لا في الواقع التشغيلي.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: <FileWarning className="w-5 h-5" />, text: 'الأمن يُعامل كمربع امتثال، لا كقدرة على مرونة الأعمال.' },
+              { icon: <FileWarning className="w-5 h-5" />, text: 'الأمن يُعامل كمربع امتثال — لا كقدرة تمكّن مرونة الأعمال.' },
               { icon: <Activity className="w-5 h-5" />, text: 'مشهد التهديدات يتطور أسرع من قدرات الكشف والاستجابة.' },
               { icon: <Fingerprint className="w-5 h-5" />, text: 'الهوية هي الحدود الجديدة — لكن تبني نموذج Zero Trust لا يزال متجزئًا.' },
               { icon: <Database className="w-5 h-5" />, text: 'ضغط تنظيمي متزايد: هيئة الأمن السيبراني، نظام حماية البيانات الشخصية، والتشريعات القطاعية.' },

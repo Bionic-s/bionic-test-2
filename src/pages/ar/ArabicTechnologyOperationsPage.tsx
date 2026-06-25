@@ -55,9 +55,9 @@ export default function ArabicTechnologyOperationsPage() {
               <span className="text-tiny font-semibold tracking-wider uppercase block mb-3" style={{ color: ACCENT }}>
                 التحول التقني ← التميز التشغيلي ← قيمة الأعمال
               </span>
-              هذه هي القدرة التي تغلق الدائرة. لا نُصمّم وننشر فقط — بل ندير ونحسّن ونطوّر باستمرار المنصات التي تحقق نتائج تحولكم.
-              من هندسة المنصات إلى FinOps، من SRE إلى المراقبة متعددة المورّدين —{' '}
-              <strong className="text-text-primary">هنا حيث يتحول التحول إلى تشغيل.</strong>
+              هذه هي القدرة التي تغلق الدائرة. لا نصمم وننشر فقط — بل ندير ونحسن ونطور باستمرار المنصات التي تحقق نتائج تحولكم.
+              من هندسة المنصات إلى FinOps، ومن SRE إلى المراقبة متعددة الموردين —{' '}
+              <strong className="text-text-primary">هنا حيث يتحول التحول إلى قيمة تشغيلية مستدامة.</strong>
             </p>
           </motion.div>
         </section>
@@ -70,11 +70,11 @@ export default function ArabicTechnologyOperationsPage() {
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">
-            تشغيل منصات تقنية معقدة أصعب من بنائها.
+            تشغيل المنصات التقنية المعقدة أصعب من بنائها — وهنا تتسرب القيمة.
           </h2>
           <p className="text-text-muted mb-8 max-w-[720px] text-right mr-auto ml-0">
-            معظم المؤسسات تواجه تجزؤًا تشغيليًا يبدد قيمة استثماراتها في التحول.
-            الفجوة بين "تم النشر" و "تم التشغيل" هي حيث تتسرب القيمة.
+            معظم المؤسسات تواجه تجزؤاً تشغيلياً يبدد قيمة استثماراتها في التحول.
+            الفجوة بين "تم النشر" و"تم التشغيل" هي حيث تتسرب القيمة — ونحن هنا لسدها.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[

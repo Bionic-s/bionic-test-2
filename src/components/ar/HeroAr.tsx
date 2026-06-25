@@ -77,7 +77,7 @@ export const HeroAr = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُمكّن التحول المؤسسي بالذكاء الاصطناعي.</p>
+            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُتكامل التحول المؤسسي — نصمم الذكاء والأتمتة والثقة في صميم العمليات.</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
@@ -86,12 +86,12 @@ export const HeroAr = () => {
               <Link to="/ar/contact?source=hero&intent=architect" onClick={() => trackExecutiveBriefingClick('hero_primary')}
                 data-magnetic
                 className="inline-flex items-center gap-2 px-8 py-4 bg-accent-primary text-white font-semibold rounded-full hover:bg-accent-secondary transition-all shadow-lg">
-                تواصل مع فريقنا <ArrowRight className="w-5 h-5 rotate-180" />
+                احجز جلسة استراتيجية <ArrowRight className="w-5 h-5 rotate-180" />
               </Link>
               <Link to="/ar/blueprints?source=hero&intent=blueprints" onClick={() => trackCTAClick('hero', '/ar/blueprints')}
                 data-magnetic
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-primary text-accent-primary font-semibold rounded-full hover:bg-accent-primary hover:text-white transition-all">
-                استكشف المخططات المرجعية
+                استكشف معمارية التحول
               </Link>
             </div>
           </motion.div>
@@ -99,9 +99,9 @@ export const HeroAr = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12" ref={ref}>
             {[
-              { value: 11, suffix: '', label: 'شريك تقني استراتيجي', description: 'منظومة تقنية عالمية' },
-              { value: 7, suffix: '', label: 'خطوط أعمال', description: 'منظومة تحول متكاملة' },
-              { value: 5, suffix: '', label: 'قطاعات رئيسية', description: 'الخدمات المالية والمصرفية · حكومي · النفط والغاز · مؤسسات كبرى' },
+              { value: 11, suffix: '', label: 'شريك تقني استراتيجي', description: 'منظومة تقنية عالمية المستوى' },
+              { value: 7, suffix: '', label: 'خطوط أعمال متكاملة', description: 'من الاستراتيجية إلى العمليات الذكية' },
+              { value: 5, suffix: '', label: 'قطاعات استراتيجية', description: 'حكومي · خدمات مالية ومصرفية · نفط وغاز · رعاية صحية · مؤسسات كبرى' },
             ].map((metric, index) => (
               <motion.div key={index} className="text-center group cursor-pointer" whileHover={{ scale: 1.05, y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                 <motion.div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-primary mb-2 group-hover:text-accent-secondary transition-colors duration-300"

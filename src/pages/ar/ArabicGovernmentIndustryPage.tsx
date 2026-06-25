@@ -48,7 +48,7 @@ export default function ArabicGovernmentIndustryPage() {
             <span style={{ color: ACCENT }}>للقطاع العام في المملكة.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            انطلاقًا من تمكين الذكاء الاصطناعي الوطني وصولًا إلى السحابة السيادية المتوافقة مع الهيئة الوطنية للأمن السيبراني، ومن أنسجة البيانات بين الوزارات إلى تحقيق مستهدفات رؤية 2030 — نمكن الجهات الحكومية السعودية من تسريع التحول الوطني.
+            انطلاقاً من تمكين الذكاء الاصطناعي الوطني وصولاً إلى السحابة السيادية المتوافقة مع الهيئة الوطنية للأمن السيبراني، ومن أنسجة البيانات بين الوزارات إلى تحقيق مستهدفات رؤية 2030 — نمكّن الجهات الحكومية السعودية من تسريع التحول الوطني.
           </p>
         </motion.section>
             </div>
@@ -57,7 +57,7 @@ export default function ArabicGovernmentIndustryPage() {
 
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>التحول الحكومي تحول وطني — وهو الأعلى تعقيدًا.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>التحول الحكومي تحول وطني — وهو الأعلى تعقيداً والأعمق أثراً.</h2>
           <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>تعمل الوزارات في بيئات بيانات منعزلة. البنية التحتية التقليدية لا تستوعب أحمال الذكاء الاصطناعي. عمليات المشتريات يدوية ومثقلة بالامتثال.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {realityItems.map((item, i) => (

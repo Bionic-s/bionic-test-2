@@ -235,7 +235,7 @@ export default function ArabicProductsPage() {
             </h1>
             <p className="text-text-muted text-lg max-w-[620px] mx-auto leading-relaxed">
               تصفّح حسب الفئة — قارن العلامات التجارية والطرازات والإمكانيات.
-              علاقة واحدة. سلسلة مسؤولية واحدة. توريد وتشغيل داخل المملكة.
+              علاقة واحدة. سلسلة توريد واحدة. مسؤولية كاملة. توريد وتشغيل داخل المملكة.
             </p>
           </div>
         </motion.div>

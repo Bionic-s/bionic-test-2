@@ -56,7 +56,7 @@ export default function ArabicInfrastructurePage() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed">
-            نصمم وننشر ونشغّل بنية تحتية سيادية ومنصات سحابة هجينة تدعم أحمال الذكاء الاصطناعي والبيانات والمؤسسات — مبنية لمتطلبات الإقامة والمرونة في المملكة العربية السعودية.
+            نصمم وننشر ونشغّل بنية تحتية سيادية ومنصات سحابة هجينة تدعم أحمال الذكاء الاصطناعي والبيانات والمؤسسات — مبنية لمتطلبات السيادة والمرونة في المملكة.
           </p>
           </motion.div>
         </section>
@@ -64,10 +64,10 @@ export default function ArabicInfrastructurePage() {
         {/* ═══ 2. الواقع ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">معظم البنى التحتية تعيق المؤسسات ولا تدفعها للأمام.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-right">معظم البنى التحتية تعيق المؤسسات — بدلاً من أن تكون محركاً لنموها.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: <Server className="w-5 h-5" />, text: 'مراكز بيانات تقليدية تستهلك رأس المال دون تقديم مرونة تشغيلية.' },
+              { icon: <Server className="w-5 h-5" />, text: 'مراكز بيانات تقليدية تستهلك رأس المال دون تقديم مرونة تشغيلية تُذكر.' },
               { icon: <Globe className="w-5 h-5" />, text: 'تبني السحابة متوقف بسبب متطلبات السيادة وإقامة البيانات.' },
               { icon: <Cloud className="w-5 h-5" />, text: 'بيئات هجينة تُدار في أنظمة متفرقة — لا نموذج تشغيل موحد.' },
               { icon: <Activity className="w-5 h-5" />, text: 'عمليات بنية تحتية يدوية على نطاق يتطلب الأتمتة.' },

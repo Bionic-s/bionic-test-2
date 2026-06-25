@@ -167,14 +167,14 @@ export default function ArabicContactPage() {
                 <span style={{ color: '#00BFFF' }}>مهندس معماري</span>
               </h1>
               <p className="text-text-muted text-lg max-w-[580px] mx-auto leading-relaxed">
-                الذكاء الاصطناعي المؤسسي. تحول تقنية الأعمال. قيمة مؤسسية قابلة للقياس. بناء قدرات مستدامة للمدى الطويل.
+                الذكاء الاصطناعي المؤسسي. تحول تقنية الأعمال. قيمة مؤسسية قابلة للقياس. بناء قدرات تتراكم عبر الزمن.
               </p>
             </motion.section>
 
             {/* ═══ FORM ═══ */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}>
               <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12">
-                <p className="text-sm text-text-muted mb-8"><span className="text-red-400">*</span> حقول مطلوبة — باقي الحقول تساعدنا في التحضير لجلسة الإحاطة</p>
+                <p className="text-sm text-text-muted mb-8"><span className="text-red-400">*</span> حقول مطلوبة — باقي الحقول تساعدنا في التحضير لجلسة الاستراتيجية</p>
 
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
 
@@ -299,16 +299,16 @@ export default function ArabicContactPage() {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.5 }} className="mt-16 mb-12">
               <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8">
-                <p className="text-lg font-semibold text-text-primary mb-3">ما يمكن توقعه من جلسة الاستراتيجية</p>
+                <p className="text-lg font-semibold text-text-primary mb-3">ماذا يحدث بعد تقديم الطلب</p>
                 <p className="text-text-muted text-sm leading-relaxed mb-5">
-                  كل جلسة استراتيجية هي نقاش مركّز — وليس عرضًا تجاريًا.
+                  كل جلسة هي نقاش معماري مركز — وليست عرضاً تجارياً.
                 </p>
                 <ul className="space-y-2.5">
                   {[
-                    'أين تقف مؤسستكم في رحلة التحول',
-                    'أي القدرات تحقق أقصى قيمة في قطاعكم',
-                    'كيف تتوافق معماريتنا ذات العشر طبقات مع أولوياتكم',
-                    'كيف تبدو استراتيجية تراكم القدرات لمؤسستكم',
+                    'موقعكم الحالي في رحلة التحول ونضج القدرات',
+                    'أي القدرات تحقق أعلى عائد في قطاعكم',
+                    'كيف تنطبق معمارية التحول ذات العشر طبقات على مؤسستكم',
+                    'استراتيجية تراكم القدرات المؤسسية عبر الآفاق الأربعة',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
                       <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#00BFFF' }} />

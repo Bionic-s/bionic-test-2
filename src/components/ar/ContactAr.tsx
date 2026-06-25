@@ -109,7 +109,7 @@ export const ContactAr = () => {
               transition={{ duration: 0.6 }}
               className="text-h2 md:text-[38px] lg:text-h2 font-bold mb-4"
             >
-              تواصل مع فريقنا
+              احجز جلستك الاستراتيجية
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -117,7 +117,7 @@ export const ContactAr = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-h4 md:text-h3 lg:text-h3 text-text-muted"
             >
-              يرد فريقنا خلال ٢٤ ساعة لمناقشة أولويات التحول لديكم.
+              يرد فريقنا خلال ٢٤ ساعة لمناقشة أولويات التحول المؤسسي لديكم.
             </motion.p>
           </div>
 
@@ -130,14 +130,14 @@ export const ContactAr = () => {
             {/* How We Engage */}
             <div className="mb-12 pb-12 border-b border-white/5">
               <h3 className="text-h4 font-semibold mb-6 text-center">كيف نعمل معًا</h3>
-              <p className="text-body text-text-muted text-center mb-8">كل رحلة تحول تبدأ بمحادثة.</p>
+              <p className="text-body text-text-muted text-center mb-8">كل رحلة تحول تبدأ بجلسة استراتيجية مركزة.</p>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                 {[
-                  { step: '1', title: 'جلسة استراتيجية', dur: '٤٥ دقيقة', desc: 'نقاش مركز حول أولويات التحول — وليس عرضًا تجاريًا.' },
+                  { step: '1', title: 'جلسة استراتيجية', dur: '٤٥ دقيقة', desc: 'نقاش معماري مركز حول أولويات التحول — وليس عرضاً تجارياً.' },
                   { step: '2', title: 'الاكتشاف والتقييم', dur: 'أسبوع – أسبوعين', desc: 'تحليل معمق للمعمارية الحالية وقدراتكم وأهدافكم المؤسسية.' },
                   { step: '3', title: 'المعمارية والمخطط', dur: 'أسبوعين – ٤ أسابيع', desc: 'المعمارية المستهدفة وخارطة الطريق والحوكمة وحالة الأعمال.' },
                   { step: '4', title: 'التنفيذ', dur: '٨–١٦ أسبوعًا', desc: 'نشر المنصات والتكامل وإدارة التبني المؤسسي.' },
-                  { step: '5', title: 'العمليات المدارة', dur: 'مستمرة', desc: 'تحسين مستمر ومراقبة وتطوير طويل المدى.' },
+                  { step: '5', title: 'العمليات المدارة والمستدامة', dur: 'مستمرة', desc: 'تحسين مستمر ومراقبة وتطوير — نبقى معكم.' },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
                     <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-tiny font-bold" style={{ backgroundColor: '#2563EB15', color: '#2563EB' }}>{item.step}</div>
@@ -153,8 +153,8 @@ export const ContactAr = () => {
             <div className="mb-12 pb-12 border-b border-white/5">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-bg-primary/50 rounded-xl border border-white/5">
                 <div className="text-right">
-                  <h4 className="text-lg font-semibold text-text-primary mb-1">تفضل الحجز المباشر</h4>
-                  <p className="text-sm text-text-muted">اختر التاريخ والوقت المناسبين — بدون مراسلات متبادلة.</p>
+                  <h4 className="text-lg font-semibold text-text-primary mb-1">تفضل بالحجز المباشر</h4>
+                  <p className="text-sm text-text-muted">اختر التاريخ والوقت المناسبين — مباشرة دون مراسلات.</p>
                 </div>
                 <Link
                   to="/ar/book-discovery-call?source=contact&intent=strategy-session"
@@ -183,7 +183,7 @@ export const ContactAr = () => {
                     className="inline-flex items-center gap-2 px-6 py-3 bg-bg-primary border border-white/10 rounded-full text-text-muted hover:border-accent-primary/50 hover:text-text-primary transition-all"
                   >
                     <FileText className="w-4 h-4" />
-                    <span>استعرض المعمارية</span>
+                    <span>استعرض معمارية التحول</span>
                   </Link>
                   <Link
                     to="/ar/value"

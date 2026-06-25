@@ -149,10 +149,10 @@ export default function Page() {
             جلسة معمارية — ٣٠ دقيقة · بدون تكلفة
           </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-            تحدث إلى مهندس معماري أول
+            تحدث إلى مهندس حلول أول
           </h1>
           <p className="text-text-muted text-lg max-w-[620px] mx-auto leading-relaxed mb-8">
-            مناقشة تقنية حول ملاءمة المنصات وخيارات المعمارية ومسارات التطور
+            مناقشة تقنية معمقة حول ملاءمة المنصات وخيارات المعمارية ومسارات التطور
           </p>
           <div className="flex items-center justify-center gap-8 text-sm text-text-muted">
             <span className="flex items-center gap-2">
