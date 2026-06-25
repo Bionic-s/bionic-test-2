@@ -77,7 +77,7 @@ export const HeroAr = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُتكامل التحول المؤسسي — نصمم الذكاء والأتمتة والثقة في صميم العمليات.</p>
+            <p className="text-xl md:text-2xl lg:text-3xl text-text-muted mb-10 max-w-4xl mx-auto">مُمكّن التحول المؤسسي بالذكاء الاصطناعي.</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}

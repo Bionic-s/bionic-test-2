@@ -33,7 +33,7 @@ export const FooterAr = () => {
               <img src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)' }} />
             </Link>
-            <p className="text-tiny font-semibold text-text-primary mb-2">مُتكامل التحول المؤسسي</p>
+            <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي بالذكاء الاصطناعي</p>
             <p className="text-tiny text-text-muted leading-relaxed">
               نصمم الذكاء والأتمتة والثقة في صميم الأعمال.
             </p>

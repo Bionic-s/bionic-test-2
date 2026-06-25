@@ -55,7 +55,7 @@ export default function ArabicAboutPage() {
             </div>
             <h1 style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)', lineHeight: '1.12', fontWeight: 700, marginBottom: '0.5rem', letterSpacing: '-0.02em', fontFamily: "'Tajawal', sans-serif" }}>
               <span className="bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-white bg-clip-text text-transparent">
-                مُتكامل التحول المؤسسي
+                مُمكّن التحول المؤسسي بالذكاء الاصطناعي
               </span>
             </h1>
             <p className="text-lg md:text-xl text-text-muted font-light max-w-3xl mx-auto leading-relaxed mt-8" style={{ fontFamily: "'Tajawal', sans-serif" }}>
@@ -108,7 +108,7 @@ export default function ArabicAboutPage() {
 
           <div className="max-w-3xl mx-auto space-y-5 text-text-muted leading-relaxed text-base bg-bg-secondary/50 rounded-xl border border-white/5 p-8" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             <p>
-              بيونك سوليوشنز هي مُتكامل التحول المؤسسي — تأسست في المملكة العربية السعودية وتعمل في أرجائها.
+              بيونك سوليوشنز هي مُمكّن التحول المؤسسي بالذكاء الاصطناعي — تأسست في المملكة العربية السعودية وتعمل في أرجائها.
               نعمل مع الجهات الحكومية والبنوك والمشغّلين الصناعيين ومقدمي الرعاية الصحية والمؤسسات الكبرى، وندير التحول وفق البيئة التنظيمية السعودية:
               منصة اعتماد للمشتريات الحكومية، وضوابط الهيئة الوطنية للأمن السيبراني، وأطر امتثال البنك المركزي السعودي، ونظام حماية البيانات الشخصية.
             </p>
