@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#00BFFF';
-const HERO_BG = '/test-site-2/images/enterprise-ai-transformation-hero.avif';
+const HERO_BG = '/test-site-2/images/hero/ai-enterprise.avif';
 const PATTERN_BG = '/test-site-2/images/geometric_pattern_4.jpg';
 
 const SectionLabel = ({ children }: { children: string }) => (

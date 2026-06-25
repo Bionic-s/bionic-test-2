@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle, Shield, TrendingUp, Users, CreditCard, GitBran
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
-const heroBg = `${import.meta.env.BASE_URL}images/enterprise-ai-transformation-hero.avif`;
+const heroBg = `${import.meta.env.BASE_URL}images/hero/ai-enterprise.avif`;
 
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };

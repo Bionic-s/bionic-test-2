@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle, Shield, Cpu, GitBranch, BarChart3, TrendingUp,
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
-const heroBg = `${import.meta.env.BASE_URL}images/enterprise-integration-hero.jpg`;
+const heroBg = `${import.meta.env.BASE_URL}images/hero/ai-agents.avif`;
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#00BFFF';
