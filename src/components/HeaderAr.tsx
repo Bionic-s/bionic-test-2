@@ -137,7 +137,7 @@ export const HeaderAr = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex flex-row-reverse items-center gap-1">
+            <nav className="hidden md:flex flex-row items-center gap-1">
 
               {/* ═══ About Dropdown ═══ */}
               <div className="relative"
@@ -386,7 +386,7 @@ export const HeaderAr = () => {
             </nav>
 
             {/* Language + CTA group */}
-            <div className="hidden md:flex flex-row-reverse items-center gap-3">
+            <div className="hidden md:flex flex-row items-center gap-3">
               <Link to={location.pathname.replace(/^\/ar/, '') || '/'}
                 className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
                 aria-label="English version">
