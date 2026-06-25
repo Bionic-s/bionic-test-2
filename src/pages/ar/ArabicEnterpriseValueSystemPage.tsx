@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Zap, Shield, BarChart3, RefreshCw, Target, Layers, Brain } from 'lucide-react';
 import { trackValueSystemView } from '../../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#059669';
@@ -20,7 +21,12 @@ export default function ArabicEnterpriseValueSystemPage() {
   const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+      <Helmet>
+        <title>منظومة القيمة | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="كيف تتراكم القيمة عبر الآفاق الزمنية — من المكاسب التشغيلية الفورية إلى بناء القدرات المؤسسية على مدى سنوات." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 1. HERO ═══ */}

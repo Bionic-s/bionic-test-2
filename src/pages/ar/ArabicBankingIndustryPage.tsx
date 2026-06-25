@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, Cpu, GitBranch, BarChart3, TrendingUp, Brain, Users, CreditCard, Heart, Wrench } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 const heroBg = `${import.meta.env.BASE_URL}images/enterprise-ai-transformation-hero.avif`;
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
@@ -35,7 +36,12 @@ export default function ArabicBankingIndustryPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+      <Helmet>
+        <title>البنوك والخدمات المالية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="التحول بالذكاء الاصطناعي للبنوك والخدمات المالية — استخبارات مكافحة غسل الأموال والاحتيال، نمذجة مخاطر الائتمان، وأتمتة التقارير التنظيمية." />
+      </Helmet>
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.5)  %, var(--bg-primary)  %)` }} />

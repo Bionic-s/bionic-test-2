@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Helmet } from 'react-helmet-async';
 
 export default function PrivacyPolicyPage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Privacy Policy | Bionic Solutions</title>
+        <meta name="description" content="Bionic Solutions privacy policy — how we collect, use, and protect personal data in compliance with Saudi PDPL and international standards." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-3xl">
         <motion.div
           ref={ref}

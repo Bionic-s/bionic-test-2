@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Zap, Shield, BarChart3, RefreshCw, Target, Layers, Brain } from 'lucide-react';
 import { trackValueSystemView } from '../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#059669';
@@ -21,7 +22,12 @@ export default function EnterpriseValueSystemPage() {
   const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Value System | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="How value accumulates across time horizons — from immediate operational wins to multi-year enterprise capability building." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 1. HERO ═══ */}

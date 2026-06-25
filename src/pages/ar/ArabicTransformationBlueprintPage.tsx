@@ -8,6 +8,7 @@ import { blueprints } from '../../data/blueprintsData';
 import { blueprintTranslations } from '../../data/blueprintsDataAr';
 import { trackBlueprintView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 
 // ── Translation Maps ──────────────────────────────────────
 
@@ -75,7 +76,12 @@ export default function ArabicTransformationBlueprintPage() {
 
   if (!bp) {
     return (
-      <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+      <div
+         className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+        <Helmet>
+          <title>مخطط تحوّل | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+          <meta name="description" content="مخطط تحول تفصيلي — معمارية، مخرجات، وأنماط تنفيذ من تحولات مؤسسية سعودية حقيقية." />
+        </Helmet>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">المخطط المرجعي غير موجود</h1>
           <p className="text-text-muted mb-8">المخطط المرجعي للتحول الذي تبحث عنه غير متوفر.</p>

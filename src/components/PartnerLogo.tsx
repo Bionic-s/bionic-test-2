@@ -32,7 +32,7 @@ export const PartnerLogo = ({
       <img
         src={p.logo}
         alt={p.name}
-        className={`object-contain ${className}`}
+        loading="lazy" decoding="async" className={`object-contain ${className}`}
         style={{
           maxWidth: maxW,
           maxHeight: px,

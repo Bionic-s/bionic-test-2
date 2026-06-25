@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { GitBranch, ArrowRight, Workflow, Zap, Network, Plug, RefreshCw, Activity, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#10B981';
@@ -31,13 +32,18 @@ export default function IntegrationPage() {
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Integration & Intelligent Operations | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Integration & Intelligent Operations — API-led architecture, event-driven, and workflow orchestration." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+            <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
           </div>
           <motion.div

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Lenis from 'lenis';
 
 import { Header } from './components/Header';
@@ -294,7 +295,11 @@ function AppContent() {
           <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {(location.pathname.startsWith('/ar/') || location.pathname === '/ar') ? (
-        <FooterAr />
+        <>
+          <FooterAr />
+          <StickyCTABar />
+          <ProgressiveProfiling />
+        </>
       ) : (
         <>
           <Footer />
@@ -310,9 +315,11 @@ function AppContent() {
 
 function App() {
   return (
-    <Router basename="/test-site-2">
-      <AppContent />
-    </Router>
+    <HelmetProvider>
+      <Router basename="/test-site-2">
+        <AppContent />
+      </Router>
+    </HelmetProvider>
   );
 }
 

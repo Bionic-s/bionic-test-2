@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Helmet } from 'react-helmet-async';
 
 export default function TermsOfUsePage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Terms of Use | Bionic Solutions</title>
+        <meta name="description" content="Terms of use for the Bionic Solutions website and services. By accessing this site, you agree to these terms." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-3xl">
         <motion.div
           ref={ref}

@@ -30,7 +30,7 @@ export const FooterAr = () => {
             </div>
 
             <Link to="/ar" className="inline-block mb-4 hover:opacity-80 transition-opacity">
-              <img src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
+              <img loading="lazy" decoding="async" src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)' }} />
             </Link>
             <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي بالذكاء الاصطناعي</p>

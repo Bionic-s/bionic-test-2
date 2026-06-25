@@ -6,6 +6,7 @@ import { supabase } from '../../lib/supabase';
 import { trackFormSubmitted, trackFormStarted } from '../../lib/analytics';
 import OfficeLocations from '../../components/OfficeLocations';
 import { contactEmails, contactPhone, businessHours } from '../../data/contactData';
+import { Helmet } from 'react-helmet-async';
 
 const validateEmail = (email: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const validatePhone = (phone: string): boolean => phone.replace(/\D/g, '').length >= 5;
@@ -154,7 +155,12 @@ export default function ArabicContactPage() {
     }`;
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+      <Helmet>
+        <title>تواصل معنا | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="ابدأ محادثة مع بيونك سوليوشنز. التحول المؤسسي بالذكاء الاصطناعي، تقييم الموردين، أو إحاطة استراتيجية." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-3xl relative" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {!isSubmitted ? (

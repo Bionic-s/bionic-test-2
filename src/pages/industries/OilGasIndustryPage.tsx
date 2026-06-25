@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Cpu, TrendingUp, Shield, BarChart3, Wrench } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 const heroBg = `${import.meta.env.BASE_URL}images/it-infrastructure.avif`;
 
 
@@ -63,7 +64,12 @@ export default function OilGasIndustryPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Oil & Gas | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="AI transformation for oil & gas — predictive maintenance, HSE compliance, OT data intelligence." />
+      </Helmet>
       {/* ═══ 1. HERO SECTION — Full-width background ═══ */}
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />

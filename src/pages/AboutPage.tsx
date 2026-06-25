@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Shield, Globe, Cpu, Users, MapPin, Target, Zap, Layers, CheckCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#2563EB';
@@ -28,7 +29,12 @@ export default function AboutPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>About | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Bionic Solutions is Saudi Arabia's enterprise AI transformation integrator — uniting strategy, technology, data, and governance into measured business outcomes." />
+      </Helmet>
 
       {/* ═══ 1. HERO — with background image ═══ */}
       <section className="relative overflow-hidden">
@@ -38,7 +44,7 @@ export default function AboutPage() {
             src={HERO_BG}
             alt=""
             className="w-full h-full object-cover"
-            loading="eager"
+            fetchPriority="high" decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>

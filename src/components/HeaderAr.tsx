@@ -126,8 +126,7 @@ export const HeaderAr = () => {
 
             {/* Logo */}
             <Link to="/ar" className="flex-shrink-0">
-              <img
-                src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
+              <img fetchPriority="high"                 src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
                 alt="Bionic Solutions"
                 className="h-10 w-auto"
                 style={{
@@ -418,8 +417,7 @@ export const HeaderAr = () => {
             {/* Mobile Nav Header: Logo + Close */}
             <div className="flex items-center justify-between p-4 border-b border-white/5">
               <Link to="/ar" onClick={() => setMobileMenuOpen(false)}>
-                <img
-                  src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
+                <img fetchPriority="high"                   src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
                   alt="بيونك سوليوشنز"
                   className="h-8 w-auto"
                   style={{

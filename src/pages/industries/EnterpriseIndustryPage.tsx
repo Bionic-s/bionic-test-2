@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Brain, TrendingUp, Shield, Cpu, GitBranch, BarChart3 } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 const heroBg = `${import.meta.env.BASE_URL}images/enterprise-integration-hero.jpg`;
 
 
@@ -68,7 +69,12 @@ export default function EnterpriseIndustryPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Enterprise | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="AI transformation for large enterprises — workforce augmentation, intelligent automation, enterprise AI governance." />
+      </Helmet>
       {/* ═══ 1. HERO SECTION — Full-width background ═══ */}
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Shield, ArrowRight, Eye, Fingerprint, Lock, Database, FileWarning, Activity, CheckCircle, ExternalLink } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#DC2626';
@@ -31,13 +32,18 @@ export default function CybersecurityPage() {
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Cybersecurity & Cyber Resilience | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Cybersecurity & Cyber Resilience — SOC, SIEM, Zero Trust, identity, and ransomware resilience." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+            <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
           </div>
           <motion.div

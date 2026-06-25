@@ -6,6 +6,7 @@ import {
   ShieldCheck, AlertCircle, Send, MapPin,
 } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import { Helmet } from 'react-helmet-async';
 
 /* ───────────────────────────────────────────
    Date helpers — KSA working days
@@ -133,7 +134,12 @@ export default function Page() {
     }`;
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+      <Helmet>
+        <title>احجز جلسة استكشافية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="احجز جلسة استكشافية لمدة 30 دقيقة مع بيونك سوليوشنز. بدون عرض بيعي أو ضغوط — محادثة منظمة حول أولويات التحول لديك." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-4xl">
 
         {/* ═══════════════════════════════════════════

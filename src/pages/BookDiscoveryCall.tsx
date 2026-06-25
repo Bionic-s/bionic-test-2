@@ -6,6 +6,7 @@ import {
   ShieldCheck, AlertCircle, Send, MapPin,
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { Helmet } from 'react-helmet-async';
 
 /* ───────────────────────────────────────────
    Date helpers — KSA working days
@@ -133,7 +134,12 @@ export default function BookDiscoveryCallPage() {
     }`;
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Book Discovery Call | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Book a 30-minute discovery call with Bionic Solutions. No pitch, no pressure — a structured conversation about your transformation priorities." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-4xl">
 
         {/* ═══════════════════════════════════════════

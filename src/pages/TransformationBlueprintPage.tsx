@@ -7,6 +7,7 @@ import { Buildings, Bank, Drop, Heartbeat, BuildingOffice, ChartBar, Desktop, Gi
 import { blueprints } from '../data/blueprintsData';
 import { trackBlueprintView } from '../lib/analytics';
 import { PartnerLogo } from '../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 
 const industryIcons: Record<string, React.ReactNode> = {
   'Government & Public Sector': <Buildings size={20} weight="fill" />,
@@ -45,7 +46,12 @@ export default function TransformationBlueprintPage() {
 
   if (!bp) {
     return (
-      <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <div
+         className="min-h-screen bg-bg-primary pt-32 pb-24">
+        <Helmet>
+          <title>Blueprint | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+          <meta name="description" content="Detailed transformation blueprint — architecture, outcomes, and implementation patterns from Saudi enterprise transformations." />
+        </Helmet>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Blueprint Not Found</h1>
           <p className="text-text-muted mb-8">The transformation blueprint you're looking for doesn't exist.</p>

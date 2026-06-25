@@ -92,7 +92,7 @@ export default function ArabicCapabilitiesPage() {
       <nav className="fixed top-0 inset-x-0 z-[100] backdrop-blur-[10px] bg-[#0B0D1088] border-b border-white/5">
         <div className="max-w-[1180px] mx-auto px-7 flex items-center justify-between h-[68px]">
           <Link to="/ar" className="flex items-center">
-            <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-8 w-auto" />
+            <img loading="lazy" decoding="async" src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-8 w-auto" />
           </Link>
           <div className="flex items-center gap-6">
             <Link to="/ar" className="flex items-center gap-1.5 text-sm text-[#9AA4AF] hover:text-white transition-colors">
@@ -240,7 +240,7 @@ export default function ArabicCapabilitiesPage() {
         <div className="max-w-[1180px] mx-auto px-7 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <img src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-7 w-auto opacity-70" />
+              <img loading="lazy" decoding="async" src="/test-site-2/bionic-full-white.svg" alt="Bionic Solutions" className="h-7 w-auto opacity-70" />
               <span className="text-xs text-[#5B6470]">شريك التحول المؤسسي للذكاء الاصطناعي</span>
             </div>
             <div className="flex items-center gap-5 text-sm text-[#9AA4AF]">

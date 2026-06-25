@@ -56,7 +56,7 @@ export const Footer = () => {
             </div>
             
             <Link to="/" className="inline-block mb-4 hover:opacity-80 transition-opacity footer-logo-link">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`} 
                 alt="Bionic Solutions" 
                 className="h-10 w-auto footer-logo brightness-0 invert"

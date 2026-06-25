@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, Target, BarChart3, FileText, Shield, Compass, 
 import { trackServicePageView } from '../../lib/analytics';
 import { CANON_PARTNERS, type PartnerData } from '../../data/partnersData';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#0D9488';
@@ -62,11 +63,16 @@ export default function ConsultingAdvisoryPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Consulting & Advisory | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="AI readiness assessment, architecture design, vendor selection, and transformation roadmap." />
+      </Helmet>
       {/* ═══ HERO ═══ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>
         <motion.div

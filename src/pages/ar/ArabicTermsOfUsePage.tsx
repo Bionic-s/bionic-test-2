@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+      <Helmet>
+        <title>شروط الاستخدام | بيونك سوليوشنز</title>
+        <meta name="description" content="شروط استخدام موقع وخدمات بيونك سوليوشنز. باستخدامك لهذا الموقع، فإنك توافق على هذه الشروط." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-4xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">شروط الاستخدام</h1>

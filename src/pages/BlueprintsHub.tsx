@@ -7,6 +7,7 @@ import { Buildings, Bank, Drop, Heartbeat, BuildingOffice } from '@phosphor-icon
 import { PartnerLogo } from '../components/PartnerLogo';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../data/blueprintsData';
 import { trackBlueprintHubView } from '../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const HERO_BG = '/test-site-2/images/security-alert.avif';
 
@@ -109,11 +110,16 @@ export default function BlueprintsHub() {
   }, [selectedIndustries, selectedCapabilities, selectedPartners, searchQuery]);
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Blueprints | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Reference transformation blueprints across government, banking, oil & gas, healthcare, and enterprise — real patterns, real outcomes." />
+      </Helmet>
       {/* ═══ HERO ═══ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>
         <motion.div

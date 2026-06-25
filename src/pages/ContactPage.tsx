@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { trackFormSubmitted, trackFormStarted } from '../lib/analytics';
 import OfficeLocations from '../components/OfficeLocations';
 import { contactEmails, contactPhone, businessHours } from '../data/contactData';
+import { Helmet } from 'react-helmet-async';
 
 const validateEmail = (email: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const validatePhone = (phone: string): boolean => phone.replace(/\D/g, '').length >= 5;
@@ -154,7 +155,12 @@ export default function ContactPage() {
     }`;
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Contact | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Start a conversation with Bionic Solutions. Enterprise AI transformation, vendor assessment, or strategic briefing." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-3xl relative">
 
         {!isSubmitted ? (

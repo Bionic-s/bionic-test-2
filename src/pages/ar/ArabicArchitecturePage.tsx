@@ -7,6 +7,7 @@ import {
   FileText, Monitor, Database, Shield, BarChart3, Gauge, Zap
 } from 'lucide-react';
 import { trackArchitectureView } from '../../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#D97706';
@@ -122,12 +123,17 @@ export default function ArabicArchitecturePage() {
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary" dir="rtl">
+      <Helmet>
+        <title>الهندسة المعمارية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="منهجيتنا المعمارية من 10 طبقات توحّد الاستراتيجية والقدرات والخدمات والقطاعات والحوكمة في نظام تشغيلي متكامل." />
+      </Helmet>
 
       {/* ═══ 1. HERO — مع صورة خلفية ═══ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>
 

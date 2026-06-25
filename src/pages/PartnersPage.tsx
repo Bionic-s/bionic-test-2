@@ -6,6 +6,7 @@ import { ArrowRight, Shield, GitMerge, Lightbulb, CheckCircle, Cpu } from 'lucid
 import { PartnerLogo } from '../components/PartnerLogo';
 import { CANON_PARTNERS } from '../data/partnersData';
 import { trackPageView } from '../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
 
@@ -62,7 +63,12 @@ export default function PartnersPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Partners | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Strategic technology partners — Salesforce, Google Cloud, IBM, Intel, Dell, Informatica, and more. Multi-vendor, one accountable relationship." />
+      </Helmet>
       {/* ── Hero ── */}
       <section className="relative pt-40 pb-20 md:pt-48 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-accent-primary/5 via-transparent to-transparent pointer-events-none" />

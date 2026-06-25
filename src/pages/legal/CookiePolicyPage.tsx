@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Helmet } from 'react-helmet-async';
 
 export default function CookiePolicyPage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24">
+      <Helmet>
+        <title>Cookie Policy | Bionic Solutions</title>
+        <meta name="description" content="Bionic Solutions cookie policy — how we use cookies and similar technologies to improve your experience." />
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-3xl">
         <motion.div
           ref={ref}

@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Cog, Shield, CheckCircle } from 'lucide-react';
 import { trackServicePageView } from '../../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#FFFFFF';
@@ -43,11 +44,16 @@ export default function ServicesHub() {
 
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Services | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Advisory, implementation, and managed operations — one accountable partner across the full transformation lifecycle." />
+      </Helmet>
       {/* ═══ HERO ═══ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>
         <motion.div

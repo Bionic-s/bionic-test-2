@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, Cpu, GitBranch, BarChart3, TrendingUp, Brain, Users, CreditCard, Heart, Wrench } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 const heroBg = `${import.meta.env.BASE_URL}images/enterprise-integration-hero.jpg`;
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
@@ -35,7 +36,12 @@ export default function ArabicEnterpriseIndustryPage() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
+      <Helmet>
+        <title>المؤسسات الكبرى | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="التحول بالذكاء الاصطناعي للمؤسسات الكبرى — تعزيز القوى العاملة، الأتمتة الذكية، وحوكمة الذكاء الاصطناعي المؤسسي." />
+      </Helmet>
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.5)  %, var(--bg-primary)  %)` }} />

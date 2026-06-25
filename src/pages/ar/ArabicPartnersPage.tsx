@@ -6,6 +6,7 @@ import { ArrowRight, Shield, GitMerge, Lightbulb, CheckCircle, Cpu } from 'lucid
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { CANON_PARTNERS } from '../../data/partnersData';
 import { trackPageView } from '../../lib/analytics';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
 
@@ -61,7 +62,12 @@ export default function ArabicPartnersPage() {
   const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <div className="min-h-screen bg-bg-primary" dir="rtl">
+    <div
+       className="min-h-screen bg-bg-primary" dir="rtl">
+      <Helmet>
+        <title>الشركاء | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="شركاؤنا الاستراتيجيون — سيلزفورس، قوقل كلاود، آي بي إم، إنتل، ديل، إنفورماتيكا، وغيرهم. علاقة واحدة شاملة لتعدد الموردين." />
+      </Helmet>
       {/* ── Hero ── */}
       <section className="relative pt-40 pb-20 md:pt-48 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-accent-primary/5 via-transparent to-transparent pointer-events-none" />

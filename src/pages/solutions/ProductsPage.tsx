@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Server, Shield, Cpu, Wrench } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#00BFFF';
@@ -213,12 +214,17 @@ export default function ProductsPage() {
   const categories = getCategories(activeTab);
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div
+       className="min-h-screen bg-bg-primary">
+      <Helmet>
+        <title>Products | Bionic Solutions — Enterprise AI Transformation Integrator</title>
+        <meta name="description" content="Complete enterprise AI ecosystem — from mobile to cloud. 11 partners. 50+ products. One relationship." />
+      </Helmet>
 
       {/* ═══ 1. HERO ═══ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={HERO_BG} alt="" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/85 to-bg-primary" />
         </div>
         <motion.div

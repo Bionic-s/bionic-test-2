@@ -25,8 +25,8 @@ export const useAnimatedText = (
   });
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-    let timeoutId: NodeJS.Timeout;
+    let intervalId: ReturnType<typeof setTimeout>;
+    let timeoutId: ReturnType<typeof setTimeout>;
 
     const startCycle = () => {
       setIsAnimating(true);
