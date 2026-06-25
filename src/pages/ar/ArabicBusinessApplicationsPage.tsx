@@ -8,7 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#F97316';
+const ACCENT = '#00BFFF';
 const HERO_BG = `${import.meta.env.BASE_URL}images/professional-services-ai-hero.jpg`;
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -75,7 +75,7 @@ export default function ArabicBusinessApplicationsPage() {
             className="relative z-10 pt-40 pb-32 text-center px-4"
           >
           <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10"
-            style={{ borderColor: '#F9731640', backgroundColor: '#F9731608' }}>
+            style={{ borderColor: '#00BFFF40', backgroundColor: '#00BFFF08' }}>
             <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>تطبيقات الأعمال وتجربة العملاء</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
@@ -94,9 +94,9 @@ export default function ArabicBusinessApplicationsPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معظم تطبيقات الأعمال تُعتمد — ولا تُحتضن.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {realityItems.map((item: any, i: number) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#F97316]30" style={{ flexDirection: 'row-reverse' }}>
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#00BFFF]30" style={{ flexDirection: 'row-reverse' }}>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: '#F9731615', color: '#F97316' }}>{iconMap[item.iconName]}</div>
+                  style={{ backgroundColor: '#00BFFF15', color: '#00BFFF' }}>{iconMap[item.iconName]}</div>
                 <p className="text-text-primary text-sm leading-relaxed text-right">{item.text}</p>
               </div>
             ))}
@@ -111,17 +111,17 @@ export default function ArabicBusinessApplicationsPage() {
 
           <div className="space-y-4">
             {capsWithIcons.map((cap: any, i: number) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#F97316]1A">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF]1A">
                 <div className="flex flex-col md:flex-row md:items-start gap-5" style={{ flexDirection: 'row-reverse' }}>
                   <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: '#F9731612', color: '#F97316' }}>{cap.icon}</div>
+                    style={{ backgroundColor: '#00BFFF12', color: '#00BFFF' }}>{cap.icon}</div>
                   <div className="flex-1 text-right">
                     <h3 className="text-lg font-bold mb-1 text-text-primary">{cap.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.desc}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {cap.outcomes.map((o: string, j: number) => (
                         <div key={j} className="flex items-start gap-2 flex-row-reverse">
-                          <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: '#F97316' }} />
+                          <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: '#00BFFF' }} />
                           <span className="text-xs text-text-primary leading-relaxed">{o}</span>
                         </div>
                       ))}
@@ -143,8 +143,8 @@ export default function ArabicBusinessApplicationsPage() {
               { href: '/ar/services/implementation', title: 'التنفيذ والتسليم', desc: 'نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps' },
               { href: '/ar/services/operations', title: 'العمليات المدارة', desc: 'عمليات المنصات ٢٤×٧ · مركز العمليات الأمنية كخدمة · ·  مستويات' },
             ].map((s, i) => (
-              <Link key={i} to={s.href} className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#F97316]/25 transition-all duration-300 text-right">
-                <h3 className="font-semibold mb-1 group-hover:text-[#F97316] transition-colors">{s.title}</h3>
+              <Link key={i} to={s.href} className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
+                <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">{s.title}</h3>
                 <p className="text-tiny text-text-muted">{s.desc}</p>
               </Link>
             ))}
@@ -154,13 +154,13 @@ export default function ArabicBusinessApplicationsPage() {
         {/* ═══ 4. WHY BIONIC ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <div className="rounded-2xl p-10 md:p-12"
-            style={{ background: 'linear-gradient(135deg, #F9731608, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #F973161A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <SectionLabel>لماذا بيونك</SectionLabel>
             <h2 className="text-2xl md:text-3xl font-bold mb-10">الشريك الذي يحول القدرات إلى نتائج.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {whyItems.map((item: any, i: number) => (
                 <div key={i} className="flex gap-3 flex-row-reverse">
-                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#F97316' }} />
+                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#00BFFF' }} />
                   <div className="text-right">
                     <h3 className="font-semibold text-base mb-1 text-text-primary">{item.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
@@ -180,7 +180,7 @@ export default function ArabicBusinessApplicationsPage() {
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group">
                 <div className="flex items-center gap-4 mb-3" style={{ flexDirection: 'row-reverse' }}>
                   <PartnerLogo partner={p} size="sm" />
-                  <span className="text-xs font-medium" style={{ color: '#F9731699' }}>{p.role}</span>
+                  <span className="text-xs font-medium" style={{ color: '#00BFFF99' }}>{p.role}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed text-right">{p.tech}</p>
               </div>
@@ -215,10 +215,10 @@ export default function ArabicBusinessApplicationsPage() {
             {insightItems.map((item: any, i: number) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300">
                 <span className="text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block"
-                  style={{ backgroundColor: '#F9731612', color: '#F97316' }}>{item.tag}</span>
+                  style={{ backgroundColor: '#00BFFF12', color: '#00BFFF' }}>{item.tag}</span>
                 <h3 className="text-lg font-bold mb-2 text-text-primary text-right">{item.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-4 text-right">{item.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium" style={{ color: '#F9731699' }}>
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium" style={{ color: '#00BFFF99' }}>
                   <ExternalLink className="w-3 h-3" /> اقرأ الرؤية
                 </span>
               </div>
@@ -238,10 +238,10 @@ export default function ArabicBusinessApplicationsPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تجسد هذه القدرة.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp: any, i: number) => (
-              <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#F97316]/25 transition-all duration-300 text-right">
-                <span className="text-tiny text-[#F97316]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#F97316] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#F97316]/40 group-hover:text-[#F97316] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
@@ -255,17 +255,17 @@ export default function ArabicBusinessApplicationsPage() {
           transition={{ duration: 0.7 }}
         >
           <div className="rounded-2xl p-10 md:p-14 text-center"
-            style={{ background: 'linear-gradient(135deg, #F973160D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #F973161A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               مستعدون لتحويل تطبيقات الأعمال إلى<br />
-              <span style={{ color: '#F97316' }}>ميزة تنافسية</span>؟
+              <span style={{ color: '#00BFFF' }}>ميزة تنافسية</span>؟
             </h2>
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
               لنناقش كيف يمكن لمنصات إدارة العلاقات وتجربة العملاء الذكية دفع النمو — مع امتثال سعودي مدمج.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: '#F97316', boxShadow: '0 8px 24px #F9731620' }}>
+                style={{ backgroundColor: '#00BFFF', boxShadow: '0 8px 24px #00BFFF20' }}>
                 تواصل معنا <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link to="/ar/blueprints" className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300">

@@ -5,7 +5,7 @@ import { ArrowRight, Building2, Shield, Globe, Cpu, Users, MapPin, Target, Zap, 
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#2563EB';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/enterprise-ai-transformation-hero.avif';
 const PATTERN_BG = '/test-site-2/images/geometric_pattern_4.jpg';
 
@@ -55,12 +55,12 @@ export default function AboutPage() {
         >
           <div className="container mx-auto max-w-4xl">
             <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10"
-              style={{ borderColor: '#2563EB40', backgroundColor: '#2563EB10', backdropFilter: 'blur(8px)' }}>
+              style={{ borderColor: '#00BFFF40', backgroundColor: '#00BFFF10', backdropFilter: 'blur(8px)' }}>
               <Building2 className="w-4 h-4 mr-2" style={{ color: ACCENT }} />
               <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>Bionic Solutions</span>
             </div>
             <h1 style={{ fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)', lineHeight: '1.12', fontWeight: 700, marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#00BFFF] via-[#60A5FA] to-white bg-clip-text text-transparent">
                 Enterprise Transformation Integrator
               </span>
             </h1>
@@ -73,13 +73,13 @@ export default function AboutPage() {
               <Link
                 to="/capabilities/ai"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #2563EB20' }}>
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>
                 Explore Our Capabilities
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#2563EB40]">
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF40]">
                 Start the Conversation
               </Link>
             </div>
@@ -98,11 +98,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
             {[
-              { icon: Layers, color: '#2563EB', title: 'Strategy & Architecture', desc: 'We map your current state, define the target architecture, and build the business case — grounded in Saudi regulatory reality.' },
-              { icon: Zap, color: '#7C3AED', title: 'Implementation & Delivery', desc: 'Platform deployment, integration engineering, and adoption enablement — multi-vendor, multi-domain, single accountability.' },
-              { icon: CheckCircle, color: '#059669', title: 'Managed Operations', desc: '24×7 monitoring, AI operations, continuous optimization — we stay with you long after go-live.' },
+              { icon: Layers, color: '#00BFFF', title: 'Strategy & Architecture', desc: 'We map your current state, define the target architecture, and build the business case — grounded in Saudi regulatory reality.' },
+              { icon: Zap, color: '#00BFFF', title: 'Implementation & Delivery', desc: 'Platform deployment, integration engineering, and adoption enablement — multi-vendor, multi-domain, single accountability.' },
+              { icon: CheckCircle, color: '#00BFFF', title: 'Managed Operations', desc: '24×7 monitoring, AI operations, continuous optimization — we stay with you long after go-live.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-8 text-center transition-all duration-300 hover:border-[#2563EB15] hover:-translate-y-1">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-8 text-center transition-all duration-300 hover:border-[#00BFFF15] hover:-translate-y-1">
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5"
                   style={{ backgroundColor: `${item.color}12` }}>
                   <item.icon className="w-7 h-7" style={{ color: item.color }} />
@@ -132,7 +132,7 @@ export default function AboutPage() {
         {/* ═══ 3. WHY BIONIC — with icons ═══ */}
         <motion.section ref={ref2} {...fadeIn} animate={inView2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-20">
           <div className="rounded-2xl p-10 md:p-14 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #2563EB08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             {/* Subtle background pattern */}
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
               style={{
@@ -151,9 +151,9 @@ export default function AboutPage() {
                   { icon: Shield, title: 'End-to-End Accountability', desc: 'From assessment through architecture to operations and continuous evolution — a single accountable partner across the full transformation lifecycle.' },
                   { icon: Globe, title: 'Vision 2030 Alignment', desc: 'Every engagement is grounded in Saudi Arabia\'s national transformation priorities — sovereignty, digital government, industrial modernization, and human capability development.' },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-5 bg-bg-primary/40 rounded-xl p-6 border border-white/5 transition-all duration-300 hover:border-[#2563EB20]">
+                  <div key={i} className="flex gap-5 bg-bg-primary/40 rounded-xl p-6 border border-white/5 transition-all duration-300 hover:border-[#00BFFF20]">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: '#2563EB12', color: ACCENT }}>
+                      style={{ backgroundColor: '#00BFFF12', color: ACCENT }}>
                       <item.icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -173,9 +173,9 @@ export default function AboutPage() {
         {/* ═══ 4. VISION 2030 — with Saudi-themed visual ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-20">
           <div className="rounded-2xl p-10 md:p-14 border relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #2563EB05, var(--bg-secondary), var(--bg-secondary))', borderColor: '#2563EB15' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF05, var(--bg-secondary), var(--bg-secondary))', borderColor: '#00BFFF15' }}>
             {/* Saudi flag colors — subtle gradient bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#006C35] via-[#2563EB] to-[#006C35] opacity-60" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#006C35] via-[#00BFFF] to-[#006C35] opacity-60" />
 
             <div className="relative z-10">
               <SectionLabel>Vision 2030</SectionLabel>
@@ -197,9 +197,9 @@ export default function AboutPage() {
                   { icon: Shield, title: 'Cyber Sovereignty', desc: 'Security architectures aligned to NCA Essential Cybersecurity Controls, SAMA Cyber Resilience Framework, and PDPL data protection requirements.' },
                   { icon: Target, title: 'National Transformation', desc: 'Every engagement contributes to the Vision 2030 objectives of a diversified, digital, and globally competitive Saudi economy.' },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 bg-bg-primary/50 rounded-xl p-5 border border-white/5 transition-all duration-300 hover:border-[#2563EB20]">
+                  <div key={i} className="flex gap-4 bg-bg-primary/50 rounded-xl p-5 border border-white/5 transition-all duration-300 hover:border-[#00BFFF20]">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: '#2563EB10', color: ACCENT }}>
+                      style={{ backgroundColor: '#00BFFF10', color: ACCENT }}>
                       <item.icon className="w-5 h-5" />
                     </div>
                     <div>
@@ -233,8 +233,8 @@ export default function AboutPage() {
               { city: 'Jeddah', region: 'Western Region Office', desc: 'Serving the Western Province and Red Sea Coast — our founding location and operational hub.' },
               { city: 'Dammam', region: 'Eastern Region Office', desc: 'Serving oil & gas, industrial, and logistics clients across the Eastern Province.' },
             ].map((office, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-8 text-center transition-all duration-300 hover:border-[#2563EB25] hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#2563EB12' }}>
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-8 text-center transition-all duration-300 hover:border-[#00BFFF25] hover:-translate-y-1">
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00BFFF12' }}>
                   <MapPin className="w-7 h-7" style={{ color: ACCENT }} />
                 </div>
                 <h3 className="font-bold text-xl mb-1 text-text-primary">{office.city}</h3>
@@ -264,15 +264,15 @@ export default function AboutPage() {
           ref={ref5}
         >
           <div className="rounded-2xl p-10 md:p-14 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #2563EB0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             {/* Decorative glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #2563EB08 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #00BFFF08 0%, transparent 70%)' }} />
 
             <div className="relative z-10">
               <h2 className="text-2xl md:text-5xl font-bold mb-6">
                 Let's architect<br />
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">what comes next.</span>
+                <span className="bg-gradient-to-r from-[#00BFFF] to-[#60A5FA] bg-clip-text text-transparent">what comes next.</span>
               </h2>
               <p className="text-text-muted text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
                 Every transformation begins with a conversation about where you are, where you need to be,
@@ -281,7 +281,7 @@ export default function AboutPage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #2563EB20' }}>
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>

@@ -56,7 +56,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #2563EB, #3B82F6);
+  background: linear-gradient(180deg, #00BFFF, #3B82F6);
   border-radius: 4px;
   border: 1px solid rgba(37, 99, 235, 0.15);
   transition: background 0.3s ease;
@@ -69,7 +69,7 @@ body {
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2563EB rgba(11, 13, 16, 0.6);
+  scrollbar-color: #00BFFF rgba(11, 13, 16, 0.6);
 }
 
 /* Smooth scroll reveal */
@@ -139,7 +139,7 @@ a[class*="bg-bg-secondary"][class*="rounded"]:hover,
   top: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, #00BFFF, #7C3AED);
+  background: linear-gradient(90deg, #00BFFF, #00BFFF);
   z-index: 100;
   transition: width 0.1s linear;
 }

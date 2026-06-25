@@ -7,7 +7,7 @@ import { trackValueSystemView } from '../../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#059669';
+const ACCENT = '#00BFFF';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
@@ -50,7 +50,7 @@ export default function ArabicEnterpriseValueSystemPage() {
             {/* المدير المالي */}
             <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#05966915', color: ACCENT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export default function ArabicEnterpriseValueSystemPage() {
             {/* الرئيس التنفيذي */}
             <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#05966915', color: ACCENT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>
                   <Target className="w-5 h-5" />
                 </div>
                 <div>
@@ -128,7 +128,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 timeline: '١٢–٣٦ شهرًا',
                 desc: 'الإيرادات، الحصة السوقية، قيمة العميل.',
                 iat: 'الذكاء + الأتمتة',
-                color: '#7C3AED',
+                color: '#00BFFF',
                 items: ['البيع المتقاطع المدعوم بالذكاء الاصطناعي', 'قنوات رقمية جديدة', 'وقت وصول أسرع للسوق', 'تحول تجربة العميل'],
               },
               {
@@ -136,7 +136,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 timeline: '٠–١٢ شهرًا',
                 desc: 'التكلفة، الإنتاجية، معدل التدفق.',
                 iat: 'الأتمتة',
-                color: '#F97316',
+                color: '#00BFFF',
                 items: ['أتمتة العمليات', 'إعادة توزيع الكوادر', 'ترشيد البنية التحتية', 'خفض التذاكر'],
               },
               {
@@ -144,7 +144,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 timeline: '٦–١٨ شهرًا',
                 desc: 'المخاطر، الامتثال، الاستمرارية.',
                 iat: 'الثقة',
-                color: '#2563EB',
+                color: '#00BFFF',
                 items: ['معمارية Zero Trust', 'الامتثال التنظيمي', 'الحماية من برامج الفدية', 'قدرة التعافي السيبراني'],
               },
               {
@@ -152,7 +152,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 timeline: '٢٤–٦٠ شهرًا',
                 desc: 'منصات سيادية، بنية تحتية وطنية.',
                 iat: 'الذكاء + الأتمتة + الثقة',
-                color: '#0D9488',
+                color: '#00BFFF',
                 items: ['منصات ذكاء سيادية', 'أنسجة بيانات وطنية', 'خدمات حكومة رقمية', 'تحول القوى العاملة'],
               },
             ].map((h, i) => (
@@ -199,7 +199,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 mechanism: 'الإنتاجية، تكلفة الخدمة، وقت الوصول للسوق',
                 outcome: 'مخرجات أكثر بتكلفة أقل وأخطاء أقل',
                 example: 'فرق العمل المعززة بالذكاء الاصطناعي تؤتمت المهام المتكررة — ويُعاد توزيع الكوادر على أعمال عالية القيمة.',
-                color: '#7C3AED',
+                color: '#00BFFF',
                 icon: Zap,
               },
               {
@@ -207,7 +207,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 mechanism: 'المرونة، السيادة، وضع التدقيق',
                 outcome: 'ثقة تمكّن النمو',
                 example: 'معمارية Zero Trust تمكّن التوسع الرقمي الآمن — فيصبح الامتثال عامل تمكين لا عائقًا.',
-                color: '#10B981',
+                color: '#00BFFF',
                 icon: Shield,
               },
             ].map((p, i) => (
@@ -261,11 +261,11 @@ export default function ArabicEnterpriseValueSystemPage() {
           </p>
           <div className="space-y-3">
             {[
-              { phase: 'المشاركة', color: '#7C3AED', icon: Target, what: 'الاستكشاف، الجاهزية، دراسة الجدوى', value: 'وضوح حول ما ينبغي تحويله، ولماذا، وما القيمة المتوقعة' },
-              { phase: 'التصميم', color: '#06B6D4', icon: Layers, what: 'المعمارية، خارطة الطريق، الحوكمة', value: 'خطة تحول بأهداف قابلة للقياس وجداول زمنية محددة' },
-              { phase: 'البناء', color: '#059669', icon: Zap, what: 'النشر، التكامل، التبني', value: 'منصات تشغيلية، مستخدمون منضمون، سير عمل حي' },
-              { phase: 'التشغيل', color: '#F97316', icon: RefreshCw, what: 'التشغيل، المراقبة، التحسين', value: 'منصات عاملة، مشكلات محلولة، مقاييس متتبعة — تمكين مستمر للتحول' },
-              { phase: 'التطوّر', color: '#DC2626', icon: TrendingUp, what: 'الابتكار، التوسع، النطاق', value: 'قدرات جديدة مُضافة، نطاق موسع، قيمة متراكمة ربعًا بعد ربع' },
+              { phase: 'المشاركة', color: '#00BFFF', icon: Target, what: 'الاستكشاف، الجاهزية، دراسة الجدوى', value: 'وضوح حول ما ينبغي تحويله، ولماذا، وما القيمة المتوقعة' },
+              { phase: 'التصميم', color: '#00BFFF', icon: Layers, what: 'المعمارية، خارطة الطريق، الحوكمة', value: 'خطة تحول بأهداف قابلة للقياس وجداول زمنية محددة' },
+              { phase: 'البناء', color: '#00BFFF', icon: Zap, what: 'النشر، التكامل، التبني', value: 'منصات تشغيلية، مستخدمون منضمون، سير عمل حي' },
+              { phase: 'التشغيل', color: '#00BFFF', icon: RefreshCw, what: 'التشغيل، المراقبة، التحسين', value: 'منصات عاملة، مشكلات محلولة، مقاييس متتبعة — تمكين مستمر للتحول' },
+              { phase: 'التطوّر', color: '#00BFFF', icon: TrendingUp, what: 'الابتكار، التوسع، النطاق', value: 'قدرات جديدة مُضافة، نطاق موسع، قيمة متراكمة ربعًا بعد ربع' },
             ].map((phase, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-white/10 transition-all duration-300 flex items-center gap-5">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${phase.color}15`, color: phase.color }}>
@@ -296,25 +296,25 @@ export default function ArabicEnterpriseValueSystemPage() {
             {[
               {
                 horizon: 'النمو',
-                color: '#7C3AED',
+                color: '#00BFFF',
                 icon: TrendingUp,
                 kpis: ['نمو الإيرادات', 'توسع العملاء', 'خدمات رقمية جديدة', 'استجابة السوق', 'أداء القنوات'],
               },
               {
                 horizon: 'الكفاءة',
-                color: '#F97316',
+                color: '#00BFFF',
                 icon: Zap,
                 kpis: ['وقت الوصول للسوق', 'تكلفة الخدمة', 'إنتاجية العمليات', 'تغطية الأتمتة', 'استغلال الموارد'],
               },
               {
                 horizon: 'المرونة',
-                color: '#2563EB',
+                color: '#00BFFF',
                 icon: Shield,
                 kpis: ['جاهزية التعافي', 'الوضع الأمني', 'نضج الامتثال', 'ثقة التدقيق', 'وقت الاستجابة للتهديدات'],
               },
               {
                 horizon: 'القدرات',
-                color: '#0D9488',
+                color: '#00BFFF',
                 icon: Brain,
                 kpis: ['تبني الذكاء الاصطناعي', 'تغطية الأتمتة', 'نضج البيانات', 'استغلال المنصات', 'قدرات القوى العاملة'],
               },
@@ -369,7 +369,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0" style={{ backgroundColor: ACCENT }}>
                       {item.restart ? '↻' : i + 1}
                     </div>
-                    {i < 5 && <div className="w-0.5 h-10 mt-1" style={{ backgroundColor: '#05966930' }} />}
+                    {i < 5 && <div className="w-0.5 h-10 mt-1" style={{ backgroundColor: '#00BFFF30' }} />}
                   </div>
                   <div className="flex-1 pb-2">
                     <div className="flex items-baseline gap-2 flex-wrap">
@@ -417,14 +417,14 @@ export default function ArabicEnterpriseValueSystemPage() {
               <Link
                 to="/ar/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #05966920' }}
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
               >
                 احجز جلسة استراتيجية
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link
                 to="/ar/architecture"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#059669]/30"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF]/30"
               >
                 استكشف معمارية التحول المؤسسي
               </Link>
@@ -442,7 +442,7 @@ export default function ArabicEnterpriseValueSystemPage() {
                 { label: 'المخططات', path: '/ar/blueprints' },
               ].map((link) => (
                 <Link key={link.label} to={link.path}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#059669]/30 transition-all hover:-translate-y-0.5">
+                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#00BFFF]/30 transition-all hover:-translate-y-0.5">
                   {link.label} <ArrowRight className="w-3.5 h-3.5 rotate-180" style={{ color: ACCENT }} />
                 </Link>
               ))}

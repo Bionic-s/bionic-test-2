@@ -9,7 +9,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#0D9488';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/data-analytics.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -80,8 +80,8 @@ export default function ConsultingAdvisoryPage() {
           className="relative z-10 pt-40 pb-24 text-center px-4"
         >
           <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#0D9488]/25 bg-[#0D9488]/5 mb-10">
-              <span className="text-tiny text-[#0D9488] font-semibold tracking-widest uppercase">Consulting & Advisory</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00BFFF]/25 bg-[#00BFFF]/5 mb-10">
+              <span className="text-tiny text-[#00BFFF] font-semibold tracking-widest uppercase">Consulting & Advisory</span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
               Strategy before technology.<br />
@@ -119,7 +119,7 @@ export default function ConsultingAdvisoryPage() {
               { pre: 'Operating model ignored', text: 'Technology deployed into an organization not redesigned to absorb it — people, process, and governance left behind' },
               { pre: 'No measurement baseline', text: 'Transformation launched without KPIs, without a baseline, without a value tracking mechanism — success becomes opinion, not evidence' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#0D9488]/20 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/20 transition-all duration-300">
                 <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
                 <p className="text-tiny text-text-muted">{item.text}</p>
               </div>
@@ -135,7 +135,7 @@ export default function ConsultingAdvisoryPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <s.icon className="w-6 h-6 mb-3" style={{ color: ACCENT }} />
                 <h3 className="font-semibold text-sm mb-2">{s.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{s.desc}</p>
@@ -152,7 +152,7 @@ export default function ConsultingAdvisoryPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilityCoverage.map((c, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#0D9488]/15 transition-all duration-300 flex items-start gap-3">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/15 transition-all duration-300 flex items-start gap-3">
                 <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{c.cap}</h3>
@@ -171,7 +171,7 @@ export default function ConsultingAdvisoryPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
                   <PartnerLogo partner={p} size="md" />
                   <div>
@@ -197,15 +197,15 @@ export default function ConsultingAdvisoryPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Reference architectures shaped by advisory engagement.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
-              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
-                <span className="text-tiny text-[#0D9488]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#0D9488] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#0D9488]/40 group-hover:text-[#0D9488] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/blueprints" className="inline-flex items-center gap-1.5 text-[#0D9488] text-sm font-medium hover:underline">
+            <Link to="/blueprints" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               View all blueprints <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -222,7 +222,7 @@ export default function ConsultingAdvisoryPage() {
               { title: 'Advisory-to-execution continuity', desc: 'The team that advises is the team that implements. No hand-off gaps, no strategy-to-execution disconnect, no "throw it over the wall."' },
               { title: 'Measured outcomes, not slide decks', desc: 'Every advisory engagement concludes with measurable KPIs, a financial business case, and an executable roadmap — not a 200-page report that sits on a shelf.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#0D9488]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
               </div>
@@ -274,14 +274,14 @@ export default function ConsultingAdvisoryPage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #0D948820' }}
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
               >
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/capabilities/ai"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#0D9488]/30"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF]/30"
               >
                 View Capabilities
               </Link>

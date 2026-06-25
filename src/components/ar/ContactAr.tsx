@@ -140,7 +140,7 @@ export const ContactAr = () => {
                   { step: '5', title: 'العمليات المدارة والمستدامة', dur: 'مستمرة', desc: 'تحسين مستمر ومراقبة وتطوير — نبقى معكم.' },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-tiny font-bold" style={{ backgroundColor: '#2563EB15', color: '#2563EB' }}>{item.step}</div>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-tiny font-bold" style={{ backgroundColor: '#00BFFF15', color: '#00BFFF' }}>{item.step}</div>
                     <h4 className="text-small font-semibold text-text-primary mb-1">{item.title}</h4>
                     <p className="text-tiny text-text-muted mb-1">{item.dur}</p>
                     <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>

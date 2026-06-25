@@ -8,7 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#7C3AED';
+const ACCENT = '#00BFFF';
 const HERO_BG = `${import.meta.env.BASE_URL}images/enterprise-ai-transformation-hero.avif`;
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -80,7 +80,7 @@ export default function ArabicAISolutionPage() {
             className="relative z-10 pt-40 pb-32 text-center px-4"
           >
           <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10 flex-row-reverse"
-            style={{ borderColor: '#7C3AED40', backgroundColor: '#7C3AED08' }}>
+            style={{ borderColor: '#00BFFF40', backgroundColor: '#00BFFF08' }}>
             <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>الذكاء الاصطناعي المؤسسي والأتمتة</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
@@ -99,9 +99,9 @@ export default function ArabicAISolutionPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معظم مبادرات الذكاء الاصطناعي لا تتجاوز مرحلة إثبات المفهوم.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {realityItems.map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#7C3AED]30" style={{ flexDirection: 'row-reverse' }}>
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#00BFFF]30" style={{ flexDirection: 'row-reverse' }}>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: '#7C3AED15', color: '#7C3AED' }}>{iconMap[item.iconName]}</div>
+                  style={{ backgroundColor: '#00BFFF15', color: '#00BFFF' }}>{iconMap[item.iconName]}</div>
                 <p className="text-text-primary text-sm leading-relaxed text-right">{item.text}</p>
               </div>
             ))}
@@ -116,17 +116,17 @@ export default function ArabicAISolutionPage() {
 
           <div className="space-y-4">
             {capsWithIcons.map((cap, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#7C3AED]1A">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF]1A">
                 <div className="flex flex-col md:flex-row md:items-start gap-5" style={{ flexDirection: 'row-reverse' }}>
                   <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: '#7C3AED12', color: '#7C3AED' }}>{cap.icon}</div>
+                    style={{ backgroundColor: '#00BFFF12', color: '#00BFFF' }}>{cap.icon}</div>
                   <div className="flex-1 text-right">
                     <h3 className="text-lg font-bold mb-1 text-text-primary">{cap.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.desc}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {cap.outcomes.map((o: string, j: number) => (
                         <div key={j} className="flex items-start gap-2 flex-row-reverse">
-                          <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: '#7C3AED' }} />
+                          <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: '#00BFFF' }} />
                           <span className="text-xs text-text-primary leading-relaxed">{o}</span>
                         </div>
                       ))}
@@ -143,25 +143,25 @@ export default function ArabicAISolutionPage() {
           <SectionLabel>كيف نحقق ذلك</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">ثلاثة نماذج تنفيذ متكاملة — عبر جميع القدرات.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link to="/ar/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/25 transition-all duration-300 text-right">
-              <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center mb-3" style={{ color: '#7C3AED' }}>
+            <Link to="/ar/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3" style={{ color: '#00BFFF' }}>
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#7C3AED] transition-colors">الاستشارات والتخطيط الاستراتيجي</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">الاستشارات والتخطيط الاستراتيجي</h3>
               <p className="text-tiny text-text-muted">تقييم الجاهزية للذكاء الاصطناعي · استشارات الامتثال والحوكمة · الاستراتيجية وخارطة الطريق</p>
             </Link>
-            <Link to="/ar/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/25 transition-all duration-300 text-right">
-              <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center mb-3" style={{ color: '#7C3AED' }}>
+            <Link to="/ar/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3" style={{ color: '#00BFFF' }}>
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#7C3AED] transition-colors">التنفيذ والتسليم</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">التنفيذ والتسليم</h3>
               <p className="text-tiny text-text-muted">نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps</p>
             </Link>
-            <Link to="/ar/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/25 transition-all duration-300 text-right">
-              <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center mb-3" style={{ color: '#7C3AED' }}>
+            <Link to="/ar/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3" style={{ color: '#00BFFF' }}>
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#7C3AED] transition-colors">العمليات المدارة</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">العمليات المدارة</h3>
               <p className="text-tiny text-text-muted">عمليات المنصات ٢٤×٧ · مركز العمليات الأمنية كخدمة · ·  مستويات</p>
             </Link>
           </div>
@@ -170,13 +170,13 @@ export default function ArabicAISolutionPage() {
         {/* ═══ 4. WHY BIONIC ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <div className="rounded-2xl p-10 md:p-12"
-            style={{ background: 'linear-gradient(135deg, #7C3AED08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #7C3AED1A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <SectionLabel>لماذا بيونك</SectionLabel>
             <h2 className="text-2xl md:text-3xl font-bold mb-10">الشريك الذي يحول القدرات إلى نتائج.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {whyItems.map((item, i) => (
                 <div key={i} className="flex gap-3 flex-row-reverse">
-                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#7C3AED' }} />
+                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: '#00BFFF' }} />
                   <div className="text-right">
                     <h3 className="font-semibold text-base mb-1 text-text-primary">{item.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
@@ -193,10 +193,10 @@ export default function ArabicAISolutionPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-8">المنظومة التقنية</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#7C3AED]1A">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#00BFFF]1A">
                 <div className="flex items-center gap-4 mb-3 flex-row-reverse">
                   <PartnerLogo partner={p} size="sm" />
-                  <span className="text-xs font-medium" style={{ color: '#7C3AED99', textAlign: 'right' }}>{p.role}</span>
+                  <span className="text-xs font-medium" style={{ color: '#00BFFF99', textAlign: 'right' }}>{p.role}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed text-right">{p.tech}</p>
               </div>
@@ -210,7 +210,7 @@ export default function ArabicAISolutionPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">التطبيقات القطاعية</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {industryItems.map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#7C3AED]1A">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#00BFFF]1A">
                 <h3 className="font-semibold text-base mb-2 text-text-primary text-right">{item.industry}</h3>
                 <p className="text-text-muted text-xs leading-relaxed text-right">{item.apps}</p>
               </div>
@@ -229,13 +229,13 @@ export default function ArabicAISolutionPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">رؤى مختارة</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {insightItems.map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#7C3AED]12">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF]12">
                 <span className="text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block"
-                  style={{ backgroundColor: '#7C3AED12', color: '#7C3AED' }}>{item.tag}</span>
+                  style={{ backgroundColor: '#00BFFF12', color: '#00BFFF' }}>{item.tag}</span>
                 <h3 className="text-lg font-bold mb-2 text-text-primary text-right">{item.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-4 text-right">{item.desc}</p>
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium"
-                  style={{ color: '#7C3AED99' }}>
+                  style={{ color: '#00BFFF99' }}>
                   <ExternalLink className="w-3 h-3" />
                   اقرأ الرؤية
                 </span>
@@ -256,15 +256,15 @@ export default function ArabicAISolutionPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تجسد هذه القدرة.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
-              <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#7C3AED]/25 transition-all duration-300 text-right">
-                <span className="text-tiny text-[#7C3AED]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#7C3AED] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#7C3AED]/40 group-hover:text-[#7C3AED] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/ar/blueprints/${bpSlugs[i]}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/ar/blueprints" className="inline-flex items-center gap-1.5 text-[#7C3AED] text-sm font-medium hover:underline">
+            <Link to="/ar/blueprints" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               استعرض كافة المخططات ذات الصلة <ArrowRight className="w-3.5 h-3.5 rotate-180" />
             </Link>
           </div>
@@ -278,10 +278,10 @@ export default function ArabicAISolutionPage() {
           transition={{ duration: 0.7 }}
         >
           <div className="rounded-2xl p-10 md:p-14 text-center"
-            style={{ background: 'linear-gradient(135deg, #7C3AED0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #7C3AED1A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               مستعدون لنقل الذكاء الاصطناعي من<br />
-              <span style={{ color: '#7C3AED' }}>التجريب إلى الإنتاج المؤسسي</span>؟
+              <span style={{ color: '#00BFFF' }}>التجريب إلى الإنتاج المؤسسي</span>؟
             </h2>
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
               لنناقش كيف يحقق الذكاء الاصطناعي المؤسسي نتائج أعمال قابلة للقياس — مع حوكمة مدمجة ومسار واضح للإنتاج.
@@ -290,7 +290,7 @@ export default function ArabicAISolutionPage() {
               <Link
                 to="/ar/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: '#7C3AED', boxShadow: '0 8px 24px #7C3AED20' }}>
+                style={{ backgroundColor: '#00BFFF', boxShadow: '0 8px 24px #00BFFF20' }}>
                 احجز جلسة استراتيجية
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>

@@ -13,8 +13,8 @@ const HERO_BG = '/test-site-2/images/security-alert.avif';
 
 const iatColors: Record<string, string> = {
   Intelligence: '#00BFFF',
-  Automation: '#7C3AED',
-  Trust: '#10B981',
+  Automation: '#00BFFF',
+  Trust: '#00BFFF',
 };
 
 const iatForce: Record<string, string> = {

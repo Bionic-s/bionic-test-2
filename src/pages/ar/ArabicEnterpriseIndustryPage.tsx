@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 const heroBg = `${import.meta.env.BASE_URL}images/enterprise-integration-hero.jpg`;
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#7C3AED';
+const ACCENT = '#00BFFF';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
@@ -194,7 +194,7 @@ export default function ArabicEnterpriseIndustryPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #7C3AED20' }}>
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>
                 تواصل معنا
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>

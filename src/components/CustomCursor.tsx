@@ -87,7 +87,7 @@ export const CustomCursor = () => {
       <div
         className="w-full h-full rounded-full border-2 flex items-center justify-center"
         style={{
-          borderColor: '#2563EB',
+          borderColor: '#00BFFF',
           backgroundColor: 'rgba(37, 99, 235, 0.08)',
           transform: `translate(-50%, -50%)`,
         }}
@@ -97,7 +97,7 @@ export const CustomCursor = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: '#2563EB' }}
+            style={{ backgroundColor: '#00BFFF' }}
           />
         )}
       </div>

@@ -8,10 +8,10 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#7C3AED';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/enterprise-ai-transformation-hero.avif';
 const SectionLabel = ({ children }: { children: string }) => (
-  <p className="text-tiny text-[#7C3AED] font-semibold tracking-wider uppercase mb-4">{children}</p>
+  <p className="text-tiny text-[#00BFFF] font-semibold tracking-wider uppercase mb-4">{children}</p>
 );
 
 /* ── Partner Logo Data ── */
@@ -50,12 +50,12 @@ export default function AISolutionPage() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9 }}
             className="relative z-10 pt-40 pb-32 text-center px-4"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#7C3AED]/25 bg-[#7C3AED]/5 mb-10">
-              <Brain className="w-4 h-4 text-[#7C3AED] mr-2" />
-              <span className="text-tiny text-[#7C3AED] font-semibold tracking-widest uppercase">Enterprise AI & Automation</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00BFFF]/25 bg-[#00BFFF]/5 mb-10">
+              <Brain className="w-4 h-4 text-[#00BFFF] mr-2" />
+              <span className="text-tiny text-[#00BFFF] font-semibold tracking-widest uppercase">Enterprise AI & Automation</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-              <span className="bg-gradient-to-r from-[#7C3AED] via-[#A78BFA] to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#00BFFF] via-[#A78BFA] to-white bg-clip-text text-transparent">
                 AI from experimentation<br />to enterprise execution.
               </span>
             </h1>
@@ -81,8 +81,8 @@ export default function AISolutionPage() {
               { icon: <Cpu className="w-5 h-5" />, text: 'Prototypes that never reach production.' },
               { icon: <Layers className="w-5 h-5" />, text: 'ROI assumed, not measured. No path to scale investment.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 hover:border-[#7C3AED]/15 transition-all duration-300 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#7C3AED15', color: ACCENT }}>{item.icon}</div>
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 hover:border-[#00BFFF]/15 transition-all duration-300 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>{item.icon}</div>
                 <p className="text-text-primary text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
@@ -134,16 +134,16 @@ export default function AISolutionPage() {
                 outcomes: ['Accelerated time-to-production for new AI use cases', 'Automated monitoring with proactive drift and performance alerts', 'Standardized MLOps pipelines across data science teams', 'Reduced operational risk through continuous validation'],
               },
             ].map((cap, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/12 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/12 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-start gap-5">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#7C3AED12', color: ACCENT }}>{cap.icon}</div>
+                  <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#00BFFF12', color: ACCENT }}>{cap.icon}</div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold mb-1 text-text-primary">{cap.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.desc}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {cap.outcomes.map((o, j) => (
                         <div key={j} className="flex items-start gap-2">
-                          <CheckCircle className="w-3.5 h-3.5 text-[#7C3AED] mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-3.5 h-3.5 text-[#00BFFF] mt-0.5 flex-shrink-0" />
                           <span className="text-xs text-text-primary leading-relaxed">{o}</span>
                         </div>
                       ))}
@@ -160,25 +160,25 @@ export default function AISolutionPage() {
           <SectionLabel>How We Deliver</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Three integrated delivery models — across every capability.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center mb-3 text-[#7C3AED]">
+            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#7C3AED] transition-colors">Consulting & Advisory</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Consulting & Advisory</h3>
               <p className="text-tiny text-text-muted">AI Readiness Assessment · Compliance & GRC Advisory · Strategy & roadmap</p>
             </Link>
-            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center mb-3 text-[#7C3AED]">
+            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#7C3AED] transition-colors">Implementation & Delivery</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Implementation & Delivery</h3>
               <p className="text-tiny text-text-muted">AI & Automation Deployment · Platform & App Delivery · MLOps pipeline</p>
             </Link>
-            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center mb-3 text-[#7C3AED]">
+            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#7C3AED] transition-colors">Managed Operations</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Managed Operations</h3>
               <p className="text-tiny text-text-muted">24×7 platform ops · SOC-as-a-Service · 3 tiers (Essential/Advanced/Elite)</p>
             </Link>
           </div>
@@ -186,7 +186,7 @@ export default function AISolutionPage() {
 
         {/* ═══ 4. WHY BIONIC ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
-          <div className="bg-gradient-to-br from-[#7C3AED]/5 via-bg-secondary to-bg-secondary border border-[#7C3AED]/10 rounded-2xl p-10 md:p-12">
+          <div className="bg-gradient-to-br from-[#00BFFF]/5 via-bg-secondary to-bg-secondary border border-[#00BFFF]/10 rounded-2xl p-10 md:p-12">
             <SectionLabel>Why Bionic</SectionLabel>
             <h2 className="text-2xl md:text-3xl font-bold mb-10">The partner who takes AI into production.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -215,10 +215,10 @@ export default function AISolutionPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/12 transition-all duration-300 group">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/12 transition-all duration-300 group">
                 <div className="flex items-center gap-4 mb-3">
                   <PartnerLogo partner={p} size="sm" />
-                  <span className="text-[#7C3AED]/60 text-xs font-medium">{p.role.split(' —')[0]}</span>
+                  <span className="text-[#00BFFF]/60 text-xs font-medium">{p.role.split(' —')[0]}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>
               </div>
@@ -239,7 +239,7 @@ export default function AISolutionPage() {
               { industry: 'Manufacturing', apps: 'Visual quality inspection, production yield optimization, intelligent supply chain coordination.' },
               { industry: 'Telecommunications', apps: 'Network operations intelligence, customer experience AI, intelligent field service dispatch.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#7C3AED]/12 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/12 transition-all duration-300">
                 <h3 className="font-semibold text-base mb-2 text-text-primary">{item.industry}</h3>
                 <p className="text-text-muted text-xs leading-relaxed">{item.apps}</p>
               </div>
@@ -274,11 +274,11 @@ export default function AISolutionPage() {
                 desc: 'Without automated pipelines, monitoring, and drift detection, AI in production becomes a liability — not an asset.',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#7C3AED]/15 transition-all duration-300">
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#7C3AED]/10 text-[#7C3AED] mb-4 inline-block">{item.tag}</span>
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/15 transition-all duration-300">
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#00BFFF]/10 text-[#00BFFF] mb-4 inline-block">{item.tag}</span>
                 <h3 className="text-lg font-bold mb-2 text-text-primary">{item.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-4">{item.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-[#7C3AED]/70 text-xs font-medium">
+                <span className="inline-flex items-center gap-1.5 text-[#00BFFF]/70 text-xs font-medium">
                   <ExternalLink className="w-3 h-3" />
                   Read perspective
                 </span>
@@ -303,15 +303,15 @@ export default function AISolutionPage() {
               { title: 'Real-Time Fraud Detection', industry: 'Banking', slug: 'real-time-fraud-detection' },
               { title: 'Agentic Workforce Transformation', industry: 'Enterprise', slug: 'agentic-workforce-transformation' },
             ].map((bp, i) => (
-              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#7C3AED]/25 transition-all duration-300">
-                <span className="text-tiny text-[#7C3AED]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#7C3AED] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#7C3AED]/40 group-hover:text-[#7C3AED] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/blueprints?capability=ai" className="inline-flex items-center gap-1.5 text-[#7C3AED] text-sm font-medium hover:underline">
+            <Link to="/blueprints?capability=ai" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               View all related blueprints <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -324,10 +324,10 @@ export default function AISolutionPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="bg-gradient-to-br from-[#7C3AED]/8 via-bg-secondary to-bg-secondary border border-[#7C3AED]/12 rounded-2xl p-10 md:p-14 text-center">
+          <div className="bg-gradient-to-br from-[#00BFFF]/8 via-bg-secondary to-bg-secondary border border-[#00BFFF]/12 rounded-2xl p-10 md:p-14 text-center">
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               Ready to move AI from<br />
-              <span className="bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] bg-clip-text text-transparent">experimentation to execution</span>?
+              <span className="bg-gradient-to-r from-[#00BFFF] to-[#A78BFA] bg-clip-text text-transparent">experimentation to execution</span>?
             </h2>
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
               Let's discuss how enterprise AI can deliver measurable business outcomes — with governance built in.
@@ -335,14 +335,14 @@ export default function AISolutionPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7C3AED] hover:bg-[#7C3AED]/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-[#7C3AED]/15"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-[#00BFFF]/15"
               >
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/blueprints?capability=ai"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 hover:border-[#7C3AED]/25 text-text-primary font-medium rounded-xl transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 hover:border-[#00BFFF]/25 text-text-primary font-medium rounded-xl transition-all duration-300"
               >
                 View Transformation Blueprints
               </Link>

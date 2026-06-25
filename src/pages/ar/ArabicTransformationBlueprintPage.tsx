@@ -113,8 +113,8 @@ export default function ArabicTransformationBlueprintPage() {
                     f === 'Intelligence'
                       ? 'border-[#00BFFF]/30 bg-[#00BFFF]/5 text-[#00BFFF]'
                       : f === 'Automation'
-                      ? 'border-[#7C3AED]/30 bg-[#7C3AED]/5 text-[#7C3AED]'
-                      : 'border-[#10B981]/30 bg-[#10B981]/5 text-[#10B981]'
+                      ? 'border-[#00BFFF]/30 bg-[#00BFFF]/5 text-[#00BFFF]'
+                      : 'border-[#00BFFF]/30 bg-[#00BFFF]/5 text-[#00BFFF]'
                   }`}
                 >
                   {iatForceNames[f] || f}

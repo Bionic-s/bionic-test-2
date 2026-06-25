@@ -9,7 +9,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#D97706';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/cloud-computing.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -119,8 +119,8 @@ export default function ArabicManagedOperationsPage() {
           className="relative z-10 pt-40 pb-24 text-center px-4"
         >
           <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#D97706]/25 bg-[#D97706]/5 mb-10">
-              <span className="text-tiny text-[#D97706] font-semibold tracking-widest uppercase">العمليات المدارة والمستدامة</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00BFFF]/25 bg-[#00BFFF]/5 mb-10">
+              <span className="text-tiny text-[#00BFFF] font-semibold tracking-widest uppercase">العمليات المدارة والمستدامة</span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
               <span style={{ color: ACCENT }}>تمكين التحول المستمر.</span><br />
@@ -177,7 +177,7 @@ export default function ArabicManagedOperationsPage() {
               { pre: 'فراغ رؤية التكاليف', text: 'تكاليف السحابة والبنية التحتية والتراخيص تنمو بنسبة تتجاوز ٣٠٪ سنويًا — غير متتبعة، غير محكومة، غير ميزانية.' },
               { pre: 'عبء إدارة المورّدين', text: 'إدارة اتفاقيات مستوى الخدمة عبر أكثر من ٥ مورّدي تقنية تستهلك أفضل مهندسيك — الذين ينبغي أن يبنوا، لا أن يديروا.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#D97706]/20 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/20 transition-all duration-300">
                 <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
                 <p className="text-tiny text-text-muted">{item.text}</p>
               </div>
@@ -196,7 +196,7 @@ export default function ArabicManagedOperationsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {valueDrivers.map((v, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <v.icon className="w-6 h-6 mb-3" style={{ color: ACCENT }} />
                 <h3 className="font-semibold text-sm mb-2">{v.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{v.desc}</p>
@@ -214,7 +214,7 @@ export default function ArabicManagedOperationsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {tiers.map((tier, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#D97706]/25 transition-all duration-300 flex flex-col">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 flex flex-col">
                 <div className="mb-5">
                   <span className="text-tiny font-semibold tracking-wider uppercase" style={{ color: ACCENT }}>{tier.name}</span>
                   <h3 className="text-xl font-bold mt-1 mb-1">{tier.subtitle}</h3>
@@ -241,7 +241,7 @@ export default function ArabicManagedOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilityCoverage.map((c, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#D97706]/15 transition-all duration-300 flex items-start gap-3">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/15 transition-all duration-300 flex items-start gap-3">
                 <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{c.cap}</h3>
@@ -260,7 +260,7 @@ export default function ArabicManagedOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
                   <PartnerLogo partner={p} size="md" />
                   <div>
@@ -286,15 +286,15 @@ export default function ArabicManagedOperationsPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية نبقيها عاملة — ومتحسنة باستمرار.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
-              <Link key={i} to={`/ar/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
-                <span className="text-tiny text-[#D97706]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#D97706] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#D97706]/40 group-hover:text-[#D97706] group-hover:-translate-x-1 transition-all mt-2 rotate-180" />
+              <Link key={i} to={`/ar/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:-translate-x-1 transition-all mt-2 rotate-180" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/ar/blueprints" className="inline-flex items-center gap-1.5 text-[#D97706] text-sm font-medium hover:underline">
+            <Link to="/ar/blueprints" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               عرض جميع المخططات المرجعية <ArrowRight className="w-3.5 h-3.5 rotate-180" />
             </Link>
           </div>
@@ -311,7 +311,7 @@ export default function ArabicManagedOperationsPage() {
               { title: 'مدفوع بالذكاء الاصطناعي، بقيادة هندسية', desc: 'Instana + Turbonomic + AIOps يتنبؤون بالمشكلات قبل أن تصبح حوادث. SRE + هندسة المنصات يمنعونها. الأتمتة هي الاستجابة الأولى — لا تذكرة.' },
               { title: '3 مستويات، شريك واحد، نضج مركب', desc: 'توسّع من المراقبة الأساسية إلى SRE النخبوي دون تغيير المزود. النضج التشغيلي يتراكم — كل مستوى يبني على السابق.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
               </div>
@@ -363,14 +363,14 @@ export default function ArabicManagedOperationsPage() {
               <Link
                 to="/ar/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #D9770620' }}
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
               >
                 ابدأ المحادثة
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </Link>
               <Link
                 to="/ar/capabilities/ops"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#D97706]/30"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF]/30"
               >
                 عرض القدرات
               </Link>

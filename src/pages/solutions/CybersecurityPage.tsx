@@ -8,7 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#DC2626';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/cybersecurity-shield.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -51,12 +51,12 @@ export default function CybersecurityPage() {
             className="relative z-10 pt-40 pb-32 text-center px-4"
           >
           <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10"
-            style={{ borderColor: '#DC262640', backgroundColor: '#DC262608' }}>
+            style={{ borderColor: '#00BFFF40', backgroundColor: '#00BFFF08' }}>
             <Shield className="w-4 h-4 mr-2" style={{ color: ACCENT }} />
             <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>Cybersecurity & Cyber Resilience</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-[#DC2626] via-[#F87171] to-white bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00BFFF] via-[#F87171] to-white bg-clip-text text-transparent">
               From reactive security<br />to cyber resilience.
             </span>
           </h1>
@@ -80,9 +80,9 @@ export default function CybersecurityPage() {
               { icon: <FileWarning className="w-5 h-5" />, text: 'Recovery plans that pass audits but fail when tested under real attack conditions.' },
               { icon: <Eye className="w-5 h-5" />, text: 'Security operations drowning in alert volume, blind to genuine threats.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#DC262630]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#00BFFF30]">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: '#DC262615', color: ACCENT }}>{item.icon}</div>
+                  style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>{item.icon}</div>
                 <p className="text-text-primary text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
@@ -134,10 +134,10 @@ export default function CybersecurityPage() {
                 outcomes: ['24×7 security monitoring with defined escalation and response', 'Continuous control validation through automated testing and red teaming', 'Regulatory change monitoring ensuring ongoing compliance with evolving mandates', 'Security maturity roadmap with quarterly improvement milestones'],
               },
             ].map((cap, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#DC26261A]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF1A]">
                 <div className="flex flex-col md:flex-row md:items-start gap-5">
                   <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: '#DC262612', color: ACCENT }}>{cap.icon}</div>
+                    style={{ backgroundColor: '#00BFFF12', color: ACCENT }}>{cap.icon}</div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold mb-1 text-text-primary">{cap.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.desc}</p>
@@ -161,25 +161,25 @@ export default function CybersecurityPage() {
           <SectionLabel>How We Deliver</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Three integrated delivery models — across every capability.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#DC2626]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#DC2626]/10 flex items-center justify-center mb-3 text-[#DC2626]">
+            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#DC2626] transition-colors">Consulting & Advisory</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Consulting & Advisory</h3>
               <p className="text-tiny text-text-muted">AI Readiness Assessment · Compliance & GRC Advisory · Strategy & roadmap</p>
             </Link>
-            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#DC2626]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#DC2626]/10 flex items-center justify-center mb-3 text-[#DC2626]">
+            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#DC2626] transition-colors">Implementation & Delivery</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Implementation & Delivery</h3>
               <p className="text-tiny text-text-muted">AI & Automation Deployment · Platform & App Delivery · MLOps pipeline</p>
             </Link>
-            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#DC2626]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#DC2626]/10 flex items-center justify-center mb-3 text-[#DC2626]">
+            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#DC2626] transition-colors">Managed Operations</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Managed Operations</h3>
               <p className="text-tiny text-text-muted">24×7 platform ops · SOC-as-a-Service · 3 tiers (Essential/Advanced/Elite)</p>
             </Link>
           </div>
@@ -188,7 +188,7 @@ export default function CybersecurityPage() {
         {/* ═══ 4. WHY BIONIC ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <div className="rounded-2xl p-10 md:p-12"
-            style={{ background: 'linear-gradient(135deg, #DC262608, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #DC26261A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <SectionLabel>Why Bionic</SectionLabel>
             <h2 className="text-2xl md:text-3xl font-bold mb-10">The partner who builds resilience, not just compliance.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -216,10 +216,10 @@ export default function CybersecurityPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Technology Ecosystem</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#DC26261A]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#00BFFF1A]">
                 <div className="flex items-center gap-3 mb-3">
                   <PartnerLogo partner={p} size="sm" />
-                  <span className="text-xs font-medium" style={{ color: '#DC262699' }}>{p.role.split(' —')[0]}</span>
+                  <span className="text-xs font-medium" style={{ color: '#00BFFF99' }}>{p.role.split(' —')[0]}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>
               </div>
@@ -240,7 +240,7 @@ export default function CybersecurityPage() {
               { industry: 'Manufacturing', apps: 'OT security, supply chain cyber risk, intellectual property protection, production resilience.' },
               { industry: 'Telecommunications', apps: 'Network security, subscriber data protection, critical infrastructure compliance, DDoS resilience.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#DC26261A]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#00BFFF1A]">
                 <h3 className="font-semibold text-base mb-2 text-text-primary">{item.industry}</h3>
                 <p className="text-text-muted text-xs leading-relaxed">{item.apps}</p>
               </div>
@@ -275,13 +275,13 @@ export default function CybersecurityPage() {
                 desc: 'Why Zero Trust demands enterprise architecture transformation — and why buying a Zero Trust product without the architecture creates more risk than it reduces.',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#DC262612]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF12]">
                 <span className="text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block"
-                  style={{ backgroundColor: '#DC262612', color: ACCENT }}>{item.tag}</span>
+                  style={{ backgroundColor: '#00BFFF12', color: ACCENT }}>{item.tag}</span>
                 <h3 className="text-lg font-bold mb-2 text-text-primary">{item.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-4">{item.desc}</p>
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium"
-                  style={{ color: '#DC262699' }}>
+                  style={{ color: '#00BFFF99' }}>
                   <ExternalLink className="w-3 h-3" />
                   Read perspective
                 </span>
@@ -306,15 +306,15 @@ export default function CybersecurityPage() {
               { title: 'Real-Time Fraud Detection', industry: 'Banking', slug: 'real-time-fraud-detection' },
               { title: 'Enterprise Zero Trust', industry: 'Enterprise', slug: 'enterprise-zero-trust' },
             ].map((bp, i) => (
-              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#DC2626]/25 transition-all duration-300">
-                <span className="text-tiny text-[#DC2626]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#DC2626] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#DC2626]/40 group-hover:text-[#DC2626] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/blueprints?capability=cyber" className="inline-flex items-center gap-1.5 text-[#DC2626] text-sm font-medium hover:underline">
+            <Link to="/blueprints?capability=cyber" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               View all related blueprints <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -328,10 +328,10 @@ export default function CybersecurityPage() {
           transition={{ duration: 0.7 }}
         >
           <div className="rounded-2xl p-10 md:p-14 text-center"
-            style={{ background: 'linear-gradient(135deg, #DC26260D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #DC26261A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               Ready to move from reactive security to<br />
-              <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">cyber resilience</span>?
+              <span className="bg-gradient-to-r from-[#00BFFF] to-[#F87171] bg-clip-text text-transparent">cyber resilience</span>?
             </h2>
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
               Let's discuss how a business-aligned cyber program can reduce risk, ensure regulatory confidence, and guarantee recovery.
@@ -340,7 +340,7 @@ export default function CybersecurityPage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #DC262620' }}>
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>

@@ -49,7 +49,7 @@ export const HeaderAr = () => {
     {
       pillar: 'الأتمتة',
       tagline: 'Apps · Integration · Workflow',
-      color: '#F59E0B',
+      color: '#00BFFF',
       items: [
         { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز اتصال، تجارة', path: '/ar/capabilities/apps' },
         { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
@@ -58,7 +58,7 @@ export const HeaderAr = () => {
     {
       pillar: 'الثقة',
       tagline: 'Cyber · Sovereign · Resilience',
-      color: '#7C3AED',
+      color: '#00BFFF',
       items: [
         { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز عمليات أمنية، Zero Trust، الهوية', path: '/ar/capabilities/cyber' },
         { name: 'البنية التحتية السيادية', desc: 'مراكز بيانات، سحابة هجينة، بنية الذكاء التحتية', path: '/ar/capabilities/infra' },
@@ -229,7 +229,7 @@ export const HeaderAr = () => {
                             {/* Automation */}
                             <div className="p-5">
                               <div className="flex items-center gap-2 mb-3">
-                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F59E0B' }} />
+                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00BFFF' }} />
                                 <div>
                                   <h4 className="text-small font-semibold text-text-primary">Automation</h4>
                                   <p className="text-tiny text-text-muted">CRM · Integration · Advisory</p>
@@ -243,7 +243,7 @@ export const HeaderAr = () => {
                                 ].map((item) => (
                                   <Link key={item.cat} to="/ar/products"
                                     className="block px-3 py-2.5 -mx-3 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
-                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#F59E0B] transition-colors">{item.cat}</p>
+                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#00BFFF] transition-colors">{item.cat}</p>
                                     <p className="text-tiny text-text-muted leading-relaxed mt-0.5">{item.sub}</p>
                                   </Link>
                                 ))}
@@ -252,7 +252,7 @@ export const HeaderAr = () => {
                             {/* Trust */}
                             <div className="p-5">
                               <div className="flex items-center gap-2 mb-3">
-                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#7C3AED' }} />
+                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00BFFF' }} />
                                 <div>
                                   <h4 className="text-small font-semibold text-text-primary">Trust</h4>
                                   <p className="text-tiny text-text-muted">Infra · Cyber · Cloud</p>
@@ -267,7 +267,7 @@ export const HeaderAr = () => {
                                 ].map((item) => (
                                   <Link key={item.cat} to="/ar/products"
                                     className="block px-3 py-2.5 -mx-3 rounded-lg hover:bg-white/[0.04] transition-colors group/link">
-                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#7C3AED] transition-colors">{item.cat}</p>
+                                    <p className="text-small font-medium text-text-primary group-hover/link:text-[#00BFFF] transition-colors">{item.cat}</p>
                                     <p className="text-tiny text-text-muted leading-relaxed mt-0.5">{item.sub}</p>
                                   </Link>
                                 ))}
@@ -483,12 +483,12 @@ export const HeaderAr = () => {
                             'Data & Analytics — Tableau, Informatica, BigQuery',
                             'AI Workstations & Laptops — Precision, ThinkPad, Core Ultra',
                           ]},
-                          { pillar: 'الأتمتة', color: '#F59E0B', cats: [
+                          { pillar: 'الأتمتة', color: '#00BFFF', cats: [
                             'CRM & Customer Experience — Sales, Service, Marketing Cloud',
                             'Integration & Automation — MuleSoft, Ansible, API Management',
                             'Advisory & Strategy — AI Readiness, Architecture, Roadmap',
                           ]},
-                          { pillar: 'الثقة', color: '#7C3AED', cats: [
+                          { pillar: 'الثقة', color: '#00BFFF', cats: [
                             'Servers & Storage — PowerEdge, ThinkSystem, FlashSystem',
                             'AI GPUs & Accelerators — Gaudi 3, H100, Intel GPU Max',
                             'Cybersecurity — QRadar, Guardium, Cyber Recovery',

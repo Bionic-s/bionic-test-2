@@ -8,7 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#D97706';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/cloud-computing.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -116,7 +116,7 @@ export default function TechnologyOperationsPage() {
               { pre: 'Observability blind spots', text: 'Logs in one tool, metrics in another, traces in a third — no single pane of glass' },
               { pre: 'Cost escalation', text: 'Without FinOps and capacity management, infrastructure costs grow 30% YoY — untracked' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#D97706]/20 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/20 transition-all duration-300">
                 <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
                 <p className="text-tiny text-text-muted">{item.text}</p>
               </div>
@@ -138,7 +138,7 @@ export default function TechnologyOperationsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {capabilities.map((cap, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <cap.icon className="w-6 h-6 mb-3" style={{ color: ACCENT }} />
                 <h3 className="font-semibold text-sm mb-2">{cap.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{cap.desc}</p>
@@ -154,25 +154,25 @@ export default function TechnologyOperationsPage() {
           <SectionLabel>How We Deliver</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Three integrated delivery models — across every capability.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#D97706]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#D97706]/10 flex items-center justify-center mb-3 text-[#D97706]">
+            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#D97706] transition-colors">Consulting & Advisory</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Consulting & Advisory</h3>
               <p className="text-tiny text-text-muted">Operational maturity assessment · Platform engineering roadmap · SLA framework design · Observability strategy</p>
             </Link>
-            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#D97706]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#D97706]/10 flex items-center justify-center mb-3 text-[#D97706]">
+            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#D97706] transition-colors">Implementation & Delivery</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Implementation & Delivery</h3>
               <p className="text-tiny text-text-muted">Observability stack deployment · IDP build-out · AIOps pipeline · Runbook automation · FinOps implementation</p>
             </Link>
-            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#D97706]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#D97706]/10 flex items-center justify-center mb-3 text-[#D97706]">
+            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#D97706] transition-colors">Managed Operations</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Managed Operations</h3>
               <p className="text-tiny text-text-muted">24×7 platform ops · SOC-as-a-Service · 3 tiers (Essential/Advanced/Elite) · Continuous optimization + FinOps</p>
             </Link>
           </div>
@@ -191,7 +191,7 @@ export default function TechnologyOperationsPage() {
               { title: 'AI-driven, not dashboard-driven', desc: 'AIOps correlates signals across your entire estate. Dashboards are the output, not the goal. Automated root-cause analysis reduces MTTR — AIOps deployments report 50–70% improvement.' },
               { title: 'SLA-backed, continuously optimized', desc: 'Every engagement measured against defined SLOs with quarterly optimization reviews. We don\'t just maintain — we improve, quarter over quarter.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
               </div>
@@ -209,7 +209,7 @@ export default function TechnologyOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((partner, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
                   <PartnerLogo partner={partner} size="sm" />
                   <div>
@@ -233,7 +233,7 @@ export default function TechnologyOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {industries.map((ind, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{ind.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{ind.desc}</p>
               </div>
@@ -256,9 +256,9 @@ export default function TechnologyOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {insights.map((ins, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300 group cursor-pointer">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300 group cursor-pointer">
                 <span className="text-tiny font-semibold tracking-wide mb-2 block" style={{ color: ACCENT }}>{ins.tag}</span>
-                <h3 className="font-semibold text-sm mb-2 group-hover:text-[#D97706] transition-colors">{ins.title}</h3>
+                <h3 className="font-semibold text-sm mb-2 group-hover:text-[#00BFFF] transition-colors">{ins.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{ins.desc}</p>
                 <div className="flex items-center gap-1.5 mt-3 text-tiny" style={{ color: ACCENT }}>
                   Read more <ArrowRight className="w-3 h-3" />
@@ -289,15 +289,15 @@ export default function TechnologyOperationsPage() {
               { title: 'Sovereign AI Platform', industry: 'Government', slug: 'sovereign-ai-platform' },
               { title: 'Industrial Intelligence & Predictive Ops', industry: 'Oil & Gas', slug: 'industrial-intelligence-predictive-ops' },
             ].map((bp, i) => (
-              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#D97706]/25 transition-all duration-300">
-                <span className="text-tiny text-[#D97706]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#D97706] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#D97706]/40 group-hover:text-[#D97706] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/blueprints?capability=ops" className="inline-flex items-center gap-1.5 text-[#D97706] text-sm font-medium hover:underline">
+            <Link to="/blueprints?capability=ops" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               View all related blueprints <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -325,7 +325,7 @@ export default function TechnologyOperationsPage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #D9770620' }}
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
               >
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />

@@ -9,7 +9,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#059669';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/ai_case_study_image.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -80,8 +80,8 @@ export default function ImplementationDeliveryPage() {
           className="relative z-10 pt-40 pb-24 text-center px-4"
         >
           <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#059669]/25 bg-[#059669]/5 mb-10">
-              <span className="text-tiny text-[#059669] font-semibold tracking-widest uppercase">Implementation & Delivery</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00BFFF]/25 bg-[#00BFFF]/5 mb-10">
+              <span className="text-tiny text-[#00BFFF] font-semibold tracking-widest uppercase">Implementation & Delivery</span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
               Strategy → Implementation →<br />
@@ -117,7 +117,7 @@ export default function ImplementationDeliveryPage() {
               { pre: 'Vendor finger-pointing', text: 'Multi-vendor environments create accountability gaps — no single party owns deployment success' },
               { pre: 'Adoption left to chance', text: 'Systems deployed but teams can\'t use them, operations can\'t absorb them, and value goes unmeasured' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#059669]/20 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/20 transition-all duration-300">
                 <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
                 <p className="text-tiny text-text-muted">{item.text}</p>
               </div>
@@ -133,7 +133,7 @@ export default function ImplementationDeliveryPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <s.icon className="w-6 h-6 mb-3" style={{ color: ACCENT }} />
                 <h3 className="font-semibold text-sm mb-2">{s.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{s.desc}</p>
@@ -153,7 +153,7 @@ export default function ImplementationDeliveryPage() {
               { title: 'KPI Tracking', desc: 'Real-time dashboard — deployment velocity, adoption metrics, operational readiness, milestone achievement.' },
               { title: 'Value Tracking', desc: 'Value realization measured against business case — ROI tracking, benefits realization, deviation analysis.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <TrendingUp className="w-5 h-5 mb-3" style={{ color: ACCENT }} />
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
@@ -170,7 +170,7 @@ export default function ImplementationDeliveryPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilityCoverage.map((c, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#059669]/15 transition-all duration-300 flex items-start gap-3">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/15 transition-all duration-300 flex items-start gap-3">
                 <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{c.cap}</h3>
@@ -189,7 +189,7 @@ export default function ImplementationDeliveryPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
                   <PartnerLogo partner={p} size="md" />
                   <div>
@@ -215,15 +215,15 @@ export default function ImplementationDeliveryPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Reference architectures we deliver into production.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
-              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
-                <span className="text-tiny text-[#059669]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#059669] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#059669]/40 group-hover:text-[#059669] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/blueprints" className="inline-flex items-center gap-1.5 text-[#059669] text-sm font-medium hover:underline">
+            <Link to="/blueprints" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               View all blueprints <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -240,7 +240,7 @@ export default function ImplementationDeliveryPage() {
               { title: 'Time-to-value acceleration', desc: 'Production-first methodology: 2-week sprints, production-grade governance, value realized incrementally — not after 18 months.' },
               { title: 'Build-to-adopt', desc: 'Delivery includes change management, training, operational runbooks, and KPI baselines. We don\'t "throw it over the wall."' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#059669]/25 transition-all duration-300">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
                 <p className="text-tiny text-text-muted leading-relaxed">{item.desc}</p>
               </div>
@@ -292,14 +292,14 @@ export default function ImplementationDeliveryPage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #05966920' }}
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
               >
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/capabilities/integration"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#059669]/30"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF]/30"
               >
                 View Capabilities
               </Link>

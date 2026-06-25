@@ -10,7 +10,7 @@ import { trackArchitectureView } from '../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#D97706';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/enterprise-integration-hero.jpg';
 
 const SectionLabel = ({ children }: { children: string }) => (
@@ -205,23 +205,23 @@ export default function ArchitecturePage() {
               {/* Connecting line from previous layer */}
               {i > 0 && (
                 <div className="flex justify-center mb-2">
-                  <div className="w-px h-8 bg-gradient-to-b from-[#D9770615] to-transparent" />
+                  <div className="w-px h-8 bg-gradient-to-b from-[#00BFFF15] to-transparent" />
                 </div>
               )}
 
               {/* Layer card */}
               <div
-                className="rounded-2xl border p-6 md:p-8 transition-all duration-300 hover:border-[#D9770620]"
+                className="rounded-2xl border p-6 md:p-8 transition-all duration-300 hover:border-[#00BFFF20]"
                 style={{
-                  background: isEven ? 'var(--bg-secondary)' : 'linear-gradient(135deg, #D9770605, var(--bg-secondary))',
-                  borderColor: isEven ? 'rgba(255,255,255,0.04)' : '#D9770610',
+                  background: isEven ? 'var(--bg-secondary)' : 'linear-gradient(135deg, #00BFFF05, var(--bg-secondary))',
+                  borderColor: isEven ? 'rgba(255,255,255,0.04)' : '#00BFFF10',
                 }}
               >
                 {/* Layer header with icon */}
                 <div className="flex items-center gap-4 mb-5">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#D9770615', color: ACCENT }}
+                    style={{ backgroundColor: '#00BFFF15', color: ACCENT }}
                   >
                     <layer.icon className="w-6 h-6" />
                   </div>
@@ -279,7 +279,7 @@ export default function ArchitecturePage() {
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 relative overflow-hidden">
             {/* Background glow */}
             <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #D9770605 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #00BFFF05 0%, transparent 70%)' }} />
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
@@ -302,7 +302,7 @@ export default function ArchitecturePage() {
                   { label: 'Enterprise Value System', path: '/value' },
                 ].map((link) => (
                   <Link key={link.label} to={link.path}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#D97706]/30 transition-all">
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#00BFFF]/30 transition-all">
                     {link.label} <ArrowRight className="w-3.5 h-3.5" style={{ color: ACCENT }} />
                   </Link>
                 ))}
@@ -321,13 +321,13 @@ export default function ArchitecturePage() {
         >
           <div className="rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, #D977060A, var(--bg-secondary), var(--bg-secondary))',
-              border: '1px solid #D9770615',
+              background: 'linear-gradient(135deg, #00BFFF0A, var(--bg-secondary), var(--bg-secondary))',
+              border: '1px solid #00BFFF15',
             }}
           >
             {/* Decorative glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #D9770605 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #00BFFF05 0%, transparent 70%)' }} />
 
             <div className="relative z-10">
               <SectionLabel>Next Step</SectionLabel>
@@ -341,14 +341,14 @@ export default function ArchitecturePage() {
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                  style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #D9770620' }}
+                  style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
                 >
                   Start the Conversation
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/blueprints"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#D97706]/30"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF]/30"
                 >
                   View Transformation Blueprints
                 </Link>

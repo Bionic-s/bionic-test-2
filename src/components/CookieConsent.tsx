@@ -65,7 +65,7 @@ export const CookieConsent = () => {
         >
           <div className="bg-bg-secondary border border-white/10 rounded-2xl p-6 shadow-2xl shadow-black/40 backdrop-blur-xl">
             <div className="flex items-start gap-3 mb-4">
-              <Shield className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#059669' }} />
+              <Shield className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00BFFF' }} />
               <div>
                 <h3 className={`font-semibold text-sm text-text-primary mb-1 ${lang === 'ar' ? "font-[Tajawal]" : ''}`}>{texts.title}</h3>
                 <p className={`text-tiny text-text-muted leading-relaxed ${lang === 'ar' ? "font-[Tajawal]" : ''}`}>
@@ -79,7 +79,7 @@ export const CookieConsent = () => {
             <div className="flex gap-3">
               <button
                 onClick={accept}
-                className={`flex-1 px-4 py-2.5 bg-[#059669] text-white text-sm font-semibold rounded-lg hover:bg-[#047857] transition-all ${lang === 'ar' ? "font-[Tajawal]" : ''}`}
+                className={`flex-1 px-4 py-2.5 bg-[#00BFFF] text-white text-sm font-semibold rounded-lg hover:bg-[#0099CC] transition-all ${lang === 'ar' ? "font-[Tajawal]" : ''}`}
               >
                 {texts.accept}
               </button>

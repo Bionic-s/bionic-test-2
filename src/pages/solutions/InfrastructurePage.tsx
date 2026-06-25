@@ -8,7 +8,7 @@ import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#2563EB';
+const ACCENT = '#00BFFF';
 const HERO_BG = '/test-site-2/images/it-infrastructure.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
@@ -52,12 +52,12 @@ export default function InfrastructurePage() {
             className="relative z-10 pt-40 pb-32 text-center px-4"
           >
           <div className="inline-flex items-center px-4 py-2 rounded-full border mb-10"
-            style={{ borderColor: '#2563EB40', backgroundColor: '#2563EB08' }}>
+            style={{ borderColor: '#00BFFF40', backgroundColor: '#00BFFF08' }}>
             <Server className="w-4 h-4 mr-2" style={{ color: ACCENT }} />
             <span className="text-tiny font-semibold tracking-widest uppercase" style={{ color: ACCENT }}>Sovereign Infrastructure & Hybrid Cloud</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-white bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00BFFF] via-[#60A5FA] to-white bg-clip-text text-transparent">
               From infrastructure management<br />to sovereign digital foundations.
             </span>
           </h1>
@@ -81,9 +81,9 @@ export default function InfrastructurePage() {
               { icon: <Container className="w-5 h-5" />, text: 'No platform layer between infrastructure and development teams.' },
               { icon: <HardDrive className="w-5 h-5" />, text: 'Infrastructure procurement cycles disconnected from business velocity.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#2563EB30]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl px-5 py-4 transition-all duration-300 flex items-center gap-3 hover:border-[#00BFFF30]">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: '#2563EB15', color: ACCENT }}>{item.icon}</div>
+                  style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>{item.icon}</div>
                 <p className="text-text-primary text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
@@ -135,10 +135,10 @@ export default function InfrastructurePage() {
                 outcomes: ['24×7 infrastructure monitoring with proactive incident response', 'Capacity planning and lifecycle management across all infrastructure assets', 'Continuous platform evolution aligned to workload and regulatory changes', 'SLA-backed operations with defined availability and performance commitments'],
               },
             ].map((cap, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#2563EB1A]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF1A]">
                 <div className="flex flex-col md:flex-row md:items-start gap-5">
                   <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: '#2563EB12', color: ACCENT }}>{cap.icon}</div>
+                    style={{ backgroundColor: '#00BFFF12', color: ACCENT }}>{cap.icon}</div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold mb-1 text-text-primary">{cap.title}</h3>
                     <p className="text-text-muted text-sm leading-relaxed mb-4">{cap.desc}</p>
@@ -162,25 +162,25 @@ export default function InfrastructurePage() {
           <SectionLabel>How We Deliver</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Three integrated delivery models — across every capability.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-3 text-[#2563EB]">
+            <Link to="/services/advisory" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">Consulting & Advisory</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Consulting & Advisory</h3>
               <p className="text-tiny text-text-muted">AI Readiness Assessment · Compliance & GRC Advisory · Strategy & roadmap</p>
             </Link>
-            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-3 text-[#2563EB]">
+            <Link to="/services/implementation" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">Implementation & Delivery</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Implementation & Delivery</h3>
               <p className="text-tiny text-text-muted">AI & Automation Deployment · Platform & App Delivery · MLOps pipeline</p>
             </Link>
-            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#2563EB]/25 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-3 text-[#2563EB]">
+            <Link to="/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
-              <h3 className="font-semibold mb-1 group-hover:text-[#2563EB] transition-colors">Managed Operations</h3>
+              <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">Managed Operations</h3>
               <p className="text-tiny text-text-muted">24×7 platform ops · SOC-as-a-Service · 3 tiers (Essential/Advanced/Elite)</p>
             </Link>
           </div>
@@ -189,7 +189,7 @@ export default function InfrastructurePage() {
         {/* ═══ 4. WHY BIONIC ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
           <div className="rounded-2xl p-10 md:p-12"
-            style={{ background: 'linear-gradient(135deg, #2563EB08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF08, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <SectionLabel>Why Bionic</SectionLabel>
             <h2 className="text-2xl md:text-3xl font-bold mb-10">The partner who builds sovereign digital foundations.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -217,10 +217,10 @@ export default function InfrastructurePage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Technology Ecosystem</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#2563EB1A]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 group hover:border-[#00BFFF1A]">
                 <div className="flex items-center gap-4 mb-3">
                   <PartnerLogo partner={p} size="sm" />
-                  <span className="text-xs font-medium" style={{ color: '#2563EB99' }}>{p.role}</span>
+                  <span className="text-xs font-medium" style={{ color: '#00BFFF99' }}>{p.role}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{p.tech}</p>
               </div>
@@ -241,7 +241,7 @@ export default function InfrastructurePage() {
               { industry: 'Manufacturing', apps: 'Edge computing for factory operations, private 5G infrastructure, production system high availability, supply chain platforms.' },
               { industry: 'Telecommunications', apps: 'NFV infrastructure, 5G core platforms, edge cloud for low-latency services, BSS/OSS cloud migration.' },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#2563EB1A]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 transition-all duration-300 hover:border-[#00BFFF1A]">
                 <h3 className="font-semibold text-base mb-2 text-text-primary">{item.industry}</h3>
                 <p className="text-text-muted text-xs leading-relaxed">{item.apps}</p>
               </div>
@@ -276,13 +276,13 @@ export default function InfrastructurePage() {
                 desc: 'Why internal developer platforms are becoming the difference between infrastructure that enables innovation and infrastructure that blocks it.',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#2563EB12]">
+              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF12]">
                 <span className="text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block"
-                  style={{ backgroundColor: '#2563EB12', color: ACCENT }}>{item.tag}</span>
+                  style={{ backgroundColor: '#00BFFF12', color: ACCENT }}>{item.tag}</span>
                 <h3 className="text-lg font-bold mb-2 text-text-primary">{item.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-4">{item.desc}</p>
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium"
-                  style={{ color: '#2563EB99' }}>
+                  style={{ color: '#00BFFF99' }}>
                   <ExternalLink className="w-3 h-3" />
                   Read perspective
                 </span>
@@ -307,15 +307,15 @@ export default function InfrastructurePage() {
               { title: 'SAMA-Compliant Banking Infrastructure', industry: 'Banking', slug: 'sama-compliant-banking-infra' },
               { title: 'Industrial Intelligence & Predictive Ops', industry: 'Oil & Gas', slug: 'industrial-intelligence-predictive-ops' },
             ].map((bp, i) => (
-              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#2563EB]/25 transition-all duration-300">
-                <span className="text-tiny text-[#2563EB]/60 mb-2 block">{bp.industry}</span>
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#2563EB] transition-colors">{bp.title}</h3>
-                <ArrowRight className="w-4 h-4 text-[#2563EB]/40 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all mt-2" />
+              <Link key={i} to={`/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
+                <span className="text-tiny text-[#00BFFF]/60 mb-2 block">{bp.industry}</span>
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-[#00BFFF] transition-colors">{bp.title}</h3>
+                <ArrowRight className="w-4 h-4 text-[#00BFFF]/40 group-hover:text-[#00BFFF] group-hover:translate-x-1 transition-all mt-2" />
               </Link>
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link to="/blueprints?capability=infra" className="inline-flex items-center gap-1.5 text-[#2563EB] text-sm font-medium hover:underline">
+            <Link to="/blueprints?capability=infra" className="inline-flex items-center gap-1.5 text-[#00BFFF] text-sm font-medium hover:underline">
               View all related blueprints <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -329,10 +329,10 @@ export default function InfrastructurePage() {
           transition={{ duration: 0.7 }}
         >
           <div className="rounded-2xl p-10 md:p-14 text-center"
-            style={{ background: 'linear-gradient(135deg, #2563EB0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #2563EB1A' }}>
+            style={{ background: 'linear-gradient(135deg, #00BFFF0D, var(--bg-secondary), var(--bg-secondary))', border: '1px solid #00BFFF1A' }}>
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               Ready to build your<br />
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">sovereign digital foundation</span>?
+              <span className="bg-gradient-to-r from-[#00BFFF] to-[#60A5FA] bg-clip-text text-transparent">sovereign digital foundation</span>?
             </h2>
             <p className="text-text-muted text-base mb-8 max-w-xl mx-auto leading-relaxed">
               Let's discuss how sovereign infrastructure and hybrid cloud can accelerate your digital transformation — with residency and resilience built in.
@@ -341,7 +341,7 @@ export default function InfrastructurePage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #2563EB20' }}>
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>

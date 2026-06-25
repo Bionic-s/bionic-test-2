@@ -16,21 +16,21 @@ const SectionLabel = ({ children }: { children: string }) => (
 const deliveryModels = [
   {
     title: 'Consulting & Advisory',
-    accent: '#0D9488',
+    accent: '#00BFFF',
     desc: 'Strategy, architecture, compliance, operating model, and business case — from readiness to executive buy-in.',
     highlights: ['AI Readiness Assessment', 'Business Case Development', 'Operating Model Design', 'Compliance & GRC Advisory', 'Vendor Selection'],
     path: '/services/advisory',
   },
   {
     title: 'Implementation & Delivery',
-    accent: '#059669',
+    accent: '#00BFFF',
     desc: 'Deploy, integrate, and deliver into production — with adoption, governance, and value tracking built in.',
     highlights: ['AI & Automation Deployment', 'Platform & App Delivery', 'Integration Engineering', 'Security Implementation', 'Value Realization'],
     path: '/services/implementation',
   },
   {
     title: 'Managed Operations',
-    accent: '#D97706',
+    accent: '#00BFFF',
     desc: 'Continuous transformation enablement — 24×7 platform ops, SRE, AIOps, FinOps, and platform engineering.',
     highlights: ['AIOps & Observability', 'SRE & Platform Engineering', 'FinOps Governance', 'SOC-as-a-Service', 'Continuous Optimization'],
     path: '/services/operations',

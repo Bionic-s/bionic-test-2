@@ -7,7 +7,7 @@ import { trackValueSystemView } from '../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const ACCENT = '#059669';
+const ACCENT = '#00BFFF';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );
@@ -51,7 +51,7 @@ export default function EnterpriseValueSystemPage() {
             {/* CFO */}
             <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#05966915', color: ACCENT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <div>
@@ -83,7 +83,7 @@ export default function EnterpriseValueSystemPage() {
             {/* CEO */}
             <div className="bg-bg-secondary border border-white/5 rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#05966915', color: ACCENT }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#00BFFF15', color: ACCENT }}>
                   <Target className="w-5 h-5" />
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function EnterpriseValueSystemPage() {
                 timeline: '12-36 months',
                 desc: 'Revenue, market share, customer value.',
                 iat: 'Intelligence + Automation',
-                color: '#7C3AED',
+                color: '#00BFFF',
                 items: ['AI-powered cross-sell', 'New digital channels', 'Faster time-to-market', 'Customer experience transformation'],
               },
               {
@@ -137,7 +137,7 @@ export default function EnterpriseValueSystemPage() {
                 timeline: '0-12 months',
                 desc: 'Cost, throughput, productivity.',
                 iat: 'Automation',
-                color: '#F97316',
+                color: '#00BFFF',
                 items: ['Process automation', 'FTE reallocation', 'Infrastructure rationalization', 'Ticket deflection'],
               },
               {
@@ -145,7 +145,7 @@ export default function EnterpriseValueSystemPage() {
                 timeline: '6-18 months',
                 desc: 'Risk, compliance, continuity.',
                 iat: 'Trust',
-                color: '#2563EB',
+                color: '#00BFFF',
                 items: ['Zero Trust architecture', 'Regulatory compliance', 'Ransomware protection', 'Cyber recovery capability'],
               },
               {
@@ -153,7 +153,7 @@ export default function EnterpriseValueSystemPage() {
                 timeline: '24-60 months',
                 desc: 'Sovereign platforms, national infrastructure.',
                 iat: 'Intelligence + Automation + Trust',
-                color: '#0D9488',
+                color: '#00BFFF',
                 items: ['Sovereign AI platforms', 'National data fabrics', 'Digital government services', 'Workforce transformation'],
               },
             ].map((h, i) => (
@@ -200,7 +200,7 @@ export default function EnterpriseValueSystemPage() {
                 mechanism: 'Throughput, cost-to-serve, time-to-market',
                 outcome: 'More output with less cost and fewer errors',
                 example: 'Agentic workforce automates repetitive tasks — FTE redeployed to high-value work.',
-                color: '#7C3AED',
+                color: '#00BFFF',
                 icon: Zap,
               },
               {
@@ -208,7 +208,7 @@ export default function EnterpriseValueSystemPage() {
                 mechanism: 'Resilience, sovereignty, audit posture',
                 outcome: 'Confidence that enables growth',
                 example: 'Zero Trust architecture enables secure digital expansion — compliance becomes enablement.',
-                color: '#10B981',
+                color: '#00BFFF',
                 icon: Shield,
               },
             ].map((p, i) => (
@@ -262,11 +262,11 @@ export default function EnterpriseValueSystemPage() {
           </p>
           <div className="space-y-3">
             {[
-              { phase: 'Engage', color: '#7C3AED', icon: Target, what: 'Discovery, readiness, business case', value: 'Clarity on what to transform, why, and what value to expect' },
-              { phase: 'Design', color: '#06B6D4', icon: Layers, what: 'Architecture, roadmap, governance', value: 'Transformation plan with measurable targets and timelines' },
-              { phase: 'Build', color: '#059669', icon: Zap, what: 'Deploy, integrate, adopt', value: 'Platforms operational, users onboarded, workflows live' },
-              { phase: 'Operate', color: '#F97316', icon: RefreshCw, what: 'Run, monitor, optimize', value: 'Platforms performing, issues resolved, metrics tracked — continuous transformation enablement' },
-              { phase: 'Evolve', color: '#DC2626', icon: TrendingUp, what: 'Innovate, expand, scale', value: 'New capabilities added, scope expanded, value compounded quarter over quarter' },
+              { phase: 'Engage', color: '#00BFFF', icon: Target, what: 'Discovery, readiness, business case', value: 'Clarity on what to transform, why, and what value to expect' },
+              { phase: 'Design', color: '#00BFFF', icon: Layers, what: 'Architecture, roadmap, governance', value: 'Transformation plan with measurable targets and timelines' },
+              { phase: 'Build', color: '#00BFFF', icon: Zap, what: 'Deploy, integrate, adopt', value: 'Platforms operational, users onboarded, workflows live' },
+              { phase: 'Operate', color: '#00BFFF', icon: RefreshCw, what: 'Run, monitor, optimize', value: 'Platforms performing, issues resolved, metrics tracked — continuous transformation enablement' },
+              { phase: 'Evolve', color: '#00BFFF', icon: TrendingUp, what: 'Innovate, expand, scale', value: 'New capabilities added, scope expanded, value compounded quarter over quarter' },
             ].map((phase, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-white/10 transition-all duration-300 flex items-center gap-5">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${phase.color}15`, color: phase.color }}>
@@ -297,25 +297,25 @@ export default function EnterpriseValueSystemPage() {
             {[
               {
                 horizon: 'Growth',
-                color: '#7C3AED',
+                color: '#00BFFF',
                 icon: TrendingUp,
                 kpis: ['Revenue Growth', 'Customer Expansion', 'New Digital Services', 'Market Responsiveness', 'Channel Performance'],
               },
               {
                 horizon: 'Efficiency',
-                color: '#F97316',
+                color: '#00BFFF',
                 icon: Zap,
                 kpis: ['Time-to-Market', 'Cost-to-Serve', 'Process Throughput', 'Automation Coverage', 'Resource Utilization'],
               },
               {
                 horizon: 'Resilience',
-                color: '#2563EB',
+                color: '#00BFFF',
                 icon: Shield,
                 kpis: ['Recovery Readiness', 'Security Posture', 'Compliance Maturity', 'Audit Confidence', 'Threat Response Time'],
               },
               {
                 horizon: 'Capability',
-                color: '#0D9488',
+                color: '#00BFFF',
                 icon: Brain,
                 kpis: ['AI Adoption', 'Automation Coverage', 'Data Maturity', 'Platform Utilization', 'Workforce Capability'],
               },
@@ -370,7 +370,7 @@ export default function EnterpriseValueSystemPage() {
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0" style={{ backgroundColor: ACCENT }}>
                       {item.restart ? '↻' : i + 1}
                     </div>
-                    {i < 5 && <div className="w-0.5 h-10 mt-1" style={{ backgroundColor: '#05966930' }} />}
+                    {i < 5 && <div className="w-0.5 h-10 mt-1" style={{ backgroundColor: '#00BFFF30' }} />}
                   </div>
                   <div className="flex-1 pb-2">
                     <div className="flex items-baseline gap-2 flex-wrap">
@@ -418,14 +418,14 @@ export default function EnterpriseValueSystemPage() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"
-                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #05966920' }}
+                style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}
               >
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/architecture"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#059669]/30"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/10 text-text-primary font-medium rounded-xl transition-all duration-300 hover:border-[#00BFFF]/30"
               >
                 Explore Transformation Architecture
               </Link>
@@ -443,7 +443,7 @@ export default function EnterpriseValueSystemPage() {
                 { label: 'Blueprints', path: '/blueprints' },
               ].map((link) => (
                 <Link key={link.label} to={link.path}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#059669]/30 transition-all hover:-translate-y-0.5">
+                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-white/10 rounded-full text-sm font-medium text-text-primary hover:border-[#00BFFF]/30 transition-all hover:-translate-y-0.5">
                   {link.label} <ArrowRight className="w-3.5 h-3.5" style={{ color: ACCENT }} />
                 </Link>
               ))}
