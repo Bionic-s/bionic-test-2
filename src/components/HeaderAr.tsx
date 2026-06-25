@@ -19,11 +19,11 @@ export const HeaderAr = () => {
 
   // ── About dropdown ──
   const aboutItems = [
-    { name: 'من نحن', desc: 'قصتنا وقيادتنا ورسالتنا', path: '/about' },
-    { name: 'معمارية التحول', desc: '١٠ طبقات. نظام واحد متكامل.', path: '/architecture' },
-    { name: 'منظومة القيمة المؤسسية', desc: 'كيف تتراكم القيمة عبر الآفاق', path: '/value' },
-    { name: 'شركاؤنا', desc: 'شركاء تقنية عالميون', path: '/partners' },
-    { name: 'المخططات المرجعية', desc: 'حالات تحول مرجعية', path: '/blueprints' },
+    { name: 'من نحن', desc: 'قصتنا وقيادتنا ورسالتنا', path: '/ar/about' },
+    { name: 'معمارية التحول', desc: '١٠ طبقات. نظام واحد متكامل.', path: '/ar/architecture' },
+    { name: 'منظومة القيمة المؤسسية', desc: 'كيف تتراكم القيمة عبر الآفاق', path: '/ar/value' },
+    { name: 'شركاؤنا', desc: 'شركاء تقنية عالميون', path: '/ar/partners' },
+    { name: 'المخططات المرجعية', desc: 'حالات تحول مرجعية', path: '/ar/blueprints' },
   ];
 
   // ── القدرات حسب القطاع ──
@@ -42,8 +42,8 @@ export const HeaderAr = () => {
       tagline: 'AI · Analytics · Data',
       color: '#00BFFF',
       items: [
-        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'وكلاء الذكاء الاصطناعي، المساعدون الأذكياء، MLOps', path: '/capabilities/ai' },
-        { name: 'البيانات والتحليلات والذكاء', desc: 'منصات البيانات، إدارة البيانات الرئيسية، ذكاء الأعمال', path: '/capabilities/data' },
+        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'وكلاء الذكاء الاصطناعي، المساعدون الأذكياء، MLOps', path: '/ar/capabilities/ai' },
+        { name: 'البيانات والتحليلات والذكاء', desc: 'منصات البيانات، إدارة البيانات الرئيسية، ذكاء الأعمال', path: '/ar/capabilities/data' },
       ],
     },
     {
@@ -51,8 +51,8 @@ export const HeaderAr = () => {
       tagline: 'Apps · Integration · Workflow',
       color: '#F59E0B',
       items: [
-        { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز اتصال، تجارة', path: '/capabilities/apps' },
-        { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، بالأحداث، تنسيق سير العمل', path: '/capabilities/integration' },
+        { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز اتصال، تجارة', path: '/ar/capabilities/apps' },
+        { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
       ],
     },
     {
@@ -60,9 +60,9 @@ export const HeaderAr = () => {
       tagline: 'Cyber · Sovereign · Resilience',
       color: '#7C3AED',
       items: [
-        { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز عمليات أمنية، Zero Trust، الهوية', path: '/capabilities/cyber' },
-        { name: 'البنية التحتية السيادية', desc: 'مراكز بيانات، سحابة هجينة، بنية الذكاء التحتية', path: '/capabilities/infra' },
-        { name: 'عمليات التقنية', desc: 'هندسة المنصات، AIOps، SRE', path: '/capabilities/ops' },
+        { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز عمليات أمنية، Zero Trust، الهوية', path: '/ar/capabilities/cyber' },
+        { name: 'البنية التحتية السيادية', desc: 'مراكز بيانات، سحابة هجينة، بنية الذكاء التحتية', path: '/ar/capabilities/infra' },
+        { name: 'عمليات التقنية', desc: 'هندسة المنصات، AIOps، SRE', path: '/ar/capabilities/ops' },
       ],
     },
   ];
@@ -71,19 +71,19 @@ export const HeaderAr = () => {
   const serviceCategories = [
     {
       heading: 'الاستشارات والتخطيط',
-      path: '/services/advisory',
+      path: '/ar/services/advisory',
       desc: 'الاستراتيجية، المعمارية، جاهزية الذكاء الاصطناعي، خرائط طريق الامتثال',
       items: ['تقييم جاهزية الذكاء الاصطناعي', 'استشارات الامتثال والحوكمة', 'المعمارية المؤسسية', 'استراتيجية تحول الأعمال'],
     },
     {
       heading: 'التنفيذ والتسليم',
-      path: '/services/implementation',
+      path: '/ar/services/implementation',
       desc: 'النشر، التكامل، التبني، الحوكمة',
       items: ['نشر الذكاء الاصطناعي والأتمتة', 'تسليم المنصات والتطبيقات', 'بناء منصة البيانات', 'تطبيق Zero Trust'],
     },
     {
       heading: 'العمليات المدارة',
-      path: '/services/operations',
+      path: '/ar/services/operations',
       desc: 'عمليات منصات ٢٤×٧، AIOps، SRE، FinOps، تحسين مستمر',
       items: ['عمليات تقنية ٢٤×٧', 'مركز عمليات أمنية كخدمة', 'حوكمة FinOps', 'هندسة المنصات'],
     },
