@@ -33,6 +33,10 @@ import ArabicBankingIndustryPage from './pages/ar/ArabicBankingIndustryPage';
 import ArabicOilGasIndustryPage from './pages/ar/ArabicOilGasIndustryPage';
 import ArabicHealthcareIndustryPage from './pages/ar/ArabicHealthcareIndustryPage';
 import ArabicEnterpriseIndustryPage from './pages/ar/ArabicEnterpriseIndustryPage';
+import ArabicTelecomIndustryPage from './pages/ar/ArabicTelecomIndustryPage';
+import ArabicRetailIndustryPage from './pages/ar/ArabicRetailIndustryPage';
+import ArabicManufacturingIndustryPage from './pages/ar/ArabicManufacturingIndustryPage';
+import ArabicTransportLogisticsIndustryPage from './pages/ar/ArabicTransportLogisticsIndustryPage';
 
 // Arabic Capability Pages
 import ArabicAISolutionPage from './pages/ar/ArabicAISolutionPage';
@@ -85,6 +89,10 @@ import BankingIndustryPage from './pages/industries/BankingIndustryPage';
 import OilGasIndustryPage from './pages/industries/OilGasIndustryPage';
 import HealthcareIndustryPage from './pages/industries/HealthcareIndustryPage';
 import EnterpriseIndustryPage from './pages/industries/EnterpriseIndustryPage';
+import TelecomIndustryPage from './pages/industries/TelecomIndustryPage';
+import RetailIndustryPage from './pages/industries/RetailIndustryPage';
+import ManufacturingIndustryPage from './pages/industries/ManufacturingIndustryPage';
+import TransportLogisticsIndustryPage from './pages/industries/TransportLogisticsIndustryPage';
 
 // Products
 import ProductsPage from './pages/solutions/ProductsPage';
@@ -204,12 +212,20 @@ function AppContent() {
           <Route path="/services/implementation" element={<ImplementationDeliveryPage />} />
           <Route path="/services/operations" element={<ManagedOperationsPage />} />
 
-          {/* ═══ Industries (5) ═══ */}
+          {/* ═══ Industries (9) ═══ */}
           <Route path="/industries/government" element={<GovernmentIndustryPage />} />
           <Route path="/industries/banking" element={<BankingIndustryPage />} />
           <Route path="/industries/oil-gas" element={<OilGasIndustryPage />} />
           <Route path="/industries/healthcare" element={<HealthcareIndustryPage />} />
           <Route path="/industries/enterprise" element={<EnterpriseIndustryPage />} />
+          <Route path="/industries/telecom" element={<TelecomIndustryPage />} />
+          <Route path="/industries/retail" element={<RetailIndustryPage />} />
+          <Route path="/industries/manufacturing" element={<ManufacturingIndustryPage />} />
+          <Route path="/industries/logistics" element={<TransportLogisticsIndustryPage />} />
+          <Route path="/industries/telecom" element={<TelecomIndustryPage />} />
+          <Route path="/industries/retail" element={<RetailIndustryPage />} />
+          <Route path="/industries/manufacturing" element={<ManufacturingIndustryPage />} />
+          <Route path="/industries/logistics" element={<TransportLogisticsIndustryPage />} />
 
           {/* ═══ Architecture ═══ */}
           <Route path="/architecture" element={<ArchitecturePage />} />
@@ -244,6 +260,10 @@ function AppContent() {
           <Route path="/solutions/banking" element={<Navigate to="/industries/banking" replace />} />
           <Route path="/solutions/oil-gas" element={<Navigate to="/industries/oil-gas" replace />} />
           <Route path="/solutions/enterprise" element={<Navigate to="/industries/enterprise" replace />} />
+          <Route path="/solutions/telecom" element={<Navigate to="/industries/telecom" replace />} />
+          <Route path="/solutions/retail" element={<Navigate to="/industries/retail" replace />} />
+          <Route path="/solutions/manufacturing" element={<Navigate to="/industries/manufacturing" replace />} />
+          <Route path="/solutions/logistics" element={<Navigate to="/industries/logistics" replace />} />
 
           {/* /case-studies / /case-studies/* → /blueprints */}
           <Route path="/case-studies" element={<Navigate to="/blueprints" replace />} />
@@ -282,6 +302,14 @@ function AppContent() {
           <Route path="/ar/industries/oil-gas" element={<ArabicOilGasIndustryPage />} />
           <Route path="/ar/industries/healthcare" element={<ArabicHealthcareIndustryPage />} />
           <Route path="/ar/industries/enterprise" element={<ArabicEnterpriseIndustryPage />} />
+          <Route path="/ar/industries/telecom" element={<ArabicTelecomIndustryPage />} />
+          <Route path="/ar/industries/retail" element={<ArabicRetailIndustryPage />} />
+          <Route path="/ar/industries/manufacturing" element={<ArabicManufacturingIndustryPage />} />
+          <Route path="/ar/industries/logistics" element={<ArabicTransportLogisticsIndustryPage />} />
+          <Route path="/ar/industries/telecom" element={<ArabicTelecomIndustryPage />} />
+          <Route path="/ar/industries/retail" element={<ArabicRetailIndustryPage />} />
+          <Route path="/ar/industries/manufacturing" element={<ArabicManufacturingIndustryPage />} />
+          <Route path="/ar/industries/logistics" element={<ArabicTransportLogisticsIndustryPage />} />
 
           {/* Arabic Legal */}
           <Route path="/ar/privacy" element={<ArabicPrivacyPolicyPage />} />

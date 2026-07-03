@@ -62,6 +62,7 @@ export const FooterAr = () => {
               <li><Link to="/ar/industries/oil-gas" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">النفط والغاز</Link></li>
               <li><Link to="/ar/industries/healthcare" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الرعاية الصحية</Link></li>
               <li><Link to="/ar/industries/enterprise" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">المؤسسات الكبرى</Link></li>
+              <li><Link to="/ar/industries/manufacturing" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الصناعة والتصنيع</Link></li>
             </ul>
           </div>
 

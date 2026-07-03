@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Filter, X, Search } from 'lucide-react';
 import { Buildings, Bank, Drop, Heartbeat, BuildingOffice } from '@phosphor-icons/react';
+import { Radio, ShoppingCart, Factory, Truck } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../../data/blueprintsData';
 import { trackBlueprintHubView } from '../../lib/analytics';
@@ -28,11 +29,15 @@ const iatForce: Record<string, string> = {
 };
 
 const industryIcons: Record<string, React.ReactNode> = {
-  'Government & Public Sector': <Buildings size={20} weight="fill" />,
-  'Banking & Financial Services': <Bank size={20} weight="fill" />,
-  'Oil, Gas & Energy': <Drop size={20} weight="fill" />,
-  'Healthcare': <Heartbeat size={20} weight="fill" />,
-  'Enterprise': <BuildingOffice size={20} weight="fill" />,
+  'Government & Public Sector': <Buildings size={20} fill="currentColor" />,
+  'Banking & Financial Services': <Bank size={20} fill="currentColor" />,
+  'Oil, Gas & Energy': <Drop size={20} fill="currentColor" />,
+  'Healthcare': <Heartbeat size={20} fill="currentColor" />,
+  'Enterprise': <BuildingOffice size={20} fill="currentColor" />,
+  'Telecom & Communications': <Radio size={20} fill="currentColor" />,
+  'Retail & Consumer': <ShoppingCart size={20} fill="currentColor" />,
+  'Manufacturing': <Factory size={20} fill="currentColor" />,
+  'Transport & Logistics': <Truck size={20} fill="currentColor" />,
 };
 
 export default function Page() {

@@ -28,6 +28,7 @@ export const Footer = () => {
     { name: 'Oil & Gas', href: '/industries/oil-gas' },
     { name: 'Healthcare', href: '/industries/healthcare' },
     { name: 'Enterprise', href: '/industries/enterprise' },
+    { name: 'Manufacturing', href: '/industries/manufacturing' },
   ];
 
   return (

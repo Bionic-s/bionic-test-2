@@ -105,7 +105,7 @@ export const Hero = () => {
             {[
               { value: 11, prefix: '', suffix: '+', label: 'Strategic Technology Partners', description: 'Global ecosystem' },
               { value: 7, prefix: '', suffix: '', label: 'Service Lines', description: 'Full transformation stack' },
-              { value: 5, prefix: '', suffix: '', label: 'Top Sectors', description: 'Banking · Government · Oil & Gas · Enterprise' },
+              { value: 5, prefix: '', suffix: '', label: 'Top Sectors', description: 'Banking · Government · Oil & Gas · Healthcare · Enterprise' },
             ].map((metric, index) => (
               <motion.div key={index} className="text-center group cursor-pointer" whileHover={{ scale: 1.05, y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
                 <motion.div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-primary mb-2 group-hover:text-accent-secondary transition-colors duration-300"

@@ -282,6 +282,30 @@ export const blueprints: Blueprint[] = [
     whyBionic: 'Zero Trust is not a product. Bionic implements Zero Trust across the full IBM security stack with Ansible automation — not just a consulting certification. Build + operate + guarantee.',
   },
 
+  // ── Sovereign AI Node (SME) ──────────────────────────
+  {
+    slug: 'sovereign-ai-node',
+    title: 'Sovereign AI Operations Node — Self-Contained Enterprise AI',
+    industry: 'Enterprise',
+    industrySlug: 'enterprise',
+    capabilities: ['Enterprise AI & Automation', 'Sovereign Infrastructure & Hybrid Cloud', 'Technology Operations', 'Cybersecurity & Cyber Resilience'],
+    capabilitySlugs: ['ai', 'infra', 'ops', 'cyber'],
+    services: ['AI Readiness Assessment', 'AI & Automation Deployment', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['NVIDIA'],
+    products: ['NVIDIA DGX Spark', 'NVIDIA AI Enterprise', 'DGX OS', 'Local LLMs (Qwen)', 'Claude Agents'],
+    challenge: 'An SME wants AI automation but cannot afford enterprise cloud subscriptions, cannot send data outside the Kingdom due to regulatory requirements, and lacks the technical team to manage AI infrastructure. Cloud AI costs compound indefinitely — a local AI appliance pays for itself in 12 months and then runs for free.',
+    architecture: 'NVIDIA DGX Spark (128GB unified RAM · 4TB NVMe · 1 PetaFLOP AI) → DGX OS + NVIDIA AI Stack → Local LLMs (Qwen 3.6 / Claude Agents) → Custom AI workflows: document processing, compliance checks, tender matching, invoicing → All data stays within the Kingdom → 24×7 Managed Operations by Bionic',
+    outcomes: [
+      '100% sovereign AI — all data, models, and operations within the Kingdom',
+      'Hardware pays for itself in 12 months vs equivalent cloud AI subscriptions',
+      'Zero cloud dependency — no monthly AI service fees after year one',
+      'AI agents handle repetitive operations: document processing, compliance, tenders, invoicing',
+      'NCA-compliant, PDPL-compliant, ready for government procurement requirements',
+    ],
+    whyBionic: 'No one delivers a turnkey sovereign AI appliance in Saudi Arabia. Cloud vendors sell subscriptions. Hardware vendors sell boxes. Bionic delivers the complete node: hardware + AI models + compliance layer + 24×7 operations — as one accountable engagement. Plug it in. Your AI runs sovereign.',
+  },
+
   // ── Enterprise AI Agents ──────────────────────────────
   {
     slug: 'enterprise-ai-agents',
@@ -305,10 +329,96 @@ export const blueprints: Blueprint[] = [
     ],
     whyBionic: 'No single vendor sells the complete AI agent stack. Dell sells hardware. Salesforce sells Agentforce. IBM sells watsonx. Google sells Vertex AI. None of them deliver the laptop, the GPU, the platform, the agent, AND the ongoing operations as one accountable engagement. Bionic does — from discovery to production to continuous evolution.',
   },
+
+  // ── Telecom ────────────────────────────────────────────
+  {
+    slug: '5g-monetization-telco-cloud',
+    title: '5G Monetization & Telco Cloud',
+    industry: 'Telecom & Communications',
+    industrySlug: 'telecom',
+    capabilities: ['Enterprise AI & Automation', 'Data, Analytics & Intelligence', 'Integration & Intelligent Operations', 'Technology Operations'],
+    capabilitySlugs: ['ai', 'data', 'integration', 'ops'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['IBM', 'Red Hat', 'Salesforce', 'Google', 'Dell Technologies'],
+    products: ['IBM Cloud Pak for Network Automation', 'Red Hat OpenShift', 'Red Hat Ansible', 'Salesforce Communications Cloud', 'Google BigQuery', 'Vertex AI', 'Dell PowerEdge R760', 'QRadar SIEM'],
+    challenge: 'A telecom operator is deploying 5G infrastructure but cannot monetize it. Network slicing, edge computing, and B2B2X models remain theoretical. BSS/OSS systems are monolithic and cannot support real-time charging or dynamic service orchestration. Revenue is flat while infrastructure cost is rising.',
+    architecture: '5G core & RAN → IBM Cloud Pak for Network Automation (orchestration) → Red Hat OpenShift telco cloud platform → Red Hat Ansible zero-touch provisioning → Salesforce Communications Cloud (B2B monetization) → Google BigQuery (network analytics) → Vertex AI (predictive capacity & churn) → QRadar SIEM (telco security)',
+    outcomes: ['Revenue generation from network slicing as-a-service', 'Zero-touch provisioning reduces operational cost measurably', 'Real-time BSS/OSS enables dynamic charging models', 'AI-driven predictive capacity management and churn reduction', 'CST-compliant telco cloud architecture'],
+    whyBionic: 'Bionic brings together network automation (IBM), telco cloud (Red Hat), monetization (Salesforce), and AI analytics (Google) — an integrated telco platform, not a collection of vendor pieces.',
+  },
+  // ── Retail ─────────────────────────────────────────────
+  {
+    slug: 'intelligent-commerce-omnichannel',
+    title: 'Intelligent Commerce & Omnichannel CX',
+    industry: 'Retail & Consumer',
+    industrySlug: 'retail',
+    capabilities: ['Business Applications & CX', 'Data, Analytics & Intelligence', 'Enterprise AI & Automation', 'Integration & Intelligent Operations'],
+    capabilitySlugs: ['apps', 'data', 'ai', 'integration'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Salesforce', 'MuleSoft', 'Google', 'Tableau', 'Informatica'],
+    products: ['Salesforce Commerce Cloud', 'Marketing Cloud', 'Data Cloud', 'Einstein AI', 'MuleSoft Anypoint', 'Google BigQuery', 'Vertex AI', 'Tableau', 'Informatica MDM'],
+    challenge: 'A Saudi retailer operates 50+ stores and an e-commerce channel — but inventory, pricing, and customer data are completely disconnected. Online promotions do not reflect in-store reality. Customer profiles are fragmented. The loyalty program does not influence real-time offers.',
+    architecture: 'POS & e-commerce systems → MuleSoft Anypoint (unified integration) → Informatica MDM (Product & Customer Golden Record) → Salesforce Data Cloud (Customer 360) → Einstein AI (personalization & recommendations) → Commerce Cloud (unified commerce engine) → Marketing Cloud (omnichannel campaigns) → Tableau (retail performance analytics)',
+    outcomes: ['Unified inventory and pricing across all channels', 'Real-time personalization driven by AI', 'Single view of customer across online and in-store', 'Measurable improvement in omnichannel conversion rates', 'PDPL-compliant customer data management'],
+    whyBionic: 'Bionic unifies Commerce Cloud + MuleSoft integration + MDM + AI personalization + analytics — one complete commerce operating system, not standalone tools.',
+  },
+  // ── Manufacturing ──────────────────────────────────────
+  {
+    slug: 'smart-factory-industry-4',
+    title: 'Smart Factory & Industry 4.0',
+    industry: 'Manufacturing',
+    industrySlug: 'manufacturing',
+    capabilities: ['Enterprise AI & Automation', 'Integration & Intelligent Operations', 'Sovereign Infrastructure & Hybrid Cloud', 'Cybersecurity & Cyber Resilience'],
+    capabilitySlugs: ['ai', 'integration', 'infra', 'cyber'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations', 'SOC-as-a-Service'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['IBM', 'Dell Technologies', 'Intel', 'Red Hat', 'Platform9'],
+    products: ['IBM Maximo', 'watsonx.ai', 'Dell PowerEdge XR', 'Intel Xeon 6', 'Intel Gaudi 3', 'Red Hat Ansible', 'Red Hat OpenShift', 'Platform9 Managed K8s', 'IBM MQ', 'QRadar SIEM', 'Guardium'],
+    challenge: 'A manufacturer operates disconnected production lines with no real-time visibility. IoT sensors generate terabytes of data — all unused. Quality control is manual and reactive. OT and IT environments are isolated. No digital twin exists for the factory floor.',
+    architecture: 'Production sensors & PLCs → IBM MQ industrial protocol bridging → Dell PowerEdge XR edge compute + Intel AI inference → Platform9 Edge K8s / Red Hat OpenShift → watsonx.ai (quality prediction & anomaly detection) → IBM Maximo (asset management & predictive maintenance) → Red Hat Ansible (automated OT response) → QRadar + Guardium (OT/IT security)',
+    outcomes: ['Predictive maintenance significantly reduces unplanned downtime', 'Real-time quality control improves defect detection measurably', 'OT/IT integration enables end-to-end factory visibility', 'Digital twin enables simulation before physical changes', 'IEC 62443-compliant industrial security'],
+    whyBionic: 'Bionic delivers Industry 4.0 from edge to enterprise: IBM Maximo for assets + watsonx for AI + Red Hat for automation + Dell/Intel for edge + QRadar for security — an integrated smart factory platform.',
+  },
+  // ── Transport & Logistics ──────────────────────────────
+  {
+    slug: 'connected-logistics-fleet-intelligence',
+    title: 'Connected Logistics & Fleet Intelligence',
+    industry: 'Transport & Logistics',
+    industrySlug: 'logistics',
+    capabilities: ['Integration & Intelligent Operations', 'Data, Analytics & Intelligence', 'Enterprise AI & Automation', 'Technology Operations'],
+    capabilitySlugs: ['integration', 'data', 'ai', 'ops'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Salesforce', 'MuleSoft', 'Google', 'Tableau', 'IBM'],
+    products: ['MuleSoft Anypoint', 'Salesforce Service Cloud', 'Field Service', 'Google BigQuery', 'Vertex AI', 'Google Maps Platform', 'Tableau', 'IBM MQ', 'watsonx.ai'],
+    challenge: 'A logistics company operates 2,000+ vehicles across the Kingdom with no real-time tracking, no route optimization, and no predictive maintenance. Deliveries are delayed, fuel consumption is unchecked, and fleet utilization is below 60%. The cold chain lacks temperature monitoring, risking pharmaceutical and food safety compliance.',
+    architecture: 'Vehicle telematics & IoT sensors → IBM MQ (real-time data ingestion) → BigQuery (fleet data lake) → Vertex AI (route optimization & ETA prediction) → watsonx.ai (predictive maintenance) → Salesforce Field Service (workforce management) → Service Cloud (customer communication) → Google Maps Platform (live tracking & geofencing) → Tableau (fleet command center)',
+    outcomes: ['Significant fuel cost reduction through AI-powered route optimization', 'Meaningful improvement in fleet utilization rates', 'Predictive maintenance reduces vehicle breakdowns measurably', 'Cold chain compliance through real-time temperature monitoring', 'Real-time customer visibility of shipment status'],
+    whyBionic: 'Bionic integrates IoT ingestion (IBM MQ), fleet AI (Vertex AI + watsonx), field service (Salesforce), and real-time visibility (Google Maps + Tableau) — one connected logistics command center.',
+  },
+  // ── ZATCA Cross-Industry ───────────────────────────────
+  {
+    slug: 'zatca-e-invoicing-compliance',
+    title: 'ZATCA E-Invoicing Compliance Platform',
+    industry: 'Enterprise',
+    industrySlug: 'enterprise',
+    capabilities: ['Integration & Intelligent Operations', 'Data, Analytics & Intelligence', 'Technology Operations', 'Cybersecurity & Cyber Resilience'],
+    capabilitySlugs: ['integration', 'data', 'ops', 'cyber'],
+    services: ['Compliance & GRC Advisory', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['MuleSoft', 'IBM', 'Red Hat', 'Informatica'],
+    products: ['MuleSoft Anypoint', 'IBM MQ', 'Red Hat Ansible', 'Informatica Data Quality', 'QRadar SIEM', 'Guardium'],
+    challenge: 'ZATCA Phase 2 e-invoicing is mandatory and Phase 3 (full integration) is approaching. Saudi enterprises across all sectors face common challenges: legacy ERP integration, real-time invoice clearance, cryptographic signing, and audit trail compliance. Non-compliance means penalties, blocked payments, and business disruption.',
+    architecture: 'ERP/Accounting systems → MuleSoft Anypoint (API integration layer) → ZATCA Fatoora API (clearance & reporting) → Informatica Data Quality (invoice data validation) → IBM MQ (guaranteed message delivery) → Red Hat Ansible (automated compliance remediation) → Guardium (invoice data security) → QRadar SIEM (compliance monitoring & audit trail)',
+    outcomes: ['ZATCA Phase 2 & 3 compliance across all invoice types', 'Real-time invoice clearance with cryptographic signing', 'Automated compliance reporting with full audit trail', 'Zero business disruption during ZATCA integration waves', 'Cross-industry applicable — government, healthcare, retail, manufacturing'],
+    whyBionic: 'ZATCA compliance is not just an ERP upgrade — it is an integration and security challenge. Bionic delivers the complete compliance platform: API integration (MuleSoft) + secure messaging (IBM MQ) + automation (Ansible) + data quality (Informatica) + security (QRadar/Guardium) — applicable across every industry.',
+  },
 ];
 
 // Derived lookup maps for filtering
-export const allBlueprintIndustries = ['Government & Public Sector', 'Banking & Financial Services', 'Oil, Gas & Energy', 'Healthcare', 'Enterprise'];
+export const allBlueprintIndustries = ['Government & Public Sector', 'Banking & Financial Services', 'Oil, Gas & Energy', 'Healthcare', 'Enterprise', 'Telecom & Communications', 'Retail & Consumer', 'Manufacturing', 'Transport & Logistics'];
 export const allBlueprintCapabilities = [
   'Enterprise AI & Automation',
   'Data, Analytics & Intelligence',
@@ -320,5 +430,5 @@ export const allBlueprintCapabilities = [
 ];
 export const allBlueprintPartners = [
   'IBM', 'Dell Technologies', 'Intel', 'Platform9',
-  'Salesforce', 'MuleSoft', 'Informatica', 'Tableau', 'Google', 'Red Hat',
+  'Salesforce', 'MuleSoft', 'Informatica', 'Tableau', 'Google', 'Red Hat', 'Lenovo', 'NVIDIA',
 ];
