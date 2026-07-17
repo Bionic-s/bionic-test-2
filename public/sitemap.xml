@@ -1,49 +1,718 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url><loc>https://app.bionics.sa/test-site-2/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-  <!-- Capabilities -->
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/ai</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/data</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/apps</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/integration</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/cyber</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/infra</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/capabilities/ops</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-  <!-- Industries -->
-  <url><loc>https://app.bionics.sa/test-site-2/industries/government</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/industries/banking</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/industries/oil-gas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/industries/healthcare</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/industries/enterprise</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- Services -->
-  <url><loc>https://app.bionics.sa/test-site-2/services/advisory</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/services/implementation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/services/operations</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Company -->
-  <url><loc>https://app.bionics.sa/test-site-2/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/architecture</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/value</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <!-- Blueprints Hub -->
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-
-  <!-- Blueprints -->
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-platform</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/inter-ministry-data-fabric</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/national-soc</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/sama-compliant-banking-infra</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/real-time-fraud-detection</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/customer-360-intelligent-engagement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/clinical-intelligence-medical-ai</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/intelligent-patient-experience</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/industrial-intelligence-predictive-ops</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/ot-it-integration-secure-ops</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/enterprise-zero-trust</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://app.bionics.sa/test-site-2/blueprints/agentic-workforce-transformation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/about"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/about"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/contact"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/contact"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/book-discovery-call</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/book-discovery-call"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/book-discovery-call"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/book-discovery-call</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/book-discovery-call"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/book-discovery-call"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/partners"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/partners"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/partners"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/partners"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/products"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/products"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/products"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/products"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/services/advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services/advisory"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services/advisory"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/services/advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services/advisory"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services/advisory"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/services/implementation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services/implementation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services/implementation"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/services/implementation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services/implementation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services/implementation"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/services/operations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services/operations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services/operations"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/services/operations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/services/operations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/services/operations"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/architecture</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/architecture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/architecture"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/architecture</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/architecture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/architecture"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/value</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/value"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/value"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/value</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/value"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/value"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/privacy"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/privacy"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/terms-of-use</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/terms-of-use"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/terms-of-use"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/terms-of-use</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/terms-of-use"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/terms-of-use"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/cookie-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/cookie-policy"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/cookie-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/cookie-policy"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/ai"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/ai"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/ai"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/ai"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/data</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/data"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/data"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/data</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/data"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/data"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/apps</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/apps"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/apps"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/apps</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/apps"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/apps"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/integration</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/integration"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/integration"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/integration</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/integration"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/integration"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/cyber</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/cyber"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/cyber"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/cyber</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/cyber"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/cyber"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/infra</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/infra"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/infra"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/infra</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/infra"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/infra"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/capabilities/ops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/ops"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/ops"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/capabilities/ops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/capabilities/ops"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/capabilities/ops"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/government</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/government"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/government"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/government</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/government"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/government"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/banking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/banking"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/banking"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/banking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/banking"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/banking"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/oil-gas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/oil-gas"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/oil-gas"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/oil-gas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/oil-gas"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/oil-gas"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/healthcare</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/healthcare"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/healthcare"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/healthcare</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/healthcare"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/healthcare"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/enterprise</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/enterprise"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/enterprise"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/enterprise</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/enterprise"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/enterprise"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/telecom</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/telecom"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/telecom"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/telecom</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/telecom"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/telecom"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/retail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/retail"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/retail"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/retail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/retail"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/retail"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/manufacturing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/manufacturing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/manufacturing"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/manufacturing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/manufacturing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/manufacturing"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/industries/logistics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/logistics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/logistics"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/industries/logistics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/industries/logistics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/industries/logistics"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-platform"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/sovereign-ai-platform"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/sovereign-ai-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-platform"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/sovereign-ai-platform"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/inter-ministry-data-fabric</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/inter-ministry-data-fabric"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/inter-ministry-data-fabric"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/inter-ministry-data-fabric</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/inter-ministry-data-fabric"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/inter-ministry-data-fabric"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/national-soc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/national-soc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/national-soc"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/national-soc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/national-soc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/national-soc"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/customer-360-intelligent-engagement</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/customer-360-intelligent-engagement"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/customer-360-intelligent-engagement"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/customer-360-intelligent-engagement</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/customer-360-intelligent-engagement"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/customer-360-intelligent-engagement"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/real-time-fraud-detection</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/real-time-fraud-detection"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/real-time-fraud-detection"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/real-time-fraud-detection</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/real-time-fraud-detection"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/real-time-fraud-detection"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/sama-compliant-banking-infra</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/sama-compliant-banking-infra"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/sama-compliant-banking-infra"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/sama-compliant-banking-infra</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/sama-compliant-banking-infra"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/sama-compliant-banking-infra"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/industrial-intelligence-predictive-ops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/industrial-intelligence-predictive-ops"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/industrial-intelligence-predictive-ops"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/industrial-intelligence-predictive-ops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/industrial-intelligence-predictive-ops"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/industrial-intelligence-predictive-ops"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/ot-it-integration-secure-ops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/ot-it-integration-secure-ops"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/ot-it-integration-secure-ops"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/ot-it-integration-secure-ops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/ot-it-integration-secure-ops"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/ot-it-integration-secure-ops"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/intelligent-patient-experience</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/intelligent-patient-experience"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/intelligent-patient-experience"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/intelligent-patient-experience</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/intelligent-patient-experience"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/intelligent-patient-experience"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/clinical-intelligence-medical-ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/clinical-intelligence-medical-ai"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/clinical-intelligence-medical-ai"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/clinical-intelligence-medical-ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/clinical-intelligence-medical-ai"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/clinical-intelligence-medical-ai"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/agentic-workforce-transformation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/agentic-workforce-transformation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/agentic-workforce-transformation"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/agentic-workforce-transformation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/agentic-workforce-transformation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/agentic-workforce-transformation"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/enterprise-zero-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/enterprise-zero-trust"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/enterprise-zero-trust"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/enterprise-zero-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/enterprise-zero-trust"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/enterprise-zero-trust"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-node</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-node"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/sovereign-ai-node"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/sovereign-ai-node</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/sovereign-ai-node"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/sovereign-ai-node"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/enterprise-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/enterprise-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/enterprise-ai-agents"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/enterprise-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/enterprise-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/enterprise-ai-agents"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/5g-monetization-telco-cloud</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/5g-monetization-telco-cloud"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/5g-monetization-telco-cloud"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/5g-monetization-telco-cloud</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/5g-monetization-telco-cloud"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/5g-monetization-telco-cloud"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/intelligent-commerce-omnichannel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/intelligent-commerce-omnichannel"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/intelligent-commerce-omnichannel"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/intelligent-commerce-omnichannel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/intelligent-commerce-omnichannel"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/intelligent-commerce-omnichannel"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/smart-factory-industry-4</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/smart-factory-industry-4"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/smart-factory-industry-4"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/smart-factory-industry-4</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/smart-factory-industry-4"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/smart-factory-industry-4"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/connected-logistics-fleet-intelligence</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/connected-logistics-fleet-intelligence"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/connected-logistics-fleet-intelligence"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/connected-logistics-fleet-intelligence</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/connected-logistics-fleet-intelligence"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/connected-logistics-fleet-intelligence"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/zatca-e-invoicing-compliance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/zatca-e-invoicing-compliance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/zatca-e-invoicing-compliance"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/zatca-e-invoicing-compliance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/zatca-e-invoicing-compliance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/zatca-e-invoicing-compliance"/>
+    <lastmod>2026-07-17</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

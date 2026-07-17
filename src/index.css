@@ -8,6 +8,24 @@
   box-sizing: border-box;
 }
 
+/* Skip-to-content link: visually hidden until keyboard-focused */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: #00BFFF;
+  color: #0B0D10;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
 html {
   scroll-behavior: smooth;
 }

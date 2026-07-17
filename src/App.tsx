@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { MotionConfig } from 'framer-motion';
 import Lenis from 'lenis';
 
 import { Header } from './components/Header';
@@ -15,96 +16,97 @@ import { CustomCursor } from './components/CustomCursor';
 import { GrainOverlay } from './components/GrainOverlay';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
+import { Seo } from './components/Seo';
 
-// Pages
-import HomePage from './pages/HomePage';
-import BlueprintsHub from './pages/BlueprintsHub';
-import TransformationBlueprintPage from './pages/TransformationBlueprintPage';
-import PartnersPage from './pages/PartnersPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import BookDiscoveryCallPage from './pages/BookDiscoveryCall';
-import NotFoundPage from './pages/NotFoundPage';
-import ArabicHomePage from './pages/ArabicHomePage';
+// Pages — lazy-loaded so each route ships as its own chunk
+const HomePage = lazy(() => import('./pages/HomePage'));
+const BlueprintsHub = lazy(() => import('./pages/BlueprintsHub'));
+const TransformationBlueprintPage = lazy(() => import('./pages/TransformationBlueprintPage'));
+const PartnersPage = lazy(() => import('./pages/PartnersPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const BookDiscoveryCallPage = lazy(() => import('./pages/BookDiscoveryCall'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const ArabicHomePage = lazy(() => import('./pages/ArabicHomePage'));
 
 // Arabic Industry Pages
-import ArabicGovernmentIndustryPage from './pages/ar/ArabicGovernmentIndustryPage';
-import ArabicBankingIndustryPage from './pages/ar/ArabicBankingIndustryPage';
-import ArabicOilGasIndustryPage from './pages/ar/ArabicOilGasIndustryPage';
-import ArabicHealthcareIndustryPage from './pages/ar/ArabicHealthcareIndustryPage';
-import ArabicEnterpriseIndustryPage from './pages/ar/ArabicEnterpriseIndustryPage';
-import ArabicTelecomIndustryPage from './pages/ar/ArabicTelecomIndustryPage';
-import ArabicRetailIndustryPage from './pages/ar/ArabicRetailIndustryPage';
-import ArabicManufacturingIndustryPage from './pages/ar/ArabicManufacturingIndustryPage';
-import ArabicTransportLogisticsIndustryPage from './pages/ar/ArabicTransportLogisticsIndustryPage';
+const ArabicGovernmentIndustryPage = lazy(() => import('./pages/ar/ArabicGovernmentIndustryPage'));
+const ArabicBankingIndustryPage = lazy(() => import('./pages/ar/ArabicBankingIndustryPage'));
+const ArabicOilGasIndustryPage = lazy(() => import('./pages/ar/ArabicOilGasIndustryPage'));
+const ArabicHealthcareIndustryPage = lazy(() => import('./pages/ar/ArabicHealthcareIndustryPage'));
+const ArabicEnterpriseIndustryPage = lazy(() => import('./pages/ar/ArabicEnterpriseIndustryPage'));
+const ArabicTelecomIndustryPage = lazy(() => import('./pages/ar/ArabicTelecomIndustryPage'));
+const ArabicRetailIndustryPage = lazy(() => import('./pages/ar/ArabicRetailIndustryPage'));
+const ArabicManufacturingIndustryPage = lazy(() => import('./pages/ar/ArabicManufacturingIndustryPage'));
+const ArabicTransportLogisticsIndustryPage = lazy(() => import('./pages/ar/ArabicTransportLogisticsIndustryPage'));
 
 // Arabic Capability Pages
-import ArabicAISolutionPage from './pages/ar/ArabicAISolutionPage';
-import ArabicDataAnalyticsPage from './pages/ar/ArabicDataAnalyticsPage';
-import ArabicBusinessApplicationsPage from './pages/ar/ArabicBusinessApplicationsPage';
-import ArabicIntegrationPage from './pages/ar/ArabicIntegrationPage';
-import ArabicCybersecurityPage from './pages/ar/ArabicCybersecurityPage';
-import ArabicInfrastructurePage from './pages/ar/ArabicInfrastructurePage';
-import ArabicTechnologyOperationsPage from './pages/ar/ArabicTechnologyOperationsPage';
+const ArabicAISolutionPage = lazy(() => import('./pages/ar/ArabicAISolutionPage'));
+const ArabicDataAnalyticsPage = lazy(() => import('./pages/ar/ArabicDataAnalyticsPage'));
+const ArabicBusinessApplicationsPage = lazy(() => import('./pages/ar/ArabicBusinessApplicationsPage'));
+const ArabicIntegrationPage = lazy(() => import('./pages/ar/ArabicIntegrationPage'));
+const ArabicCybersecurityPage = lazy(() => import('./pages/ar/ArabicCybersecurityPage'));
+const ArabicInfrastructurePage = lazy(() => import('./pages/ar/ArabicInfrastructurePage'));
+const ArabicTechnologyOperationsPage = lazy(() => import('./pages/ar/ArabicTechnologyOperationsPage'));
 
 // Arabic Service Pages
-import ArabicServicesHub from './pages/ar/ArabicServicesHub';
-import ArabicConsultingAdvisoryPage from './pages/ar/ArabicConsultingAdvisoryPage';
-import ArabicImplementationDeliveryPage from './pages/ar/ArabicImplementationDeliveryPage';
-import ArabicManagedOperationsPage from './pages/ar/ArabicManagedOperationsPage';
+const ArabicServicesHub = lazy(() => import('./pages/ar/ArabicServicesHub'));
+const ArabicConsultingAdvisoryPage = lazy(() => import('./pages/ar/ArabicConsultingAdvisoryPage'));
+const ArabicImplementationDeliveryPage = lazy(() => import('./pages/ar/ArabicImplementationDeliveryPage'));
+const ArabicManagedOperationsPage = lazy(() => import('./pages/ar/ArabicManagedOperationsPage'));
 
 // Arabic Other Pages
-import ArabicAboutPage from './pages/ar/ArabicAboutPage';
-import ArabicArchitecturePage from './pages/ar/ArabicArchitecturePage';
-import ArabicEnterpriseValueSystemPage from './pages/ar/ArabicEnterpriseValueSystemPage';
-import ArabicPartnersPage from './pages/ar/ArabicPartnersPage';
-import ArabicBlueprintsHub from './pages/ar/ArabicBlueprintsHub';
-import ArabicTransformationBlueprintPage from './pages/ar/ArabicTransformationBlueprintPage';
-import ArabicProductsPage from './pages/ar/ArabicProductsPage';
-import ArabicContactPage from './pages/ar/ArabicContactPage';
-import ArabicBookDiscoveryCallPage from './pages/ar/ArabicBookDiscoveryCallPage';
-import ArabicNotFoundPage from './pages/ar/ArabicNotFoundPage';
-import ArabicPrivacyPolicyPage from './pages/ar/ArabicPrivacyPolicyPage';
-import ArabicTermsOfUsePage from './pages/ar/ArabicTermsOfUsePage';
-import ArabicCookiePolicyPage from './pages/ar/ArabicCookiePolicyPage';
+const ArabicAboutPage = lazy(() => import('./pages/ar/ArabicAboutPage'));
+const ArabicArchitecturePage = lazy(() => import('./pages/ar/ArabicArchitecturePage'));
+const ArabicEnterpriseValueSystemPage = lazy(() => import('./pages/ar/ArabicEnterpriseValueSystemPage'));
+const ArabicPartnersPage = lazy(() => import('./pages/ar/ArabicPartnersPage'));
+const ArabicBlueprintsHub = lazy(() => import('./pages/ar/ArabicBlueprintsHub'));
+const ArabicTransformationBlueprintPage = lazy(() => import('./pages/ar/ArabicTransformationBlueprintPage'));
+const ArabicProductsPage = lazy(() => import('./pages/ar/ArabicProductsPage'));
+const ArabicContactPage = lazy(() => import('./pages/ar/ArabicContactPage'));
+const ArabicBookDiscoveryCallPage = lazy(() => import('./pages/ar/ArabicBookDiscoveryCallPage'));
+const ArabicNotFoundPage = lazy(() => import('./pages/ar/ArabicNotFoundPage'));
+const ArabicPrivacyPolicyPage = lazy(() => import('./pages/ar/ArabicPrivacyPolicyPage'));
+const ArabicTermsOfUsePage = lazy(() => import('./pages/ar/ArabicTermsOfUsePage'));
+const ArabicCookiePolicyPage = lazy(() => import('./pages/ar/ArabicCookiePolicyPage'));
 
 // Capabilities (shared with legacy /solutions/* redirects)
-import AISolutionPage from './pages/solutions/AISolutionPage';
-import DataAnalyticsSolutionPage from './pages/solutions/DataAnalyticsPage';
-import BusinessApplicationsSolutionPage from './pages/solutions/BusinessApplicationsPage';
-import IntegrationSolutionPage from './pages/solutions/IntegrationPage';
-import ServiceManagementSolutionPage from './pages/solutions/TechnologyOperationsPage';
-import CybersecuritySolutionPage from './pages/solutions/CybersecurityPage';
-import InfrastructureSolutionPage from './pages/solutions/InfrastructurePage';
+const AISolutionPage = lazy(() => import('./pages/solutions/AISolutionPage'));
+const DataAnalyticsSolutionPage = lazy(() => import('./pages/solutions/DataAnalyticsPage'));
+const BusinessApplicationsSolutionPage = lazy(() => import('./pages/solutions/BusinessApplicationsPage'));
+const IntegrationSolutionPage = lazy(() => import('./pages/solutions/IntegrationPage'));
+const ServiceManagementSolutionPage = lazy(() => import('./pages/solutions/TechnologyOperationsPage'));
+const CybersecuritySolutionPage = lazy(() => import('./pages/solutions/CybersecurityPage'));
+const InfrastructureSolutionPage = lazy(() => import('./pages/solutions/InfrastructurePage'));
 
 // Services
-import ServicesHub from './pages/services/ServicesHub';
-import ConsultingAdvisoryPage from './pages/services/ConsultingAdvisoryPage';
-import ImplementationDeliveryPage from './pages/services/ImplementationDeliveryPage';
-import ManagedOperationsPage from './pages/services/ManagedOperationsPage';
+const ServicesHub = lazy(() => import('./pages/services/ServicesHub'));
+const ConsultingAdvisoryPage = lazy(() => import('./pages/services/ConsultingAdvisoryPage'));
+const ImplementationDeliveryPage = lazy(() => import('./pages/services/ImplementationDeliveryPage'));
+const ManagedOperationsPage = lazy(() => import('./pages/services/ManagedOperationsPage'));
 
 // Industries
-import GovernmentIndustryPage from './pages/industries/GovernmentIndustryPage';
-import BankingIndustryPage from './pages/industries/BankingIndustryPage';
-import OilGasIndustryPage from './pages/industries/OilGasIndustryPage';
-import HealthcareIndustryPage from './pages/industries/HealthcareIndustryPage';
-import EnterpriseIndustryPage from './pages/industries/EnterpriseIndustryPage';
-import TelecomIndustryPage from './pages/industries/TelecomIndustryPage';
-import RetailIndustryPage from './pages/industries/RetailIndustryPage';
-import ManufacturingIndustryPage from './pages/industries/ManufacturingIndustryPage';
-import TransportLogisticsIndustryPage from './pages/industries/TransportLogisticsIndustryPage';
+const GovernmentIndustryPage = lazy(() => import('./pages/industries/GovernmentIndustryPage'));
+const BankingIndustryPage = lazy(() => import('./pages/industries/BankingIndustryPage'));
+const OilGasIndustryPage = lazy(() => import('./pages/industries/OilGasIndustryPage'));
+const HealthcareIndustryPage = lazy(() => import('./pages/industries/HealthcareIndustryPage'));
+const EnterpriseIndustryPage = lazy(() => import('./pages/industries/EnterpriseIndustryPage'));
+const TelecomIndustryPage = lazy(() => import('./pages/industries/TelecomIndustryPage'));
+const RetailIndustryPage = lazy(() => import('./pages/industries/RetailIndustryPage'));
+const ManufacturingIndustryPage = lazy(() => import('./pages/industries/ManufacturingIndustryPage'));
+const TransportLogisticsIndustryPage = lazy(() => import('./pages/industries/TransportLogisticsIndustryPage'));
 
 // Products
-import ProductsPage from './pages/solutions/ProductsPage';
+const ProductsPage = lazy(() => import('./pages/solutions/ProductsPage'));
 
 // Architecture
-import ArchitecturePage from './pages/ArchitecturePage';
+const ArchitecturePage = lazy(() => import('./pages/ArchitecturePage'));
 
 // Legal
-import PrivacyPolicyPage from './pages/legal/PrivacyPolicyPage';
-import TermsOfUsePage from './pages/legal/TermsOfUsePage';
-import CookiePolicyPage from './pages/legal/CookiePolicyPage';
-import EnterpriseValueSystemPage from './pages/EnterpriseValueSystemPage';
+const PrivacyPolicyPage = lazy(() => import('./pages/legal/PrivacyPolicyPage'));
+const TermsOfUsePage = lazy(() => import('./pages/legal/TermsOfUsePage'));
+const CookiePolicyPage = lazy(() => import('./pages/legal/CookiePolicyPage'));
+const EnterpriseValueSystemPage = lazy(() => import('./pages/EnterpriseValueSystemPage'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -116,28 +118,39 @@ function ScrollToTop() {
   return null;
 }
 
+function PageFallback() {
+  return <div className="min-h-screen" aria-busy="true" />;
+}
+
 function AppContent() {
   const location = useLocation();
+  const isArabic = location.pathname.startsWith('/ar/') || location.pathname === '/ar';
 
   useEffect(() => {
-    // Initialize Lenis smooth scroll
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-      prevent: (node: any) => {
-        // Prevent Lenis from handling clicks on React Router links
-        return node.tagName === 'A' || node.closest('a');
-      },
-    });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    let lenis: Lenis | undefined;
+    let rafId = 0;
+
+    if (!prefersReducedMotion) {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+        prevent: (node: any) => {
+          // Prevent Lenis from handling clicks on React Router links
+          return node.tagName === 'A' || node.closest('a');
+        },
+      });
+
+      function raf(time: number) {
+        lenis!.raf(time);
+        rafId = requestAnimationFrame(raf);
+      }
+
+      rafId = requestAnimationFrame(raf);
     }
-
-    requestAnimationFrame(raf);
 
     // Scroll reveal animation
     const observerOptions = {
@@ -157,31 +170,32 @@ function AppContent() {
     scrollElements.forEach((el) => observer.observe(el));
 
     return () => {
-      lenis.destroy();
+      cancelAnimationFrame(rafId);
+      lenis?.destroy();
       observer.disconnect();
     };
   }, []);
 
-  // Stop Lenis on route change to allow smooth page transitions
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
   // Set html lang + dir dynamically
   useEffect(() => {
-    const isArabic = location.pathname.startsWith('/ar/') || location.pathname === '/ar';
     document.documentElement.lang = isArabic ? 'ar' : 'en';
     document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
-  }, [location.pathname]);
+  }, [isArabic]);
 
   return (
     <div className="min-h-screen">
+      <a href="#main" className="skip-link">
+        {isArabic ? 'تخطي إلى المحتوى' : 'Skip to content'}
+      </a>
+      <Seo />
       <Preloader />
       <CustomCursor />
       <GrainOverlay />
       <ScrollProgress />
       <ScrollToTop />
-      {(location.pathname.startsWith('/ar/') || location.pathname === '/ar') ? <HeaderAr /> : <Header />}
+      {isArabic ? <HeaderAr /> : <Header />}
+      <main id="main">
+      <Suspense fallback={<PageFallback />}>
       <Routes>
           {/* ═══ Core Pages ═══ */}
           <Route path="/" element={<HomePage />} />
@@ -218,10 +232,6 @@ function AppContent() {
           <Route path="/industries/oil-gas" element={<OilGasIndustryPage />} />
           <Route path="/industries/healthcare" element={<HealthcareIndustryPage />} />
           <Route path="/industries/enterprise" element={<EnterpriseIndustryPage />} />
-          <Route path="/industries/telecom" element={<TelecomIndustryPage />} />
-          <Route path="/industries/retail" element={<RetailIndustryPage />} />
-          <Route path="/industries/manufacturing" element={<ManufacturingIndustryPage />} />
-          <Route path="/industries/logistics" element={<TransportLogisticsIndustryPage />} />
           <Route path="/industries/telecom" element={<TelecomIndustryPage />} />
           <Route path="/industries/retail" element={<RetailIndustryPage />} />
           <Route path="/industries/manufacturing" element={<ManufacturingIndustryPage />} />
@@ -306,10 +316,6 @@ function AppContent() {
           <Route path="/ar/industries/retail" element={<ArabicRetailIndustryPage />} />
           <Route path="/ar/industries/manufacturing" element={<ArabicManufacturingIndustryPage />} />
           <Route path="/ar/industries/logistics" element={<ArabicTransportLogisticsIndustryPage />} />
-          <Route path="/ar/industries/telecom" element={<ArabicTelecomIndustryPage />} />
-          <Route path="/ar/industries/retail" element={<ArabicRetailIndustryPage />} />
-          <Route path="/ar/industries/manufacturing" element={<ArabicManufacturingIndustryPage />} />
-          <Route path="/ar/industries/logistics" element={<ArabicTransportLogisticsIndustryPage />} />
 
           {/* Arabic Legal */}
           <Route path="/ar/privacy" element={<ArabicPrivacyPolicyPage />} />
@@ -322,19 +328,11 @@ function AppContent() {
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      {(location.pathname.startsWith('/ar/') || location.pathname === '/ar') ? (
-        <>
-          <FooterAr />
-          <StickyCTABar />
-          <ProgressiveProfiling />
-        </>
-      ) : (
-        <>
-          <Footer />
-          <StickyCTABar />
-          <ProgressiveProfiling />
-        </>
-      )}
+      </Suspense>
+      </main>
+      {isArabic ? <FooterAr /> : <Footer />}
+      <StickyCTABar />
+      <ProgressiveProfiling />
       <CookieConsent />
       <BackToTop />
     </div>
@@ -344,9 +342,11 @@ function AppContent() {
 function App() {
   return (
     <HelmetProvider>
-      <Router basename="/test-site-2">
-        <AppContent />
-      </Router>
+      <MotionConfig reducedMotion="user">
+        <Router basename="/test-site-2">
+          <AppContent />
+        </Router>
+      </MotionConfig>
     </HelmetProvider>
   );
 }

@@ -38,14 +38,24 @@ export const CookieConsent = () => {
     setChoice(stored as ConsentChoice);
   }, []);
 
+  const updateGtagConsent = (granted: boolean) => {
+    const w = window as any;
+    w.dataLayer = w.dataLayer || [];
+    // Consent Mode expects gtag()-style arguments objects on the dataLayer
+    const gtag = function () { w.dataLayer.push(arguments); } as (...args: unknown[]) => void;
+    gtag('consent', 'update', { analytics_storage: granted ? 'granted' : 'denied' });
+  };
+
   const accept = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+    updateGtagConsent(true);
     setChoice('accepted');
     setVisible(false);
   };
 
   const reject = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
+    updateGtagConsent(false);
     setChoice('rejected');
     setVisible(false);
   };
@@ -72,7 +82,7 @@ export const CookieConsent = () => {
                   {texts.body}
                 </p>
               </div>
-              <button onClick={reject} className="p-1 text-text-muted hover:text-text-primary transition-colors flex-shrink-0" aria-label="إغلاق">
+              <button onClick={reject} className="p-1 text-text-muted hover:text-text-primary transition-colors flex-shrink-0" aria-label={lang === 'ar' ? 'إغلاق' : 'Close'}>
                 <X className="w-4 h-4" />
               </button>
             </div>
