@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, Shield, Brain, Cog, Target, Layers, CheckCircle } from 'lucide-react';
-import { Buildings, Bank, Drop, Heartbeat, BuildingOffice, ChartBar, Desktop, GitMerge, ShieldCheck, Cloud, Gear, Brain as BrainPh } from '@phosphor-icons/react';
+import { Building2, Landmark, Droplet, HeartPulse, Building, BarChart3, Monitor, GitMerge, ShieldCheck, Cloud, Settings } from 'lucide-react';
 import { blueprints } from '../../data/blueprintsData';
 import { blueprintTranslations } from '../../data/blueprintsDataAr';
 import { trackBlueprintView } from '../../lib/analytics';
@@ -39,21 +39,21 @@ const iatForceNames: Record<string, string> = {
 // ── Icon Maps (keyed by English — data is English) ────────
 
 const industryIcons: Record<string, React.ReactNode> = {
-  'Government & Public Sector': <Buildings size={20} weight="fill" />,
-  'Banking & Financial Services': <Bank size={20} weight="fill" />,
-  'Oil, Gas & Energy': <Drop size={20} weight="fill" />,
-  'Healthcare': <Heartbeat size={20} weight="fill" />,
-  'Enterprise': <BuildingOffice size={20} weight="fill" />,
+  'Government & Public Sector': <Building2 size={20} />,
+  'Banking & Financial Services': <Landmark size={20} />,
+  'Oil, Gas & Energy': <Droplet size={20} />,
+  'Healthcare': <HeartPulse size={20} />,
+  'Enterprise': <Building size={20} />,
 };
 
 const capabilityIcons: Record<string, React.ReactNode> = {
-  'Enterprise AI & Automation': <BrainPh size={20} weight="fill" />,
-  'Data, Analytics & Intelligence': <ChartBar size={20} weight="fill" />,
-  'Business Applications & CX': <Desktop size={20} weight="fill" />,
-  'Integration & Intelligent Operations': <GitMerge size={20} weight="fill" />,
-  'Cybersecurity & Cyber Resilience': <ShieldCheck size={20} weight="fill" />,
-  'Sovereign Infrastructure & Hybrid Cloud': <Cloud size={20} weight="fill" />,
-  'Technology Operations': <Gear size={20} weight="fill" />,
+  'Enterprise AI & Automation': <Brain size={20} />,
+  'Data, Analytics & Intelligence': <BarChart3 size={20} />,
+  'Business Applications & CX': <Monitor size={20} />,
+  'Integration & Intelligent Operations': <GitMerge size={20} />,
+  'Cybersecurity & Cyber Resilience': <ShieldCheck size={20} />,
+  'Sovereign Infrastructure & Hybrid Cloud': <Cloud size={20} />,
+  'Technology Operations': <Settings size={20} />,
 };
 
 const iatForce: Record<string, string> = {

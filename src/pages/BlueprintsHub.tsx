@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Filter, X, Search } from 'lucide-react';
-import { Buildings, Bank, Drop, Heartbeat, BuildingOffice } from '@phosphor-icons/react';
+import { Building2, Landmark, Droplet, HeartPulse, Building } from 'lucide-react';
 import { Radio, ShoppingCart, Factory, Truck } from 'lucide-react';
 import { PartnerLogo } from '../components/PartnerLogo';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../data/blueprintsData';
@@ -29,15 +29,15 @@ const iatForce: Record<string, string> = {
 };
 
 const industryIcons: Record<string, React.ReactNode> = {
-  'Government & Public Sector': <Buildings size={20} fill="currentColor" />,
-  'Banking & Financial Services': <Bank size={20} fill="currentColor" />,
-  'Oil, Gas & Energy': <Drop size={20} fill="currentColor" />,
-  'Healthcare': <Heartbeat size={20} fill="currentColor" />,
-  'Enterprise': <BuildingOffice size={20} fill="currentColor" />,
-  'Telecom & Communications': <Radio size={20} fill="currentColor" />,
-  'Retail & Consumer': <ShoppingCart size={20} fill="currentColor" />,
-  'Manufacturing': <Factory size={20} fill="currentColor" />,
-  'Transport & Logistics': <Truck size={20} fill="currentColor" />,
+  'Government & Public Sector': <Building2 size={20} />,
+  'Banking & Financial Services': <Landmark size={20} />,
+  'Oil, Gas & Energy': <Droplet size={20} />,
+  'Healthcare': <HeartPulse size={20} />,
+  'Enterprise': <Building size={20} />,
+  'Telecom & Communications': <Radio size={20} />,
+  'Retail & Consumer': <ShoppingCart size={20} />,
+  'Manufacturing': <Factory size={20} />,
+  'Transport & Logistics': <Truck size={20} />,
 };
 
 export default function BlueprintsHub() {
