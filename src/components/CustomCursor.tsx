@@ -17,12 +17,13 @@ export const CustomCursor = () => {
 
   const rafRef = useRef<number>(0);
 
-  // Detect mobile
+  // Only show on devices with a real pointer (excludes touch tablets/laptops in touch mode)
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const check = () => setIsMobile(!mq.matches);
     check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
+    mq.addEventListener('change', check);
+    return () => mq.removeEventListener('change', check);
   }, []);
 
   // Track mouse via rAF for performance

@@ -15,6 +15,7 @@ export const FooterAr = () => {
                 href="https://www.linkedin.com/company/bionic-solutions-ksa/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="حلول بايونيك على لينكدإن"
                 className="w-10 h-10 bg-bg-primary rounded-full flex items-center justify-center hover:bg-accent-primary hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 <Linkedin className="w-5 h-5 text-text-muted group-hover:text-text-primary" />
@@ -23,6 +24,7 @@ export const FooterAr = () => {
                 href="https://twitter.com/bionics_Sa"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="حلول بايونيك على إكس (تويتر)"
                 className="w-10 h-10 bg-bg-primary rounded-full flex items-center justify-center hover:bg-accent-primary hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 <Twitter className="w-5 h-5 text-text-muted group-hover:text-text-primary" />

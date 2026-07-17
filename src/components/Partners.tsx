@@ -108,6 +108,7 @@ export const Partners = () => {
             {scrollPartners.map((partner, i) => (
               <div
                 key={`${partner.name}-${i}`}
+                aria-hidden={i >= partners.length || undefined}
                 className="shrink-0 flex items-center gap-3 group cursor-default"
               >
                 <div className="opacity-50 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0">

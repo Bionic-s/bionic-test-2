@@ -85,7 +85,7 @@ export const ContactAr = () => {
       }, 5000);
     } catch (err) {
       setIsSubmitting(false);
-      setError(err instanceof Error ? err.message : 'حدث خطأ. يرجى المحاولة مرة أخرى.');
+      setError('تعذر إرسال رسالتك. يرجى المحاولة مرة أخرى أو مراسلتنا على info@bionics.com.sa');
       console.error('Contact form submission error:', err);
     }
   };
@@ -197,7 +197,7 @@ export const ContactAr = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
                 {error && (
-                  <div className="bg-error/10 border border-error/20 rounded-medium p-4 flex items-start space-x-3 space-x-reverse">
+                  <div role="alert" className="bg-error/10 border border-error/20 rounded-medium p-4 flex items-start space-x-3 space-x-reverse">
                     <AlertCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-body text-error">{error}</p>

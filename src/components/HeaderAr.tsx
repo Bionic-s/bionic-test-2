@@ -95,6 +95,28 @@ export const HeaderAr = () => {
     setServicesOpen(false);
   };
 
+  // Touch devices: first tap opens the dropdown; second tap follows the link
+  const touchToggle = (open: boolean, opener: () => void) => (e: React.MouseEvent) => {
+    if (!open && window.matchMedia('(hover: none)').matches) {
+      e.preventDefault();
+      closeAll();
+      opener();
+    }
+  };
+
+  const blurClose = (closer: () => void) => (e: React.FocusEvent<HTMLDivElement>) => {
+    if (!e.currentTarget.contains(e.relatedTarget as Node | null)) closer();
+  };
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeAll();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -141,8 +163,13 @@ export const HeaderAr = () => {
               {/* ═══ About Dropdown ═══ */}
               <div className="relative"
                 onMouseEnter={() => { closeAll(); setAboutOpen(true); }}
-                onMouseLeave={() => setAboutOpen(false)}>
+                onMouseLeave={() => setAboutOpen(false)}
+                onFocus={() => { closeAll(); setAboutOpen(true); }}
+                onBlur={blurClose(() => setAboutOpen(false))}>
                 <Link to="/ar/about"
+                  aria-haspopup="true"
+                  aria-expanded={aboutOpen}
+                  onClick={touchToggle(aboutOpen, () => setAboutOpen(true))}
                   className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
                   <span>عن الشركة</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${aboutOpen ? 'rotate-180' : ''}`} />
@@ -168,8 +195,13 @@ export const HeaderAr = () => {
               {/* ═══ Our Offerings Mega-Menu — Tabbed ═══ */}
               <div className="relative"
                 onMouseEnter={() => { closeAll(); setCapabilitiesOpen(true); }}
-                onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('products'); }}>
+                onMouseLeave={() => { setCapabilitiesOpen(false); setCapabilitiesTab('products'); }}
+                onFocus={() => { closeAll(); setCapabilitiesOpen(true); }}
+                onBlur={blurClose(() => { setCapabilitiesOpen(false); setCapabilitiesTab('products'); })}>
                 <Link to="/ar/capabilities/ai"
+                  aria-haspopup="true"
+                  aria-expanded={capabilitiesOpen}
+                  onClick={touchToggle(capabilitiesOpen, () => setCapabilitiesOpen(true))}
                   className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
                   <span>خطوط الأعمال</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${capabilitiesOpen ? 'rotate-180' : ''}`} />
@@ -334,8 +366,13 @@ export const HeaderAr = () => {
               {/* ═══ Services Mega-Menu ═══ */}
               <div className="relative"
                 onMouseEnter={() => { closeAll(); setServicesOpen(true); }}
-                onMouseLeave={() => setServicesOpen(false)}>
+                onMouseLeave={() => setServicesOpen(false)}
+                onFocus={() => { closeAll(); setServicesOpen(true); }}
+                onBlur={blurClose(() => setServicesOpen(false))}>
                 <Link to="/ar/services"
+                  aria-haspopup="true"
+                  aria-expanded={servicesOpen}
+                  onClick={touchToggle(servicesOpen, () => setServicesOpen(true))}
                   className="flex items-center space-x-1 px-3 py-2 text-text-primary hover:text-accent-primary transition-colors font-medium text-sm rounded-lg">
                   <span>خدماتنا</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -425,7 +462,7 @@ export const HeaderAr = () => {
                   }}
                 />
               </Link>
-              <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-text-primary hover:text-accent-primary transition-colors rounded-lg hover:bg-white/5">
+              <button onClick={() => setMobileMenuOpen(false)} aria-label="إغلاق القائمة" className="p-2 text-text-primary hover:text-accent-primary transition-colors rounded-lg hover:bg-white/5">
                 <X className="w-6 h-6" />
               </button>
             </div>

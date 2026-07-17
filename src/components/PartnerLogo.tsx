@@ -46,6 +46,8 @@ export const PartnerLogo = ({
   // Text fallback — initial letter with accent background
   return (
     <div
+      role="img"
+      aria-label={p.name}
       className={`rounded-md flex items-center justify-center text-white font-bold shrink-0 ${className}`}
       style={{ backgroundColor: p.accent, width: px, height: px, fontSize: px * 0.5 }}
     >
