@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Home, Search, Compass, MessageSquare } from 'lucide-react';
+import { Home, Search, Compass, MessageSquare } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 const stagger = {

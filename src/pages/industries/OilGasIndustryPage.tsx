@@ -62,6 +62,7 @@ export default function OilGasIndustryPage() {
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div
@@ -151,7 +152,7 @@ export default function OilGasIndustryPage() {
         </motion.section>
 
         {/* ═══ 5. RELEVANT SERVICES ═══ */}
-        <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
+        <motion.section ref={ref6} {...fadeIn} animate={inView6 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>How We Deliver</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Three delivery models applied to energy.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle, AlertCircle, ArrowRight, FileText, Phone, Mail, MapPin, Clock, Layers, BarChart3, BookOpen } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, ArrowRight, Phone, Mail, Clock, Layers, BarChart3, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { trackFormSubmitted, trackFormStarted } from '../lib/analytics';

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, GitMerge, Lightbulb, CheckCircle, Cpu } from 'lucide-react';
+import { ArrowRight, Shield, GitMerge, Lightbulb, Cpu } from 'lucide-react';
 import { PartnerLogo } from '../components/PartnerLogo';
 import { CANON_PARTNERS } from '../data/partnersData';
 import { trackPageView } from '../lib/analytics';

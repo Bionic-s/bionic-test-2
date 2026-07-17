@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Activity, Gauge, BarChart3, GitBranch, TrendingUp, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Activity, Gauge, BarChart3, GitBranch, TrendingUp } from 'lucide-react';
 import { trackServicePageView } from '../../lib/analytics';
 import { CANON_PARTNERS, type PartnerData } from '../../data/partnersData';
 import { PartnerLogo } from '../../components/PartnerLogo';

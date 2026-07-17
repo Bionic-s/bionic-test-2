@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Cpu, Activity, Gauge, BarChart3, GitBranch, HardDrive, CheckCircle, ExternalLink } from 'lucide-react';
+import { ArrowRight, Cpu, Activity, Gauge, BarChart3, GitBranch, CheckCircle } from 'lucide-react';
 import { trackCapabilityPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';

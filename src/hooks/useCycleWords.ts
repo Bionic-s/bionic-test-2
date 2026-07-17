@@ -75,13 +75,14 @@ export const useCycleWords = (
       }
     };
 
+    let delId: ReturnType<typeof setInterval> | undefined;
     const id = setInterval(() => {
       if (phaseRef.current === 'pause') {
         // After pause, switch to deleting
         clearInterval(id);
         phaseRef.current = 'deleting';
         // Start deleting immediately
-        const delId = setInterval(() => {
+        delId = setInterval(() => {
           if (phaseRef.current !== 'deleting' || charIndexRef.current <= 0) {
             clearInterval(delId);
             if (charIndexRef.current <= 0) reset();
@@ -95,7 +96,10 @@ export const useCycleWords = (
       tick();
     }, getDelay());
 
-    return () => clearInterval(id);
+    return () => {
+      clearInterval(id);
+      if (delId !== undefined) clearInterval(delId);
+    };
   }, [wordIndex, words, typingSpeedMs, pauseMs, deletingSpeedMs, reset]);
 
   return displayText;

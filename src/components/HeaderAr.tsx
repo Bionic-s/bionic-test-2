@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { trackCTAClick, trackExecutiveBriefingClick } from '../lib/analytics';
+import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
 import { ChevronDown, X, Menu, ArrowRight } from 'lucide-react';
 

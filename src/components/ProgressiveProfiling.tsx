@@ -52,6 +52,16 @@ export const ProgressiveProfiling = () => {
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [handleMouseLeave]);
 
+  useEffect(() => {
+    if (!isVisible) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') handleDismiss();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isVisible]);
+
   const handleDismiss = () => {
     setIsVisible(false);
     setIsDismissed(true);
@@ -86,11 +96,10 @@ export const ProgressiveProfiling = () => {
       }, 3000);
     } catch (err) {
       setIsSubmitting(false);
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      console.error('capture-lead failed:', err);
+      setError('Something went wrong. Please try again, or email us directly.');
     }
   };
-
-  if (isDismissed || !isVisible) return null;
 
   return (
     <AnimatePresence>
@@ -106,6 +115,9 @@ export const ProgressiveProfiling = () => {
 
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="exit-modal-title"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -114,13 +126,14 @@ export const ProgressiveProfiling = () => {
             >
               <button
                 onClick={handleDismiss}
+                aria-label="Close"
                 className="absolute top-4 right-4 p-2 hover:bg-white/5 rounded-full transition-colors"
               >
                 <X className="w-6 h-6 text-text-muted" />
               </button>
 
               {error && (
-                <div className="bg-error/10 border border-error/20 rounded-medium p-4 flex items-start space-x-3 mb-6">
+                <div role="alert" className="bg-error/10 border border-error/20 rounded-medium p-4 flex items-start space-x-3 mb-6">
                   <AlertCircle className="w-5 h-5 text-error flex-shrink-0 mt-0.5" />
                   <p className="text-body text-error">{error}</p>
                 </div>
@@ -143,7 +156,7 @@ export const ProgressiveProfiling = () => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                 >
-                  <h3 className="text-h3 font-bold mb-2">Before You Go</h3>
+                  <h3 id="exit-modal-title" className="text-h3 font-bold mb-2">Before You Go</h3>
                   <p className="text-body text-text-muted mb-6">
                     Get a personalized strategy session on enterprise AI transformation.
                   </p>
@@ -151,6 +164,7 @@ export const ProgressiveProfiling = () => {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <input
                       type="email"
+                      aria-label="Work Email"
                       placeholder="Work Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}

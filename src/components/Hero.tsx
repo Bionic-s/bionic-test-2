@@ -30,15 +30,22 @@ export const Hero = () => {
       btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.3}px, ${(e.clientY - r.top - r.height / 2) * 0.5}px)`;
     };
     const onMagLeave = (e: MouseEvent) => { (e.currentTarget as HTMLElement).style.transform = ''; };
-    setTimeout(() => {
+    const magneticEls: Element[] = [];
+    const magneticTimer = setTimeout(() => {
       document.querySelectorAll('[data-magnetic]').forEach((btn) => {
         btn.addEventListener('mousemove', onMagMove as any);
         btn.addEventListener('mouseleave', onMagLeave as any);
+        magneticEls.push(btn);
       });
     }, 300);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(magneticTimer);
+      magneticEls.forEach((btn) => {
+        btn.removeEventListener('mousemove', onMagMove as any);
+        btn.removeEventListener('mouseleave', onMagLeave as any);
+      });
     };
   }, []);
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Radio, Signal, Wifi, Shield, Cpu, TrendingUp, BarChart3 } from 'lucide-react';
+import { ArrowRight, CheckCircle, Radio, Signal, Shield, Cpu, TrendingUp, BarChart3 } from 'lucide-react';
 import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
