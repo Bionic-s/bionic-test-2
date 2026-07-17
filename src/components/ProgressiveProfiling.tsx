@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
 
 const STORAGE_KEY = 'bionicExitModalDismissed';
 const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
@@ -74,6 +73,7 @@ export const ProgressiveProfiling = () => {
     setError(null);
 
     try {
+      const { supabase } = await import('../lib/supabase');
       const { data, error: submitError } = await supabase.functions.invoke('capture-lead', {
         body: {
           name: '',
