@@ -1,3 +1,17 @@
+// Only echo back origins we trust; everything else gets the production origin
+// (bots ignore CORS anyway — this stops other sites from using visitors' browsers)
+const ALLOWED_ORIGINS = [
+    'https://app.bionics.sa',
+    'https://bionics.com.sa',
+    'https://www.bionics.com.sa',
+    'http://localhost:5173',
+    'http://localhost:4173',
+];
+function allowOrigin(req: Request): string {
+    const origin = req.headers.get('origin') ?? '';
+    return ALLOWED_ORIGINS.includes(origin) ? origin : 'https://app.bionics.sa';
+}
+
 /**
  * book-discovery — Supabase Edge Function
  * DB-first: insert into discovery_bookings, then best-effort email via Resend.
@@ -10,7 +24,8 @@ const FROM = Deno.env.get('FROM_EMAIL') || 'm.aljawharji@bionics.com.sa';
 
 Deno.serve(async (req: Request) => {
   const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowOrigin(req),
+        'Vary': 'Origin',
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
   };

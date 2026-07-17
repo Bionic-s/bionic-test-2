@@ -1,6 +1,21 @@
+// Only echo back origins we trust; everything else gets the production origin
+// (bots ignore CORS anyway — this stops other sites from using visitors' browsers)
+const ALLOWED_ORIGINS = [
+    'https://app.bionics.sa',
+    'https://bionics.com.sa',
+    'https://www.bionics.com.sa',
+    'http://localhost:5173',
+    'http://localhost:4173',
+];
+function allowOrigin(req: Request): string {
+    const origin = req.headers.get('origin') ?? '';
+    return ALLOWED_ORIGINS.includes(origin) ? origin : 'https://app.bionics.sa';
+}
+
 Deno.serve(async (req) => {
     const corsHeaders = {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': allowOrigin(req),
+        'Vary': 'Origin',
         'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
         'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE, PATCH',
         'Access-Control-Max-Age': '86400',
@@ -237,15 +252,17 @@ ${messageHtml}
     } catch (error) {
         console.error('Contact form error:', error);
 
+        const VALIDATION_MESSAGES = ['Name and email are required', 'Invalid email format'];
+        const isValidation = VALIDATION_MESSAGES.includes(error.message);
         const errorResponse = {
             error: {
                 code: 'CONTACT_FORM_FAILED',
-                message: error.message || 'Failed to submit contact form'
+                message: isValidation ? error.message : 'We could not process your request. Please try again later.'
             }
         };
 
         return new Response(JSON.stringify(errorResponse), {
-            status: 500,
+            status: isValidation ? 400 : 500,
             headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
     }
