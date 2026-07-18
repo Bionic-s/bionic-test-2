@@ -98,7 +98,7 @@ const cyberCategories: Category[] = [
   {
     name: 'التعافي السيبراني',
     products: [
-      { name: 'PowerProtect Cyber Recovery', vendor: 'Dell Technologies', desc: 'خزنة استرداد معزولة وغير قابلة للتغيير — مفصولة هوائيًا عن بيئة الإنتاج. تحمي البيانات الحرجة من برامج الفدية بفحوصات سلامة آلية.' },
+      { name: 'PowerProtect Cyber Recovery', vendor: 'Dell Technologies', desc: 'خزنة استرداد معزولة وغير قابلة للتغيير — معزولة تمامًا عن الشبكات عن بيئة الإنتاج. تحمي البيانات الحرجة من برامج الفدية بفحوصات سلامة آلية.' },
     ],
   },
 ];
@@ -149,7 +149,7 @@ const serviceCategories: Category[] = [
   {
     name: 'وكلاء الذكاء الاصطناعي المؤسسي',
     products: [
-      { name: 'Agent Discovery Workshop', vendor: 'Bionic Solutions', desc: 'مشاركة لمدة أسبوعين — نحدد ٣–٥ حالات استخدام عالية العائد لوكلاء الذكاء الاصطناعي عبر مؤسستك. تُسلّم كخارطة طريق ذات أولوية مع تقديرات البناء.' },
+      { name: 'Agent Discovery Workshop', vendor: 'Bionic Solutions', desc: 'مشروع لمدة أسبوعين — نحدد ٣–٥ حالات استخدام عالية العائد لوكلاء الذكاء الاصطناعي عبر مؤسستك. تُسلّم كخارطة طريق ذات أولوية مع تقديرات البناء.' },
       { name: 'Custom AI Agent Build', vendor: 'Bionic Solutions', desc: 'تطوير شامل لدورة حياة الوكيل — اكتشاف وتصميم وبناء واختبار ونشر. مدعوم بـ Salesforce Agentforce أو IBM watsonx أو Google Vertex AI. يُسلّم جاهزًا للإنتاج في بيئتك.' },
       { name: 'Agent Operations & Evolution', vendor: 'Bionic Solutions', desc: 'مراقبة مستمرة للوكلاء وتحسين التلقينات وصيانة قاعدة المعرفة وتحليلات الأداء. عقد دوري شهري — نواصل تطوير وكلائك.' },
     ],
@@ -158,7 +158,7 @@ const serviceCategories: Category[] = [
     name: 'الاستشارات والاستراتيجية',
     products: [
       { name: 'AI Readiness Assessment', vendor: 'Bionic Solutions', desc: 'تقييم لمدة أسبوعين — جاهزية البنية التحتية والبيانات والحوكمة والمواهب. تقرير جاهز لمجلس الإدارة مع خارطة طريق ذات أولوية.' },
-      { name: 'Strategy & Architecture', vendor: 'Bionic Solutions', desc: 'مشاركة تنفيذية — تصميم الحالة المستهدفة وتحليل فجوات القدرات وخارطة طريق تحول لمدة ١٨ شهرًا.' },
+      { name: 'Strategy & Architecture', vendor: 'Bionic Solutions', desc: 'مشروع تنفيذي — تصميم الحالة المستهدفة وتحليل فجوات القدرات وخارطة طريق تحول لمدة ١٨ شهرًا.' },
     ],
   },
   {

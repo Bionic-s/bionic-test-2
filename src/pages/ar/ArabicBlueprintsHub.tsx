@@ -7,6 +7,7 @@ import { Building2, Landmark, Droplet, HeartPulse, Building } from 'lucide-react
 import { Radio, ShoppingCart, Factory, Truck } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBlueprintPartners } from '../../data/blueprintsData';
+import { blueprintTranslations } from '../../data/blueprintsDataAr';
 import { trackBlueprintHubView } from '../../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
@@ -407,9 +408,9 @@ export default function Page() {
                     </div>
 
                     <h3 className="text-xl font-bold mb-2 group-hover:text-accent-primary transition-colors">
-                      {bp.title}
+                      {blueprintTranslations[bp.slug]?.title || bp.title}
                     </h3>
-                    <p className="text-sm text-text-muted mb-4 line-clamp-2">{bp.challenge}</p>
+                    <p className="text-sm text-text-muted mb-4 line-clamp-2">{blueprintTranslations[bp.slug]?.challenge || bp.challenge}</p>
 
                     {/* Partner Badges */}
                     <div className="flex flex-wrap gap-1.5 mb-3">

@@ -85,7 +85,7 @@ export default function ArabicPartnersPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               ٨ شركاء تقنيين استراتيجيين.
               <br />
-              <span className="text-accent-primary">مُكمِّل واحد مسؤول.</span>
+              <span className="text-accent-primary">مُكامل واحد مسؤول.</span>
             </h1>
             <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
               نختار ونجمع ونشغّل أحدث التقنيات المؤسسية عالميًا — لتحصل على علاقة مسؤولة واحدة عبر منظومة متكاملة.

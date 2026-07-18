@@ -15,7 +15,7 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const partners = [{"name":"MuleSoft","role":"اتصال بقيادة API","tech":"Anypoint Platform · API Manager · Exchange · Flex Gateway · API Governance"},{"name":"IBM","role":"نسيج التكامل المؤسسي","tech":"Cloud Pak for Integration · API Connect · App Connect · MQ · Event Streams"},{"name":"Google","role":"إدارة API ومعمارية مدفوعة بالأحداث","tech":"Apigee · Workflows · Eventarc · Pub/Sub · Cloud Run"},{"name":"Informatica","role":"تكامل البيانات والتطبيقات","tech":"Cloud Data Integration · Application Integration · Mass Ingestion"}];
-const blueprints = [{"title":"تكامل OT/IT والعمليات الآمنة","industry":"نفط وغاز","slug":"ot-it-integration-secure-ops"},{"title":"Customer ٣٦٠ والمشاركة الذكية","industry":"بنوك","slug":"customer-360-intelligent-engagement"},{"title":"تحول فرق العمل المعززة بالذكاء الاصطناعي","industry":"مؤسسات","slug":"agentic-workforce-transformation"}];
+const blueprints = [{"title":"تكامل OT/IT والعمليات الآمنة","industry":"نفط وغاز","slug":"ot-it-integration-secure-ops"},{"title":"Customer ٣٦٠ والتفاعل الذكي","industry":"بنوك","slug":"customer-360-intelligent-engagement"},{"title":"تحول فرق العمل المعززة بالذكاء الاصطناعي","industry":"مؤسسات","slug":"agentic-workforce-transformation"}];
 const bpSlugs = ["ot-it-integration-secure-ops","customer-360-intelligent-engagement","agentic-workforce-transformation"];
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -140,7 +140,7 @@ export default function ArabicIntegrationPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { href: '/ar/services/advisory', title: 'الاستشارات والتخطيط', desc: 'تقييم الجاهزية للذكاء الاصطناعي · استشارات الامتثال والحوكمة · الاستراتيجية وخارطة الطريق' },
-              { href: '/ar/services/implementation', title: 'التنفيذ والتسليم', desc: 'نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps' },
+              { href: '/ar/services/implementation', title: 'التنفيذ والتسليم', desc: 'نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · مسار MLOps' },
               { href: '/ar/services/operations', title: 'العمليات المدارة', desc: 'عمليات المنصات ٢٤×٧ · مركز العمليات الأمنية كخدمة · مستويات خدمة متدرّجة' },
             ].map((s, i) => (
               <Link key={i} to={s.href} className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">

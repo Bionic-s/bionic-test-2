@@ -38,7 +38,7 @@ const blueprints = [
   { title: 'منصة الذكاء السيادي', industry: 'حكومي', slug: 'sovereign-ai-platform' },
   { title: 'مركز العمليات السيبرانية الوطني', industry: 'حكومي', slug: 'national-soc' },
   { title: 'بنية تحتية مصرفية متوافقة مع SAMA', industry: 'بنوك', slug: 'sama-compliant-banking-infra' },
-  { title: 'Customer 360 والمشاركة الذكية', industry: 'بنوك', slug: 'customer-360-intelligent-engagement' },
+  { title: 'Customer 360 والتفاعل الذكي', industry: 'بنوك', slug: 'customer-360-intelligent-engagement' },
   { title: 'تكامل OT/IT والعمليات الآمنة', industry: 'نفط وغاز', slug: 'ot-it-integration-secure-ops' },
   { title: 'Zero Trust المؤسسي', industry: 'مؤسسات', slug: 'enterprise-zero-trust' },
 ];
@@ -163,7 +163,7 @@ export default function ArabicConsultingAdvisoryPage() {
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>المنظومة الاستراتيجية</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            موضوعية متعددة المنصات والتقنيات. في كل مشاركة.
+            موضوعية متعددة المنصات والتقنيات. في كل مشروع.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (
@@ -190,7 +190,7 @@ export default function ArabicConsultingAdvisoryPage() {
           className="mb-28"
         >
           <SectionLabel>مخططات التحول المرجعية</SectionLabel>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تطبيقية تبلورت عبر المشاركات الاستشارية.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية تطبيقية تبلورت عبر المشاريع الاستشارية.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
               <Link key={i} to={`/ar/blueprints/${bp.slug}`} className="group bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
@@ -214,9 +214,9 @@ export default function ArabicConsultingAdvisoryPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               { title: 'موضوعية متعددة المنصات والتقنيات', desc: 'لا نمثل مورّدًا واحدًا. نختار ما يحقق أقصى قيمة لأعمالكم — بناءً على التقييم مقابل متطلباتكم، لا على حوافز الموزعين.' },
-              { title: 'عمق تنظيمي سعودي', desc: 'خبرة SDAIA و NCA و PDPL و SAMA مدمجة في كل مشاركة استشارية. المواءمة التنظيمية تُصمم من اليوم الأول — لا تُضاف لاحقًا.' },
+              { title: 'عمق تنظيمي سعودي', desc: 'خبرة SDAIA و NCA و PDPL و SAMA مدمجة في كل مشروع استشاري. المواءمة التنظيمية تُصمم من اليوم الأول — لا تُضاف لاحقًا.' },
               { title: 'استمرارية من الاستشارة إلى التنفيذ', desc: 'الفريق الذي يقدم الاستشارة هو من يتولى التنفيذ. لا فجوات تسليم، لا انقطاع بين الاستراتيجية والتنفيذ، لا تسليم منقوص.' },
-              { title: 'نتائج قابلة للقياس تتجاوز التقارير والعروض النظرية', desc: 'كل مشاركة استشارية تنتهي بمؤشرات أداء قابلة للقياس، وحالة أعمال مالية، وخارطة طريق قابلة للتنفيذ — لا تقرير من ٢٠٠ صفحة يُوضع على الرف.' },
+              { title: 'نتائج قابلة للقياس تتجاوز التقارير والعروض النظرية', desc: 'كل مشروع استشاري ينتهي بمؤشرات أداء قابلة للقياس، وحالة أعمال مالية، وخارطة طريق قابلة للتنفيذ — لا تقرير من ٢٠٠ صفحة يُوضع على الرف.' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>

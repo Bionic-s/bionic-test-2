@@ -151,7 +151,7 @@ export default function ArabicAboutPage() {
                   { icon: Target, title: 'خبرة التحول المؤسسي', desc: 'لا نبيع منتجات — نبني قدرات مؤسسية. نوفّق بين الاستراتيجية والتقنية والبيانات والحوكمة في برامج تحول تُقاس بالأثر الفعلي على الأداء المؤسسي.' },
                   { icon: Layers, title: 'قيادة منظومة متعددة الموردين', desc: 'لسنا مقيدين بخارطة طريق أي مورد. نعتمد على أهم منصات التقنية عالمياً — نختار ما يحقق أقصى قيمة للأعمال وندمجه في نسيج مؤسسي واحد.' },
                   { icon: Shield, title: 'مسؤولية واحدة من البداية إلى النهاية', desc: 'من التقييم إلى المعمارية إلى النشر والتشغيل والتحسين المستمر — شريك واحد، مسؤولية كاملة عبر دورة حياة التحول.' },
-                  { icon: Globe, title: 'المواءمة مع رؤية ٢٠٣٠', desc: 'كل مشاركة تنطلق من أولويات التحول الوطني — السيادة الرقمية والحكومة الإلكترونية والتحديث الصناعي وتنمية القدرات البشرية.' },
+                  { icon: Globe, title: 'المواءمة مع رؤية ٢٠٣٠', desc: 'كل مشروع ينطلق من أولويات التحول الوطني — السيادة الرقمية والحكومة الإلكترونية والتحديث الصناعي وتنمية القدرات البشرية.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 bg-bg-primary/40 rounded-xl p-6 border border-white/5 transition-all duration-300 hover:border-[#00BFFF20]">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -187,7 +187,7 @@ export default function ArabicAboutPage() {
               </div>
               <p className="text-text-muted text-lg mb-10 max-w-3xl leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
                 المملكة ليست مجرد سوق نخدمه — هي السياق الاستراتيجي الذي يُحدد معماريتنا وأولوياتنا وغايتنا.
-                كل مشاركة لبيونك تُصمم انطلاقاً من التزامات حقيقية تجاه التحول الوطني.
+                كل مشروع لبيونك يُصمم انطلاقاً من التزامات حقيقية تجاه التحول الوطني.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {[
@@ -196,7 +196,7 @@ export default function ArabicAboutPage() {
                   { icon: Zap, title: 'التحديث الصناعي', desc: 'بنية تحتية وأتمتة وذكاء يواكب تطور الصناعة السعودية — من التصنيع والطاقة إلى اللوجستيات وسلاسل الإمداد.' },
                   { icon: Users, title: 'تنمية القدرات البشرية', desc: 'نقل المعرفة وتمكين المنصات وتطوير القوى العاملة — لضمان تشغيل الكوادر الوطنية لبرامج التحول وتطويرها وقيادتها.' },
                   { icon: Shield, title: 'السيادة السيبرانية', desc: 'معماريات أمنية متوافقة مع الضوابط الأساسية للهيئة الوطنية للأمن السيبراني، وإطار المرونة السيبرانية للبنك المركزي السعودي، ونظام حماية البيانات الشخصية.' },
-                  { icon: Target, title: 'التحول الوطني', desc: 'كل مشاركة تُسهم مباشرة في تحقيق مستهدفات رؤية ٢٠٣٠: اقتصاد سعودي متنوع ورقمي وتنافسي عالمياً.' },
+                  { icon: Target, title: 'التحول الوطني', desc: 'كل مشروع يُسهم مباشرة في تحقيق مستهدفات رؤية ٢٠٣٠: اقتصاد سعودي متنوع ورقمي وتنافسي عالمياً.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 bg-bg-primary/50 rounded-xl p-5 border border-white/5 transition-all duration-300 hover:border-[#00BFFF20]">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"

@@ -170,7 +170,7 @@ export default function ArabicContactPage() {
               <p className="text-tiny font-semibold tracking-wider uppercase mb-4 text-[#00BFFF]">تواصل تنفيذي</p>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
                 تحدث إلى<br />
-                <span style={{ color: '#00BFFF' }}>مهندس معماري</span>
+                <span style={{ color: '#00BFFF' }}>مهندس حلول</span>
               </h1>
               <p className="text-text-muted text-lg max-w-[580px] mx-auto leading-relaxed">
                 الذكاء الاصطناعي المؤسسي. تحول تقنية الأعمال. قيمة مؤسسية قابلة للقياس. بناء قدرات تتراكم عبر الزمن.

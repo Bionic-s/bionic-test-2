@@ -112,14 +112,14 @@ export default function ArabicInfrastructurePage() {
               {
                 icon: <Container className="w-5 h-5" />,
                 title: 'Kubernetes وهندسة المنصات',
-                desc: 'بناء منصات مطورين داخلية على Kubernetes — توفر تنسيق الحاويات، شبكة الخدمات، خطوط أنابيب CI/CD، وقدرات خدمة ذاتية تسرّع سرعة الفرق الهندسية.',
-                outcomes: ['منصة Kubernetes مدارة مع حوكمة متعددة المجموعات', 'بوابة مطورين ذاتية الخدمة تقلل أوقات انتظار البنية التحتية', 'خطوط أنابيب CI/CD آلية تسرّع وتيرة النشر', 'شبكة خدمات توفر المراقبة والأمن وإدارة الحركة'],
+                desc: 'بناء منصات مطورين داخلية على Kubernetes — توفر تنسيق الحاويات، شبكة الخدمات، مسارات CI/CD، وقدرات خدمة ذاتية تسرّع سرعة الفرق الهندسية.',
+                outcomes: ['منصة Kubernetes مدارة مع حوكمة متعددة المجموعات', 'بوابة مطورين ذاتية الخدمة تقلل أوقات انتظار البنية التحتية', 'مسارات CI/CD آلية تسرّع وتيرة النشر', 'شبكة خدمات توفر المراقبة والأمن وإدارة الحركة'],
               },
               {
                 icon: <Globe className="w-5 h-5" />,
                 title: 'البنية التحتية السيادية وإقامة البيانات',
                 desc: 'تصميم معماريات بنية تحتية تلبي متطلبات إقامة البيانات السعودية — تضمن عدم مغادرة البيانات للحدود المصرَّح بها مع الحفاظ على مرونة السحابة الأصلية.',
-                outcomes: ['معمارية سيادية تضمن بقاء البيانات داخل النطاق القضائي السعودي', 'منصات سحابة خاصة وهجينة تلبي متطلبات الإقامة', 'تشغيل معزول هوائيًا لأحمال العمل المصنَّفة', 'وثائق امتثال تدعم متطلبات هيئة الأمن السيبراني والتدقيق القطاعي'],
+                outcomes: ['معمارية سيادية تضمن بقاء البيانات داخل النطاق القضائي السعودي', 'منصات سحابة خاصة وهجينة تلبي متطلبات الإقامة', 'تشغيل معزول تمامًا عن الشبكات لأحمال العمل المصنَّفة', 'وثائق امتثال تدعم متطلبات هيئة الأمن السيبراني والتدقيق القطاعي'],
               },
               {
                 icon: <Cpu className="w-5 h-5" />,
@@ -173,7 +173,7 @@ export default function ArabicInfrastructurePage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">التنفيذ والتسليم</h3>
-              <p className="text-tiny text-text-muted">نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps</p>
+              <p className="text-tiny text-text-muted">نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · مسار MLOps</p>
             </Link>
             <Link to="/ar/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
               <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">

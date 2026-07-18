@@ -185,7 +185,7 @@ export default function ArabicRetailIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref5} {...fadeIn} animate={inView5 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>النظام البيئي الاستراتيجي</SectionLabel>
+          <SectionLabel>المنظومة الاستراتيجي</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">تقنيات التجارة — مصممة للتجزئة السعودية.</h2>
           <p className="text-text-muted mb-8 max-w-[720px]">لسنا موردًا. نحن نصمم منصات تجارة باستخدام أرقى التقنيات العالمية — مختارة للقدرة وليس لحوافز البيع.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

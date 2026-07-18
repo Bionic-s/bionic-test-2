@@ -16,7 +16,7 @@ const SectionLabel = ({ children }: { children: string }) => (
 
 const partners = [{"name":"Salesforce","role":"الذكاء التنفيذي وذكاء الأعمال","tech":"Tableau · Einstein Analytics · CRM Analytics · Data Cloud"},{"name":"Informatica","role":"إدارة البيانات الرئيسية والحوكمة","tech":"MDM · جودة البيانات · كتالوج البيانات · تتبع البيانات · تكامل البيانات"},{"name":"IBM","role":"نسيج البيانات ومنصات بيانات مهيأة لتشغيل مبادرات الذكاء الاصطناعي","tech":"watsonx.data · DataStage · Cloud Pak for Data · Db2 · Knowledge Catalog"},{"name":"Intel","role":"بنية البيانات التحتية","tech":"Xeon Scalable · Optane · مسرعات التحليلات · معالجة البيانات الطرفية"},{"name":"Google","role":"منصة البيانات والتحليلات على نطاق واسع","tech":"BigQuery · Looker · Dataflow · Dataproc · Vertex AI"},{"name":"Tableau","role":"ذكاء أعمال خدمة ذاتية وتحليلات بصرية","tech":"Tableau Cloud · تحليلات مضمنة · Data Stories · Pulse"}];
 
-const blueprints = [{"title":"نسيج البيانات بين الوزارات","industry":"حكومي","slug":"inter-ministry-data-fabric"},{"title":"Customer ٣٦٠ والمشاركة الذكية","industry":"بنوك","slug":"customer-360-intelligent-engagement"},{"title":"الذكاء السريري والذكاء الاصطناعي الطبي","industry":"رعاية صحية","slug":"clinical-intelligence-medical-ai"}];
+const blueprints = [{"title":"نسيج البيانات بين الوزارات","industry":"حكومي","slug":"inter-ministry-data-fabric"},{"title":"Customer ٣٦٠ والتفاعل الذكي","industry":"بنوك","slug":"customer-360-intelligent-engagement"},{"title":"الذكاء السريري والذكاء الاصطناعي الطبي","industry":"رعاية صحية","slug":"clinical-intelligence-medical-ai"}];
 const bpSlugs = ["inter-ministry-data-fabric","customer-360-intelligent-engagement","clinical-intelligence-medical-ai"];
 
 const realityItems = [{"iconName":"Database","text":"البيانات موزعة بين أنظمة متعددة دون مرجعية موحدة وموثوقة — والقرارات تُبنى على تقديرات لا على حقائق."},{"iconName":"Server","text":"الأنظمة القديمة تعجز عن دعم أحمال الذكاء الاصطناعي والتحليلات الفورية."},{"iconName":"Eye","text":"تُتخذ قرارات استراتيجية اعتماداً على الخبرة الشخصية لا على البيانات — فتفوت المؤسسة فرصاً وتحمل مخاطر."},{"iconName":"GitBranch","text":"بيانات رئيسية غير متسقة عبر الأنظمة المؤسسية."},{"iconName":"LineChart","text":"مخرجات تحليلية وفيرة دون أثر واضح على اتخاذ القرار."},{"iconName":"Shield","text":"مخاطر امتثال البيانات في ظل PDPL والتشريعات القطاعية."}];
@@ -155,7 +155,7 @@ export default function ArabicDataAnalyticsPage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">التنفيذ والتسليم</h3>
-              <p className="text-tiny text-text-muted">نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps</p>
+              <p className="text-tiny text-text-muted">نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · مسار MLOps</p>
             </Link>
             <Link to="/ar/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
               <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3" style={{ color: '#00BFFF' }}>

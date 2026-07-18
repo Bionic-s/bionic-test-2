@@ -88,7 +88,7 @@ export default function ArabicTechnologyOperationsPage() {
               { pre: 'تفاعلي لا استباقي', text: 'الفرق تكتشف الأعطال من شكاوى المستخدمين، لا من إشارات إنذار مبكر مدفوعة بالذكاء الاصطناعي' },
               { pre: 'فجوة هندسة المنصات', text: 'المطورون ينتظرون أسابيع للبنية التحتية — لا منصة مطورين داخلية، لا خدمة ذاتية، لا مسارات ذهبية' },
               { pre: 'انحراف مستوى الخدمة', text: 'الأداء التشغيلي يتدهور بصمت مع مرور الوقت بدون حلقة تحسين مستمرة' },
-              { pre: 'نقاط عمياء في المراقبة', text: 'السجلات في أداة، والمقاييس في أخرى، والتتبع في ثالثة — لا لوحة زجاجية واحدة' },
+              { pre: 'نقاط عمياء في المراقبة', text: 'السجلات في أداة، والمقاييس في أخرى، والتتبع في ثالثة — دون شاشة موحّدة' },
               { pre: 'تصاعد التكاليف', text: 'بدون FinOps وإدارة السعة، تكاليف البنية التحتية تنمو بنسبة ٣٠٪ سنويًا دون تتبّع' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/20 transition-all duration-300 text-right">
@@ -147,7 +147,7 @@ export default function ArabicTechnologyOperationsPage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">التنفيذ والتسليم</h3>
-              <p className="text-tiny text-text-muted">نشر حزمة المراقبة · بناء منصة المطور الداخلية · خط أنابيب AIOps · أتمتة أدلة التشغيل · تنفيذ FinOps</p>
+              <p className="text-tiny text-text-muted">نشر حزمة المراقبة · بناء منصة المطور الداخلية · مسار AIOps · أتمتة أدلة التشغيل · تنفيذ FinOps</p>
             </Link>
             <Link to="/ar/services/operations" className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
               <div className="w-10 h-10 rounded-lg bg-[#00BFFF]/10 flex items-center justify-center mb-3 text-[#00BFFF]">
@@ -214,7 +214,7 @@ export default function ArabicTechnologyOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: 'القطاع الحكومي', desc: 'عمليات منصات سيادية — مركز عمليات شبكة ٢٤×٧ للبنية التحتية على المستوى الوطني بنموذج تشغيل معزول هوائيًا ودعم أحمال العمل المصنَّفة.' },
+              { title: 'القطاع الحكومي', desc: 'عمليات منصات سيادية — مركز عمليات شبكة ٢٤×٧ للبنية التحتية على المستوى الوطني بنموذج تشغيل معزول تمامًا عن الشبكات ودعم أحمال العمل المصنَّفة.' },
               { title: 'القطاع المصرفي', desc: 'عمليات مدارة متوافقة مع البنك المركزي — عمليات منصات بضمان مستوى الخدمة مع سجلات تدقيق تنظيمية ومراقبة امتثال مستمرة.' },
               { title: 'النفط والغاز', desc: 'مراقبة موحَّدة للتقنية التشغيلية والتقنية المعلوماتية — رؤية تشغيلية عبر البنية التحتية وأنظمة التحكم الصناعي مع قياس من الطرف إلى السحابة.' },
               { title: 'الرعاية الصحية', desc: 'عمليات منصات سريرية — عمليات عالية التوفر للأنظمة السريرية المدعومة بالذكاء الاصطناعي مع أمن المعلومات الصحية وقابلية تتبع تدقيق كاملة.' },
