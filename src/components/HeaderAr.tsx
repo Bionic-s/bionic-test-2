@@ -352,7 +352,7 @@ export const HeaderAr = () => {
                       {/* Footer */}
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30">
                         <p className="text-tiny text-text-muted">
-                          {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. ١١ شريكًا. علاقة واحدة.' : capabilitiesTab === 'capability' ? '٧ قدرات. ٣ ركائز. الذكاء · الأتمتة · الثقة.' : '٥ قطاعات. من القطاع الحكومي إلى المؤسسات الكبرى — تحول الذكاء الاصطناعي مُطبّق على قطاعك.'}
+                          {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. ٨ شركاء. علاقة واحدة.' : capabilitiesTab === 'capability' ? '٧ قدرات. ٣ ركائز. الذكاء · الأتمتة · الثقة.' : '٥ قطاعات. من القطاع الحكومي إلى المؤسسات الكبرى — تحول الذكاء الاصطناعي مُطبّق على قطاعك.'}
                         </p>
                         <Link to="/ar/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
                           استعرض مخططات التحول <ArrowRight className="w-4 h-4" />

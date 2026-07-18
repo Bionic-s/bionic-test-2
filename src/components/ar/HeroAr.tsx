@@ -6,6 +6,7 @@ import { trackExecutiveBriefingClick, trackCTAClick } from '../../lib/analytics'
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { useCycleWords } from '../../hooks/useCycleWords';
+import { STRATEGIC_PARTNER_COUNT } from '../../data/strategicPartners';
 
 export const HeroAr = () => {
   const heroBg = `${import.meta.env.BASE_URL}images/hero_background_7.png`;
@@ -99,7 +100,7 @@ export const HeroAr = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12" ref={ref}>
             {[
-              { value: 11, suffix: '', label: 'شريك تقني استراتيجي', description: 'منظومة تقنية عالمية المستوى' },
+              { value: STRATEGIC_PARTNER_COUNT, suffix: '', label: 'شركاء تقنيون استراتيجيون', description: 'منظومة عالمية' },
               { value: 7, suffix: '', label: 'خطوط أعمال متكاملة', description: 'من الاستراتيجية إلى العمليات الذكية' },
               { value: 5, suffix: '', label: 'قطاعات استراتيجية', description: 'حكومي · خدمات مالية ومصرفية · نفط وغاز · رعاية صحية · مؤسسات كبرى' },
             ].map((metric, index) => (

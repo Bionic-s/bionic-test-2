@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, GitMerge, Lightbulb, Cpu } from 'lucide-react';
 import { PartnerLogo } from '../components/PartnerLogo';
 import { CANON_PARTNERS } from '../data/partnersData';
+import { STRATEGIC_PARTNERS_SINGLE, SALESFORCE_ECOSYSTEM, STRATEGIC_PARTNER_COUNT } from '../data/strategicPartners';
 import { trackPageView } from '../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
@@ -12,21 +13,16 @@ const fadeIn = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } }
 
 /* ── Partner Outcomes: one card per partner, one outcome each ── */
 const ECOSYSTEM_CARD = {
-  name: 'Salesforce Ecosystem',
-  outcome: 'CRM + AI + Analytics + Integration + Data Management — the complete customer intelligence platform, unified under one partner.',
-  main: 'Salesforce',
-  subs: ['MuleSoft', 'Tableau', 'Informatica'],
+  name: SALESFORCE_ECOSYSTEM.name.en,
+  outcome: SALESFORCE_ECOSYSTEM.outcome.en,
+  main: SALESFORCE_ECOSYSTEM.logoName,
+  subs: SALESFORCE_ECOSYSTEM.ecosystemMembers!.filter((m) => m !== SALESFORCE_ECOSYSTEM.logoName),
 };
 
-const PARTNER_OUTCOMES: { name: string; outcome: string }[] = [
-  { name: 'IBM', outcome: 'watsonx AI governance + FlashSystem infrastructure — AI that is compliant, not just fast.' },
-  { name: 'Google', outcome: 'Sovereign AI on Vertex AI — governed, secured, and operated in-Kingdom.' },
-  { name: 'Dell Technologies', outcome: 'PowerEdge, PowerStore, VxRail — the infrastructure backbone underneath AI workloads.' },
-  { name: 'Intel', outcome: 'Xeon & Gaudi AI acceleration — sovereign AI compute, from edge to datacenter.' },
-  { name: 'Platform9', outcome: 'Kubernetes, managed, in your datacenter — private cloud without the complexity.' },
-  { name: 'Lenovo', outcome: 'ThinkSystem, ThinkAgile, TruScale — infrastructure engineered for AI, from edge to cloud.' },
-  { name: 'Red Hat', outcome: 'OpenShift + Ansible Automation — open-source platform for sovereign hybrid cloud.' },
-];
+const PARTNER_OUTCOMES: { name: string; outcome: string }[] = STRATEGIC_PARTNERS_SINGLE.map((p) => ({
+  name: p.logoName,
+  outcome: p.outcome.en,
+}));
 
 /* ── Partnership tiers ── */
 const TIERS = [
@@ -83,7 +79,7 @@ export default function PartnersPage() {
               Strategic Ecosystem
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              8 Strategic Partners.
+              {STRATEGIC_PARTNER_COUNT} Strategic Partners.
               <br />
               <span className="text-accent-primary">One Accountable Integrator.</span>
             </h1>

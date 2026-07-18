@@ -317,7 +317,7 @@ export default function ArabicArchitecturePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="pb-12"
+          className="pb-20 md:pb-28 lg:pb-32"
         >
           <div className="rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
             style={{

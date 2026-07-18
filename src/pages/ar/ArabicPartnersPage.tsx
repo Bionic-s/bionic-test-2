@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, GitMerge, Lightbulb, Cpu } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { CANON_PARTNERS } from '../../data/partnersData';
+import { STRATEGIC_PARTNERS_SINGLE, SALESFORCE_ECOSYSTEM } from '../../data/strategicPartners';
 import { trackPageView } from '../../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
@@ -12,21 +13,16 @@ const fadeIn = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } }
 
 /* ── نتائج الشركاء: بطاقة واحدة لكل شريك، نتيجة واحدة لكل منهم ── */
 const ECOSYSTEM_CARD = {
-  name: 'منظومة Salesforce',
-  outcome: 'CRM + ذكاء + تحليلات + تكامل + إدارة بيانات — منصة ذكاء عملاء متكاملة وموحدة تحت مسؤولية واحدة.',
-  main: 'Salesforce',
-  subs: ['MuleSoft', 'Tableau', 'Informatica'],
+  name: SALESFORCE_ECOSYSTEM.name.ar,
+  outcome: SALESFORCE_ECOSYSTEM.outcome.ar,
+  main: SALESFORCE_ECOSYSTEM.logoName,
+  subs: SALESFORCE_ECOSYSTEM.ecosystemMembers!.filter((m) => m !== SALESFORCE_ECOSYSTEM.logoName),
 };
 
-const PARTNER_OUTCOMES: { name: string; outcome: string }[] = [
-  { name: 'IBM', outcome: 'حوكمة ذكاء watsonx + بنية FlashSystem التحتية — ذكاء اصطناعي متوافق وليس سريعًا فحسب.' },
-  { name: 'Google', outcome: 'ذكاء سيادي على Vertex AI — محكوم ومؤمَّن ومُشغَّل داخل المملكة.' },
-  { name: 'Dell Technologies', outcome: 'PowerEdge وPowerStore وVxRail — العمود الفقري للبنية التحتية تحت أحمال الذكاء الاصطناعي.' },
-  { name: 'Intel', outcome: 'Xeon وGaudi AI لتسريع الذكاء — حوسبة ذكاء سيادية من الحافة إلى مركز البيانات.' },
-  { name: 'Platform9', outcome: 'Kubernetes مُدارة في مركز بياناتك — سحابة خاصة بدون تعقيد.' },
-  { name: 'Lenovo', outcome: 'ThinkSystem وThinkAgile وTruScale — بنية تحتية مهيأة للذكاء الاصطناعي من الحافة إلى السحابة.' },
-  { name: 'Red Hat', outcome: 'OpenShift + أتمتة Ansible — منصة مفتوحة المصدر للسحابة الهجينة السيادية.' },
-];
+const PARTNER_OUTCOMES: { name: string; outcome: string }[] = STRATEGIC_PARTNERS_SINGLE.map((p) => ({
+  name: p.logoName,
+  outcome: p.outcome.ar,
+}));
 
 /* ── مستويات الشراكة ── */
 const TIERS = [

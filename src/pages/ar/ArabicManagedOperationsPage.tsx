@@ -345,7 +345,7 @@ export default function ArabicManagedOperationsPage() {
         </motion.section>
 
         {/* ═══ CTA ═══ */}
-        <motion.section
+        <motion.section className="pb-20 md:pb-28 lg:pb-32"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

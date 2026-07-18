@@ -7,6 +7,7 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { useCycleWords } from '../hooks/useCycleWords';
 import { useTextReveal } from '../hooks/useTextReveal';
+import { STRATEGIC_PARTNER_COUNT } from '../data/strategicPartners';
 
 export const Hero = () => {
   const heroBg = `${import.meta.env.BASE_URL}images/hero_background_7.png`;
@@ -110,7 +111,7 @@ export const Hero = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12" ref={ref}>
             {[
-              { value: 11, prefix: '', suffix: '+', label: 'Strategic Technology Partners', description: 'Global ecosystem' },
+              { value: STRATEGIC_PARTNER_COUNT, prefix: '', suffix: '', label: 'Strategic Technology Partners', description: 'Global ecosystem' },
               { value: 7, prefix: '', suffix: '', label: 'Service Lines', description: 'Full transformation stack' },
               { value: 5, prefix: '', suffix: '', label: 'Top Sectors', description: 'Banking · Government · Oil & Gas · Healthcare · Enterprise' },
             ].map((metric, index) => (

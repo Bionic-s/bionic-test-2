@@ -261,7 +261,7 @@ export default function ArabicAboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView5 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center pb-12"
+          className="text-center pb-20 md:pb-28 lg:pb-32"
           ref={ref5}
         >
           <div className="rounded-2xl p-10 md:p-14 relative overflow-hidden"

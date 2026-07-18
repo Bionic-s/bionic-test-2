@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Server, Shield, Cpu, Wrench } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
+import { STRATEGIC_PARTNERS_SINGLE, SALESFORCE_ECOSYSTEM } from '../../data/strategicPartners';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
@@ -184,9 +185,9 @@ const serviceCategories: Category[] = [
    ═══════════════════════════════════════════ */
 
 const tabs = [
+  { id: 'platforms', label: 'المنصات والذكاء الاصطناعي', icon: Cpu, desc: 'إدارة علاقات العملاء والتكامل والذكاء الاصطناعي المؤسسي والبيانات والتحليلات.' },
   { id: 'infrastructure', label: 'البنية التحتية', icon: Server, desc: 'الخوادم والتخزين والبنية فائقة التقارب ومنصات السحابة السيادية.' },
   { id: 'cybersecurity', label: 'الأمن السيبراني', icon: Shield, desc: 'إدارة المعلومات الأمنية وأمن البيانات والتعافي السيبراني والهوية — جميع الشركاء.' },
-  { id: 'platforms', label: 'المنصات والذكاء الاصطناعي', icon: Cpu, desc: 'إدارة علاقات العملاء والتكامل والذكاء الاصطناعي المؤسسي والبيانات والتحليلات.' },
   { id: 'services', label: 'الخدمات', icon: Wrench, desc: 'الاستراتيجية والنشر والعمليات المدارة والتحسين.' },
 ] as const;
 
@@ -206,7 +207,7 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 export default function ArabicProductsPage() {
-  const [activeTab, setActiveTab] = useState<TabId>('infrastructure');
+  const [activeTab, setActiveTab] = useState<TabId>('platforms');
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -218,7 +219,7 @@ export default function ArabicProductsPage() {
        className="min-h-screen bg-bg-primary" dir="rtl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
       <Helmet>
         <title>المنتجات | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
-        <meta name="description" content="منظومة متكاملة من منتجات الذكاء الاصطناعي المؤسسي — من الجوال إلى السحابة. ١١ شريكًا. أكثر من ٥٠ منتجًا. علاقة واحدة." />
+        <meta name="description" content="منظومة متكاملة من منتجات الذكاء الاصطناعي المؤسسي — من الجوال إلى السحابة. ٨ شركاء. أكثر من ٥٠ منتجًا. علاقة واحدة." />
       </Helmet>
 
       {/* ═══ 1. HERO ═══ */}
@@ -349,25 +350,41 @@ export default function ArabicProductsPage() {
           className="mb-20"
         >
           <div className="text-center mb-10">
-            <SectionLabel>منظومة المورّدين</SectionLabel>
-            <h2 className="text-2xl md:text-3xl font-bold">١١ شريكًا تقنيًا مباشرًا.</h2>
+            <SectionLabel>المنظومة الاستراتيجية</SectionLabel>
+            <h2 className="text-2xl md:text-3xl font-bold">٨ شركاء تقنيين استراتيجيين.</h2>
             <p className="text-text-muted text-base mt-3 max-w-lg mx-auto">
-              منتجات تُورَّد مباشرة عبر علاقات توزيع معتمدة — Ingram Micro وشركاء التوزيع الإقليميون.
+              متعددو الموردين بالتصميم، وعلاقة واحدة مسؤولة — نفس الشركاء الاستراتيجيين في صفحة الشركاء.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 lg:gap-4 lg:grid-cols-6">
-            {[
-              'Dell Technologies', 'Intel', 'IBM', 'Lenovo',
-              'Salesforce', 'Google', 'Red Hat', 'Platform9',
-              'MuleSoft', 'Tableau', 'Informatica',
-            ].map((vendor) => (
-              <div key={vendor}
+          {/* الشركاء السبعة المفردون */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
+            {STRATEGIC_PARTNERS_SINGLE.map((partner) => (
+              <div key={partner.id}
                 className="bg-bg-secondary border border-white/5 rounded-xl p-4 flex items-center justify-center h-36 hover:border-[#00BFFF20] hover:bg-[#00BFFF03] transition-all duration-300">
                 <div className="w-full h-24 flex items-center justify-center">
-                  <PartnerLogo partner={vendor} size="md" />
+                  <PartnerLogo partner={partner.logoName} size="md" />
                 </div>
               </div>
             ))}
+          </div>
+          {/* منظومة Salesforce — علاقة واحدة موحّدة بعرض كامل */}
+          <div className="mt-3 lg:mt-4 bg-bg-secondary border border-[#00A1E0]/20 rounded-xl p-6 md:p-8 hover:border-[#00A1E0]/40 transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex items-center gap-3 md:w-56 shrink-0">
+                <PartnerLogo partner={SALESFORCE_ECOSYSTEM.logoName} size="lg" />
+                <span className="text-tiny font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#00A1E0]/30 bg-[#00A1E0]/10 text-[#00A1E0]">منظومة</span>
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-3">
+                  {SALESFORCE_ECOSYSTEM.ecosystemMembers!.map((sub) => (
+                    <div key={sub} className="h-8 flex items-center opacity-70">
+                      <PartnerLogo partner={sub} size="sm" />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-text-muted text-sm leading-relaxed">{SALESFORCE_ECOSYSTEM.outcome.ar}</p>
+              </div>
+            </div>
           </div>
         </motion.section>
 
@@ -377,7 +394,7 @@ export default function ArabicProductsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="pb-16"
+          className="pb-20 md:pb-28 lg:pb-32"
         >
           <div className="rounded-2xl p-10 md:p-14 text-center relative overflow-hidden"
             style={{

@@ -217,7 +217,7 @@ export default function TransportLogisticsIndustryPage() {
           </div>
         </motion.section>
 
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+        <motion.section className="pb-20 md:pb-28 lg:pb-32" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>Next Step</SectionLabel>
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Ready to connect your fleet?</h2>
