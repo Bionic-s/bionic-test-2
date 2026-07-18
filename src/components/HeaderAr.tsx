@@ -240,8 +240,8 @@ export const HeaderAr = () => {
                               <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00BFFF' }} />
                                 <div>
-                                  <h4 className="text-small font-semibold text-text-primary">Intelligence</h4>
-                                  <p className="text-tiny text-text-muted">AI · Data · Workstations</p>
+                                  <h4 className="text-small font-semibold text-text-primary">الذكاء</h4>
+                                  <p className="text-tiny text-text-muted">ذكاء اصطناعي · بيانات · محطات عمل</p>
                                 </div>
                               </div>
                               <div className="space-y-0.5 ml-4">
@@ -263,8 +263,8 @@ export const HeaderAr = () => {
                               <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00BFFF' }} />
                                 <div>
-                                  <h4 className="text-small font-semibold text-text-primary">Automation</h4>
-                                  <p className="text-tiny text-text-muted">CRM · Integration · Advisory</p>
+                                  <h4 className="text-small font-semibold text-text-primary">الأتمتة</h4>
+                                  <p className="text-tiny text-text-muted">علاقات العملاء · التكامل · الاستشارات</p>
                                 </div>
                               </div>
                               <div className="space-y-0.5 ml-4">
@@ -286,8 +286,8 @@ export const HeaderAr = () => {
                               <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00BFFF' }} />
                                 <div>
-                                  <h4 className="text-small font-semibold text-text-primary">Trust</h4>
-                                  <p className="text-tiny text-text-muted">Infra · Cyber · Cloud</p>
+                                  <h4 className="text-small font-semibold text-text-primary">الثقة</h4>
+                                  <p className="text-tiny text-text-muted">البنية التحتية · الأمن السيبراني · السحابة</p>
                                 </div>
                               </div>
                               <div className="space-y-0.5 ml-4">
@@ -308,7 +308,7 @@ export const HeaderAr = () => {
                             {/* CTA row */}
                             <Link to="/ar/products"
                               className="col-span-3 px-4 py-3 mt-1 rounded-lg hover:bg-[#00BFFF06] transition-colors flex items-center justify-center gap-2 text-small font-semibold text-[#00BFFF] hover:text-white">
-                              View Full Product Catalog → 4 tabs · 10 categories · 50+ products <ArrowRight className="w-4 h-4" />
+                              استعرض كتالوج المنتجات الكامل — ٤ تبويبات · ١٠ فئات · أكثر من ٥٠ منتجًا <ArrowRight className="w-4 h-4" />
                             </Link>
                           </div>
                         ) : capabilitiesTab === 'capability' ? (
@@ -355,7 +355,7 @@ export const HeaderAr = () => {
                           {capabilitiesTab === 'products' ? 'منظومة الذكاء الاصطناعي الكاملة — من المحمول إلى السحابة. ١١ شريكًا. علاقة واحدة.' : capabilitiesTab === 'capability' ? '٧ قدرات. ٣ ركائز. الذكاء · الأتمتة · الثقة.' : '٥ قطاعات. من القطاع الحكومي إلى المؤسسات الكبرى — تحول الذكاء الاصطناعي مُطبّق على قطاعك.'}
                         </p>
                         <Link to="/ar/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
-                          View Transformation Blueprints <ArrowRight className="w-4 h-4" />
+                          استعرض مخططات التحول <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>
@@ -404,9 +404,9 @@ export const HeaderAr = () => {
                         </div>
                       </div>
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30">
-                        <p className="text-tiny text-text-muted">Advisory · Implementation · Managed Operations</p>
+                        <p className="text-tiny text-text-muted">الاستشارات · التنفيذ · العمليات المُدارة</p>
                         <Link to="/ar/services" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
-                          View All Services <ArrowRight className="w-4 h-4" />
+                          عرض جميع الخدمات <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>
@@ -516,20 +516,20 @@ export const HeaderAr = () => {
                       <div className="space-y-3">
                         {[
                           { pillar: 'الذكاء', color: '#00BFFF', cats: [
-                            'Enterprise AI & ML — watsonx, Vertex AI, Agentforce',
-                            'Data & Analytics — Tableau, Informatica, BigQuery',
-                            'AI Workstations & Laptops — Precision, ThinkPad, Core Ultra',
+                            'الذكاء الاصطناعي المؤسسي والتعلم الآلي — watsonx · Vertex AI · Agentforce',
+                            'البيانات والتحليلات — Tableau · Informatica · BigQuery',
+                            'محطات عمل وأجهزة ذكاء اصطناعي — Precision · ThinkPad · Core Ultra',
                           ]},
                           { pillar: 'الأتمتة', color: '#00BFFF', cats: [
-                            'CRM & Customer Experience — Sales, Service, Marketing Cloud',
-                            'Integration & Automation — MuleSoft, Ansible, API Management',
-                            'Advisory & Strategy — AI Readiness, Architecture, Roadmap',
+                            'إدارة علاقات العملاء وتجربة العميل — Sales · Service · Marketing Cloud',
+                            'التكامل والأتمتة — MuleSoft · Ansible · إدارة API',
+                            'الاستشارات والاستراتيجية — جاهزية الذكاء الاصطناعي · المعمارية · خارطة الطريق',
                           ]},
                           { pillar: 'الثقة', color: '#00BFFF', cats: [
-                            'Servers & Storage — PowerEdge, ThinkSystem, FlashSystem',
-                            'AI GPUs & Accelerators — Gaudi 3, H100, Intel GPU Max',
-                            'Cybersecurity — QRadar, Guardium, Cyber Recovery',
-                            'Cloud & HCI — VxRail, ThinkAgile, APEX, OpenShift',
+                            'الخوادم والتخزين — PowerEdge · ThinkSystem · FlashSystem',
+                            'معالجات ومسرعات الذكاء الاصطناعي — Gaudi 3 · H100 · Intel GPU Max',
+                            'الأمن السيبراني — QRadar · Guardium · Cyber Recovery',
+                            'السحابة والبنية فائقة التقارب — VxRail · ThinkAgile · APEX · OpenShift',
                           ]},
                         ].map((pillar) => (
                           <div key={pillar.pillar}>
@@ -547,7 +547,7 @@ export const HeaderAr = () => {
                         ))}
                         <Link to="/ar/products" onClick={() => setMobileMenuOpen(false)}
                           className="flex items-center gap-2 px-4 py-3 mt-2 text-[#00BFFF] font-semibold text-small border-t border-white/5 pt-4">
-                          View Full Product Catalog → 50+ products <ArrowRight className="w-4 h-4" />
+                          استعرض كتالوج المنتجات — أكثر من ٥٠ منتجًا <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     ) : mobileCapabilitiesTab === 'capability' ? (
@@ -591,7 +591,7 @@ export const HeaderAr = () => {
                     </Link>
                     <Link to="/ar/blueprints" onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2 px-4 py-3 text-accent-primary font-medium text-small">
-                      View Blueprints <ArrowRight className="w-4 h-4" />
+                      استعرض المخططات <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 )}
@@ -620,7 +620,7 @@ export const HeaderAr = () => {
                     ))}
                     <Link to="/ar/services" onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2 px-4 py-3 text-accent-primary font-medium text-small">
-                      View All Services <ArrowRight className="w-4 h-4" />
+                      عرض جميع الخدمات <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 )}

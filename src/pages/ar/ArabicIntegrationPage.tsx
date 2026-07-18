@@ -141,7 +141,7 @@ export default function ArabicIntegrationPage() {
             {[
               { href: '/ar/services/advisory', title: 'الاستشارات والتخطيط', desc: 'تقييم الجاهزية للذكاء الاصطناعي · استشارات الامتثال والحوكمة · الاستراتيجية وخارطة الطريق' },
               { href: '/ar/services/implementation', title: 'التنفيذ والتسليم', desc: 'نشر الذكاء الاصطناعي والأتمتة · تسليم المنصات والتطبيقات · خط أنابيب MLOps' },
-              { href: '/ar/services/operations', title: 'العمليات المدارة', desc: 'عمليات المنصات ٢٤×٧ · مركز العمليات الأمنية كخدمة · ·  مستويات' },
+              { href: '/ar/services/operations', title: 'العمليات المدارة', desc: 'عمليات المنصات ٢٤×٧ · مركز العمليات الأمنية كخدمة · مستويات خدمة متدرّجة' },
             ].map((s, i) => (
               <Link key={i} to={s.href} className="group bg-bg-secondary border border-white/5 rounded-xl p-6 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
                 <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">{s.title}</h3>

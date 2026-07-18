@@ -89,7 +89,7 @@ export default function ArabicTechnologyOperationsPage() {
               { pre: 'فجوة هندسة المنصات', text: 'المطورون ينتظرون أسابيع للبنية التحتية — لا منصة مطورين داخلية، لا خدمة ذاتية، لا مسارات ذهبية' },
               { pre: 'انحراف مستوى الخدمة', text: 'الأداء التشغيلي يتدهور بصمت مع مرور الوقت بدون حلقة تحسين مستمرة' },
               { pre: 'نقاط عمياء في المراقبة', text: 'السجلات في أداة، والمقاييس في أخرى، والتتبع في ثالثة — لا لوحة زجاجية واحدة' },
-              { pre: 'تصاعد التكاليف', text: 'بدون FinOps وإدارة السعة، تكاليف البنية التحتية تنمو  % سنويًا — بدون تتبع' },
+              { pre: 'تصاعد التكاليف', text: 'بدون FinOps وإدارة السعة، تكاليف البنية التحتية تنمو بنسبة ٣٠٪ سنويًا دون تتبّع' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-4 hover:border-[#00BFFF]/20 transition-all duration-300 text-right">
                 <p className="text-tiny font-semibold mb-1" style={{ color: ACCENT }}>{item.pre}</p>
@@ -154,7 +154,7 @@ export default function ArabicTechnologyOperationsPage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">العمليات المدارة</h3>
-              <p className="text-tiny text-text-muted">عمليات منصات ٢٤×٧ · مركز عمليات أمنية كخدمة · ·  مستويات (أساسي/متقدم/متميز) · تحسين مستمر + FinOps</p>
+              <p className="text-tiny text-text-muted">عمليات منصات ٢٤×٧ · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز) · تحسين مستمر + FinOps</p>
             </Link>
           </div>
         </motion.section>

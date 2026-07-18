@@ -40,7 +40,7 @@ export default function ArabicBankingIndustryPage() {
        className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
       <Helmet>
         <title>البنوك والخدمات المالية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
-        <meta name="description" content="التحول بالذكاء الاصطناعي للبنوك والخدمات المالية — استخبارات مكافحة غسل الأموال والاحتيال، نمذجة مخاطر الائتمان، وأتمتة التقارير التنظيمية." />
+        <meta name="description" content="التحول بالذكاء الاصطناعي للبنوك والخدمات المالية — تحليلات مكافحة غسل الأموال والاحتيال، نمذجة مخاطر الائتمان، وأتمتة التقارير التنظيمية." />
       </Helmet>
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
@@ -141,7 +141,7 @@ export default function ArabicBankingIndustryPage() {
             أفضل التقنيات العالمية ضمن معماريات مصممة لتلبية متطلبات السوق السعودي.
           </h2>
           <p className="text-text-muted mb-8 max-w-[720px]" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-            لانبيع منتجات. نصمم منصات سيادية باستخدام أفضل التقنيات العالمية — مختارة بناءً على الكفاءة، وليس حوافز إعادة البيع.
+            لا نبيع منتجات. نصمم منصات سيادية باستخدام أفضل التقنيات العالمية — مختارة بناءً على الكفاءة، وليس حوافز إعادة البيع.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p, i) => (

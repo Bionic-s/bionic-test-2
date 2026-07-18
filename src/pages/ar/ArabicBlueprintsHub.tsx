@@ -40,6 +40,34 @@ const industryIcons: Record<string, React.ReactNode> = {
   'Transport & Logistics': <Truck size={20} />,
 };
 
+const industryNames: Record<string, string> = {
+  'Government & Public Sector': 'القطاع الحكومي والعام',
+  'Banking & Financial Services': 'الخدمات المصرفية والمالية',
+  'Oil, Gas & Energy': 'النفط والغاز والطاقة',
+  'Healthcare': 'الرعاية الصحية',
+  'Enterprise': 'المؤسسات',
+  'Telecom & Communications': 'الاتصالات وتقنية المعلومات',
+  'Retail & Consumer': 'التجزئة والسلع الاستهلاكية',
+  'Manufacturing': 'التصنيع',
+  'Transport & Logistics': 'النقل والخدمات اللوجستية',
+};
+
+const capabilityNames: Record<string, string> = {
+  'Enterprise AI & Automation': 'الذكاء الاصطناعي المؤسسي والأتمتة',
+  'Data, Analytics & Intelligence': 'البيانات والتحليلات والذكاء',
+  'Business Applications & CX': 'تطبيقات الأعمال وتجربة العملاء',
+  'Integration & Intelligent Operations': 'التكامل والعمليات الذكية',
+  'Cybersecurity & Cyber Resilience': 'الأمن السيبراني والمرونة السيبرانية',
+  'Sovereign Infrastructure & Hybrid Cloud': 'البنية التحتية السيادية والسحابة الهجينة',
+  'Technology Operations': 'عمليات التقنية',
+};
+
+const iatForceNames: Record<string, string> = {
+  Intelligence: 'ذكاء',
+  Automation: 'أتمتة',
+  Trust: 'ثقة',
+};
+
 export default function Page() {
 
   useEffect(() => { trackBlueprintHubView(); }, []);
@@ -203,7 +231,7 @@ export default function Page() {
                       onChange={() => toggleIndustry(ind)}
                       className="w-4 h-4 rounded border-white/20 bg-bg-primary text-accent-primary"
                     />
-                    <span className="flex items-center gap-2 flex-row">{ind} {industryIcons[ind]}</span>
+                    <span className="flex items-center gap-2 flex-row">{industryNames[ind] || ind} {industryIcons[ind]}</span>
                   </label>
                 ))}
               </div>
@@ -235,7 +263,7 @@ export default function Page() {
                       className="w-2 h-2 rounded-full"
                       style={{ backgroundColor: iatColors[iatForce[cap]] }}
                     />
-                    {cap}
+                    {capabilityNames[cap] || cap}
                   </label>
                 ))}
               </div>
@@ -287,7 +315,7 @@ export default function Page() {
                   key={ind}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent-primary/10 border border-accent-primary/30 rounded-full text-xs font-medium text-accent-primary"
                 >
-                  {ind}
+                  {industryNames[ind] || ind}
                   <button onClick={() => toggleIndustry(ind)} className="hover:bg-accent-primary/20 rounded-full p-0.5">
                     <X className="w-3 h-3" />
                   </button>
@@ -303,7 +331,7 @@ export default function Page() {
                     color: iatColors[iatForce[cap]],
                   }}
                 >
-                  {cap}
+                  {capabilityNames[cap] || cap}
                   <button onClick={() => toggleCapability(cap)} className="hover:bg-white/10 rounded-full p-0.5">
                     <X className="w-3 h-3" />
                   </button>
@@ -361,7 +389,7 @@ export default function Page() {
                   <div className="p-6 pb-0">
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <span className="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/30 inline-flex items-center gap-1.5">
-                        {industryIcons[bp.industry]} {bp.industry}
+                        {industryIcons[bp.industry]} {industryNames[bp.industry] || bp.industry}
                       </span>
                       {[...new Set(bp.capabilities.map((c) => iatForce[c]).filter(Boolean))].map((f, i) => (
                         <span
@@ -373,7 +401,7 @@ export default function Page() {
                             color: iatColors[f],
                           }}
                         >
-                          {f}
+                          {iatForceNames[f] || f}
                         </span>
                       ))}
                     </div>

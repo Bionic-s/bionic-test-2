@@ -40,7 +40,7 @@ export default function ArabicGovernmentIndustryPage() {
        className="min-h-screen bg-bg-primary pt-32 pb-24" dir="rtl">
       <Helmet>
         <title>القطاع الحكومي | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
-        <meta name="description" content="التحول بالذكاء الاصطناعي للقطاع الحكومي السعودي — استخبارات المشتريات عبر منصة اعتماد، أتمتة الخدمات للمواطنين، وذكاء المستندات على المستوى الوطني." />
+        <meta name="description" content="التحول بالذكاء الاصطناعي للقطاع الحكومي السعودي — ذكاء المشتريات عبر منصة اعتماد، أتمتة الخدمات للمواطنين، وذكاء المستندات على المستوى الوطني." />
       </Helmet>
         <section className="relative -mt-32 mb-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
