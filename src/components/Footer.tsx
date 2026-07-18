@@ -1,19 +1,12 @@
 import { Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { contactEmails } from '../data/contactData';
+import { capabilities } from '../data/capabilities';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const capabilities = [
-    { name: 'Enterprise AI & Automation', href: '/capabilities/ai' },
-    { name: 'Data, Analytics & Intelligence', href: '/capabilities/data' },
-    { name: 'Business Applications & CX', href: '/capabilities/apps' },
-    { name: 'Integration & Intelligent Operations', href: '/capabilities/integration' },
-    { name: 'Cybersecurity & Cyber Resilience', href: '/capabilities/cyber' },
-    { name: 'Sovereign Infrastructure & Hybrid Cloud', href: '/capabilities/infra' },
-    { name: 'Technology Operations', href: '/capabilities/ops' },
-  ];
+
 
   const company = [
     { name: 'About', href: '/about' },
@@ -81,7 +74,7 @@ export const Footer = () => {
               {capabilities.map((item, index) => (
                 <li key={index}>
                   <Link
-                    to={item.href}
+                    to={item.path}
                     className="text-body text-text-muted hover:text-accent-primary transition-colors"
                   >
                     {item.name}

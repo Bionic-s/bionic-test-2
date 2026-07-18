@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { capabilityPillars as CAPABILITY_PILLARS } from '../data/capabilities';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
@@ -36,36 +37,12 @@ export const HeaderAr = () => {
   ];
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
-  const capabilityPillars = [
-    {
-      pillar: 'الذكاء',
-      tagline: 'AI · Analytics · Data',
-      color: '#00BFFF',
-      items: [
-        { name: 'الذكاء الاصطناعي المؤسسي والأتمتة', desc: 'وكلاء الذكاء الاصطناعي، المساعدون الأذكياء، MLOps', path: '/ar/capabilities/ai' },
-        { name: 'البيانات والتحليلات والذكاء', desc: 'منصات البيانات، إدارة البيانات الرئيسية، ذكاء الأعمال', path: '/ar/capabilities/data' },
-      ],
-    },
-    {
-      pillar: 'الأتمتة',
-      tagline: 'Apps · Integration · Workflow',
-      color: '#00BFFF',
-      items: [
-        { name: 'تطبيقات الأعمال وتجربة العملاء', desc: 'إدارة علاقات العملاء، مركز اتصال، تجارة', path: '/ar/capabilities/apps' },
-        { name: 'التكامل والعمليات الذكية', desc: 'معمارية API، بالأحداث، تنسيق سير العمل', path: '/ar/capabilities/integration' },
-      ],
-    },
-    {
-      pillar: 'الثقة',
-      tagline: 'Cyber · Sovereign · Resilience',
-      color: '#00BFFF',
-      items: [
-        { name: 'الأمن السيبراني والمرونة السيبرانية', desc: 'مركز عمليات أمنية، Zero Trust، الهوية', path: '/ar/capabilities/cyber' },
-        { name: 'البنية التحتية السيادية', desc: 'مراكز بيانات، سحابة هجينة، بنية الذكاء التحتية', path: '/ar/capabilities/infra' },
-        { name: 'عمليات التقنية', desc: 'هندسة المنصات، AIOps، SRE', path: '/ar/capabilities/ops' },
-      ],
-    },
-  ];
+  const capabilityPillars = CAPABILITY_PILLARS.map((p) => ({
+    pillar: p.pillar.ar,
+    tagline: p.tagline,
+    color: p.color,
+    items: p.items.map((i) => ({ name: i.name.ar, desc: i.desc.ar, path: i.path.ar })),
+  }));
 
   // ── Services ──
   const serviceCategories = [

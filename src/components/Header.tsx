@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { capabilityPillars as CAPABILITY_PILLARS } from '../data/capabilities';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
@@ -36,36 +37,12 @@ export const Header = () => {
   ];
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
-  const capabilityPillars = [
-    {
-      pillar: 'Intelligence',
-      tagline: 'AI · Analytics · Data',
-      color: '#00BFFF',
-      items: [
-        { name: 'Enterprise AI & Automation', desc: 'Agentic AI, copilots, MLOps', path: '/capabilities/ai' },
-        { name: 'Data, Analytics & Intelligence', desc: 'Data platforms, MDM, BI', path: '/capabilities/data' },
-      ],
-    },
-    {
-      pillar: 'Automation',
-      tagline: 'Apps · Integration · Workflow',
-      color: '#00BFFF',
-      items: [
-        { name: 'Business Applications & CX', desc: 'CRM, contact center, commerce', path: '/capabilities/apps' },
-        { name: 'Integration & Intelligent Ops', desc: 'API-led, event-driven, workflow', path: '/capabilities/integration' },
-      ],
-    },
-    {
-      pillar: 'Trust',
-      tagline: 'Cyber · Sovereign · Resilience',
-      color: '#00BFFF',
-      items: [
-        { name: 'Cybersecurity & Cyber Resilience', desc: 'SOC, Zero Trust, identity', path: '/capabilities/cyber' },
-        { name: 'Sovereign Infrastructure', desc: 'Datacenter, hybrid cloud, AI infra', path: '/capabilities/infra' },
-        { name: 'Technology Operations', desc: 'Platform engineering, AIOps, SRE', path: '/capabilities/ops' },
-      ],
-    },
-  ];
+  const capabilityPillars = CAPABILITY_PILLARS.map((p) => ({
+    pillar: p.pillar.en,
+    tagline: p.tagline,
+    color: p.color,
+    items: p.items.map((i) => ({ name: i.name.en, desc: i.desc.en, path: i.path.en })),
+  }));
 
   // ── Services ──
   const serviceCategories = [

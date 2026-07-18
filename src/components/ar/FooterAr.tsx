@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { capabilitiesAr } from '../../data/capabilities';
 import { Linkedin, Twitter, Mail, ArrowLeft } from 'lucide-react';
 
 export const FooterAr = () => {
@@ -45,13 +46,9 @@ export const FooterAr = () => {
           <div>
             <h4 className="text-small font-semibold text-text-primary mb-4">القدرات</h4>
             <ul className="space-y-2">
-              <li><Link to="/ar/capabilities/ai" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الذكاء الاصطناعي المؤسسي والأتمتة</Link></li>
-              <li><Link to="/ar/capabilities/data" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">البيانات والتحليلات والذكاء</Link></li>
-              <li><Link to="/ar/capabilities/apps" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">تطبيقات الأعمال وتجربة العملاء</Link></li>
-              <li><Link to="/ar/capabilities/integration" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">التكامل والعمليات الذكية</Link></li>
-              <li><Link to="/ar/capabilities/cyber" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الأمن السيبراني والمرونة السيبرانية</Link></li>
-              <li><Link to="/ar/capabilities/infra" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">البنية التحتية السيادية والسحابة الهجينة</Link></li>
-              <li><Link to="/ar/capabilities/ops" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">عمليات التقنية</Link></li>
+              {capabilitiesAr.map((cap) => (
+                <li key={cap.path}><Link to={cap.path} className="text-tiny text-text-muted hover:text-accent-primary transition-colors">{cap.name}</Link></li>
+              ))}
             </ul>
           </div>
 
