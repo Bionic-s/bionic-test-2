@@ -17,6 +17,8 @@ export interface Blueprint {
   architecture: string;
   outcomes: string[];
   whyBionic: string;
+  /** How this blueprint applies across industries (optional). */
+  industryUse?: { industry: string; use: string }[];
 }
 
 export const blueprints: Blueprint[] = [
@@ -414,6 +416,153 @@ export const blueprints: Blueprint[] = [
     architecture: 'ERP/Accounting systems → MuleSoft Anypoint (API integration layer) → ZATCA Fatoora API (clearance & reporting) → Informatica Data Quality (invoice data validation) → IBM MQ (guaranteed message delivery) → Red Hat Ansible (automated compliance remediation) → Guardium (invoice data security) → QRadar SIEM (compliance monitoring & audit trail)',
     outcomes: ['ZATCA Phase 2 & 3 compliance across all invoice types', 'Real-time invoice clearance with cryptographic signing', 'Automated compliance reporting with full audit trail', 'Zero business disruption during ZATCA integration waves', 'Cross-industry applicable — government, healthcare, retail, manufacturing'],
     whyBionic: 'ZATCA compliance is not just an ERP upgrade — it is an integration and security challenge. Bionic delivers the complete compliance platform: API integration (MuleSoft) + secure messaging (IBM MQ) + automation (Ansible) + data quality (Informatica) + security (QRadar/Guardium) — applicable across every industry.',
+  },
+  // ── Cross-Industry: Cyber Recovery ─────────────────────
+  {
+    slug: 'cyber-recovery-vault',
+    title: 'Cyber Recovery & Ransomware Resilience Vault',
+    industry: 'Healthcare',
+    industrySlug: 'healthcare',
+    capabilities: ['Cybersecurity & Cyber Resilience', 'Sovereign Infrastructure & Hybrid Cloud', 'Technology Operations'],
+    capabilitySlugs: ['cyber', 'infra', 'ops'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations', 'SOC-as-a-Service'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Dell Technologies', 'IBM', 'Red Hat'],
+    products: ['PowerProtect Cyber Recovery', 'Safeguarded Copy', 'QRadar SIEM', 'QRadar SOAR', 'Red Hat Ansible'],
+    challenge: 'Ransomware is the number-one operational risk for Saudi enterprises. Backups alone are not enough — modern attacks encrypt backups first. Organizations need an isolated, immutable recovery vault with automated integrity validation and a rehearsed recovery runbook.',
+    architecture: 'Production systems → Dell PowerProtect Cyber Recovery air-gapped vault (immutable copies + CyberSense integrity analytics) → IBM Safeguarded Copy for array-level immutable snapshots → QRadar SIEM detection → QRadar SOAR automated response playbooks → Ansible-orchestrated clean recovery',
+    outcomes: [
+      'Guaranteed clean recovery point — even if production backups are encrypted',
+      'Automated integrity validation on every vault sync',
+      'Recovery time measured in hours, not weeks',
+      'NCA-aligned cyber resilience posture with rehearsed runbooks',
+    ],
+    whyBionic: 'Bionic combines Dell vault isolation, IBM array-level immutability, and IBM detection-and-response into one rehearsed recovery capability — then operates it 24×7 as a service.',
+    industryUse: [
+      { industry: 'Healthcare', use: 'Protect patient records and clinical systems — recover EHR and PACS within hours, keeping care delivery running.' },
+      { industry: 'Banking & Financial Services', use: 'SAMA-aligned operational resilience — immutable copies of core banking and payments data with proven recovery drills.' },
+      { industry: 'Government & Public Sector', use: 'Sovereign vault for citizen data — air-gapped in-Kingdom recovery aligned with NCA controls.' },
+      { industry: 'Oil, Gas & Energy', use: 'Shield OT/IT historians and control-adjacent systems so a corporate breach never halts production.' },
+      { industry: 'Enterprise', use: 'Board-level ransomware assurance — quantified recovery objectives and annual attack-simulation exercises.' },
+    ],
+  },
+
+  // ── Cross-Industry: PDPL Data Governance ───────────────
+  {
+    slug: 'pdpl-data-governance',
+    title: 'PDPL Data Governance & Privacy Compliance',
+    industry: 'Retail & Consumer',
+    industrySlug: 'retail',
+    capabilities: ['Data, Analytics & Intelligence', 'Cybersecurity & Cyber Resilience', 'Integration & Intelligent Operations'],
+    capabilitySlugs: ['data', 'cyber', 'integration'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Informatica', 'IBM', 'Tableau', 'MuleSoft'],
+    products: ['Informatica Data Governance', 'Informatica MDM', 'Guardium', 'Tableau', 'MuleSoft Anypoint'],
+    challenge: 'The Personal Data Protection Law (PDPL) requires organizations to know exactly what personal data they hold, where it lives, who touches it, and prove consent — across dozens of systems. Most enterprises cannot answer these questions today.',
+    architecture: 'Informatica Data Governance catalog & lineage (discover + classify personal data) → Informatica MDM consent & golden record → Guardium data activity monitoring and access policy enforcement → MuleSoft governed data-sharing APIs → Tableau compliance dashboards for the DPO',
+    outcomes: [
+      'Complete personal-data inventory with automated discovery and classification',
+      'Demonstrable PDPL compliance — consent, purpose limitation, and subject-rights workflows',
+      'Real-time monitoring of who accesses personal data, with policy enforcement',
+      'Audit-ready reporting for SDAIA inquiries',
+    ],
+    whyBionic: 'Privacy compliance is a data-architecture problem, not a legal memo. Bionic assembles discovery, mastering, monitoring, and reporting into one governed pipeline — and operates it continuously.',
+    industryUse: [
+      { industry: 'Retail & Consumer', use: 'Millions of loyalty and e-commerce profiles governed — consent-aware personalization without regulatory exposure.' },
+      { industry: 'Banking & Financial Services', use: 'PDPL layered on SAMA requirements — unified customer data governance across core, cards, and digital channels.' },
+      { industry: 'Healthcare', use: 'Patient-data privacy across hospital systems — PHI classification, access monitoring, and consent management.' },
+      { industry: 'Telecom & Communications', use: 'Subscriber data governance at national scale — location and usage data classified, minimized, and monitored.' },
+      { industry: 'Government & Public Sector', use: 'Citizen-data stewardship across entities — governed sharing with full lineage and audit trails.' },
+    ],
+  },
+
+  // ── Cross-Industry: Consumption Infrastructure ─────────
+  {
+    slug: 'consumption-based-infrastructure',
+    title: 'Consumption-Based Infrastructure — CapEx to OpEx',
+    industry: 'Enterprise',
+    industrySlug: 'enterprise',
+    capabilities: ['Sovereign Infrastructure & Hybrid Cloud', 'Technology Operations'],
+    capabilitySlugs: ['infra', 'ops'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Lenovo', 'Dell Technologies', 'Platform9'],
+    products: ['Lenovo TruScale IaaS', 'Dell APEX', 'Lenovo ThinkAgile HCI', 'Platform9 Managed Kubernetes'],
+    challenge: 'Enterprises want cloud economics without giving up data residency. Buying infrastructure means large CapEx cycles, over-provisioning, and three-year refresh lock-in — while public cloud breaks sovereignty requirements.',
+    architecture: 'Lenovo TruScale / Dell APEX consumption-based hardware on-premises → ThinkAgile HCI integrated stack → Platform9 managed Kubernetes and private-cloud control plane → unified metering, FinOps chargeback, and elastic capacity — pay only for what is used',
+    outcomes: [
+      'Cloud-like pay-per-use economics with 100% in-Kingdom data residency',
+      '25–40% infrastructure cost avoidance versus traditional CapEx cycles',
+      'Elastic capacity — scale up in days without procurement cycles',
+      'Single FinOps view of consumption across vendors',
+    ],
+    whyBionic: 'Bionic is the single accountable operator across Lenovo, Dell, and Platform9 consumption models — one contract, one SLA, one FinOps dashboard instead of three vendor billing portals.',
+    industryUse: [
+      { industry: 'Enterprise', use: 'Shift the datacenter to OpEx — fund AI initiatives from infrastructure savings instead of new budget.' },
+      { industry: 'Government & Public Sector', use: 'Sovereign elasticity — national-program workloads scale on demand while staying in-Kingdom.' },
+      { industry: 'Banking & Financial Services', use: 'Regulated-workload elasticity — burst capacity for month-end and Ramadan peaks without over-provisioning.' },
+      { industry: 'Telecom & Communications', use: 'Edge and core sites on consumption billing — align infrastructure cost with subscriber revenue.' },
+      { industry: 'Manufacturing', use: 'Factory-edge compute as a service — new plants come online without capital approval cycles.' },
+    ],
+  },
+
+  // ── Oil & Gas: Emissions Intelligence ──────────────────
+  {
+    slug: 'emissions-intelligence',
+    title: 'Emissions Intelligence & Sustainability Analytics',
+    industry: 'Oil, Gas & Energy',
+    industrySlug: 'energy',
+    capabilities: ['Data, Analytics & Intelligence', 'Enterprise AI & Automation', 'Integration & Intelligent Operations'],
+    capabilitySlugs: ['data', 'ai', 'integration'],
+    services: ['AI Readiness Assessment', 'AI & Automation Deployment', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['IBM', 'Intel', 'Tableau', 'MuleSoft'],
+    products: ['watsonx.ai', 'IBM Maximo', 'Intel Gaudi AI (Edge)', 'Tableau', 'MuleSoft Anypoint'],
+    challenge: 'Saudi energy companies carry net-zero commitments under Vision 2030 and the Saudi Green Initiative, but emissions data is scattered across OT sensors, flare systems, and manual spreadsheets. Reporting is quarterly and backward-looking — not operational.',
+    architecture: 'OT sensors and flare monitoring → MuleSoft OT/IT integration layer → watsonx.ai emissions forecasting and anomaly detection → IBM Maximo asset linkage (leaks, flares, inefficient equipment) → Intel edge inference at remote sites → Tableau executive sustainability dashboards',
+    outcomes: [
+      'Real-time emissions visibility across fields, plants, and facilities',
+      'AI-driven leak and flare-event detection before they escalate',
+      'Audit-ready reporting aligned with Saudi Green Initiative targets',
+      'Emissions tied to specific assets — so reduction becomes a maintenance plan, not a slogan',
+    ],
+    whyBionic: 'Bionic connects the OT data layer, AI forecasting, asset management, and executive reporting into one operational emissions platform — sustainability as an operations discipline, not an annual report.',
+    industryUse: [
+      { industry: 'Oil, Gas & Energy', use: 'Flare, methane, and combustion emissions monitored in real time across upstream and downstream assets.' },
+      { industry: 'Manufacturing', use: 'Plant-level energy and carbon intensity per production line — optimize schedules for cost and emissions together.' },
+      { industry: 'Transport & Logistics', use: 'Fleet fuel and emissions analytics — route optimization that cuts both cost and carbon.' },
+      { industry: 'Government & Public Sector', use: 'National and city-level sustainability dashboards aggregating sector data for Vision 2030 reporting.' },
+    ],
+  },
+
+  // ── Telecom: Full Sovereign Private Cloud ──────────────
+  {
+    slug: 'sovereign-private-cloud',
+    title: 'Full Sovereign Private Cloud — OpenStack',
+    industry: 'Telecom & Communications',
+    industrySlug: 'telecom',
+    capabilities: ['Sovereign Infrastructure & Hybrid Cloud', 'Technology Operations', 'Cybersecurity & Cyber Resilience'],
+    capabilitySlugs: ['infra', 'ops', 'cyber'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations', 'SOC-as-a-Service'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Platform9', 'Lenovo', 'Red Hat', 'Intel'],
+    products: ['Platform9 OpenStack Private Cloud', 'Lenovo ThinkSystem Servers', 'Red Hat OpenShift', 'Intel Xeon 6', 'QRadar SIEM'],
+    challenge: 'Operators and regulated enterprises need AWS-like self-service — compute, networking, storage, identity — but CST and NCA data-residency rules keep core workloads out of public cloud. Building OpenStack in-house takes years of scarce expertise.',
+    architecture: 'Lenovo ThinkSystem on Intel Xeon 6 → Platform9 OpenStack private cloud (compute, network, storage, identity — SaaS-managed control plane) → Red Hat OpenShift for containerized and network functions → QRadar SIEM security monitoring → Bionic 24×7 managed operations',
+    outcomes: [
+      'Full private-cloud self-service without hiring an OpenStack team',
+      'CST and NCA-compliant data residency for core and network workloads',
+      '99.9% managed-uptime SLA with remote healing',
+      'VM and container workloads on one sovereign platform',
+    ],
+    whyBionic: 'Platform9 delivers the managed control plane, Lenovo and Intel the sovereign hardware, Red Hat the container layer — Bionic assembles and operates the whole cloud as one accountable service.',
+    industryUse: [
+      { industry: 'Telecom & Communications', use: 'Telco cloud for network functions and IT workloads — CST-compliant, operated as a service.' },
+      { industry: 'Government & Public Sector', use: 'Entity-owned sovereign cloud — self-service for departments with NCA-aligned controls.' },
+      { industry: 'Banking & Financial Services', use: 'Private cloud for core-adjacent workloads that regulation keeps on-premises.' },
+      { industry: 'Enterprise', use: 'AWS-like developer experience inside your datacenter — without cloud egress or residency risk.' },
+    ],
   },
 ];
 

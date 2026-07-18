@@ -269,6 +269,31 @@ export default function TransformationBlueprintPage() {
         </div>
       </section>
 
+      {/* Where It Applies — industry use cases */}
+      {bp.industryUse && (
+        <section className="py-16">
+          <div className="container mx-auto px-4 lg:px-12 max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-center mb-3">Where It Applies</h2>
+              <p className="text-text-muted text-center mb-10 max-w-2xl mx-auto">The same architecture, applied to each sector's reality.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {bp.industryUse.map((iu, i) => (
+                  <div key={i} className="p-5 rounded-xl bg-bg-primary border border-white/5 hover:border-accent-primary/20 transition-colors">
+                    <p className="text-small font-semibold text-accent-primary mb-1.5">{iu.industry}</p>
+                    <p className="text-sm text-text-muted leading-relaxed">{iu.use}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Why Bionic */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-12 max-w-5xl">
