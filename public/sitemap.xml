@@ -785,4 +785,18 @@
     <lastmod>2026-07-19</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/blueprints/vmware-exit-private-cloud</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/vmware-exit-private-cloud"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/vmware-exit-private-cloud"/>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.bionics.sa/test-site-2/ar/blueprints/vmware-exit-private-cloud</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://app.bionics.sa/test-site-2/blueprints/vmware-exit-private-cloud"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://app.bionics.sa/test-site-2/ar/blueprints/vmware-exit-private-cloud"/>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

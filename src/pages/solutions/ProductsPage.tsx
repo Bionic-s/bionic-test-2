@@ -73,6 +73,7 @@ const infraCategories: Category[] = [
     name: 'Cloud & As-a-Service',
     products: [
       { name: 'APEX Cloud & As-a-Service', vendor: 'Dell Technologies', desc: 'Consumption-based infrastructure — on-prem, edge, colocation. Pay-per-use with elastic capacity.' },
+      { name: 'Private Cloud Director', vendor: 'Platform9', desc: 'The lowest-risk path beyond VMware — full HA/DRS/live-migration parity on your existing hardware, with vJailbreak migration in weeks, not months.' },
       { name: 'Managed Kubernetes', vendor: 'Platform9', desc: 'Kubernetes in your datacenter or VPC — multi-cluster, auto-healing, managed from a single SaaS control plane.' },
       { name: 'OpenStack Private Cloud', vendor: 'Platform9', desc: 'AWS-like private cloud on your hardware — compute, networking, storage, identity. Sovereignty without operational burden.' },
       { name: 'Red Hat OpenShift', vendor: 'Red Hat', desc: 'Enterprise Kubernetes platform — build, deploy, scale containerized apps across hybrid cloud. Foundation for sovereign private cloud.' },

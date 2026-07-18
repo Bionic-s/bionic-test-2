@@ -564,6 +564,36 @@ export const blueprints: Blueprint[] = [
       { industry: 'Enterprise', use: 'AWS-like developer experience inside your datacenter — without cloud egress or residency risk.' },
     ],
   },
+  // ── Enterprise: VMware Exit ────────────────────────────
+  {
+    slug: 'vmware-exit-private-cloud',
+    title: 'VMware Exit — Private Cloud Director',
+    industry: 'Enterprise',
+    industrySlug: 'enterprise',
+    capabilities: ['Sovereign Infrastructure & Hybrid Cloud', 'Technology Operations'],
+    capabilitySlugs: ['infra', 'ops'],
+    services: ['AI Readiness Assessment', 'Platform & App Delivery', 'Managed Operations'],
+    serviceSlugs: ['advisory', 'implementation', 'operations'],
+    partners: ['Platform9', 'Dell Technologies', 'Lenovo'],
+    products: ['Platform9 Private Cloud Director', 'vJailbreak Migration', 'Platform9 Managed Kubernetes', 'Dell PowerEdge Servers', 'Lenovo ThinkSystem Servers'],
+    challenge: 'The VMware era has reached a hard stop — forced bundles, rising renewal costs, and SKU retirements. The usual exits all carry a catch: HCI replatforming (Nutanix) means new hardware and rigid scaling; container-first stacks (OpenShift Virtualization, SUSE Harvester) run VMs on Kubernetes — the right destination for containers, but a re-skilling project when the goal is running thousands of VMs tomorrow; DIY hypervisors leave your team supporting the stack alone. Enterprises need VMware parity without a new lock-in.',
+    architecture: 'Existing servers and storage stay (Dell, HPE, Pure, NetApp — no HCI rebuy) → Platform9 Private Cloud Director with full enterprise parity (HA, DRS, live migration, snapshots, storage integration) → vJailbreak in-place cluster conversion (real-time replication, VMware tools replaced live — weeks, not months) → SaaS-managed control plane → same platform grows into Kubernetes, DBaaS, and fractional-GPU AI workloads when ready → Bionic 24×7 managed operations',
+    outcomes: [
+      'Full VMware operational parity — HA, DRS, live migration, and snapshots preserved, no admin re-skilling',
+      'Migration in weeks via vJailbreak — proven at 40,000+ VMs with zero disruption (Siemens, selected head-to-head over Nutanix, Red Hat, and Hyper-V)',
+      'Keep existing hardware, storage, networking, and backup tools — no HCI replatforming',
+      'Predictable per-core pricing instead of forced bundle renewals',
+      'Built-in modernization path: VMs today, Kubernetes and AI workloads on the same platform tomorrow',
+    ],
+    whyBionic: 'Bionic runs the full safe-passage plan: environment assessment, migration wave design, vJailbreak execution, and 24×7 managed operations after cutover — one accountable partner from VMware estate to sovereign private cloud, with the container layer (OpenShift) added on top when the roadmap calls for it.',
+    industryUse: [
+      { industry: 'Enterprise', use: 'Exit renewal pressure on your timeline — migrate the VM estate in phased waves with parity preserved and budgets predictable.' },
+      { industry: 'Government & Public Sector', use: 'Sovereign virtualization in-Kingdom — citizen-facing workloads move off VMware without leaving the datacenter or NCA compliance.' },
+      { industry: 'Banking & Financial Services', use: 'Core-adjacent VM estates migrate under SAMA change-control — live conversion, rehearsed rollback, zero customer-facing disruption.' },
+      { industry: 'Telecom & Communications', use: 'IT and network-adjacent VM farms consolidate onto one platform — with Kubernetes for network functions on the same control plane.' },
+      { industry: 'Healthcare', use: 'Clinical application servers migrate ward-by-ward with live replication — no downtime windows for systems that cannot stop.' },
+    ],
+  },
 ];
 
 // Derived lookup maps for filtering

@@ -73,6 +73,7 @@ const infraCategories: Category[] = [
     name: 'السحابة والخدمات حسب الاستخدام',
     products: [
       { name: 'APEX Cloud & As-a-Service', vendor: 'Dell Technologies', desc: 'بنية تحتية بنموذج استهلاكي — في الموقع أو الطرفية أو مراكز البيانات المشتركة. دفع حسب الاستخدام بسعة مرنة.' },
+      { name: 'Private Cloud Director', vendor: 'Platform9', desc: 'المسار الأقل مخاطرة للخروج من VMware — تكافؤ كامل في التوافر العالي والجدولة والترحيل الحي على عتادكم الحالي، مع هجرة عبر vJailbreak خلال أسابيع لا أشهر.' },
       { name: 'Managed Kubernetes', vendor: 'Platform9', desc: 'Kubernetes في مركز بياناتك أو شبكتك السحابية الخاصة — متعدد التجمعات، إصلاح ذاتي، يُدار من لوحة تحكم SaaS واحدة.' },
       { name: 'OpenStack Private Cloud', vendor: 'Platform9', desc: 'سحابة خاصة تشبه AWS على عتادك — حوسبة وشبكات وتخزين وإدارة هوية. سيادة البيانات دون عبء تشغيلي.' },
       { name: 'Red Hat OpenShift', vendor: 'Red Hat', desc: 'منصة Kubernetes المؤسسية — بناء ونشر وتوسيع التطبيقات المعبأة بالحاويات عبر السحابة الهجينة. أساس السحابة الخاصة ذات السيادة.' },
