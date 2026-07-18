@@ -137,7 +137,7 @@ export const ContactAr = () => {
                   { step: '2', title: 'الاكتشاف والتقييم', dur: 'أسبوع – أسبوعين', desc: 'تحليل معمق للمعمارية الحالية وقدراتكم وأهدافكم المؤسسية.' },
                   { step: '3', title: 'المعمارية والمخطط', dur: 'أسبوعين – ٤ أسابيع', desc: 'المعمارية المستهدفة وخارطة الطريق والحوكمة وحالة الأعمال.' },
                   { step: '4', title: 'التنفيذ', dur: '٨–١٦ أسبوعًا', desc: 'نشر المنصات والتكامل وإدارة التبني المؤسسي.' },
-                  { step: '5', title: 'العمليات المدارة والمستدامة', dur: 'مستمرة', desc: 'تحسين مستمر ومراقبة وتطوير — نبقى معكم.' },
+                  { step: '5', title: 'العمليات المدارة والمستمرة', dur: 'مستمرة', desc: 'تحسين مستمر ومراقبة وتطوير — نبقى معكم.' },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
                     <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-tiny font-bold" style={{ backgroundColor: '#00BFFF15', color: '#00BFFF' }}>{item.step}</div>

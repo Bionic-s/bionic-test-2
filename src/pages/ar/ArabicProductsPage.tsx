@@ -151,7 +151,7 @@ const serviceCategories: Category[] = [
     products: [
       { name: 'Agent Discovery Workshop', vendor: 'Bionic Solutions', desc: 'مشروع لمدة أسبوعين — نحدد ٣–٥ حالات استخدام عالية العائد لوكلاء الذكاء الاصطناعي عبر مؤسستك. تُسلّم كخارطة طريق ذات أولوية مع تقديرات البناء.' },
       { name: 'Custom AI Agent Build', vendor: 'Bionic Solutions', desc: 'تطوير شامل لدورة حياة الوكيل — اكتشاف وتصميم وبناء واختبار ونشر. مدعوم بـ Salesforce Agentforce أو IBM watsonx أو Google Vertex AI. يُسلّم جاهزًا للإنتاج في بيئتك.' },
-      { name: 'Agent Operations & Evolution', vendor: 'Bionic Solutions', desc: 'مراقبة مستمرة للوكلاء وتحسين التلقينات وصيانة قاعدة المعرفة وتحليلات الأداء. عقد دوري شهري — نواصل تطوير وكلائك.' },
+      { name: 'Agent Operations & Evolution', vendor: 'Bionic Solutions', desc: 'مراقبة مستمرة للوكلاء وتحسين الموجّهات وصيانة قاعدة المعرفة وتحليلات الأداء. عقد دوري شهري — نواصل تطوير وكلائك.' },
     ],
   },
   {
@@ -166,7 +166,7 @@ const serviceCategories: Category[] = [
     products: [
       { name: 'Platform Deployment', vendor: 'Bionic Solutions', desc: 'نشر كامل للعتاد والبرمجيات والمنصات السحابية — متعدد المورّدين والمجالات بمسؤولية موحدة.' },
       { name: 'AI & Automation Delivery', vendor: 'Bionic Solutions', desc: 'نماذج ذكاء اصطناعي وسير أتمتة وأنظمة وكلاء إلى بيئة الإنتاج — عمليات MLOps ومراقبة وحوكمة.' },
-      { name: 'Platform Engineering & IDP', vendor: 'Bionic Solutions', desc: 'منصة تطوير داخلية — مسارات ذهبية وبنية تحتية ذاتية الخدمة وحوكمة آلية. بنية تحتية في دقائق لا أسابيع.' },
+      { name: 'Platform Engineering & IDP', vendor: 'Bionic Solutions', desc: 'منصة تطوير داخلية — مسارات تطوير موصى بها وبنية تحتية ذاتية الخدمة وحوكمة آلية. بنية تحتية في دقائق لا أسابيع.' },
     ],
   },
   {

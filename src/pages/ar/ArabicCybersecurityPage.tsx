@@ -74,7 +74,7 @@ export default function ArabicCybersecurityPage() {
             {[
               { icon: <FileWarning className="w-5 h-5" />, text: 'الأمن يُعامل كمربع امتثال — لا كقدرة تمكّن مرونة الأعمال.' },
               { icon: <Activity className="w-5 h-5" />, text: 'مشهد التهديدات يتطور أسرع من قدرات الكشف والاستجابة.' },
-              { icon: <Fingerprint className="w-5 h-5" />, text: 'الهوية هي الحدود الجديدة — لكن تبني نموذج Zero Trust لا يزال متجزئًا.' },
+              { icon: <Fingerprint className="w-5 h-5" />, text: 'الهوية هي المحيط الأمني الجديد — لكن تبني نموذج Zero Trust لا يزال متجزئًا.' },
               { icon: <Database className="w-5 h-5" />, text: 'ضغط تنظيمي متزايد: هيئة الأمن السيبراني، نظام حماية البيانات الشخصية، والتشريعات القطاعية.' },
               { icon: <FileWarning className="w-5 h-5" />, text: 'خطط تعافٍ تجتاز التدقيق لكنها تفشل عند اختبارها تحت ظروف هجوم حقيقية.' },
               { icon: <Eye className="w-5 h-5" />, text: 'عمليات أمنية تغرق في حجم التنبيهات، عمياء عن التهديدات الحقيقية.' },

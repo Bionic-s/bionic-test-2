@@ -167,7 +167,7 @@ export default function Page() {
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#00BFFF]" />
-              مقاعد أسبوعية محدودة
+              مواعيد أسبوعية محدودة
             </span>
           </div>
         </motion.section>
@@ -464,7 +464,7 @@ export default function Page() {
                 'حدد بنيتكم التقنية الحالية وقيود التكامل.',
                 'دوّن أي أهداف إنتاجية أو متطلبات امتثال (ساما، الهيئة الوطنية للأمن السيبراني، سدايا، نظام حماية البيانات الشخصية).',
                 'حدد أي المعنيين يجب أن ينضموا — المعمارية، الأمن السيبراني، العمليات.',
-                'أحضر مخططًا معمارياً إن وجد. السبورة البيضاء خيار مناسب أيضًا.',
+                'أحضر مخططًا معمارياً إن وجد. حتى رسم تخطيطي مبدئي يفي بالغرض.',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-text-muted text-sm leading-relaxed">
                   <CheckCircle className="w-5 h-5 text-[#00BFFF] flex-shrink-0 mt-0.5" />

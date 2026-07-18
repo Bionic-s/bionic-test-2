@@ -17,9 +17,9 @@ const SectionLabel = ({ children }: { children: string }) => (
 
 const valueDrivers = [
   { title: 'AIOps', desc: 'قياس موحد عبر كامل ممتلكاتكم التقنية. Instana + Turbonomic + IBM Concert. تحليل آلي للسبب الجذري. برامج AIOps تقلل متوسط وقت الاكتشاف بنسبة تصل إلى ٦٠٪ من خلال الربط الآلي للإشارات.', icon: Activity },
-  { title: 'SRE', desc: 'ميزانيات الأخطاء، هندسة أهداف مستوى الخدمة، تحليلات ما بعد الحادثة بدون لوم. الموثوقية كمنهج هندسي — وليس مجرد قائمة دعم.', icon: Gauge },
+  { title: 'SRE', desc: 'ميزانيات الأخطاء، هندسة أهداف مستوى الخدمة، تحليلات ما بعد الحادثة دون توجيه لوم. الموثوقية كمنهج هندسي — وليس مجرد قائمة دعم.', icon: Gauge },
   { title: 'FinOps', desc: 'رؤية مستمرة للتكاليف عبر السحابة الهجينة المتعددة. تحميل التكاليف، إعداد الميزانية، إدارة الحجوزات. برامج FinOps تحقق عادةً تجنب تكاليف بنسبة 25–40٪ خلال السنة الأولى.', icon: BarChart3 },
-  { title: 'هندسة المنصات', desc: 'تطوير منصة المطورين الداخلية. مسارات ذهبية، بنية تحتية ذاتية الخدمة، تحسين تجربة المطورين.', icon: GitBranch },
+  { title: 'هندسة المنصات', desc: 'تطوير منصة المطورين الداخلية. مسارات تطوير موصى بها، بنية تحتية ذاتية الخدمة، تحسين تجربة المطورين.', icon: GitBranch },
   { title: 'التحسين المستمر', desc: 'مراجعات تحسين ربع سنوية. ضبط حجم الموارد، موازنة أعباء العمل، تحسين الأداء، تقليل الديون التقنية. تحسين قابل للقياس — كل ربع سنة.', icon: TrendingUp },
 ];
 
@@ -27,7 +27,7 @@ const tiers = [
   {
     name: 'الأساسي',
     subtitle: 'المراقبة والتنبيه',
-    ideal: 'للمؤسسات التي تبدأ رحلة العمليات المدارة والمستدامة',
+    ideal: 'للمؤسسات التي تبدأ رحلة العمليات المدارة والمستمرة',
     items: [
       'مراقبة البنية التحتية على مدار الساعة — صحة الخوادم والتخزين والشبكات',
       'مراقبة التطبيقات — المعاملات الاصطناعية، صحة API، معدلات الأخطاء',
@@ -50,7 +50,7 @@ const tiers = [
     ],
   },
   {
-    name: 'النخبوي',
+    name: 'النخبة',
     subtitle: 'التحسين والتحول',
     ideal: 'للمؤسسات التي تتطلب عمليات بمستوى SRE وتطورًا مستمرًا للمنصات',
     items: [
@@ -120,7 +120,7 @@ export default function ArabicManagedOperationsPage() {
         >
           <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
             <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00BFFF]/25 bg-[#00BFFF]/5 mb-10">
-              <span className="text-tiny text-[#00BFFF] font-semibold tracking-widest uppercase">العمليات المدارة والمستدامة</span>
+              <span className="text-tiny text-[#00BFFF] font-semibold tracking-widest uppercase">العمليات المدارة والمستمرة</span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7">
               <span style={{ color: ACCENT }}>تمكين التحول المستمر.</span><br />
@@ -309,7 +309,7 @@ export default function ArabicManagedOperationsPage() {
               { title: 'تحول مستمر، لا حالة ثابتة', desc: 'كل ربع سنة نحسّن شيئًا قابلًا للقياس — أهداف مستوى الخدمة، التكاليف، سرعة التطبيق، تجربة المطورين. العمليات كقيمة مركبة، لا تكلفة ثابتة.' },
               { title: 'نشغّل ما نصممه', desc: 'لا فجوة تسليم. الفريق الذي صمم منصتكم يطورها باستمرار. قرارات المعمارية تُتخذ والواقع التشغيلي مدمج من اليوم الأول.' },
               { title: 'مدفوع بالذكاء الاصطناعي، بقيادة هندسية', desc: 'Instana + Turbonomic + AIOps يتنبؤون بالمشكلات قبل أن تصبح حوادث. SRE + هندسة المنصات يمنعونها. الأتمتة هي الاستجابة الأولى — لا تذكرة.' },
-              { title: '3 مستويات، شريك واحد، نضج مركب', desc: 'توسّع من المراقبة الأساسية إلى SRE النخبوي دون تغيير المزود. النضج التشغيلي يتراكم — كل مستوى يبني على السابق.' },
+              { title: '3 مستويات، شريك واحد، نضج مركب', desc: 'توسّع من المراقبة الأساسية إلى SRE النخبة دون تغيير المزود. النضج التشغيلي يتراكم — كل مستوى يبني على السابق.' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>

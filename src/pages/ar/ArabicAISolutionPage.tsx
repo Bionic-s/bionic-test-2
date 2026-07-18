@@ -65,7 +65,7 @@ export default function ArabicAISolutionPage() {
        className="min-h-screen bg-bg-primary" dir="rtl">
       <Helmet>
         <title>الذكاء الاصطناعي والأتمتة المؤسسية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
-        <meta name="description" content="الذكاء الاصطناعي والأتمتة المؤسسية — وكلاء الذكاء الاصطناعي، المساعدين الأذكياء، MLOps، والأتمتة الذكية للمؤسسات السعودية." />
+        <meta name="description" content="الذكاء الاصطناعي والأتمتة المؤسسية — وكلاء الذكاء الاصطناعي، المساعدون الأذكياء، MLOps، والأتمتة الذكية للمؤسسات السعودية." />
       </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 

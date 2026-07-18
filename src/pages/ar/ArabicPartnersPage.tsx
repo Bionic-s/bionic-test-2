@@ -33,7 +33,7 @@ const TIERS = [
   {
     title: 'موزع معتمد',
     subtitle: 'توريد. تسليم. دعم.',
-    desc: 'إعادة بيع معتمدة ونشر لتقنيات الشركاء — أجهزة وبرمجيات ومنصات سحابية — مع لوجستيات محلية وتسليم داخل المملكة ودعم الضمان.',
+    desc: 'إعادة بيع معتمدة ونشر لتقنيات الشركاء — أجهزة وبرمجيات ومنصات سحابية — مع خدمات لوجستية محلية وتسليم داخل المملكة ودعم الضمان.',
     icon: Shield,
     examples: 'Dell PowerEdge, PowerStore · Intel Xeon, Gaudi AI · IBM FlashSystem, Power · Platform9 · Lenovo ThinkSystem',
   },

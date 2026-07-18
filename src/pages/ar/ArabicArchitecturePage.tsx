@@ -113,7 +113,7 @@ const layers = [
     title: 'العمليات والتحسين المستمر',
     subtitle: 'كيف نستمر ونراكم القيمة؟',
     desc: 'العمليات ليست مرحلة أخيرة — بل المحرك الذي يحمي القيمة المحققة ويراكمها ربعاً بعد ربع: AIOps، وهندسة موثوقية الأنظمة، وFinOps، وSOC كخدمة، ومراجعات تحسين ربع سنوية.',
-    items: ['AIOps والمراقبة: Instana + Turbonomic', 'هندسة موثوقية الأنظمة: ميزانيات الأخطاء، SLOs، تحليل postmortem', 'FinOps: رؤية التكاليف، محاسبة تناسبية، تحسين', 'SOC كخدمة: أمن على مدار الساعة، صيد التهديدات', 'التحسين المستمر: مراجعات ربع سنوية، تحسين المقاس'],
+    items: ['AIOps والمراقبة: Instana + Turbonomic', 'هندسة موثوقية الأنظمة: ميزانيات الأخطاء، SLOs، تحليل ما بعد الحادث', 'FinOps: رؤية التكاليف، محاسبة تناسبية، تحسين', 'SOC كخدمة: أمن على مدار الساعة، صيد التهديدات', 'التحسين المستمر: مراجعات ربع سنوية، تحسين المقاس'],
     link: { label: 'استكشف عمليات التقنية', to: '/ar/capabilities/ops' },
   },
 ];
@@ -151,7 +151,7 @@ export default function ArabicArchitecturePage() {
             </h1>
             <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
               عشر طبقات مترابطة. منهجية متكاملة واحدة. من نتائج الأعمال إلى التحسين المستمر —
-              هكذا نصمم وننفذ ونستدام التحول المؤسسي في المملكة العربية السعودية.
+              هكذا نصمم وننفذ ونُديم التحول المؤسسي في المملكة العربية السعودية.
             </p>
           </div>
         </motion.div>
@@ -180,9 +180,9 @@ export default function ArabicArchitecturePage() {
               <p><strong className="text-text-primary">الخدمات</strong> تُحدد <em>كيف</em> نُنفّذ — ثلاثة نماذج متداخلة.</p>
               <p><strong className="text-text-primary">مخططات التحول</strong> تُثبت <em>أنها تعمل</em> في بيئة إنتاجية حقيقية — ١٢ معمارية مرجعية.</p>
               <p><strong className="text-text-primary">التطبيقات والمنصات</strong> تقدم <em>التقنية</em> التي تشغّل كل ما سبق.</p>
-              <p><strong className="text-text-primary">البيانات والذكاء</strong> يغذي <em>كل ما يعلوه</em>.</p>
+              <p><strong className="text-text-primary">البيانات والذكاء</strong> يغذيان <em>كل ما يعلوه</em>.</p>
               <p><strong className="text-text-primary">البنية التحتية والأمن</strong> يوفران <em>أساس الثقة</em>.</p>
-              <p><strong className="text-text-primary">العمليات والتحسين المستمر</strong> <em>تستدام وتراكم</em> القيمة ربعاً بعد ربع.</p>
+              <p><strong className="text-text-primary">العمليات والتحسين المستمر</strong> <em>تُديم وتُراكم</em> القيمة ربعاً بعد ربع.</p>
             </div>
           </div>
         </motion.section>
