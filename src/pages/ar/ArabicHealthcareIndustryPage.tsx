@@ -18,7 +18,7 @@ const realityItems = [{"pre":"تأخير التشخيص","text":"تراكمات 
 const priorities = [{"title":"الذكاء السريري والتشخيص","desc":"تصوير طبي بالذكاء الاصطناعي، دعم القرار السريري، وأنظمة الإنذار المبكر.","icon":"Cpu"},{"title":"تجربة مريض ذكية","desc":"بوابة مريض موحدة، فرز بالذكاء الاصطناعي، ورحلات رعاية مخصصة.","icon":"Heart"},{"title":"منصة بيانات الرعاية الصحية","desc":"بحيرة بيانات سريرية موحدة، تحليلات Patient 360.","icon":"TrendingUp"},{"title":"الذكاء التشغيلي","desc":"إدارة أسرة تنبؤية، تحسين توظيف بالذكاء الاصطناعي.","icon":"TrendingUp"},{"title":"أمن المعلومات الصحية","desc":"Zero Trust للرعاية الصحية، المرونة ضد برامج الفدية، أمن الأجهزة الطبية.","icon":"Shield"},{"title":"تكامل التجمعات الصحية","desc":"مشاركة بيانات عبر المرافق، تنسيق الإحالات.","icon":"Users"}];
 const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء التصوير الطبي، معالجة اللغة الطبيعية السريرية، التوثيق السريري الآلي"},{"cap":"البيانات والتحليلات والذكاء","app":"بحيرة بيانات سريرية، تحليلات Patient 360، لوحات صحة السكان"},{"cap":"تطبيقات الأعمال وتجربة العملاء","app":"منصة تجربة المريض، إدارة علاقات العملاء للرعاية الصحية"},{"cap":"التكامل والعمليات الذكية","app":"تكامل السجل الطبي/نظام الصور/المختبر، معمارية FHIR API"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"أمن المعلومات الصحية، أمن الأجهزة الطبية، Zero Trust للرعاية الصحية"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"بنية تحتية متوافقة مع المعلومات الصحية، منصات سريرية عالية التوفر"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/apps","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/infra"];
-const services = [{"svc":"الاستشارات والتخطيط","app":"استراتيجية الصحة الرقمية، خارطة طريق الذكاء السريري، امتثال المعلومات الصحية"},{"svc":"التنفيذ والتسليم","app":"نشر الذكاء السريري، تسليم منصة المريض، بناء منصة البيانات الصحية"},{"svc":"العمليات المدارة","app":"عمليات منصات سريرية ٢٤×٧، عمليات أمن المعلومات الصحية"}];
+const services = [{"svc":"الاستشارات والتخطيط","app":"استراتيجية الصحة الرقمية، خارطة طريق الذكاء السريري، امتثال المعلومات الصحية"},{"svc":"التنفيذ والتسليم","app":"نشر الذكاء السريري، تسليم منصة المريض، بناء منصة البيانات الصحية"},{"svc":"العمليات المدارة","app":"عمليات منصات سريرية على مدار الساعة، عمليات أمن المعلومات الصحية"}];
 const svcPaths: string[] = ["/ar/services/advisory","/ar/services/implementation","/ar/services/operations"];
 const blueprints = [{"title":"تجربة المريض الذكية","label":"رعاية صحية"},{"title":"الذكاء السريري والذكاء الاصطناعي الطبي","label":"رعاية صحية"}];
 const bpSlugs: string[] = ["intelligent-patient-experience","clinical-intelligence-medical-ai"];
@@ -93,7 +93,7 @@ export default function ArabicHealthcareIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>القدرات المرتبطة</SectionLabel>
+          <SectionLabel>القدرات ذات الصلة</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>مواءمة قدرات بيونك مع متطلبات القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilities.map((c, i) => (

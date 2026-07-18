@@ -172,7 +172,7 @@ export default function ArabicAboutPage() {
           </div>
         </motion.section>
 
-        {/* ═══ 4. رؤية 2030 — مع عنصر بصري سعودي ═══ */}
+        {/* ═══ 4. رؤية ٢٠٣٠ — مع عنصر بصري سعودي ═══ */}
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-20">
           <div className="rounded-2xl p-10 md:p-14 border relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #00BFFF05, var(--bg-secondary), var(--bg-secondary))', borderColor: '#00BFFF15' }}>
@@ -180,7 +180,7 @@ export default function ArabicAboutPage() {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#006C35] via-[#00BFFF] to-[#006C35] opacity-60" />
 
             <div className="relative z-10">
-              <SectionLabel>رؤية 2030</SectionLabel>
+              <SectionLabel>رؤية ٢٠٣٠</SectionLabel>
               <div className="flex items-center gap-4 mb-4">
                 <Globe className="w-8 h-8 flex-shrink-0" style={{ color: ACCENT }} />
                 <h2 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Tajawal', sans-serif" }}>جذور سعودية. سيادة أولًا. نتائج ملموسة.</h2>

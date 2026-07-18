@@ -17,7 +17,7 @@ const SectionLabel = ({ children }: { children: string }) => (
 const partners = [
   { name: 'IBM', role: 'AIOps والمراقبة وأتمتة تقنية المعلومات', tech: 'Instana · Turbonomic · IBM Concert · Cloud Pak for Watson AIOps · SevOne' },
   { name: 'Dell Technologies', role: 'قياس البنية التحتية والعمليات', tech: 'CloudIQ · OpenManage Enterprise · APEX Console · PowerProtect Cyber Recovery' },
-  { name: 'Platform9', role: 'عمليات K8s متعددة المجموعات وسحابة خاصة', tech: 'Managed Kubernetes · OpenStack · KubeVirt · أتمتة المعادن المجردة · إدارة متعددة المجموعات' },
+  { name: 'Platform9', role: 'عمليات K8s متعددة المجموعات وسحابة خاصة', tech: 'Managed Kubernetes · OpenStack · KubeVirt · أتمتة الخوادم الفعلية · إدارة متعددة المجموعات' },
   { name: 'Intel', role: 'أداء البنية التحتية والقياس', tech: 'Intel Node Manager · Resource Director Technology · ضبط وتحسين الأداء' },
 ];
 
@@ -113,9 +113,9 @@ export default function ArabicTechnologyOperationsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { icon: <GitBranch className="w-6 h-6" />, title: 'هندسة المنصات ومنصة المطور الداخلية', desc: 'منصات مطورين داخلية بمسارات ذهبية. تزويد البنية التحتية في دقائق — لا أسابيع — عبر بوابات خدمة ذاتية، لا تذاكر.' },
-              { icon: <Gauge className="w-6 h-6" />, title: 'هندسة موثوقية الموقع (SRE)', desc: 'ميزانيات خطأ، عمليات مدفوعة بمستوى الخدمة، تحليلات لاحقة بدون لوم. الموثوقية كتخصص هندسي — لا قائمة انتظار دعم.' },
+              { icon: <Gauge className="w-6 h-6" />, title: 'هندسة موثوقية الأنظمة (SRE)', desc: 'ميزانيات خطأ، عمليات مدفوعة بمستوى الخدمة، تحليلات لاحقة بدون لوم. الموثوقية كتخصص هندسي — لا قائمة انتظار دعم.' },
               { icon: <Activity className="w-6 h-6" />, title: 'AIOps والمراقبة الشاملة', desc: 'قياس موحد عبر السجلات والمقاييس والتتبع. برامج AIOps تقلل متوسط وقت الكشف حتى 60% — مع ارتباط آلي للحوادث عبر كل طبقة في بيئتكم.' },
-              { icon: <BarChart3 className="w-6 h-6" />, title: 'السعة والأداء وFinOps', desc: 'تحسين مستمر عبر الحوسبة والتخزين والسحابة. برامج FinOps تحقق عادةً 25–40% تجنب تكاليف مع محاسبة مرتجعة وتنبؤ وتحسين فوري.' },
+              { icon: <BarChart3 className="w-6 h-6" />, title: 'السعة والأداء وFinOps', desc: 'تحسين مستمر عبر الحوسبة والتخزين والسحابة. برامج FinOps تحقق عادةً 25–40% تجنب تكاليف مع محاسبة استرجاعية وتنبؤ وتحسين فوري.' },
               { icon: <Cpu className="w-6 h-6" />, title: 'عمليات منصات متعددة المورّدين', desc: 'نموذج تشغيل واحد عبر IBM و Dell و Red Hat والسحابة الأصلية. دليل تشغيل واحد، سلسلة مساءلة واحدة، رؤية واحدة للصحة.' },
               { icon: <CheckCircle className="w-6 h-6" />, title: 'إدارة وتحسين مستوى الخدمة', desc: 'مستويات خدمة مقاسة ومبلغ عنها ومحسَّنة باستمرار. أدلة تشغيل معالجة آلية مع مراجعات تحسين ربع سنوية.' },
             ].map((cap, i) => (
@@ -154,7 +154,7 @@ export default function ArabicTechnologyOperationsPage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">العمليات المدارة</h3>
-              <p className="text-tiny text-text-muted">عمليات منصات ٢٤×٧ · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز) · تحسين مستمر + FinOps</p>
+              <p className="text-tiny text-text-muted">عمليات منصات على مدار الساعة · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز) · تحسين مستمر + FinOps</p>
             </Link>
           </div>
         </motion.section>
@@ -214,12 +214,12 @@ export default function ArabicTechnologyOperationsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: 'القطاع الحكومي', desc: 'عمليات منصات سيادية — مركز عمليات شبكة ٢٤×٧ للبنية التحتية على المستوى الوطني بنموذج تشغيل معزول تمامًا عن الشبكات ودعم أحمال العمل المصنَّفة.' },
+              { title: 'القطاع الحكومي', desc: 'عمليات منصات سيادية — مركز عمليات شبكة على مدار الساعة للبنية التحتية على المستوى الوطني بنموذج تشغيل معزول تمامًا عن الشبكات ودعم أحمال العمل المصنَّفة.' },
               { title: 'القطاع المصرفي', desc: 'عمليات مدارة متوافقة مع البنك المركزي — عمليات منصات بضمان مستوى الخدمة مع سجلات تدقيق تنظيمية ومراقبة امتثال مستمرة.' },
               { title: 'النفط والغاز', desc: 'مراقبة موحَّدة للتقنية التشغيلية والتقنية المعلوماتية — رؤية تشغيلية عبر البنية التحتية وأنظمة التحكم الصناعي مع قياس من الطرف إلى السحابة.' },
               { title: 'الرعاية الصحية', desc: 'عمليات منصات سريرية — عمليات عالية التوفر للأنظمة السريرية المدعومة بالذكاء الاصطناعي مع أمن المعلومات الصحية وقابلية تتبع تدقيق كاملة.' },
               { title: 'الاتصالات', desc: 'هندسة منصات واعية بالشبكة — عمليات بنية تحتية متكاملة مع قياس الشبكة لضمان الخدمة من البداية إلى النهاية.' },
-              { title: 'المؤسسات الكبرى', desc: 'عمليات متعددة السحب — نموذج تشغيل موحد عبر المحلي والسحابة الخاصة والعامة مع حوكمة FinOps.' },
+              { title: 'المؤسسات الكبرى', desc: 'عمليات متعددة السحابات — نموذج تشغيل موحد عبر المحلي والسحابة الخاصة والعامة مع حوكمة FinOps.' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300 text-right">
                 <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
@@ -246,7 +246,7 @@ export default function ArabicTechnologyOperationsPage() {
             {[
               { tag: 'العمليات', title: 'من ITIL إلى SRE', desc: 'لماذا تتحول المؤسسات السعودية من عمليات تقنية معلومات قائمة على التذاكر إلى هندسة موثوقية يقودها المهندسون — وماذا يعني ذلك لعائد استثمار التحول.' },
               { tag: 'الهندسة', title: 'ضرورة هندسة المنصات', desc: 'منصات المطورين الداخلية لم تعد اختيارية. كيف تقلل فرق المنصات العبء المعرفي وتسرّع التسليم عبر البيئات الهجينة.' },
-              { tag: 'الحوكمة', title: 'FinOps في السعودية متعددة السحب', desc: 'أنماط FinOps عملية للمؤسسات التي تدير التكاليف عبر المحلي والسحابة الخاصة والعامة — مع السياق التنظيمي المحلي.' },
+              { tag: 'الحوكمة', title: 'FinOps في السعودية متعددة السحابات', desc: 'أنماط FinOps عملية للمؤسسات التي تدير التكاليف عبر المحلي والسحابة الخاصة والعامة — مع السياق التنظيمي المحلي.' },
             ].map((item, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-5 hover:border-[#00BFFF]/25 transition-all duration-300 group cursor-pointer text-right">
                 <span className="text-tiny font-semibold tracking-wide mb-2 block" style={{ color: ACCENT }}>{item.tag}</span>

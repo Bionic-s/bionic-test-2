@@ -166,7 +166,7 @@ export default function ArabicTelecomIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>المخططات التحويلية</SectionLabel>
+          <SectionLabel>المخططات المرجعية</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية مثبتة لقطاع الاتصالات.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
@@ -220,7 +220,7 @@ export default function ArabicTelecomIndustryPage() {
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">مستعد لتحقيق عوائد استثمارك في الجيل الخامس؟</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">هل أنتم مستعدون لتحقيق عوائد استثماركم في الجيل الخامس؟</h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">لنناقش كيف يمكن لتحقيق عوائد الجيل الخامس والسحابة الاتصالية وعمليات الشبكات المدعومة بالذكاء الاصطناعي أن تحول أعمالك الاتصالية.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg" style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>

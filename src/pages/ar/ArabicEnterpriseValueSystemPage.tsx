@@ -433,7 +433,7 @@ export default function ArabicEnterpriseValueSystemPage() {
 
           {/* تنقل متبادل */}
           <div className="text-center">
-            <h2 className="text-lg font-semibold mb-5 text-text-muted">ماذا تود استكشافه بعد ذلك؟</h2>
+            <h2 className="text-lg font-semibold mb-5 text-text-muted">ماذا تودّون استكشافه بعد ذلك؟</h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
                 { label: 'المعمارية', path: '/ar/architecture' },

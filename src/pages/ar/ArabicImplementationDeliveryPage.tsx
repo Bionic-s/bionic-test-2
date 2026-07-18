@@ -255,7 +255,7 @@ export default function ArabicImplementationDeliveryPage() {
           className="mb-16"
         >
           <div className="text-center">
-            <h2 className="text-lg font-semibold mb-5 text-text-muted">ماذا تود استكشافه أيضًا؟</h2>
+            <h2 className="text-lg font-semibold mb-5 text-text-muted">ماذا تودّون استكشافه أيضًا؟</h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
                 { label: 'القدرات', path: '/ar/capabilities/ai' },

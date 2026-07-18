@@ -35,8 +35,8 @@ export default function ArabicCybersecurityPage() {
     <div
        className="min-h-screen bg-bg-primary" dir="rtl">
       <Helmet>
-        <title>الأمن السيبراني والصمود السيبراني | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
-        <meta name="description" content="الأمن السيبراني والصمود السيبراني — مركز العمليات الأمنية، SIEM، نموذج Zero Trust، إدارة الهوية، والصمود ضد الفدية." />
+        <title>الأمن السيبراني والمرونة السيبرانية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
+        <meta name="description" content="الأمن السيبراني والمرونة السيبرانية — مركز العمليات الأمنية، SIEM، نموذج Zero Trust، إدارة الهوية، والصمود ضد الفدية." />
       </Helmet>
       <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
@@ -99,7 +99,7 @@ export default function ArabicCybersecurityPage() {
               {
                 icon: <Shield className="w-5 h-5" />,
                 title: 'استراتيجية الأمن السيبراني وإدارة المخاطر',
-                desc: 'تقييم مشهد التهديدات، تحديد المخاطر التجارية كميًا، وبناء استراتيجية أمن سيبراني متعددة السنوات تتماشى مع رغبة المخاطر المؤسسية — لا مع خارطة طريق مورّد منتج.',
+                desc: 'تقييم مشهد التهديدات، تحديد المخاطر التجارية كميًا، وبناء استراتيجية أمن سيبراني متعددة السنوات تتماشى مع قابلية المؤسسة لتحمّل المخاطر — لا مع خارطة طريق مورّد منتج.',
                 outcomes: ['خط أساس للمخاطر السيبرانية محدَّد كميًا مقابل أثر الأعمال', 'استراتيجية متعددة السنوات مرتَّبة حسب تخفيض المخاطر لا تحديث التقنية', 'إطار حوكمة متوافق مع هيئة الأمن السيبراني والبنك المركزي والقطاعات', 'حالة استثمارية تربط الإنفاق الأمني بتخفيض ملموس للمخاطر'],
               },
               {
@@ -130,7 +130,7 @@ export default function ArabicCybersecurityPage() {
                 icon: <Activity className="w-5 h-5" />,
                 title: 'عمليات الأمن المدارة والتحسين المستمر',
                 desc: 'تشغيل ومراقبة وإنضاج مستمر لبرنامج الأمن — ضمان تطور الضوابط مع التهديدات، تغير الأنظمة، ونمو الأعمال.',
-                outcomes: ['مراقبة أمنية ٢٤×٧ مع تصعيد واستجابة محدَّدين', 'تحقق مستمر من الضوابط عبر اختبار آلي وفرق هجومية حمراء', 'مراقبة تغيرات تنظيمية تضمن امتثالًا مستمرًا للمتطلبات المتطورة', 'خارطة طريق نضج أمني بمراحل تحسين ربع سنوية'],
+                outcomes: ['مراقبة أمنية على مدار الساعة مع تصعيد واستجابة محدَّدين', 'تحقق مستمر من الضوابط عبر اختبار آلي وفرق هجومية حمراء', 'مراقبة تغيرات تنظيمية تضمن امتثالًا مستمرًا للمتطلبات المتطورة', 'خارطة طريق نضج أمني بمراحل تحسين ربع سنوية'],
               },
             ].map((cap, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF1A]">
@@ -179,7 +179,7 @@ export default function ArabicCybersecurityPage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">العمليات المدارة</h3>
-              <p className="text-tiny text-text-muted">عمليات منصات ٢٤×٧ · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز)</p>
+              <p className="text-tiny text-text-muted">عمليات منصات على مدار الساعة · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز)</p>
             </Link>
           </div>
         </motion.section>

@@ -323,7 +323,7 @@ export default function ArabicContactPage() {
                   ))}
                 </ul>
                 <p className="text-tiny text-text-muted mt-5 pt-5 border-t border-white/5">
-                  يرد فريقنا خلال ٢٤–٤٨ ساعة لتحديد موعد جلستك الإحاطية.
+                  يرد فريقنا خلال ٢٤–٤٨ ساعة لتحديد موعد جلستكم الإحاطية.
                 </p>
               </div>
             </motion.div>

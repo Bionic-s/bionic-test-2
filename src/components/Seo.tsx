@@ -7,7 +7,7 @@ const organizationSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Bionic Solutions',
-  alternateName: 'حلول بايونيك',
+  alternateName: 'بيونك سوليوشنز',
   url: `${SITE}/`,
   logo: `${SITE}/icon-512.png`,
   description:

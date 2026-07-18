@@ -31,7 +31,7 @@ const deliveryModels = [
   {
     title: 'العمليات المدارة',
     accent: '#00BFFF',
-    desc: 'تمكين التحول المستمر — عمليات منصات ٢٤×٧، SRE، AIOps، FinOps، وهندسة المنصات.',
+    desc: 'تمكين التحول المستمر — عمليات منصات على مدار الساعة، SRE، AIOps، FinOps، وهندسة المنصات.',
     highlights: ['AIOps والمراقبة', 'SRE وهندسة المنصات', 'حوكمة FinOps', 'مركز عمليات أمنية كخدمة', 'تحسين مستمر وممنهج'],
     path: '/ar/services/operations',
   },
@@ -149,7 +149,7 @@ export default function ArabicServicesHub() {
         >
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              لست متأكداً أي نموذج يناسب تحولكم؟
+              لستم متأكدين من النموذج الأنسب لتحولكم؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">
               معظم التحولات المؤسسية تجمع بين نموذجين أو ثلاثة. دعونا نناقش ما يتطلبه مسار تحولكم.

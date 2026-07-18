@@ -18,9 +18,9 @@ const realityItems = [
   { pre: 'خطوط إنتاج منفصلة', text: 'خطوط الإنتاج تعمل في عزلة — لا رؤية آنية، لا بيانات موحدة، لا ذكاء عبر الخطوط.' },
   { pre: 'بيانات IoT غير مستخدمة', text: 'آلاف المستشعرات تولد تيرابايتات من البيانات يوميًا — لا شيء منها محلل أو قابل للتنفيذ.' },
   { pre: 'صيانة تفاعلية', text: 'المعدات تتعطل بشكل غير متوقع. الصيانة مبنية على التقويم وليس الحالة. التوقف يكلف الملايين.' },
-  { pre: 'فجوة OT/IT', text: 'التقنية التشغيلية وتقنية المعلومات معزولتان تمامًا. SCADA لا تتحدث مع ERP. التحديثات الأمنية لا تصل للأنظمة الصناعية.' },
+  { pre: 'فجوة OT/IT', text: 'التقنية التشغيلية وتقنية المعلومات معزولتان تمامًا. SCADA لا تتكامل مع ERP. التحديثات الأمنية لا تصل للأنظمة الصناعية.' },
   { pre: 'جودة بالتفتيش', text: 'مراقبة الجودة تحدث بعد الإنتاج — وليس أثناءه. العيوب تكتشف متأخرًا مما يزيد الهدر وإعادة العمل.' },
-  { pre: 'لا يوجد توأم رقمي', text: 'تغييرات المصنع تُختبر على أرضية الإنتاج الحية. لا قدرة على المحاكاة. كل تجربة تحمل مخاطر إنتاجية.' },
+  { pre: 'لا يوجد توأم رقمي', text: 'تغييرات المصنع تُختبر على صالة الإنتاج الحية. لا قدرة على المحاكاة. كل تجربة تحمل مخاطر إنتاجية.' },
 ];
 
 const priorities = [
@@ -35,7 +35,7 @@ const priorities = [
 const capabilities = [
   { cap: 'الذكاء الاصطناعي المؤسسي والأتمتة', app: 'جودة تنبؤية، اكتشاف الشذوذ، فحص بالرؤية الحاسوبية، جدولة إنتاج بالذكاء الاصطناعي' },
   { cap: 'التكامل والعمليات الذكية', app: 'جسر بروتوكولات OT/IT، تكامل SCADA مع ERP، خط بيانات IoT الصناعي، اتصال MES' },
-  { cap: 'البنية التحتية السيادية والسحابة الهجينة', app: 'حوسبة طرفية لأرضية المصنع، استدلال AI في الموقع، شبكات صناعية معزولة، تخزين بيانات سيادي' },
+  { cap: 'البنية التحتية السيادية والسحابة الهجينة', app: 'حوسبة طرفية لصالة الإنتاج، استدلال AI في الموقع، شبكات صناعية معزولة، تخزين بيانات سيادي' },
   { cap: 'الأمن السيبراني والمرونة السيبرانية', app: 'امتثال IEC 62443، كشف تهديدات OT، تجزئة الشبكات الصناعية، وصول آمن عن بعد' },
 ];
 
@@ -166,7 +166,7 @@ export default function ArabicManufacturingIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref4} {...fadeIn} animate={inView4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>المخططات التحويلية</SectionLabel>
+          <SectionLabel>المخططات المرجعية</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6">معماريات مرجعية مثبتة لقطاع التصنيع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {blueprints.map((bp, i) => (
@@ -220,7 +220,7 @@ export default function ArabicManufacturingIndustryPage() {
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <div className="bg-bg-secondary border border-white/5 rounded-2xl p-8 md:p-12 text-center">
             <SectionLabel>الخطوة التالية</SectionLabel>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">مستعد لنشر الثورة الصناعية الرابعة في مصنعك؟</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">هل أنتم مستعدون لتطبيق الثورة الصناعية الرابعة في مصانعكم؟</h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto">لنناقش كيف يمكن للصيانة التنبؤية والتوأم الرقمي وتكامل OT/IT أن تحول عملياتك التصنيعية.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg" style={{ backgroundColor: ACCENT, boxShadow: '0 8px 24px #00BFFF20' }}>

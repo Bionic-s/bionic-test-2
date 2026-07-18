@@ -17,7 +17,7 @@ const SectionLabel = ({ children }: { children: string }) => (
 const partners = [
   { name: 'Dell Technologies', role: 'البنية التحتية المؤسسية', tech: 'PowerEdge · PowerStore · PowerMax · VxRail · APEX · PowerFlex' },
   { name: 'IBM', role: 'التخزين وبنية الذكاء والسحابة الهجينة', tech: 'FlashSystem · Power · watsonx · Cloud Pak · Storage Defender' },
-  { name: 'Platform9', role: 'منصة سحابة خاصة وهجينة', tech: 'Managed Kubernetes · OpenStack · KubeVirt · أتمتة المعادن المجردة · إدارة متعددة المجموعات' },
+  { name: 'Platform9', role: 'منصة سحابة خاصة وهجينة', tech: 'Managed Kubernetes · OpenStack · KubeVirt · أتمتة الخوادم الفعلية · إدارة متعددة المجموعات' },
   { name: 'Intel', role: 'الحوسبة والذكاء والبنية الطرفية', tech: 'Xeon Scalable · Gaudi 3 AI Accelerators · Edge AI · الحوسبة السرية · Optane' },
   { name: 'Red Hat', role: 'بنية تحتية مفتوحة المصدر وأتمتة', tech: 'OpenShift · Ansible Automation · RHEL · Satellite' },
 ];
@@ -131,7 +131,7 @@ export default function ArabicInfrastructurePage() {
                 icon: <Activity className="w-5 h-5" />,
                 title: 'عمليات البنية التحتية والتطور المستمر',
                 desc: 'تشغيل ومراقبة وتطوير مستمر لمنصة البنية التحتية — ضمان الموثوقية والأداء والتكيف مع تغير أحمال العمل والمتطلبات التنظيمية.',
-                outcomes: ['مراقبة بنية تحتية ٢٤×٧ مع استجابة استباقية للحوادث', 'تخطيط السعة وإدارة دورة الحياة عبر جميع أصول البنية التحتية', 'تطور مستمر للمنصة متوائم مع تغيرات أحمال العمل والأنظمة', 'عمليات بضمان اتفاقية مستوى خدمة مع التزامات أداء وتوافر محدَّدة'],
+                outcomes: ['مراقبة بنية تحتية على مدار الساعة مع استجابة استباقية للحوادث', 'تخطيط السعة وإدارة دورة الحياة عبر جميع أصول البنية التحتية', 'تطور مستمر للمنصة متوائم مع تغيرات أحمال العمل والأنظمة', 'عمليات بضمان اتفاقية مستوى خدمة مع التزامات أداء وتوافر محدَّدة'],
               },
             ].map((cap, i) => (
               <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-[#00BFFF1A]">
@@ -180,7 +180,7 @@ export default function ArabicInfrastructurePage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
               </div>
               <h3 className="font-semibold mb-1 group-hover:text-[#00BFFF] transition-colors">العمليات المدارة</h3>
-              <p className="text-tiny text-text-muted">عمليات منصات ٢٤×٧ · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز)</p>
+              <p className="text-tiny text-text-muted">عمليات منصات على مدار الساعة · مركز عمليات أمنية كخدمة · مستويات خدمة متدرّجة (أساسي/متقدم/متميز)</p>
             </Link>
           </div>
         </motion.section>
@@ -196,7 +196,7 @@ export default function ArabicInfrastructurePage() {
                 { title: 'السيادة أولًا. مصمَّمة من البداية.', desc: 'كل معمارية نصممها تبدأ بمتطلبات إقامة البيانات السعودية وضوابط هيئة الأمن السيبراني والمتطلبات القطاعية — لا تُعامل كفكرة لاحقة أو ميزة إضافية.' },
                 { title: 'هجينة بالتصميم. لا بالصدفة.', desc: 'نصمم منصات تمتد من مركز البيانات الخاص إلى السحابة السيادية إلى السحابة العامة — بإدارة موحَّدة ومرونة لوضع أحمال العمل حيث تنتمي.' },
                 { title: 'هندسة متعددة المورّدين. بدون احتكار.', desc: 'نصمم عبر Dell و IBM و Platform9 و Intel — نختار البنية التحتية المناسبة لكل حمل عمل، بناءً على ملاءمة المعمارية لا حوافز المورّد.' },
-                { title: 'شريك واحد. مسؤولية كاملة.', desc: 'من استراتيجية البنية التحتية مرورًا بنشر المنصة إلى عمليات ٢٤×٧ — علاقة واحدة مسؤولة عبر دورة حياة البنية التحتية الكاملة.' },
+                { title: 'شريك واحد. مسؤولية كاملة.', desc: 'من استراتيجية البنية التحتية مرورًا بنشر المنصة إلى عمليات على مدار الساعة — علاقة واحدة مسؤولة عبر دورة حياة البنية التحتية الكاملة.' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 flex-row-reverse">
                   <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: ACCENT }} />

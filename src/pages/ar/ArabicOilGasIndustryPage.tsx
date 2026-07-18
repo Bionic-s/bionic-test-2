@@ -15,10 +15,10 @@ const SectionLabel = ({ children }: { children: string }) => (
 );
 
 const realityItems = [{"pre":"التوقف غير المخطط","text":"أعطال المعدات تُكلف الملايين — والصيانة ما زالت قائمة على التقويم لا على الحالة الفعلية."},{"pre":"مخاطر تقارب OT/IT","text":"أنظمة التحكم الصناعي متصلة دون تجزئة كافية أو آليات لكشف التهديدات."},{"pre":"عمليات نائية غير مرئية","text":"رؤية آنية محدودة للأصول الموزعة عبر مناطق شاسعة."},{"pre":"بيانات محتجزة","text":"بيانات تشغيلية متراكمة لسنوات — دون تحليل يُذكر."},{"pre":"الامتثال البيئي","text":"مراقبة الانبعاثات يدوية — بطيئة وعرضة للأخطاء."},{"pre":"ضغط التحول في الطاقة","text":"تتبع الكربون وتحسين الكفاءة لم يعودا خيارًا — بل متطلبين تشغيليين."}];
-const priorities = [{"title":"الصيانة التنبؤية","desc":"توقع أعطال المعدات بالذكاء الاصطناعي باستخدام تحليلات إنترنت الأشياء والتوائم الرقمية.","icon":"Wrench"},{"title":"تقارب الأمن السيبراني OT/IT","desc":"أمن OT متعدد الطبقات مع تجزئة الشبكة وكشف التهديدات.","icon":"Shield"},{"title":"ذكاء من الحافة إلى السحابة","desc":"تحليلات فورية مع إدارة مركزية لنماذج الذكاء الاصطناعي.","icon":"Cpu"},{"title":"ذكاء الكربون والطاقة","desc":"تتبع الانبعاثات بالذكاء الاصطناعي وتحسين الطاقة.","icon":"BarChart3"},{"title":"عمليات التوأم الرقمي","desc":"نسخ افتراضية للأصول المادية للمحاكاة والتحسين.","icon":"TrendingUp"},{"title":"ذكاء سلسلة الإمداد","desc":"لوجستيات ذكية وتنبؤ بالطلب وإدارة مخاطر الموردين.","icon":"TrendingUp"}];
-const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء الصيانة التنبؤية، كشف الشذوذ، الرؤية الحاسوبية لفحص الأصول"},{"cap":"البيانات والتحليلات والذكاء","app":"منصة بيانات إنترنت الأشياء، لوحات تشغيلية فورية، تحليلات الانبعاثات"},{"cap":"التكامل والعمليات الذكية","app":"تكامل OT/IT، خطوط بيانات من الحافة إلى السحابة، اتصال SCADA"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"أمن OT/IT، حماية ICS، امتثال IEC 62443"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"حوسبة طرفية، سحابة هجينة للعمليات البعيدة، بنية ذكاء للطاقة"},{"cap":"عمليات التقنية","app":"عمليات منصات من الحافة إلى السحابة، مراقبة OT/IT موحدة ٢٤×٧"}];
+const priorities = [{"title":"الصيانة التنبؤية","desc":"توقع أعطال المعدات بالذكاء الاصطناعي باستخدام تحليلات إنترنت الأشياء والتوائم الرقمية.","icon":"Wrench"},{"title":"تقارب الأمن السيبراني OT/IT","desc":"أمن OT متعدد الطبقات مع تجزئة الشبكة وكشف التهديدات.","icon":"Shield"},{"title":"ذكاء من الحافة إلى السحابة","desc":"تحليلات فورية مع إدارة مركزية لنماذج الذكاء الاصطناعي.","icon":"Cpu"},{"title":"ذكاء الانبعاثات والطاقة","desc":"تتبع الانبعاثات بالذكاء الاصطناعي وتحسين الطاقة.","icon":"BarChart3"},{"title":"عمليات التوأم الرقمي","desc":"نسخ افتراضية للأصول المادية للمحاكاة والتحسين.","icon":"TrendingUp"},{"title":"ذكاء سلسلة الإمداد","desc":"لوجستيات ذكية وتنبؤ بالطلب وإدارة مخاطر الموردين.","icon":"TrendingUp"}];
+const capabilities = [{"cap":"الذكاء الاصطناعي المؤسسي والأتمتة","app":"ذكاء الصيانة التنبؤية، كشف الشذوذ، الرؤية الحاسوبية لفحص الأصول"},{"cap":"البيانات والتحليلات والذكاء","app":"منصة بيانات إنترنت الأشياء، لوحات تشغيلية فورية، تحليلات الانبعاثات"},{"cap":"التكامل والعمليات الذكية","app":"تكامل OT/IT، خطوط بيانات من الحافة إلى السحابة، اتصال SCADA"},{"cap":"الأمن السيبراني والمرونة السيبرانية","app":"أمن OT/IT، حماية ICS، امتثال IEC 62443"},{"cap":"البنية التحتية السيادية والسحابة الهجينة","app":"حوسبة طرفية، سحابة هجينة للعمليات البعيدة، بنية ذكاء للطاقة"},{"cap":"عمليات التقنية","app":"عمليات منصات من الحافة إلى السحابة، مراقبة OT/IT موحدة على مدار الساعة"}];
 const capPaths: string[] = ["/ar/capabilities/ai","/ar/capabilities/data","/ar/capabilities/integration","/ar/capabilities/cyber","/ar/capabilities/infra","/ar/capabilities/ops"];
-const services = [{"svc":"الاستشارات والتخطيط","app":"استراتيجية تقارب OT/IT، خارطة طريق الصيانة التنبؤية، تصميم ذكاء الكربون"},{"svc":"التنفيذ والتسليم","app":"نشر منصة إنترنت الأشياء، تنفيذ التوأم الرقمي، نشر أمن OT"},{"svc":"العمليات المدارة","app":"مراقبة OT/IT ٢٤×٧، عمليات الصيانة التنبؤية، إدارة أسطول الحافة"}];
+const services = [{"svc":"الاستشارات والتخطيط","app":"استراتيجية تقارب OT/IT، خارطة طريق الصيانة التنبؤية، تصميم ذكاء الانبعاثات الكربونية"},{"svc":"التنفيذ والتسليم","app":"نشر منصة إنترنت الأشياء، تنفيذ التوأم الرقمي، نشر أمن OT"},{"svc":"العمليات المدارة","app":"مراقبة OT/IT على مدار الساعة، عمليات الصيانة التنبؤية، إدارة أسطول الحافة"}];
 const svcPaths: string[] = ["/ar/services/advisory","/ar/services/implementation","/ar/services/operations"];
 const blueprints = [{"title":"الذكاء الصناعي والعمليات التنبؤية","label":"نفط وغاز"},{"title":"تكامل OT/IT والعمليات الآمنة","label":"نفط وغاز"}];
 const bpSlugs: string[] = ["industrial-intelligence-predictive-ops","ot-it-integration-secure-ops"];
@@ -51,7 +51,7 @@ export default function ArabicOilGasIndustryPage() {
           <SectionLabel>قطاع النفط والغاز والطاقة</SectionLabel>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-7" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             عمليات طاقة ذكية —<br />
-            <span style={{ color: ACCENT }}>من الصيانة التنبؤية إلى ذكاء الكربون.</span>
+            <span style={{ color: ACCENT }}>من الصيانة التنبؤية إلى ذكاء الانبعاثات الكربونية.</span>
           </h1>
           <p className="text-text-muted text-lg max-w-[720px] leading-relaxed" style={{ fontFamily: "'Tajawal', sans-serif" }}>
             من الصيانة التنبؤية المدعومة بالذكاء الاصطناعي إلى أمن الشبكات الصناعية OT/IT، ومن الذكاء الممتد من الحافة إلى السحابة إلى تتبع البصمة الكربونية — نمكّن شركات الطاقة السعودية من تعظيم زمن تشغيل الأصول وتقليل المخاطر.
@@ -93,7 +93,7 @@ export default function ArabicOilGasIndustryPage() {
         </motion.section>
 
         <motion.section ref={ref3} {...fadeIn} animate={inView3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
-          <SectionLabel>القدرات المرتبطة</SectionLabel>
+          <SectionLabel>القدرات ذات الصلة</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>مواءمة قدرات بيونك مع متطلبات القطاع.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {capabilities.map((c, i) => (
@@ -190,7 +190,7 @@ export default function ArabicOilGasIndustryPage() {
               هل أنتم مستعدون لتطوير عمليات الطاقة لديكم بالذكاء الاصطناعي؟
             </h2>
             <p className="text-text-muted text-lg mb-8 max-w-[600px] mx-auto" style={{ fontFamily: "'Tajawal', sans-serif" }}>
-              لنناقش كيف تساهم الصيانة التنبؤية وأمن OT/IT وذكاء الكربون في تقليل المخاطر وتعظيم قيمة الأصول.
+              لنناقش كيف تساهم الصيانة التنبؤية وأمن OT/IT وذكاء الانبعاثات الكربونية في تقليل المخاطر وتعظيم قيمة الأصول.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/ar/contact" className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg"

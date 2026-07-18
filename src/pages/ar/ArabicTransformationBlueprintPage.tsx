@@ -145,11 +145,11 @@ export default function ArabicTransformationBlueprintPage() {
         </div>
       </section>
 
-      {/* القدرات المرتبطة + الخدمات المرتبطة */}
+      {/* القدرات ذات الصلة + الخدمات المرتبطة */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-12 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* القدرات المرتبطة */}
+            {/* القدرات ذات الصلة */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +158,7 @@ export default function ArabicTransformationBlueprintPage() {
             >
               <div className="flex items-center gap-2 mb-6">
                 <Layers className="w-5 h-5 text-accent-primary" />
-                <h2 className="text-2xl font-bold">القدرات المرتبطة</h2>
+                <h2 className="text-2xl font-bold">القدرات ذات الصلة</h2>
               </div>
               <div className="space-y-3">
                 {bp.capabilities.map((cap, i) => (

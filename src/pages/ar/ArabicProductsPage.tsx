@@ -172,7 +172,7 @@ const serviceCategories: Category[] = [
   {
     name: 'العمليات المدارة',
     products: [
-      { name: 'Managed Operations ٢٤×٧', vendor: 'Bionic Solutions', desc: 'عمليات منصات مستمرة — مراقبة واستجابة للحوادث وتحديثات وتحسين. ٣ مستويات: الأساسية والمتقدمة والنخبة.' },
+      { name: 'Managed Operations على مدار الساعة', vendor: 'Bionic Solutions', desc: 'عمليات منصات مستمرة — مراقبة واستجابة للحوادث وتحديثات وتحسين. ٣ مستويات: الأساسية والمتقدمة والنخبة.' },
       { name: 'SOC-as-a-Service', vendor: 'Bionic Solutions', desc: 'مركز عمليات أمنية على مدار الساعة — مراقبة التهديدات والصيد والاستجابة للحوادث والامتثال. متوافق مع الهيئة الوطنية للأمن السيبراني والبنك المركزي السعودي.' },
       { name: 'FinOps Governance', vendor: 'Bionic Solutions', desc: 'إدارة تكاليف السحابة والبنية التحتية — رؤية ومحاسبة تناسبية وتنبؤ وتحسين. تحقق عادةً توفيرًا بنسبة ٢٥–٤٠٪ خلال ربعين.' },
     ],
@@ -218,7 +218,7 @@ export default function ArabicProductsPage() {
        className="min-h-screen bg-bg-primary" dir="rtl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
       <Helmet>
         <title>المنتجات | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
-        <meta name="description" content="منظومة متكاملة من منتجات الذكاء الاصطناعي المؤسسي — من الجوال إلى السحابة. 11 شريكًا. أكثر من 50 منتجًا. علاقة واحدة." />
+        <meta name="description" content="منظومة متكاملة من منتجات الذكاء الاصطناعي المؤسسي — من الجوال إلى السحابة. ١١ شريكًا. أكثر من ٥٠ منتجًا. علاقة واحدة." />
       </Helmet>
 
       {/* ═══ 1. HERO ═══ */}

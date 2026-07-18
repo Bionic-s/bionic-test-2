@@ -459,7 +459,7 @@ export default function Page() {
           transition={{ duration: 0.5 }}
           className="text-center mt-20 pt-16 border-t border-white/10"
         >
-          <h2 className="text-xl font-bold mb-6">ماذا تود استكشافه أيضًا؟</h2>
+          <h2 className="text-xl font-bold mb-6">ماذا تودّون استكشافه أيضًا؟</h2>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
             {[
               { label: 'القدرات', path: '/ar/capabilities/ai', desc: '7 مجالات' },
