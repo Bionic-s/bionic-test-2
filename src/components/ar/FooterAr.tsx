@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { capabilitiesAr } from '../../data/capabilities';
+import { industriesAr } from '../../data/industries';
 import { Linkedin, Twitter, Mail, ArrowLeft } from 'lucide-react';
 
 export const FooterAr = () => {
@@ -56,12 +57,9 @@ export const FooterAr = () => {
           <div>
             <h4 className="text-small font-semibold text-text-primary mb-4">القطاعات</h4>
             <ul className="space-y-2">
-              <li><Link to="/ar/industries/government" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">القطاع الحكومي</Link></li>
-              <li><Link to="/ar/industries/banking" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الخدمات المالية والمصرفية</Link></li>
-              <li><Link to="/ar/industries/oil-gas" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">النفط والغاز</Link></li>
-              <li><Link to="/ar/industries/healthcare" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الرعاية الصحية</Link></li>
-              <li><Link to="/ar/industries/enterprise" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">المؤسسات الكبرى</Link></li>
-              <li><Link to="/ar/industries/manufacturing" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">الصناعة والتصنيع</Link></li>
+              {industriesAr.map((ind) => (
+                <li key={ind.path}><Link to={ind.path} className="text-tiny text-text-muted hover:text-accent-primary transition-colors">{ind.name}</Link></li>
+              ))}
             </ul>
           </div>
 

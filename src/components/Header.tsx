@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { capabilityPillars as CAPABILITY_PILLARS } from '../data/capabilities';
+import { industries as INDUSTRIES } from '../data/industries';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
@@ -28,13 +29,11 @@ export const Header = () => {
   ];
 
   // ── Capability by Industry mapping ──
-  const industryCapabilityMap = [
-    { heading: 'Government', path: '/industries/government', caps: ['Enterprise AI', 'Data & Intelligence', 'Cybersecurity', 'Sovereign Infra'] },
-    { heading: 'Banking', path: '/industries/banking', caps: ['Enterprise AI', 'Data & Intelligence', 'Business Apps', 'Cybersecurity'] },
-    { heading: 'Oil & Gas', path: '/industries/oil-gas', caps: ['Enterprise AI', 'Integration & Ops', 'Cybersecurity', 'Sovereign Infra'] },
-    { heading: 'Healthcare', path: '/industries/healthcare', caps: ['Enterprise AI', 'Data & Intelligence', 'Business Apps', 'Integration'] },
-    { heading: 'Enterprise', path: '/industries/enterprise', caps: ['Enterprise AI', 'Business Apps', 'Cybersecurity', 'Technology Ops'] },
-  ];
+  const industryCapabilityMap = INDUSTRIES.map((i) => ({
+    heading: i.name.en,
+    path: i.path.en,
+    caps: i.caps.en,
+  }));
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
   const capabilityPillars = CAPABILITY_PILLARS.map((p) => ({

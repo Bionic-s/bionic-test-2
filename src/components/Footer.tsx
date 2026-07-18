@@ -2,6 +2,7 @@ import { Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { contactEmails } from '../data/contactData';
 import { capabilities } from '../data/capabilities';
+import { industriesEn as industries } from '../data/industries';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,14 +16,7 @@ export const Footer = () => {
     { name: 'Architecture', href: '/architecture' },
   ];
 
-  const industries = [
-    { name: 'Government', href: '/industries/government' },
-    { name: 'Banking', href: '/industries/banking' },
-    { name: 'Oil & Gas', href: '/industries/oil-gas' },
-    { name: 'Healthcare', href: '/industries/healthcare' },
-    { name: 'Enterprise', href: '/industries/enterprise' },
-    { name: 'Manufacturing', href: '/industries/manufacturing' },
-  ];
+
 
   return (
     <footer className="bg-bg-secondary border-t border-white/5">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { capabilityPillars as CAPABILITY_PILLARS } from '../data/capabilities';
+import { industries as INDUSTRIES } from '../data/industries';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
@@ -28,13 +29,11 @@ export const HeaderAr = () => {
   ];
 
   // ── القدرات حسب القطاع ──
-  const industryCapabilityMap = [
-    { heading: 'القطاع الحكومي', path: '/ar/industries/government', caps: ['الذكاء الاصطناعي المؤسسي', 'البيانات والذكاء', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
-    { heading: 'الخدمات المالية والمصرفية', path: '/ar/industries/banking', caps: ['الذكاء الاصطناعي المؤسسي', 'البيانات والذكاء', 'تطبيقات الأعمال', 'الأمن السيبراني'] },
-    { heading: 'النفط والغاز', path: '/ar/industries/oil-gas', caps: ['الذكاء الاصطناعي المؤسسي', 'التكامل والعمليات', 'الأمن السيبراني', 'البنية التحتية السيادية'] },
-    { heading: 'الرعاية الصحية', path: '/ar/industries/healthcare', caps: ['الذكاء الاصطناعي المؤسسي', 'البيانات والذكاء', 'تطبيقات الأعمال', 'التكامل'] },
-    { heading: 'المؤسسات الكبرى', path: '/ar/industries/enterprise', caps: ['الذكاء الاصطناعي المؤسسي', 'تطبيقات الأعمال', 'الأمن السيبراني', 'عمليات التقنية'] },
-  ];
+  const industryCapabilityMap = INDUSTRIES.map((i) => ({
+    heading: i.name.ar,
+    path: i.path.ar,
+    caps: i.caps.ar,
+  }));
 
   // ── Capabilities by Capability tab (3 Pillars → 7 cap pages) ──
   const capabilityPillars = CAPABILITY_PILLARS.map((p) => ({
