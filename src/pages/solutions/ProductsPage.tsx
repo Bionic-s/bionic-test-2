@@ -60,6 +60,8 @@ const infraCategories: Category[] = [
       { name: 'PowerStore Storage', vendor: 'Dell Technologies', desc: 'Mid-range all-flash with intelligent automation, NVMe performance, and AppsON capability.' },
       { name: 'PowerMax Storage', vendor: 'Dell Technologies', desc: 'Mission-critical high-end storage — real-time AI-driven optimization, zero-downtime architecture.' },
       { name: 'FlashSystem Storage', vendor: 'IBM', desc: 'NVMe-accelerated all-flash — cyber-resilient with integrated encryption and ransomware detection.' },
+      { name: 'SAN Volume Controller (Storage Virtualize)', vendor: 'IBM', desc: 'Virtualize hundreds of storage systems from any vendor under one control plane — non-disruptive migration, data reduction, and estate-wide cyber resilience.' },
+      { name: 'Spectrum Protect + LTO Tape', vendor: 'IBM', desc: 'Immutable, air-gapped backup — SAMA-aligned tamper-proof data protection with offline tape isolation.' },
     ],
   },
   {

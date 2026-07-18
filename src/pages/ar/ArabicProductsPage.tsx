@@ -60,6 +60,8 @@ const infraCategories: Category[] = [
       { name: 'PowerStore Storage', vendor: 'Dell Technologies', desc: 'تخزين فلاشي بالكامل من الفئة المتوسطة بأتمتة ذكية وأداء NVMe وقدرة AppsON المدمجة.' },
       { name: 'PowerMax Storage', vendor: 'Dell Technologies', desc: 'تخزين عالي الأداء للمهام الحرجة — تحسين آني مدعوم بالذكاء الاصطناعي ومعمارية بلا توقف للصيانة.' },
       { name: 'FlashSystem Storage', vendor: 'IBM', desc: 'تخزين فلاشي بالكامل مسرّع بتقنية NVMe — مرونة سيبرانية مع تشفير مدمج وكشف برامج الفدية.' },
+      { name: 'SAN Volume Controller (Storage Virtualize)', vendor: 'IBM', desc: 'توحيد افتراضي لمئات أنظمة التخزين من أي مورد تحت طبقة تحكم واحدة — هجرة دون انقطاع وتقليل بيانات ومرونة سيبرانية على مستوى البيئة كلها.' },
+      { name: 'Spectrum Protect + LTO Tape', vendor: 'IBM', desc: 'نسخ احتياطي غير قابل للتعديل ومعزول تمامًا — حماية بيانات متوافقة مع متطلبات البنك المركزي السعودي بعزل شرائط دون اتصال.' },
     ],
   },
   {
