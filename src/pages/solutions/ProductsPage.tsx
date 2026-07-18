@@ -219,7 +219,7 @@ export default function ProductsPage() {
        className="min-h-screen bg-bg-primary">
       <Helmet>
         <title>Products | Bionic Solutions — Enterprise AI Transformation Integrator</title>
-        <meta name="description" content="Complete enterprise AI ecosystem — from mobile to cloud. 11 partners. 50+ products. One relationship." />
+        <meta name="description" content="Complete enterprise AI ecosystem — from mobile to cloud. 8 partners. 50+ products. One relationship." />
       </Helmet>
 
       {/* ═══ 1. HERO ═══ */}

@@ -329,7 +329,7 @@ export const Header = () => {
                       {/* Footer */}
                       <div className="border-t border-white/5 px-6 py-4 flex items-center justify-between bg-bg-primary/30">
                         <p className="text-tiny text-text-muted">
-                          {capabilitiesTab === 'products' ? 'Full AI stack — from laptop to cloud. 11 partners. One relationship.' : capabilitiesTab === 'capability' ? '7 capabilities. 3 pillars. Intelligence · Automation · Trust.' : '5 sectors. Government to enterprise — AI transformation applied to your sector.'}
+                          {capabilitiesTab === 'products' ? 'Full AI stack — from laptop to cloud. 8 partners. One relationship.' : capabilitiesTab === 'capability' ? '7 capabilities. 3 pillars. Intelligence · Automation · Trust.' : '5 sectors. Government to enterprise — AI transformation applied to your sector.'}
                         </p>
                         <Link to="/blueprints" className="inline-flex items-center gap-2 text-small font-medium text-accent-primary hover:text-accent-secondary transition-colors">
                           View Transformation Blueprints <ArrowRight className="w-4 h-4" />
