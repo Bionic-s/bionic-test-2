@@ -48,7 +48,7 @@ Deno.serve(async (req: Request) => {
     // 1. Insert into DB (primary — MUST succeed)
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL') || 'https://krjgjaemysvutpwbwgst.supabase.co',
-      Deno.env.get('SB_SERVICE_KEY') || '',
+      Deno.env.get('SB_SERVICE_KEY') || Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '',
     );
 
     const { data, error: dbErr } = await supabase

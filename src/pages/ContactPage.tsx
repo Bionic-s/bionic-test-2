@@ -28,7 +28,11 @@ const industries = [
   'Banking & Financial Services',
   'Oil, Gas & Energy',
   'Healthcare',
-  'Enterprise (Telecom, Retail, Manufacturing)',
+  'Enterprise',
+  'Telecom & IT',
+  'Retail & Consumer',
+  'Manufacturing',
+  'Transport & Logistics',
 ];
 
 const priorities = [
@@ -87,7 +91,7 @@ export default function ContactPage() {
   };
 
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFormData((prev) => ({ ...prev, country: e.target.value, phone: '' }));
+    setFormData((prev) => ({ ...prev, country: e.target.value }));
     if (fieldErrors.phone) setFieldErrors((prev) => ({ ...prev, phone: undefined }));
   };
 
@@ -132,8 +136,9 @@ export default function ContactPage() {
       setIsSubmitted(true);
       trackFormSubmitted(formData.industry, formData.priority, formData.size);
     } catch (err: any) {
+      console.error('Contact form submission error:', err);
       setIsSubmitting(false);
-      setError(err.message || 'An error occurred. Please try again.');
+      setError(`We couldn't send your request. Please try again, or email us directly at ${contactEmails.general}.`);
     }
   };
 
@@ -217,7 +222,7 @@ export default function ContactPage() {
                         </select>
                         <div className="flex-1">
                           <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} onBlur={() => handleBlur('phone')}
-                            aria-required="true" className={inputCls('phone')} placeholder="050 123 4567" />
+                            className={inputCls('phone')} placeholder="050 123 4567" />
                           <FieldErr msg={touched.phone ? fieldErrors.phone : undefined} id="phone-error" />
                         </div>
                       </div>
@@ -229,13 +234,13 @@ export default function ContactPage() {
                     <div>
                       <label htmlFor="role" className="block text-sm text-text-muted mb-2">Role / Title <span className="text-text-muted">(optional)</span></label>
                       <input type="text" id="role" name="role" value={formData.role} onChange={handleChange} onBlur={() => handleBlur('role')}
-                        aria-required="true" className={inputCls('role')} placeholder="e.g. CIO, CTO, Head of Procurement" />
+                        className={inputCls('role')} placeholder="e.g. CIO, CTO, Head of Procurement" />
                       <FieldErr msg={touched.role ? fieldErrors.role : undefined} id="role-error" />
                     </div>
                     <div>
                       <label htmlFor="size" className="block text-sm text-text-muted mb-2">Organization Size <span className="text-text-muted">(optional)</span></label>
                       <select id="size" name="size" value={formData.size} onChange={handleChange} onBlur={() => handleBlur('size')}
-                        aria-required="true" className={selectCls('size')}>
+                        className={selectCls('size')}>
                         <option value="" className="bg-bg-primary text-text-muted">Select organization size...</option>
                         {orgSizes.map((s) => <option key={s} value={s} className="bg-bg-primary">{s}</option>)}
                       </select>
@@ -247,7 +252,7 @@ export default function ContactPage() {
                   <div>
                     <label htmlFor="industry" className="block text-sm text-text-muted mb-2">Industry <span className="text-text-muted">(optional)</span></label>
                     <select id="industry" name="industry" value={formData.industry} onChange={handleChange} onBlur={() => handleBlur('industry')}
-                      aria-required="true" className={selectCls('industry')}>
+                      className={selectCls('industry')}>
                       <option value="" className="bg-bg-primary text-text-muted">Select your industry...</option>
                       {industries.map((ind) => <option key={ind} value={ind} className="bg-bg-primary">{ind}</option>)}
                     </select>
@@ -258,7 +263,7 @@ export default function ContactPage() {
                   <div>
                     <label htmlFor="priority" className="block text-sm text-text-muted mb-2">Meeting Focus <span className="text-text-muted">(optional)</span></label>
                     <select id="priority" name="priority" value={formData.priority} onChange={handleChange} onBlur={() => handleBlur('priority')}
-                      aria-required="true" className={selectCls('priority')}>
+                      className={selectCls('priority')}>
                       <option value="" className="bg-bg-primary text-text-muted">Select briefing type...</option>
                       {priorities.map((p) => <option key={p} value={p} className="bg-bg-primary">{p}</option>)}
                     </select>
@@ -379,7 +384,7 @@ export default function ContactPage() {
                 {[
                   { label: 'Architecture', desc: '10 layers', path: '/architecture', icon: Layers },
                   { label: 'Enterprise Value System', desc: 'How value compounds', path: '/value', icon: BarChart3 },
-                  { label: 'Blueprints', desc: '12 architectures', path: '/blueprints', icon: BookOpen },
+                  { label: 'Blueprints', desc: '27 architectures', path: '/blueprints', icon: BookOpen },
                 ].map((link) => (
                   <Link key={link.label} to={link.path}
                     className="inline-flex items-center gap-3 px-5 py-3 bg-bg-secondary border border-white/5 rounded-xl text-sm font-medium text-text-primary hover:border-[#00BFFF]/25 transition-all hover:-translate-y-0.5">

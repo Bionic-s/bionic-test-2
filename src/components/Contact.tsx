@@ -77,18 +77,6 @@ export const Contact = () => {
       // Track conversion event (GTM)
       trackFormSubmitted('', '', '');
 
-      // Send Enterprise Framework Guide via email
-      try {
-        await fetch('/api/send-guide', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: formData.name, email: formData.email }),
-        });
-      } catch (e) {
-        // Non-blocking — guide email is best-effort
-        console.error('Guide send failed:', e);
-      }
-      
       // Reset success message after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false);

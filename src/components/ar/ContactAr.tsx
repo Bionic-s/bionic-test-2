@@ -70,16 +70,6 @@ export const ContactAr = () => {
       
       trackFormSubmitted('', '', '');
 
-      try {
-        await fetch('/api/send-guide', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: formData.name, email: formData.email }),
-        });
-      } catch (e) {
-        console.error('Guide send failed:', e);
-      }
-      
       setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);

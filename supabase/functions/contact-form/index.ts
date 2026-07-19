@@ -45,10 +45,12 @@ Deno.serve(async (req) => {
         // STEP 1: Persist lead to Supabase (MUST succeed)
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         const supabaseUrl = Deno.env.get('SUPABASE_URL') || 'https://krjgjaemysvutpwbwgst.supabase.co';
-        const supabaseServiceKey = Deno.env.get('SB_SERVICE_KEY');
+        // SUPABASE_SERVICE_ROLE_KEY is auto-injected into every edge function;
+        // SB_SERVICE_KEY remains as an optional manual override.
+        const supabaseServiceKey = Deno.env.get('SB_SERVICE_KEY') || Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
         if (!supabaseServiceKey) {
-            throw new Error('SB_SERVICE_KEY not configured');
+            throw new Error('Service key not configured');
         }
 
         const insertResponse = await fetch(
