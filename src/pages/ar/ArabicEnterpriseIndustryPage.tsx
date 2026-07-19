@@ -61,6 +61,8 @@ export default function ArabicEnterpriseIndustryPage() {
           </div>
         </section>
 
+        <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>الواقع</SectionLabel>
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: "'Tajawal', sans-serif" }}>كل مؤسسة تتجه نحو الذكاء الاصطناعي — لكن معظمها ليس جاهزاً من حيث البيانات والحوكمة والبنية.</h2>
@@ -206,6 +208,7 @@ export default function ArabicEnterpriseIndustryPage() {
           </div>
         </motion.section>
 
+    </div>
     </div>
 );
 }

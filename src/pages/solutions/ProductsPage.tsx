@@ -4,7 +4,8 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Server, Shield, Cpu, Wrench } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
-import { STRATEGIC_PARTNER_COUNT, STRATEGIC_PARTNERS_SINGLE, SALESFORCE_ECOSYSTEM } from '../../data/strategicPartners';
+import { STRATEGIC_PARTNER_COUNT } from '../../data/strategicPartners';
+import { StrategicPartnersShowcase } from '../../components/StrategicPartnersShowcase';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
@@ -359,36 +360,7 @@ export default function ProductsPage() {
               Multi-vendor by design, one accountable relationship — the same strategic partners you'll find on our Partners page.
             </p>
           </div>
-          {/* Seven single-partner relationships */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
-            {STRATEGIC_PARTNERS_SINGLE.map((partner) => (
-              <div key={partner.id}
-                className="bg-bg-secondary border border-white/5 rounded-xl p-4 flex items-center justify-center h-36 hover:border-[#00BFFF20] hover:bg-[#00BFFF03] transition-all duration-300">
-                <div className="w-full h-24 flex items-center justify-center">
-                  <PartnerLogo partner={partner.logoName} size="md" />
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Salesforce Ecosystem — one unified full-width relationship */}
-          <div className="mt-3 lg:mt-4 bg-bg-secondary border border-[#00A1E0]/20 rounded-xl p-6 md:p-8 hover:border-[#00A1E0]/40 transition-all duration-300">
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex items-center gap-3 md:w-56 shrink-0">
-                <PartnerLogo partner={SALESFORCE_ECOSYSTEM.logoName} size="lg" />
-                <span className="text-tiny font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#00A1E0]/30 bg-[#00A1E0]/10 text-[#00A1E0]">Ecosystem</span>
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-3">
-                  {SALESFORCE_ECOSYSTEM.ecosystemMembers!.map((sub) => (
-                    <div key={sub} className="h-8 flex items-center opacity-70">
-                      <PartnerLogo partner={sub} size="sm" />
-                    </div>
-                  ))}
-                </div>
-                <p className="text-text-muted text-sm leading-relaxed">{SALESFORCE_ECOSYSTEM.outcome.en}</p>
-              </div>
-            </div>
-          </div>
+          <StrategicPartnersShowcase lang="en" />
         </motion.section>
 
         {/* ═══ 6. CTA ═══ */}

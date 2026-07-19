@@ -164,7 +164,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <p className="text-tiny text-text-muted mt-8 pt-6 border-t border-white/[0.06] text-center">
-                Partner ecosystem: Salesforce · Google Cloud · IBM · Dell Technologies · Intel · MuleSoft · Informatica · Platform9
+                Partner ecosystem: IBM · Google Cloud · Dell Technologies · Intel · Platform9 · Lenovo · Red Hat · Salesforce Ecosystem (Salesforce · MuleSoft · Tableau · Informatica)
               </p>
             </div>
           </div>

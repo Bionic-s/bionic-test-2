@@ -5,24 +5,13 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, GitMerge, Lightbulb, Cpu } from 'lucide-react';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { CANON_PARTNERS } from '../../data/partnersData';
-import { STRATEGIC_PARTNERS_SINGLE, SALESFORCE_ECOSYSTEM } from '../../data/strategicPartners';
+import { StrategicPartnersShowcase } from '../../components/StrategicPartnersShowcase';
 import { trackPageView } from '../../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
 
 /* ── نتائج الشركاء: بطاقة واحدة لكل شريك، نتيجة واحدة لكل منهم ── */
-const ECOSYSTEM_CARD = {
-  name: SALESFORCE_ECOSYSTEM.name.ar,
-  outcome: SALESFORCE_ECOSYSTEM.outcome.ar,
-  main: SALESFORCE_ECOSYSTEM.logoName,
-  subs: SALESFORCE_ECOSYSTEM.ecosystemMembers!.filter((m) => m !== SALESFORCE_ECOSYSTEM.logoName),
-};
-
-const PARTNER_OUTCOMES: { name: string; outcome: string }[] = STRATEGIC_PARTNERS_SINGLE.map((p) => ({
-  name: p.logoName,
-  outcome: p.outcome.ar,
-}));
 
 /* ── مستويات الشراكة ── */
 const TIERS = [
@@ -108,85 +97,7 @@ export default function ArabicPartnersPage() {
             </p>
           </motion.div>
 
-          {/* شبكة بطاقات الشركاء */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-            {/* بطاقات الشركاء الأفراد أولاً */}
-            {PARTNER_OUTCOMES.map((po, i) => {
-              const canon = CANON_PARTNERS.find((x) => x.name.toLowerCase() === po.name.toLowerCase());
-              return (
-                <motion.div
-                  key={po.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView1 ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.45, delay: i * 0.06 }}
-                  className={`group relative bg-bg-secondary/40 border border-white/[0.06] rounded-2xl overflow-hidden hover:border-accent-primary/25 transition-all duration-400 hover:-translate-y-1 flex flex-col ${po.name === 'IBM' ? 'lg:row-span-2 shadow-[0_0_30px_rgba(5,47,173,0.08)]' : ''}`}
-                >
-                  <div className="h-0.5 w-full" style={{ backgroundColor: canon?.accent || '#444' }} />
-                  <div className="flex items-center justify-center px-4 pt-6 pb-3">
-                    <PartnerLogo partner={po.name} size={po.name === 'IBM' ? 'xl' : 'lg'} className="mx-auto transition-transform duration-300 group-hover:scale-105" />
-                  </div>
-                  <div className="px-4 pb-6 flex-1 flex flex-col justify-end">
-                    <p className="text-tiny text-text-muted leading-relaxed text-center">{po.outcome}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-
-            {/* ── منظومة Salesforce — عرض كامل، صف أخير ── */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView1 ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="col-span-2 md:col-span-3 lg:col-span-4 group relative bg-bg-secondary/40 border border-white/[0.06] rounded-2xl overflow-hidden hover:border-accent-primary/25 transition-all duration-500 hover:-translate-y-1"
-            >
-              <div className="h-0.5 w-full" style={{ backgroundColor: '#00A1E0' }} />
-              
-              {/* تخطيط سطح المكتب: أفقي */}
-              <div className="hidden lg:flex items-center gap-8 p-6">
-                {/* شارة + شعار رئيسي */}
-                <div className="flex flex-col items-center gap-3 shrink-0">
-                  <span className="text-tiny font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#00A1E0]/30 bg-[#00A1E0]/10 text-[#00A1E0]">منظومة</span>
-                  <div className="bg-bg-primary/60 border border-white/5 rounded-xl p-4">
-                    <PartnerLogo partner="Salesforce" size="xl" className="mx-auto" />
-                  </div>
-                </div>
-
-                {/* شركاء فرعيون */}
-                <div className="flex items-center gap-4">
-                  <div className="w-px h-16 bg-white/8" />
-                  {ECOSYSTEM_CARD.subs.map((sub) => (
-                    <div key={sub} className="flex items-center justify-center bg-bg-primary/50 border border-white/5 rounded-xl p-4 w-28">
-                      <PartnerLogo partner={sub} size="md" className="mx-auto" />
-                    </div>
-                  ))}
-                  <div className="w-px h-16 bg-white/8" />
-                </div>
-
-                {/* نص النتيجة */}
-                <div className="flex-1">
-                  <p className="text-sm text-text-muted leading-relaxed">{ECOSYSTEM_CARD.outcome}</p>
-                </div>
-              </div>
-
-              {/* تخطيط الجوال: رأسي */}
-              <div className="lg:hidden p-5 flex flex-col">
-                <div className="flex items-center justify-center mb-3">
-                  <span className="text-tiny font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-[#00A1E0]/30 bg-[#00A1E0]/10 text-[#00A1E0]">منظومة</span>
-                </div>
-                <div className="flex items-center justify-center bg-bg-primary/60 border border-white/5 rounded-xl p-4 mb-3">
-                  <PartnerLogo partner="Salesforce" size="lg" className="mx-auto" />
-                </div>
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  {ECOSYSTEM_CARD.subs.map((sub) => (
-                    <div key={sub} className="flex items-center justify-center bg-bg-primary/50 border border-white/5 rounded-lg p-2.5">
-                      <PartnerLogo partner={sub} size="sm" className="mx-auto" />
-                    </div>
-                  ))}
-                </div>
-                <p className="text-tiny text-text-muted leading-relaxed text-center">{ECOSYSTEM_CARD.outcome}</p>
-              </div>
-            </motion.div>
-          </div>
+          <StrategicPartnersShowcase lang="ar" inView={inView1} />
         </div>
       </section>
 

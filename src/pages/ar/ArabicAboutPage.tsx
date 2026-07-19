@@ -166,7 +166,7 @@ export default function ArabicAboutPage() {
                 ))}
               </div>
               <p className="text-tiny text-text-muted mt-8 pt-6 border-t border-white/[0.06] text-center">
-                منظومة الشركاء: Salesforce · Google Cloud · IBM · Dell Technologies · Intel · MuleSoft · Informatica · Platform9
+                منظومة الشركاء: IBM · Google Cloud · Dell Technologies · Intel · Platform9 · Lenovo · Red Hat · منظومة Salesforce (تشمل MuleSoft وTableau وInformatica)
               </p>
             </div>
           </div>

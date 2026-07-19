@@ -10,7 +10,7 @@ import { blueprints, allBlueprintIndustries, allBlueprintCapabilities, allBluepr
 import { trackBlueprintHubView } from '../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
-const HERO_BG = '/test-site-2/images/security-alert.avif';
+const HERO_BG = '/test-site-2/images/blueprints-hero.jpg';
 
 const iatColors: Record<string, string> = {
   Intelligence: '#00BFFF',

@@ -97,6 +97,8 @@ export default function GovernmentIndustryPage() {
           </div>
         </section>
 
+        <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
+
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="mb-28">
           <SectionLabel>The Reality</SectionLabel>
@@ -272,6 +274,7 @@ export default function GovernmentIndustryPage() {
           </div>
         </motion.section>
 
+    </div>
     </div>
 );
 }
