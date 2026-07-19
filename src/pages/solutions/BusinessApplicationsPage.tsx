@@ -39,7 +39,6 @@ export default function BusinessApplicationsPage() {
         <title>Business Applications & CX | Bionic Solutions — Enterprise AI Transformation Integrator</title>
         <meta name="description" content="Business Applications & CX — CRM, contact center, marketing automation, commerce, and employee experience." />
       </Helmet>
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
@@ -67,6 +66,8 @@ export default function BusinessApplicationsPage() {
           </p>
           </motion.div>
         </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl">
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">

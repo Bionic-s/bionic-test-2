@@ -62,7 +62,6 @@ export default function ArabicBusinessApplicationsPage() {
         <title>تطبيقات الأعمال وتجربة العملاء | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
         <meta name="description" content="تطبيقات الأعمال وتجربة العملاء — إدارة علاقات العملاء، مراكز الاتصال، أتمتة التسويق، التجارة الإلكترونية، وتجربة الموظف." />
       </Helmet>
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
@@ -87,6 +86,8 @@ export default function ArabicBusinessApplicationsPage() {
           </p>
           </motion.div>
         </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">

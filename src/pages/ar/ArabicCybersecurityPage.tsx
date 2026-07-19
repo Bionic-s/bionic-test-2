@@ -38,7 +38,6 @@ export default function ArabicCybersecurityPage() {
         <title>الأمن السيبراني والمرونة السيبرانية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
         <meta name="description" content="الأمن السيبراني والمرونة السيبرانية — مركز العمليات الأمنية، SIEM، نموذج Zero Trust، إدارة الهوية، والصمود ضد الفدية." />
       </Helmet>
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
@@ -65,6 +64,8 @@ export default function ArabicCybersecurityPage() {
           </p>
           </motion.div>
         </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 2. الواقع ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">

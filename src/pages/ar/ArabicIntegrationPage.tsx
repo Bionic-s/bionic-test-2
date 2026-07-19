@@ -62,7 +62,6 @@ export default function ArabicIntegrationPage() {
         <title>التكامل والعمليات الذكية | بيونك سوليوشنز — مُمكّن التحول المؤسسي بالذكاء الاصطناعي</title>
         <meta name="description" content="التكامل والعمليات الذكية — معمارية قائمة على واجهات API، معمارية مدفوعة بالأحداث، وتنسيق سير العمل المؤسسي." />
       </Helmet>
-      <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 1. HERO ═══ */}
         <section className="relative overflow-hidden">
@@ -87,6 +86,8 @@ export default function ArabicIntegrationPage() {
           </p>
           </motion.div>
         </section>
+
+      <div className="container mx-auto px-4 lg:px-12 max-w-6xl" style={{ fontFamily: "'Tajawal', sans-serif" }}>
 
         {/* ═══ 2. THE REALITY ═══ */}
         <motion.section ref={ref1} {...fadeIn} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="mb-28">
