@@ -4,7 +4,9 @@ import { industries as INDUSTRIES } from '../data/industries';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
-import { ChevronDown, X, Menu, ArrowRight } from 'lucide-react';
+import { ChevronDown, X, ArrowRight } from 'lucide-react';
+import { BionicArabicLogo } from './BionicArabicLogo';
+import { AnimatedHamburger } from './AnimatedHamburger';
 
 export const HeaderAr = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -122,15 +124,9 @@ export const HeaderAr = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
 
-            {/* Logo */}
+            {/* Arabic Logo */}
             <Link to="/ar" className="flex-shrink-0">
-              <img fetchPriority="high"                 src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
-                alt="Bionic Solutions"
-                className="h-10 w-auto"
-                style={{
-                  filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)',
-                }}
-              />
+              <BionicArabicLogo color="#00BFFF" height={40} animated={false} />
             </Link>
 
             {/* Desktop Navigation */}
@@ -397,15 +393,8 @@ export const HeaderAr = () => {
 
             </nav>
 
-            {/* Language + CTA group */}
-            <div className="hidden md:flex flex-row items-center gap-3">
-              <Link to={location.pathname.replace(/^\/ar/, '') || '/'}
-                className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
-                aria-label="English version">
-                <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇬🇧</span>
-                <span className="text-[11px] font-medium text-[#5B6470] group-hover:text-white transition-colors tracking-wide" style={{ fontFamily: "'Tajawal', sans-serif" }}>English</span>
-              </Link>
-
+            {/* CTA — before language so language stays at far edge */}
+            <div className="hidden md:flex items-center">
               <Link to="/ar/contact"
                 onClick={() => trackCTAClick('mega_menu', '/contact')}
                 className="px-5 py-2 bg-accent-primary text-text-primary text-sm font-semibold rounded-full hover:bg-accent-secondary transition-all">
@@ -413,11 +402,26 @@ export const HeaderAr = () => {
               </Link>
             </div>
 
-            {/* Mobile Burger */}
-            <button onClick={() => setMobileMenuOpen(true)}
-              className="md:hidden p-2 text-text-primary hover:text-accent-primary transition-colors" aria-label="Open menu">
-              <Menu className="w-6 h-6" />
-            </button>
+            {/* Language Switcher — LAST child → أقصى اليسار في RTL */}
+            <div className="hidden md:flex items-center flex-shrink-0">
+              <span className="block w-px h-5 bg-white/10" />
+              <Link
+                to={location.pathname.replace(/^\/ar/, '') || '/'}
+                className="px-4 py-2 text-sm font-medium text-text-muted hover:text-accent-primary transition-colors"
+                style={{ fontFamily: "'Tajawal', sans-serif" }}
+                aria-label="English version"
+              >
+                English
+              </Link>
+            </div>
+
+            {/* Mobile Burger — animated morph to X */}
+            <AnimatedHamburger
+              isOpen={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(true)}
+              color="#00BFFF"
+              className="md:hidden"
+            />
           </div>
         </div>
       </header>
@@ -430,13 +434,7 @@ export const HeaderAr = () => {
             {/* Mobile Nav Header: Logo + Close */}
             <div className="flex items-center justify-between p-4 border-b border-white/5">
               <Link to="/ar" onClick={() => setMobileMenuOpen(false)}>
-                <img fetchPriority="high"                   src={`${import.meta.env.BASE_URL}bionic-full-dark.svg`}
-                  alt="بيونك سوليوشنز"
-                  className="h-8 w-auto"
-                  style={{
-                    filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)',
-                  }}
-                />
+                <BionicArabicLogo color="#00BFFF" height={32} animated={false} />
               </Link>
               <button onClick={() => setMobileMenuOpen(false)} aria-label="إغلاق القائمة" className="p-2 text-text-primary hover:text-accent-primary transition-colors rounded-lg hover:bg-white/5">
                 <X className="w-6 h-6" />
@@ -608,9 +606,10 @@ export const HeaderAr = () => {
                 شركاؤنا
               </Link>
 
-              {/* Mobile English */}
+              {/* Mobile English — STC style */}
               <Link to={location.pathname.replace(/^\/ar/, '') || '/'} onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors text-right">
+                className="block px-4 py-3 text-text-muted hover:text-accent-primary text-lg font-medium rounded-xl transition-colors"
+                style={{ fontFamily: "'Tajawal', sans-serif" }}>
                 English
               </Link>
 

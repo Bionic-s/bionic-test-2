@@ -4,7 +4,8 @@ import { industries as INDUSTRIES } from '../data/industries';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../lib/analytics';
 import { motion } from 'framer-motion';
-import { ChevronDown, X, Menu, ArrowRight } from 'lucide-react';
+import { ChevronDown, X, ArrowRight } from 'lucide-react';
+import { AnimatedHamburger } from './AnimatedHamburger';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -397,15 +398,8 @@ export const Header = () => {
 
             </nav>
 
-            {/* Language + CTA group */}
-            <div className="hidden md:flex items-center gap-3">
-              <Link to={`/ar${location.pathname}`}
-                className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-[#00BFFF40] bg-white/[0.02] hover:bg-[#00BFFF08] transition-all duration-300"
-                aria-label="النسخة العربية">
-                <span className="text-xs opacity-50 group-hover:opacity-100 transition-opacity">🇸🇦</span>
-                <span className="text-[11px] font-medium text-[#5B6470] group-hover:text-white transition-colors tracking-wide" style={{ fontFamily: "'Tajawal', sans-serif" }}>عربي</span>
-              </Link>
-
+            {/* CTA */}
+            <div className="hidden md:flex items-center">
               <Link to="/contact"
                 onClick={() => trackCTAClick('mega_menu', '/contact')}
                 className="px-5 py-2 bg-accent-primary text-text-primary text-sm font-semibold rounded-full hover:bg-accent-secondary transition-all">
@@ -413,11 +407,26 @@ export const Header = () => {
               </Link>
             </div>
 
-            {/* Mobile Burger */}
-            <button onClick={() => setMobileMenuOpen(true)}
-              className="md:hidden p-2 text-text-primary hover:text-accent-primary transition-colors" aria-label="Open menu">
-              <Menu className="w-6 h-6" />
-            </button>
+            {/* Language Switcher — far right edge */}
+            <div className="hidden md:flex items-center flex-shrink-0 ml-3">
+              <Link
+                to={`/ar${location.pathname}`}
+                className="px-4 py-2 text-sm font-medium text-text-muted hover:text-accent-primary transition-colors"
+                style={{ fontFamily: "'Tajawal', sans-serif" }}
+                aria-label="النسخة العربية"
+              >
+                العربية
+              </Link>
+              <span className="block w-px h-5 bg-white/10" />
+            </div>
+
+            {/* Mobile Burger — animated morph to X */}
+            <AnimatedHamburger
+              isOpen={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(true)}
+              color="#00BFFF"
+              className="md:hidden"
+            />
           </div>
         </div>
       </header>
@@ -602,9 +611,9 @@ export const Header = () => {
                 Our Partners
               </Link>
 
-              {/* Mobile Arabic */}
+              {/* Mobile Arabic — STC style */}
               <Link to={`/ar${location.pathname}`} onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 text-text-primary text-lg font-medium hover:bg-white/5 rounded-xl transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>
+                className="block px-4 py-3 text-text-muted hover:text-accent-primary text-lg font-medium rounded-xl transition-colors" style={{ fontFamily: "'Tajawal', sans-serif" }}>
                 العربية
               </Link>
 
