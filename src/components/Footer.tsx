@@ -148,7 +148,7 @@ export const Footer = () => {
         <div className="border-t border-white/5 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-small text-text-muted">
-              &copy; {currentYear} Bionic Solutions. All rights reserved.
+              &copy; {currentYear} Bionic Solutions. All rights reserved. · Riyadh · Jeddah · Al Khobar
             </p>
             <div className="flex space-x-6">
               <Link to="/privacy" className="text-small text-text-muted hover:text-accent-primary transition-colors">

@@ -34,7 +34,7 @@ export const FooterAr = () => {
             </div>
 
             <Link to="/ar" className="inline-block mb-4 hover:opacity-80 transition-opacity">
-              <img loading="lazy" decoding="async" src="/test-site-2/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
+              <img loading="lazy" decoding="async" src="/bionic-full-dark.svg" alt="Bionic Solutions" className="h-10 w-auto"
                 style={{ filter: 'brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(2174%) hue-rotate(164deg) brightness(99%) contrast(93%)' }} />
             </Link>
             <p className="text-tiny font-semibold text-text-primary mb-2">مُمكّن التحول المؤسسي بالذكاء الاصطناعي</p>
@@ -108,7 +108,7 @@ export const FooterAr = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-tiny text-text-muted">
-            © {currentYear} شركة بيونك سوليوشنز. جميع الحقوق محفوظة.
+            © {currentYear} شركة بيونك سوليوشنز. جميع الحقوق محفوظة. · الرياض · جدة · الخبر
           </p>
           <div className="flex items-center gap-4">
             <Link to="/ar/privacy" className="text-tiny text-text-muted hover:text-accent-primary transition-colors">سياسة الخصوصية</Link>
