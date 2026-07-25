@@ -35,13 +35,18 @@ export const StickyCTABar = () => {
       // Show sticky CTA after scrolling 300px for better visibility
       if (window.scrollY > 300 && !isClosed) {
         setIsVisible(true);
+        document.documentElement.classList.add('sticky-cta-visible');
       } else {
         setIsVisible(false);
+        document.documentElement.classList.remove('sticky-cta-visible');
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.documentElement.classList.remove('sticky-cta-visible');
+    };
   }, [isClosed]);
 
   const handleClose = () => {

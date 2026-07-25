@@ -249,3 +249,7 @@ a[class*="bg-bg-secondary"][class*="rounded"]:hover,
   border-color: rgba(0, 191, 255, 0.3);
   transform: translateY(-2px);
 }
+/* Lift back-to-top above sticky CTA bar when visible */
+html.sticky-cta-visible .back-to-top {
+  bottom: 90px;
+}
