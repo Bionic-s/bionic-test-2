@@ -10,7 +10,7 @@ import { useTextReveal } from '../hooks/useTextReveal';
 import { STRATEGIC_PARTNER_COUNT } from '../data/strategicPartners';
 
 export const Hero = () => {
-  const heroBg = `${import.meta.env.BASE_URL}images/hero_background_7.png`;
+  const heroBg = `${import.meta.env.BASE_URL}images/optimized/hero_background_7.webp`;
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 

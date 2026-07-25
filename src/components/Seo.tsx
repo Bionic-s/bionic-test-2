@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-const SITE = 'https://app.bionics.sa/test-site-2';
+const SITE = 'https://www.bionic-solutions.com.sa';
 
 const organizationSchema = JSON.stringify({
   '@context': 'https://schema.org',

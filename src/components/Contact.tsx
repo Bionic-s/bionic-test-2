@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, CheckCircle, AlertCircle, FileText, ArrowRight } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+
 import { trackFormSubmitted } from '../lib/analytics';
+
+const FORM_API = 'https://app.bionics.sa/api';
 
 export const Contact = () => {
   const [ref, inView] = useInView({
@@ -24,6 +26,7 @@ export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,37 +53,26 @@ export const Contact = () => {
         }
       }
 
-      const { data, error: submitError } = await supabase.functions.invoke('contact-form', {
-        body: {
+      const res = await fetch(`${FORM_API}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           company: formData.company,
           phone: formData.phone || null,
           message: formData.message || 'No message provided',
-        },
+        }),
       });
 
-      if (submitError) {
-        throw new Error(submitError.message || 'Failed to submit form');
-      }
-
-      // Check if the response contains an error
-      if (data?.error) {
-        throw new Error(data.error.message || 'Failed to submit form');
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        throw new Error(data.error?.message || 'Failed to submit form');
       }
 
       // Success
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-      
-      // Track conversion event (GTM)
-      trackFormSubmitted('', '', '');
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      navigate('/thank-you');
     } catch (err) {
       setIsSubmitting(false);
       setError('We could not send your message. Please try again, or email us at info@bionics.com.sa.');

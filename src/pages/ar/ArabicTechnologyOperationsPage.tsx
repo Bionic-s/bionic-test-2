@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#00BFFF';
-const HERO_BG = '/test-site-2/images/cloud-computing.avif';
+const HERO_BG = '/images/cloud-computing.avif';
 const SectionLabel = ({ children }: { children: string }) => (
   <p className="text-tiny font-semibold tracking-wider uppercase mb-4" style={{ color: ACCENT }}>{children}</p>
 );

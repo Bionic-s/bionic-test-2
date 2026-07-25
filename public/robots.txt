@@ -1,6 +1,20 @@
 User-agent: *
-Allow: /test-site-2/
-Disallow: /test-site-2/api/
-Disallow: /test-site-2/admin/
+Allow: /
+Disallow: /thank-you
+Sitemap: https://www.bionic-solutions.com.sa/sitemap.xml
 
-Sitemap: https://app.bionics.sa/test-site-2/sitemap.xml
+# Crawl-delay for bots that support it (Cloudflare handles this in production)
+Crawl-delay: 2
+
+# Block AI crawlers that train on content
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /

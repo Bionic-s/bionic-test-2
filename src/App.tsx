@@ -26,6 +26,7 @@ const PartnersPage = lazy(() => import('./pages/PartnersPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const BookDiscoveryCallPage = lazy(() => import('./pages/BookDiscoveryCall'));
+const ThankYouPage = lazy(() => import('./pages/ThankYouPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const ArabicHomePage = lazy(() => import('./pages/ArabicHomePage'));
 
@@ -39,6 +40,7 @@ const ArabicTelecomIndustryPage = lazy(() => import('./pages/ar/ArabicTelecomInd
 const ArabicRetailIndustryPage = lazy(() => import('./pages/ar/ArabicRetailIndustryPage'));
 const ArabicManufacturingIndustryPage = lazy(() => import('./pages/ar/ArabicManufacturingIndustryPage'));
 const ArabicTransportLogisticsIndustryPage = lazy(() => import('./pages/ar/ArabicTransportLogisticsIndustryPage'));
+const ArabicThankYouPage = lazy(() => import('./pages/ar/ArabicThankYouPage'));
 
 // Arabic Capability Pages
 const ArabicAISolutionPage = lazy(() => import('./pages/ar/ArabicAISolutionPage'));
@@ -202,6 +204,11 @@ function AppContent() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/book-discovery-call" element={<BookDiscoveryCallPage />} />
+          <Route path="/thank-you" element={
+            <Suspense fallback={null}>
+              <ThankYouPage />
+            </Suspense>
+          } />
 
           {/* ═══ Transformation Blueprints ═══ */}
           <Route path="/partners" element={<PartnersPage />} />
@@ -290,6 +297,11 @@ function AppContent() {
           <Route path="/ar/products" element={<ArabicProductsPage />} />
           <Route path="/ar/contact" element={<ArabicContactPage />} />
           <Route path="/ar/book-discovery-call" element={<ArabicBookDiscoveryCallPage />} />
+          <Route path="/ar/thank-you" element={
+            <Suspense fallback={null}>
+              <ArabicThankYouPage />
+            </Suspense>
+          } />
 
           {/* Arabic Capabilities */}
           <Route path="/ar/capabilities/ai" element={<ArabicAISolutionPage />} />
@@ -343,7 +355,7 @@ function App() {
   return (
     <HelmetProvider>
       <MotionConfig reducedMotion="user">
-        <Router basename="/test-site-2">
+        <Router basename={import.meta.env.BASE_URL !== '/' ? import.meta.env.BASE_URL : undefined}>
           <AppContent />
         </Router>
       </MotionConfig>

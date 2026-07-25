@@ -7,7 +7,7 @@ import { trackIndustryPageView } from '../../lib/analytics';
 import { PartnerLogo } from '../../components/PartnerLogo';
 import { Helmet } from 'react-helmet-async';
 
-const heroBg = `${import.meta.env.BASE_URL}images/professional-services-ai-hero.jpg`;
+const heroBg = `${import.meta.env.BASE_URL}images/optimized/professional-services-ai-hero.webp`;
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#00BFFF';
 const SectionLabel = ({ children }: { children: string }) => (

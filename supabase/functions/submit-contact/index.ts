@@ -1,16 +1,4 @@
-// Only echo back origins we trust; everything else gets the production origin
-// (bots ignore CORS anyway — this stops other sites from using visitors' browsers)
-const ALLOWED_ORIGINS = [
-    'https://app.bionics.sa',
-    'https://bionics.com.sa',
-    'https://www.bionics.com.sa',
-    'http://localhost:5173',
-    'http://localhost:4173',
-];
-function allowOrigin(req: Request): string {
-    const origin = req.headers.get('origin') ?? '';
-    return ALLOWED_ORIGINS.includes(origin) ? origin : 'https://app.bionics.sa';
-}
+import { allowOrigin } from "../_shared/cors.ts";
 
 // Simple date formatting function since we can't import external modules
 function formatDate(date, format) {

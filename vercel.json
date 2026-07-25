@@ -1,5 +1,10 @@
 {
+  "version": 2,
+  "outputDirectory": "dist",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "rewrites": [
-    { "source": "/((?!assets/|favicon|icon-|manifest|sitemap|robots).*)", "destination": "/index.html" }
+    { "source": "/ar/(.*)", "destination": "/index.html" },
+    { "source": "/((?!assets|favicon|icon-|manifest|og-image|sitemap|robots).*)", "destination": "/index.html" }
   ]
 }

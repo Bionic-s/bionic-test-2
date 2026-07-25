@@ -1,13 +1,15 @@
 import { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, Link, useNavigate } from 'react-router-dom';
 import {
   Calendar, CheckCircle, Video, Clock, ArrowRight,
   ShieldCheck, AlertCircle, Send, MapPin,
 } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+
+
 import { Helmet } from 'react-helmet-async';
 
+const FORM_API = 'https://app.bionics.sa/api';
 /* ───────────────────────────────────────────
    Date helpers — KSA working days
    ─────────────────────────────────────────── */
@@ -83,6 +85,7 @@ export default function BookDiscoveryCallPage() {
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const timeSlots = useMemo(() => generateTimeSlots(), []);
 
@@ -110,18 +113,21 @@ export default function BookDiscoveryCallPage() {
     setIsSubmitting(true);
     setError(null);
     try {
-      const { error: sErr } = await supabase.functions.invoke('book-discovery', {
-        body: {
+      const res = await fetch(`${FORM_API}/book-discovery`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name, email, company, phone, role, notes,
           selected_date: selectedDate,
           selected_time: selectedTime,
           source, intent,
           user_agent: navigator.userAgent,
-        },
+        }),
       });
-      if (sErr) throw new Error(sErr.message || 'Failed to submit booking');
+      const data = await res.json();
+      if (!res.ok || data.error) throw new Error(data.error?.message || 'Failed to submit booking');
       setIsSubmitting(false);
-      setSubmitted(true);
+      navigate('/thank-you?source=discovery');
     } catch (err: any) {
       setIsSubmitting(false);
       setError(err.message || 'An error occurred. Try again.');

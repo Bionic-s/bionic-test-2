@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
+const FORM_API = 'https://app.bionics.sa/api';
 const STORAGE_KEY = 'bionicExitModalDismissed';
 const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
@@ -30,6 +32,7 @@ export const ProgressiveProfiling = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const location = useLocation();
 
@@ -73,22 +76,24 @@ export const ProgressiveProfiling = () => {
     setError(null);
 
     try {
-      const { supabase } = await import('../lib/supabase');
-      const { data, error: submitError } = await supabase.functions.invoke('capture-lead', {
-        body: {
+      const res = await fetch('https://app.bionics.sa/api/capture-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: '',
           email,
           stage: 'exit_intent',
           magnet_type: 'exit_intent',
-        },
+        }),
       });
 
-      if (submitError || data?.error) {
-        throw new Error(submitError?.message || data?.error?.message || 'Failed');
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        throw new Error(data.error?.message || 'Failed');
       }
 
       setIsSubmitting(false);
-      setSubmitted(true);
+      navigate('/thank-you');
       markDismissed();
       
       setTimeout(() => {

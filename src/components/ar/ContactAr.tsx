@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, CheckCircle, AlertCircle, FileText, ArrowRight } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
+
+
 import { trackFormSubmitted } from '../../lib/analytics';
+
+const FORM_API = 'https://app.bionics.sa/api';
 
 export const ContactAr = () => {
   const [ref, inView] = useInView({
@@ -24,6 +27,7 @@ export const ContactAr = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,33 +50,25 @@ export const ContactAr = () => {
         }
       }
 
-      const { data, error: submitError } = await supabase.functions.invoke('contact-form', {
-        body: {
+      const res = await fetch(`${FORM_API}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           company: formData.company,
           phone: formData.phone || null,
           message: formData.message || 'لم تُقدَّم رسالة',
-        },
+        }),
       });
 
-      if (submitError) {
-        throw new Error(submitError.message || 'فشل إرسال النموذج');
-      }
-
-      if (data?.error) {
-        throw new Error(data.error.message || 'فشل إرسال النموذج');
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        throw new Error(data.error?.message || 'فشل إرسال النموذج');
       }
 
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-      
-      trackFormSubmitted('', '', '');
-
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      navigate('/ar/thank-you');
     } catch (err) {
       setIsSubmitting(false);
       setError('تعذر إرسال رسالتك. يرجى المحاولة مرة أخرى أو مراسلتنا على info@bionics.com.sa');

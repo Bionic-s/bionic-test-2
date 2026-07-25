@@ -11,7 +11,7 @@ import { blueprintTranslations } from '../../data/blueprintsDataAr';
 import { trackBlueprintHubView } from '../../lib/analytics';
 import { Helmet } from 'react-helmet-async';
 
-const HERO_BG = '/test-site-2/images/blueprints-hero.jpg';
+const HERO_BG = '/images/optimized/blueprints-hero.webp';
 
 const iatColors: Record<string, string> = {
   Intelligence: '#00BFFF',

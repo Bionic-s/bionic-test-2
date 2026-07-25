@@ -13,7 +13,7 @@ const BASE = import.meta.env.BASE_URL;
 export const CANON_PARTNERS: PartnerData[] = [
   {
     name: 'Salesforce',
-    logo: `${BASE}images/partners/salesforce-partner.png`,
+    logo: `${BASE}images/optimized/salesforce-partner.webp`,
     accent: '#00A1E0',
   },
   {
@@ -28,22 +28,22 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'Dell Technologies',
-    logo: `${BASE}images/partners/dell-partner.png`,
+    logo: `${BASE}images/optimized/dell-partner.webp`,
     accent: '#007DB8',
   },
   {
     name: 'Intel',
-    logo: `${BASE}images/partners/intel-partner.png`,
+    logo: `${BASE}images/optimized/intel-partner.webp`,
     accent: '#0071C5',
   },
   {
     name: 'MuleSoft',
-    logo: `${BASE}images/partners/mulesoft-partner.png`,
+    logo: `${BASE}images/optimized/mulesoft-partner.webp`,
     accent: '#00A1E0',
   },
   {
     name: 'Tableau',
-    logo: `${BASE}images/partners/tableau-partner.png`,
+    logo: `${BASE}images/optimized/tableau-partner.webp`,
     accent: '#E8762D',
   },
   {
@@ -53,12 +53,12 @@ export const CANON_PARTNERS: PartnerData[] = [
   },
   {
     name: 'Platform9',
-    logo: `${BASE}images/partners/platform9-partner.png`,
+    logo: `${BASE}images/optimized/platform9-partner.webp`,
     accent: '#7B61FF',
   },
   {
     name: 'Red Hat',
-    logo: `${BASE}images/partners/redhat-partner.png`,
+    logo: `${BASE}images/optimized/redhat-partner.webp`,
     accent: '#EE0000',
   },
   {

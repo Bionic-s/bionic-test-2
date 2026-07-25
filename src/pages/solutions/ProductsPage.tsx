@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet-async';
 
 const fadeIn = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 const ACCENT = '#00BFFF';
-const HERO_BG = '/test-site-2/images/it-infrastructure.avif';
+const HERO_BG = '/images/it-infrastructure.avif';
 
 /* ═══════════════════════════════════════════
    CATEGORY-BASED PRODUCT CATALOG

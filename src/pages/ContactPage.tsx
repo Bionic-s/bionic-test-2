@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle, ArrowRight, Phone, Mail, Clock, Layers, BarChart3, BookOpen } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 import { trackFormSubmitted, trackFormStarted } from '../lib/analytics';
 import OfficeLocations from '../components/OfficeLocations';
 import { contactEmails, contactPhone, businessHours } from '../data/contactData';
 import { Helmet } from 'react-helmet-async';
 
+const FORM_API = 'https://app.bionics.sa/api';
 const validateEmail = (email: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const validatePhone = (phone: string): boolean => phone.replace(/\D/g, '').length >= 5;
 
@@ -78,6 +80,7 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
@@ -123,15 +126,18 @@ export default function ContactPage() {
     if (!validateForm()) { setError('Please complete all required fields'); return; }
     setIsSubmitting(true); setError(null);
     try {
-      const { data, error: sErr } = await supabase.functions.invoke('contact-form', {
-        body: {
+      const res = await fetch(`${FORM_API}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: formData.name, email: formData.email, company: formData.company,
           phone: `${formData.country} ${formData.phone}`,
           role: formData.role, industry: formData.industry,
           priority: formData.priority, size: formData.size, message: formData.message,
-        },
+        }),
       });
-      if (sErr || data?.error) throw new Error(sErr?.message || data?.error?.message || 'Failed');
+      const data = await res.json();
+      if (!res.ok || data.error) throw new Error(data.error?.message || 'Failed');
       setIsSubmitting(false);
       setIsSubmitted(true);
       trackFormSubmitted(formData.industry, formData.priority, formData.size);
