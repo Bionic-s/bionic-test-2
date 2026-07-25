@@ -63,7 +63,7 @@ export const StickyCTABar = () => {
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           dir={isArabic ? 'rtl' : 'ltr'}
-          className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-accent-primary to-accent-secondary shadow-2xl"
+          className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-accent-primary to-accent-secondary shadow-2xl"
         >
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between gap-4">
