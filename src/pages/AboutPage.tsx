@@ -229,14 +229,17 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { city: 'Riyadh', region: 'Central Region Headquarters', desc: 'Serving government, banking, and enterprise clients across the capital and central province.' },
-              { city: 'Jeddah', region: 'Western Region Office', desc: 'Serving the Western Province and Red Sea Coast — our founding location and operational hub.' },
-              { city: 'Dammam', region: 'Eastern Region Office', desc: 'Serving oil & gas, industrial, and logistics clients across the Eastern Province.' },
+              { city: 'Jeddah', region: 'Western Region', desc: 'Serving the Western Province and Red Sea Coast — where the company was founded.' },
+              { city: 'Riyadh', region: 'Headquarters — Olaya Towers', desc: 'Level 29, Tower B, Olaya Towers. Serving government, banking, and enterprise clients across the capital and central province.', isHQ: true },
+              { city: 'Al Khobar', region: 'Eastern Region', desc: 'Serving oil & gas, industrial, and logistics clients across the Eastern Province and Gulf Coast.' },
             ].map((office, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-8 text-center transition-all duration-300 hover:border-[#00BFFF25] hover:-translate-y-1">
+              <div key={i} className={`bg-bg-secondary border rounded-xl p-8 text-center transition-all duration-300 hover:-translate-y-1 ${office.isHQ ? 'border-[#00BFFF40]' : 'border-white/5 hover:border-[#00BFFF25]'}`}>
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00BFFF12' }}>
                   <MapPin className="w-7 h-7" style={{ color: ACCENT }} />
                 </div>
+                {office.isHQ && (
+                  <span className="inline-block px-2.5 py-0.5 bg-accent-primary/15 rounded-full text-tiny font-semibold text-accent-primary mb-1">HQ</span>
+                )}
                 <h3 className="font-bold text-xl mb-1 text-text-primary">{office.city}</h3>
                 <p className="text-tiny font-medium mb-3" style={{ color: ACCENT }}>{office.region}</p>
                 <p className="text-text-muted text-sm leading-relaxed">{office.desc}</p>

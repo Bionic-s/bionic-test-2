@@ -230,14 +230,17 @@ export default function ArabicAboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { city: 'الرياض', region: 'المقر الرئيسي — المنطقة الوسطى', desc: 'نخدم الجهات الحكومية والبنوك والمؤسسات الكبرى في العاصمة والمنطقة الوسطى.' },
-              { city: 'جدة', region: 'مكتب المنطقة الغربية', desc: 'نخدم المنطقة الغربية وساحل البحر الأحمر — حيث تأسست الشركة وتدير عملياتها.' },
-              { city: 'الدمام', region: 'مكتب المنطقة الشرقية', desc: 'نخدم قطاع النفط والغاز والصناعة وسلاسل الإمداد في المنطقة الشرقية.' },
+              { city: 'جدة', region: 'المنطقة الغربية', desc: 'نخدم المنطقة الغربية وساحل البحر الأحمر — حيث تأسست الشركة.' },
+              { city: 'الرياض', region: 'المقر الرئيسي — أبراج العليا', desc: 'الدور ٢٩، برج B، أبراج العليا. نخدم الجهات الحكومية والبنوك والمؤسسات الكبرى في العاصمة والمنطقة الوسطى.', isHQ: true },
+              { city: 'الخبر', region: 'المنطقة الشرقية', desc: 'نخدم قطاع النفط والغاز والصناعة وسلاسل الإمداد في المنطقة الشرقية وساحل الخليج.' },
             ].map((office, i) => (
-              <div key={i} className="bg-bg-secondary border border-white/5 rounded-xl p-8 text-center transition-all duration-300 hover:border-[#00BFFF25] hover:-translate-y-1">
+              <div key={i} className={`bg-bg-secondary border rounded-xl p-8 text-center transition-all duration-300 hover:-translate-y-1 ${office.isHQ ? 'border-[#00BFFF40]' : 'border-white/5 hover:border-[#00BFFF25]'}`}>
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00BFFF12' }}>
                   <MapPin className="w-7 h-7" style={{ color: ACCENT }} />
                 </div>
+                {office.isHQ && (
+                  <span className="inline-block px-2.5 py-0.5 bg-accent-primary/15 rounded-full text-tiny font-semibold text-accent-primary mb-1">المقر الرئيسي</span>
+                )}
                 <h3 className="font-bold text-xl mb-1 text-text-primary">{office.city}</h3>
                 <p className="text-tiny font-medium mb-3" style={{ color: ACCENT }}>{office.region}</p>
                 <p className="text-text-muted text-sm leading-relaxed">{office.desc}</p>
