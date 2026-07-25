@@ -229,9 +229,9 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { city: 'Jeddah', region: 'Western Region', desc: 'Serving the Western Province and Red Sea Coast — where the company was founded.' },
+              { city: 'Jeddah', region: 'King Abdul Aziz Road, Jeddah 21499', desc: 'Serving the Western Province and Red Sea Coast — where the company was founded.' },
               { city: 'Riyadh', region: 'Headquarters — Olaya Towers', desc: 'Level 29, Tower B, Olaya Towers. Serving government, banking, and enterprise clients across the capital and central province.', isHQ: true },
-              { city: 'Al Khobar', region: 'Eastern Region', desc: 'Serving oil & gas, industrial, and logistics clients across the Eastern Province and Gulf Coast.' },
+              { city: 'Al Khobar', region: 'King Fahd Road, Al Khobar 31952', desc: 'Serving oil & gas, industrial, and logistics clients across the Eastern Province and Gulf Coast.' },
             ].map((office, i) => (
               <div key={i} className={`bg-bg-secondary border rounded-xl p-8 text-center transition-all duration-300 hover:-translate-y-1 ${office.isHQ ? 'border-[#00BFFF40]' : 'border-white/5 hover:border-[#00BFFF25]'}`}>
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00BFFF12' }}>

@@ -230,9 +230,9 @@ export default function ArabicAboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { city: 'جدة', region: 'المنطقة الغربية', desc: 'نخدم المنطقة الغربية وساحل البحر الأحمر — حيث تأسست الشركة.' },
+              { city: 'جدة', region: 'طريق الملك عبدالعزيز، جدة ٢١٤٩٩', desc: 'نخدم المنطقة الغربية وساحل البحر الأحمر — حيث تأسست الشركة.' },
               { city: 'الرياض', region: 'المقر الرئيسي — أبراج العليا', desc: 'الدور ٢٩، برج B، أبراج العليا. نخدم الجهات الحكومية والبنوك والمؤسسات الكبرى في العاصمة والمنطقة الوسطى.', isHQ: true },
-              { city: 'الخبر', region: 'المنطقة الشرقية', desc: 'نخدم قطاع النفط والغاز والصناعة وسلاسل الإمداد في المنطقة الشرقية وساحل الخليج.' },
+              { city: 'الخبر', region: 'طريق الملك فهد، الخبر ٣١٩٥٢', desc: 'نخدم قطاع النفط والغاز والصناعة وسلاسل الإمداد في المنطقة الشرقية وساحل الخليج.' },
             ].map((office, i) => (
               <div key={i} className={`bg-bg-secondary border rounded-xl p-8 text-center transition-all duration-300 hover:-translate-y-1 ${office.isHQ ? 'border-[#00BFFF40]' : 'border-white/5 hover:border-[#00BFFF25]'}`}>
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00BFFF12' }}>
