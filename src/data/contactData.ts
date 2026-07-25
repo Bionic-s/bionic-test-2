@@ -1,7 +1,19 @@
 export const officeLocations = [
   {
-    name: 'Riyadh Office',
-    nameAr: 'مكتب الرياض',
+    name: 'Jeddah Office',
+    nameAr: 'مكتب جدة',
+    region: 'Western Province',
+    regionAr: 'المنطقة الغربية',
+    city: 'Jeddah',
+    cityAr: 'جدة',
+    country: 'Saudi Arabia',
+    countryAr: 'المملكة العربية السعودية',
+    description: 'Serving the Western Region and Red Sea business community',
+    descriptionAr: 'خدمة المنطقة الغربية ومجتمع أعمال البحر الأحمر',
+  },
+  {
+    name: 'Riyadh Headquarters',
+    nameAr: 'المقر الرئيسي — الرياض',
     region: 'Level 29, Tower B, Olaya Towers',
     regionAr: 'الدور ٢٩، برج B، أبراج العليا',
     city: 'Prince Mohammed Bin Abdulaziz Rd, Al Olaya',
@@ -10,6 +22,7 @@ export const officeLocations = [
     countryAr: 'الرياض ١٢٢١٣، المملكة العربية السعودية',
     description: 'Headquarters — serving Saudi Arabia with enterprise AI, automation & transformation',
     descriptionAr: 'المقر الرئيسي — خدمة المملكة العربية السعودية بحلول الذكاء الاصطناعي والأتمتة والتحول المؤسسي',
+    isHQ: true,
   },
   {
     name: 'Al Khobar Office',
@@ -22,18 +35,6 @@ export const officeLocations = [
     countryAr: 'المملكة العربية السعودية',
     description: 'Supporting businesses across the Eastern Province and Gulf Coast',
     descriptionAr: 'دعم الأعمال في المنطقة الشرقية وساحل الخليج',
-  },
-  {
-    name: 'Jeddah Office',
-    nameAr: 'مكتب جدة',
-    region: 'Western Province',
-    regionAr: 'المنطقة الغربية',
-    city: 'Jeddah',
-    cityAr: 'جدة',
-    country: 'Saudi Arabia',
-    countryAr: 'المملكة العربية السعودية',
-    description: 'Serving the Western Region and Red Sea business community',
-    descriptionAr: 'خدمة المنطقة الغربية ومجتمع أعمال البحر الأحمر',
   },
 ];
 

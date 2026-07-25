@@ -40,6 +40,11 @@ export default function OfficeLocations({
               <div className={`flex items-start mb-4 ${isAr ? 'flex-row-reverse space-x-reverse space-x-3' : 'space-x-3'}`}>
                 <MapPin className="w-5 h-5 text-accent-primary flex-shrink-0 mt-1" />
                 <div className="flex-1 min-w-0">
+                  {'isHQ' in office && (
+                    <span className="inline-block px-2 py-0.5 bg-accent-primary/15 rounded-full text-tiny font-semibold text-accent-primary mb-1">
+                      {isAr ? 'المقر الرئيسي' : 'HQ'}
+                    </span>
+                  )}
                   <h4 className="font-semibold text-lg mb-1">{isAr ? office.cityAr : office.city}</h4>
                   <p className="text-small text-accent-primary mb-2">{isAr ? office.regionAr : office.region}</p>
                   <p className="text-body text-text-muted">{isAr ? office.countryAr : office.country}</p>
@@ -69,6 +74,11 @@ export default function OfficeLocations({
               <div className="w-12 h-12 bg-accent-primary/20 rounded-full flex items-center justify-center mb-4">
                 <MapPin className="w-6 h-6 text-accent-primary" />
               </div>
+              {'isHQ' in office ? (
+                <div className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-accent-primary/15 rounded-full mb-1">
+                  <span className="text-tiny font-semibold text-accent-primary">{isAr ? 'المقر الرئيسي' : 'HQ'}</span>
+                </div>
+              ) : null}
               <h4 className="font-semibold text-white mb-2">{isAr ? office.nameAr : office.name}</h4>
               <p className="text-accent-primary mb-1">{isAr ? office.regionAr : office.region}</p>
               <p className="text-small text-text-muted">
