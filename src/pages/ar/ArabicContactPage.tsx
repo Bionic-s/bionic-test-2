@@ -347,21 +347,21 @@ export default function ArabicContactPage() {
                 <p className="text-sm text-text-muted">اختر الطريقة التي تناسبك</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all">
+                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all" dir="rtl">
                   <Phone className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
                   <h4 className="font-semibold text-sm text-text-primary mb-1">اتصل بنا</h4>
-                  <a href={contactPhone.href} className="text-[#00BFFF] text-sm font-medium">{contactPhone.number}</a>
+                  <a href={contactPhone.href} className="text-[#00BFFF] text-sm font-medium" dir="ltr">{contactPhone.number}</a>
                   <p className="text-tiny text-text-muted mt-1">{contactPhone.hoursAr}</p>
                 </div>
-                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all">
+                <div className="bg-bg-secondary border border-white/5 rounded-xl p-6 text-center hover:border-[#00BFFF]/20 transition-all" dir="rtl">
                   <Mail className="w-6 h-6 mx-auto mb-3" style={{ color: '#00BFFF' }} />
                   <h4 className="font-semibold text-sm text-text-primary mb-1">راسلنا</h4>
-                  <a href={`mailto:${contactEmails.general}`} className="text-[#00BFFF] text-sm font-medium">{contactEmails.general}</a>
+                  <a href={`mailto:${contactEmails.general}`} className="text-[#00BFFF] text-sm font-medium" dir="ltr">{contactEmails.general}</a>
                   <p className="text-tiny text-text-muted mt-1">نرد خلال ٢٤ ساعة</p>
                 </div>
               </div>
               <OfficeLocations variant="card" showDescription={false} title="زوروا مكاتبنا" locale="ar" />
-              <div className="mt-6 bg-bg-secondary border border-white/5 rounded-xl p-6 flex items-start gap-4">
+              <div className="mt-6 bg-bg-secondary border border-white/5 rounded-xl p-6 flex items-start gap-4" dir="rtl">
                 <Clock className="w-5 h-5 flex-shrink-0" style={{ color: '#00BFFF' }} />
                 <div>
                   <h4 className="font-semibold text-sm text-text-primary mb-1">ساعات العمل</h4>
