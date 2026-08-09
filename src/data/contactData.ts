@@ -58,8 +58,8 @@ export const contactEmails = {
 };
 
 export const contactPhone = {
-  number: '+966 500 884 376',
-  href: 'tel:+966500884376',
+  number: '+966 11 297 8285',
+  href: 'tel:+966112978285',
   hours: 'Sun-Thu, 8AM-5PM (UTC+3)',
   hoursAr: 'الأحد–الخميس، ٨ صباحًا – ٥ مساءً (UTC+3)',
 };
